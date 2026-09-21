@@ -3,7 +3,7 @@ kind: concept
 articleId: multiple-columns
 lang: en
 title: Multiple columns
-summary: Navigate a three-area workspace.
+summary: Compare the same six resources.
 category: columns
 aliases:
   - Multiple columns
@@ -12,8 +12,8 @@ related:
   - single-column
   - two-columns
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: "Three or more page regions keep navigation, active work, and context nearby."
@@ -25,11 +25,11 @@ comparison:
 
 ## Concept
 
-Three or more page regions keep navigation, active work, and context nearby. This workspace uses three regions, not flowing newspaper columns.
+Three or more page regions keep navigation, active work, and context nearby.
 
 ## Example
 
-Choose a document to update the main text and related-material heading. Narrow preview stacks navigation, document, then references. Reset or reload restores the initial state.
+All six layouts use the same six resources, labels, and colors. Filter a topic, reverse collection order, open study notes, or narrow the preview. Compare the reading flow while the content stays the same. Reset or reload restores the full collection and original order. Filters, resources, and guidance occupy three adjacent regions.
 
 ## When to choose it
 

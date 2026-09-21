@@ -3,7 +3,7 @@ kind: concept
 articleId: script
 lang: ko
 title: 스크립트
-summary: 라틴 초대장 제목 입력.
+summary: 같은 글자·문장·숫자로 서체 비교.
 category: type-shapes
 aliases:
   - 스크립트
@@ -12,24 +12,24 @@ related:
   - serif
   - sans-serif
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: 스크립트 서체는 손글씨의 획과 연결을 빌립니다.
-  advantages: 짧은 손글씨 제목이 초대장에 표정을 더합니다.
+  advantages: 손글씨 획이 짧은 글에 표정을 더합니다.
   limitations: 긴 문장과 미지원 문자는 일반 대체 글꼴이 필요하며 이 표본은 라틴 글자만 시연합니다.
   suitable: 짧고 표현적인 제목에 어울립니다.
-  combinations: 행사 세부 정보는 일반 산세리프 본문으로 둡니다.
+  combinations: 인터페이스 라벨과 긴 설명에는 일반 산세리프를 씁니다.
 ---
 
 ## 개념
 
-스크립트 서체는 손글씨의 획과 연결을 빌립니다. CSS cursive와 가까운 편집 분류이며 프로그래밍 스크립트와는 다릅니다.
+스크립트 서체는 손글씨의 획과 연결을 빌립니다.
 
 ## 예시
 
-Dancing Script 초대장에 라틴 제목을 입력하고 크기를 조절합니다. 입력을 지우면 제목은 비고 일반 본문은 그대로 남습니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
+다섯 표본은 같은 문장, iiiWWW 0123, 숫자를 사용합니다. 표본 입력·크기·실측 폭 가이드·숫자 정렬을 조절합니다. 글자는 하나의 문자열로 연결 형태를 유지합니다. 초기화·새로고침하면 처음 글과 48px 크기로 돌아갑니다. Dancing Script는 라틴 손글씨를 보여주며 현지화 글은 Noto 대체 서체를 사용합니다.
 
 ## 추천 조건
 

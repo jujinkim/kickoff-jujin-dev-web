@@ -3,7 +3,7 @@ kind: concept
 articleId: uniform-grid
 lang: en
 title: Uniform grid
-summary: Filter an equal-card catalog.
+summary: Compare the same six resources.
 category: content-arrangement
 aliases:
   - Uniform grid
@@ -12,8 +12,8 @@ related:
   - list-layout
   - masonry
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: Equal-width cards align in shared rows.
@@ -25,11 +25,11 @@ comparison:
 
 ## Concept
 
-Equal-width cards align in shared rows. Unlike masonry, a taller card stretches its row rather than filling a shorter column.
+Equal-width cards align in shared rows.
 
 ## Example
 
-Filter six resources by category and open Details. Cards keep equal widths and aligned row boundaries as descriptions expand. Reset or reload restores the initial state.
+All six layouts use the same six resources, labels, and colors. Filter a topic, reverse collection order, open study notes, or narrow the preview. Compare the reading flow while the content stays the same. Reset or reload restores the full collection and original order. Equal-width cards share row heights, including room for longer text.
 
 ## When to choose it
 

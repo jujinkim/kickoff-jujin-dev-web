@@ -3,7 +3,7 @@ kind: concept
 articleId: flat-design
 lang: ja
 title: フラットデザイン
-summary: タスクの完了と絞り込み.
+summary: 同じタスク一覧でスタイルを比較。
 category: styles
 aliases:
   - フラットデザイン
@@ -16,8 +16,8 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-22"
 comparison:
   features: 単色面と明確なラベルで、奥行き表現なしに階層を作ります。
@@ -30,14 +30,14 @@ checked: "2026-09-21"
 
 ## 概念
 
-単色面と明確なラベルで、奥行き表現なしに階層を作ります。豊富な情報も扱えるため、ミニマリズムとは異なります。
+単色面と明確なラベルで、奥行き表現なしに階層を作ります。
 
 ## 実例
 
-3つのタスクを完了にします。完了数が更新され、未完了・完了の絞り込みで該当する項目や空の状態を示します。 リセット・再読み込みで初期状態に戻ります。
+7種類のスタイルで同じ3件のタスクを使います。完了をチェックし、未完了・完了で絞ると完了数が変わります。該当がなければ案内を表示します。リセット・再読み込みで全件未完了に戻ります。 立体効果を使わず、単色の面とラベルで階層を作ります。
 
 ## 選ぶ条件
 
-日常的なタスク管理に向きます。奥行きの手がかりがない分、枠とラベルで操作を分かりやすくします。
+日常的なタスク管理に向きます。 奥行きの手がかりがない分、枠とラベルで操作を分かりやすくします。
 
 [NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)

@@ -3,7 +3,7 @@ kind: concept
 articleId: minimalism
 lang: ja
 title: ミニマリズム
-summary: 余白のある作品集を巡る.
+summary: 同じタスク一覧でスタイルを比較。
 category: styles
 aliases:
   - ミニマリズム
@@ -16,28 +16,28 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-22"
 comparison:
   features: 限られた要素と広い余白で核心に集中させます。
-  advantages: 余白がひとつの作品に注意を集めます。
+  advantages: 余白で重要なタスクに視線を集めます。
   limitations: 操作や固有の情報まで削ると、単純化ではなく作業の損失になります。
-  suitable: 焦点を絞った作品集に向きます。
+  suitable: 集中した作業の流れに適しています。
   combinations: 抑制した配置にはセリフもサンセリフも組み合わせられます。
 checked: "2026-09-21"
 ---
 
 ## 概念
 
-限られた要素と広い余白で核心に集中させます。フラットデザインと異なり、奥行きだけでなく何を残すかの選択です。
+限られた要素と広い余白で核心に集中させます。
 
 ## 実例
 
-前へ・次へで3つの抽象作品を巡ります。作品、題名、位置が一緒に変わり、端では反対側につながります。 リセット・再読み込みで初期状態に戻ります。
+7種類のスタイルで同じ3件のタスクを使います。完了をチェックし、未完了・完了で絞ると完了数が変わります。該当がなければ案内を表示します。リセット・再読み込みで全件未完了に戻ります。 広い余白と控えめな装飾で同じ3件のタスクに集中させます。
 
 ## 選ぶ条件
 
-焦点を絞った作品集に向きます。操作や固有の情報まで削ると、単純化ではなく作業の損失になります。
+集中した作業の流れに適しています。 操作や固有の情報まで削ると、単純化ではなく作業の損失になります。
 
 [NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)

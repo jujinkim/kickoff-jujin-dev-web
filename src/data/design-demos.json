@@ -2,162 +2,162 @@
   "brutalism": {
     "component": "Brutalism",
     "caption": {
-      "en": "Search a raw document archive",
-      "ko": "투박한 문서 아카이브 검색",
-      "ja": "無骨な文書アーカイブを検索"
+      "en": "Compare the same task list",
+      "ko": "같은 작업 목록으로 스타일 비교",
+      "ja": "同じタスク一覧でスタイルを比較"
     },
     "capture": "[data-demo=\"brutalism\"]"
   },
   "neobrutalism": {
     "component": "Neobrutalism",
     "caption": {
-      "en": "Pick a concert date",
-      "ko": "공연 날짜 선택",
-      "ja": "公演日を選択"
+      "en": "Compare the same task list",
+      "ko": "같은 작업 목록으로 스타일 비교",
+      "ja": "同じタスク一覧でスタイルを比較"
     },
     "capture": "[data-demo=\"neobrutalism\"]"
   },
   "glassmorphism": {
     "component": "Glassmorphism",
     "caption": {
-      "en": "Change a glass weather dashboard",
-      "ko": "유리 날씨 대시보드 전환",
-      "ja": "ガラスの天気パネルを切り替える"
+      "en": "Compare the same task list",
+      "ko": "같은 작업 목록으로 스타일 비교",
+      "ja": "同じタスク一覧でスタイルを比較"
     },
     "capture": "[data-demo=\"glassmorphism\"]"
   },
   "neumorphism": {
     "component": "Neumorphism",
     "caption": {
-      "en": "Adjust a soft light console",
-      "ko": "부드러운 조명 제어판",
-      "ja": "柔らかな照明パネル"
+      "en": "Compare the same task list",
+      "ko": "같은 작업 목록으로 스타일 비교",
+      "ja": "同じタスク一覧でスタイルを比較"
     },
     "capture": "[data-demo=\"neumorphism\"]"
   },
   "skeuomorphism": {
     "component": "Skeuomorphism",
     "caption": {
-      "en": "Write and bookmark paper notes",
-      "ko": "종이 노트 작성·책갈피",
-      "ja": "紙のノートとしおり"
+      "en": "Compare the same task list",
+      "ko": "같은 작업 목록으로 스타일 비교",
+      "ja": "同じタスク一覧でスタイルを比較"
     },
     "capture": "[data-demo=\"skeuomorphism\"]"
   },
   "flat-design": {
     "component": "FlatDesign",
     "caption": {
-      "en": "Complete and filter tasks",
-      "ko": "작업 완료·상태 필터",
-      "ja": "タスクの完了と絞り込み"
+      "en": "Compare the same task list",
+      "ko": "같은 작업 목록으로 스타일 비교",
+      "ja": "同じタスク一覧でスタイルを比較"
     },
     "capture": "[data-demo=\"flat-design\"]"
   },
   "minimalism": {
     "component": "Minimalism",
     "caption": {
-      "en": "Browse a quiet portfolio",
-      "ko": "여백 중심 작품집 탐색",
-      "ja": "余白のある作品集を巡る"
+      "en": "Compare the same task list",
+      "ko": "같은 작업 목록으로 스타일 비교",
+      "ja": "同じタスク一覧でスタイルを比較"
     },
     "capture": "[data-demo=\"minimalism\"]"
   },
   "single-column": {
     "component": "SingleColumn",
     "caption": {
-      "en": "Resize a continuous reading flow",
-      "ko": "하나의 세로 읽기 흐름",
-      "ja": "ひとつの縦の読書フロー"
+      "en": "Compare the same six resources",
+      "ko": "같은 자료 6개로 배치 비교",
+      "ja": "同じ6件の資料で配置を比較"
     },
     "capture": "[data-demo=\"single-column\"]"
   },
   "two-columns": {
     "component": "TwoColumns",
     "caption": {
-      "en": "Navigate two-column documentation",
-      "ko": "2열 문서 탐색",
-      "ja": "2列の文書を読む"
+      "en": "Compare the same six resources",
+      "ko": "같은 자료 6개로 배치 비교",
+      "ja": "同じ6件の資料で配置を比較"
     },
     "capture": "[data-demo=\"two-columns\"]"
   },
   "multiple-columns": {
     "component": "MultipleColumns",
     "caption": {
-      "en": "Navigate a three-area workspace",
-      "ko": "3영역 자료 작업 공간",
-      "ja": "3領域の資料ワークスペース"
+      "en": "Compare the same six resources",
+      "ko": "같은 자료 6개로 배치 비교",
+      "ja": "同じ6件の資料で配置を比較"
     },
     "capture": "[data-demo=\"multiple-columns\"]"
   },
   "list-layout": {
     "component": "ListLayout",
     "caption": {
-      "en": "Filter and sort a reading list",
-      "ko": "읽기 목록 필터·정렬",
-      "ja": "読書リストの絞り込みと並べ替え"
+      "en": "Compare the same six resources",
+      "ko": "같은 자료 6개로 배치 비교",
+      "ja": "同じ6件の資料で配置を比較"
     },
     "capture": "[data-demo=\"list-layout\"]"
   },
   "uniform-grid": {
     "component": "UniformGrid",
     "caption": {
-      "en": "Filter an equal-card catalog",
-      "ko": "균등 카드 카탈로그 필터",
-      "ja": "均等カードのカタログを絞り込む"
+      "en": "Compare the same six resources",
+      "ko": "같은 자료 6개로 배치 비교",
+      "ja": "同じ6件の資料で配置を比較"
     },
     "capture": "[data-demo=\"uniform-grid\"]"
   },
   "masonry": {
     "component": "Masonry",
     "caption": {
-      "en": "Expand cards and repack by height",
-      "ko": "설명 펼침·높이 기반 재배치",
-      "ja": "説明を開き、高さに応じて再配置"
+      "en": "Compare the same six resources",
+      "ko": "같은 자료 6개로 배치 비교",
+      "ja": "同じ6件の資料で配置を比較"
     },
     "capture": "[data-demo=\"masonry\"]"
   },
   "serif": {
     "component": "Serif",
     "caption": {
-      "en": "Inspect serif terminals and editorial type",
-      "ko": "세리프 획 끝·편집 지면 관찰",
-      "ja": "セリフの端と編集紙面を観察"
+      "en": "Compare the same text specimen",
+      "ko": "같은 글자·문장·숫자로 서체 비교",
+      "ja": "同じ文字・文章・数字で書体を比較"
     },
     "capture": "[data-demo=\"serif\"]"
   },
   "sans-serif": {
     "component": "SansSerif",
     "caption": {
-      "en": "Adjust a sign and UI specimen",
-      "ko": "안내판·UI 표본 조절",
-      "ja": "案内板とUI見本を調整"
+      "en": "Compare the same text specimen",
+      "ko": "같은 글자·문장·숫자로 서체 비교",
+      "ja": "同じ文字・文章・数字で書体を比較"
     },
     "capture": "[data-demo=\"sans-serif\"]"
   },
   "script": {
     "component": "Script",
     "caption": {
-      "en": "Personalize a Latin invitation heading",
-      "ko": "라틴 초대장 제목 입력",
-      "ja": "ラテン文字の招待状見出しを入力"
+      "en": "Compare the same text specimen",
+      "ko": "같은 글자·문장·숫자로 서체 비교",
+      "ja": "同じ文字・文章・数字で書体を比較"
     },
     "capture": "[data-demo=\"script\"]"
   },
   "proportional": {
     "component": "Proportional",
     "caption": {
-      "en": "Measure varying glyph advances",
-      "ko": "라틴 전진 폭 측정",
-      "ja": "ラテン文字の送り幅を測る"
+      "en": "Compare the same text specimen",
+      "ko": "같은 글자·문장·숫자로 서체 비교",
+      "ja": "同じ文字・文章・数字で書体を比較"
     },
     "capture": "[data-demo=\"proportional\"]"
   },
   "monospace": {
     "component": "Monospace",
     "caption": {
-      "en": "Measure equal Latin advances",
-      "ko": "라틴 전진 폭 측정",
-      "ja": "ラテン文字の送り幅を測る"
+      "en": "Compare the same text specimen",
+      "ko": "같은 글자·문장·숫자로 서체 비교",
+      "ja": "同じ文字・文章・数字で書体を比較"
     },
     "capture": "[data-demo=\"monospace\"]"
   }

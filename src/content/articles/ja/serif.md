@@ -3,7 +3,7 @@ kind: concept
 articleId: serif
 lang: ja
 title: セリフ
-summary: セリフの端と編集紙面を観察.
+summary: 同じ文字・文章・数字で書体を比較。
 category: type-shapes
 aliases:
   - セリフ
@@ -12,12 +12,12 @@ related:
   - sans-serif
   - script
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: セリフは線の端に仕上げの飾りを持ちます。
-  advantages: 端の細部が編集紙面に独特な質感を与えます。
+  advantages: 端の装飾が同じ見本に異なる質感を与えます。
   limitations: 韓日文字はNoto Serif CJKサブセット。未対応文字は代替されるため実際の字形を確認します。
   suitable: 編集物の印象が合う場合に選びます。
   combinations: セリフ本文とサンセリフの操作ラベルを組み合わせます。
@@ -25,14 +25,14 @@ comparison:
 
 ## 概念
 
-セリフは線の端に仕上げの飾りを持ちます。形の分類なので、比例幅・等幅という送り幅の分類とは独立しています。
+セリフは線の端に仕上げの飾りを持ちます。
 
 ## 実例
 
-編集紙面でNoto Serifの見出しと本文を組み合わせます。見本のサイズを変え、拡大したラテンHの左端を示します。 リセット・再読み込みで初期状態に戻ります。
+5種類の見本で同じ文章、iiiWWW 0123、数字を使います。文字入力、サイズ、実測幅ガイド、数字の整列を操作します。文字列の接続形を保ちます。リセット・再読み込みで最初の文字と48pxに戻ります。 Hの端を示してセリフの細部を調べます。
 
 ## 選ぶ条件
 
-編集物の印象が合う場合に選びます。韓日文字はNoto Serif CJKサブセット。未対応文字は代替されるため実際の字形を確認します。
+編集物の印象が合う場合に選びます。 韓日文字はNoto Serif CJKサブセット。未対応文字は代替されるため実際の字形を確認します。
 
 [W3C](https://www.w3.org/TR/css-fonts-3/)

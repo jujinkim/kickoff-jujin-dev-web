@@ -3,7 +3,7 @@ kind: concept
 articleId: uniform-grid
 lang: ko
 title: 균등 그리드
-summary: 균등 카드 카탈로그 필터.
+summary: 같은 자료 6개로 배치 비교.
 category: content-arrangement
 aliases:
   - 균등 그리드
@@ -12,8 +12,8 @@ related:
   - list-layout
   - masonry
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: 같은 폭의 카드를 공통 행에 정렬합니다.
@@ -25,11 +25,11 @@ comparison:
 
 ## 개념
 
-같은 폭의 카드를 공통 행에 정렬합니다. 메이슨리와 달리 긴 카드는 짧은 열을 채우지 않고 해당 행 높이를 늘립니다.
+같은 폭의 카드를 공통 행에 정렬합니다.
 
 ## 예시
 
-자료 여섯 개를 분류로 좁히고 상세를 펼칩니다. 설명이 늘어나도 카드 폭과 행 경계가 정렬됩니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
+여섯 레이아웃은 같은 자료 6개, 라벨, 색을 사용합니다. 주제 필터·수집 역순·연구 메모 펼침·미리보기 폭을 조절합니다. 내용은 그대로 두고 읽기 흐름을 비교하세요. 초기화·새로고침하면 전체 자료와 수집 순서로 돌아갑니다. 같은 폭의 카드가 행 높이를 공유하며 긴 글을 위한 여백을 남깁니다.
 
 ## 추천 조건
 

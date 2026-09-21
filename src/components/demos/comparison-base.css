@@ -1,0 +1,100 @@
+/* Shared comparison controls; all rules stay inside demo roots. */
+:where([data-comparison]) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  padding: clamp(16px, 3vw, 32px);
+  color-scheme: light;
+}
+:where([data-comparison]) * {
+  box-sizing: border-box;
+}
+:where([data-comparison]) :is(h2, h3, p) {
+  margin: 0 0 1rem;
+}
+:where([data-comparison]) h2 {
+  font-size: 2rem;
+  line-height: 1.15;
+}
+:where([data-comparison]) h3 {
+  font-size: 1.15rem;
+}
+:where([data-comparison]) .controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin: 18px 0;
+}
+:where([data-comparison]) label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+}
+:where([data-comparison]) :is(button, select, input, textarea) {
+  font: inherit;
+  max-width: 100%;
+  color: inherit;
+}
+:where([data-comparison])
+  :is(button, select, input:not([type="checkbox"]):not([type="range"])) {
+  min-height: 44px;
+  padding: 8px 12px;
+}
+:where([data-comparison]) :is(button, select) {
+  cursor: pointer;
+}
+:where([data-comparison]) button {
+  border: 1px solid currentColor;
+  background: transparent;
+}
+:where([data-comparison]) :is(input, textarea, select) {
+  background: #fff;
+  color: #172329;
+  border: 1px solid #67747c;
+}
+:where([data-comparison]) input[type="range"] {
+  width: 150px;
+}
+:where([data-comparison]) input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+}
+:where([data-comparison]) :focus-visible {
+  outline: 3px dashed currentColor;
+  outline-offset: 4px;
+}
+:where([data-comparison]) [hidden] {
+  display: none !important;
+}
+:where([data-comparison]) [role="status"] {
+  min-height: 1.5em;
+  font-size: 0.85rem;
+  margin-top: 16px;
+}
+:where([data-comparison]) small {
+  font-size: 0.8rem;
+}
+:where([data-comparison]) .reset {
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  :where([data-comparison]) * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+:where([data-comparison="tasks"]) [data-task] label {
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+:where([data-comparison="tasks"]) [data-task] input {
+  flex: none;
+}
+:where([data-comparison="tasks"]) [data-task] small {
+  flex: none;
+  white-space: nowrap;
+}

@@ -3,7 +3,7 @@ kind: concept
 articleId: masonry
 lang: ja
 title: メイソンリー
-summary: 説明を開き、高さに応じて再配置.
+summary: 同じ6件の資料で配置を比較。
 category: content-arrangement
 aliases:
   - メイソンリー
@@ -12,8 +12,8 @@ related:
   - list-layout
   - uniform-grid
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: 高さの違うカードを、その時点で最も短い列に置きます。
@@ -25,14 +25,14 @@ comparison:
 
 ## 概念
 
-高さの違うカードを、その時点で最も短い列に置きます。共通行の隙間を減らす一方、見た目の順序は段違いになります。
+高さの違うカードを、その時点で最も短い列に置きます。
 
 ## 実例
 
-説明を開くと高さを測り、後続カードを再配置します。DOM順は1–6を保ち、JavaScriptなしでは通常のグリッドになります。 リセット・再読み込みで初期状態に戻ります。
+6種類のレイアウトで同じ6件の資料、ラベル、色を使います。テーマの絞り込み、収集順の反転、研究メモ、表示幅を操作します。内容を変えずに読む流れを比べます。リセット・再読み込みで全件と収集順に戻ります。 高さの異なるカードが短い列を埋め、メモを開くとDOM順を保って再配置します。
 
 ## 選ぶ条件
 
-視覚資料の収集に向きます。展開後のキーボード順と重なりを確認し、狭い画面では1列にします。
+視覚資料の収集に向きます。 展開後のキーボード順と重なりを確認し、狭い画面では1列にします。
 
 [W3C](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)

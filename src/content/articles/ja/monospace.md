@@ -3,7 +3,7 @@ kind: concept
 articleId: monospace
 lang: ja
 title: 等幅
-summary: ラテン文字の送り幅を測る.
+summary: 同じ文字・文章・数字で書体を比較。
 category: character-width
 aliases:
   - 等幅
@@ -11,8 +11,8 @@ related:
   - theme
   - proportional
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: 等幅ラテン文字は輪郭が違っても送り幅を共有します。
@@ -24,14 +24,14 @@ comparison:
 
 ## 概念
 
-等幅ラテン文字は輪郭が違っても送り幅を共有します。すべてのUnicode文字が端末の1セルを占めるという意味ではありません。
+等幅ラテン文字は輪郭が違っても送り幅を共有します。
 
 ## 実例
 
-JetBrains Monoの見本を編集し、文字枠ガイドを出します。実測したiとWの幅が一致し、コードと数値列も一定間隔を示します。 リセット・再読み込みで初期状態に戻ります。
+5種類の見本で同じ文章、iiiWWW 0123、数字を使います。文字入力、サイズ、実測幅ガイド、数字の整列を操作します。文字列の接続形を保ちます。リセット・再読み込みで最初の文字と48pxに戻ります。 対応するラテン文字は等しい送り幅ですが、代替文字では異なる場合があります。
 
 ## 選ぶ条件
 
-コードや整列したラテン文字の資料に向きます。CJK、絵文字、結合文字、代替書体では異なるため、対応文字を確認します。
+コードや整列したラテン文字の資料に向きます。 CJK、絵文字、結合文字、代替書体では異なるため、対応文字を確認します。
 
 [W3C](https://www.w3.org/TR/css-fonts-3/)

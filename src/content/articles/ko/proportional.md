@@ -3,7 +3,7 @@ kind: concept
 articleId: proportional
 lang: ko
 title: 비례폭
-summary: 라틴 전진 폭 측정.
+summary: 같은 글자·문장·숫자로 서체 비교.
 category: character-width
 aliases:
   - 비례폭
@@ -11,8 +11,8 @@ related:
   - theme
   - monospace
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: 비례폭 글자는 서로 다른 전진 폭을 씁니다.
@@ -24,11 +24,11 @@ comparison:
 
 ## 개념
 
-비례폭 글자는 서로 다른 전진 폭을 씁니다. 폭은 윤곽뿐 아니라 주변 간격도 포함하며 숫자만 고정폭일 수도 있습니다.
+비례폭 글자는 서로 다른 전진 폭을 씁니다.
 
 ## 예시
 
-표본을 입력하고 실측 폭 가이드를 켭니다. Noto Sans의 i와 W는 폭이 다릅니다. 숫자 열 정렬은 글자 폭을 유지하며 숫자 행을 맞춥니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
+다섯 표본은 같은 문장, iiiWWW 0123, 숫자를 사용합니다. 표본 입력·크기·실측 폭 가이드·숫자 정렬을 조절합니다. 글자는 하나의 문자열로 연결 형태를 유지합니다. 초기화·새로고침하면 처음 글과 48px 크기로 돌아갑니다. 실측 i와 W의 전진 폭이 다르며 숫자는 별도로 열 정렬할 수 있습니다.
 
 ## 추천 조건
 

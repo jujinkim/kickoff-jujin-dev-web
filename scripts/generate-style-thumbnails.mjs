@@ -54,6 +54,8 @@ try {
       await page.locator(entry.capture).screenshot({
         path: `public/thumbnails/${id}-${lang}.png`,
         type: "png",
+        // Fixed off-screen navigation must not leak into tall element captures.
+        style: ".skip-link { visibility: hidden !important; }",
       });
       console.log(`Captured ${id}/${lang}`);
     }

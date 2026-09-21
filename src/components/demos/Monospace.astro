@@ -1,17 +1,19 @@
 ---
 import type { Lang } from "../../lib/i18n";
 import { local } from "./shared";
+import "./fonts.css";
+import "./comparison-base.css";
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = local(lang);
-import "./fonts.css";
 ---
 
 <section
   class="demo"
   data-demo="monospace"
+  data-comparison="type"
   lang={lang}
   data-reset-message={t(
     "Initial state restored",
@@ -19,10 +21,23 @@ import "./fonts.css";
     "初期状態に戻しました",
   )}
 >
-  <small>
-    JETBRAINS MONO / {t("CODE & COLUMNS", "코드와 열", "コードと列")}
-  </small>
+  <small>JETBRAINS MONO / {t("TYPE LAB", "조판 실험실", "組版実験室")}</small>
   <h2>{t("Letters take space", "글자가 차지하는 공간", "文字が占める空間")}</h2>
+  <div class="specimen">
+    <span class="letter" lang="en">
+      H<span class="terminal top" aria-hidden="true"></span>
+      <span class="terminal bottom" aria-hidden="true"></span>
+    </span>
+    <div>
+      <h3 lang="en">River, light &amp; time</h3>
+      <p lang="en">
+        Every detail has a story. Slow down and let the page unfold.
+      </p>
+      <p class="localized">
+        {t("River, light & time", "강과 빛, 그리고 시간", "川と光、そして時間")}
+      </p>
+    </div>
+  </div>
   <label>
     {t("Specimen", "표본", "見本")}
     <input
@@ -34,8 +49,11 @@ import "./fonts.css";
       disabled
     />
   </label>
-  <div class="sample" data-sample>
-    iiiWWW 0123
+  <div class="sample-wrap">
+    <div class="sample" data-sample lang="en">
+      iiiWWW 0123
+    </div>
+    <div class="guides-layer" aria-hidden="true"></div>
   </div>
   <p class="measurement" data-measure>
     {t(
@@ -44,207 +62,127 @@ import "./fonts.css";
       "書体の読み込み後に送り幅を表示します。",
     )}
   </p>
-  <pre class="code"><code>const light = true;
-const level = 65;
-
-ID    VALUE
-001   11.11
-002   88.88</code></pre>
+  <div class="numbers">
+    <span>111.11</span>
+    <span>888.88</span>
+    <span>123.45</span>
+  </div>
   <div class="controls">
+    <label>
+      {t("Size", "크기", "サイズ")}
+      <input
+        data-size
+        type="range"
+        min="24"
+        max="72"
+        value="48"
+        data-interactive
+        disabled
+      />
+      <output data-size-value>48px</output>
+    </label>
     <label>
       <input type="checkbox" data-guides data-interactive disabled />
       {t("Advance guides", "전진 폭 가이드", "送り幅ガイド")}
     </label>
+    <label>
+      <input type="checkbox" data-tabular data-interactive disabled />
+      {t("Tabular digits", "숫자 열 정렬", "等幅数字")}
+    </label>
   </div>
   <p class="font-note">
     {t(
-      "Widths below are measured, not estimated from outlines. This Latin font does not promise equal widths for CJK, emoji, or fallback glyphs.",
-      "아래 폭은 윤곽 추정이 아닌 실측입니다. 이 라틴 글꼴은 한·일 문자, 이모지, 대체 글꼴의 동일 폭을 보장하지 않습니다.",
-      "幅は輪郭からの推測ではなく実測です。このラテン書体はCJK、絵文字、代替文字の等幅を保証しません。",
+      "All five examples share the same text and size. The named face renders supported Latin; Korean and Japanese use Noto CJK. Other characters may fall back. Guides measure text in context, so shaping and ligatures can affect the ranges.",
+      "다섯 예제는 같은 글과 크기를 사용합니다. 라틴 지원 문자는 표시된 서체, 한·일 문자는 Noto CJK로 표시합니다. 나머지는 대체 글꼴을 쓸 수 있습니다. 가이드는 문맥 안에서 측정하므로 연결 형태와 합자가 범위에 영향을 줄 수 있습니다.",
+      "5例は同じ文章とサイズを使います。対応するラテン文字は表示の書体、韓国語と日本語はNoto CJKで表示します。ほかは代替書体になる場合があります。ガイドは文脈内で測定するため、接続や合字が範囲に影響する場合があります。",
     )}
   </p>
-
   <button class="reset" type="button" data-reset data-interactive disabled>
     {t("Reset", "초기화", "リセット")}
   </button>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
-  import { mount } from "./shared";
-  mount("monospace", (root, say) => {
-    const input = root.querySelector<HTMLInputElement>("[data-text]")!,
-      guides = root.querySelector<HTMLInputElement>("[data-guides]")!,
-      sample = root.querySelector<HTMLElement>("[data-sample]")!;
-    const tabular = root.querySelector<HTMLInputElement>("[data-tabular]");
-    const measure = () => {
-      const range = document.createRange();
-      const widths = [...sample.childNodes].map((node) => {
-        range.selectNodeContents(node);
-        return range.getBoundingClientRect().width.toFixed(2);
-      });
-      root.querySelector("[data-measure]")!.textContent =
-        `${widths.join(" / ")} px`;
-    };
-    const update = () => {
-      sample.replaceChildren(
-        ...Array.from(input.value).map((char) => {
-          const span = document.createElement("span");
-          span.textContent = char;
-          return span;
-        }),
-      );
-      sample.classList.toggle("guides", guides.checked);
-      const numbers = root.querySelector<HTMLElement>(".numbers");
-      if (numbers && tabular) numbers.dataset.tabular = String(tabular.checked);
-      measure();
-      say(
-        `${input.value.length} / 60 · ${guides.parentElement!.textContent}: ${guides.checked ? "✓" : "—"}`,
-      );
-    };
-    input.addEventListener("input", update);
-    guides.addEventListener("change", update);
-    tabular?.addEventListener("change", update);
-    document.fonts.ready.then(() => {
-      update();
-      say("");
-    });
-    return () => {
-      input.value = "iiiWWW 0123";
-      guides.checked = false;
-      if (tabular) tabular.checked = false;
-      update();
-    };
-  });
+  import { mountType } from "./type-behavior";
+  mountType("monospace");
 </script>
 <style>
   .demo {
-    min-width: 0;
-    overflow-wrap: anywhere;
-    padding: clamp(16px, 3vw, 32px);
-    color-scheme: light;
+    background: #f8f4e9;
+    color: #353a35;
   }
-  .demo * {
-    box-sizing: border-box;
-  }
-  h2,
-  h3,
-  p {
-    margin: 0 0 1rem;
-  }
-  h2 {
-    font-size: clamp(1.8rem, 4vw, 3.6rem);
-    line-height: 1.12;
-  }
-  h3 {
-    font-size: 1.2rem;
-  }
-  .controls {
+  .specimen {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    gap: 24px;
     align-items: center;
-    margin: 18px 0;
+    border-block: 1px solid #b8ae9b;
+    margin: 24px 0;
+    padding: 16px 0;
   }
-  label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    max-width: 100%;
+  .specimen,
+  .sample,
+  .numbers {
+    font-family: "Demo Mono", var(--demo-sans-cjk, sans-serif), serif;
+    font-weight: 400;
   }
-  button,
-  select,
-  input,
-  textarea {
-    font: inherit;
-    max-width: 100%;
-    color: inherit;
+  .specimen h3 {
+    font-family: inherit;
+    font-size: 32px;
+    font-weight: 400;
   }
-  button,
-  select,
-  input:not([type="checkbox"]):not([type="range"]) {
-    min-height: 44px;
-    padding: 8px 12px;
+  .specimen p {
+    line-height: 1.7;
   }
-  button,
-  select {
-    cursor: pointer;
+  .letter {
+    position: relative;
+    flex: none;
+    font-size: 140px;
+    line-height: 1.2;
   }
-  button {
-    border: 1px solid currentColor;
-    background: transparent;
+  .terminal {
+    display: none;
+    position: absolute;
+    left: 2%;
+    width: 42%;
+    height: 12%;
+    border: 2px solid #b64c2b;
+    border-radius: 50%;
   }
-  input,
-  textarea,
-  select {
-    background: #fff;
-    color: #172329;
-    border: 1px solid #67747c;
+  .top {
+    top: 18%;
   }
-  input[type="range"] {
-    width: 150px;
+  .bottom {
+    bottom: 14%;
   }
-  input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
+  .demo[data-terminals="true"] .terminal {
+    display: block;
   }
-  :focus-visible {
-    outline: 3px dashed currentColor;
-    outline-offset: 4px;
-  }
-  [hidden] {
-    display: none !important;
-  }
-  [role="status"] {
-    min-height: 1.5em;
-    font-size: 0.85rem;
-    margin-top: 16px;
-  }
-  small {
-    font-size: 0.8rem;
-  }
-  .reset {
-    margin-top: 20px;
-    font-size: 0.85rem;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .demo * {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
-  .demo {
-    background: #17262e;
-    color: #e3eee8;
-  }
-  h2 {
-    font-size: 2rem;
+  .sample-wrap {
+    position: relative;
+    margin: 24px 0;
   }
   .sample {
-    font-family: "Demo Mono", monospace;
-    font-size: 32px;
+    font-size: 48px;
     line-height: 2;
     white-space: pre-wrap;
     word-break: break-all;
-    margin: 24px 0;
-    min-height: 64px;
+    min-height: 96px;
   }
-  .sample:global(.guides) {
-    background-image: linear-gradient(#ffffff08, #ffffff08);
+  .guides-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
   }
-  .sample :global(span) {
-    display: inline;
-  }
-  .sample:global(.guides) :global(span) {
-    outline: 1px solid #a8b8af;
-    background: #ffffff0a;
+  .guides-layer :global(span) {
+    position: absolute;
+    outline: 1px solid #897245;
+    background: #e7daba44;
   }
   .measurement {
     font-size: 0.85rem;
     font-variant-numeric: tabular-nums;
   }
   .numbers {
-    font-family: "Demo Sans", sans-serif;
     font-size: 32px;
     display: flex;
     flex-direction: column;
@@ -254,17 +192,14 @@ ID    VALUE
   .numbers[data-tabular="true"] {
     font-variant-numeric: tabular-nums;
   }
-  .code {
-    font-family: "Demo Mono", monospace;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    border-top: 1px solid #82958b;
-    padding-top: 20px;
-    font-size: 16px;
-    background: transparent;
-    color: inherit;
-  }
   .font-note {
     font-size: 0.75rem;
+    line-height: 1.65;
+  }
+  @media (max-width: 500px) {
+    .specimen {
+      flex-direction: column;
+      align-items: start;
+    }
   }
 </style>

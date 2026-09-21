@@ -1,24 +1,20 @@
 ---
 import type { Lang } from "../../lib/i18n";
 import { local } from "./shared";
+import { resources } from "./resources";
+import "./comparison-base.css";
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = local(lang);
-const titles = [
-  t("Color atlas", "색 지도", "色の地図"),
-  t("Paper forms", "종이 형태", "紙のかたち"),
-  t("City rhythm", "도시 리듬", "街のリズム"),
-  t("Quiet geometry", "고요한 기하", "静かな幾何"),
-  t("Letter studies", "글자 연구", "文字の研究"),
-  t("Light archive", "빛 기록", "光の記録"),
-];
+const items = resources(lang);
 ---
 
 <section
   class="demo"
   data-demo="masonry"
+  data-comparison="resources"
   lang={lang}
   data-reset-message={t(
     "Initial state restored",
@@ -26,201 +22,147 @@ const titles = [
     "初期状態に戻しました",
   )}
 >
-  <small>{t("COLLECTED", "수집 자료", "収集資料")} / 06</small>
-  <h2>{t("Visual fragments", "시각의 조각", "視覚のかけら")}</h2>
-  <p>
-    {t(
-      "Open a caption. Watch the shortest column take the next card.",
-      "설명을 펼치면 다음 카드가 가장 짧은 열에 놓입니다.",
-      "説明を開くと、次のカードが最も短い列に入ります。",
-    )}
-  </p>
-  <div class="board">
-    {titles.map((title, i) => (
-      <article data-tile>
-        <div class={`art art-${i}`} aria-hidden="true">
-          {["◒", "▤", "▦", "◭", "Aa", "◐"][i]}
-        </div>
-        <small>0{i + 1}</small>
-        <h3>{title}</h3>
-        <details>
-          <summary>{t("Caption", "설명", "説明")}</summary>
-          <p>
-            {t(
-              "Collected on a slow walk through the city. The changing proportions create a rhythm; each fragment keeps its place in the reading sequence.",
-              "도시를 천천히 걸으며 모았습니다. 달라지는 비율이 리듬을 만들지만 각 조각의 읽기 순서는 유지됩니다.",
-              "街をゆっくり歩きながら集めました。比率の変化がリズムを生みますが、それぞれの読む順序は保たれます。",
-            )}
-          </p>
-        </details>
-      </article>
-    ))}
+  <header>
+    <small>{t("COLLECTED / 06", "수집 자료 / 06", "収集資料 / 06")}</small>
+    <h2>{t("Visual fragments", "시각의 조각", "視覚のかけら")}</h2>
+    <p>
+      {t(
+        "Browse the same six resources; compare how the layout changes the reading flow.",
+        "같은 자료 6개를 살펴보며 배치에 따른 읽기 흐름을 비교하세요.",
+        "同じ6件の資料で、配置による読む流れの違いを比べてください。",
+      )}
+    </p>
+  </header>
+  <div class="controls">
+    <label>
+      {t("Preview width", "미리보기 폭", "表示幅")}
+      <select data-width data-interactive disabled>
+        <option value="wide">{t("Wide", "넓게", "広い")}</option>
+        <option value="narrow">{t("Narrow", "좁게", "狭い")}</option>
+      </select>
+    </label>
   </div>
-
+  <div class="frame" data-width="wide">
+    <div class="workspace">
+      <nav aria-label={t("Resource filters", "자료 필터", "資料の絞り込み")}>
+        <label>
+          {t("Topic", "주제", "テーマ")}
+          <select data-filter data-interactive disabled>
+            <option value="all">{t("All", "전체", "すべて")}</option>
+            <option value="color">{t("Color", "색", "色")}</option>
+            <option value="form">{t("Form", "형태", "形")}</option>
+            <option value="type">{t("Type", "글자", "文字")}</option>
+          </select>
+        </label>
+        <label>
+          {t("Order", "순서", "順序")}
+          <select data-sort data-interactive disabled>
+            <option value="original">
+              {t("Collection order", "수집 순서", "収集順")}
+            </option>
+            <option value="reverse">
+              {t("Reverse order", "역순", "逆順")}
+            </option>
+          </select>
+        </label>
+        <strong data-count>6 / 6</strong>
+      </nav>
+      <div class="board">
+        {items.map((item) => (
+          <article data-tile data-id={item.id} data-topic={item.topic}>
+            <div class={`art art-${item.id}`} aria-hidden="true">
+              {item.symbol}
+            </div>
+            <div class="description">
+              <small>0{item.id + 1}</small>
+              <h3 data-resource-title>{item.title}</h3>
+              <p>{item.description}</p>
+              <details>
+                <summary>{t("Study notes", "연구 메모", "研究メモ")}</summary>
+                <p>
+                  {t(
+                    "Compare shape, spacing, and contrast. Keep this resource beside the next draft and revisit the details.",
+                    "형태, 간격, 대비를 비교합니다. 다음 초안 곁에 자료를 두고 세부를 다시 살펴보세요.",
+                    "形、間隔、コントラストを比べます。次の案の横に資料を置き、細部を見直してください。",
+                  )}
+                </p>
+              </details>
+            </div>
+          </article>
+        ))}
+      </div>
+      <aside>
+        <h3>{t("Study guide", "연구 안내", "研究ガイド")}</h3>
+        <p>
+          {t(
+            "Collect → compare → revise",
+            "수집 → 비교 → 수정",
+            "収集 → 比較 → 修正",
+          )}
+        </p>
+        <p>
+          {t(
+            "Six resources, one collection.",
+            "자료 6개, 하나의 모음.",
+            "6件の資料、ひとつのコレクション。",
+          )}
+        </p>
+      </aside>
+    </div>
+  </div>
   <button class="reset" type="button" data-reset data-interactive disabled>
     {t("Reset", "초기화", "リセット")}
   </button>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
-  import { mount } from "./shared";
-  mount("masonry", (root, say) => {
-    const board = root.querySelector<HTMLElement>(".board")!,
-      tiles = [...root.querySelectorAll<HTMLElement>("[data-tile]")];
-    let pending = false;
-    const layout = () => {
-      pending = false;
-      const columns =
-        board.clientWidth < 450 ? 1 : board.clientWidth < 650 ? 2 : 3;
-      const gap = 16,
-        w = (board.clientWidth - gap * (columns - 1)) / columns;
-      const heights = Array(columns).fill(0) as number[];
-      tiles.forEach((tile) => {
-        tile.style.width = `${w}px`;
-        const col = heights.indexOf(Math.min(...heights));
-        tile.style.transform = `translate(${col * (w + gap)}px,${heights[col]}px)`;
-        heights[col] += tile.offsetHeight + gap;
-      });
-      board.dataset.positioned = "true";
-      board.style.height = `${Math.max(...heights) - gap}px`;
-    };
-    const queue = () => {
-      if (!pending) {
-        pending = true;
-        requestAnimationFrame(layout);
-      }
-    };
-    new ResizeObserver(queue).observe(board);
-    tiles.forEach((tile) => new ResizeObserver(queue).observe(tile));
-    root.querySelectorAll("details").forEach((d) =>
-      d.addEventListener("toggle", () => {
-        queue();
-        say(d.closest("article")!.querySelector("h3")!.textContent!);
-      }),
-    );
-    document.fonts.ready.then(queue);
-    queue();
-    return () => {
-      root.querySelectorAll("details").forEach((d) => (d.open = false));
-      queue();
-    };
-  });
+  import { mountResources } from "./resource-behavior";
+  mountResources("masonry", true);
 </script>
 <style>
-  .demo {
-    min-width: 0;
-    overflow-wrap: anywhere;
-    padding: clamp(16px, 3vw, 32px);
-    color-scheme: light;
-  }
-  .demo * {
-    box-sizing: border-box;
-  }
-  h2,
-  h3,
-  p {
-    margin: 0 0 1rem;
-  }
-  h2 {
-    font-size: clamp(1.8rem, 4vw, 3.6rem);
-    line-height: 1.12;
-  }
-  h3 {
-    font-size: 1.2rem;
-  }
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    margin: 18px 0;
-  }
-  label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    max-width: 100%;
-  }
-  button,
-  select,
-  input,
-  textarea {
-    font: inherit;
-    max-width: 100%;
-    color: inherit;
-  }
-  button,
-  select,
-  input:not([type="checkbox"]):not([type="range"]) {
-    min-height: 44px;
-    padding: 8px 12px;
-  }
-  button,
-  select {
-    cursor: pointer;
-  }
-  button {
-    border: 1px solid currentColor;
-    background: transparent;
-  }
-  input,
-  textarea,
-  select {
-    background: #fff;
-    color: #172329;
-    border: 1px solid #67747c;
-  }
-  input[type="range"] {
-    width: 150px;
-  }
-  input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
-  }
-  :focus-visible {
-    outline: 3px dashed currentColor;
-    outline-offset: 4px;
-  }
-  [hidden] {
-    display: none !important;
-  }
-  [role="status"] {
-    min-height: 1.5em;
-    font-size: 0.85rem;
-    margin-top: 16px;
-  }
-  small {
-    font-size: 0.8rem;
-  }
-  .reset {
-    margin-top: 20px;
-    font-size: 0.85rem;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .demo * {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
   .demo {
     background: #f3ece5;
     color: #443730;
   }
-  .board {
-    position: relative;
+  .frame {
+    container-type: inline-size;
+    margin: auto;
+  }
+  .frame[data-width="narrow"] {
+    max-width: 300px;
+  }
+  .workspace {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+    gap: 20px;
     align-items: start;
   }
-  .board[data-positioned="true"] {
-    display: block;
+  .workspace > * {
+    min-width: 0;
   }
-  .board[data-positioned="true"] article {
-    position: absolute;
-    top: 0;
-    left: 0;
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px;
+    background: #e5ddd3;
+    border: 1px solid #bead9e;
+    align-items: center;
+  }
+  nav select {
+    width: 100%;
+    min-width: 0;
+  }
+  nav label {
+    min-width: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .board {
+    display: grid;
+    gap: 16px;
+    align-items: start;
+    min-width: 0;
+    position: relative;
   }
   article {
     min-width: 0;
@@ -231,47 +173,71 @@ const titles = [
   .art {
     display: grid;
     place-items: center;
-    height: 150px;
-    font-size: 5rem;
+    height: 120px;
+    font-size: 3rem;
     background: #bdc9ad;
     color: #3f5034;
     margin-bottom: 16px;
   }
   .art-1 {
-    height: 240px;
     background: #dfb29c;
     color: #6c3924;
   }
   .art-2 {
-    height: 110px;
     background: #c7cadc;
     color: #454b70;
   }
   .art-3 {
-    height: 210px;
     background: #decf99;
     color: #665824;
   }
   .art-4 {
-    height: 130px;
     background: #d1b7c5;
     color: #664252;
   }
   .art-5 {
-    height: 190px;
     background: #a8c5c2;
     color: #315a56;
   }
-  details p {
+  article p,
+  aside p {
     font-size: 0.85rem;
     line-height: 1.65;
+  }
+  details p {
     margin-top: 12px;
   }
-  @media (max-width: 500px) {
-    .board {
-      grid-template-columns: 1fr;
-    }
-    /* Reflow immediately on narrow screens, even before ResizeObserver fires. */
+  aside {
+    border-block: 1px solid #bead9e;
+    padding: 16px 0;
+  }
+  .board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .art-1 {
+    height: 200px;
+  }
+  .art-2 {
+    height: 90px;
+  }
+  .art-3 {
+    height: 175px;
+  }
+  .art-4 {
+    height: 110px;
+  }
+  .art-5 {
+    height: 155px;
+  }
+  .board[data-positioned="true"] {
+    display: block;
+  }
+  .board[data-positioned="true"] article {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  @container (max-width:450px) {
     .board[data-positioned="true"] {
       display: grid;
       height: auto !important;
@@ -280,6 +246,23 @@ const titles = [
       position: static;
       width: auto !important;
       transform: none !important;
+    }
+  }
+  @container (max-width:450px) {
+    .workspace {
+      grid-template-columns: 1fr;
+    }
+    .workspace > * {
+      grid-column: auto;
+    }
+    .board {
+      grid-template-columns: 1fr;
+    }
+    article {
+      display: block;
+    }
+    .art {
+      max-width: 100%;
     }
   }
 </style>

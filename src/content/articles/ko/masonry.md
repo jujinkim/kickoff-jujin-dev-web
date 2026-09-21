@@ -3,7 +3,7 @@ kind: concept
 articleId: masonry
 lang: ko
 title: 메이슨리
-summary: 설명 펼침·높이 기반 재배치.
+summary: 같은 자료 6개로 배치 비교.
 category: content-arrangement
 aliases:
   - 메이슨리
@@ -12,8 +12,8 @@ related:
   - list-layout
   - uniform-grid
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: 높이가 다른 카드를 현재 가장 짧은 열에 넣습니다.
@@ -25,11 +25,11 @@ comparison:
 
 ## 개념
 
-높이가 다른 카드를 현재 가장 짧은 열에 넣습니다. 공통 행의 빈틈을 줄이지만 시각적 순서가 엇갈릴 수 있습니다.
+높이가 다른 카드를 현재 가장 짧은 열에 넣습니다.
 
 ## 예시
 
-설명을 펼치면 높이를 측정해 뒤 카드를 재배치합니다. DOM 순서는 1–6을 유지하고 JavaScript가 없으면 일반 그리드가 남습니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
+여섯 레이아웃은 같은 자료 6개, 라벨, 색을 사용합니다. 주제 필터·수집 역순·연구 메모 펼침·미리보기 폭을 조절합니다. 내용은 그대로 두고 읽기 흐름을 비교하세요. 초기화·새로고침하면 전체 자료와 수집 순서로 돌아갑니다. 다른 높이의 카드가 짧은 열을 채우고, 메모를 펼치면 DOM 순서를 유지하며 재배치합니다.
 
 ## 추천 조건
 

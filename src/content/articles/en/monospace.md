@@ -3,7 +3,7 @@ kind: concept
 articleId: monospace
 lang: en
 title: Monospace
-summary: Measure equal Latin advances.
+summary: Compare the same text specimen.
 category: character-width
 aliases:
   - Monospace
@@ -11,8 +11,8 @@ related:
   - theme
   - proportional
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: >-
@@ -28,11 +28,11 @@ comparison:
 
 ## Concept
 
-Monospaced Latin glyphs share an advance width even when their ink shapes differ. This does not mean every Unicode character occupies one terminal cell.
+Monospaced Latin glyphs share an advance width even when their ink shapes differ.
 
 ## Example
 
-Edit the JetBrains Mono specimen and show cell guides. Measured i and W advances match; the code and numeric columns illustrate the same regular spacing. Reset or reload restores the initial state.
+All five specimens share a sentence, iiiWWW 0123, and the same numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Supported Latin characters share an advance width; fallback characters may differ.
 
 ## When to choose it
 

@@ -3,7 +3,7 @@ kind: concept
 articleId: minimalism
 lang: en
 title: Minimalism
-summary: Browse a quiet portfolio.
+summary: Compare the same task list.
 category: styles
 aliases:
   - Minimalism
@@ -16,30 +16,30 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-22"
 comparison:
   features: Limited elements and generous space focus attention on essential content.
-  advantages: Space concentrates attention on one work.
+  advantages: Space concentrates attention on essential tasks.
   limitations: >-
     Removing navigation or unique information weakens the task rather than
     simplifying it.
-  suitable: Choose it for a focused portfolio.
+  suitable: Choose it for a focused workflow.
   combinations: Serif or sans-serif can support the same restrained layout.
 checked: "2026-09-21"
 ---
 
 ## Concept
 
-Limited elements and generous space focus attention on essential content. Unlike flat design, minimalism concerns what remains, not only surface depth.
+Limited elements and generous space focus attention on essential content.
 
 ## Example
 
-Browse three abstract works with Previous and Next. The artwork, title, and position change together; navigation wraps at either end. Reset or reload restores the initial state.
+All seven styles use the same three tasks. Check a task, filter Open or Done, and watch the completed count change. An empty state appears when no tasks match. Reset or reload restores three unchecked tasks. Extra space and restrained decoration keep the same three tasks prominent.
 
 ## When to choose it
 
-Choose it for a focused portfolio. Removing navigation or unique information weakens the task rather than simplifying it.
+Choose it for a focused workflow. Removing navigation or unique information weakens the task rather than simplifying it.
 
 [NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)

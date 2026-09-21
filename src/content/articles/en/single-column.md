@@ -3,7 +3,7 @@ kind: concept
 articleId: single-column
 lang: en
 title: Single column
-summary: Resize a continuous reading flow.
+summary: Compare the same six resources.
 category: columns
 aliases:
   - Single column
@@ -12,11 +12,11 @@ related:
   - two-columns
   - multiple-columns
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
-  features: "Navigation, article, and related material follow one vertical stream."
+  features: "Filters, resources, and guidance follow one vertical stream."
   advantages: One stream makes the next reading step predictable.
   limitations: >-
     Long pages require scrolling; a restrained line length helps keep the text
@@ -27,11 +27,11 @@ comparison:
 
 ## Concept
 
-Navigation, article, and related material follow one vertical stream. Column count describes large regions, not the number of cards inside them.
+Filters, resources, and guidance follow one vertical stream.
 
 ## Example
 
-Change the preview width and expand another paragraph. The reading order stays navigation, article, related reading at both widths. Reset or reload restores the initial state.
+All six layouts use the same six resources, labels, and colors. Filter a topic, reverse collection order, open study notes, or narrow the preview. Compare the reading flow while the content stays the same. Reset or reload restores the full collection and original order. Filters, resources, and guidance form one vertical stream.
 
 ## When to choose it
 

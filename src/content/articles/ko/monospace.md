@@ -3,7 +3,7 @@ kind: concept
 articleId: monospace
 lang: ko
 title: 고정폭
-summary: 라틴 전진 폭 측정.
+summary: 같은 글자·문장·숫자로 서체 비교.
 category: character-width
 aliases:
   - 고정폭
@@ -11,8 +11,8 @@ related:
   - theme
   - proportional
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: 고정폭 라틴 글자는 윤곽이 달라도 전진 폭이 같습니다.
@@ -24,11 +24,11 @@ comparison:
 
 ## 개념
 
-고정폭 라틴 글자는 윤곽이 달라도 전진 폭이 같습니다. 모든 유니코드 문자가 터미널 한 칸이라는 뜻은 아닙니다.
+고정폭 라틴 글자는 윤곽이 달라도 전진 폭이 같습니다.
 
 ## 예시
 
-JetBrains Mono 표본을 바꾸고 글자 칸 가이드를 켭니다. 실측 i·W 전진 폭이 같으며 코드와 숫자 열도 일정한 간격을 보여줍니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
+다섯 표본은 같은 문장, iiiWWW 0123, 숫자를 사용합니다. 표본 입력·크기·실측 폭 가이드·숫자 정렬을 조절합니다. 글자는 하나의 문자열로 연결 형태를 유지합니다. 초기화·새로고침하면 처음 글과 48px 크기로 돌아갑니다. 지원되는 라틴 문자는 전진 폭이 같지만 대체 문자는 다를 수 있습니다.
 
 ## 추천 조건
 

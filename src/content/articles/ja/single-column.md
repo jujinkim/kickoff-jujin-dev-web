@@ -3,7 +3,7 @@ kind: concept
 articleId: single-column
 lang: ja
 title: 単一カラム
-summary: ひとつの縦の読書フロー.
+summary: 同じ6件の資料で配置を比較。
 category: columns
 aliases:
   - 単一カラム
@@ -12,11 +12,11 @@ related:
   - two-columns
   - multiple-columns
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
-  features: ナビゲーション、記事、関連資料をひとつの縦の流れに置きます。
+  features: フィルター、資料、案内がひとつの縦の流れをたどります。
   advantages: ひとつの流れが次の読む順序を示します。
   limitations: 長いページはスクロールが必要なので、一行の長さを抑えます。
   suitable: 順に読む内容に向きます。
@@ -25,14 +25,14 @@ comparison:
 
 ## 概念
 
-ナビゲーション、記事、関連資料をひとつの縦の流れに置きます。列数は大きな領域の配置であり、内部のカード数ではありません。
+フィルター、資料、案内がひとつの縦の流れをたどります。
 
 ## 実例
 
-表示幅を変え、追加の段落を開きます。どちらの幅でもナビゲーション、記事、関連資料の順序を保ちます。 リセット・再読み込みで初期状態に戻ります。
+6種類のレイアウトで同じ6件の資料、ラベル、色を使います。テーマの絞り込み、収集順の反転、研究メモ、表示幅を操作します。内容を変えずに読む流れを比べます。リセット・再読み込みで全件と収集順に戻ります。 フィルター、資料、案内がひとつの縦の流れになります。
 
 ## 選ぶ条件
 
-順に読む内容に向きます。長いページはスクロールが必要なので、一行の長さを抑えます。
+順に読む内容に向きます。 長いページはスクロールが必要なので、一行の長さを抑えます。
 
 [W3C](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)

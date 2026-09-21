@@ -3,19 +3,39 @@
 All designs belong **inside the article body**. Site header, navigation, title,
 description, comments, URLs, and API v1 remain the surrounding catalog. A demo
 may choose its own background, typography, material, layout, and controls.
-Do not impose one card, before/after comparison, or application skeleton on
-unrelated concepts. Shared lifecycle helpers are fine; shared visual templates
-are not a substitute for designing the example.
+Within each comparison category, keep **scenario, data, labels, initial state,
+and basic actions identical**. Change only the concept under comparison:
+
+| Category   | Shared example                                                                       | Variable                                                   |
+| ---------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
+| Styles     | Three-task checklist; completion and status filter                                   | Color, type treatment, borders, shadows, material, spacing |
+| Layout     | Six resources; topic filter, order, notes, preview width                             | Region composition and list/grid/masonry placement         |
+| Typography | The same Latin sentence, localized phrase, `iiiWWW 0123`, numbers, 48px initial size | Typeface and measured advances                             |
+
+Keep material-specific aids (opaque glass), serif terminal marks, and weight
+controls as labeled extras. Do not replace the shared task with a weather app,
+concert poster, or invitation. Typography shape and width are different axes:
+Noto Sans intentionally appears in both sans-serif and proportional examples.
+A future candidate joins the relevant shared scenario; an unrelated category
+may define its own scenario after documenting why it needs one.
+
+Independent Astro components still own semantic markup and scoped visual rules.
+`tasks.ts`, `resource-behavior.ts`, and `type-behavior.ts` share category behavior;
+`resources.ts` supplies the identical six-resource data. `comparison-base.css`
+scopes basic controls to `[data-comparison]`. Do not add a global visual theme.
 
 The current release contains 18 designs / 54 translated design articles plus
 36 guide articles. Forty candidates remain planned. Counts here describe this
 release, not runtime allowlists.
 
+Current screen evidence: [shared-example review](design-comparison-review.md).
+
 ## Plan the example
 
 Copy [the brief](templates/design-demo-brief.md). Define the concept, its nearest
 neighbor, visible distinguishing features, scenario, representative action,
-initial/changed/reset states, mobile order, and sources. Explain why the example
+initial/changed/reset states, mobile order, and sources. Record the shared
+comparison category, fixed content, and exactly which visual property changes. Explain why the example
 demonstrates the concept. Keep decorative choices distinct from universal rules.
 
 Sources for implementation: [Astro scoped styles](https://docs.astro.build/en/guides/styling/),
@@ -37,7 +57,7 @@ research lives in [catalog-writing](catalog-writing/README.md).
    budget. Describe actions and results in Markdown, because static exports
    cannot run the application. Demo text and exploration time are separate.
 4. Write `src/components/demos/YourDesign.astro`. Own the markup, styles, state,
-   events, and reset. Use semantic controls; enable JS-dependent controls only
+   events, and reset, using the category behavior helper where applicable. Use semantic controls; enable JS-dependent controls only
    after mount. State belongs to the current page, never account/server/storage.
 5. Add one entry to `src/data/design-demos.json`. The renderer uses an Astro
    glob to resolve the component; **do not edit `DesignDemo.astro` or Card**.
@@ -139,7 +159,7 @@ state, and announcement; proper names and explicitly Latin specimens may stay
 Latin. Give every input an accessible name. Never insert user text with HTML.
 
 Reference implementations: [Brutalism](../src/components/demos/Brutalism.astro)
-for search/filter/empty states, [Masonry](../src/components/demos/Masonry.astro)
+for task completion/filter/empty states, [Masonry](../src/components/demos/Masonry.astro)
 for DOM-preserving height measurement and native details. The latter uses
 ResizeObserver after fonts load, shortest-column placement, no DOM reordering,
 and a normal CSS grid without JavaScript. Narrow boards become one column.
@@ -158,9 +178,10 @@ Rebuild fonts with `python3 -m venv /tmp/design-fonts`, then
 `/tmp/design-fonts/bin/python scripts/subset-design-fonts.py`. The script verifies
 the recorded upstream hash before subsetting; changing upstream requires explicit
 manifest review. CJK coverage follows demo source text, not all Unicode.
-After adding localized text, regenerate and inspect the specimen. Width examples
-use DOM Range measurements after `document.fonts.ready`, preserving shaping and
-font features. Do not confuse glyph ink width, advance, and terminal cell width.
+After adding localized text, regenerate and inspect the specimen. All type examples
+use DOM Range measurements over one text node after `document.fonts.ready`.
+Overlay guides preserve shaping and ligatures; a character range is not an
+independent glyph advance when a ligature or contextual shaping is present. Do not confuse glyph ink width, advance, and terminal cell width.
 
 ## Commands and capture
 
@@ -169,10 +190,11 @@ For an existing design, run sequentially from repository root:
 ```sh
 npm run check
 npm run build
-# In another terminal, leave this serving the built files:
+# In another terminal, serve the built files during capture:
 node scripts/serve-dist.mjs
 npm run thumbnails -- --id masonry
 # Omit --id to capture every registered published design in all languages.
+# Stop that server before rebuilding dist; browser tests start their own server.
 npm run build
 npm test
 npm run test:e2e
@@ -193,6 +215,8 @@ into `dist`. Thumbnail dimensions may differ because the actual screens differ.
 
 ## Completion and debugging
 
+- Same-category demos retain identical content, basic actions, and initial state.
+  Browser tests compare their actual text and reset behavior across three languages.
 - Visible structure, material, and typography demonstrate the declared concept.
   Compare desktop and mobile captures side by side; a passing build is not a
   visual review. Browser tests save captures in `artifacts/design-demos/`.
@@ -228,7 +252,7 @@ the regular build. Rendering, capture discovery, and validation have no fixed
 
 > Implement candidate `<id>` using `docs/design-demos.md` and
 > `docs/templates/design-demo-brief.md`. Read candidate scope and neighboring
-> concepts. Build an independent article-body Astro demo with localized initial,
+> concepts. Join the category shared scenario and build an independent article-body Astro demo with localized initial,
 > changed, reset, empty, keyboard, mobile, and no-JavaScript states. Review English
 > then Korean/Japanese, register through `src/data/design-demos.json`, capture the
 > real screens, and complete the documented checks. Preserve IDs, URLs, comments,

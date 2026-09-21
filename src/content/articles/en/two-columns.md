@@ -3,7 +3,7 @@ kind: concept
 articleId: two-columns
 lang: en
 title: Two columns
-summary: Navigate two-column documentation.
+summary: Compare the same six resources.
 category: columns
 aliases:
   - Two columns
@@ -12,12 +12,12 @@ related:
   - single-column
   - multiple-columns
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
-  features: Two adjacent regions separate navigation from reading.
-  advantages: Navigation stays available beside the document.
+  features: Two adjacent regions separate filters from resources.
+  advantages: Filters stay available beside the resource list.
   limitations: "Sidebars reduce reading width, so stack regions before they become cramped."
   suitable: Choose it for documentation with persistent navigation.
   combinations: The main column can contain lists or a resource grid.
@@ -25,11 +25,11 @@ comparison:
 
 ## Concept
 
-Two adjacent regions separate navigation from reading. This is a page-region layout, not two newspaper text columns.
+Two adjacent regions separate filters from resources.
 
 ## Example
 
-Select Overview, Materials, or Process. The right document changes; a narrow preview stacks navigation above it without changing source order. Reset or reload restores the initial state.
+All six layouts use the same six resources, labels, and colors. Filter a topic, reverse collection order, open study notes, or narrow the preview. Compare the reading flow while the content stays the same. Reset or reload restores the full collection and original order. Filters sit beside the resource list; guidance follows the list.
 
 ## When to choose it
 

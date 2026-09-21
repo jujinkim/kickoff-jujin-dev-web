@@ -1,5 +1,8 @@
 # Design demos — local verification, 2026-09-22
 
+Historical screen review. Current comparison examples are documented in
+[Shared design examples](design-comparison-review.md).
+
 Implemented 18 independent article-body demonstrations: seven rebuilt styles,
 six layouts, and five typography examples. Each has English, Korean, and Japanese
 articles and an actual-screen thumbnail. Existing guide content remains 36

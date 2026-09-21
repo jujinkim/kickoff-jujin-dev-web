@@ -6,10 +6,12 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang);
+import "./comparison-base.css";
 ---
 
 <section
   class="demo"
+  data-comparison="tasks"
   data-demo="flat-design"
   lang={lang}
   data-reset-message={t(
@@ -67,129 +69,10 @@ const t = local(lang);
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
-  import { mount } from "./shared";
-  mount("flat-design", (root, say) => {
-    const filter = root.querySelector<HTMLSelectElement>("[data-filter]")!;
-    const checks = [...root.querySelectorAll<HTMLInputElement>("[data-check]")];
-    const update = () => {
-      let visible = 0;
-      checks.forEach((c) => {
-        const row = c.closest<HTMLElement>("[data-task]")!;
-        row.hidden =
-          filter.value !== "all" && (filter.value === "done") !== c.checked;
-        if (!row.hidden) visible++;
-      });
-      const count = `${checks.filter((c) => c.checked).length} / ${checks.length}`;
-      root.querySelector("[data-count]")!.textContent = count;
-      root.querySelector<HTMLElement>("[data-empty]")!.hidden = visible > 0;
-      say(count);
-    };
-    checks.forEach((c) => c.addEventListener("change", update));
-    filter.addEventListener("change", update);
-    return () => {
-      checks.forEach((c) => (c.checked = false));
-      filter.value = "all";
-      update();
-    };
-  });
+  import { mountTasks } from "./tasks";
+  mountTasks("flat-design");
 </script>
 <style>
-  .demo {
-    min-width: 0;
-    overflow-wrap: anywhere;
-    padding: clamp(16px, 3vw, 32px);
-    color-scheme: light;
-  }
-  .demo * {
-    box-sizing: border-box;
-  }
-  h2,
-  h3,
-  p {
-    margin: 0 0 1rem;
-  }
-  h2 {
-    font-size: clamp(1.8rem, 4vw, 3.6rem);
-    line-height: 1.12;
-  }
-  h3 {
-    font-size: 1.2rem;
-  }
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    margin: 18px 0;
-  }
-  label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    max-width: 100%;
-  }
-  button,
-  select,
-  input,
-  textarea {
-    font: inherit;
-    max-width: 100%;
-    color: inherit;
-  }
-  button,
-  select,
-  input:not([type="checkbox"]):not([type="range"]) {
-    min-height: 44px;
-    padding: 8px 12px;
-  }
-  button,
-  select {
-    cursor: pointer;
-  }
-  button {
-    border: 1px solid currentColor;
-    background: transparent;
-  }
-  input,
-  textarea,
-  select {
-    background: #fff;
-    color: #172329;
-    border: 1px solid #67747c;
-  }
-  input[type="range"] {
-    width: 150px;
-  }
-  input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
-  }
-  :focus-visible {
-    outline: 3px dashed currentColor;
-    outline-offset: 4px;
-  }
-  [hidden] {
-    display: none !important;
-  }
-  [role="status"] {
-    min-height: 1.5em;
-    font-size: 0.85rem;
-    margin-top: 16px;
-  }
-  small {
-    font-size: 0.8rem;
-  }
-  .reset {
-    margin-top: 20px;
-    font-size: 0.85rem;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .demo * {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
   .demo {
     background: #f1f5f9;
     color: #17304e;
@@ -198,8 +81,6 @@ const t = local(lang);
     display: flex;
     gap: 20px;
     align-items: center;
-    background: #165cc4;
-    color: white;
     padding: 22px;
   }
   header > span {
@@ -218,11 +99,25 @@ const t = local(lang);
     align-items: center;
     gap: 12px;
     padding: 20px 12px;
-    background: white;
-    border-bottom: 2px solid #e1e8f0;
+    border-bottom: 1px solid;
   }
   li:has(:checked) span {
     text-decoration: line-through;
+  }
+  .controls {
+    justify-content: space-between;
+  }
+  .demo {
+    background: #f1f5f9;
+    color: #17304e;
+  }
+  header {
+    background: #165cc4;
+    color: white;
+  }
+  li {
+    background: white;
+    border-bottom: 2px solid #e1e8f0;
   }
   input {
     accent-color: #165cc4;

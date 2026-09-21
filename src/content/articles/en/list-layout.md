@@ -3,7 +3,7 @@ kind: concept
 articleId: list-layout
 lang: en
 title: List layout
-summary: Filter and sort a reading list.
+summary: Compare the same six resources.
 category: content-arrangement
 aliases:
   - List layout
@@ -12,8 +12,8 @@ related:
   - uniform-grid
   - masonry
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: "Repeated rows keep title, summary, and metadata in predictable positions."
@@ -25,11 +25,11 @@ comparison:
 
 ## Concept
 
-Repeated rows keep title, summary, and metadata in predictable positions. A visual list layout is separate from a programming list collection.
+Repeated rows keep title, summary, and metadata in predictable positions.
 
 ## Example
 
-Filter the reading list by topic, then sort newest or shortest. Matching rows reorder while titles and metadata stay together. Reset or reload restores the initial state.
+All six layouts use the same six resources, labels, and colors. Filter a topic, reverse collection order, open study notes, or narrow the preview. Compare the reading flow while the content stays the same. Reset or reload restores the full collection and original order. Images and text repeat in aligned rows.
 
 ## When to choose it
 

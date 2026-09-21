@@ -3,7 +3,7 @@ kind: concept
 articleId: serif
 lang: en
 title: Serif
-summary: Inspect serif terminals and editorial type.
+summary: Compare the same text specimen.
 category: type-shapes
 aliases:
   - Serif
@@ -12,12 +12,12 @@ related:
   - sans-serif
   - script
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: Serifs add finishing strokes at letter terminals.
-  advantages: Terminal details give this editorial page a distinct texture.
+  advantages: Terminal details give the same specimen a distinct texture.
   limitations: >-
     Korean and Japanese use Noto Serif CJK subsets; unsupported characters fall
     back, so inspect actual glyphs.
@@ -27,11 +27,11 @@ comparison:
 
 ## Concept
 
-Serifs add finishing strokes at letter terminals. This shape classification is independent of proportional or fixed advance widths.
+Serifs add finishing strokes at letter terminals.
 
 ## Example
 
-An editorial page pairs Noto Serif headings and text. Resize the specimen and mark the left terminals of the enlarged Latin H. Reset or reload restores the initial state.
+All five specimens share a sentence, iiiWWW 0123, and the same numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Mark H terminals to inspect the serif details.
 
 ## When to choose it
 

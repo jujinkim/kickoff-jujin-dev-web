@@ -6,10 +6,12 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang);
+import "./comparison-base.css";
 ---
 
 <section
   class="demo"
+  data-comparison="tasks"
   data-demo="neumorphism"
   lang={lang}
   data-reset-message={t(
@@ -18,35 +20,48 @@ const t = local(lang);
     "初期状態に戻しました",
   )}
 >
-  <small>{t("STUDIO", "스튜디오", "スタジオ")} / 01</small>
-  <h2>{t("Evening light", "저녁 조명", "夕方の照明")}</h2>
-  <div class="lamp" aria-hidden="true">
-    <div class="bulb"></div>
-  </div>
+  <header>
+    <span>✓</span>
+    <div>
+      <small>
+        {t("PROJECT / TODAY", "프로젝트 / 오늘", "プロジェクト / 今日")}
+      </small>
+      <h2>{t("Make room", "공간 만들기", "余白をつくる")}</h2>
+    </div>
+  </header>
   <div class="controls">
-    <button
-      type="button"
-      data-power
-      aria-pressed="true"
-      data-interactive
-      disabled
-    >
-      ⏻ {t("Power", "전원", "電源")}
-    </button>
     <label>
-      {t("Brightness", "밝기", "明るさ")}
-      <input
-        type="range"
-        min="0"
-        max="100"
-        value="65"
-        data-level
-        data-interactive
-        disabled
-      />
-      <output>65%</output>
+      {t("Status", "상태", "状態")}
+      <select data-filter data-interactive disabled>
+        <option value="all">{t("All", "전체", "すべて")}</option>
+        <option value="open">{t("Open", "진행 중", "未完了")}</option>
+        <option value="done">{t("Done", "완료", "完了")}</option>
+      </select>
     </label>
+    <strong data-count>0 / 3</strong>
   </div>
+  <ul>
+    {[
+      t("Gather references", "참고 자료 모으기", "参考資料を集める"),
+      t("Draw the first draft", "첫 초안 그리기", "最初の案を描く"),
+      t("Review labels", "라벨 검토하기", "ラベルを確認する"),
+    ].map((text, i) => (
+      <li data-task>
+        <label>
+          <input type="checkbox" data-check data-interactive disabled />
+          <span>{text}</span>
+        </label>
+        <small>0{i + 1}</small>
+      </li>
+    ))}
+  </ul>
+  <p data-empty hidden>
+    {t(
+      "No tasks in this state.",
+      "해당 상태의 작업이 없습니다.",
+      "この状態のタスクはありません。",
+    )}
+  </p>
 
   <button class="reset" type="button" data-reset data-interactive disabled>
     {t("Reset", "초기화", "リセット")}
@@ -54,167 +69,90 @@ const t = local(lang);
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
-  import { mount } from "./shared";
-  mount("neumorphism", (root, say) => {
-    const power = root.querySelector<HTMLButtonElement>("[data-power]")!,
-      level = root.querySelector<HTMLInputElement>("[data-level]")!;
-    let on = true;
-    const update = () => {
-      power.setAttribute("aria-pressed", String(on));
-      root.querySelector<HTMLElement>(".bulb")!.style.opacity = String(
-        on ? Number(level.value) / 100 : 0,
-      );
-      root.querySelector("output")!.textContent = `${on ? level.value : 0}%`;
-      say(`${power.textContent}: ${on ? "✓" : "—"} · ${on ? level.value : 0}%`);
-    };
-    power.addEventListener("click", () => {
-      on = !on;
-      update();
-    });
-    level.addEventListener("input", update);
-    return () => {
-      on = true;
-      level.value = "65";
-      update();
-    };
-  });
+  import { mountTasks } from "./tasks";
+  mountTasks("neumorphism");
 </script>
 <style>
   .demo {
-    min-width: 0;
-    overflow-wrap: anywhere;
-    padding: clamp(16px, 3vw, 32px);
-    color-scheme: light;
+    background: #f1f5f9;
+    color: #17304e;
   }
-  .demo * {
-    box-sizing: border-box;
+  header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 22px;
   }
-  h2,
-  h3,
-  p {
-    margin: 0 0 1rem;
+  header > span {
+    font-size: 3rem;
   }
   h2 {
-    font-size: clamp(1.8rem, 4vw, 3.6rem);
-    line-height: 1.12;
+    font-size: 2rem;
   }
-  h3 {
-    font-size: 1.2rem;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 12px;
+    border-bottom: 1px solid;
+  }
+  li:has(:checked) span {
+    text-decoration: line-through;
   }
   .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    margin: 18px 0;
-  }
-  label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    max-width: 100%;
-  }
-  button,
-  select,
-  input,
-  textarea {
-    font: inherit;
-    max-width: 100%;
-    color: inherit;
-  }
-  button,
-  select,
-  input:not([type="checkbox"]):not([type="range"]) {
-    min-height: 44px;
-    padding: 8px 12px;
-  }
-  button,
-  select {
-    cursor: pointer;
-  }
-  button {
-    border: 1px solid currentColor;
-    background: transparent;
-  }
-  input,
-  textarea,
-  select {
-    background: #fff;
-    color: #172329;
-    border: 1px solid #67747c;
-  }
-  input[type="range"] {
-    width: 150px;
-  }
-  input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
-  }
-  :focus-visible {
-    outline: 3px dashed currentColor;
-    outline-offset: 4px;
-  }
-  [hidden] {
-    display: none !important;
-  }
-  [role="status"] {
-    min-height: 1.5em;
-    font-size: 0.85rem;
-    margin-top: 16px;
-  }
-  small {
-    font-size: 0.8rem;
-  }
-  .reset {
-    margin-top: 20px;
-    font-size: 0.85rem;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .demo * {
-      transition: none !important;
-      animation: none !important;
-    }
+    justify-content: space-between;
   }
   .demo {
-    background: #e1e6e9;
-    color: #33414c;
-    border-radius: 28px;
-    border: 1px solid #a3afb8;
+    background: #e3e8ed;
+    color: #35475a;
+    border: 1px solid #a5b1bf;
+    border-radius: 26px;
   }
-  .lamp {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    margin: 30px auto;
+  header {
+    border-radius: 22px;
+    box-shadow:
+      9px 9px 18px #bdc4ce,
+      -9px -9px 18px #fff;
+    border: 1px solid #bdc4ce;
+  }
+  ul {
     display: grid;
-    place-items: center;
-    box-shadow:
-      12px 12px 24px #b1bac1,
-      -12px -12px 24px #fff;
-    border: 1px solid #adb8bf;
+    gap: 20px;
   }
-  .bulb {
-    width: 90px;
-    height: 90px;
-    background: #ffdf75;
-    border: 2px solid #8b783c;
-    border-radius: 50%;
-    opacity: 0.65;
-    box-shadow: 0 0 32px #ffdc65;
-  }
-  button {
-    background: #e1e6e9;
-    border-radius: 14px;
-    border: 1px solid #8b99a3;
+  li {
+    background: #e3e8ed;
+    border: 1px solid #bdc4ce;
+    border-radius: 18px;
     box-shadow:
-      5px 5px 10px #b1bac1,
-      -5px -5px 10px #fff;
+      6px 6px 12px #bdc4ce,
+      -6px -6px 12px #fff;
   }
-  button[aria-pressed="true"] {
+  li:has(:checked) {
     box-shadow:
-      inset 4px 4px 8px #b1bac1,
+      inset 4px 4px 8px #bdc4ce,
       inset -4px -4px 8px #fff;
-    border: 2px solid #33414c;
+  }
+  button,
+  select {
+    background: #e3e8ed;
+    color: #35475a;
+    border: 1px solid #9ba9b9;
+    border-radius: 12px;
+    box-shadow:
+      4px 4px 8px #bdc4ce,
+      -4px -4px 8px #fff;
+  }
+  button:active {
+    box-shadow:
+      inset 4px 4px 8px #bdc4ce,
+      inset -4px -4px 8px #fff;
+  }
+  input {
+    accent-color: #476784;
   }
 </style>

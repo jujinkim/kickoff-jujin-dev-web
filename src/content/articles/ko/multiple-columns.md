@@ -3,7 +3,7 @@ kind: concept
 articleId: multiple-columns
 lang: ko
 title: 다열
-summary: 3영역 자료 작업 공간.
+summary: 같은 자료 6개로 배치 비교.
 category: columns
 aliases:
   - 다열
@@ -12,8 +12,8 @@ related:
   - single-column
   - two-columns
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: 세 개 이상의 영역으로 탐색·작업·맥락을 가까이 둡니다.
@@ -25,11 +25,11 @@ comparison:
 
 ## 개념
 
-세 개 이상의 영역으로 탐색·작업·맥락을 가까이 둡니다. 이 예는 신문식 본문 다단이 아닌 세 영역 작업 공간입니다.
+세 개 이상의 영역으로 탐색·작업·맥락을 가까이 둡니다.
 
 ## 예시
 
-문서를 선택하면 본문과 관련 자료 제목이 바뀝니다. 좁은 미리보기에서는 탐색·문서·참고 자료 순서로 쌓입니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
+여섯 레이아웃은 같은 자료 6개, 라벨, 색을 사용합니다. 주제 필터·수집 역순·연구 메모 펼침·미리보기 폭을 조절합니다. 내용은 그대로 두고 읽기 흐름을 비교하세요. 초기화·새로고침하면 전체 자료와 수집 순서로 돌아갑니다. 필터·자료·안내가 나란한 세 영역을 차지합니다.
 
 ## 추천 조건
 

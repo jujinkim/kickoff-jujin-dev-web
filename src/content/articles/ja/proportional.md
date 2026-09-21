@@ -3,7 +3,7 @@ kind: concept
 articleId: proportional
 lang: ja
 title: プロポーショナル
-summary: ラテン文字の送り幅を測る.
+summary: 同じ文字・文章・数字で書体を比較。
 category: character-width
 aliases:
   - プロポーショナル
@@ -11,8 +11,8 @@ related:
   - theme
   - monospace
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: 比例幅の文字は異なる送り幅を使います。
@@ -24,14 +24,14 @@ comparison:
 
 ## 概念
 
-比例幅の文字は異なる送り幅を使います。幅には輪郭だけでなく周囲の間隔も含み、数字だけ等幅にもできます。
+比例幅の文字は異なる送り幅を使います。
 
 ## 実例
 
-見本を入力し、実測幅のガイドを表示します。Noto SansのiとWは幅が異なります。等幅数字にすると文字幅を変えず数値の行を揃えます。 リセット・再読み込みで初期状態に戻ります。
+5種類の見本で同じ文章、iiiWWW 0123、数字を使います。文字入力、サイズ、実測幅ガイド、数字の整列を操作します。文字列の接続形を保ちます。リセット・再読み込みで最初の文字と48pxに戻ります。 iとWの実測送り幅は異なりますが、数字は別に等幅で揃えられます。
 
 ## 選ぶ条件
 
-流れる本文に向きます。対応文字や数字機能は異なるため、名称から推測せず読み込んだ書体を測ります。
+流れる本文に向きます。 対応文字や数字機能は異なるため、名称から推測せず読み込んだ書体を測ります。
 
 [W3C](https://www.w3.org/TR/css-fonts-3/)

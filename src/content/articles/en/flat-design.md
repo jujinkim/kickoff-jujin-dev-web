@@ -3,7 +3,7 @@ kind: concept
 articleId: flat-design
 lang: en
 title: Flat design
-summary: Complete and filter tasks.
+summary: Compare the same task list.
 category: styles
 aliases:
   - Flat design
@@ -16,8 +16,8 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-22"
 comparison:
   features: Solid surfaces and clear labels establish hierarchy without simulated depth.
@@ -32,11 +32,11 @@ checked: "2026-09-21"
 
 ## Concept
 
-Solid surfaces and clear labels establish hierarchy without simulated depth. Flat design can contain rich information; it is not necessarily minimalism.
+Solid surfaces and clear labels establish hierarchy without simulated depth.
 
 ## Example
 
-Check the three project tasks. The completion count updates; Open and Done filters reveal matching tasks, including an empty state. Reset or reload restores the initial state.
+All seven styles use the same three tasks. Check a task, filter Open or Done, and watch the completed count change. An empty state appears when no tasks match. Reset or reload restores three unchecked tasks. Solid fills and labels carry the hierarchy without depth effects.
 
 ## When to choose it
 

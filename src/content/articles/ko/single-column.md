@@ -3,7 +3,7 @@ kind: concept
 articleId: single-column
 lang: ko
 title: 단일 열
-summary: 하나의 세로 읽기 흐름.
+summary: 같은 자료 6개로 배치 비교.
 category: columns
 aliases:
   - 단일 열
@@ -12,11 +12,11 @@ related:
   - two-columns
   - multiple-columns
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
-  features: 탐색·글·관련 내용을 하나의 세로 흐름으로 둡니다.
+  features: 필터·자료·안내가 하나의 세로 흐름을 따릅니다.
   advantages: 하나의 흐름이 다음 읽기 순서를 알려줍니다.
   limitations: 긴 페이지는 스크롤이 필요하므로 한 줄 길이를 제한하세요.
   suitable: 순서대로 읽는 콘텐츠에 어울립니다.
@@ -25,11 +25,11 @@ comparison:
 
 ## 개념
 
-탐색·글·관련 내용을 하나의 세로 흐름으로 둡니다. 열 수는 큰 영역의 배치이며 그 안의 카드 개수와는 다릅니다.
+필터·자료·안내가 하나의 세로 흐름을 따릅니다.
 
 ## 예시
 
-미리보기 폭을 바꾸고 추가 문단을 펼칩니다. 두 폭 모두 탐색, 글, 관련 내용 순서가 유지됩니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
+여섯 레이아웃은 같은 자료 6개, 라벨, 색을 사용합니다. 주제 필터·수집 역순·연구 메모 펼침·미리보기 폭을 조절합니다. 내용은 그대로 두고 읽기 흐름을 비교하세요. 초기화·새로고침하면 전체 자료와 수집 순서로 돌아갑니다. 필터·자료·안내가 하나의 세로 흐름을 이룹니다.
 
 ## 추천 조건
 

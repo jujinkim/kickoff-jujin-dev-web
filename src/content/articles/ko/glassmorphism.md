@@ -3,7 +3,7 @@ kind: concept
 articleId: glassmorphism
 lang: ko
 title: 글래스모피즘
-summary: 유리 날씨 대시보드 전환.
+summary: 같은 작업 목록으로 스타일 비교.
 category: styles
 aliases:
   - 글래스모피즘
@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-22"
 comparison:
   features: 반투명 패널 뒤로 흐려진 배경이 보입니다.
@@ -30,11 +30,11 @@ checked: "2026-09-21"
 
 ## 개념
 
-반투명 패널 뒤로 흐려진 배경이 보입니다. 단순 투명도와 달리 글자는 불투명하게 두고 뒤쪽 풍경만 흐립니다.
+반투명 패널 뒤로 흐려진 배경이 보입니다.
 
 ## 예시
 
-가상 날씨 대시보드를 낮에서 밤으로 바꿉니다. 불투명 패널을 켜면 반투명·블러가 단색 표면으로 바뀝니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
+일곱 스타일은 같은 작업 3개를 사용합니다. 완료를 체크하고 진행 중·완료로 필터링하면 완료 수가 바뀝니다. 조건에 맞는 작업이 없으면 안내가 나타납니다. 초기화·새로고침하면 모두 미완료로 돌아갑니다. 불투명 패널로 전환해 흐린 유리와 단색 대안을 비교합니다.
 
 ## 추천 조건
 

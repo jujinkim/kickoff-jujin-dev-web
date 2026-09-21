@@ -3,7 +3,7 @@ kind: concept
 articleId: list-layout
 lang: ja
 title: リスト
-summary: 読書リストの絞り込みと並べ替え.
+summary: 同じ6件の資料で配置を比較。
 category: content-arrangement
 aliases:
   - リスト
@@ -12,8 +12,8 @@ related:
   - uniform-grid
   - masonry
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: 繰り返す行が題名、要約、メタデータを一定の位置に置きます。
@@ -25,14 +25,14 @@ comparison:
 
 ## 概念
 
-繰り返す行が題名、要約、メタデータを一定の位置に置きます。視覚的なリスト配置は、プログラムのリスト構造とは別です。
+繰り返す行が題名、要約、メタデータを一定の位置に置きます。
 
 ## 実例
 
-読書リストをテーマで絞り、新しい順・短い順に並べます。題名とメタデータをまとめたまま行が移動します。 リセット・再読み込みで初期状態に戻ります。
+6種類のレイアウトで同じ6件の資料、ラベル、色を使います。テーマの絞り込み、収集順の反転、研究メモ、表示幅を操作します。内容を変えずに読む流れを比べます。リセット・再読み込みで全件と収集順に戻ります。 画像と文章が整列した行で繰り返されます。
 
 ## 選ぶ条件
 
-文章中心の項目を見比べる場合に向きます。長い要約でパターンが隠れないよう、内容を短く保ちます。
+文章中心の項目を見比べる場合に向きます。 長い要約でパターンが隠れないよう、内容を短く保ちます。
 
 [W3C](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)

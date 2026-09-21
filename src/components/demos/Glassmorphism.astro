@@ -6,10 +6,12 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang);
+import "./comparison-base.css";
 ---
 
 <section
   class="demo"
+  data-comparison="tasks"
   data-demo="glassmorphism"
   lang={lang}
   data-reset-message={t(
@@ -18,44 +20,52 @@ const t = local(lang);
     "初期状態に戻しました",
   )}
 >
-  <div class="orb" aria-hidden="true"></div>
-  <div class="glass">
-    <small>
-      {t("LOCAL WEATHER / DEMO", "지역 날씨 / 데모", "地域の天気 / デモ")}
-    </small>
-    <h2>{t("Seoul", "서울", "ソウル")}</h2>
-    <p class="temperature">23°</p>
-    <p>
-      {t("Clear skies · Feels like 24°", "맑음 · 체감 24°", "晴れ · 体感24°")}
-    </p>
-    <div class="forecast">
-      <span>
-        12:00
-        <br />
-        24°
-      </span>
-      <span>
-        15:00
-        <br />
-        25°
-      </span>
-      <span>
-        18:00
-        <br />
-        22°
-      </span>
+  <header>
+    <span>✓</span>
+    <div>
+      <small>
+        {t("PROJECT / TODAY", "프로젝트 / 오늘", "プロジェクト / 今日")}
+      </small>
+      <h2>{t("Make room", "공간 만들기", "余白をつくる")}</h2>
     </div>
-  </div>
-  <div class="controls glass">
+  </header>
+  <div class="controls">
     <label>
-      <input type="checkbox" data-night data-interactive disabled />
-      {t("Night", "밤", "夜")}
+      {t("Status", "상태", "状態")}
+      <select data-filter data-interactive disabled>
+        <option value="all">{t("All", "전체", "すべて")}</option>
+        <option value="open">{t("Open", "진행 중", "未完了")}</option>
+        <option value="done">{t("Done", "완료", "完了")}</option>
+      </select>
     </label>
     <label>
       <input type="checkbox" data-opaque data-interactive disabled />
       {t("Opaque panels", "불투명 패널", "不透明パネル")}
     </label>
+    <strong data-count>0 / 3</strong>
   </div>
+  <ul>
+    {[
+      t("Gather references", "참고 자료 모으기", "参考資料を集める"),
+      t("Draw the first draft", "첫 초안 그리기", "最初の案を描く"),
+      t("Review labels", "라벨 검토하기", "ラベルを確認する"),
+    ].map((text, i) => (
+      <li data-task>
+        <label>
+          <input type="checkbox" data-check data-interactive disabled />
+          <span>{text}</span>
+        </label>
+        <small>0{i + 1}</small>
+      </li>
+    ))}
+  </ul>
+  <p data-empty hidden>
+    {t(
+      "No tasks in this state.",
+      "해당 상태의 작업이 없습니다.",
+      "この状態のタスクはありません。",
+    )}
+  </p>
 
   <button class="reset" type="button" data-reset data-interactive disabled>
     {t("Reset", "초기화", "リセット")}
@@ -63,200 +73,96 @@ const t = local(lang);
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
-  import { mount } from "./shared";
-  mount("glassmorphism", (root, say) => {
-    const night = root.querySelector<HTMLInputElement>("[data-night]")!,
-      opaque = root.querySelector<HTMLInputElement>("[data-opaque]")!;
-    const update = () => {
-      root.dataset.night = String(night.checked);
-      root.dataset.opaque = String(opaque.checked);
-      say(
-        [night, opaque]
-          .map(
-            (x) =>
-              `${x.parentElement!.textContent!.trim()}: ${x.checked ? "✓" : "—"}`,
-          )
-          .join(" · "),
-      );
-    };
-    night.addEventListener("change", update);
-    opaque.addEventListener("change", update);
-    return () => {
-      night.checked = false;
-      opaque.checked = false;
-      update();
-    };
-  });
+  import { mountTasks } from "./tasks";
+  mountTasks("glassmorphism");
 </script>
 <style>
   .demo {
-    min-width: 0;
-    overflow-wrap: anywhere;
-    padding: clamp(16px, 3vw, 32px);
-    color-scheme: light;
+    background: #f1f5f9;
+    color: #17304e;
   }
-  .demo * {
-    box-sizing: border-box;
+  header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 22px;
   }
-  h2,
-  h3,
-  p {
-    margin: 0 0 1rem;
+  header > span {
+    font-size: 3rem;
   }
   h2 {
-    font-size: clamp(1.8rem, 4vw, 3.6rem);
-    line-height: 1.12;
+    font-size: 2rem;
   }
-  h3 {
-    font-size: 1.2rem;
+  ul {
+    list-style: none;
+    padding: 0;
   }
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    margin: 18px 0;
-  }
-  label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    max-width: 100%;
-  }
-  button,
-  select,
-  input,
-  textarea {
-    font: inherit;
-    max-width: 100%;
-    color: inherit;
-  }
-  button,
-  select,
-  input:not([type="checkbox"]):not([type="range"]) {
-    min-height: 44px;
-    padding: 8px 12px;
-  }
-  button,
-  select {
-    cursor: pointer;
-  }
-  button {
-    border: 1px solid currentColor;
-    background: transparent;
-  }
-  input,
-  textarea,
-  select {
-    background: #fff;
-    color: #172329;
-    border: 1px solid #67747c;
-  }
-  input[type="range"] {
-    width: 150px;
-  }
-  input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
-  }
-  :focus-visible {
-    outline: 3px dashed currentColor;
-    outline-offset: 4px;
-  }
-  [hidden] {
-    display: none !important;
-  }
-  [role="status"] {
-    min-height: 1.5em;
-    font-size: 0.85rem;
-    margin-top: 16px;
-  }
-  small {
-    font-size: 0.8rem;
-  }
-  [role="status"] {
-    background: #fff;
-    border-radius: 4px;
-  }
-  [role="status"]:empty {
-    background: transparent;
-  }
-  .reset {
-    margin-top: 20px;
-    font-size: 0.85rem;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .demo * {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
-  .demo {
-    isolation: isolate;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #568eb3, #d9b3cf 55%, #f4c47c);
-    color: #162635;
-    border-radius: 22px;
-  }
-  .demo[data-night="true"] {
-    background: linear-gradient(130deg, #172749, #535486, #885c80);
-  }
-  .orb {
-    position: absolute;
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    background: #fff1ba;
-    right: 0;
-    max-width: 100%;
-    top: 15px;
-    z-index: -1;
-    box-shadow: 0 0 70px #ffedc4;
-  }
-  .demo[data-night="true"] .orb {
-    background: #b6c6ff;
-    box-shadow: 0 0 50px #9eade0;
-  }
-  .glass {
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid #fff;
-    border-radius: 20px;
-    padding: 24px;
-    backdrop-filter: blur(18px);
-    box-shadow:
-      0 16px 40px #1f345328,
-      inset 0 1px 1px #fff;
-  }
-  .temperature {
-    font-size: 6rem;
-    line-height: 1.2;
-  }
-  .forecast {
+  li {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 12px;
+    border-bottom: 1px solid;
+  }
+  li:has(:checked) span {
+    text-decoration: line-through;
+  }
+  .controls {
+    justify-content: space-between;
+  }
+  .demo {
+    background:
+      radial-gradient(circle at 10% 25%, #6dc7ee, transparent 45%),
+      radial-gradient(circle at 90% 80%, #d98feb, transparent 45%), #41559a;
+    color: #11284d;
+    border: 1px solid #d8e8ff;
+  }
+  header,
+  li,
+  .controls {
+    background: #ffffffb8;
+    border: 1px solid #fff;
+    border-radius: 18px;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 12px 28px #14234822;
+    padding: 20px;
+  }
+  ul {
+    display: grid;
     gap: 12px;
   }
-  .demo[data-opaque="true"] .glass {
-    background: #fff;
-    backdrop-filter: none;
+  button {
+    background: #eef6ff;
+    color: #11284d;
+    border: 1px solid #fff;
+    border-radius: 12px;
   }
+  .reset,
   [role="status"] {
-    background: #fff;
-    border-radius: 4px;
+    color: #fff;
   }
   .reset {
-    background: #fff;
+    background: #233e74;
+  }
+  .demo[data-opaque="true"] header,
+  .demo[data-opaque="true"] li,
+  .demo[data-opaque="true"] .controls {
+    background: #f1f6ff;
+    backdrop-filter: none;
   }
   @supports not (backdrop-filter: blur(1px)) {
-    .glass {
-      background: #fff;
+    header,
+    li,
+    .controls {
+      background: #f1f6ff;
     }
   }
   @media (prefers-reduced-transparency: reduce) {
-    .glass {
-      background: #fff;
+    header,
+    li,
+    .controls {
+      background: #f1f6ff;
       backdrop-filter: none;
     }
   }

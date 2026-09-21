@@ -6,10 +6,12 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang);
+import "./comparison-base.css";
 ---
 
 <section
   class="demo"
+  data-comparison="tasks"
   data-demo="skeuomorphism"
   lang={lang}
   data-reset-message={t(
@@ -18,42 +20,48 @@ const t = local(lang);
     "初期状態に戻しました",
   )}
 >
-  <div class="paper">
-    <div class="ribbon" aria-hidden="true">
-      01
+  <header>
+    <span>✓</span>
+    <div>
+      <small>
+        {t("PROJECT / TODAY", "프로젝트 / 오늘", "プロジェクト / 今日")}
+      </small>
+      <h2>{t("Make room", "공간 만들기", "余白をつくる")}</h2>
     </div>
-    <small>{t("FIELD NOTEBOOK", "현장 수첩", "フィールドノート")}</small>
-    <h2>{t("Small discoveries", "작은 발견", "小さな発見")}</h2>
-    <label class="note-label">
-      {t("Note", "노트", "ノート")}
-      <textarea
-        rows="6"
-        maxlength="1200"
-        data-note
-        data-interactive
-        disabled
-      >{t("Morning light on the window.", "창문에 비치는 아침 햇살.", "窓に差し込む朝の光。")}</textarea>
+  </header>
+  <div class="controls">
+    <label>
+      {t("Status", "상태", "状態")}
+      <select data-filter data-interactive disabled>
+        <option value="all">{t("All", "전체", "すべて")}</option>
+        <option value="open">{t("Open", "진행 중", "未完了")}</option>
+        <option value="done">{t("Done", "완료", "完了")}</option>
+      </select>
     </label>
-    <div class="controls">
-      <label>
-        {t("Page", "페이지", "ページ")}
-        <select data-page data-interactive disabled>
-          <option value="0">01</option>
-          <option value="1">02</option>
-          <option value="2">03</option>
-        </select>
-      </label>
-      <button
-        type="button"
-        data-mark
-        aria-pressed="false"
-        data-interactive
-        disabled
-      >
-        {t("Bookmark", "책갈피", "しおり")}
-      </button>
-    </div>
+    <strong data-count>0 / 3</strong>
   </div>
+  <ul>
+    {[
+      t("Gather references", "참고 자료 모으기", "参考資料を集める"),
+      t("Draw the first draft", "첫 초안 그리기", "最初の案を描く"),
+      t("Review labels", "라벨 검토하기", "ラベルを確認する"),
+    ].map((text, i) => (
+      <li data-task>
+        <label>
+          <input type="checkbox" data-check data-interactive disabled />
+          <span>{text}</span>
+        </label>
+        <small>0{i + 1}</small>
+      </li>
+    ))}
+  </ul>
+  <p data-empty hidden>
+    {t(
+      "No tasks in this state.",
+      "해당 상태의 작업이 없습니다.",
+      "この状態のタスクはありません。",
+    )}
+  </p>
 
   <button class="reset" type="button" data-reset data-interactive disabled>
     {t("Reset", "초기화", "リセット")}
@@ -61,206 +69,88 @@ const t = local(lang);
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
-  import { mount } from "./shared";
-  mount("skeuomorphism", (root, say) => {
-    const note = root.querySelector<HTMLTextAreaElement>("[data-note]")!,
-      page = root.querySelector<HTMLSelectElement>("[data-page]")!,
-      mark = root.querySelector<HTMLButtonElement>("[data-mark]")!;
-    const initial = note.value;
-    let notes = [initial, "", ""],
-      marks = [false, false, false],
-      current = 0;
-    const show = () => {
-      note.value = notes[current];
-      mark.setAttribute("aria-pressed", String(marks[current]));
-      root.querySelector(".ribbon")!.textContent =
-        `0${current + 1}${marks[current] ? " ✓" : ""}`;
-      say(`${current + 1} / 3 · ${note.value.length}`);
-    };
-    note.addEventListener("input", () => {
-      notes[current] = note.value;
-      say(`${current + 1} / 3 · ${note.value.length}`);
-    });
-    page.addEventListener("change", () => {
-      current = Number(page.value);
-      show();
-    });
-    mark.addEventListener("click", () => {
-      marks[current] = !marks[current];
-      show();
-    });
-    return () => {
-      notes = [initial, "", ""];
-      marks = [false, false, false];
-      current = 0;
-      page.value = "0";
-      show();
-    };
-  });
+  import { mountTasks } from "./tasks";
+  mountTasks("skeuomorphism");
 </script>
 <style>
   .demo {
-    min-width: 0;
-    overflow-wrap: anywhere;
-    padding: clamp(16px, 3vw, 32px);
-    color-scheme: light;
+    background: #f1f5f9;
+    color: #17304e;
   }
-  .demo * {
-    box-sizing: border-box;
+  header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 22px;
   }
-  h2,
-  h3,
-  p {
-    margin: 0 0 1rem;
+  header > span {
+    font-size: 3rem;
   }
   h2 {
-    font-size: clamp(1.8rem, 4vw, 3.6rem);
-    line-height: 1.12;
+    font-size: 2rem;
   }
-  h3 {
-    font-size: 1.2rem;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 12px;
+    border-bottom: 1px solid;
+  }
+  li:has(:checked) span {
+    text-decoration: line-through;
   }
   .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    margin: 18px 0;
-  }
-  label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    max-width: 100%;
-  }
-  button,
-  select,
-  input,
-  textarea {
-    font: inherit;
-    max-width: 100%;
-    color: inherit;
-  }
-  button,
-  select,
-  input:not([type="checkbox"]):not([type="range"]) {
-    min-height: 44px;
-    padding: 8px 12px;
-  }
-  button,
-  select {
-    cursor: pointer;
-  }
-  button {
-    border: 1px solid currentColor;
-    background: transparent;
-  }
-  input,
-  textarea,
-  select {
-    background: #fff;
-    color: #172329;
-    border: 1px solid #67747c;
-  }
-  input[type="range"] {
-    width: 150px;
-  }
-  input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
-  }
-  :focus-visible {
-    outline: 3px dashed currentColor;
-    outline-offset: 4px;
-  }
-  [hidden] {
-    display: none !important;
-  }
-  [role="status"] {
-    min-height: 1.5em;
-    font-size: 0.85rem;
-    margin-top: 16px;
-  }
-  small {
-    font-size: 0.8rem;
-  }
-  .reset {
-    margin-top: 20px;
-    font-size: 0.85rem;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .demo * {
-      transition: none !important;
-      animation: none !important;
-    }
+    justify-content: space-between;
   }
   .demo {
-    background: #6c4637;
-    color: #392c22;
-    padding: 24px 24px 24px 34px;
-    border-radius: 6px 16px 16px 6px;
-    border: 2px solid #452d24;
-    box-shadow: inset 9px 0 8px #302018;
+    background: repeating-linear-gradient(0deg, #704932 0 3px, #79513a 3px 7px);
+    color: #493324;
+    border: 5px solid #583a28;
+    border-radius: 8px;
+    box-shadow: inset 0 0 15px #362215;
   }
-  .paper {
+  header {
+    background: #ad7050;
+    color: #fff8e8;
+    border: 2px dashed #efc7a2;
+    border-radius: 5px;
+  }
+  ul {
     position: relative;
-    background: #fff5d9;
-    padding: 28px 24px;
-    border-left: 7px double #bfaaa0;
+    background: repeating-linear-gradient(#fff8e6 0 31px, #c8d2cf 31px 32px);
+    padding: 16px 20px 16px 32px;
     box-shadow:
-      4px 4px #dbceb5,
-      8px 8px #f0e5ce;
+      3px 4px #e3d8bd,
+      6px 7px #c2ac8f;
   }
-  h2 {
-    font-family: Georgia, serif;
-    font-size: 2.4rem;
-  }
-  .ribbon {
+  ul::before {
+    content: "";
     position: absolute;
-    top: -28px;
-    right: 20px;
-    padding: 12px 8px 22px;
-    background: #9c372e;
-    color: #fff;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+    inset: 0 auto 0 20px;
+    border-left: 2px solid #ce9691;
   }
-  .note-label {
-    display: block;
-  }
-  textarea {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    padding: 0 8px;
+  li {
     border: 0;
-    border-left: 1px solid #bf7770;
-    background: repeating-linear-gradient(
-      transparent 0 31px,
-      #b5b2a5 31px 32px
-    );
-    line-height: 32px;
-    resize: vertical;
+    min-height: 96px;
+    font-family: Georgia, serif;
   }
-  .reset {
-    color: #fff;
-  }
+  .controls,
   [role="status"] {
-    color: #fff;
+    color: #fff8e8;
   }
-  button[aria-pressed="true"] {
-    background: #9c372e;
-    color: #fff;
+  button {
+    background: linear-gradient(#f8e6c5, #d5b994);
+    border: 1px solid #392a1b;
+    border-radius: 5px;
+    color: #493324;
+    box-shadow: 0 3px 2px #38251d;
   }
-  @media (max-width: 450px) {
-    h2 {
-      font-size: 1.5rem;
-    }
-    .demo {
-      padding: 20px 16px;
-    }
-    .paper {
-      padding: 22px 12px;
-    }
+  input {
+    accent-color: #79513a;
   }
 </style>

@@ -6,10 +6,12 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang);
+import "./comparison-base.css";
 ---
 
 <section
   class="demo"
+  data-comparison="tasks"
   data-demo="brutalism"
   lang={lang}
   data-reset-message={t(
@@ -19,57 +21,45 @@ const t = local(lang);
   )}
 >
   <header>
-    <small>{t("PUBLIC INDEX", "공개 목록", "公開目録")} / 001—003</small>
-    <h2>{t("OPEN ARCHIVE", "공개 아카이브", "公開アーカイブ")}</h2>
-    <p>
-      {t(
-        "Documents, without decoration.",
-        "장식 없는 문서 보관소.",
-        "装飾のない文書庫。",
-      )}
-    </p>
+    <span>✓</span>
+    <div>
+      <small>
+        {t("PROJECT / TODAY", "프로젝트 / 오늘", "プロジェクト / 今日")}
+      </small>
+      <h2>{t("Make room", "공간 만들기", "余白をつくる")}</h2>
+    </div>
   </header>
   <div class="controls">
     <label>
-      {t("Search", "검색", "検索")}
-      <input type="search" data-search data-interactive disabled />
-    </label>
-    <label>
-      {t("Type", "유형", "種類")}
+      {t("Status", "상태", "状態")}
       <select data-filter data-interactive disabled>
         <option value="all">{t("All", "전체", "すべて")}</option>
-        <option value="notes">{t("Notes", "노트", "ノート")}</option>
-        <option value="manual">{t("Manual", "설명서", "手引き")}</option>
+        <option value="open">{t("Open", "진행 중", "未完了")}</option>
+        <option value="done">{t("Done", "완료", "完了")}</option>
       </select>
     </label>
+    <strong data-count>0 / 3</strong>
   </div>
-  <ol>
+  <ul>
     {[
-      t("Walking the city", "도시 산책", "街を歩く"),
-      t("Printing manual", "인쇄 설명서", "印刷の手引き"),
-      t("Field observations", "현장 관찰", "現場観察"),
-    ].map((title, i) => (
-      <li data-row data-kind={i === 1 ? "manual" : "notes"}>
-        <span>00{i + 1} / 2026</span>
-        <a href={`#archive-${i}`}>{title}</a>
-        <details id={`archive-${i}`}>
-          <summary>{t("Read document", "문서 읽기", "文書を読む")}</summary>
-          <p>
-            {t(
-              "Record the route, materials and changes. Leave a clear trail for the next reader.",
-              "경로, 재료, 변화를 기록합니다. 다음 독자가 따라갈 흔적을 남깁니다.",
-              "経路、素材、変化を記録。次の読者がたどれる記録を残します。",
-            )}
-          </p>
-        </details>
+      t("Gather references", "참고 자료 모으기", "参考資料を集める"),
+      t("Draw the first draft", "첫 초안 그리기", "最初の案を描く"),
+      t("Review labels", "라벨 검토하기", "ラベルを確認する"),
+    ].map((text, i) => (
+      <li data-task>
+        <label>
+          <input type="checkbox" data-check data-interactive disabled />
+          <span>{text}</span>
+        </label>
+        <small>0{i + 1}</small>
       </li>
     ))}
-  </ol>
+  </ul>
   <p data-empty hidden>
     {t(
-      "No documents. Clear search or change type.",
-      "문서 없음. 검색어를 지우거나 유형을 바꾸세요.",
-      "文書なし。検索語を消すか種類を変えてください。",
+      "No tasks in this state.",
+      "해당 상태의 작업이 없습니다.",
+      "この状態のタスクはありません。",
     )}
   </p>
 
@@ -79,162 +69,83 @@ const t = local(lang);
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
-  import { mount } from "./shared";
-  mount("brutalism", (root, say) => {
-    const search = root.querySelector<HTMLInputElement>("[data-search]")!;
-    const filter = root.querySelector<HTMLSelectElement>("[data-filter]")!;
-    const rows = [...root.querySelectorAll<HTMLElement>("[data-row]")];
-    const update = () => {
-      let count = 0;
-      rows.forEach((row) => {
-        row.hidden =
-          !(filter.value === "all" || row.dataset.kind === filter.value) ||
-          !row
-            .textContent!.toLocaleLowerCase()
-            .includes(search.value.trim().toLocaleLowerCase());
-        if (!row.hidden) count++;
-      });
-      root.querySelector<HTMLElement>("[data-empty]")!.hidden = count > 0;
-      say(`${count} / ${rows.length}`);
-    };
-    search.addEventListener("input", update);
-    filter.addEventListener("change", update);
-    return () => {
-      search.value = "";
-      filter.value = "all";
-      root.querySelectorAll("details").forEach((d) => (d.open = false));
-      update();
-    };
-  });
+  import { mountTasks } from "./tasks";
+  mountTasks("brutalism");
 </script>
 <style>
   .demo {
-    min-width: 0;
-    overflow-wrap: anywhere;
-    padding: clamp(16px, 3vw, 32px);
-    color-scheme: light;
-  }
-  .demo * {
-    box-sizing: border-box;
-  }
-  h2,
-  h3,
-  p {
-    margin: 0 0 1rem;
-  }
-  h2 {
-    font-size: clamp(1.8rem, 4vw, 3.6rem);
-    line-height: 1.12;
-  }
-  h3 {
-    font-size: 1.2rem;
-  }
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    margin: 18px 0;
-  }
-  label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    max-width: 100%;
-  }
-  button,
-  select,
-  input,
-  textarea {
-    font: inherit;
-    max-width: 100%;
-    color: inherit;
-  }
-  button,
-  select,
-  input:not([type="checkbox"]):not([type="range"]) {
-    min-height: 44px;
-    padding: 8px 12px;
-  }
-  button,
-  select {
-    cursor: pointer;
-  }
-  button {
-    border: 1px solid currentColor;
-    background: transparent;
-  }
-  input,
-  textarea,
-  select {
-    background: #fff;
-    color: #172329;
-    border: 1px solid #67747c;
-  }
-  input[type="range"] {
-    width: 150px;
-  }
-  input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
-  }
-  :focus-visible {
-    outline: 3px dashed currentColor;
-    outline-offset: 4px;
-  }
-  [hidden] {
-    display: none !important;
-  }
-  [role="status"] {
-    min-height: 1.5em;
-    font-size: 0.85rem;
-    margin-top: 16px;
-  }
-  small {
-    font-size: 0.8rem;
-  }
-  .reset {
-    margin-top: 20px;
-    font-size: 0.85rem;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .demo * {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
-  .demo {
-    background: #fff;
-    color: #111;
-    font-family: Arial, sans-serif;
-    border: 2px solid #111;
+    background: #f1f5f9;
+    color: #17304e;
   }
   header {
-    border-bottom: 6px solid;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 22px;
+  }
+  header > span {
+    font-size: 3rem;
   }
   h2 {
-    font-weight: 900;
-    letter-spacing: -0.06em;
+    font-size: 2rem;
   }
-  ol {
+  ul {
     list-style: none;
     padding: 0;
   }
   li {
-    border-top: 1px solid;
-    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 12px;
+    border-bottom: 1px solid;
+  }
+  li:has(:checked) span {
+    text-decoration: line-through;
+  }
+  .controls {
+    justify-content: space-between;
+  }
+  .demo {
+    background: white;
+    color: #111;
+    border: 3px solid #111;
+    font-family: monospace;
+    border-radius: 0;
+  }
+  header {
+    padding: 16px 0;
+    border-block: 4px solid;
+  }
+  header > span {
+    display: none;
+  }
+  h2 {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    text-transform: uppercase;
+    letter-spacing: -0.07em;
+  }
+  li {
+    border-bottom: 2px solid;
+    padding: 24px 0;
   }
   li span {
-    display: block;
-    font: 12px monospace;
-  }
-  a {
-    color: inherit;
-    font-size: 1.5rem;
     text-decoration: underline;
+    text-underline-offset: 4px;
   }
-  details {
-    margin-top: 12px;
+  button,
+  select,
+  input {
+    border-radius: 0;
+    border: 2px solid #111;
+    box-shadow: none;
+  }
+  input {
+    accent-color: #111;
+  }
+  button {
+    background: #111;
+    color: white;
   }
 </style>

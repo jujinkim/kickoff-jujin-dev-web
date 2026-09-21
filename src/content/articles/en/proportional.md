@@ -3,7 +3,7 @@ kind: concept
 articleId: proportional
 lang: en
 title: Proportional
-summary: Measure varying glyph advances.
+summary: Compare the same text specimen.
 category: character-width
 aliases:
   - Proportional
@@ -11,8 +11,8 @@ related:
   - theme
   - monospace
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: Proportional letters use varying advance widths.
@@ -26,11 +26,11 @@ comparison:
 
 ## Concept
 
-Proportional letters use varying advance widths. Advance includes spacing around a glyph, not just its ink outline; digits can still be tabular.
+Proportional letters use varying advance widths.
 
 ## Example
 
-Enter a specimen and show measured width guides. In Noto Sans, i and W differ. Toggle tabular digits to align numeric rows without changing letter widths. Reset or reload restores the initial state.
+All five specimens share a sentence, iiiWWW 0123, and the same numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. The measured i and W advances differ; tabular digits can still align.
 
 ## When to choose it
 

@@ -1,24 +1,20 @@
 ---
 import type { Lang } from "../../lib/i18n";
 import { local } from "./shared";
+import { resources } from "./resources";
+import "./comparison-base.css";
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = local(lang);
-const titles = [
-  t("Color atlas", "색 지도", "色の地図"),
-  t("Paper forms", "종이 형태", "紙のかたち"),
-  t("City rhythm", "도시 리듬", "街のリズム"),
-  t("Quiet geometry", "고요한 기하", "静かな幾何"),
-  t("Letter studies", "글자 연구", "文字の研究"),
-  t("Light archive", "빛 기록", "光の記録"),
-];
+const items = resources(lang);
 ---
 
 <section
   class="demo"
   data-demo="uniform-grid"
+  data-comparison="resources"
   lang={lang}
   data-reset-message={t(
     "Initial state restored",
@@ -26,220 +22,222 @@ const titles = [
     "初期状態に戻しました",
   )}
 >
-  <small>{t("RESOURCE LIBRARY", "자료실", "資料室")}</small>
-  <h2>{t("Useful things", "쓸모 있는 것들", "役立つもの")}</h2>
+  <header>
+    <small>{t("COLLECTED / 06", "수집 자료 / 06", "収集資料 / 06")}</small>
+    <h2>{t("Visual fragments", "시각의 조각", "視覚のかけら")}</h2>
+    <p>
+      {t(
+        "Browse the same six resources; compare how the layout changes the reading flow.",
+        "같은 자료 6개를 살펴보며 배치에 따른 읽기 흐름을 비교하세요.",
+        "同じ6件の資料で、配置による読む流れの違いを比べてください。",
+      )}
+    </p>
+  </header>
   <div class="controls">
     <label>
-      {t("Category", "분류", "分類")}
-      <select data-filter data-interactive disabled>
-        <option value="all">{t("All", "전체", "すべて")}</option>
-        <option value="visual">{t("Visual", "시각", "ビジュアル")}</option>
-        <option value="type">{t("Type", "글자", "文字")}</option>
+      {t("Preview width", "미리보기 폭", "表示幅")}
+      <select data-width data-interactive disabled>
+        <option value="wide">{t("Wide", "넓게", "広い")}</option>
+        <option value="narrow">{t("Narrow", "좁게", "狭い")}</option>
       </select>
     </label>
   </div>
-  <div class="grid">
-    {titles.map((title, i) => (
-      <article data-card data-kind={i % 2 ? "type" : "visual"}>
-        <div class={`art art-${i}`} aria-hidden="true">
-          {["◒", "▤", "▦", "◭", "Aa", "◐"][i]}
-        </div>
-        <h3>{title}</h3>
-        <details>
-          <summary>{t("Details", "상세", "詳細")}</summary>
-          <p>
-            {t(
-              "A small reference set for your next composition. Compare shape, spacing, and contrast.",
-              "다음 구성을 위한 작은 참고 자료입니다. 형태, 간격, 대비를 비교하세요.",
-              "次の構成のための小さな参考資料。形、間隔、コントラストを比べてください。",
-            )}
-          </p>
-        </details>
-      </article>
-    ))}
+  <div class="frame" data-width="wide">
+    <div class="workspace">
+      <nav aria-label={t("Resource filters", "자료 필터", "資料の絞り込み")}>
+        <label>
+          {t("Topic", "주제", "テーマ")}
+          <select data-filter data-interactive disabled>
+            <option value="all">{t("All", "전체", "すべて")}</option>
+            <option value="color">{t("Color", "색", "色")}</option>
+            <option value="form">{t("Form", "형태", "形")}</option>
+            <option value="type">{t("Type", "글자", "文字")}</option>
+          </select>
+        </label>
+        <label>
+          {t("Order", "순서", "順序")}
+          <select data-sort data-interactive disabled>
+            <option value="original">
+              {t("Collection order", "수집 순서", "収集順")}
+            </option>
+            <option value="reverse">
+              {t("Reverse order", "역순", "逆順")}
+            </option>
+          </select>
+        </label>
+        <strong data-count>6 / 6</strong>
+      </nav>
+      <div class="board">
+        {items.map((item) => (
+          <article data-tile data-id={item.id} data-topic={item.topic}>
+            <div class={`art art-${item.id}`} aria-hidden="true">
+              {item.symbol}
+            </div>
+            <div class="description">
+              <small>0{item.id + 1}</small>
+              <h3 data-resource-title>{item.title}</h3>
+              <p>{item.description}</p>
+              <details>
+                <summary>{t("Study notes", "연구 메모", "研究メモ")}</summary>
+                <p>
+                  {t(
+                    "Compare shape, spacing, and contrast. Keep this resource beside the next draft and revisit the details.",
+                    "형태, 간격, 대비를 비교합니다. 다음 초안 곁에 자료를 두고 세부를 다시 살펴보세요.",
+                    "形、間隔、コントラストを比べます。次の案の横に資料を置き、細部を見直してください。",
+                  )}
+                </p>
+              </details>
+            </div>
+          </article>
+        ))}
+      </div>
+      <aside>
+        <h3>{t("Study guide", "연구 안내", "研究ガイド")}</h3>
+        <p>
+          {t(
+            "Collect → compare → revise",
+            "수집 → 비교 → 수정",
+            "収集 → 比較 → 修正",
+          )}
+        </p>
+        <p>
+          {t(
+            "Six resources, one collection.",
+            "자료 6개, 하나의 모음.",
+            "6件の資料、ひとつのコレクション。",
+          )}
+        </p>
+      </aside>
+    </div>
   </div>
-
   <button class="reset" type="button" data-reset data-interactive disabled>
     {t("Reset", "초기화", "リセット")}
   </button>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
-  import { mount } from "./shared";
-  mount("uniform-grid", (root, say) => {
-    const filter = root.querySelector<HTMLSelectElement>("[data-filter]")!;
-    const cards = [...root.querySelectorAll<HTMLElement>("[data-card]")];
-    const update = () => {
-      cards.forEach(
-        (c) =>
-          (c.hidden =
-            filter.value !== "all" && c.dataset.kind !== filter.value),
-      );
-      say(`${cards.filter((c) => !c.hidden).length} / ${cards.length}`);
-    };
-    filter.addEventListener("change", update);
-    root
-      .querySelectorAll("details")
-      .forEach((d) =>
-        d.addEventListener("toggle", () =>
-          say(d.closest("article")!.querySelector("h3")!.textContent!),
-        ),
-      );
-    return () => {
-      filter.value = "all";
-      root.querySelectorAll("details").forEach((d) => (d.open = false));
-      update();
-    };
-  });
+  import { mountResources } from "./resource-behavior";
+  mountResources("uniform-grid", false);
 </script>
 <style>
   .demo {
+    background: #f3ece5;
+    color: #443730;
+  }
+  .frame {
+    container-type: inline-size;
+    margin: auto;
+  }
+  .frame[data-width="narrow"] {
+    max-width: 300px;
+  }
+  .workspace {
+    display: grid;
+    gap: 20px;
+    align-items: start;
+  }
+  .workspace > * {
     min-width: 0;
-    overflow-wrap: anywhere;
-    padding: clamp(16px, 3vw, 32px);
-    color-scheme: light;
   }
-  .demo * {
-    box-sizing: border-box;
-  }
-  h2,
-  h3,
-  p {
-    margin: 0 0 1rem;
-  }
-  h2 {
-    font-size: clamp(1.8rem, 4vw, 3.6rem);
-    line-height: 1.12;
-  }
-  h3 {
-    font-size: 1.2rem;
-  }
-  .controls {
+  nav {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    align-items: center;
-    margin: 18px 0;
-  }
-  label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    max-width: 100%;
-  }
-  button,
-  select,
-  input,
-  textarea {
-    font: inherit;
-    max-width: 100%;
-    color: inherit;
-  }
-  button,
-  select,
-  input:not([type="checkbox"]):not([type="range"]) {
-    min-height: 44px;
-    padding: 8px 12px;
-  }
-  button,
-  select {
-    cursor: pointer;
-  }
-  button {
-    border: 1px solid currentColor;
-    background: transparent;
-  }
-  input,
-  textarea,
-  select {
-    background: #fff;
-    color: #172329;
-    border: 1px solid #67747c;
-  }
-  input[type="range"] {
-    width: 150px;
-  }
-  input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
-  }
-  :focus-visible {
-    outline: 3px dashed currentColor;
-    outline-offset: 4px;
-  }
-  [hidden] {
-    display: none !important;
-  }
-  [role="status"] {
-    min-height: 1.5em;
-    font-size: 0.85rem;
-    margin-top: 16px;
-  }
-  small {
-    font-size: 0.8rem;
-  }
-  .reset {
-    margin-top: 20px;
-    font-size: 0.85rem;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .demo * {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
-  .demo {
-    background: #eff0fa;
-    color: #242b50;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    align-items: stretch;
-  }
-  .grid article {
-    background: #fff;
-    border: 1px solid #a5acc7;
     padding: 16px;
+    background: #e5ddd3;
+    border: 1px solid #bead9e;
+    align-items: center;
+  }
+  nav select {
+    width: 100%;
     min-width: 0;
   }
+  nav label {
+    min-width: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .board {
+    display: grid;
+    gap: 16px;
+    align-items: start;
+    min-width: 0;
+    position: relative;
+  }
+  article {
+    min-width: 0;
+    padding: 14px;
+    background: #fffaf4;
+    border: 1px solid #bead9e;
+  }
   .art {
-    height: 100px;
     display: grid;
     place-items: center;
-    background: #d3daf6;
-    color: #293d83;
-    font-size: 4rem;
-    margin-bottom: 18px;
+    height: 120px;
+    font-size: 3rem;
+    background: #bdc9ad;
+    color: #3f5034;
+    margin-bottom: 16px;
   }
-  .art-1,
+  .art-1 {
+    background: #dfb29c;
+    color: #6c3924;
+  }
+  .art-2 {
+    background: #c7cadc;
+    color: #454b70;
+  }
+  .art-3 {
+    background: #decf99;
+    color: #665824;
+  }
   .art-4 {
-    background: #f5d9c6;
-    color: #93462a;
+    background: #d1b7c5;
+    color: #664252;
   }
-  .art-2,
   .art-5 {
-    background: #d4e8d9;
-    color: #2d6844;
+    background: #a8c5c2;
+    color: #315a56;
   }
-  h3 {
-    font-size: 1.1rem;
+  article p,
+  aside p {
+    font-size: 0.85rem;
+    line-height: 1.65;
   }
   details p {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    margin-top: 10px;
+    margin-top: 12px;
   }
-  @media (max-width: 650px) {
-    .grid {
+  aside {
+    border-block: 1px solid #bead9e;
+    padding: 16px 0;
+  }
+  .board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+  article {
+    height: 100%;
+  }
+  @container (min-width:451px) and (max-width:650px) {
+    .board {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-  @media (max-width: 420px) {
-    .grid {
+  @container (max-width:450px) {
+    .workspace {
       grid-template-columns: 1fr;
+    }
+    .workspace > * {
+      grid-column: auto;
+    }
+    .board {
+      grid-template-columns: 1fr;
+    }
+    article {
+      display: block;
+    }
+    .art {
+      max-width: 100%;
     }
   }
 </style>

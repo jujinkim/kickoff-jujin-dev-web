@@ -3,7 +3,7 @@ kind: concept
 articleId: neumorphism
 lang: en
 title: Neumorphism
-summary: Adjust a soft light console.
+summary: Compare the same task list.
 category: styles
 aliases:
   - Neumorphism
@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-22"
 comparison:
   features: Opposing soft shadows make controls appear molded from their background.
@@ -32,11 +32,11 @@ checked: "2026-09-21"
 
 ## Concept
 
-Opposing soft shadows make controls appear molded from their background. Skeuomorphism instead refers more broadly to recognizable physical objects.
+Opposing soft shadows make controls appear molded from their background.
 
 ## Example
 
-The lamp starts on at 65%. Toggle power or drag brightness: the light and numeric output change, while the pressed button marks power. Reset or reload restores the initial state.
+All seven styles use the same three tasks. Check a task, filter Open or Done, and watch the completed count change. An empty state appears when no tasks match. Reset or reload restores three unchecked tasks. A checked row looks pressed into the same soft material.
 
 ## When to choose it
 

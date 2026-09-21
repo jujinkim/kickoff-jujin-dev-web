@@ -3,7 +3,7 @@ kind: concept
 articleId: neobrutalism
 lang: ja
 title: ネオブルータリズム
-summary: 公演日を選択.
+summary: 同じタスク一覧でスタイルを比較。
 category: styles
 aliases:
   - ネオブルータリズム
@@ -16,28 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-22"
 comparison:
   features: 鮮やかな色面、太い枠、硬いオフセット影で強調します。
-  advantages: 強い色面が日付と出演者を強調します。
+  advantages: 強い色面でタスクと操作を強調します。
   limitations: 装飾が詳細と競合するため、強調は重要な情報に絞ります。
-  suitable: 個性の強い小さな公演に向きます。
-  combinations: 複数のポスターはグリッドに置き、出演者情報は短く保ちます。
+  suitable: 大胆な印象の小さな画面に適しています。
+  combinations: 繰り返すタスク行を簡潔に保ちます。
 checked: "2026-09-21"
 ---
 
 ## 概念
 
-鮮やかな色面、太い枠、硬いオフセット影で強調します。無骨なブルータリズムがこうした遊びのある表面を必要とするわけではありません。
+鮮やかな色面、太い枠、硬いオフセット影で強調します。
 
 ## 実例
 
-公演ポスターは金曜日から始まります。土曜日を選ぶと、日時と会場の階層を保ちながら出演者が変わります。 リセット・再読み込みで初期状態に戻ります。
+7種類のスタイルで同じ3件のタスクを使います。完了をチェックし、未完了・完了で絞ると完了数が変わります。該当がなければ案内を表示します。リセット・再読み込みで全件未完了に戻ります。 鮮やかな色面と硬い影で同じタスクを強調します。
 
 ## 選ぶ条件
 
-個性の強い小さな公演に向きます。装飾が詳細と競合するため、強調は重要な情報に絞ります。
+大胆な印象の小さな画面に適しています。 装飾が詳細と競合するため、強調は重要な情報に絞ります。
 
 [NN/g](https://www.nngroup.com/articles/neobrutalism/)

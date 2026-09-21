@@ -3,7 +3,7 @@ kind: concept
 articleId: glassmorphism
 lang: en
 title: Glassmorphism
-summary: Change a glass weather dashboard.
+summary: Compare the same task list.
 category: styles
 aliases:
   - Glassmorphism
@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-22"
 comparison:
   features: Translucent panels reveal a blurred background.
@@ -30,11 +30,11 @@ checked: "2026-09-21"
 
 ## Concept
 
-Translucent panels reveal a blurred background. Unlike simple transparency, blur softens what lies behind fully opaque text.
+Translucent panels reveal a blurred background.
 
 ## Example
 
-Switch the fictional weather dashboard from day to night. Opaque panels replace translucency and blur with a solid surface. Reset or reload restores the initial state.
+All seven styles use the same three tasks. Check a task, filter Open or Done, and watch the completed count change. An empty state appears when no tasks match. Reset or reload restores three unchecked tasks. Switch to opaque panels to compare the blurred glass with a solid fallback.
 
 ## When to choose it
 

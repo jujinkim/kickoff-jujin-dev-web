@@ -3,7 +3,7 @@ kind: concept
 articleId: brutalism
 lang: ja
 title: ブルータリズム
-summary: 無骨な文書アーカイブを検索.
+summary: 同じタスク一覧でスタイルを比較。
 category: styles
 aliases:
   - ブルータリズム
@@ -16,28 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-22"
 comparison:
   features: 露出した罫線と無骨な文字が構造を示します。
-  advantages: 罫線が文書の境界を示します。
+  advantages: むき出しの区切り線でタスクの境界を示します。
   limitations: 粗い印象が邪魔にならないよう、リンクの下線と明確な操作を保ちます。
-  suitable: 実用的な文書庫に向きます。
-  combinations: リストや1列と組み合わせ、文書を順に見渡せます。
+  suitable: 実用的なタスク一覧に適しています。
+  combinations: リストや単一列でタスクを順に確認できます。
 checked: "2026-09-21"
 ---
 
 ## 概念
 
-露出した罫線と無骨な文字が構造を示します。この文書庫はネオブルータリズムの鮮やかな色やオフセット影を使いません。
+露出した罫線と無骨な文字が構造を示します。
 
 ## 実例
 
-3件の文書を検索し、ノート・手引きで絞ります。結果が更新され、検索語を消すと該当する種類の文書が戻ります。 リセット・再読み込みで初期状態に戻ります。
+7種類のスタイルで同じ3件のタスクを使います。完了をチェックし、未完了・完了で絞ると完了数が変わります。該当がなければ案内を表示します。リセット・再読み込みで全件未完了に戻ります。 むき出しの区切り線と下線付きタスク名で構造を示します。
 
 ## 選ぶ条件
 
-実用的な文書庫に向きます。粗い印象が邪魔にならないよう、リンクの下線と明確な操作を保ちます。
+実用的なタスク一覧に適しています。 粗い印象が邪魔にならないよう、リンクの下線と明確な操作を保ちます。
 
 [NN/g](https://www.nngroup.com/articles/brutalism-antidesign/)

@@ -3,7 +3,7 @@ kind: concept
 articleId: sans-serif
 lang: en
 title: Sans serif
-summary: Adjust a sign and UI specimen.
+summary: Compare the same text specimen.
 category: type-shapes
 aliases:
   - Sans serif
@@ -12,14 +12,14 @@ related:
   - serif
   - script
 status: published
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-22"
 comparison:
   features: >-
     Sans-serif letters omit serifs, but their terminals and proportions still
     vary.
-  advantages: Size and weight establish a clear sign hierarchy.
+  advantages: Size and weight establish hierarchy in the same specimen.
   limitations: >-
     Check ambiguous glyphs and localized CJK subsets instead of assuming
     universal readability.
@@ -29,11 +29,11 @@ comparison:
 
 ## Concept
 
-Sans-serif letters omit serifs, but their terminals and proportions still vary. The category does not guarantee that similar characters are distinct.
+Sans-serif letters omit serifs, but their terminals and proportions still vary.
 
 ## Example
 
-A Noto Sans sign pairs a large platform number with labels. Adjust specimen size and weight; compare Il1 and O0 in the same face. Reset or reload restores the initial state.
+All five specimens share a sentence, iiiWWW 0123, and the same numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Change weight to compare the same glyphs at different strengths.
 
 ## When to choose it
 
