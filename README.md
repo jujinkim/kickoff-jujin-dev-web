@@ -1,4 +1,4 @@
-# ju jin.dev
+# jujin.dev
 
 A multilingual development field guide built with **Astro, TypeScript, and Markdown**. No React, CMS, translation API, or built-in AI chat. Public origin: **https://jujin.dev/**.
 

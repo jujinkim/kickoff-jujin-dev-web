@@ -2,7 +2,7 @@ import { published, markdownUrl } from "../lib/content";
 import { categories, categoryNames } from "../lib/i18n";
 export async function GET() {
   const all = await published();
-  const text = `# ju jin.dev
+  const text = `# jujin.dev
 
 > A development field guide: imagine outcomes, compare options, decide, then instruct AI.
 
