@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "tools"
 lang: "ja"
 title: "言語・フレームワーク・ライブラリ・エンジン"
@@ -61,8 +62,8 @@ Engine: Godot -> scene, input, rendering, physics
 
 ## 関連記事と出典
 
-- [Astro・Hugo・Jekyll：HTMLを届ける三つの方法](/ja/catalog/static-sites/)
-- [Web・アプリ・PC・コンソールの届け方](/ja/catalog/shipping/)
+- [Astro・Hugo・Jekyll：HTMLを届ける三つの方法](/ja/guides/static-sites/)
+- [Web・アプリ・PC・コンソールの届け方](/ja/guides/shipping/)
 
 - [TypeScript — Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [Godot — Introduction](https://docs.godotengine.org/en/stable/getting_started/introduction/introduction_to_godot.html)

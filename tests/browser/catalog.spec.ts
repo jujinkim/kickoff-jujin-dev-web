@@ -9,11 +9,11 @@ for (const [lang, query, id] of [
   }) => {
     const errors: string[] = [];
     page.on("pageerror", (e) => errors.push(e.message));
-    await page.goto(`/${lang}/catalog/`);
+    await page.goto(`/${lang}/guides/`);
     await expect(page.locator(".catalog-card:visible")).toHaveCount(12);
     await page.locator("#search").fill(query);
     const target = page.locator(
-      `#search-results a[href="/${lang}/catalog/${id}/"]`,
+      `#search-results a[href="/${lang}/guides/${id}/"]`,
     );
     await expect(target).toBeVisible();
     const links = await page
@@ -25,13 +25,13 @@ for (const [lang, query, id] of [
     await expect(page.locator("#search-results a")).toHaveCount(1);
     await expect(page.locator("#search-results a")).toHaveAttribute(
       "href",
-      `/${lang}/catalog/collections/`,
+      `/${lang}/guides/collections/`,
     );
     await page.locator("#search").fill("");
     await expect(page.locator(".catalog-card:visible")).toHaveCount(1);
     await page.locator("#category").selectOption("planning");
     await expect(page.locator(".catalog-card:visible")).toHaveCount(4);
-    await page.goto(`/${lang}/catalog/srs/`);
+    await page.goto(`/${lang}/guides/srs/`);
     await page.reload();
     await expect(page.locator("h1")).toContainText("SRS");
     expect(errors).toEqual([]);
@@ -40,7 +40,7 @@ for (const [lang, query, id] of [
 test("views, theme and language survive navigation and reload", async ({
   page,
 }) => {
-  await page.goto("/en/catalog/");
+  await page.goto("/en/guides/");
   for (const view of ["list", "thumbnail", "preview"]) {
     await page.locator(`button[data-view=${view}]`).click();
     await expect(page.locator("html")).toHaveAttribute("data-view", view);
@@ -56,9 +56,9 @@ test("views, theme and language survive navigation and reload", async ({
     "aria-pressed",
     "true",
   );
-  await page.goto("/en/catalog/srs/");
+  await page.goto("/en/guides/srs/");
   await page.locator(".languages a[lang=ko]").click();
-  await expect(page).toHaveURL(/\/ko\/catalog\/srs\/$/);
+  await expect(page).toHaveURL(/\/ko\/guides\/srs\/$/);
   await expect(page.locator("html")).toHaveAttribute("lang", "ko");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
 });
@@ -73,7 +73,7 @@ test("keyboard navigation, copy and AI lookup complete the reader flow", async (
   await expect(page.locator(".skip-link")).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(page.locator("#main")).toBeFocused();
-  await page.goto("/en/catalog/srs/");
+  await page.goto("/en/guides/srs/");
   await page.locator("[data-copy]").click();
   await expect(page.locator(".prompt-section [role=status]")).toHaveText(
     "Copied",
@@ -98,7 +98,7 @@ test("search failure keeps browse available and copy failure explains fallback",
   page,
 }) => {
   await page.route("**/pagefind/**", (route) => route.abort());
-  await page.goto("/en/catalog/");
+  await page.goto("/en/guides/");
   await page.locator("#search").fill("requirements");
   await expect(page.locator("#result-status")).toContainText(
     "Search could not load",
@@ -121,7 +121,15 @@ test("mobile and desktop layouts contain content without horizontal overflow", a
   for (const width of [375, 768, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     for (const lang of ["en", "ko", "ja"]) {
-      for (const path of ["", "catalog/", "catalog/layout/", "ai/"]) {
+      for (const path of [
+        "",
+        "catalog/",
+        "catalog/categories/styles/",
+        "catalog/categories/columns/",
+        "guides/",
+        "guides/layout/",
+        "ai/",
+      ]) {
         await page.goto(`/${lang}/${path}`);
         await expect(page.locator("h1")).toBeVisible();
         expect(
@@ -140,7 +148,7 @@ test("comments use identical strict mapping and language-specific widget configu
     route.fulfill({ contentType: "application/javascript", body: "" }),
   );
   for (const lang of ["en", "ko", "ja"]) {
-    await page.goto(`/${lang}/catalog/srs/`);
+    await page.goto(`/${lang}/guides/srs/`);
     const script = page.locator(".giscus script");
     await expect(script).toHaveAttribute("data-mapping", "specific");
     await expect(script).toHaveAttribute("data-strict", "1");
@@ -148,3 +156,23 @@ test("comments use identical strict mapping and language-specific widget configu
     await expect(script).toHaveAttribute("data-lang", lang);
   }
 });
+
+for (const lang of ["en", "ko", "ja"]) {
+  test(`${lang}: concept tree, pending names and legacy redirect`, async ({
+    page,
+  }) => {
+    await page.goto(`/${lang}/catalog/`);
+    await expect(page.locator(".catalog-card")).toHaveCount(0);
+    await page
+      .locator(`.category-tree a[href="/${lang}/catalog/categories/styles/"]`)
+      .click();
+    await expect(page.locator("[data-candidate]")).toHaveCount(7);
+    await expect(page.locator("[data-candidate] a")).toHaveCount(0);
+    await expect(page.locator("table")).toHaveCount(0);
+    await page.locator(".languages a[lang=en]").click();
+    await expect(page).toHaveURL(/\/en\/catalog\/categories\/styles\/$/);
+    await page.goto(`/${lang}/catalog/srs/`);
+    await expect(page).toHaveURL(new RegExp(`/${lang}/guides/srs/$`));
+    await expect(page.locator("h1")).toContainText("SRS");
+  });
+}

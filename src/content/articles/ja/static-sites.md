@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "static-sites"
 lang: "ja"
 title: "Astro・Hugo・Jekyll：HTMLを届ける三つの方法"
@@ -48,9 +49,9 @@ Astroはコンポーネント中心の表示と選択的な操作に向き、Nod
 
 ## 関連記事と出典
 
-- [言語・フレームワーク・ライブラリ・エンジン](/ja/catalog/tools/)
-- [Web・アプリ・PC・コンソールの届け方](/ja/catalog/shipping/)
-- [Design DecisionとADR：判断を残す](/ja/catalog/adr/)
+- [言語・フレームワーク・ライブラリ・エンジン](/ja/guides/tools/)
+- [Web・アプリ・PC・コンソールの届け方](/ja/guides/shipping/)
+- [Design DecisionとADR：判断を残す](/ja/guides/adr/)
 
 - [Astro — Islands architecture](https://docs.astro.build/en/concepts/islands/)
 - [Hugo — Introduction](https://gohugo.io/about/introduction/)

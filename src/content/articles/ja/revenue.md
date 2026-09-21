@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "revenue"
 lang: "ja"
 title: "サブスク・買い切り・広告：価値に合わせる"
@@ -60,8 +61,8 @@ Ads: eligible traffic x variable realized yield
 
 ## 関連記事と出典
 
-- [決済経路とPG・MoR：TossとLemon Squeezy](/ja/catalog/payments/)
-- [SRSと完了条件：「完成」の意味から](/ja/catalog/srs/)
+- [決済経路とPG・MoR：TossとLemon Squeezy](/ja/guides/payments/)
+- [SRSと完了条件：「完成」の意味から](/ja/guides/srs/)
 
 - [Stripe — Billing subscriptions](https://docs.stripe.com/billing/subscriptions/overview)
 - [Google — AdSense eligibility](https://support.google.com/adsense/answer/9724)

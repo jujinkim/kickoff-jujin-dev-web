@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "theme"
 lang: "ja"
 title: "テーマ・フォント・共通スタイル"
@@ -57,8 +58,8 @@ CSSの例はダーク時に背景と文字のトークンを変え、カード�
 
 ## 関連記事と出典
 
-- [レイアウトとUI要素に名前を付ける](/ja/catalog/layout/)
-- [アーキテクチャとSOLID・GRASP入門](/ja/catalog/architecture/)
+- [レイアウトとUI要素に名前を付ける](/ja/guides/layout/)
+- [アーキテクチャとSOLID・GRASP入門](/ja/guides/architecture/)
 
 - [MDN — Custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 - [W3C — Contrast minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)

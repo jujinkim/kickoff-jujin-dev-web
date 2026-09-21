@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "static-sites"
 lang: "en"
 title: "Astro, Hugo, Jekyll: three ways to ship HTML"
@@ -48,9 +49,9 @@ Compare Astro, Hugo, and Jekyll for our agreed content workflow. Show how each h
 
 ## Related reading and sources
 
-- [Language, library, framework, engine](/en/catalog/tools/)
-- [Runtime, distribution, hosting: three questions](/en/catalog/shipping/)
-- [Design decisions that leave a paper trail](/en/catalog/adr/)
+- [Language, library, framework, engine](/en/guides/tools/)
+- [Runtime, distribution, hosting: three questions](/en/guides/shipping/)
+- [Design decisions that leave a paper trail](/en/guides/adr/)
 
 - [Astro — Islands architecture](https://docs.astro.build/en/concepts/islands/)
 - [Hugo — Introduction](https://gohugo.io/about/introduction/)

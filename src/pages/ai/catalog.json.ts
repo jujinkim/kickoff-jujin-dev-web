@@ -1,5 +1,5 @@
 import { published, articleUrl, markdownUrl, isStale } from "../../lib/content";
-import { categories, categoryNames } from "../../lib/i18n";
+import categories from "../../data/categories.json";
 export async function GET() {
   const all = await published();
   const ids = [...new Set(all.map((a) => a.data.articleId))].sort();
@@ -8,6 +8,7 @@ export async function GET() {
     const original = translations.find((a) => a.data.lang === "en")!;
     return {
       id,
+      kind: original.data.kind,
       category: original.data.category,
       related: original.data.related,
       example: original.data.example,
@@ -17,6 +18,7 @@ export async function GET() {
           {
             title: a.data.title,
             summary: a.data.summary,
+            comparison: a.data.comparison,
             aliases: a.data.aliases,
             revision: a.data.revision,
             sourceRevision: a.data.sourceRevision,
@@ -36,15 +38,7 @@ export async function GET() {
         site: "https://jujin.dev",
         sourceLanguage: "en",
         instructions: "https://jujin.dev/ai/instructions.md",
-        categories: categories.map((id) => ({
-          id,
-          names: Object.fromEntries(
-            Object.entries(categoryNames).map(([lang, names]) => [
-              lang,
-              names[id],
-            ]),
-          ),
-        })),
+        categories,
         articles,
       },
       null,

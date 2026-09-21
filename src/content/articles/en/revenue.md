@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "revenue"
 lang: "en"
 title: "Subscription, one-time payment, or ads?"
@@ -60,8 +61,8 @@ Compare subscription, one-time purchase, and advertising for our audience and on
 
 ## Related reading and sources
 
-- [Payment channels, PG, and merchant of record](/en/catalog/payments/)
-- [SRS: make ‘done’ mean something](/en/catalog/srs/)
+- [Payment channels, PG, and merchant of record](/en/guides/payments/)
+- [SRS: make ‘done’ mean something](/en/guides/srs/)
 
 - [Stripe — Billing subscriptions](https://docs.stripe.com/billing/subscriptions/overview)
 - [Google — AdSense eligibility](https://support.google.com/adsense/answer/9724)

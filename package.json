@@ -14,7 +14,8 @@
     "test": "node --test tests/*.test.mjs",
     "test:e2e": "playwright test",
     "format": "prettier --write .",
-    "verify:live": "node scripts/verify-live.mjs"
+    "verify:live": "node scripts/verify-live.mjs",
+    "content:new": "node scripts/content-new.mjs"
   },
   "dependencies": {
     "astro": "7.3.3"

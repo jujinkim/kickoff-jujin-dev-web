@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "layout"
 lang: "ja"
 title: "レイアウトとUI要素に名前を付ける"
@@ -60,8 +61,8 @@ Mobile: main content first; navigation collapses
 
 ## 関連記事と出典
 
-- [テーマ・フォント・共通スタイル](/ja/catalog/theme/)
-- [SRSと完了条件：「完成」の意味から](/ja/catalog/srs/)
+- [テーマ・フォント・共通スタイル](/ja/guides/theme/)
+- [SRSと完了条件：「完成」の意味から](/ja/guides/srs/)
 
 - [MDN — CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
 - [WAI — Dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)

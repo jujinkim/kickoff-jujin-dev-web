@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "architecture"
 lang: "ja"
 title: "アーキテクチャとSOLID・GRASP入門"
@@ -57,8 +58,8 @@ Domain rules do not import the UI or database driver.
 
 ## 関連記事と出典
 
-- [OOADと責務分離：それぞれに仕事を](/ja/catalog/ooad/)
-- [Design DecisionとADR：判断を残す](/ja/catalog/adr/)
+- [OOADと責務分離：それぞれに仕事を](/ja/guides/ooad/)
+- [Design DecisionとADR：判断を残す](/ja/guides/adr/)
 
 - [Microsoft — Architecture principles](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles)
 - [Craig Larman — Applying UML and Patterns](https://www.craiglarman.com/wiki/index.php?title=Books_by_Craig_Larman)

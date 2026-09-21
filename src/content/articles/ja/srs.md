@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "srs"
 lang: "ja"
 title: "SRSと完了条件：「完成」の意味から"
@@ -56,7 +57,7 @@ Failure: unavailable stock leaves the cart unchanged
 
 ## 関連記事と出典
 
-- [Design DecisionとADR：判断を残す](/ja/catalog/adr/)
-- [OOADと責務分離：それぞれに仕事を](/ja/catalog/ooad/)
+- [Design DecisionとADR：判断を残す](/ja/guides/adr/)
+- [OOADと責務分離：それぞれに仕事を](/ja/guides/ooad/)
 
 - [NASA — Software requirements](https://swehb.nasa.gov/display/SWEHBVD/SWE-050+-+Software+Requirements)

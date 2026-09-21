@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "payments"
 lang: "en"
 title: "Payment channels, PG, and merchant of record"
@@ -60,8 +61,8 @@ For our product and seller location, compare Toss Payments PG, Lemon Squeezy MoR
 
 ## Related reading and sources
 
-- [Subscription, one-time payment, or ads?](/en/catalog/revenue/)
-- [Runtime, distribution, hosting: three questions](/en/catalog/shipping/)
+- [Subscription, one-time payment, or ads?](/en/guides/revenue/)
+- [Runtime, distribution, hosting: three questions](/en/guides/shipping/)
 
 - [Toss Payments — Payment integration](https://docs.tosspayments.com/guides/v2/payment-widget/integration)
 - [Lemon Squeezy — Merchant of Record](https://docs.lemonsqueezy.com/help/payments/merchant-of-record)

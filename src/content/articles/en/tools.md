@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "tools"
 lang: "en"
 title: "Language, library, framework, engine"
@@ -61,8 +62,8 @@ Classify our candidates as language, library, framework, engine, or a combinatio
 
 ## Related reading and sources
 
-- [Astro, Hugo, Jekyll: three ways to ship HTML](/en/catalog/static-sites/)
-- [Runtime, distribution, hosting: three questions](/en/catalog/shipping/)
+- [Astro, Hugo, Jekyll: three ways to ship HTML](/en/guides/static-sites/)
+- [Runtime, distribution, hosting: three questions](/en/guides/shipping/)
 
 - [TypeScript — Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [Godot — Introduction](https://docs.godotengine.org/en/stable/getting_started/introduction/introduction_to_godot.html)

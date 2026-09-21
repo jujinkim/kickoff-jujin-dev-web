@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "shipping"
 lang: "en"
 title: "Runtime, distribution, hosting: three questions"
@@ -61,8 +62,8 @@ For our agreed target devices, separate runtime, distribution channel, and hosti
 
 ## Related reading and sources
 
-- [Astro, Hugo, Jekyll: three ways to ship HTML](/en/catalog/static-sites/)
-- [Payment channels, PG, and merchant of record](/en/catalog/payments/)
+- [Astro, Hugo, Jekyll: three ways to ship HTML](/en/guides/static-sites/)
+- [Payment channels, PG, and merchant of record](/en/guides/payments/)
 
 - [GitHub — Pages overview](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 - [Apple — Distributing your app](https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases)

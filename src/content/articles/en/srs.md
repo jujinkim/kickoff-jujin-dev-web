@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "srs"
 lang: "en"
 title: "SRS: make ‘done’ mean something"
@@ -56,7 +57,7 @@ For the bookshop cart, first read our agreed requirements. List unresolved quest
 
 ## Related reading and sources
 
-- [Design decisions that leave a paper trail](/en/catalog/adr/)
-- [OOAD: give each object a job](/en/catalog/ooad/)
+- [Design decisions that leave a paper trail](/en/guides/adr/)
+- [OOAD: give each object a job](/en/guides/ooad/)
 
 - [NASA — Software requirements](https://swehb.nasa.gov/display/SWEHBVD/SWE-050+-+Software+Requirements)

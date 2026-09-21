@@ -13,17 +13,21 @@ const d = article.data;
 
 <article class="catalog-card" data-category={d.category}>
   <a class="card-link" href={articleUrl(article)}>
-    <div class="card-preview">
-      <Example kind={d.example} lang={d.lang} />
-    </div>
-    <img
-      class="card-thumbnail"
-      src={`/thumbnails/${d.example}.svg`}
-      width="600"
-      height="320"
-      alt=""
-      loading="lazy"
-    />
+    {d.example && (
+      <>
+        <div class="card-preview">
+          <Example kind={d.example} lang={d.lang} />
+        </div>
+        <img
+          class="card-thumbnail"
+          src={`/thumbnails/${d.example}.svg`}
+          width="600"
+          height="320"
+          alt=""
+          loading="lazy"
+        />
+      </>
+    )}
     <div class="card-text">
       <div class="card-meta">
         <span>{categoryNames[d.lang][d.category]}</span>

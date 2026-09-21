@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "srs"
 lang: "ko"
 title: "SRS와 완료 조건: ‘완성’의 뜻부터"
@@ -56,7 +57,7 @@ Failure: unavailable stock leaves the cart unchanged
 
 ## 관련 글과 출처
 
-- [Design Decision과 ADR: 결정의 흔적](/ko/catalog/adr/)
-- [OOAD와 책임 분리: 객체마다 할 일 하나](/ko/catalog/ooad/)
+- [Design Decision과 ADR: 결정의 흔적](/ko/guides/adr/)
+- [OOAD와 책임 분리: 객체마다 할 일 하나](/ko/guides/ooad/)
 
 - [NASA — Software requirements](https://swehb.nasa.gov/display/SWEHBVD/SWE-050+-+Software+Requirements)

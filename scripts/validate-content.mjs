@@ -2,14 +2,14 @@ import { readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import matter from "gray-matter";
-export const categoryIds = [
-  "planning",
-  "data",
-  "development",
-  "deployment",
-  "design",
-  "business",
-];
+import {
+  taxonomy,
+  candidates,
+  conceptSections,
+  comparisonKeys,
+  validateCatalog,
+} from "./catalog-data.mjs";
+export const categoryIds = taxonomy.map((c) => c.id);
 export const examples = [
   "spec",
   "objects",
@@ -62,7 +62,7 @@ export function readArticles(root = "src/content/articles") {
     }));
 }
 export function validateArticles(articles) {
-  const errors = [];
+  const errors = validateCatalog(taxonomy, candidates, articles);
   const keys = new Set();
   const byKey = new Map();
   for (const a of articles) {
@@ -78,11 +78,22 @@ export function validateArticles(articles) {
       errors.push(`${a.file}: invalid status`);
     if (!categoryIds.includes(d.category))
       errors.push(`${a.file}: unknown category`);
-    if (!examples.includes(d.example))
+    if (
+      (d.kind === "guide" || d.example !== undefined) &&
+      !examples.includes(d.example)
+    )
       errors.push(`${a.file}: unknown example`);
     if (a.file !== `${key}.md`)
       errors.push(`${a.file}: path must equal ${key}.md`);
-    for (const name of ["title", "summary", "aiPrompt"]) {
+    if (!["guide", "concept"].includes(d.kind))
+      errors.push(`${key}: invalid kind`);
+    if (d.kind === "concept" && taxonomy.some((c) => c.parent === d.category))
+      errors.push(`${key}: concept requires leaf category`);
+    for (const name of [
+      "title",
+      "summary",
+      ...(d.kind === "guide" ? ["aiPrompt"] : []),
+    ]) {
       if (typeof d[name] !== "string" || !d[name].trim())
         errors.push(`${key}: missing ${name}`);
     }
@@ -108,14 +119,30 @@ export function validateArticles(articles) {
         errors.push(`${key}: invalid ${name} date`);
     }
     if (d.status !== "published") continue;
+    if (d.kind === "concept") {
+      for (const field of comparisonKeys)
+        if (
+          typeof d.comparison?.[field] !== "string" ||
+          !d.comparison[field].trim() ||
+          /TODO/.test(d.comparison[field])
+        )
+          errors.push(`${key}: missing comparison ${field}`);
+      if (/\bTODO\b/.test(a.content) || d.summary === "TODO")
+        errors.push(`${key}: unfinished concept`);
+    }
     const headings = [...a.content.matchAll(/^## (.+)$/gm)].map((m) => m[1]);
-    if (JSON.stringify(headings) !== JSON.stringify(sectionNames[d.lang]))
+    if (
+      JSON.stringify(headings) !==
+      JSON.stringify(
+        d.kind === "concept" ? conceptSections[d.lang] : sectionNames[d.lang],
+      )
+    )
       errors.push(`${key}: sections missing or out of order`);
     if (!a.content.includes("```"))
       errors.push(`${key}: missing textual/code example`);
     if (!/\]\(https:\/\//.test(a.content))
       errors.push(`${key}: missing official source`);
-    if (!a.content.includes(d.aiPrompt))
+    if (d.aiPrompt && !a.content.includes(d.aiPrompt))
       errors.push(`${key}: body and copy prompt differ`);
     if (
       ["static-sites", "shipping", "revenue", "payments"].includes(
@@ -137,6 +164,7 @@ export function validateArticles(articles) {
       if (d.lang === "en" && d.sourceRevision !== d.revision)
         errors.push(`${a.file}: original revision mismatch`);
       if (
+        d.kind !== en.data.kind ||
         d.category !== en.data.category ||
         d.example !== en.data.example ||
         JSON.stringify(d.related) !== JSON.stringify(en.data.related)
@@ -154,7 +182,7 @@ export function validateArticles(articles) {
     }
     if (d.status === "published")
       for (const match of a.content.matchAll(
-        /\]\(\/(en|ko|ja)\/catalog\/([a-z0-9-]+)\/\)/g,
+        /\]\(\/(en|ko|ja)\/(?:catalog|guides)\/([a-z0-9-]+)\/\)/g,
       )) {
         const target = byKey.get(`${match[1]}/${match[2]}`);
         if (!target || target.data.status !== "published")

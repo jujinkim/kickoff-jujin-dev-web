@@ -3,13 +3,20 @@ import Base from "../../layouts/Base.astro";
 import Card from "../../components/Card.astro";
 import Example from "../../components/Example.astro";
 import { languages, strings, categories, categoryNames } from "../../lib/i18n";
+import { ancestors } from "../../lib/catalog";
 import { published } from "../../lib/content";
 export function getStaticPaths() {
   return languages.map((lang) => ({ params: { lang }, props: { lang } }));
 }
 const { lang } = Astro.props;
 const t = strings[lang];
-const articles = (await published()).filter((a) => a.data.lang === lang);
+const all = await published();
+const concepts = all.filter(
+  (a) => a.data.lang === lang && a.data.kind === "concept",
+);
+const articles = all.filter(
+  (a) => a.data.lang === lang && a.data.kind === "guide",
+);
 const recommended = ["srs", "layout", "collections"].map((id) =>
   articles.find((a) => a.data.articleId === id)!,
 );
@@ -35,12 +42,13 @@ const recent = [...articles]
         <a class="button primary" href={`/${lang}/catalog/`}>
           {t.browse} <span>↗</span>
         </a>
-        <a class="text-link" href={`/${lang}/ai/`}>
-          {t.ai} →
+        <a class="text-link" href={`/${lang}/guides/`}>
+          {t.guides} →
         </a>
       </div>
       <p class="hero-note">
-        12 {t.count} <span> / </span> EN · KO · JA <span> / </span> Human + AI
+        {articles.length} {t.guides} <span> / </span> EN · KO · JA{" "}
+        <span> / </span> Human + AI
       </p>
     </div>
     <div class="hero-art" aria-hidden="true">
@@ -81,12 +89,14 @@ const recent = [...articles]
     </div>
     <div class="category-grid">
       {categories.map((category, i) => (
-        <a href={`/${lang}/catalog/?category=${category}`}>
+        <a href={`/${lang}/catalog/categories/${category}/`}>
           <span class="category-number">0{i + 1}</span>
           <strong>{categoryNames[lang][category]}</strong>
           <span>
-            {articles
-              .filter((a) => a.data.category === category)
+            {concepts
+              .filter((a) =>
+                ancestors(a.data.category).some((c) => c.id === category),
+              )
               .length.toString()
               .padStart(2, "0")}{" "}
             ↗
@@ -99,7 +109,7 @@ const recent = [...articles]
     <div class="section-heading">
       <div>
         <p class="eyebrow">LESS GUESSING, MORE BUILDING</p>
-        <h2>{t.learn}</h2>
+        <h2>{t.guides}</h2>
       </div>
       <a class="text-link" href={`/${lang}/start/`}>
         {t.start} →
@@ -124,13 +134,13 @@ const recent = [...articles]
   <section class="section">
     <div class="section-heading">
       <h2>{t.recent}</h2>
-      <a class="text-link" href={`/${lang}/catalog/`}>
-        {t.catalog} →
+      <a class="text-link" href={`/${lang}/guides/`}>
+        {t.guides} →
       </a>
     </div>
     <div class="recent-list">
       {recent.map((a) => (
-        <a href={`/${lang}/catalog/${a.data.articleId}/`}>
+        <a href={`/${lang}/guides/${a.data.articleId}/`}>
           <span class="tiny-label">{categoryNames[lang][a.data.category]}</span>
           <strong>{a.data.title}</strong>
           <time>{a.data.updated}</time>

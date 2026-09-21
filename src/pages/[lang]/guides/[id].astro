@@ -1,0 +1,15 @@
+---
+import Article from "../../../components/Article.astro";
+import { published } from "../../../lib/content";
+export async function getStaticPaths() {
+  return (await published())
+    .filter((a) => a.data.kind === "guide")
+    .map((article) => ({
+      params: { lang: article.data.lang, id: article.data.articleId },
+      props: { article },
+    }));
+}
+const { article } = Astro.props;
+---
+
+<Article article={article} />

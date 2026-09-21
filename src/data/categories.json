@@ -1,0 +1,407 @@
+[
+  {
+    "id": "planning",
+    "parent": null,
+    "names": {
+      "en": "Planning & architecture",
+      "ko": "기획·설계",
+      "ja": "企画・設計"
+    },
+    "descriptions": {
+      "en": "Explore Planning & architecture.",
+      "ko": "기획·설계 항목을 탐색합니다.",
+      "ja": "企画・設計の項目を探します。"
+    },
+    "order": 0
+  },
+  {
+    "id": "data",
+    "parent": null,
+    "names": {
+      "en": "Data structures",
+      "ko": "자료구조",
+      "ja": "データ構造"
+    },
+    "descriptions": {
+      "en": "Explore Data structures.",
+      "ko": "자료구조 항목을 탐색합니다.",
+      "ja": "データ構造の項目を探します。"
+    },
+    "order": 1
+  },
+  {
+    "id": "development",
+    "parent": null,
+    "names": {
+      "en": "Development platforms",
+      "ko": "개발 플랫폼",
+      "ja": "開発プラットフォーム"
+    },
+    "descriptions": {
+      "en": "Explore Development platforms.",
+      "ko": "개발 플랫폼 항목을 탐색합니다.",
+      "ja": "開発プラットフォームの項目を探します。"
+    },
+    "order": 2
+  },
+  {
+    "id": "deployment",
+    "parent": null,
+    "names": {
+      "en": "Deployment platforms",
+      "ko": "배포 플랫폼",
+      "ja": "配布プラットフォーム"
+    },
+    "descriptions": {
+      "en": "Explore Deployment platforms.",
+      "ko": "배포 플랫폼 항목을 탐색합니다.",
+      "ja": "配布プラットフォームの項目を探します。"
+    },
+    "order": 3
+  },
+  {
+    "id": "design",
+    "parent": null,
+    "names": {
+      "en": "Design",
+      "ko": "디자인",
+      "ja": "デザイン"
+    },
+    "descriptions": {
+      "en": "Explore Design.",
+      "ko": "디자인 항목을 탐색합니다.",
+      "ja": "デザインの項目を探します。"
+    },
+    "order": 4
+  },
+  {
+    "id": "business",
+    "parent": null,
+    "names": {
+      "en": "Monetization",
+      "ko": "수익화",
+      "ja": "収益化"
+    },
+    "descriptions": {
+      "en": "Explore Monetization.",
+      "ko": "수익화 항목을 탐색합니다.",
+      "ja": "収益化の項目を探します。"
+    },
+    "order": 5
+  },
+  {
+    "id": "layout",
+    "parent": "design",
+    "names": {
+      "en": "Layout",
+      "ko": "레이아웃",
+      "ja": "レイアウト"
+    },
+    "descriptions": {
+      "en": "Explore Layout.",
+      "ko": "레이아웃 항목을 탐색합니다.",
+      "ja": "レイアウトの項目を探します。"
+    },
+    "order": 0
+  },
+  {
+    "id": "typography",
+    "parent": "design",
+    "names": {
+      "en": "Typography",
+      "ko": "타이포그래피",
+      "ja": "タイポグラフィ"
+    },
+    "descriptions": {
+      "en": "Explore Typography.",
+      "ko": "타이포그래피 항목을 탐색합니다.",
+      "ja": "タイポグラフィの項目を探します。"
+    },
+    "order": 2
+  },
+  {
+    "id": "requirements",
+    "parent": "planning",
+    "names": {
+      "en": "Requirements expression",
+      "ko": "요구사항 표현",
+      "ja": "要件の表現"
+    },
+    "descriptions": {
+      "en": "Explore Requirements expression.",
+      "ko": "요구사항 표현 항목을 탐색합니다.",
+      "ja": "要件の表現の項目を探します。"
+    },
+    "order": 0
+  },
+  {
+    "id": "boundaries",
+    "parent": "planning",
+    "names": {
+      "en": "Architecture boundaries & dependencies",
+      "ko": "아키텍처의 경계·의존 구조",
+      "ja": "境界と依存構造"
+    },
+    "descriptions": {
+      "en": "Explore Architecture boundaries & dependencies.",
+      "ko": "아키텍처의 경계·의존 구조 항목을 탐색합니다.",
+      "ja": "境界と依存構造の項目を探します。"
+    },
+    "order": 1
+  },
+  {
+    "id": "service-split",
+    "parent": "planning",
+    "names": {
+      "en": "Service decomposition",
+      "ko": "서비스 분할",
+      "ja": "サービス分割"
+    },
+    "descriptions": {
+      "en": "Explore Service decomposition.",
+      "ko": "서비스 분할 항목을 탐색합니다.",
+      "ja": "サービス分割の項目を探します。"
+    },
+    "order": 2
+  },
+  {
+    "id": "abstract-collections",
+    "parent": "data",
+    "names": {
+      "en": "Abstract collections",
+      "ko": "추상 컬렉션",
+      "ja": "抽象コレクション"
+    },
+    "descriptions": {
+      "en": "Explore Abstract collections.",
+      "ko": "추상 컬렉션 항목을 탐색합니다.",
+      "ja": "抽象コレクションの項目を探します。"
+    },
+    "order": 3
+  },
+  {
+    "id": "sequential-storage",
+    "parent": "data",
+    "names": {
+      "en": "Sequential storage structures",
+      "ko": "순차 저장 구조",
+      "ja": "順次記憶構造"
+    },
+    "descriptions": {
+      "en": "Explore Sequential storage structures.",
+      "ko": "순차 저장 구조 항목을 탐색합니다.",
+      "ja": "順次記憶構造の項目を探します。"
+    },
+    "order": 4
+  },
+  {
+    "id": "processing-order",
+    "parent": "data",
+    "names": {
+      "en": "Processing order",
+      "ko": "처리 순서",
+      "ja": "処理順序"
+    },
+    "descriptions": {
+      "en": "Explore Processing order.",
+      "ko": "처리 순서 항목을 탐색합니다.",
+      "ja": "処理順序の項目を探します。"
+    },
+    "order": 5
+  },
+  {
+    "id": "static-generators",
+    "parent": "development",
+    "names": {
+      "en": "Static site generators",
+      "ko": "정적 사이트 생성기",
+      "ja": "静的サイトジェネレーター"
+    },
+    "descriptions": {
+      "en": "Explore Static site generators.",
+      "ko": "정적 사이트 생성기 항목을 탐색합니다.",
+      "ja": "静的サイトジェネレーターの項目を探します。"
+    },
+    "order": 6
+  },
+  {
+    "id": "web-ui",
+    "parent": "development",
+    "names": {
+      "en": "Web UI development tools",
+      "ko": "웹 UI 개발 도구",
+      "ja": "Web UI開発ツール"
+    },
+    "descriptions": {
+      "en": "Explore Web UI development tools.",
+      "ko": "웹 UI 개발 도구 항목을 탐색합니다.",
+      "ja": "Web UI開発ツールの項目を探します。"
+    },
+    "order": 7
+  },
+  {
+    "id": "game-engines",
+    "parent": "development",
+    "names": {
+      "en": "Game engines",
+      "ko": "게임 엔진",
+      "ja": "ゲームエンジン"
+    },
+    "descriptions": {
+      "en": "Explore Game engines.",
+      "ko": "게임 엔진 항목을 탐색합니다.",
+      "ja": "ゲームエンジンの項目を探します。"
+    },
+    "order": 8
+  },
+  {
+    "id": "hosting-models",
+    "parent": "deployment",
+    "names": {
+      "en": "Hosting execution models",
+      "ko": "호스팅 실행 모델",
+      "ja": "ホスティング実行モデル"
+    },
+    "descriptions": {
+      "en": "Explore Hosting execution models.",
+      "ko": "호스팅 실행 모델 항목을 탐색합니다.",
+      "ja": "ホスティング実行モデルの項目を探します。"
+    },
+    "order": 9
+  },
+  {
+    "id": "release-replacement",
+    "parent": "deployment",
+    "names": {
+      "en": "Release replacement",
+      "ko": "릴리스 교체 방식",
+      "ja": "リリース切り替え方式"
+    },
+    "descriptions": {
+      "en": "Explore Release replacement.",
+      "ko": "릴리스 교체 방식 항목을 탐색합니다.",
+      "ja": "リリース切り替え方式の項目を探します。"
+    },
+    "order": 10
+  },
+  {
+    "id": "columns",
+    "parent": "layout",
+    "names": {
+      "en": "Column composition",
+      "ko": "열 구성",
+      "ja": "列構成"
+    },
+    "descriptions": {
+      "en": "Explore Column composition.",
+      "ko": "열 구성 항목을 탐색합니다.",
+      "ja": "列構成の項目を探します。"
+    },
+    "order": 11
+  },
+  {
+    "id": "content-arrangement",
+    "parent": "layout",
+    "names": {
+      "en": "Content arrangement",
+      "ko": "콘텐츠 나열",
+      "ja": "コンテンツ配置"
+    },
+    "descriptions": {
+      "en": "Explore Content arrangement.",
+      "ko": "콘텐츠 나열 항목을 탐색합니다.",
+      "ja": "コンテンツ配置の項目を探します。"
+    },
+    "order": 12
+  },
+  {
+    "id": "styles",
+    "parent": "design",
+    "names": {
+      "en": "Styles",
+      "ko": "스타일",
+      "ja": "スタイル"
+    },
+    "descriptions": {
+      "en": "Explore Styles.",
+      "ko": "스타일 항목을 탐색합니다.",
+      "ja": "スタイルの項目を探します。"
+    },
+    "order": 1
+  },
+  {
+    "id": "type-shapes",
+    "parent": "typography",
+    "names": {
+      "en": "Typeface shapes",
+      "ko": "서체 형태",
+      "ja": "書体の形"
+    },
+    "descriptions": {
+      "en": "Explore Typeface shapes.",
+      "ko": "서체 형태 항목을 탐색합니다.",
+      "ja": "書体の形の項目を探します。"
+    },
+    "order": 14
+  },
+  {
+    "id": "character-width",
+    "parent": "typography",
+    "names": {
+      "en": "Character width",
+      "ko": "문자 폭",
+      "ja": "文字幅"
+    },
+    "descriptions": {
+      "en": "Explore Character width.",
+      "ko": "문자 폭 항목을 탐색합니다.",
+      "ja": "文字幅の項目を探します。"
+    },
+    "order": 15
+  },
+  {
+    "id": "revenue-sources",
+    "parent": "business",
+    "names": {
+      "en": "Revenue sources",
+      "ko": "수익원",
+      "ja": "収益源"
+    },
+    "descriptions": {
+      "en": "Explore Revenue sources.",
+      "ko": "수익원 항목을 탐색합니다.",
+      "ja": "収益源の項目を探します。"
+    },
+    "order": 16
+  },
+  {
+    "id": "billing",
+    "parent": "business",
+    "names": {
+      "en": "Billing methods",
+      "ko": "과금 방식",
+      "ja": "課金方式"
+    },
+    "descriptions": {
+      "en": "Explore Billing methods.",
+      "ko": "과금 방식 항목을 탐색합니다.",
+      "ja": "課金方式の項目を探します。"
+    },
+    "order": 17
+  },
+  {
+    "id": "seller-responsibility",
+    "parent": "business",
+    "names": {
+      "en": "Seller responsibility models",
+      "ko": "판매 책임 모델",
+      "ja": "販売責任モデル"
+    },
+    "descriptions": {
+      "en": "Explore Seller responsibility models.",
+      "ko": "판매 책임 모델 항목을 탐색합니다.",
+      "ja": "販売責任モデルの項目を探します。"
+    },
+    "order": 18
+  }
+]

@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "payments"
 lang: "ja"
 title: "決済経路とPG・MoR：TossとLemon Squeezy"
@@ -60,8 +61,8 @@ PGは直接販売に合う反面、自分で運用する仕事が多く残りま
 
 ## 関連記事と出典
 
-- [サブスク・買い切り・広告：価値に合わせる](/ja/catalog/revenue/)
-- [Web・アプリ・PC・コンソールの届け方](/ja/catalog/shipping/)
+- [サブスク・買い切り・広告：価値に合わせる](/ja/guides/revenue/)
+- [Web・アプリ・PC・コンソールの届け方](/ja/guides/shipping/)
 
 - [Toss Payments — Payment integration](https://docs.tosspayments.com/guides/v2/payment-widget/integration)
 - [Lemon Squeezy — Merchant of Record](https://docs.lemonsqueezy.com/help/payments/merchant-of-record)

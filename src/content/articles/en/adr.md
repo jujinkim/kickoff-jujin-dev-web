@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "adr"
 lang: "en"
 title: "Design decisions that leave a paper trail"
@@ -58,7 +59,7 @@ Draft a proposed ADR for our rendering choice. Read existing decisions first. In
 
 ## Related reading and sources
 
-- [SRS: make ‘done’ mean something](/en/catalog/srs/)
-- [Astro, Hugo, Jekyll: three ways to ship HTML](/en/catalog/static-sites/)
+- [SRS: make ‘done’ mean something](/en/guides/srs/)
+- [Astro, Hugo, Jekyll: three ways to ship HTML](/en/guides/static-sites/)
 
 - [AWS — Architectural decision records](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html)

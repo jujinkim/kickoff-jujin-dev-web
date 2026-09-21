@@ -1,0 +1,76 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import CategoryTree from "../../../../components/CategoryTree.astro";
+import Comparison from "../../../../components/Comparison.astro";
+import { taxonomy, candidates, ancestors } from "../../../../lib/catalog";
+import { published, articleUrl } from "../../../../lib/content";
+import { languages, strings } from "../../../../lib/i18n";
+export function getStaticPaths() {
+  return languages.flatMap((lang) =>
+    taxonomy.map((category) => ({
+      params: { lang, categoryId: category.id },
+      props: { lang, category },
+    })),
+  );
+}
+const { lang, category } = Astro.props;
+const t = strings[lang];
+const articles = (await published()).filter(
+  (a) =>
+    a.data.lang === lang &&
+    a.data.kind === "concept" &&
+    a.data.category === category.id,
+);
+const pending = candidates.filter(
+  (c) =>
+    c.category === category.id &&
+    !articles.some((a) => a.data.articleId === c.id),
+);
+---
+
+<Base
+  lang={lang}
+  title={category.names[lang]}
+  description={category.descriptions[lang]}
+>
+  <section class="page-heading">
+    <nav class="breadcrumb" aria-label={t.catalog}>
+      <a href={`/${lang}/catalog/`}>{t.catalog}</a>
+      {ancestors(category.id).map((c) => (
+        <>
+          {" "}
+          /{" "}
+          <a
+            href={`/${lang}/catalog/categories/${c.id}/`}
+            aria-current={c.id === category.id ? "page" : undefined}
+          >
+            {c.names[lang]}
+          </a>
+        </>
+      ))}
+    </nav>
+    <h1>{category.names[lang]}</h1>
+    <p>{category.descriptions[lang]}</p>
+    <p>
+      {articles.length} {t.count}
+    </p>
+  </section>
+  <section class="section">
+    <CategoryTree parent={category.id} lang={lang} />
+    <ul class="concept-list">
+      {articles.map((a) => (
+        <li>
+          <a href={articleUrl(a)}>{a.data.title}</a>
+          <p>{a.data.summary}</p>
+        </li>
+      ))}
+      {pending.map((c) => (
+        <li data-candidate={c.id}>
+          <strong>{c.titles[lang]}</strong>{" "}
+          <span class="tiny-label">{t.pending}</span>
+        </li>
+      ))}
+    </ul>
+    <Comparison articles={articles} lang={lang} />
+  </section>
+</Base>

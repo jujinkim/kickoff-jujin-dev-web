@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "layout"
 lang: "en"
 title: "Name the layout you are pointing at"
@@ -60,8 +61,8 @@ Describe this catalog using named regions and components. Propose mobile and des
 
 ## Related reading and sources
 
-- [Themes and fonts without fifty shades of almost](/en/catalog/theme/)
-- [SRS: make ‘done’ mean something](/en/catalog/srs/)
+- [Themes and fonts without fifty shades of almost](/en/guides/theme/)
+- [SRS: make ‘done’ mean something](/en/guides/srs/)
 
 - [MDN — CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
 - [WAI — Dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)

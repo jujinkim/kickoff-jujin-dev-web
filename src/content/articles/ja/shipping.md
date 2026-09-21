@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "shipping"
 lang: "ja"
 title: "Web・アプリ・PC・コンソールの届け方"
@@ -61,8 +62,8 @@ Webはリンク共有が簡単ですがブラウザー機能に制約されま�
 
 ## 関連記事と出典
 
-- [Astro・Hugo・Jekyll：HTMLを届ける三つの方法](/ja/catalog/static-sites/)
-- [決済経路とPG・MoR：TossとLemon Squeezy](/ja/catalog/payments/)
+- [Astro・Hugo・Jekyll：HTMLを届ける三つの方法](/ja/guides/static-sites/)
+- [決済経路とPG・MoR：TossとLemon Squeezy](/ja/guides/payments/)
 
 - [GitHub — Pages overview](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 - [Apple — Distributing your app](https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases)

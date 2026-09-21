@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "shipping"
 lang: "ko"
 title: "웹·앱·PC·콘솔: 실행·유통·호스팅 구분"
@@ -61,8 +62,8 @@ Console: platform runtime | approved channel | optional backend
 
 ## 관련 글과 출처
 
-- [Astro·Hugo·Jekyll: HTML을 보내는 세 방법](/ko/catalog/static-sites/)
-- [결제 채널과 PG·MoR: 토스·Lemon Squeezy](/ko/catalog/payments/)
+- [Astro·Hugo·Jekyll: HTML을 보내는 세 방법](/ko/guides/static-sites/)
+- [결제 채널과 PG·MoR: 토스·Lemon Squeezy](/ko/guides/payments/)
 
 - [GitHub — Pages overview](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 - [Apple — Distributing your app](https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases)

@@ -1,0 +1,22 @@
+---
+import Base from "../../../layouts/Base.astro";
+import ArticleListing from "../../../components/ArticleListing.astro";
+import { languages, strings } from "../../../lib/i18n";
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+const { lang } = Astro.props;
+const t = strings[lang];
+---
+
+<Base lang={lang} title={t.guides} description={t.intro}>
+  <section class="page-heading">
+    <p class="eyebrow">THE FIELD GUIDES</p>
+    <h1>
+      {t.guides}
+      <span class="accent-dot">.</span>
+    </h1>
+    <p>{t.intro}</p>
+  </section>
+  <ArticleListing lang={lang} kind="guide" />
+</Base>

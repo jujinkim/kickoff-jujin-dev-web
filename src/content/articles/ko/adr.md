@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "adr"
 lang: "ko"
 title: "Design Decision과 ADR: 결정의 흔적"
@@ -58,7 +59,7 @@ Revisit: private personalized content becomes required
 
 ## 관련 글과 출처
 
-- [SRS와 완료 조건: ‘완성’의 뜻부터](/ko/catalog/srs/)
-- [Astro·Hugo·Jekyll: HTML을 보내는 세 방법](/ko/catalog/static-sites/)
+- [SRS와 완료 조건: ‘완성’의 뜻부터](/ko/guides/srs/)
+- [Astro·Hugo·Jekyll: HTML을 보내는 세 방법](/ko/guides/static-sites/)
 
 - [AWS — Architectural decision records](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html)

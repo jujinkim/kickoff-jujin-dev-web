@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "ooad"
 lang: "ko"
 title: "OOAD와 책임 분리: 객체마다 할 일 하나"
@@ -55,7 +56,7 @@ Receipt <- Order.confirm()
 
 ## 관련 글과 출처
 
-- [아키텍처와 SOLID·GRASP: 약어 숭배 금지](/ko/catalog/architecture/)
-- [SRS와 완료 조건: ‘완성’의 뜻부터](/ko/catalog/srs/)
+- [아키텍처와 SOLID·GRASP: 약어 숭배 금지](/ko/guides/architecture/)
+- [SRS와 완료 조건: ‘완성’의 뜻부터](/ko/guides/srs/)
 
 - [Microsoft — Domain model design](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/microservice-domain-model)

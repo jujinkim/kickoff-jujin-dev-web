@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "tools"
 lang: "ko"
 title: "언어·프레임워크·라이브러리·엔진 구분"
@@ -61,8 +62,8 @@ Engine: Godot -> scene, input, rendering, physics
 
 ## 관련 글과 출처
 
-- [Astro·Hugo·Jekyll: HTML을 보내는 세 방법](/ko/catalog/static-sites/)
-- [웹·앱·PC·콘솔: 실행·유통·호스팅 구분](/ko/catalog/shipping/)
+- [Astro·Hugo·Jekyll: HTML을 보내는 세 방법](/ko/guides/static-sites/)
+- [웹·앱·PC·콘솔: 실행·유통·호스팅 구분](/ko/guides/shipping/)
 
 - [TypeScript — Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [Godot — Introduction](https://docs.godotengine.org/en/stable/getting_started/introduction/introduction_to_godot.html)

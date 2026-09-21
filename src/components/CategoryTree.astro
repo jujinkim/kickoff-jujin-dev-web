@@ -1,0 +1,19 @@
+---
+import { childrenOf } from "../lib/catalog";
+import type { Lang } from "../lib/i18n";
+interface Props {
+  parent?: string | null;
+  lang: Lang;
+}
+const { parent = null, lang } = Astro.props;
+const children = childrenOf(parent);
+---
+
+<ul class="category-tree" data-root={parent === null ? "true" : undefined}>
+  {children.map((c) => (
+    <li>
+      <a href={`/${lang}/catalog/categories/${c.id}/`}>{c.names[lang]}</a>
+      <Astro.self parent={c.id} lang={lang} />
+    </li>
+  ))}
+</ul>

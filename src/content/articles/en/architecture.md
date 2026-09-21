@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "architecture"
 lang: "en"
 title: "Architecture without acronym worship"
@@ -57,8 +58,8 @@ Trace a concrete change through our code. Show dependency direction and misplace
 
 ## Related reading and sources
 
-- [OOAD: give each object a job](/en/catalog/ooad/)
-- [Design decisions that leave a paper trail](/en/catalog/adr/)
+- [OOAD: give each object a job](/en/guides/ooad/)
+- [Design decisions that leave a paper trail](/en/guides/adr/)
 
 - [Microsoft — Architecture principles](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles)
 - [Craig Larman — Applying UML and Patterns](https://www.craiglarman.com/wiki/index.php?title=Books_by_Craig_Larman)

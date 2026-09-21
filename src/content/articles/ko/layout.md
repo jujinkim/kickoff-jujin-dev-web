@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "layout"
 lang: "ko"
 title: "레이아웃과 UI 요소: 가리키는 것에 이름 붙이기"
@@ -60,8 +61,8 @@ Mobile: main content first; navigation collapses
 
 ## 관련 글과 출처
 
-- [테마·폰트·공통 스타일: 비슷한 색 50개 금지](/ko/catalog/theme/)
-- [SRS와 완료 조건: ‘완성’의 뜻부터](/ko/catalog/srs/)
+- [테마·폰트·공통 스타일: 비슷한 색 50개 금지](/ko/guides/theme/)
+- [SRS와 완료 조건: ‘완성’의 뜻부터](/ko/guides/srs/)
 
 - [MDN — CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
 - [WAI — Dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)

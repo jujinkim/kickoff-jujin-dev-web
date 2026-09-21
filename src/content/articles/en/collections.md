@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "collections"
 lang: "en"
 title: "Array, list, map, set: pick by operation"
@@ -62,8 +63,8 @@ For our product selection, clarify ordering, duplicate handling, lookup keys, an
 
 ## Related reading and sources
 
-- [OOAD: give each object a job](/en/catalog/ooad/)
-- [SRS: make ‘done’ mean something](/en/catalog/srs/)
+- [OOAD: give each object a job](/en/guides/ooad/)
+- [SRS: make ‘done’ mean something](/en/guides/srs/)
 
 - [MDN — Keyed collections](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections)
 - [MDN — Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)

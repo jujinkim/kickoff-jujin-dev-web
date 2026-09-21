@@ -1,0 +1,46 @@
+---
+import type { Article } from "../lib/content";
+import { articleUrl } from "../lib/content";
+import type { Lang } from "../lib/i18n";
+import { comparisonKeys, comparisonLabels } from "../lib/comparison";
+interface Props {
+  articles: Article[];
+  lang: Lang;
+}
+const { articles, lang } = Astro.props;
+const entries = articles.filter((a) => a.data.comparison);
+---
+
+{entries.length > 0 && (
+  <div class="comparison-scroll">
+    <table class="comparison">
+      <caption>
+        {lang === "ko"
+          ? "같은 범주의 비교"
+          : lang === "ja"
+            ? "同じ分類の比較"
+            : "Comparison within this category"}
+      </caption>
+      <thead>
+        <tr>
+          <th>{lang === "ko" ? "개념" : lang === "ja" ? "概念" : "Concept"}</th>
+          {comparisonLabels[lang].map((label) => (
+            <th scope="col">{label}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {entries.map((a) => (
+          <tr>
+            <th scope="row">
+              <a href={articleUrl(a)}>{a.data.title}</a>
+            </th>
+            {comparisonKeys.map((key) => (
+              <td>{a.data.comparison![key]}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}

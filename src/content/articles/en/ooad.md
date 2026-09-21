@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "ooad"
 lang: "en"
 title: "OOAD: give each object a job"
@@ -55,7 +56,7 @@ Review our checkout use case. Identify domain concepts, invariants, and responsi
 
 ## Related reading and sources
 
-- [Architecture without acronym worship](/en/catalog/architecture/)
-- [SRS: make ‘done’ mean something](/en/catalog/srs/)
+- [Architecture without acronym worship](/en/guides/architecture/)
+- [SRS: make ‘done’ mean something](/en/guides/srs/)
 
 - [Microsoft — Domain model design](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/microservice-domain-model)

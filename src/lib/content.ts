@@ -4,9 +4,9 @@ export type Article = CollectionEntry<"articles">;
 export const published = () =>
   getCollection("articles", ({ data }) => data.status === "published");
 export const articleUrl = (article: Article) =>
-  `/${article.data.lang}/catalog/${article.data.articleId}/`;
+  `/${article.data.lang}/${article.data.kind === "guide" ? "guides" : "catalog"}/${article.data.articleId}/`;
 export const markdownUrl = (article: Article) =>
-  `/${article.data.lang}/catalog/${article.data.articleId}.md`;
+  `/${article.data.lang}/${article.data.kind === "guide" ? "guides" : "catalog"}/${article.data.articleId}.md`;
 export function translationFor(all: Article[], articleId: string, lang: Lang) {
   return all.find(
     (a) => a.data.articleId === articleId && a.data.lang === lang,

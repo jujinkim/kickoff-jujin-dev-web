@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "architecture"
 lang: "ko"
 title: "아키텍처와 SOLID·GRASP: 약어 숭배 금지"
@@ -57,8 +58,8 @@ Domain rules do not import the UI or database driver.
 
 ## 관련 글과 출처
 
-- [OOAD와 책임 분리: 객체마다 할 일 하나](/ko/catalog/ooad/)
-- [Design Decision과 ADR: 결정의 흔적](/ko/catalog/adr/)
+- [OOAD와 책임 분리: 객체마다 할 일 하나](/ko/guides/ooad/)
+- [Design Decision과 ADR: 결정의 흔적](/ko/guides/adr/)
 
 - [Microsoft — Architecture principles](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles)
 - [Craig Larman — Applying UML and Patterns](https://www.craiglarman.com/wiki/index.php?title=Books_by_Craig_Larman)

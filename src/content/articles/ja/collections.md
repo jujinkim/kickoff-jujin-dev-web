@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "collections"
 lang: "ja"
 title: "配列・リスト・マップ・集合：操作で選ぶ"
@@ -62,8 +63,8 @@ const selected = new Set(["book-1", "book-1"]);
 
 ## 関連記事と出典
 
-- [OOADと責務分離：それぞれに仕事を](/ja/catalog/ooad/)
-- [SRSと完了条件：「完成」の意味から](/ja/catalog/srs/)
+- [OOADと責務分離：それぞれに仕事を](/ja/guides/ooad/)
+- [SRSと完了条件：「完成」の意味から](/ja/guides/srs/)
 
 - [MDN — Keyed collections](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections)
 - [MDN — Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)

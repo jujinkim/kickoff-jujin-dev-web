@@ -1,5 +1,22 @@
 # Verification — 2026-09-21
 
+## Catalog / guide split — local verification
+
+- `npm run check`: Astro/TypeScript, 36 source documents, taxonomy/candidate relationships and formatting pass.
+- `npm run build`: 173 HTML pages; 36 canonical guide Markdown files plus 36 legacy Markdown aliases; Pagefind indexes only 36 published documents.
+- `npm test`: 17 pass. Covers duplicate/cyclic/missing categories, candidate collisions, leaf membership, invalid peers/related guides, translation metadata drift, draft scaffolds and overwrite refusal.
+- Isolated real-build fixture publishes one concept and checks catalog listing, shared comparison summaries, Markdown, AI kind, llms.txt, real browser search and incoming guide links. Draft title/body sentinel stays out of public output and search. Temporary files are removed in `finally`; source collection retains only the original 36 documents.
+- All 36 existing HTML aliases target their guide canonicals. Legacy Markdown equals canonical Markdown. Canonical pages retain comment IDs, language alternates and sitemap entries. Existing source bytes differ only by `kind: guide` and migrated internal links.
+- `npm run test:e2e`: 11 pass against built `dist`. Three-language search, category filters, language/theme/view persistence, copy/failure paths, comments, redirects, pending candidate names, and responsive layouts at 375/768/1440 px.
+- Agent-browser visual check: Korean catalog renders separated navigation and taxonomy cards; no browser errors reported.
+- Candidates: 58 across six roots / 27 total categories. Seven style candidates lead the writing queue. No concept bodies were added or published.
+
+Local changes only. No commit, push, deployment or public-origin verification in this task. Historical public-domain findings below were not refreshed.
+
+## Original site baseline
+
+The sections below record the earlier site baseline. Current catalog/guide split verification appears above.
+
 ## Scope
 
 Reader flow: localized home → catalog example → full article and tradeoffs → copied AI instructions. Assistant flow: llms.txt → behavior rules → alias lookup → published Markdown. Static artifact verification uses the same `dist` served by GitHub Pages.

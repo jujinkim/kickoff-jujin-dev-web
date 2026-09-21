@@ -1,75 +1,42 @@
 ---
 import Base from "../../../layouts/Base.astro";
-import Card from "../../../components/Card.astro";
-import {
-  languages,
-  strings,
-  categories,
-  categoryNames,
-} from "../../../lib/i18n";
+import ArticleListing from "../../../components/ArticleListing.astro";
+import CategoryTree from "../../../components/CategoryTree.astro";
+import { languages, strings } from "../../../lib/i18n";
+import { candidates } from "../../../lib/catalog";
 import { published } from "../../../lib/content";
 export function getStaticPaths() {
   return languages.map((lang) => ({ params: { lang }, props: { lang } }));
 }
 const { lang } = Astro.props;
 const t = strings[lang];
-const articles = (await published()).filter((a) => a.data.lang === lang);
+const count = (await published()).filter(
+  (a) => a.data.lang === lang && a.data.kind === "concept",
+).length;
 ---
 
 <Base lang={lang} title={t.catalog} description={t.intro}>
   <section class="page-heading">
-    <p class="eyebrow">THE FIELD GUIDE / 12 NOTES</p>
-    <h1>
-      {t.catalog}
-      <span class="accent-dot">.</span>
-    </h1>
-    <p>{t.intro}</p>
+    <h1>{t.catalog}</h1>
+    <p>
+      {lang === "ko"
+        ? "분류를 따라 개념과 도구를 탐색하고 비교하세요."
+        : lang === "ja"
+          ? "分類から概念とツールを探し、比較します。"
+          : "Explore and compare concepts and tools by category."}
+    </p>
+    <p>
+      {count} {t.count} · {candidates.length}{" "}
+      {lang === "ko"
+        ? "초기 후보"
+        : lang === "ja"
+          ? "初期候補"
+          : "initial candidates"}
+    </p>
+    <a href={`/${lang}/guides/`}>{t.guides} →</a>
   </section>
-  <section
-    class="catalog-section"
-    id="catalog"
-    data-empty={t.empty}
-    data-error={t.searchError}
-    data-results={t.results}
-  >
-    <div class="catalog-toolbar">
-      <div class="search-field">
-        <label for="search">{t.search}</label>
-        <input
-          id="search"
-          type="search"
-          placeholder={t.searchHint}
-          autocomplete="off"
-        />
-      </div>
-      <div class="view-switch" role="group" aria-label={t.views}>
-        {["preview", "thumbnail", "list"].map((view) => (
-          <button data-view={view} aria-pressed={view === "preview"}>
-            {t[view as "preview" | "thumbnail" | "list"]}
-          </button>
-        ))}
-      </div>
-    </div>
-    <div class="filter-row">
-      <label class="sr-only" for="category">
-        {t.all}
-      </label>
-      <select id="category">
-        <option value="">{t.all}</option>
-        {categories.map((c) => (
-          <option value={c}>{categoryNames[lang][c]}</option>
-        ))}
-      </select>
-      <p id="result-status" role="status" aria-live="polite">
-        {articles.length} {t.count}
-      </p>
-    </div>
-    <div id="search-results" class="search-results" hidden></div>
-    <div class="catalog-grid" id="catalog-grid">
-      {articles.map((article, index) => (
-        <Card article={article} index={index} />
-      ))}
-    </div>
+  <section class="section">
+    <CategoryTree lang={lang} />
   </section>
-  <script is:inline type="module" src="/catalog.js"></script>
+  <ArticleListing lang={lang} kind="concept" />
 </Base>

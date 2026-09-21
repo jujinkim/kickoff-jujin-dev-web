@@ -1,9 +1,18 @@
+import taxonomy from "../data/categories.json";
 import { published, articleUrl } from "./content";
 import { languages, type Lang } from "./i18n";
 const site = "https://jujin.dev";
 export async function sitemap(lang: Lang) {
   const all = await published();
-  const entries = ["", "start/", "catalog/", "ai/", "about/"].map((path) => ({
+  const entries = [
+    "",
+    "start/",
+    "catalog/",
+    "guides/",
+    "ai/",
+    "about/",
+    ...taxonomy.map((c) => `catalog/categories/${c.id}/`),
+  ].map((path) => ({
     url: `/${lang}/${path}`,
     alternates: languages.map((l) => ({ lang: l, url: `/${l}/${path}` })),
     updated: undefined as string | undefined,

@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "collections"
 lang: "ko"
 title: "배열·리스트·맵·집합: 연산으로 고르기"
@@ -62,8 +63,8 @@ const selected = new Set(["book-1", "book-1"]);
 
 ## 관련 글과 출처
 
-- [OOAD와 책임 분리: 객체마다 할 일 하나](/ko/catalog/ooad/)
-- [SRS와 완료 조건: ‘완성’의 뜻부터](/ko/catalog/srs/)
+- [OOAD와 책임 분리: 객체마다 할 일 하나](/ko/guides/ooad/)
+- [SRS와 완료 조건: ‘완성’의 뜻부터](/ko/guides/srs/)
 
 - [MDN — Keyed collections](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections)
 - [MDN — Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)

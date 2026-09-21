@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "adr"
 lang: "ja"
 title: "Design DecisionとADR：判断を残す"
@@ -58,7 +59,7 @@ Revisit: private personalized content becomes required
 
 ## 関連記事と出典
 
-- [SRSと完了条件：「完成」の意味から](/ja/catalog/srs/)
-- [Astro・Hugo・Jekyll：HTMLを届ける三つの方法](/ja/catalog/static-sites/)
+- [SRSと完了条件：「完成」の意味から](/ja/guides/srs/)
+- [Astro・Hugo・Jekyll：HTMLを届ける三つの方法](/ja/guides/static-sites/)
 
 - [AWS — Architectural decision records](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html)

@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "ooad"
 lang: "ja"
 title: "OOADと責務分離：それぞれに仕事を"
@@ -55,7 +56,7 @@ Receipt <- Order.confirm()
 
 ## 関連記事と出典
 
-- [アーキテクチャとSOLID・GRASP入門](/ja/catalog/architecture/)
-- [SRSと完了条件：「完成」の意味から](/ja/catalog/srs/)
+- [アーキテクチャとSOLID・GRASP入門](/ja/guides/architecture/)
+- [SRSと完了条件：「完成」の意味から](/ja/guides/srs/)
 
 - [Microsoft — Domain model design](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/microservice-domain-model)

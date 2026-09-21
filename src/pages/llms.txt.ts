@@ -1,5 +1,6 @@
+import taxonomy from "../data/categories.json";
 import { published, markdownUrl } from "../lib/content";
-import { categories, categoryNames } from "../lib/i18n";
+import { categoryNames } from "../lib/i18n";
 export async function GET() {
   const all = await published();
   const text = `# jujin.dev
@@ -11,11 +12,14 @@ Read project context first. Do not re-ask confirmed decisions. Before explicit s
 ## Start here
 - [Behavior rules](https://jujin.dev/ai/instructions.md)
 - [Versioned multilingual catalog and aliases](https://jujin.dev/ai/catalog.json)
+- [Concept catalog](https://jujin.dev/en/catalog/)
+- [Guides](https://jujin.dev/en/guides/)
 - [Project integration guide](https://jujin.dev/en/ai/)
 
 English originals with Korean and Japanese translations. The catalog links every published translation and marks stale revisions. Drafts are excluded. A missing translation is not an English duplicate at a translated URL.
 
-${categories
+${taxonomy
+  .map((c) => c.id)
   .map(
     (c) =>
       `## ${categoryNames.en[c]}\n${all

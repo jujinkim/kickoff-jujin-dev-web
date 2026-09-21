@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "theme"
 lang: "en"
 title: "Themes and fonts without fifty shades of almost"
@@ -57,8 +58,8 @@ Audit our colors, typography, and spacing. Propose semantic tokens and font fall
 
 ## Related reading and sources
 
-- [Name the layout you are pointing at](/en/catalog/layout/)
-- [Architecture without acronym worship](/en/catalog/architecture/)
+- [Name the layout you are pointing at](/en/guides/layout/)
+- [Architecture without acronym worship](/en/guides/architecture/)
 
 - [MDN — Custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 - [W3C — Contrast minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)

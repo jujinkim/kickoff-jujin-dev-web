@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "revenue"
 lang: "ko"
 title: "구독·일회 결제·광고: 가치에 맞춰 청구하기"
@@ -60,8 +61,8 @@ Ads: eligible traffic x variable realized yield
 
 ## 관련 글과 출처
 
-- [결제 채널과 PG·MoR: 토스·Lemon Squeezy](/ko/catalog/payments/)
-- [SRS와 완료 조건: ‘완성’의 뜻부터](/ko/catalog/srs/)
+- [결제 채널과 PG·MoR: 토스·Lemon Squeezy](/ko/guides/payments/)
+- [SRS와 완료 조건: ‘완성’의 뜻부터](/ko/guides/srs/)
 
 - [Stripe — Billing subscriptions](https://docs.stripe.com/billing/subscriptions/overview)
 - [Google — AdSense eligibility](https://support.google.com/adsense/answer/9724)

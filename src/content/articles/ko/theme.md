@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "theme"
 lang: "ko"
 title: "테마·폰트·공통 스타일: 비슷한 색 50개 금지"
@@ -57,8 +58,8 @@ aiPrompt: "우리 색·글자·간격을 점검해줘. 한·영·일 대체 폰�
 
 ## 관련 글과 출처
 
-- [레이아웃과 UI 요소: 가리키는 것에 이름 붙이기](/ko/catalog/layout/)
-- [아키텍처와 SOLID·GRASP: 약어 숭배 금지](/ko/catalog/architecture/)
+- [레이아웃과 UI 요소: 가리키는 것에 이름 붙이기](/ko/guides/layout/)
+- [아키텍처와 SOLID·GRASP: 약어 숭배 금지](/ko/guides/architecture/)
 
 - [MDN — Custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 - [W3C — Contrast minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)

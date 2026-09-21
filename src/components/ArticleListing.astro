@@ -1,0 +1,71 @@
+---
+import Card from "./Card.astro";
+import { strings, categoryNames, type Lang } from "../lib/i18n";
+import { taxonomy } from "../lib/catalog";
+import { published } from "../lib/content";
+interface Props {
+  lang: Lang;
+  kind: "guide" | "concept";
+}
+const { lang, kind } = Astro.props;
+const t = strings[lang];
+const categories = taxonomy
+  .filter((c) =>
+    kind === "guide"
+      ? !c.parent
+      : !taxonomy.some((child) => child.parent === c.id),
+  )
+  .map((c) => c.id);
+const articles = (await published()).filter(
+  (a) => a.data.lang === lang && a.data.kind === kind,
+);
+---
+
+<section
+  class="catalog-section"
+  id="catalog"
+  data-kind={kind}
+  data-empty={t.empty}
+  data-error={t.searchError}
+  data-results={t.results}
+>
+  <div class="catalog-toolbar">
+    <div class="search-field">
+      <label for="search">{t.search}</label>
+      <input
+        id="search"
+        type="search"
+        placeholder={t.searchHint}
+        autocomplete="off"
+      />
+    </div>
+    <div class="view-switch" role="group" aria-label={t.views}>
+      {["preview", "thumbnail", "list"].map((view) => (
+        <button data-view={view} aria-pressed={view === "preview"}>
+          {t[view as "preview" | "thumbnail" | "list"]}
+        </button>
+      ))}
+    </div>
+  </div>
+  <div class="filter-row">
+    <label class="sr-only" for="category">
+      {t.all}
+    </label>
+    <select id="category">
+      <option value="">{t.all}</option>
+      {categories.map((c) => (
+        <option value={c}>{categoryNames[lang][c]}</option>
+      ))}
+    </select>
+    <p id="result-status" role="status" aria-live="polite">
+      {articles.length} {t.count}
+    </p>
+  </div>
+  <div id="search-results" class="search-results" hidden></div>
+  <div class="catalog-grid" id="catalog-grid">
+    {articles.map((article, index) => (
+      <Card article={article} index={index} />
+    ))}
+  </div>
+</section>
+<script is:inline type="module" src="/catalog.js"></script>

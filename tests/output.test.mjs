@@ -22,7 +22,7 @@ test("AI aliases resolve to published Markdown with matching title and instructi
       assert.ok(md.startsWith(`# ${t.title}`));
       assert.ok(md.includes(`ID: ${article.id}`));
       assert.ok(md.includes("## "));
-      const html = read(`${lang}/catalog/${article.id}/index.html`);
+      const html = read(`${lang}/guides/${article.id}/index.html`);
       assert.ok(html.includes(`data-comment-term="${article.id}"`));
       assert.ok(html.includes(`data-term="${article.id}"`));
     }
@@ -31,7 +31,7 @@ test("AI aliases resolve to published Markdown with matching title and instructi
 test("each translated page has self canonical, reciprocal translations, and English x-default", () => {
   for (const article of catalog.articles) {
     for (const [lang, t] of Object.entries(article.translations)) {
-      const html = read(`${lang}/catalog/${article.id}/index.html`);
+      const html = read(`${lang}/guides/${article.id}/index.html`);
       assert.ok(html.includes(`rel="canonical" href="${t.url}"`));
       for (const [other, translation] of Object.entries(article.translations))
         assert.ok(
@@ -86,4 +86,46 @@ test("AI rules cover ambiguity, strong recommendation, delegated scope, missing 
   ])
     assert.ok(text.includes(rule));
   assert.ok(read("llms.txt").includes("/ai/catalog.json"));
+});
+
+test("legacy HTML redirects and Markdown preserve guide content and identity", () => {
+  for (const article of catalog.articles)
+    for (const [lang, t] of Object.entries(article.translations)) {
+      assert.equal(article.kind, "guide");
+      const alias = read(`${lang}/catalog/${article.id}/index.html`);
+      assert.ok(alias.includes(`0;url=/${lang}/guides/${article.id}/`));
+      assert.ok(alias.includes(`rel="canonical" href="${t.url}"`));
+      assert.ok(alias.includes('content="noindex"'));
+      assert.ok(!alias.includes("data-pagefind-body"));
+      assert.equal(
+        read(`${lang}/catalog/${article.id}.md`),
+        read(`${lang}/guides/${article.id}.md`),
+      );
+      assert.ok(
+        !read(`sitemap-${lang}.xml`).includes(
+          `/${lang}/catalog/${article.id}/`,
+        ),
+      );
+    }
+});
+test("pending names have no body links, comparisons, AI articles or indexed pages", () => {
+  assert.ok(
+    catalog.categories.some((c) => c.id === "columns" && c.parent === "layout"),
+  );
+  for (const lang of ["en", "ko", "ja"]) {
+    const html = read(`${lang}/catalog/categories/styles/index.html`);
+    assert.equal([...html.matchAll(/data-candidate=/g)].length, 7);
+    assert.ok(!html.includes(`href="/${lang}/catalog/brutalism/"`));
+    assert.ok(!html.includes('class="comparison"'));
+    assert.ok(!existsSync(`dist/${lang}/catalog/brutalism/index.html`));
+    assert.ok(
+      !read(`sitemap-${lang}.xml`).includes(`/${lang}/catalog/brutalism/`),
+    );
+  }
+  assert.ok(!catalog.articles.some((a) => a.id === "brutalism"));
+  const manifest = JSON.parse(read("pagefind/pagefind-entry.json"));
+  assert.equal(
+    Object.values(manifest.languages).reduce((n, l) => n + l.page_count, 0),
+    36,
+  );
 });

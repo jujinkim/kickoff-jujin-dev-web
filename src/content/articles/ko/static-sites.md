@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "static-sites"
 lang: "ko"
 title: "Astro·Hugo·Jekyll: HTML을 보내는 세 방법"
@@ -48,9 +49,9 @@ Astro는 컴포넌트 중심 레이아웃과 선택적 상호작용에 맞지만
 
 ## 관련 글과 출처
 
-- [언어·프레임워크·라이브러리·엔진 구분](/ko/catalog/tools/)
-- [웹·앱·PC·콘솔: 실행·유통·호스팅 구분](/ko/catalog/shipping/)
-- [Design Decision과 ADR: 결정의 흔적](/ko/catalog/adr/)
+- [언어·프레임워크·라이브러리·엔진 구분](/ko/guides/tools/)
+- [웹·앱·PC·콘솔: 실행·유통·호스팅 구분](/ko/guides/shipping/)
+- [Design Decision과 ADR: 결정의 흔적](/ko/guides/adr/)
 
 - [Astro — Islands architecture](https://docs.astro.build/en/concepts/islands/)
 - [Hugo — Introduction](https://gohugo.io/about/introduction/)

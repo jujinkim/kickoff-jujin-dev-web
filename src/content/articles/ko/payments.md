@@ -1,4 +1,5 @@
 ---
+kind: guide
 articleId: "payments"
 lang: "ko"
 title: "결제 채널과 PG·MoR: 토스·Lemon Squeezy"
@@ -60,8 +61,8 @@ PG는 직접 가맹점 결제에 맞지만 직접 운영할 일이 더 남습니
 
 ## 관련 글과 출처
 
-- [구독·일회 결제·광고: 가치에 맞춰 청구하기](/ko/catalog/revenue/)
-- [웹·앱·PC·콘솔: 실행·유통·호스팅 구분](/ko/catalog/shipping/)
+- [구독·일회 결제·광고: 가치에 맞춰 청구하기](/ko/guides/revenue/)
+- [웹·앱·PC·콘솔: 실행·유통·호스팅 구분](/ko/guides/shipping/)
 
 - [Toss Payments — Payment integration](https://docs.tosspayments.com/guides/v2/payment-widget/integration)
 - [Lemon Squeezy — Merchant of Record](https://docs.lemonsqueezy.com/help/payments/merchant-of-record)

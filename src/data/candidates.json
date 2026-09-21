@@ -1,0 +1,805 @@
+[
+  {
+    "id": "user-story",
+    "category": "requirements",
+    "titles": {
+      "en": "User story",
+      "ko": "사용자 스토리",
+      "ja": "ユーザーストーリー"
+    },
+    "scope": "Explain User story within requirements expression; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["use-case", "job-story"],
+    "relatedGuides": ["srs"],
+    "order": 100
+  },
+  {
+    "id": "use-case",
+    "category": "requirements",
+    "titles": {
+      "en": "Use case",
+      "ko": "유스케이스",
+      "ja": "ユースケース"
+    },
+    "scope": "Explain Use case within requirements expression; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["user-story", "job-story"],
+    "relatedGuides": ["srs"],
+    "order": 101
+  },
+  {
+    "id": "job-story",
+    "category": "requirements",
+    "titles": {
+      "en": "Job story",
+      "ko": "잡 스토리",
+      "ja": "ジョブストーリー"
+    },
+    "scope": "Explain Job story within requirements expression; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["user-story", "use-case"],
+    "relatedGuides": ["srs"],
+    "order": 102
+  },
+  {
+    "id": "layered-architecture",
+    "category": "boundaries",
+    "titles": {
+      "en": "Layered architecture",
+      "ko": "계층형 아키텍처",
+      "ja": "レイヤードアーキテクチャ"
+    },
+    "scope": "Explain Layered architecture within architecture boundaries & dependencies; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["hexagonal-architecture", "clean-architecture"],
+    "relatedGuides": ["architecture"],
+    "order": 200
+  },
+  {
+    "id": "hexagonal-architecture",
+    "category": "boundaries",
+    "titles": {
+      "en": "Hexagonal architecture",
+      "ko": "헥사고날 아키텍처",
+      "ja": "ヘキサゴナルアーキテクチャ"
+    },
+    "scope": "Explain Hexagonal architecture within architecture boundaries & dependencies; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["layered-architecture", "clean-architecture"],
+    "relatedGuides": ["architecture"],
+    "order": 201
+  },
+  {
+    "id": "clean-architecture",
+    "category": "boundaries",
+    "titles": {
+      "en": "Clean architecture",
+      "ko": "클린 아키텍처",
+      "ja": "クリーンアーキテクチャ"
+    },
+    "scope": "Explain Clean architecture within architecture boundaries & dependencies; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["layered-architecture", "hexagonal-architecture"],
+    "relatedGuides": ["architecture"],
+    "order": 202
+  },
+  {
+    "id": "monolith",
+    "category": "service-split",
+    "titles": {
+      "en": "Monolith",
+      "ko": "모놀리스",
+      "ja": "モノリス"
+    },
+    "scope": "Explain Monolith within service decomposition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["modular-monolith", "microservices"],
+    "relatedGuides": ["architecture"],
+    "order": 300
+  },
+  {
+    "id": "modular-monolith",
+    "category": "service-split",
+    "titles": {
+      "en": "Modular monolith",
+      "ko": "모듈러 모놀리스",
+      "ja": "モジュラーモノリス"
+    },
+    "scope": "Explain Modular monolith within service decomposition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["monolith", "microservices"],
+    "relatedGuides": ["architecture"],
+    "order": 301
+  },
+  {
+    "id": "microservices",
+    "category": "service-split",
+    "titles": {
+      "en": "Microservices",
+      "ko": "마이크로서비스",
+      "ja": "マイクロサービス"
+    },
+    "scope": "Explain Microservices within service decomposition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["monolith", "modular-monolith"],
+    "relatedGuides": ["architecture"],
+    "order": 302
+  },
+  {
+    "id": "list",
+    "category": "abstract-collections",
+    "titles": {
+      "en": "List",
+      "ko": "리스트",
+      "ja": "リスト"
+    },
+    "scope": "Explain List within abstract collections; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["set", "map"],
+    "relatedGuides": ["collections"],
+    "order": 400
+  },
+  {
+    "id": "set",
+    "category": "abstract-collections",
+    "titles": {
+      "en": "Set",
+      "ko": "집합",
+      "ja": "集合"
+    },
+    "scope": "Explain Set within abstract collections; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["list", "map"],
+    "relatedGuides": ["collections"],
+    "order": 401
+  },
+  {
+    "id": "map",
+    "category": "abstract-collections",
+    "titles": {
+      "en": "Map",
+      "ko": "맵",
+      "ja": "マップ"
+    },
+    "scope": "Explain Map within abstract collections; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["list", "set"],
+    "relatedGuides": ["collections"],
+    "order": 402
+  },
+  {
+    "id": "array",
+    "category": "sequential-storage",
+    "titles": {
+      "en": "Array",
+      "ko": "배열",
+      "ja": "配列"
+    },
+    "scope": "Explain Array within sequential storage structures; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["linked-list"],
+    "relatedGuides": ["collections"],
+    "order": 500
+  },
+  {
+    "id": "linked-list",
+    "category": "sequential-storage",
+    "titles": {
+      "en": "Linked list",
+      "ko": "연결 리스트",
+      "ja": "連結リスト"
+    },
+    "scope": "Explain Linked list within sequential storage structures; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["array"],
+    "relatedGuides": ["collections"],
+    "order": 501
+  },
+  {
+    "id": "stack",
+    "category": "processing-order",
+    "titles": {
+      "en": "Stack",
+      "ko": "스택",
+      "ja": "スタック"
+    },
+    "scope": "Explain Stack within processing order; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["queue", "priority-queue"],
+    "relatedGuides": ["collections"],
+    "order": 600
+  },
+  {
+    "id": "queue",
+    "category": "processing-order",
+    "titles": {
+      "en": "Queue",
+      "ko": "큐",
+      "ja": "キュー"
+    },
+    "scope": "Explain Queue within processing order; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["stack", "priority-queue"],
+    "relatedGuides": ["collections"],
+    "order": 601
+  },
+  {
+    "id": "priority-queue",
+    "category": "processing-order",
+    "titles": {
+      "en": "Priority queue",
+      "ko": "우선순위 큐",
+      "ja": "優先度付きキュー"
+    },
+    "scope": "Explain Priority queue within processing order; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["stack", "queue"],
+    "relatedGuides": ["collections"],
+    "order": 602
+  },
+  {
+    "id": "astro",
+    "category": "static-generators",
+    "titles": {
+      "en": "Astro",
+      "ko": "Astro",
+      "ja": "Astro"
+    },
+    "scope": "Explain Astro within static site generators; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["hugo", "jekyll"],
+    "relatedGuides": ["static-sites"],
+    "order": 700
+  },
+  {
+    "id": "hugo",
+    "category": "static-generators",
+    "titles": {
+      "en": "Hugo",
+      "ko": "Hugo",
+      "ja": "Hugo"
+    },
+    "scope": "Explain Hugo within static site generators; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["astro", "jekyll"],
+    "relatedGuides": ["static-sites"],
+    "order": 701
+  },
+  {
+    "id": "jekyll",
+    "category": "static-generators",
+    "titles": {
+      "en": "Jekyll",
+      "ko": "Jekyll",
+      "ja": "Jekyll"
+    },
+    "scope": "Explain Jekyll within static site generators; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["astro", "hugo"],
+    "relatedGuides": ["static-sites"],
+    "order": 702
+  },
+  {
+    "id": "react",
+    "category": "web-ui",
+    "titles": {
+      "en": "React",
+      "ko": "React",
+      "ja": "React"
+    },
+    "scope": "Explain React within web ui development tools; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["vue", "svelte"],
+    "relatedGuides": ["tools"],
+    "order": 800
+  },
+  {
+    "id": "vue",
+    "category": "web-ui",
+    "titles": {
+      "en": "Vue",
+      "ko": "Vue",
+      "ja": "Vue"
+    },
+    "scope": "Explain Vue within web ui development tools; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["react", "svelte"],
+    "relatedGuides": ["tools"],
+    "order": 801
+  },
+  {
+    "id": "svelte",
+    "category": "web-ui",
+    "titles": {
+      "en": "Svelte",
+      "ko": "Svelte",
+      "ja": "Svelte"
+    },
+    "scope": "Explain Svelte within web ui development tools; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["react", "vue"],
+    "relatedGuides": ["tools"],
+    "order": 802
+  },
+  {
+    "id": "godot",
+    "category": "game-engines",
+    "titles": {
+      "en": "Godot",
+      "ko": "Godot",
+      "ja": "Godot"
+    },
+    "scope": "Explain Godot within game engines; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["unity", "unreal-engine"],
+    "relatedGuides": ["tools"],
+    "order": 900
+  },
+  {
+    "id": "unity",
+    "category": "game-engines",
+    "titles": {
+      "en": "Unity",
+      "ko": "Unity",
+      "ja": "Unity"
+    },
+    "scope": "Explain Unity within game engines; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["godot", "unreal-engine"],
+    "relatedGuides": ["tools"],
+    "order": 901
+  },
+  {
+    "id": "unreal-engine",
+    "category": "game-engines",
+    "titles": {
+      "en": "Unreal Engine",
+      "ko": "Unreal Engine",
+      "ja": "Unreal Engine"
+    },
+    "scope": "Explain Unreal Engine within game engines; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["godot", "unity"],
+    "relatedGuides": ["tools"],
+    "order": 902
+  },
+  {
+    "id": "static-hosting",
+    "category": "hosting-models",
+    "titles": {
+      "en": "Static hosting",
+      "ko": "정적 호스팅",
+      "ja": "静的ホスティング"
+    },
+    "scope": "Explain Static hosting within hosting execution models; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["always-on-server", "serverless-functions"],
+    "relatedGuides": ["shipping"],
+    "order": 1000
+  },
+  {
+    "id": "always-on-server",
+    "category": "hosting-models",
+    "titles": {
+      "en": "Always-on server",
+      "ko": "상시 서버",
+      "ja": "常時稼働サーバー"
+    },
+    "scope": "Explain Always-on server within hosting execution models; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["static-hosting", "serverless-functions"],
+    "relatedGuides": ["shipping"],
+    "order": 1001
+  },
+  {
+    "id": "serverless-functions",
+    "category": "hosting-models",
+    "titles": {
+      "en": "Serverless functions",
+      "ko": "서버리스 함수",
+      "ja": "サーバーレス関数"
+    },
+    "scope": "Explain Serverless functions within hosting execution models; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["static-hosting", "always-on-server"],
+    "relatedGuides": ["shipping"],
+    "order": 1002
+  },
+  {
+    "id": "rolling",
+    "category": "release-replacement",
+    "titles": {
+      "en": "Rolling",
+      "ko": "롤링",
+      "ja": "ローリング"
+    },
+    "scope": "Explain Rolling within release replacement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["blue-green", "canary"],
+    "relatedGuides": ["shipping"],
+    "order": 1100
+  },
+  {
+    "id": "blue-green",
+    "category": "release-replacement",
+    "titles": {
+      "en": "Blue-green",
+      "ko": "블루·그린",
+      "ja": "ブルーグリーン"
+    },
+    "scope": "Explain Blue-green within release replacement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["rolling", "canary"],
+    "relatedGuides": ["shipping"],
+    "order": 1101
+  },
+  {
+    "id": "canary",
+    "category": "release-replacement",
+    "titles": {
+      "en": "Canary",
+      "ko": "카나리",
+      "ja": "カナリア"
+    },
+    "scope": "Explain Canary within release replacement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["rolling", "blue-green"],
+    "relatedGuides": ["shipping"],
+    "order": 1102
+  },
+  {
+    "id": "single-column",
+    "category": "columns",
+    "titles": {
+      "en": "Single column",
+      "ko": "단일 열",
+      "ja": "単一カラム"
+    },
+    "scope": "Explain Single column within column composition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["two-columns", "multiple-columns"],
+    "relatedGuides": ["layout"],
+    "order": 1200
+  },
+  {
+    "id": "two-columns",
+    "category": "columns",
+    "titles": {
+      "en": "Two columns",
+      "ko": "2열",
+      "ja": "2カラム"
+    },
+    "scope": "Explain Two columns within column composition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["single-column", "multiple-columns"],
+    "relatedGuides": ["layout"],
+    "order": 1201
+  },
+  {
+    "id": "multiple-columns",
+    "category": "columns",
+    "titles": {
+      "en": "Multiple columns",
+      "ko": "다열",
+      "ja": "マルチカラム"
+    },
+    "scope": "Explain Multiple columns within column composition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["single-column", "two-columns"],
+    "relatedGuides": ["layout"],
+    "order": 1202
+  },
+  {
+    "id": "list-layout",
+    "category": "content-arrangement",
+    "titles": {
+      "en": "List layout",
+      "ko": "리스트",
+      "ja": "リスト"
+    },
+    "scope": "Explain List layout within content arrangement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["uniform-grid", "masonry"],
+    "relatedGuides": ["layout"],
+    "order": 1300
+  },
+  {
+    "id": "uniform-grid",
+    "category": "content-arrangement",
+    "titles": {
+      "en": "Uniform grid",
+      "ko": "균등 그리드",
+      "ja": "均等グリッド"
+    },
+    "scope": "Explain Uniform grid within content arrangement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["list-layout", "masonry"],
+    "relatedGuides": ["layout"],
+    "order": 1301
+  },
+  {
+    "id": "masonry",
+    "category": "content-arrangement",
+    "titles": {
+      "en": "Masonry",
+      "ko": "메이슨리",
+      "ja": "メイソンリー"
+    },
+    "scope": "Explain Masonry within content arrangement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["list-layout", "uniform-grid"],
+    "relatedGuides": ["layout"],
+    "order": 1302
+  },
+  {
+    "id": "brutalism",
+    "category": "styles",
+    "titles": {
+      "en": "Brutalism",
+      "ko": "브루탈리즘",
+      "ja": "ブルータリズム"
+    },
+    "scope": "Explain Brutalism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": [
+      "neobrutalism",
+      "glassmorphism",
+      "neumorphism",
+      "skeuomorphism",
+      "flat-design",
+      "minimalism"
+    ],
+    "relatedGuides": ["theme"],
+    "order": 0
+  },
+  {
+    "id": "neobrutalism",
+    "category": "styles",
+    "titles": {
+      "en": "Neobrutalism",
+      "ko": "네오브루탈리즘",
+      "ja": "ネオブルータリズム"
+    },
+    "scope": "Explain Neobrutalism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": [
+      "brutalism",
+      "glassmorphism",
+      "neumorphism",
+      "skeuomorphism",
+      "flat-design",
+      "minimalism"
+    ],
+    "relatedGuides": ["theme"],
+    "order": 1
+  },
+  {
+    "id": "glassmorphism",
+    "category": "styles",
+    "titles": {
+      "en": "Glassmorphism",
+      "ko": "글래스모피즘",
+      "ja": "グラスモーフィズム"
+    },
+    "scope": "Explain Glassmorphism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": [
+      "brutalism",
+      "neobrutalism",
+      "neumorphism",
+      "skeuomorphism",
+      "flat-design",
+      "minimalism"
+    ],
+    "relatedGuides": ["theme"],
+    "order": 2
+  },
+  {
+    "id": "neumorphism",
+    "category": "styles",
+    "titles": {
+      "en": "Neumorphism",
+      "ko": "뉴모피즘",
+      "ja": "ニューモーフィズム"
+    },
+    "scope": "Explain Neumorphism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": [
+      "brutalism",
+      "neobrutalism",
+      "glassmorphism",
+      "skeuomorphism",
+      "flat-design",
+      "minimalism"
+    ],
+    "relatedGuides": ["theme"],
+    "order": 3
+  },
+  {
+    "id": "skeuomorphism",
+    "category": "styles",
+    "titles": {
+      "en": "Skeuomorphism",
+      "ko": "스큐어모피즘",
+      "ja": "スキューモーフィズム"
+    },
+    "scope": "Explain Skeuomorphism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": [
+      "brutalism",
+      "neobrutalism",
+      "glassmorphism",
+      "neumorphism",
+      "flat-design",
+      "minimalism"
+    ],
+    "relatedGuides": ["theme"],
+    "order": 4
+  },
+  {
+    "id": "flat-design",
+    "category": "styles",
+    "titles": {
+      "en": "Flat design",
+      "ko": "플랫 디자인",
+      "ja": "フラットデザイン"
+    },
+    "scope": "Explain Flat design within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": [
+      "brutalism",
+      "neobrutalism",
+      "glassmorphism",
+      "neumorphism",
+      "skeuomorphism",
+      "minimalism"
+    ],
+    "relatedGuides": ["theme"],
+    "order": 5
+  },
+  {
+    "id": "minimalism",
+    "category": "styles",
+    "titles": {
+      "en": "Minimalism",
+      "ko": "미니멀리즘",
+      "ja": "ミニマリズム"
+    },
+    "scope": "Explain Minimalism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": [
+      "brutalism",
+      "neobrutalism",
+      "glassmorphism",
+      "neumorphism",
+      "skeuomorphism",
+      "flat-design"
+    ],
+    "relatedGuides": ["theme"],
+    "order": 6
+  },
+  {
+    "id": "serif",
+    "category": "type-shapes",
+    "titles": {
+      "en": "Serif",
+      "ko": "세리프",
+      "ja": "セリフ"
+    },
+    "scope": "Explain Serif within typeface shapes; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["sans-serif", "script"],
+    "relatedGuides": ["theme"],
+    "order": 1500
+  },
+  {
+    "id": "sans-serif",
+    "category": "type-shapes",
+    "titles": {
+      "en": "Sans serif",
+      "ko": "산세리프",
+      "ja": "サンセリフ"
+    },
+    "scope": "Explain Sans serif within typeface shapes; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["serif", "script"],
+    "relatedGuides": ["theme"],
+    "order": 1501
+  },
+  {
+    "id": "script",
+    "category": "type-shapes",
+    "titles": {
+      "en": "Script",
+      "ko": "스크립트",
+      "ja": "スクリプト"
+    },
+    "scope": "Explain Script within typeface shapes; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["serif", "sans-serif"],
+    "relatedGuides": ["theme"],
+    "order": 1502
+  },
+  {
+    "id": "proportional",
+    "category": "character-width",
+    "titles": {
+      "en": "Proportional",
+      "ko": "비례폭",
+      "ja": "プロポーショナル"
+    },
+    "scope": "Explain Proportional within character width; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["monospace"],
+    "relatedGuides": ["theme"],
+    "order": 1600
+  },
+  {
+    "id": "monospace",
+    "category": "character-width",
+    "titles": {
+      "en": "Monospace",
+      "ko": "고정폭",
+      "ja": "等幅"
+    },
+    "scope": "Explain Monospace within character width; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["proportional"],
+    "relatedGuides": ["theme"],
+    "order": 1601
+  },
+  {
+    "id": "direct-payment",
+    "category": "revenue-sources",
+    "titles": {
+      "en": "Customer direct payment",
+      "ko": "고객 직접 결제",
+      "ja": "顧客の直接支払い"
+    },
+    "scope": "Explain Customer direct payment within revenue sources; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["advertising", "sponsorship"],
+    "relatedGuides": ["revenue"],
+    "order": 1700
+  },
+  {
+    "id": "advertising",
+    "category": "revenue-sources",
+    "titles": {
+      "en": "Advertising",
+      "ko": "광고",
+      "ja": "広告"
+    },
+    "scope": "Explain Advertising within revenue sources; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["direct-payment", "sponsorship"],
+    "relatedGuides": ["revenue"],
+    "order": 1701
+  },
+  {
+    "id": "sponsorship",
+    "category": "revenue-sources",
+    "titles": {
+      "en": "Sponsorship",
+      "ko": "후원",
+      "ja": "スポンサー支援"
+    },
+    "scope": "Explain Sponsorship within revenue sources; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["direct-payment", "advertising"],
+    "relatedGuides": ["revenue"],
+    "order": 1702
+  },
+  {
+    "id": "one-time-payment",
+    "category": "billing",
+    "titles": {
+      "en": "One-time payment",
+      "ko": "일회성 결제",
+      "ja": "買い切り"
+    },
+    "scope": "Explain One-time payment within billing methods; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["subscription", "usage-based"],
+    "relatedGuides": ["revenue"],
+    "order": 1800
+  },
+  {
+    "id": "subscription",
+    "category": "billing",
+    "titles": {
+      "en": "Subscription",
+      "ko": "구독",
+      "ja": "サブスクリプション"
+    },
+    "scope": "Explain Subscription within billing methods; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["one-time-payment", "usage-based"],
+    "relatedGuides": ["revenue"],
+    "order": 1801
+  },
+  {
+    "id": "usage-based",
+    "category": "billing",
+    "titles": {
+      "en": "Usage-based billing",
+      "ko": "사용량 기반 과금",
+      "ja": "従量課金"
+    },
+    "scope": "Explain Usage-based billing within billing methods; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["one-time-payment", "subscription"],
+    "relatedGuides": ["revenue"],
+    "order": 1802
+  },
+  {
+    "id": "direct-seller",
+    "category": "seller-responsibility",
+    "titles": {
+      "en": "Direct seller model",
+      "ko": "직접 판매자 모델",
+      "ja": "直接販売者モデル"
+    },
+    "scope": "Explain Direct seller model within seller responsibility models; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["merchant-of-record"],
+    "relatedGuides": ["payments"],
+    "order": 1900
+  },
+  {
+    "id": "merchant-of-record",
+    "category": "seller-responsibility",
+    "titles": {
+      "en": "Merchant of record model",
+      "ko": "MoR 모델",
+      "ja": "MoRモデル"
+    },
+    "scope": "Explain Merchant of record model within seller responsibility models; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "compareWith": ["direct-seller"],
+    "relatedGuides": ["payments"],
+    "order": 1901
+  }
+]

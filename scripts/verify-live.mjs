@@ -25,11 +25,11 @@ async function check(path, expected) {
 for (const lang of ["en", "ko", "ja"]) {
   await check(`/${lang}/`, `lang="${lang}"`);
   await check(
-    `/${lang}/catalog/srs/`,
-    `href="https://jujin.dev/${lang}/catalog/srs/"`,
+    `/${lang}/guides/srs/`,
+    `href="https://jujin.dev/${lang}/guides/srs/"`,
   );
-  await check(`/${lang}/catalog/srs.md`, "ID: srs");
-  await check(`/sitemap-${lang}.xml`, "/catalog/srs/");
+  await check(`/${lang}/guides/srs.md`, "ID: srs");
+  await check(`/sitemap-${lang}.xml`, "/guides/srs/");
 }
 await check("/llms.txt", "/ai/catalog.json");
 await check("/ai/instructions.md", "EVERY unresolved choice");

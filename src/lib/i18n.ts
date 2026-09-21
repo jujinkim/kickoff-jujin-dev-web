@@ -1,47 +1,23 @@
 export const languages = ["en", "ko", "ja"] as const;
 export type Lang = (typeof languages)[number];
 export const languageNames = { en: "English", ko: "한국어", ja: "日本語" };
-export const categories = [
-  "planning",
-  "data",
-  "development",
-  "deployment",
-  "design",
-  "business",
-] as const;
+import taxonomy from "../data/categories.json";
+export const categories = taxonomy.filter((c) => !c.parent).map((c) => c.id);
 export const categoryNames: Record<
   Lang,
-  Record<(typeof categories)[number], string>
-> = {
-  en: {
-    planning: "Planning & architecture",
-    data: "Data structures",
-    development: "Development tools",
-    deployment: "Shipping & platforms",
-    design: "Interface design",
-    business: "Making money",
-  },
-  ko: {
-    planning: "기획·설계",
-    data: "기본 자료구조",
-    development: "개발 플랫폼",
-    deployment: "배포 플랫폼",
-    design: "디자인",
-    business: "수익화",
-  },
-  ja: {
-    planning: "企画・設計",
-    data: "基本データ構造",
-    development: "開発プラットフォーム",
-    deployment: "配布プラットフォーム",
-    design: "デザイン",
-    business: "収益化",
-  },
-};
+  Record<string, string>
+> = Object.fromEntries(
+  languages.map((lang) => [
+    lang,
+    Object.fromEntries(taxonomy.map((c) => [c.id, c.names[lang]])),
+  ]),
+) as Record<Lang, Record<string, string>>;
 export const strings = {
   en: {
     start: "Start here",
     catalog: "Catalog",
+    guides: "Guides",
+    pending: "Coming soon",
     ai: "Connect your AI",
     about: "About",
     theme: "Dark mode",
@@ -100,6 +76,8 @@ export const strings = {
   ko: {
     start: "시작하기",
     catalog: "카탈로그",
+    guides: "가이드",
+    pending: "준비 중",
     ai: "AI 연결",
     about: "소개",
     theme: "다크 모드",
@@ -157,6 +135,8 @@ export const strings = {
   ja: {
     start: "はじめに",
     catalog: "カタログ",
+    guides: "ガイド",
+    pending: "準備中",
     ai: "AIとつなぐ",
     about: "このサイト",
     theme: "ダークモード",

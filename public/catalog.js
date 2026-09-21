@@ -49,7 +49,10 @@ async function update() {
     pagefind ??= import("/pagefind/pagefind.js");
     const engine = await pagefind;
     const result = await engine.search(query, {
-      filters: cat ? { category: cat } : {},
+      filters: {
+        ...(cat ? { category: cat } : {}),
+        ...(root.dataset.kind ? { kind: root.dataset.kind } : {}),
+      },
     });
     const hits = await Promise.all(result.results.map((r) => r.data()));
     if (request !== serial) return;
