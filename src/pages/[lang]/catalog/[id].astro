@@ -1,0 +1,120 @@
+---
+import { render } from "astro:content";
+import Base from "../../../layouts/Base.astro";
+import Example from "../../../components/Example.astro";
+import Comments from "../../../components/Comments.astro";
+import {
+  published,
+  articleUrl,
+  markdownUrl,
+  isStale,
+  translationFor,
+} from "../../../lib/content";
+import { strings, categoryNames } from "../../../lib/i18n";
+export async function getStaticPaths() {
+  return (await published()).map((article) => ({
+    params: { lang: article.data.lang, id: article.data.articleId },
+    props: { article },
+  }));
+}
+const { article } = Astro.props;
+const d = article.data;
+const t = strings[d.lang];
+const all = await published();
+const { Content, headings } = await render(article);
+const alternates = all
+  .filter((a) => a.data.articleId === d.articleId)
+  .map((a) => ({ lang: a.data.lang, url: articleUrl(a) }));
+---
+
+<Base
+  lang={d.lang}
+  title={d.title}
+  description={d.summary}
+  alternates={alternates}
+>
+  <div data-pagefind-body>
+    <header class="article-heading">
+      <div class="breadcrumb">
+        <a href={`/${d.lang}/catalog/`}>{t.catalog}</a> /{" "}
+        {categoryNames[d.lang][d.category]}
+      </div>
+      <span class="eyebrow" data-pagefind-filter={`category:${d.category}`}>
+        {categoryNames[d.lang][d.category]}
+      </span>
+      <h1 data-pagefind-meta="title">{d.title}</h1>
+      <p>{d.summary}</p>
+      <div class="article-meta">
+        <time datetime={d.updated}>
+          {t.updated} {d.updated}
+        </time>
+        <span>REV. {d.revision.toString().padStart(2, "0")}</span>
+        <a href={markdownUrl(article)}>{t.markdown} ↗</a>
+      </div>
+    </header>
+    {isStale(article, all) && (
+      <p class="notice">
+        {t.stale} <a href={`/en/catalog/${d.articleId}/`}>{t.original} ↗</a>
+      </p>
+    )}
+    <div class="article-layout">
+      <div class="article-main">
+        <div class="article-example" data-pagefind-ignore>
+          <Example kind={d.example} lang={d.lang} />
+        </div>
+        <article class="prose">
+          <Content />
+        </article>
+        <section class="prompt-section" data-pagefind-ignore>
+          <h2>{t.copy}</h2>
+          <pre class="prompt-box" id="article-prompt">{d.aiPrompt}</pre>
+          <button
+            class="button primary"
+            data-copy="article-prompt"
+            data-success={t.copied}
+            data-error={t.copyError}
+          >
+            {t.copy} ⧉
+          </button>
+          <p role="status" aria-live="polite"></p>
+        </section>
+        <section class="prose" data-pagefind-ignore>
+          <h2>{t.related}</h2>
+          <ul>
+            {d.related.map((id) => {
+              const translated = translationFor(all, id, d.lang);
+              const target = translated ?? translationFor(all, id, "en");
+              return (
+                target && (
+                  <li>
+                    <a href={articleUrl(target)}>{target.data.title}</a>
+                    {!translated && <small> — {t.missing}</small>}
+                  </li>
+                )
+              );
+            })}
+          </ul>
+          <a
+            href={`https://github.com/jujinkim/jujin-dev-web/blob/main/src/content/articles/${d.lang}/${d.articleId}.md`}
+          >
+            {t.source} ↗
+          </a>
+        </section>
+        <Comments articleId={d.articleId} lang={d.lang} />
+      </div>
+      <aside class="toc" data-pagefind-ignore>
+        <h2>{t.toc}</h2>
+        <ol>
+          {headings
+            .filter((h) => h.depth === 2)
+            .map((h) => (
+              <li>
+                <a href={`#${h.slug}`}>{h.text}</a>
+              </li>
+            ))}
+        </ol>
+        <a href={markdownUrl(article)}>{t.markdown} ↗</a>
+      </aside>
+    </div>
+  </div>
+</Base>

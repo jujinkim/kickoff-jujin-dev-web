@@ -1,0 +1,39 @@
+---
+import type { Article } from "../lib/content";
+import { articleUrl } from "../lib/content";
+import { categoryNames, strings } from "../lib/i18n";
+import Example from "./Example.astro";
+interface Props {
+  article: Article;
+  index?: number;
+}
+const { article, index = 0 } = Astro.props;
+const d = article.data;
+---
+
+<article class="catalog-card" data-category={d.category}>
+  <a class="card-link" href={articleUrl(article)}>
+    <div class="card-preview">
+      <Example kind={d.example} lang={d.lang} />
+    </div>
+    <img
+      class="card-thumbnail"
+      src={`/thumbnails/${d.example}.svg`}
+      width="600"
+      height="320"
+      alt=""
+      loading="lazy"
+    />
+    <div class="card-text">
+      <div class="card-meta">
+        <span>{categoryNames[d.lang][d.category]}</span>
+        <span>{String(index + 1).padStart(2, "0")}</span>
+      </div>
+      <h3>{d.title}</h3>
+      <p>{d.summary}</p>
+      <span class="read-link">
+        {strings[d.lang].read} <span aria-hidden="true">↗</span>
+      </span>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.obsidian_publish.log
+.env*
+!.env.example
+test-results/
+playwright-report/

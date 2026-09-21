@@ -1,0 +1,75 @@
+---
+import Base from "../../../layouts/Base.astro";
+import Card from "../../../components/Card.astro";
+import {
+  languages,
+  strings,
+  categories,
+  categoryNames,
+} from "../../../lib/i18n";
+import { published } from "../../../lib/content";
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+const { lang } = Astro.props;
+const t = strings[lang];
+const articles = (await published()).filter((a) => a.data.lang === lang);
+---
+
+<Base lang={lang} title={t.catalog} description={t.intro}>
+  <section class="page-heading">
+    <p class="eyebrow">THE FIELD GUIDE / 12 NOTES</p>
+    <h1>
+      {t.catalog}
+      <span class="accent-dot">.</span>
+    </h1>
+    <p>{t.intro}</p>
+  </section>
+  <section
+    class="catalog-section"
+    id="catalog"
+    data-empty={t.empty}
+    data-error={t.searchError}
+    data-results={t.results}
+  >
+    <div class="catalog-toolbar">
+      <div class="search-field">
+        <label for="search">{t.search}</label>
+        <input
+          id="search"
+          type="search"
+          placeholder={t.searchHint}
+          autocomplete="off"
+        />
+      </div>
+      <div class="view-switch" role="group" aria-label={t.views}>
+        {["preview", "thumbnail", "list"].map((view) => (
+          <button data-view={view} aria-pressed={view === "preview"}>
+            {t[view as "preview" | "thumbnail" | "list"]}
+          </button>
+        ))}
+      </div>
+    </div>
+    <div class="filter-row">
+      <label class="sr-only" for="category">
+        {t.all}
+      </label>
+      <select id="category">
+        <option value="">{t.all}</option>
+        {categories.map((c) => (
+          <option value={c}>{categoryNames[lang][c]}</option>
+        ))}
+      </select>
+      <p id="result-status" role="status" aria-live="polite">
+        {articles.length} {t.count}
+      </p>
+    </div>
+    <div id="search-results" class="search-results" hidden></div>
+    <div class="catalog-grid" id="catalog-grid">
+      {articles.map((article, index) => (
+        <Card article={article} index={index} />
+      ))}
+    </div>
+  </section>
+  <script is:inline type="module" src="/catalog.js"></script>
+</Base>

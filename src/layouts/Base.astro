@@ -1,0 +1,201 @@
+---
+import "../styles/global.css";
+import { languages, languageNames, strings, type Lang } from "../lib/i18n";
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  alternates?: { lang: Lang; url: string }[];
+  noindex?: boolean;
+}
+const { lang, title, description, noindex = false } = Astro.props;
+const t = strings[lang];
+const path = Astro.url.pathname;
+const alternates =
+  Astro.props.alternates ??
+  languages.map((l) => ({
+    lang: l,
+    url: noindex ? `/${l}/` : path.replace(/^\/(en|ko|ja)\//, `/${l}/`),
+  }));
+const english = alternates.find((a) => a.lang === "en");
+const absolute = (url: string) => new URL(url, "https://jujin.dev").href;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · ju jin.dev</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={absolute(path)} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {!noindex &&
+      alternates.map((a) => (
+        <link rel="alternate" hreflang={a.lang} href={absolute(a.url)} />
+      ))}
+    {!noindex && english && (
+      <link rel="alternate" hreflang="x-default" href={absolute(english.url)} />
+    )}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={absolute(path)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ju jin.dev" />
+    <meta name="color-scheme" content="light dark" />
+    <script is:inline>
+      try {
+        const saved = localStorage.getItem("theme");
+        document.documentElement.dataset.theme =
+          saved === "dark" || saved === "light"
+            ? saved
+            : matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        const view = localStorage.getItem("catalog-view");
+        if (["preview", "thumbnail", "list"].includes(view))
+          document.documentElement.dataset.view = view;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      {t.skip}
+    </a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href={`/${lang}/`} aria-label="ju jin.dev">
+          <span class="brand-mark">j.</span>
+          <span>
+            ju jin<span class="brand-domain">.dev</span>
+          </span>
+        </a>
+        <nav aria-label={t.catalog}>
+          {[
+            ["start", t.start],
+            ["catalog", t.catalog],
+            ["ai", t.ai],
+            ["about", t.about],
+          ].map(([slug, label]) => (
+            <a
+              href={`/${lang}/${slug}/`}
+              aria-current={path.includes(`/${slug}/`) ? "page" : undefined}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+        <div class="header-tools">
+          <div class="external-links">
+            <a href="https://jujin.kim">jujin.kim ↗</a>
+            <a href="https://blog.jujin.kim">blog.jujin.kim ↗</a>
+          </div>
+          <div class="languages" aria-label="Language">
+            {languages.map((l) => {
+              const target = alternates.find((a) => a.lang === l);
+              return (
+                <a
+                  href={target?.url ?? english?.url ?? "/en/"}
+                  lang={l}
+                  aria-current={l === lang ? "page" : undefined}
+                  title={
+                    target
+                      ? languageNames[l]
+                      : `${languageNames[l]}: ${t.missing}`
+                  }
+                >
+                  {l.toUpperCase()}
+                  {!target && "↗"}
+                </a>
+              );
+            })}
+          </div>
+          <button
+            class="theme-button"
+            id="theme-toggle"
+            aria-label={t.theme}
+            aria-pressed="false"
+          >
+            ◐
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      {languages
+        .filter((l) => !alternates.some((a) => a.lang === l))
+        .map((l) => (
+          <p class="notice">
+            {languageNames[l]}: <a href={english?.url ?? "/en/"}>{t.missing}</a>
+          </p>
+        ))}
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand" href={`/${lang}/`}>
+          ju jin.dev<span class="accent-dot">●</span>
+        </a>
+        <p>{t.footer}</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://jujin.kim">jujin.kim ↗</a>
+        <a href="https://blog.jujin.kim">blog.jujin.kim ↗</a>
+        <a href="/llms.txt">llms.txt ↗</a>
+        <a href="https://github.com/jujinkim/jujin-dev-web">GitHub ↗</a>
+      </div>
+    </footer>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>("#theme-toggle");
+      function syncTheme() {
+        const dark = document.documentElement.dataset.theme === "dark";
+        toggle?.setAttribute("aria-pressed", String(dark));
+        document
+          .querySelector<HTMLIFrameElement>("iframe.giscus-frame")
+          ?.contentWindow?.postMessage(
+            { giscus: { setConfig: { theme: dark ? "dark" : "light" } } },
+            "https://giscus.app",
+          );
+      }
+      syncTheme();
+      toggle?.addEventListener("click", () => {
+        const next =
+          document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = next;
+        try {
+          localStorage.setItem("theme", next);
+        } catch {}
+        syncTheme();
+      });
+      matchMedia("(prefers-color-scheme: dark)").addEventListener(
+        "change",
+        (e) => {
+          try {
+            if (localStorage.getItem("theme")) return;
+          } catch {}
+          document.documentElement.dataset.theme = e.matches ? "dark" : "light";
+          syncTheme();
+        },
+      );
+      document
+        .querySelectorAll<HTMLButtonElement>("[data-copy]")
+        .forEach((button) =>
+          button.addEventListener("click", async () => {
+            const target = document.getElementById(button.dataset.copy!);
+            const status = button.parentElement?.querySelector("[role=status]");
+            try {
+              await navigator.clipboard.writeText(
+                target?.textContent?.trim() ?? "",
+              );
+              if (status)
+                status.textContent = button.dataset.success ?? "Copied";
+            } catch {
+              if (status)
+                status.textContent = button.dataset.error ?? "Copy failed";
+            }
+          }),
+        );
+    </script>
+  </body>
+</html>

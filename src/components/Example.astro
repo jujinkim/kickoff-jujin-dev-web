@@ -1,0 +1,212 @@
+---
+import type { Lang } from "../lib/i18n";
+interface Props {
+  kind: string;
+  lang: Lang;
+}
+const { kind, lang } = Astro.props;
+const words = {
+  en: {
+    header: "Header",
+    sidebar: "Sidebar",
+    content: "Main content",
+    button: "Continue",
+    spec: "Add the same book twice",
+    done: "One row. Quantity: 2.",
+    decision: "A choice. With receipts.",
+    accepted: "ACCEPTED",
+    cost: "Tradeoff: rebuild to publish",
+    light: "Light",
+    dark: "Dark",
+    value: "Value",
+    order: "Order",
+    stock: "Stock",
+    payment: "Payment",
+  },
+  ko: {
+    header: "헤더",
+    sidebar: "사이드바",
+    content: "본문",
+    button: "계속",
+    spec: "같은 책을 두 번 추가",
+    done: "한 행. 수량: 2.",
+    decision: "이유가 남는 선택.",
+    accepted: "채택",
+    cost: "비용: 발행하려면 재빌드",
+    light: "밝게",
+    dark: "어둡게",
+    value: "가치",
+    order: "주문",
+    stock: "재고",
+    payment: "결제",
+  },
+  ja: {
+    header: "ヘッダー",
+    sidebar: "サイドバー",
+    content: "本文",
+    button: "次へ",
+    spec: "同じ本を二回追加",
+    done: "一行。数量：2。",
+    decision: "理由が残る選択。",
+    accepted: "採用",
+    cost: "費用：公開には再ビルド",
+    light: "ライト",
+    dark: "ダーク",
+    value: "価値",
+    order: "注文",
+    stock: "在庫",
+    payment: "決済",
+  },
+}[lang];
+---
+
+<div class:list={["example", `example-${kind}`]}>
+  {kind === "spec" && (
+    <div class="spec-demo">
+      <span class="tiny-label">GIVEN → WHEN → THEN</span>
+      <p>{words.spec}</p>
+      <div class="success">✓ &nbsp; {words.done}</div>
+    </div>
+  )}
+  {kind === "objects" && (
+    <div class="flow">
+      <span>{words.order}</span>
+      <b>↙ &nbsp; ↘</b>
+      <div>
+        <span>{words.stock}</span>
+        <span>{words.payment}</span>
+      </div>
+    </div>
+  )}
+  {kind === "layers" && (
+    <div class="layer-demo">
+      <span>UI</span>
+      <span>↓ &nbsp; Use case</span>
+      <span>↓ &nbsp; Domain</span>
+      <small>Port ← Adapter</small>
+    </div>
+  )}
+  {kind === "decision" && (
+    <div class="decision-demo">
+      <span class="tiny-label">
+        ADR—001 <em>{words.accepted}</em>
+      </span>
+      <strong>{words.decision}</strong>
+      <small>{words.cost}</small>
+    </div>
+  )}
+  {kind === "collections" && (
+    <div class="collection-demo">
+      <div>
+        <code>Array</code>
+        <span>0</span>
+        <span>1</span>
+        <span>2</span>
+      </div>
+      <div>
+        <code>Map</code>
+        <span>key → {words.value}</span>
+      </div>
+      <div>
+        <code>Set</code>
+        <span>A</span>
+        <span>B</span>
+        <s>A</s>
+      </div>
+    </div>
+  )}
+  {kind === "tools" && (
+    <div class="tools-demo">
+      <span>
+        TypeScript <small>language</small>
+      </span>
+      <span>
+        Astro <small>framework</small>
+      </span>
+      <span>
+        Godot <small>engine</small>
+      </span>
+    </div>
+  )}
+  {kind === "generators" && (
+    <div class="flow">
+      <span>Markdown</span>
+      <b>↓ &nbsp; build</b>
+      <div>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JS</span>
+      </div>
+    </div>
+  )}
+  {kind === "shipping" && (
+    <div class="shipping-demo">
+      <span>
+        Browser <b>← URL</b>
+      </span>
+      <span>
+        Mobile <b>← Store</b>
+      </span>
+      <span>
+        PC <b>← Download</b>
+      </span>
+      <span>
+        Console <b>← Platform</b>
+      </span>
+    </div>
+  )}
+  {kind === "layout" && (
+    <div class="wireframe">
+      <div>
+        {words.header}
+        <i>● ● ●</i>
+      </div>
+      <aside>{words.sidebar}</aside>
+      <section>
+        {words.content}
+        <span></span>
+        <span></span>
+        <b>{words.button} →</b>
+      </section>
+    </div>
+  )}
+  {kind === "theme" && (
+    <div class="theme-demo">
+      <div>
+        <span>Aa</span>
+        <small>{words.light}</small>
+        <i></i>
+      </div>
+      <div>
+        <span>Aa</span>
+        <small>{words.dark}</small>
+        <i></i>
+      </div>
+    </div>
+  )}
+  {kind === "revenue" && (
+    <div class="revenue-demo">
+      <span class="tiny-label">100 × $5 / month</span>
+      <strong>$500</strong>
+      <small>gross ≠ profit</small>
+      <div>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+    </div>
+  )}
+  {kind === "payments" && (
+    <div class="flow">
+      <span>Checkout</span>
+      <b>↓ &nbsp; verify</b>
+      <div>
+        <span>Server</span>
+        <span>PG / MoR</span>
+      </div>
+      <small>✓ Payment → Access</small>
+    </div>
+  )}
+</div>

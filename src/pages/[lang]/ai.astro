@@ -1,0 +1,111 @@
+---
+import Base from "../../layouts/Base.astro";
+import { languages, strings } from "../../lib/i18n";
+import { projectPrompt } from "../../lib/ai";
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+const { lang } = Astro.props;
+const t = strings[lang];
+const steps = {
+  en: [
+    [
+      "Paste into project instructions",
+      "Give your assistant the block below. Ask it to fetch the files and summarize the rules before starting.",
+    ],
+    [
+      "Look up a term, read the source",
+      "Try SRS, 요구사항, or 要件 in catalog.json. They resolve to the same article ID. Follow the Markdown link for your language.",
+    ],
+    [
+      "Compare, decide, then build",
+      "Try: ‘I want a bookshop cart. Ask about every undecided behavior and produce acceptance criteria.’ A strong recommendation still needs your decision.",
+    ],
+    [
+      "Delegate a bounded choice",
+      "Try: ‘Choose spacing within the approved layout; report your reasons.’ That delegates spacing, not the business model. If a source cannot load, the assistant must say so.",
+    ],
+  ],
+  ko: [
+    [
+      "프로젝트 지침에 붙여넣기",
+      "아래 문구를 AI에게 주세요. 작업 전에 파일을 가져오고 규칙을 요약하도록 요청합니다.",
+    ],
+    [
+      "용어를 찾고 원문 읽기",
+      "catalog.json에서 SRS, 요구사항, 要件을 찾아보세요. 같은 글 ID로 연결됩니다. 원하는 언어의 Markdown 링크를 읽게 합니다.",
+    ],
+    [
+      "비교하고 결정한 뒤 만들기",
+      "예: ‘서점 장바구니를 만들고 싶어. 미결정 동작을 전부 질문하고 완료 조건을 작성해줘.’ 추천이 강해도 결정은 필요합니다.",
+    ],
+    [
+      "범위를 정해 위임하기",
+      "예: ‘확정된 레이아웃 안에서 간격을 골라주고 이유를 보고해줘.’ 간격 위임이지 수익 모델 위임이 아닙니다. 자료 접근에 실패하면 밝히도록 합니다.",
+    ],
+  ],
+  ja: [
+    [
+      "プロジェクトの指示に貼り付ける",
+      "下の文章をAIに渡します。作業前にファイルを取得し、規則を要約するよう頼みます。",
+    ],
+    [
+      "用語を探して原文を読む",
+      "catalog.jsonでSRS、요구사항、要件を探すと同じ記事IDに届きます。希望言語のMarkdownリンクを読ませます。",
+    ],
+    [
+      "比較し、決定してから作る",
+      "例：「書店のカートを作りたい。未決定の動作をすべて質問して、受け入れ条件を作って」。強い推薦にも決定が必要です。",
+    ],
+    [
+      "範囲を限定して委任する",
+      "例：「承認済みレイアウト内の間隔を選び、理由を報告して」。間隔の委任であって収益モデルの委任ではありません。取得失敗は報告させます。",
+    ],
+  ],
+}[lang];
+---
+
+<Base lang={lang} title={t.ai} description={t.aiIntro}>
+  <section class="page-heading">
+    <p class="eyebrow">A READING LIST, NOT A MAGIC SPELL</p>
+    <h1>{t.ai}</h1>
+    <p>{t.aiIntro}</p>
+  </section>
+  <div class="guide-content">
+    <p class="notice">{t.aiWarning}</p>
+    <div class="steps">
+      {steps.map(([title, body]) => (
+        <section class="step">
+          <div>
+            <h2>{title}</h2>
+            <p>{body}</p>
+          </div>
+        </section>
+      ))}
+    </div>
+    <section class="prompt-section">
+      <h2>{t.prompt}</h2>
+      <pre class="prompt-box" id="project-prompt">{projectPrompt[lang]}</pre>
+      <button
+        class="button primary"
+        data-copy="project-prompt"
+        data-success={t.copied}
+        data-error={t.copyError}
+      >
+        {t.copy} ⧉
+      </button>
+      <p role="status" aria-live="polite"></p>
+    </section>
+    <div class="resource-links">
+      <a class="button" href="/llms.txt">
+        llms.txt ↗
+      </a>
+      <a class="button" href="/ai/instructions.md">
+        {t.guide} ↗
+      </a>
+      <a class="button" href="/ai/catalog.json">
+        catalog.json ↗
+      </a>
+    </div>
+  </div>
+</Base>

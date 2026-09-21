@@ -1,0 +1,105 @@
+---
+import Base from "../../layouts/Base.astro";
+import { languages, strings } from "../../lib/i18n";
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+const { lang } = Astro.props;
+const t = strings[lang];
+const steps = {
+  en: [
+    [
+      "Name a result, not a framework",
+      "Write who needs what, in which situation. ‘A bookshop cart that survives a payment failure’ is more useful than ‘a modern full-stack experience’.",
+      "srs",
+    ],
+    [
+      "Point to an example",
+      "Identify the parts: header, sidebar, list, dialog. Sketch the success and failure states. A pretty screenshot is only one state.",
+      "layout",
+    ],
+    [
+      "Compare the costs",
+      "Choose based on your constraints. Record what you rejected and why. You are allowed to choose the boring option.",
+      "adr",
+    ],
+    [
+      "Hand over a precise brief",
+      "Bring requirements, decisions, and acceptance criteria to AI. Ask about remaining choices or explicitly delegate a bounded scope.",
+      "ai",
+    ],
+  ],
+  ko: [
+    [
+      "프레임워크 말고 결과를 적기",
+      "누가 어떤 상황에서 무엇을 원하는지 적으세요. ‘최신 풀스택 경험’보다 ‘결제 실패에도 유지되는 서점 장바구니’가 쓸모 있습니다.",
+      "srs",
+    ],
+    [
+      "예시를 가리키기",
+      "헤더, 사이드바, 리스트, 모달의 이름을 찾고 성공·실패 상태를 그리세요. 예쁜 스크린샷은 상태 하나일 뿐입니다.",
+      "layout",
+    ],
+    [
+      "비용 비교하기",
+      "제약에 맞춰 고르고, 버린 대안과 이유도 남기세요. 지루한 선택을 해도 됩니다.",
+      "adr",
+    ],
+    [
+      "정확한 작업 지시 건네기",
+      "요구사항, 결정, 완료 조건을 AI에게 주세요. 남은 선택을 질문하게 하거나 범위를 정해 명시적으로 위임합니다.",
+      "ai",
+    ],
+  ],
+  ja: [
+    [
+      "フレームワークより結果を書く",
+      "誰が、どんな状況で、何を必要とするか。「最新のフルスタック体験」より「決済失敗でも残る書店のカート」が役立ちます。",
+      "srs",
+    ],
+    [
+      "例を指す",
+      "ヘッダー、サイドバー、リスト、モーダルを名付け、成功と失敗の状態を描きます。きれいな画面は一つの状態にすぎません。",
+      "layout",
+    ],
+    [
+      "費用を比較する",
+      "制約に合わせて選び、不採用案と理由を残します。地味な選択でも大丈夫です。",
+      "adr",
+    ],
+    [
+      "正確な依頼を渡す",
+      "要件、判断、完了条件をAIへ渡します。残る選択を質問させるか、範囲を決めて明示的に委任します。",
+      "ai",
+    ],
+  ],
+}[lang];
+---
+
+<Base lang={lang} title={t.start} description={t.startIntro}>
+  <section class="page-heading">
+    <p class="eyebrow">START WITH THE OUTCOME</p>
+    <h1>{t.start}</h1>
+    <p>{t.startIntro}</p>
+  </section>
+  <div class="guide-content">
+    <div class="steps">
+      {steps.map(([title, body, id]) => (
+        <section class="step">
+          <div>
+            <h2>{title}</h2>
+            <p>{body}</p>
+            <p>
+              <a
+                class="text-link"
+                href={id === "ai" ? `/${lang}/ai/` : `/${lang}/catalog/${id}/`}
+              >
+                {t.next} →
+              </a>
+            </p>
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</Base>

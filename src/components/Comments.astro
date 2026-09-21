@@ -1,0 +1,53 @@
+---
+import { strings, type Lang } from "../lib/i18n";
+import config from "../lib/giscus.json";
+interface Props {
+  articleId: string;
+  lang: Lang;
+}
+const { articleId, lang } = Astro.props;
+const t = strings[lang];
+const enabled = !!config.repoId && !!config.categoryId;
+---
+
+<section class="comments" data-pagefind-ignore data-comment-term={articleId}>
+  <h2>{t.comments}</h2>
+  <p>{t.commentsNote}</p>
+  {enabled ? (
+    <div
+      class="giscus"
+      data-repo={config.repo}
+      data-repo-id={config.repoId}
+      data-category={config.category}
+      data-category-id={config.categoryId}
+      data-term={articleId}
+      data-lang={lang}
+    ></div>
+  ) : (
+    <p class="notice">{t.commentsPending}</p>
+  )}
+</section>
+<script>
+  const host = document.querySelector<HTMLElement>(".giscus");
+  if (host) {
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    const attrs = {
+      ...host.dataset,
+      mapping: "specific",
+      strict: "1",
+      reactionsEnabled: "1",
+      emitMetadata: "0",
+      inputPosition: "top",
+      theme:
+        document.documentElement.dataset.theme === "dark" ? "dark" : "light",
+      loading: "lazy",
+    };
+    Object.entries(attrs).forEach(([key, value]) => {
+      if (value) script.dataset[key] = value;
+    });
+    host.append(script);
+  }
+</script>
