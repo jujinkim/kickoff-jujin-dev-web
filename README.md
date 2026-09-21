@@ -16,8 +16,8 @@ Search needs the generated Pagefind index. Verify the production output with:
 ```sh
 npm run check
 npm run build
-npm test
 npx playwright install chromium
+npm test
 npm run test:e2e
 npm run preview
 ```
