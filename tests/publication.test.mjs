@@ -36,6 +36,11 @@ test(
       ])
         cpSync(name, join(dir, name), { recursive: true });
       symlinkSync(resolve("node_modules"), join(dir, "node_modules"), "dir");
+      // Keep this fixture independent of the production concept publication set.
+      for (const article of readArticles(join(dir, "src/content/articles"))) {
+        if (article.data.kind === "concept")
+          rmSync(join(dir, "src/content/articles", article.file));
+      }
       const articlePath = (lang) =>
         join(dir, "src/content/articles", lang, "srs.md");
       const original = matter(readFileSync(articlePath("en"), "utf8"));

@@ -1,0 +1,512 @@
+---
+import type { Lang } from "../lib/i18n";
+import { studies, studyWords } from "../lib/style-study";
+interface Props {
+  articleId: string;
+  lang: Lang;
+}
+const { articleId, lang } = Astro.props;
+const w = studyWords[lang];
+const study = studies[lang][articleId];
+const modes: Record<string, (keyof typeof w.conditions)[]> = {
+  glassmorphism: ["simple", "complex", "opaque"],
+  neumorphism: ["raised", "inset", "shadowless"],
+  "flat-design": ["retained", "failure"],
+  minimalism: ["reduced", "missing"],
+};
+const options = modes[articleId] ?? [];
+const initial = options[0] ?? "default";
+---
+
+<figure
+  class="style-study"
+  data-style-study={articleId}
+  data-mode={initial}
+  data-initial={initial}
+  data-save={w.save}
+  data-saved={w.saved}
+  data-unsaved={w.unsaved}
+  data-reset={w.reset}
+  aria-labelledby="study-caption"
+  data-pagefind-ignore
+>
+  <figcaption id="study-caption">
+    <strong>{w.heading}</strong>
+    <br />
+    {study.caption}
+  </figcaption>
+  <p>{w.local}</p>
+  <div class="study-controls">
+    {options.length > 0 && (
+      <label>
+        {w.mode}
+        <select data-study-mode disabled>
+          {options.map((mode) => (
+            <option value={mode}>{w.conditions[mode]}</option>
+          ))}
+        </select>
+      </label>
+    )}
+    <button type="button" data-study-reset disabled>
+      {w.reset}
+    </button>
+  </div>
+  <div class="study-panels">
+    {["baseline", "variant"].map((panel) => (
+      <section
+        class="study-panel"
+        data-panel={panel}
+        aria-label={panel === "baseline" ? w.baseline : w.variant}
+      >
+        <h3>{panel === "baseline" ? w.baseline : w.variant}</h3>
+        <div class="study-backdrop">
+          <div class="study-card">
+            {articleId === "skeuomorphism" && panel === "variant" && (
+              <span class="study-bookmark" aria-hidden="true" data-bookmark />
+            )}
+            <h4>
+              {articleId === "brutalism" && panel === "variant" ? (
+                <a href="#study-description">{w.title}</a>
+              ) : (
+                w.title
+              )}
+            </h4>
+            <p>{w.summary}</p>
+            <p class="study-time">{w.time}</p>
+            {articleId === "minimalism" && panel === "baseline" && (
+              <div class="study-badges">
+                <span>5. {w.badge}</span>
+                <span>6. {w.badge}</span>
+              </div>
+            )}
+            <button type="button" data-study-save aria-pressed="false" disabled>
+              {w.save}
+            </button>
+            {articleId === "minimalism" && panel === "baseline" && (
+              <div class="study-duplicate">
+                <small>7. {w.duplicate}</small>
+                <button
+                  type="button"
+                  data-study-save
+                  aria-pressed="false"
+                  disabled
+                >
+                  {w.save}
+                </button>
+              </div>
+            )}
+            {articleId === "flat-design" && panel === "variant" && (
+              <span data-study-failed-action hidden>
+                {w.save}
+              </span>
+            )}
+            <p class="study-state" data-study-state>
+              {w.unsaved}
+            </p>
+          </div>
+        </div>
+      </section>
+    ))}
+  </div>
+  <p class="study-rejected" data-study-rejected hidden>
+    {w.rejected}
+  </p>
+  <p
+    class="study-status"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+    data-study-status
+  ></p>
+  <div class="study-states" data-study-states aria-label={w.states}>
+    <strong>{w.states}</strong>
+    <div>
+      <span>
+        {w.normal}: <span class="state-token">{w.save}</span>
+      </span>
+      <span>
+        {w.focus}: <span class="state-token focus-token">{w.save}</span>
+      </span>
+      <span>
+        {w.saved}: <span class="state-token">✓ {w.saved}</span>
+      </span>
+    </div>
+  </div>
+  <p>
+    <strong>{w.tokens}</strong>
+    <br />
+    <code>{study.tokens}</code>
+  </p>
+  <div id="study-description">
+    <p>{study.description}</p>
+    <ol>
+      <li>{w.input}</li>
+      <li>{w.initial}</li>
+      <li>{w.action}</li>
+      <li>{w.result}</li>
+    </ol>
+  </div>
+  <noscript>
+    <p>{w.nojs}</p>
+  </noscript>
+</figure>
+<script>
+  document
+    .querySelectorAll<HTMLElement>("[data-style-study]")
+    .forEach((root) => {
+      const saves =
+        root.querySelectorAll<HTMLButtonElement>("[data-study-save]");
+      const reset =
+        root.querySelector<HTMLButtonElement>("[data-study-reset]")!;
+      const mode = root.querySelector<HTMLSelectElement>("[data-study-mode]");
+      const status = root.querySelector<HTMLElement>("[data-study-status]")!;
+      const setSaved = (saved: boolean) => {
+        saves.forEach((button) => {
+          button.textContent = saved ? root.dataset.saved! : root.dataset.save!;
+          button.setAttribute("aria-pressed", String(saved));
+        });
+        root.querySelectorAll("[data-study-state]").forEach((state) => {
+          state.textContent = saved
+            ? `✓ ${root.dataset.saved}`
+            : root.dataset.unsaved!;
+        });
+        root.querySelectorAll("[data-bookmark]").forEach((mark) => {
+          mark.textContent = saved ? "✓" : "";
+        });
+      };
+      const setMode = (value: string) => {
+        root.dataset.mode = value;
+        root.querySelector<HTMLElement>("[data-study-rejected]")!.hidden = ![
+          "failure",
+          "missing",
+        ].includes(value);
+        root
+          .querySelectorAll<HTMLElement>("[data-study-failed-action]")
+          .forEach((label) => {
+            label.hidden = value !== "failure";
+          });
+        root
+          .querySelectorAll<HTMLButtonElement>(
+            '[data-panel="variant"] [data-study-save]',
+          )
+          .forEach((button) => {
+            button.hidden = value === "missing" || value === "failure";
+          });
+      };
+      saves.forEach((button) => {
+        button.disabled = false;
+        button.addEventListener("click", () => {
+          setSaved(true);
+          status.textContent = `✓ ${root.dataset.saved}`;
+        });
+      });
+      reset.disabled = false;
+      reset.addEventListener("click", () => {
+        setSaved(false);
+        setMode(root.dataset.initial!);
+        if (mode) mode.value = root.dataset.initial!;
+        status.textContent = `${root.dataset.reset}: ${root.dataset.unsaved}`;
+      });
+      if (mode) {
+        mode.disabled = false;
+        mode.addEventListener("change", () => {
+          setMode(mode.value);
+          status.textContent = `${mode.selectedOptions[0].textContent}. ${root.querySelector("[data-study-state]")!.textContent}`;
+        });
+      }
+    });
+</script>
+<style>
+  .style-study {
+    margin: 0 0 2rem;
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+    border: 1px solid var(--ink);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+  figcaption {
+    font-size: 1.15rem;
+  }
+  p {
+    margin: 0.8rem 0;
+  }
+  ol {
+    padding-left: 1.4rem;
+  }
+  li + li {
+    margin-top: 0.4rem;
+  }
+  .study-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: end;
+    margin: 1rem 0;
+  }
+  label {
+    display: grid;
+    gap: 0.3rem;
+    max-width: 100%;
+  }
+  select {
+    max-width: 100%;
+  }
+  button,
+  select {
+    font: inherit;
+    color: var(--ink);
+    background: var(--surface);
+    border: 2px solid currentColor;
+    border-radius: 4px;
+    min-height: 44px;
+    padding: 0.45rem 0.7rem;
+    white-space: normal;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled,
+  select:disabled {
+    cursor: default;
+    opacity: 1;
+  }
+  :is(button, select, a):focus-visible {
+    outline: 3px dashed var(--study-focus, var(--ink));
+    outline-offset: 3px;
+  }
+  .study-panels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .study-panel {
+    min-width: 0;
+  }
+  h3 {
+    font-size: 0.95rem;
+    margin: 0 0 0.5rem;
+  }
+  h4 {
+    font-size: 1.3rem;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .study-card p {
+    line-height: 1.5;
+  }
+  .study-backdrop {
+    padding: 12px;
+    height: calc(100% - 2rem);
+    background: var(--surface);
+    border-radius: 8px;
+  }
+  .study-card {
+    padding: 1rem;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--ink);
+    height: 100%;
+    position: relative;
+  }
+  .study-time {
+    font-size: 0.9rem;
+  }
+  .study-state {
+    font-weight: 700;
+    min-height: 1.5em;
+  }
+  .study-states {
+    border-top: 1px solid currentColor;
+    padding-top: 0.8rem;
+  }
+  .study-states > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.3rem;
+    margin: 1rem 0;
+  }
+  .state-token {
+    display: inline-block;
+    padding: 0.3rem;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+  }
+  .focus-token {
+    outline: 3px dashed var(--study-focus, var(--ink));
+    outline-offset: 3px;
+  }
+  code {
+    font-size: 0.85rem;
+    white-space: normal;
+  }
+  .study-status {
+    min-height: 1.5em;
+  }
+  .study-rejected {
+    border: 2px dashed currentColor;
+    padding: 0.7rem;
+  }
+  [data-style-study="brutalism"] [data-panel="variant"] .study-card {
+    border-radius: 0;
+  }
+  [data-style-study="brutalism"] [data-panel="variant"] h4 {
+    font-family: monospace;
+  }
+  [data-style-study="brutalism"] [data-panel="variant"] h4 a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  [data-style-study="neobrutalism"] [data-panel="variant"] .study-card {
+    border: 3px solid currentColor;
+    border-radius: 0;
+    box-shadow: 4px 4px 0 currentColor;
+  }
+  [data-style-study="neobrutalism"] [data-panel="variant"] button {
+    background: #f7d959;
+    color: #18231e;
+    border: 3px solid;
+    border-radius: 0;
+  }
+  [data-style-study="glassmorphism"] [data-panel="variant"] .study-backdrop {
+    background: linear-gradient(135deg, #5f8b9d, #9bb8a0);
+  }
+  [data-style-study="glassmorphism"][data-mode="complex"]
+    [data-panel="variant"]
+    .study-backdrop {
+    background: repeating-conic-gradient(#203846 0% 25%, #e9b879 0% 50%) 0 /
+      28px 28px;
+  }
+  :is(
+      [data-style-study="glassmorphism"],
+      [data-style-study="neumorphism"],
+      [data-style-study="skeuomorphism"]
+    )
+    [data-panel="variant"]
+    .study-card {
+    --study-focus: #18231e;
+  }
+  :is(
+      [data-style-study="glassmorphism"],
+      [data-style-study="neumorphism"],
+      [data-style-study="skeuomorphism"]
+    )
+    [data-panel="variant"]
+    button {
+    border-color: var(--study-focus);
+  }
+  [data-style-study="glassmorphism"] [data-panel="variant"] .study-card {
+    background: rgb(255 255 255 / 0.88);
+    color: #18231e;
+    backdrop-filter: blur(12px);
+  }
+  [data-style-study="glassmorphism"][data-mode="opaque"]
+    [data-panel="variant"]
+    .study-card {
+    background: #fff;
+    backdrop-filter: none;
+  }
+  [data-style-study="neumorphism"] [data-panel="variant"] .study-backdrop,
+  [data-style-study="neumorphism"] [data-panel="variant"] .study-card {
+    background: #e2e6e5;
+    color: #18231e;
+  }
+  [data-style-study="neumorphism"] [data-panel="variant"] .study-card {
+    box-shadow:
+      -6px -6px 12px #fff,
+      6px 6px 12px #9ba6a1;
+  }
+  [data-style-study="neumorphism"][data-mode="inset"]
+    [data-panel="variant"]
+    .study-card {
+    box-shadow:
+      inset -6px -6px 12px #fff,
+      inset 6px 6px 12px #9ba6a1;
+  }
+  [data-style-study="neumorphism"][data-mode="shadowless"]
+    [data-panel="variant"]
+    .study-card {
+    box-shadow: none;
+  }
+  [data-style-study="skeuomorphism"] [data-panel="variant"] .study-card {
+    background: #fff4d9;
+    color: #382e20;
+    border-radius: 0 0 10px 0;
+    padding-top: 2.8rem;
+  }
+  .study-bookmark {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    background: #633325;
+    color: #fff;
+    width: 1.8rem;
+    height: 2.3rem;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
+  }
+  [data-style-study="flat-design"] [data-panel="baseline"] .study-card {
+    background: linear-gradient(
+      140deg,
+      var(--surface),
+      color-mix(in srgb, var(--surface) 80%, var(--ink))
+    );
+    box-shadow: 3px 3px 8px #0003;
+  }
+  [data-style-study="flat-design"] [data-panel="variant"] .study-card {
+    box-shadow: none;
+    background-image: none;
+  }
+  [data-style-study="flat-design"][data-mode="failure"]
+    [data-panel="variant"]
+    button {
+    border: 0;
+    background: transparent;
+  }
+  .study-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.7rem;
+  }
+  .study-badges span {
+    border: 1px dashed;
+    border-radius: 20px;
+    padding: 0.25rem 0.5rem;
+  }
+  .study-duplicate {
+    display: grid;
+    gap: 0.4rem;
+    justify-items: start;
+    margin-top: 0.6rem;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  @media (max-width: 600px) {
+    .study-panels {
+      grid-template-columns: 1fr;
+    }
+    .study-backdrop {
+      height: auto;
+    }
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    [data-style-study="glassmorphism"] [data-panel="variant"] .study-card {
+      background: #fff;
+      backdrop-filter: none;
+    }
+  }
+  @media (forced-colors: active) {
+    .study-card,
+    button,
+    select {
+      border-color: CanvasText;
+    }
+    .study-bookmark {
+      forced-color-adjust: none;
+    }
+  }
+</style>

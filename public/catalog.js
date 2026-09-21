@@ -54,7 +54,28 @@ async function update() {
         ...(root.dataset.kind ? { kind: root.dataset.kind } : {}),
       },
     });
-    const hits = await Promise.all(result.results.map((r) => r.data()));
+    const indexedHits = await Promise.all(result.results.map((r) => r.data()));
+    // CJK query and index segmentation can disagree even on an exact title.
+    // Published cards already belong to this language and article kind.
+    const normalize = (text) => text.normalize("NFKC").trim().toLowerCase();
+    const exactHits = cards
+      .filter(
+        (card) =>
+          !card.hidden &&
+          normalize(card.querySelector("h3").textContent) === normalize(query),
+      )
+      .map((card) => ({
+        url: card.querySelector(".card-link").getAttribute("href"),
+        meta: { title: card.querySelector("h3").textContent },
+        summary: card.querySelector(".card-text p").textContent,
+      }));
+    const seen = new Set();
+    const hits = [...exactHits, ...indexedHits].filter((hit) => {
+      const path = new URL(hit.url, location.href).pathname;
+      if (seen.has(path)) return false;
+      seen.add(path);
+      return true;
+    });
     if (request !== serial) return;
     resultList.replaceChildren();
     for (const hit of hits) {
@@ -63,17 +84,17 @@ async function update() {
       link.href = hit.url;
       link.textContent = hit.meta.title;
       const p = document.createElement("p");
-      p.textContent = new DOMParser().parseFromString(
-        hit.excerpt,
-        "text/html",
-      ).body.textContent;
+      p.textContent =
+        hit.summary ??
+        new DOMParser().parseFromString(hit.excerpt, "text/html").body
+          .textContent;
       article.append(link, p);
       resultList.append(article);
     }
     grid.hidden = true;
     resultList.hidden = false;
     resultStatus.textContent = hits.length
-      ? `${result.results.length} ${root.dataset.results}`
+      ? `${hits.length} ${root.dataset.results}`
       : root.dataset.empty;
   } catch {
     if (request !== serial) return;

@@ -1,5 +1,7 @@
 # Local writing-design verification
 
+Historical design-pack snapshot. For the subsequent seven-style publication, see [styles release review](styles-review.md) and [current verification](../verification.md).
+
 Checked on **2026-09-21**. This report covers local planning documents and the existing site's regression gates. It does not certify future article prose, translations, visualizations or a live deployment.
 
 ## Coverage and integrity

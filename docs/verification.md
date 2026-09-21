@@ -1,5 +1,33 @@
 # Verification — 2026-09-21
 
+## Styles release
+
+This section supersedes the historical baseline below. The source set adds seven concept IDs in English, Korean and Japanese to the existing twelve guides: 19 IDs and 57 language documents. All other 51 candidates remain planned. API schema version remains 1.
+
+Editorial evidence: [group review](catalog-writing/styles-review.md), [source refresh A](catalog-writing/styles-sources-a.md), [source refresh B](catalog-writing/styles-sources-b.md). English group review preceded translation. Fixture labels, six comparison axes, five comparison summaries, source scope, counterexamples and combination conditions are preserved.
+
+The visualization review caught and fixed light focus outlines on fixed-light cards in dark mode, and dark focus outlines around the neobrutalist accent button on a dark card. Local focus colors now follow the surrounding surface. Conservative WCAG luminance calculations gave ordinary text ratios above 11:1 for the tested card fills; the darkest decorative neumorphic shadow still yielded 6.44:1. These bounded calculations do not certify every arbitrary background or full WCAG conformance.
+
+An isolated English preview passed 14 cases (seven styles × two themes) at 320 CSS px: no document overflow, Save/Reset state, and focus retention. Final multilingual gates passed:
+
+- `npm run check`: 51 Astro files, zero errors/warnings/hints; 57 published documents validated; formatting passed.
+- `npm run build`: 194 HTML routes; 57 canonical article Markdown documents plus 36 legacy guide aliases; Pagefind indexes 57 documents in three languages.
+- `npm test`: 19 passed. Covers all 21 new routes and sibling links, canonical/hreflang, comment IDs, Markdown, AI catalog, sitemap, shared comparison summaries, guide-only scaffold fixtures, overwrite prevention, missing/stale translations and draft exclusion.
+- `npm run test:e2e`: 21 passed against built `dist`. All 21 localized style titles resolve to their article; language switches and sibling links work. Studies pass 320/1440px light/dark layouts, Save/Reset/reload, focus retention, keyboard activation and select navigation, live result text, grayscale/shadow removal, and JavaScript-disabled reading. Focus/text contrast regression checks cover fixed-light materials and the neobrutalist accent.
+- Agent-browser inspected the built Korean glass study and operated complex background, dark mode and Save. Screenshots inspected: [Korean glass, dark](screenshots/styles-glass-ko-dark.png), [Japanese minimalism, 320px failure case](screenshots/styles-minimal-ja-mobile.png).
+
+The initial browser run found a Japanese exact-title search failure. Pagefind 1.5.2's browser query split `ブルータリズム` into `ブル / ータ / リズム`, while the index retained the full title; the intended article was missing even though its body was indexed. Exact title matches from the already-published, language/kind/category-scoped cards now precede Pagefind full-text matches, with URL deduplication. Tests retain exact-title assertions and check category/kind isolation. This bounded supplement does not replace general CJK full-text segmentation. See [Pagefind multilingual search](https://pagefind.app/docs/multilingual/) for the indexing/query model.
+
+English and both translations received mutual group review. Native-speaker editorial review, non-Chromium browser coverage, screen-reader listening, and authenticated comment posting were not performed. Automated semantics and contrast checks are bounded evidence, not a full accessibility certification.
+
+Production verification follows the reviewed commit's Pages run; the release result is recorded below after deployment.
+
+Public baseline was refreshed before the release: all 18 existing live checks passed. Pages certificate is approved; `https_enforced` remains false. The old redirect and missing-certificate sections below are historical, not current blockers. See [deployment](deployment.md).
+
+## Historical catalog/guide baseline
+
+The remaining sections retain earlier evidence and limitations for context; their document counts and domain failures predate this release.
+
 ## Catalog / guide split — local verification
 
 - `npm run check`: Astro/TypeScript, 36 source documents, taxonomy/candidate relationships and formatting pass.

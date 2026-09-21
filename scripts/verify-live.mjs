@@ -1,5 +1,14 @@
 const origin = process.env.SITE_ORIGIN ?? "https://jujin.dev";
 let failed = 0;
+const styles = [
+  "brutalism",
+  "neobrutalism",
+  "glassmorphism",
+  "neumorphism",
+  "skeuomorphism",
+  "flat-design",
+  "minimalism",
+];
 async function check(path, expected) {
   try {
     const url = new URL(path, origin);
@@ -12,8 +21,9 @@ async function check(path, expected) {
         `${response.status}${response.headers.get("location") ? ` -> ${response.headers.get("location")}` : ""}`,
       );
     const body = await response.text();
-    if (expected && !body.includes(expected))
-      throw new Error(`Missing expected content: ${expected}`);
+    for (const token of expected ? [expected].flat() : [])
+      if (!body.includes(token))
+        throw new Error(`Missing expected content: ${token}`);
     console.log(`PASS ${url.pathname}`);
     return body;
   } catch (error) {
@@ -24,20 +34,39 @@ async function check(path, expected) {
 }
 for (const lang of ["en", "ko", "ja"]) {
   await check(`/${lang}/`, `lang="${lang}"`);
+  for (const id of styles) {
+    await check(`/${lang}/catalog/${id}/`, [
+      `data-comment-term="${id}"`,
+      `data-style-study="${id}"`,
+      `rel="canonical" href="https://jujin.dev/${lang}/catalog/${id}/"`,
+      ...["en", "ko", "ja"].map(
+        (other) =>
+          `hreflang="${other}" href="https://jujin.dev/${other}/catalog/${id}/"`,
+      ),
+      ...styles
+        .filter((peer) => peer !== id)
+        .map((peer) => `href="/${lang}/catalog/${peer}/"`),
+    ]);
+    await check(`/${lang}/catalog/${id}.md`, `ID: ${id}`);
+  }
+  await check(`/${lang}/catalog/categories/styles/`, 'class="comparison"');
   await check(
     `/${lang}/guides/srs/`,
     `href="https://jujin.dev/${lang}/guides/srs/"`,
   );
   await check(`/${lang}/guides/srs.md`, "ID: srs");
-  await check(`/sitemap-${lang}.xml`, "/guides/srs/");
+  await check(`/sitemap-${lang}.xml`, [
+    "/guides/srs/",
+    ...styles.map((id) => `/${lang}/catalog/${id}/`),
+  ]);
 }
 await check("/llms.txt", "/ai/catalog.json");
 await check("/ai/instructions.md", "EVERY unresolved choice");
 const catalog = await check("/ai/catalog.json", '"schemaVersion": 1');
 if (catalog) {
   try {
-    if (JSON.parse(catalog).articles.length < 12)
-      throw new Error("Expected at least 12 articles");
+    if (JSON.parse(catalog).articles.length !== 19)
+      throw new Error("Expected exactly 19 articles");
   } catch (error) {
     failed++;
     console.error(error.message);

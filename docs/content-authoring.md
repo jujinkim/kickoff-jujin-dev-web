@@ -1,6 +1,6 @@
 # Catalog and guide authoring
 
-This change prepares writing; it does not generate article bodies or publish drafts.
+This guide describes the authoring workflow. The first seven styles are documented in the [styles release review](catalog-writing/styles-review.md); the other 51 candidates remain planned.
 
 ## Shared data and routes
 

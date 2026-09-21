@@ -2,11 +2,12 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
+import { readArticles } from "../scripts/validate-content.mjs";
 const read = (p) => readFileSync(`dist/${p}`, "utf8");
 const catalog = JSON.parse(read("ai/catalog.json"));
 test("AI aliases resolve to published Markdown with matching title and instructions", () => {
   assert.equal(catalog.schemaVersion, 1);
-  assert.equal(catalog.articles.length, 12);
+  assert.equal(catalog.articles.length, 19);
   for (const alias of ["SRS", "요구사항", "要件"]) {
     assert.equal(
       catalog.articles.find((a) =>
@@ -22,7 +23,9 @@ test("AI aliases resolve to published Markdown with matching title and instructi
       assert.ok(md.startsWith(`# ${t.title}`));
       assert.ok(md.includes(`ID: ${article.id}`));
       assert.ok(md.includes("## "));
-      const html = read(`${lang}/guides/${article.id}/index.html`);
+      const html = read(
+        `${lang}/${article.kind === "guide" ? "guides" : "catalog"}/${article.id}/index.html`,
+      );
       assert.ok(html.includes(`data-comment-term="${article.id}"`));
       assert.ok(html.includes(`data-term="${article.id}"`));
     }
@@ -31,7 +34,9 @@ test("AI aliases resolve to published Markdown with matching title and instructi
 test("each translated page has self canonical, reciprocal translations, and English x-default", () => {
   for (const article of catalog.articles) {
     for (const [lang, t] of Object.entries(article.translations)) {
-      const html = read(`${lang}/guides/${article.id}/index.html`);
+      const html = read(
+        `${lang}/${article.kind === "guide" ? "guides" : "catalog"}/${article.id}/index.html`,
+      );
       assert.ok(html.includes(`rel="canonical" href="${t.url}"`));
       for (const [other, translation] of Object.entries(article.translations))
         assert.ok(
@@ -89,7 +94,7 @@ test("AI rules cover ambiguity, strong recommendation, delegated scope, missing 
 });
 
 test("legacy HTML redirects and Markdown preserve guide content and identity", () => {
-  for (const article of catalog.articles)
+  for (const article of catalog.articles.filter((a) => a.kind === "guide"))
     for (const [lang, t] of Object.entries(article.translations)) {
       assert.equal(article.kind, "guide");
       const alias = read(`${lang}/catalog/${article.id}/index.html`);
@@ -108,24 +113,49 @@ test("legacy HTML redirects and Markdown preserve guide content and identity", (
       );
     }
 });
-test("pending names have no body links, comparisons, AI articles or indexed pages", () => {
-  assert.ok(
-    catalog.categories.some((c) => c.id === "columns" && c.parent === "layout"),
-  );
+test("seven published concepts and 51 pending candidates remain separate", () => {
+  assert.equal(catalog.articles.filter((a) => a.kind === "guide").length, 12);
+  assert.equal(catalog.articles.filter((a) => a.kind === "concept").length, 7);
   for (const lang of ["en", "ko", "ja"]) {
     const html = read(`${lang}/catalog/categories/styles/index.html`);
-    assert.equal([...html.matchAll(/data-candidate=/g)].length, 7);
-    assert.ok(!html.includes(`href="/${lang}/catalog/brutalism/"`));
-    assert.ok(!html.includes('class="comparison"'));
-    assert.ok(!existsSync(`dist/${lang}/catalog/brutalism/index.html`));
-    assert.ok(
-      !read(`sitemap-${lang}.xml`).includes(`/${lang}/catalog/brutalism/`),
-    );
+    assert.equal([...html.matchAll(/data-candidate=/g)].length, 0);
+    assert.ok(html.includes(`href="/${lang}/catalog/brutalism/"`));
+    assert.ok(html.includes('class="comparison"'));
+    const pending = read(`${lang}/catalog/categories/columns/index.html`);
+    assert.equal([...pending.matchAll(/data-candidate=/g)].length, 3);
+    assert.ok(!existsSync(`dist/${lang}/catalog/single-column/index.html`));
   }
-  assert.ok(!catalog.articles.some((a) => a.id === "brutalism"));
   const manifest = JSON.parse(read("pagefind/pagefind-entry.json"));
   assert.equal(
     Object.values(manifest.languages).reduce((n, l) => n + l.page_count, 0),
-    36,
+    57,
   );
+});
+
+test("article and category tables render the same reviewed summaries", () => {
+  const escape = (text) =>
+    text
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  for (const { data } of readArticles().filter(
+    (a) => a.data.kind === "concept",
+  )) {
+    const page = read(`${data.lang}/catalog/${data.articleId}/index.html`);
+    const category = read(
+      `${data.lang}/catalog/categories/${data.category}/index.html`,
+    );
+    for (const value of Object.values(data.comparison)) {
+      assert.ok(
+        page.includes(escape(value)),
+        `${data.lang}/${data.articleId}: article summary`,
+      );
+      assert.ok(
+        category.includes(escape(value)),
+        `${data.lang}/${data.articleId}: category summary`,
+      );
+    }
+  }
 });

@@ -1,5 +1,7 @@
 # Verified source ledger
 
+Styles publication refresh: [brutalism, neobrutalism, glassmorphism, neumorphism](styles-sources-a.md) and [skeuomorphism, flat design, minimalism, accessibility](styles-sources-b.md). These supplements distinguish original authors/publication dates from the 2026-09-21 check date and record drafting-time retrieval limitations.
+
 Original pages opened and relevant passages inspected on **2026-09-21**. Summaries below are paraphrases. A successful fetch alone was not counted: each entry records the supporting section and the narrow claim retained. Article evidence maps connect these entries to their planned claims.
 
 ## style-brutal

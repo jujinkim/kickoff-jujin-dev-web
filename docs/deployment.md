@@ -9,29 +9,21 @@
 - Giscus app access works: public discussion lookup returned `Discussion not found` for the not-yet-created `srs` thread; the actual Korean widget rendered zero comments and GitHub sign-in. No comments were posted.
 - Workflow checks content/types/format, builds and indexes, validates output, then runs browser tests before publishing. Actions are pinned to commit SHAs. Node and direct dependencies are pinned.
 
-## Existing domain blocker
+## Current public origin — 2026-09-21
 
-Live check on 2026-09-21:
+The earlier Cloudflare redirect and missing-certificate findings are resolved. Before the styles release, `npm run verify:live` passed all 18 baseline checks on `https://jujin.dev` without redirects. The latest preceding Pages run, [35578936070](https://github.com/jujinkim/jujin-dev-web/actions/runs/35578936070), succeeded.
 
-```text
-https://jujin.dev/en/
-HTTP 301 Location: https://dev.jujin.kim/en/
-Server: cloudflare
-Destination: HTTP 404
-```
-
-The old Cloudflare redirect must be removed or disabled for `jujin.dev` and its deep paths. Keep the domain pointed at this repository’s GitHub Pages site, not the former blog. Inspect Redirect Rules, Bulk Redirects, Page Rules, or a Worker attached to this hostname to find the actual owner of this response; the response alone does not identify which mechanism is configured. Cloudflare administrative access is not available in this workspace session.
-
-The Pages API reports the correct CNAME but no certificate. Enabling HTTPS returned **“The certificate does not exist yet”**. After DNS/proxy/redirect configuration is corrected, let GitHub provision the certificate, then enable **Enforce HTTPS**. Do not claim that HTTPS at the Cloudflare edge proves origin certificate readiness.
+The Pages API reports `status: built`, `build_type: workflow`, CNAME `jujin.dev`, and an approved certificate for `jujin.dev` and `www.jujin.dev` expiring 2026-12-20. `https_enforced` remains false; successful HTTPS requests and certificate approval do not imply that setting is enabled. No DNS or Pages settings were changed during this release.
 
 ## Release procedure
 
-1. Review and publish this change to `main` to trigger the workflow. This implementation session did not commit or push it.
-2. Correct the existing domain redirect and verify the DNS target against GitHub Pages Settings. If proxying blocks certificate provisioning, follow GitHub and Cloudflare’s current official custom-domain instructions.
-3. Wait for a successful Actions deployment and certificate provisioning; enable HTTPS enforcement.
-4. Run `npm run verify:live` against `https://jujin.dev`. It rejects redirects away from the expected origin and checks deep links, AI resources, SEO, Markdown, sitemap and search assets.
-5. Open the domain in a browser; search `requirements`, `요구사항`, and `要件` in their respective catalogs. Reload an article directly. Confirm giscus loads under the production origin with the same `srs` term in all three languages.
-6. With the owner’s authenticated GitHub account, manually verify sign-in and one intended comment. Posting is deliberately not automated.
+1. Run content/type/format checks, build, artifact tests and browser tests against `dist`.
+2. Commit and push reviewed content to `main`; inspect the matching Actions run through successful deployment.
+3. Run `npm run verify:live` against `https://jujin.dev`. It rejects redirects and checks all 21 style HTML and Markdown paths, category comparison tables, existing guides, AI resources, sitemaps and search assets.
+4. Verify actual Pagefind queries and article interactions on the public origin. Keep comment IDs consistent across translations.
+5. Authenticated GitHub sign-in/comment posting remains an owner-driven manual check; this release does not post comments.
+
+See [verification](verification.md) for release-specific results and limitations.
 
 If the GitHub app is later disconnected, install [giscus](https://github.com/apps/giscus) for `jujinkim/jujin-dev-web`, preserve Discussions and the existing category, and regenerate configuration at [giscus.app](https://giscus.app/). Never replace stable article IDs merely to reconnect comments.
 

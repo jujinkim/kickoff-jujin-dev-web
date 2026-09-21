@@ -1,6 +1,6 @@
 # Catalog writing designs / 카탈로그 집필 설계 / カタログ執筆設計
 
-This local design pack covers **58 candidates in 19 comparison groups**. It prepares practical introductory articles: definition, concrete example, benefits, constraints, selection and combination. It contains no article bodies, translation drafts, implemented visualizations or publication changes. The existing 36 published language-specific guide documents remain the public content set.
+This local design pack covers **58 candidates in 19 comparison groups**. It prepares practical introductory articles: definition, concrete example, benefits, constraints, selection and combination. The original pack contained designs only. The seven styles have now progressed to English drafting, group review, Korean/Japanese translation and an interactive study; see the [styles release review](styles-review.md). The other 51 candidates remain planned.
 
 ## How to write from this pack
 

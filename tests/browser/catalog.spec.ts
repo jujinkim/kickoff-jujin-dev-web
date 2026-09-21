@@ -158,17 +158,17 @@ test("comments use identical strict mapping and language-specific widget configu
 });
 
 for (const lang of ["en", "ko", "ja"]) {
-  test(`${lang}: concept tree, pending names and legacy redirect`, async ({
+  test(`${lang}: concept tree, published styles and legacy redirect`, async ({
     page,
   }) => {
     await page.goto(`/${lang}/catalog/`);
-    await expect(page.locator(".catalog-card")).toHaveCount(0);
+    await expect(page.locator(".catalog-card")).toHaveCount(7);
     await page
       .locator(`.category-tree a[href="/${lang}/catalog/categories/styles/"]`)
       .click();
-    await expect(page.locator("[data-candidate]")).toHaveCount(7);
+    await expect(page.locator("[data-candidate]")).toHaveCount(0);
     await expect(page.locator("[data-candidate] a")).toHaveCount(0);
-    await expect(page.locator("table")).toHaveCount(0);
+    await expect(page.locator("table.comparison")).toHaveCount(1);
     await page.locator(".languages a[lang=en]").click();
     await expect(page).toHaveURL(/\/en\/catalog\/categories\/styles\/$/);
     await page.goto(`/${lang}/catalog/srs/`);

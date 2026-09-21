@@ -15,6 +15,7 @@ import {
   validateArticles,
 } from "../scripts/validate-content.mjs";
 const articles = readArticles();
+const guides = articles.filter((a) => a.data.kind === "guide");
 test("58 candidates, six roots, styles first; valid tree and relationships", () => {
   assert.equal(candidates.length, 58);
   assert.equal(taxonomy.filter((c) => !c.parent).length, 6);
@@ -67,7 +68,7 @@ test("scaffolds remain private, derive status and never overwrite any language",
   const dir = mkdtempSync(join(tmpdir(), "jujin-scaffold-"));
   try {
     const candidate = candidates.find((c) => c.id === "brutalism");
-    assert.equal(candidateStatus(candidate, articles), "planned");
+    assert.equal(candidateStatus(candidate, guides), "planned");
     const paths = createConcept("brutalism", dir);
     const drafts = readArticles(dir);
     assert.equal(drafts.length, 3);
@@ -77,7 +78,7 @@ test("scaffolds remain private, derive status and never overwrite any language",
       ),
     );
     assert.equal(candidateStatus(candidate, drafts), "draft");
-    assert.deepEqual(validateArticles([...articles, ...drafts]), []);
+    assert.deepEqual(validateArticles([...guides, ...drafts]), []);
     const before = paths.map((p) => readFileSync(p, "utf8"));
     assert.throws(() => createConcept("brutalism", dir), /overwrite/);
     assert.deepEqual(
@@ -87,7 +88,7 @@ test("scaffolds remain private, derive status and never overwrite any language",
     rmSync(paths[0]);
     assert.throws(() => createConcept("brutalism", dir), /overwrite/);
     assert.throws(() => createConcept("../escape", dir), /Unknown candidate/);
-    const mismatch = structuredClone([...articles, ...drafts]);
+    const mismatch = structuredClone([...guides, ...drafts]);
     mismatch.find((a) => a.file === "ko/brutalism.md").data.kind = "guide";
     assert.match(validateArticles(mismatch).join("\n"), /shared metadata/);
   } finally {
