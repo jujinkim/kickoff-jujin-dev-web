@@ -3,7 +3,7 @@ kind: concept
 articleId: skeuomorphism
 lang: en
 title: Skeuomorphism
-summary: "Use a familiar object metaphor without hiding the digital action."
+summary: Write and bookmark paper notes.
 category: styles
 aliases:
   - Skeuomorphism
@@ -16,30 +16,30 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: "Physical references shape appearance or interaction."
-  advantages: "Familiar objects can reinforce meaning."
-  limitations: "Unfamiliar metaphors can confuse readers."
-  suitable: "When readers recognize the reference."
-  combinations: "Flat icons and minimal content."
+  features: Recognizable materials and objects explain a digital task.
+  advantages: Page and bookmark metaphors clarify the notebook task.
+  limitations: >-
+    Decorative realism can consume space; keep typing and page controls
+    explicit.
+  suitable: Choose a familiar metaphor that supports the task.
+  combinations: A single reading column can sit inside the paper surface.
 checked: "2026-09-21"
 ---
 
 ## Concept
 
-Skeuomorphism borrows a physical object's appearance or interaction. A bookmark can suggest keeping an article; realistic paper texture is optional. [IxDF](https://ixdf.org/literature/topics/skeuomorphism)
+Recognizable materials and objects explain a digital task. A paper notebook uses binding, ruled lines, layered edges, and a ribbon bookmark.
 
 ## Example
 
-The illustrative card adds a bookmark while retaining an explicit Save button. Activating it shows Saved and a check; Reset clears the example.
-
-```text
-Save → Saved + marked bookmark
-```
+Write on page 1, visit page 2, then return: each page retains its note. Bookmark marks only the current page. Reset or reload restores the initial state.
 
 ## When to choose it
 
-Use a reference readers recognize, but keep the action understandable without that knowledge. A flat bookmark and minimal content can coexist; unnecessary dragging would add a physical constraint without helping the task.
+Choose a familiar metaphor that supports the task. Decorative realism can consume space; keep typing and page controls explicit.
+
+[IxDF](https://ixdf.org/literature/topics/skeuomorphism)

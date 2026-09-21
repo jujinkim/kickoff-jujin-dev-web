@@ -3,7 +3,7 @@ kind: concept
 articleId: neumorphism
 lang: ko
 title: 뉴모피즘
-summary: "부드러운 부조, 독립적인 조작 요소."
+summary: 부드러운 조명 제어판.
 category: styles
 aliases:
   - 뉴모피즘
@@ -16,31 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: 부드러운 밝은 면과 그림자 쌍.
-  advantages: 틀에 더하는 촉각적 인상.
-  limitations: 조작 요소를 가리는 미묘한 경계.
-  suitable: 조작이 명확한 장식 패널.
-  combinations: 부조 안의 플랫 외곽선 버튼.
+  features: 양방향의 부드러운 그림자가 바탕에서 빚은 듯한 컨트롤을 만듭니다.
+  advantages: 부드러운 깊이가 물리적 제어판 은유를 돕습니다.
+  limitations: 그림자만으로 상태를 구분하지 말고 라벨·테두리·숫자 피드백을 유지하세요.
+  suitable: 작은 제어판에 어울립니다.
+  combinations: 미니멀 배치로 그림자와 명확한 라벨의 공간을 확보합니다.
 checked: "2026-09-21"
 ---
 
 ## 개념
 
-뉴모피즘은 부드러운 밝은 면과 그림자로 비슷한 색조의 표면에서 솟거나 들어간 형태를 만듭니다. [IxDF](https://ixdf.org/literature/topics/neumorphism)는 촉각적인 효과와 미묘한 경계가 조작 요소를 가리는 위험을 설명합니다.
+양방향의 부드러운 그림자가 바탕에서 빚은 듯한 컨트롤을 만듭니다. 스큐어모피즘은 더 넓게 알아볼 수 있는 물리적 사물을 참조합니다.
 
 ## 예시
 
-솟은 읽기 카드 안에 외곽선 저장 버튼을 둡니다. 그림자를 없애도 동작과 결과는 명확하게 남습니다.
-
-```text
-돌출 / 함몰 / 그림자 없음
-같은 버튼; 저장 → 저장됨
-```
+조명은 밝기 65%로 켜져 있습니다. 전원·밝기를 조절하면 빛과 숫자가 바뀌고 눌린 버튼이 전원 상태를 표시합니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
 
 ## 추천 조건
 
-독립적으로 명확한 플랫 조작 요소를 가진 장식 틀에서 고려하세요. 그림자 반전은 저장보다 순간적인 누름으로 해석될 수 있으므로 라벨과 상태 문구를 유지합니다.
+작은 제어판에 어울립니다. 그림자만으로 상태를 구분하지 말고 라벨·테두리·숫자 피드백을 유지하세요.
+
+[IxDF](https://ixdf.org/literature/topics/neumorphism)

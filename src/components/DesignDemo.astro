@@ -1,0 +1,62 @@
+---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import type { Lang } from "../lib/i18n";
+import { designDemos, isDesignId } from "../lib/design-demos";
+interface Props {
+  articleId: string;
+  lang: Lang;
+}
+const { articleId, lang } = Astro.props;
+const modules = import.meta.glob<{ default: AstroComponentFactory }>(
+  "./demos/*.astro",
+  { eager: true },
+);
+const entry = isDesignId(articleId) ? designDemos[articleId] : undefined;
+const Component = entry && modules[`./demos/${entry.component}.astro`]?.default;
+if (entry && !Component)
+  throw new Error(`Missing demo component: ${entry.component}`);
+---
+
+{entry && Component && (
+  <figure
+    class="design-demo"
+    data-design-id={articleId}
+    data-capture={entry.capture}
+    data-pagefind-ignore
+  >
+    <figcaption>{entry.caption[lang]}</figcaption>
+    <Component lang={lang} />
+    <p class="demo-note">
+      {lang === "ko"
+        ? "본문 안의 가상 데모입니다. 초기화·새로고침으로 처음 상태로 돌아갑니다."
+        : lang === "ja"
+          ? "本文内の架空のデモです。リセット・再読み込みで初期状態に戻ります。"
+          : "A fictional demo within this article. Reset or reload restores its initial state."}
+    </p>
+    <noscript>
+      <p>
+        {lang === "ko"
+          ? "정적 화면과 설명은 그대로 읽을 수 있습니다. 조작에는 JavaScript가 필요합니다."
+          : lang === "ja"
+            ? "静的な画面と説明は読めます。操作にはJavaScriptが必要です。"
+            : "The initial screen and explanation remain available. Interactive controls require JavaScript."}
+      </p>
+    </noscript>
+  </figure>
+)}
+<style>
+  .design-demo {
+    margin: 0 0 2rem;
+    min-width: 0;
+  }
+  figcaption {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .demo-note {
+    font-size: 0.8rem;
+    margin-top: 12px;
+    color: var(--muted);
+  }
+</style>

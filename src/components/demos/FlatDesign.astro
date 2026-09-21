@@ -1,0 +1,235 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section
+  class="demo"
+  data-demo="flat-design"
+  lang={lang}
+  data-reset-message={t(
+    "Initial state restored",
+    "초기 상태로 복원했습니다",
+    "初期状態に戻しました",
+  )}
+>
+  <header>
+    <span>✓</span>
+    <div>
+      <small>
+        {t("PROJECT / TODAY", "프로젝트 / 오늘", "プロジェクト / 今日")}
+      </small>
+      <h2>{t("Make room", "공간 만들기", "余白をつくる")}</h2>
+    </div>
+  </header>
+  <div class="controls">
+    <label>
+      {t("Status", "상태", "状態")}
+      <select data-filter data-interactive disabled>
+        <option value="all">{t("All", "전체", "すべて")}</option>
+        <option value="open">{t("Open", "진행 중", "未完了")}</option>
+        <option value="done">{t("Done", "완료", "完了")}</option>
+      </select>
+    </label>
+    <strong data-count>0 / 3</strong>
+  </div>
+  <ul>
+    {[
+      t("Gather references", "참고 자료 모으기", "参考資料を集める"),
+      t("Draw the first draft", "첫 초안 그리기", "最初の案を描く"),
+      t("Review labels", "라벨 검토하기", "ラベルを確認する"),
+    ].map((text, i) => (
+      <li data-task>
+        <label>
+          <input type="checkbox" data-check data-interactive disabled />
+          <span>{text}</span>
+        </label>
+        <small>0{i + 1}</small>
+      </li>
+    ))}
+  </ul>
+  <p data-empty hidden>
+    {t(
+      "No tasks in this state.",
+      "해당 상태의 작업이 없습니다.",
+      "この状態のタスクはありません。",
+    )}
+  </p>
+
+  <button class="reset" type="button" data-reset data-interactive disabled>
+    {t("Reset", "초기화", "リセット")}
+  </button>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mount } from "./shared";
+  mount("flat-design", (root, say) => {
+    const filter = root.querySelector<HTMLSelectElement>("[data-filter]")!;
+    const checks = [...root.querySelectorAll<HTMLInputElement>("[data-check]")];
+    const update = () => {
+      let visible = 0;
+      checks.forEach((c) => {
+        const row = c.closest<HTMLElement>("[data-task]")!;
+        row.hidden =
+          filter.value !== "all" && (filter.value === "done") !== c.checked;
+        if (!row.hidden) visible++;
+      });
+      const count = `${checks.filter((c) => c.checked).length} / ${checks.length}`;
+      root.querySelector("[data-count]")!.textContent = count;
+      root.querySelector<HTMLElement>("[data-empty]")!.hidden = visible > 0;
+      say(count);
+    };
+    checks.forEach((c) => c.addEventListener("change", update));
+    filter.addEventListener("change", update);
+    return () => {
+      checks.forEach((c) => (c.checked = false));
+      filter.value = "all";
+      update();
+    };
+  });
+</script>
+<style>
+  .demo {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: clamp(16px, 3vw, 32px);
+    color-scheme: light;
+  }
+  .demo * {
+    box-sizing: border-box;
+  }
+  h2,
+  h3,
+  p {
+    margin: 0 0 1rem;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 3.6rem);
+    line-height: 1.12;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 18px 0;
+  }
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+  button,
+  select,
+  input,
+  textarea {
+    font: inherit;
+    max-width: 100%;
+    color: inherit;
+  }
+  button,
+  select,
+  input:not([type="checkbox"]):not([type="range"]) {
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+  button,
+  select {
+    cursor: pointer;
+  }
+  button {
+    border: 1px solid currentColor;
+    background: transparent;
+  }
+  input,
+  textarea,
+  select {
+    background: #fff;
+    color: #172329;
+    border: 1px solid #67747c;
+  }
+  input[type="range"] {
+    width: 150px;
+  }
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+  :focus-visible {
+    outline: 3px dashed currentColor;
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  [role="status"] {
+    min-height: 1.5em;
+    font-size: 0.85rem;
+    margin-top: 16px;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  .reset {
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .demo * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+  .demo {
+    background: #f1f5f9;
+    color: #17304e;
+  }
+  header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: #165cc4;
+    color: white;
+    padding: 22px;
+  }
+  header > span {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 12px;
+    background: white;
+    border-bottom: 2px solid #e1e8f0;
+  }
+  li:has(:checked) span {
+    text-decoration: line-through;
+  }
+  input {
+    accent-color: #165cc4;
+  }
+  button {
+    background: #165cc4;
+    color: white;
+    border: 0;
+  }
+</style>

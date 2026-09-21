@@ -1,0 +1,66 @@
+[
+  {
+    "family": "Demo Serif",
+    "file": "notoserif.woff2",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserif/NotoSerif%5Bwdth%2Cwght%5D.ttf",
+    "sourceSha256": "4d8e6761424656867019081a1a01336f3cb086982682698714054fc33f782713",
+    "license": "notoserif-OFL.txt",
+    "characters": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~°·—"
+  },
+  {
+    "family": "Demo Sans",
+    "file": "notosans.woff2",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosans/NotoSans%5Bwdth%2Cwght%5D.ttf",
+    "sourceSha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d",
+    "license": "notosans-OFL.txt",
+    "characters": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~°·—"
+  },
+  {
+    "family": "Demo Script",
+    "file": "dancingscript.woff2",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/dancingscript/DancingScript%5Bwght%5D.ttf",
+    "sourceSha256": "21808625578fe8d8cd10cb684be546dca077b27cd03a53a2f1ec11dc743c924c",
+    "license": "dancingscript-OFL.txt",
+    "characters": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~°·—"
+  },
+  {
+    "family": "Demo Mono",
+    "file": "jetbrainsmono.woff2",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf",
+    "sourceSha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda",
+    "license": "jetbrainsmono-OFL.txt",
+    "characters": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~°·—←→↗⏻"
+  },
+  {
+    "family": "Demo Serif KR",
+    "file": "notoserifkr.woff2",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifkr/NotoSerifKR%5Bwght%5D.ttf",
+    "sourceSha256": "11f8d5de6f1b79195efba3828aaa2ec95c1178f5ae976fb23c8d53250a9938f3",
+    "license": "notoserifkr-OFL.txt",
+    "characters": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~°·—←→↗▤▦◐◒✓、。々あいうえおかがきくけこごさしじすせそぞただちっつづてでとどなにのはひびぶへべほまみむめもやゆらりるれわをんアィイウェエオカガクゲコサザシジスズセソタチッテデトドナネノバパビフブプベペホマムメモュョラリルレロワン・ー一不並中了二人今付代体何余保信光入公具典出分列初刷前動化北占印参口台合同問図国土地均域場夕夜天太始字完実室家察小少屋川工差常幅幾広序庫庭引形役待後必応思意感態成所手技折抽招推描散文料新方日明時景晴曜曲書替最朝期未本材板架根案検構橋次止歩段比気沿注消測源演照版物率現生発白的目眺短研確示程種究空窓立端筆等紙素索細終組経絵緩置考者背自舞色落行術街衡表装要見視覚観角記証詳誌認語象資路車軌輪返送透通造連進道選部郭配金鉛開間関隔隣集電静面韓音順領類食飾가각간갈감갑강같개거걷걸검것게격견경고공과곽관교구굵궤균그근글금기길깁까깨께꼴꾸뀝끄끝나날남납내널넓녁노놓는늘늦니닌다단달당대더데도독동되된될됩둡드든들듬디딩따라락람래러렉련렬로록료류른를리릭마막만맑맥멈메며면명모목무문물미바반발밝밤방백버벤벨벳벽변보복본부북분불브비빛사산살상새색생서선설성세셋소속쇄수순술숫쉬스습승시식신실쓸씨아안않았야어업없에여역연열영옆오와완요용우운울움원위유윤율으은을음읍의이인일읽입있자작장재저적전접정제젝조좁종주중지직진질집짜짧쪽차찰참창책처천첩첫체초최추출측치침카코크탐태택탠터토투퉁튜트틀틴팅판패퍼페펼폭표프피필하한함합해햇했행향험현형호화획후흔히힘："
+  },
+  {
+    "family": "Demo Serif JP",
+    "file": "notoserifjp.woff2",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifjp/NotoSerifJP%5Bwght%5D.ttf",
+    "sourceSha256": "2fd527ba12b6a44ec30d796d633360da0aeba6c5d4af1304ce12bb4dc15a7dfc",
+    "license": "notoserifjp-OFL.txt",
+    "characters": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~°·—←→↗▤▦◐◒✓、。々あいうえおかがきくけこごさしじすせそぞただちっつづてでとどなにのはひびぶへべほまみむめもやゆらりるれわをんアィイウェエオカガクゲコサザシジスズセソタチッテデトドナネノバパビフブプベペホマムメモュョラリルレロワン・ー一不並中了二人今付代体何余保信光入公具典内出分列初刷前動化北占印参収口台合同問図国土地均域場変夕夜天太始字完実室家察対小少屋川工差常幅幾広序庫庭引形役待後必応思意感態成戻所手技折択抽招拠推描散数文料新方日明時景晴曜曲書替最朝期未本材板架根案検概構橋次止歩残段比気沿注消測源演照版物状狭率現生発白的目眺短研確示程種究空窓立端筆等紙素索細終組経絵緒緩置考者背自舞色落行術街衡表装要見視覚観角記証詳誌認語説読象資路車軌輪込返送透通造連進道選部郭配金鉛録開間関隔隣集電静面韓音順領類食飾験："
+  },
+  {
+    "family": "Demo Sans KR",
+    "file": "notosanskr.woff2",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanskr/NotoSansKR%5Bwght%5D.ttf",
+    "sourceSha256": "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252",
+    "license": "notosanskr-OFL.txt",
+    "characters": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~°·—←→↗▤▦◐◒✓、。々あいうえおかがきくけこごさしじすせそぞただちっつづてでとどなにのはひびぶへべほまみむめもやゆらりるれわをんアィイウェエオカガクゲコサザシジスズセソタチッテデトドナネノバパビフブプベペホマムメモュョラリルレロワン・ー一不並中了二人今付代体何余保信光入公具典出分列初刷前動化北占印参口台合同問図国土地均域場夕夜天太始字完実室家察小少屋川工差常幅幾広序庫庭引形役待後必応思意感態成所手技折抽招推描散文料新方日明時景晴曜曲書替最朝期未本材板架根案検構橋次止歩段比気沿注消測源演照版物率現生発白的目眺短研確示程種究空窓立端筆等紙素索細終組経絵緩置考者背自舞色落行術街衡表装要見視覚観角記証詳誌認語象資路車軌輪返送透通造連進道選部郭配金鉛開間関隔隣集電静面韓音順領類食飾가각간갈감갑강같개거걷걸검것게격견경고공과곽관교구굵궤균그근글금기길깁까깨께꼴꾸뀝끄끝나날남납내널넓녁노놓는늘늦니닌다단달당대더데도독동되된될됩둡드든들듬디딩따라락람래러렉련렬로록료류른를리릭마막만맑맥멈메며면명모목무문물미바반발밝밤방백버벤벨벳벽변보복본부북분불브비빛사산살상새색생서선설성세셋소속쇄수순술숫쉬스습승시식신실쓸씨아안않았야어업없에여역연열영옆오와완요용우운울움원위유윤율으은을음읍의이인일읽입있자작장재저적전접정제젝조좁종주중지직진질집짜짧쪽차찰참창책처천첩첫체초최추출측치침카코크탐태택탠터토투퉁튜트틀틴팅판패퍼페펼폭표프피필하한함합해햇했행향험현형호화획후흔히힘："
+  },
+  {
+    "family": "Demo Sans JP",
+    "file": "notosansjp.woff2",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansjp/NotoSansJP%5Bwght%5D.ttf",
+    "sourceSha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f",
+    "license": "notosansjp-OFL.txt",
+    "characters": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~°·—←→↗▤▦◐◒✓、。々あいうえおかがきくけこごさしじすせそぞただちっつづてでとどなにのはひびぶへべほまみむめもやゆらりるれわをんアィイウェエオカガクゲコサザシジスズセソタチッテデトドナネノバパビフブプベペホマムメモュョラリルレロワン・ー一不並中了二人今付代体何余保信光入公具典内出分列初刷前動化北占印参収口台合同問図国土地均域場変夕夜天太始字完実室家察対小少屋川工差常幅幾広序庫庭引形役待後必応思意感態成戻所手技折択抽招拠推描散数文料新方日明時景晴曜曲書替最朝期未本材板架根案検概構橋次止歩残段比気沿注消測源演照版物状狭率現生発白的目眺短研確示程種究空窓立端筆等紙素索細終組経絵緒緩置考者背自舞色落行術街衡表装要見視覚観角記証詳誌認語説読象資路車軌輪込返送透通造連進道選部郭配金鉛録開間関隔隣集電静面韓音順領類食飾験："
+  }
+]

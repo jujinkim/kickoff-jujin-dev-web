@@ -1,0 +1,236 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section
+  class="demo"
+  data-demo="neobrutalism"
+  lang={lang}
+  data-reset-message={t(
+    "Initial state restored",
+    "초기 상태로 복원했습니다",
+    "初期状態に戻しました",
+  )}
+>
+  <p class="stamp">{t("LIVE", "공연", "公演")} / 2026</p>
+  <h2>{t("LOUD NIGHTS", "시끄러운 밤", "音の夜")}</h2>
+  <p>
+    {t(
+      "Two nights. One small stage.",
+      "이틀 밤, 하나의 작은 무대.",
+      "二夜、ひとつの小さな舞台。",
+    )}
+  </p>
+  <div class="controls">
+    <label>
+      {t("Date", "날짜", "日付")}
+      <select data-date data-interactive disabled>
+        <option value="0">09.25 / {t("Friday", "금요일", "金曜日")}</option>
+        <option value="1">09.26 / {t("Saturday", "토요일", "土曜日")}</option>
+      </select>
+    </label>
+  </div>
+  <div class="poster">
+    <span class="star" aria-hidden="true">
+      ✳
+    </span>
+    <p>19:00 — 22:00</p>
+    <h3 data-lineup>
+      {t(
+        "Electric Garden + Paper Moon",
+        "일렉트릭 가든 + 페이퍼 문",
+        "エレクトリックガーデン + ペーパームーン",
+      )}
+    </h3>
+    <p>
+      {t(
+        "Standing · Studio 03 · Fictional event",
+        "스탠딩 · 스튜디오 03 · 가상 공연",
+        "立見 · スタジオ03 · 架空の公演",
+      )}
+    </p>
+  </div>
+
+  <button class="reset" type="button" data-reset data-interactive disabled>
+    {t("Reset", "초기화", "リセット")}
+  </button>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mount } from "./shared";
+  mount("neobrutalism", (root, say) => {
+    const date = root.querySelector<HTMLSelectElement>("[data-date]")!;
+    const line = root.querySelector<HTMLElement>("[data-lineup]")!;
+    const names = [
+      line.textContent!,
+      {
+        en: "Velvet Echo + Night Bus",
+        ko: "벨벳 에코 + 나이트 버스",
+        ja: "ベルベットエコー + ナイトバス",
+      }[root.lang]!,
+    ];
+    const update = () => {
+      line.textContent = names[Number(date.value)];
+      say(`${date.selectedOptions[0].textContent}: ${line.textContent}`);
+    };
+    date.addEventListener("change", update);
+    return () => {
+      date.value = "0";
+      update();
+    };
+  });
+</script>
+<style>
+  .demo {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: clamp(16px, 3vw, 32px);
+    color-scheme: light;
+  }
+  .demo * {
+    box-sizing: border-box;
+  }
+  h2,
+  h3,
+  p {
+    margin: 0 0 1rem;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 3.6rem);
+    line-height: 1.12;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 18px 0;
+  }
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+  button,
+  select,
+  input,
+  textarea {
+    font: inherit;
+    max-width: 100%;
+    color: inherit;
+  }
+  button,
+  select,
+  input:not([type="checkbox"]):not([type="range"]) {
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+  button,
+  select {
+    cursor: pointer;
+  }
+  button {
+    border: 1px solid currentColor;
+    background: transparent;
+  }
+  input,
+  textarea,
+  select {
+    background: #fff;
+    color: #172329;
+    border: 1px solid #67747c;
+  }
+  input[type="range"] {
+    width: 150px;
+  }
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+  :focus-visible {
+    outline: 3px dashed currentColor;
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  [role="status"] {
+    min-height: 1.5em;
+    font-size: 0.85rem;
+    margin-top: 16px;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  .reset {
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .demo * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+  .demo {
+    background: #fdde39;
+    color: #111;
+    border: 4px solid #111;
+    font-family: Arial, sans-serif;
+  }
+  h2 {
+    font-weight: 900;
+    letter-spacing: -0.06em;
+    max-width: 8em;
+  }
+  .stamp {
+    background: #ad91ff;
+    border: 3px solid;
+    display: inline-block;
+    padding: 8px;
+    transform: rotate(-4deg);
+  }
+  .poster {
+    background: #ff8bac;
+    border: 4px solid;
+    padding: 24px;
+    box-shadow: 8px 8px 0 #111;
+    margin: 24px 8px 8px 0;
+  }
+  .poster h3 {
+    font-size: 2rem;
+    max-width: 13em;
+  }
+  .star {
+    font-size: 5rem;
+    float: right;
+    line-height: 1;
+  }
+  @media (max-width: 450px) {
+    .poster h3 {
+      clear: both;
+      font-size: 1.5rem;
+    }
+    .star {
+      font-size: 2.5rem;
+    }
+  }
+  select,
+  button {
+    border: 3px solid;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: 3px 3px 0;
+  }
+</style>

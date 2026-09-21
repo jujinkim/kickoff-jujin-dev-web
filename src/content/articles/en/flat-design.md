@@ -3,7 +3,7 @@ kind: concept
 articleId: flat-design
 lang: en
 title: Flat design
-summary: "Remove simulated depth while keeping actions recognizable."
+summary: Complete and filter tasks.
 category: styles
 aliases:
   - Flat design
@@ -16,31 +16,30 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: "Two-dimensional surfaces reduce simulated depth."
-  advantages: "Few fills and outlines suffice."
-  limitations: "Missing cues can hide controls."
-  suitable: "Explicit labels and visible focus."
-  combinations: "Dense lists or minimal content."
+  features: Solid surfaces and clear labels establish hierarchy without simulated depth.
+  advantages: Labels and solid fills separate tasks and actions clearly.
+  limitations: >-
+    Without depth cues, boundaries and labels must keep actions easy to
+    recognize.
+  suitable: Choose it for routine task management.
+  combinations: List rows work for tasks; uniform grids work for project summaries.
 checked: "2026-09-21"
 ---
 
 ## Concept
 
-Flat design reduces gloss and simulated depth. It concerns surfaces; minimalism concerns which content remains. A flat interface can still hold abundant information. [NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)
+Solid surfaces and clear labels establish hierarchy without simulated depth. Flat design can contain rich information; it is not necessarily minimalism.
 
 ## Example
 
-Remove the illustrative card's gradient and shadow, but retain its Save label and button border. Activation shows Saved; Reset clears this local state.
-
-```text
-Remove: gloss + shadow
-Keep: Save border + focus
-```
+Check the three project tasks. The completion count updates; Open and Done filters reveal matching tasks, including an empty state. Reset or reload restores the initial state.
 
 ## When to choose it
 
-Use flat surfaces when controls remain recognizable before interaction. They suit dense lists or minimal pages; removing every distinguishing cue would make Save resemble ordinary text.
+Choose it for routine task management. Without depth cues, boundaries and labels must keep actions easy to recognize.
+
+[NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)

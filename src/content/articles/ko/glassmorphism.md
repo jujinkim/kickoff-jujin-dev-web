@@ -3,7 +3,7 @@ kind: concept
 articleId: glassmorphism
 lang: ko
 title: 글래스모피즘
-summary: 배경에 의존하는 반투명 층.
+summary: 유리 날씨 대시보드 전환.
 category: styles
 aliases:
   - 글래스모피즘
@@ -16,31 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: 반투명 채우기와 배경 흐림.
-  advantages: 주변 시각 맥락 일부 유지.
-  limitations: 복잡한 배경의 가독성 저하.
-  suitable: 배경 통제와 불투명 대안.
-  combinations: 유리 안의 불투명 플랫 버튼.
+  features: 반투명 패널 뒤로 흐려진 배경이 보입니다.
+  advantages: 반투명 패널이 배경 맥락을 유지합니다.
+  limitations: 배경마다 대비가 달라지므로 불투명 모드를 제공하고 장면별로 확인하세요.
+  suitable: 배경 맥락이 중요한 화면에 어울립니다.
+  combinations: 단순한 그리드와 불투명 대체 표시를 조합합니다.
 checked: "2026-09-21"
 ---
 
 ## 개념
 
-글래스모피즘은 배경 흐림과 반투명 채우기로 유리 같은 층을 표현합니다. 전경 글자는 선명하게 둡니다. [NN/g](https://www.nngroup.com/articles/glassmorphism/)는 배경 변화가 가독성에 영향을 준다고 설명합니다.
+반투명 패널 뒤로 흐려진 배경이 보입니다. 단순 투명도와 달리 글자는 불투명하게 두고 뒤쪽 풍경만 흐립니다.
 
 ## 예시
 
-카드를 불투명하게 바꾸면 배경 무늬만 가려지고 제목과 저장은 남습니다. 카드 전체를 흐리면 글자도 흐려집니다.
-
-```text
-반투명 → 불투명 패널
-같은 글자; 저장 → 저장됨
-```
+가상 날씨 대시보드를 낮에서 밤으로 바꿉니다. 불투명 패널을 켜면 반투명·블러가 단색 표면으로 바뀝니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
 
 ## 추천 조건
 
-배경을 통제하는 오버레이에 불투명 플랫 버튼을 조합할 수 있지만 복잡한 배경은 대비를 약하게 합니다. 흐림에만 의존하지 말고 불투명 대안을 제공하세요.
+배경 맥락이 중요한 화면에 어울립니다. 배경마다 대비가 달라지므로 불투명 모드를 제공하고 장면별로 확인하세요.
+
+[NN/g](https://www.nngroup.com/articles/glassmorphism/)

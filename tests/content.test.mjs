@@ -10,15 +10,15 @@ function changed(mutator) {
   mutator(copy);
   return validateArticles(copy);
 }
-test("catalog has 19 complete articles in each of three languages", () => {
-  assert.equal(originals.length, 57);
+test("catalog has 30 complete articles in each of three languages", () => {
+  assert.equal(originals.length, 90);
   assert.deepEqual(validateArticles(originals), []);
   for (const lang of ["en", "ko", "ja"])
     assert.equal(
       originals.filter(
         (a) => a.data.lang === lang && a.data.status === "published",
       ).length,
-      19,
+      30,
     );
 });
 test("duplicate stable IDs in one language are rejected", () =>

@@ -23,7 +23,7 @@ test("58 candidates, six roots, styles first; valid tree and relationships", () 
   assert.ok(
     candidates
       .toSorted((a, b) => a.order - b.order)
-      .slice(0, 7)
+      .slice(0, candidates.filter((c) => c.category === "styles").length)
       .every((c) => c.category === "styles"),
   );
 });

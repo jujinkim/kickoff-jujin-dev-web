@@ -3,7 +3,7 @@ kind: concept
 articleId: glassmorphism
 lang: en
 title: Glassmorphism
-summary: Translucent layers depend on backgrounds.
+summary: Change a glass weather dashboard.
 category: styles
 aliases:
   - Glassmorphism
@@ -16,31 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: Translucent fill and background blur.
-  advantages: Overlays retain some surrounding context.
-  limitations: Busy backgrounds can weaken readability.
-  suitable: Controlled backgrounds with opaque alternatives.
-  combinations: Solid flat controls inside glass.
+  features: Translucent panels reveal a blurred background.
+  advantages: Translucent panels retain the background context.
+  limitations: Contrast depends on the backdrop; offer an opaque mode and test each scene.
+  suitable: Choose it when background context matters.
+  combinations: Pair with a simple grid and an opaque readability fallback.
 checked: "2026-09-21"
 ---
 
 ## Concept
 
-Glassmorphism suggests translucent glass through background blur and a partly transparent fill. Foreground text stays sharp. [NN/g](https://www.nngroup.com/articles/glassmorphism/) explains why changing the backdrop can change readability.
+Translucent panels reveal a blurred background. Unlike simple transparency, blur softens what lies behind fully opaque text.
 
 ## Example
 
-An illustrative reading card switches to an opaque surface: the background pattern disappears, but the title and Save remain. Blurring the whole card would blur its text too.
-
-```text
-Translucent → opaque panel
-Same text; Save → Saved
-```
+Switch the fictional weather dashboard from day to night. Opaque panels replace translucency and blur with a solid surface. Reset or reload restores the initial state.
 
 ## When to choose it
 
-Consider contextual overlays with controlled backgrounds and solid flat buttons, but busy backdrops can weaken contrast. Provide an opaque alternative rather than relying on blur alone.
+Choose it when background context matters. Contrast depends on the backdrop; offer an opaque mode and test each scene.
+
+[NN/g](https://www.nngroup.com/articles/glassmorphism/)

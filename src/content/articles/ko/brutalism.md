@@ -3,7 +3,7 @@ kind: concept
 articleId: brutalism
 lang: ko
 title: 브루탈리즘
-summary: "거친 표면, 명확한 구조."
+summary: 투박한 문서 아카이브 검색.
 category: styles
 aliases:
   - 브루탈리즘
@@ -16,31 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: 가공 적은 글자와 노출된 구조.
-  advantages: 적은 장식으로 구조를 설명.
-  limitations: 독자와 맞지 않을 거친 어조.
-  suitable: 실용적인 어조의 매체.
-  combinations: 최소 콘텐츠와 단일 열.
+  features: 노출된 구분선과 투박한 타이포가 구조를 드러냅니다.
+  advantages: 구분선이 문서 경계를 드러냅니다.
+  limitations: 거친 인상이 방해되지 않도록 링크 밑줄과 알아보기 쉬운 컨트롤을 유지하세요.
+  suitable: 실용적인 아카이브에 어울립니다.
+  combinations: 리스트·단일 열과 조합해 문서를 순서대로 훑습니다.
 checked: "2026-09-21"
 ---
 
 ## 개념
 
-브루탈리즘은 기본 구분선과 가공 적은 글자로 페이지 구조를 드러냅니다. 탐색을 혼란스럽게 할 필요는 없습니다. [NN/g](https://www.nngroup.com/articles/brutalism-antidesign/)는 이를 의도적으로 혼란을 주는 안티디자인과 구분합니다.
+노출된 구분선과 투박한 타이포가 구조를 드러냅니다. 이 아카이브는 네오브루탈리즘의 선명한 색과 오프셋 그림자를 쓰지 않습니다.
 
 ## 예시
 
-장식을 덜어도 읽기 카드의 제목 링크와 저장 버튼은 알아볼 수 있게 유지합니다.
-
-```text
-기본 테두리 + 밑줄 제목
-저장 → 저장됨
-```
+문서 세 개를 검색하고 노트·설명서로 좁힙니다. 결과가 함께 갱신되며 검색어를 지우면 해당 유형의 전체 문서가 돌아옵니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
 
 ## 추천 조건
 
-실용적인 매체에서 최소 콘텐츠·단일 열과 조합할 수 있지만 거친 어조가 독자와 맞지 않을 수 있습니다. 라벨·포커스·저장 상태는 명확히 둡니다.
+실용적인 아카이브에 어울립니다. 거친 인상이 방해되지 않도록 링크 밑줄과 알아보기 쉬운 컨트롤을 유지하세요.
+
+[NN/g](https://www.nngroup.com/articles/brutalism-antidesign/)

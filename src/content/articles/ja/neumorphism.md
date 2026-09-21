@@ -3,7 +3,7 @@ kind: concept
 articleId: neumorphism
 lang: ja
 title: ニューモーフィズム
-summary: 柔らかい浮き彫り、独立した操作。
+summary: 柔らかな照明パネル.
 category: styles
 aliases:
   - ニューモーフィズム
@@ -16,31 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: 柔らかい明暗の影の対。
-  advantages: 枠に加える触覚的な印象。
-  limitations: 操作を隠す微妙な境界。
-  suitable: 操作が明確な装飾パネル。
-  combinations: 浮き彫り内のフラットな枠付きボタン。
+  features: 両方向の柔らかな影が、背景から成形したような操作部を作ります。
+  advantages: 柔らかな奥行きが物理的な操作盤の比喩を助けます。
+  limitations: 影だけに頼らず、ラベル、枠、数値のフィードバックを残します。
+  suitable: 小さな操作盤に向きます。
+  combinations: 最小限の配置で影と明確なラベルの場所を確保します。
 checked: "2026-09-21"
 ---
 
 ## 概念
 
-ニューモーフィズムは柔らかい明暗の影で、似た色調の表面の隆起やくぼみを示します。[IxDF](https://ixdf.org/literature/topics/neumorphism)は触覚的な効果と、微妙な境界が操作を隠す危険を説明します。
+両方向の柔らかな影が、背景から成形したような操作部を作ります。スキューモーフィズムは、より広く物理的な物を参照します。
 
 ## 実例
 
-隆起した読書カード内に枠付き保存ボタンを置きます。影を除いても操作と結果は明確に残ります。
-
-```text
-隆起 / くぼみ / 影なし
-同じボタン; 保存 → 保存済み
-```
+照明は明るさ65%で点灯しています。電源や明るさを変えると光と数値が変化し、押されたボタンが電源状態を示します。 リセット・再読み込みで初期状態に戻ります。
 
 ## 選ぶ条件
 
-独立して明確なフラット操作を持つ装飾枠で検討します。影の反転は保存状態より一時的な押下と解釈される場合があるため、ラベルと状態文を保ちます。
+小さな操作盤に向きます。影だけに頼らず、ラベル、枠、数値のフィードバックを残します。
+
+[IxDF](https://ixdf.org/literature/topics/neumorphism)

@@ -3,7 +3,7 @@ kind: concept
 articleId: brutalism
 lang: ja
 title: ブルータリズム
-summary: 粗い表面、明確な構造。
+summary: 無骨な文書アーカイブを検索.
 category: styles
 aliases:
   - ブルータリズム
@@ -16,31 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: 加工の少ない文字と露出した構造。
-  advantages: 少ない装飾で構造を説明。
-  limitations: 読者に合わない粗い表現。
-  suitable: 実用的な語り口の媒体。
-  combinations: 最小限の内容と単一カラム。
+  features: 露出した罫線と無骨な文字が構造を示します。
+  advantages: 罫線が文書の境界を示します。
+  limitations: 粗い印象が邪魔にならないよう、リンクの下線と明確な操作を保ちます。
+  suitable: 実用的な文書庫に向きます。
+  combinations: リストや1列と組み合わせ、文書を順に見渡せます。
 checked: "2026-09-21"
 ---
 
 ## 概念
 
-ブルータリズムは単純な罫線と加工の少ない文字で構造を示します。移動を混乱させる必要はありません。[NN/g](https://www.nngroup.com/articles/brutalism-antidesign/)は、意図的に混乱させるアンチデザインと区別します。
+露出した罫線と無骨な文字が構造を示します。この文書庫はネオブルータリズムの鮮やかな色やオフセット影を使いません。
 
 ## 実例
 
-装飾を減らしても、読書カードの見出しリンクと保存ボタンは識別できるように保ちます。
-
-```text
-単純な枠 + 下線付き見出し
-保存 → 保存済み
-```
+3件の文書を検索し、ノート・手引きで絞ります。結果が更新され、検索語を消すと該当する種類の文書が戻ります。 リセット・再読み込みで初期状態に戻ります。
 
 ## 選ぶ条件
 
-実用的な媒体で最小限の内容や単一カラムと組み合わせられますが、粗い表現が読者に合わない場合もあります。ラベル、フォーカス、保存状態を明確にします。
+実用的な文書庫に向きます。粗い印象が邪魔にならないよう、リンクの下線と明確な操作を保ちます。
+
+[NN/g](https://www.nngroup.com/articles/brutalism-antidesign/)

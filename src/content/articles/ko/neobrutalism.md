@@ -3,7 +3,7 @@ kind: concept
 articleId: neobrutalism
 lang: ko
 title: 네오브루탈리즘
-summary: "대담한 틀, 구분되는 동작."
+summary: 공연 날짜 선택.
 category: styles
 aliases:
   - 네오브루탈리즘
@@ -16,31 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: 굵은 외곽선과 단단한 그림자.
-  advantages: 강한 틀로 동작 경계 강조.
-  limitations: 같은 강조끼리의 경쟁.
-  suitable: 위계가 명확한 경쾌한 매체.
-  combinations: 최소 콘텐츠와 균등 그리드.
+  features: "선명한 색면, 굵은 테두리, 단단한 오프셋 그림자로 강조합니다."
+  advantages: 강한 색면이 날짜와 공연자를 강조합니다.
+  limitations: 장식이 많으면 세부 정보와 경쟁하므로 핵심만 강하게 강조하세요.
+  suitable: 강한 개성을 가진 작은 공연에 어울립니다.
+  combinations: 여러 포스터는 그리드에 두고 공연 목록은 짧게 유지합니다.
 checked: "2026-09-21"
 ---
 
 ## 개념
 
-네오브루탈리즘은 굵은 외곽선과 단단한 오프셋 그림자로 그래픽 인상을 만듭니다. [NN/g](https://www.nngroup.com/articles/neobrutalism/)는 거친 웹 브루탈리즘과 구분합니다. 밝은 색이나 특정 테두리 폭은 필수가 아닙니다.
+선명한 색면, 굵은 테두리, 단단한 오프셋 그림자로 강조합니다. 투박한 브루탈리즘이 이런 장난스러운 표면을 요구하는 것은 아닙니다.
 
 ## 예시
 
-강한 틀 안에서도 저장과 포커스 표시는 유지합니다. 수치는 설명용 선택입니다.
-
-```text
-외곽선 3px; 단단한 그림자 4px
-저장 → 저장됨
-```
+공연 포스터는 금요일로 시작합니다. 토요일을 선택하면 날짜·장소·시간의 위계는 유지되고 공연 목록이 바뀝니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
 
 ## 추천 조건
 
-경쾌한 매체에서 최소 콘텐츠·균등 그리드와 조합하되, 모두 똑같이 강조하면 경쟁합니다. 의미 있는 역할만 강조하고 선명한 색도 대비를 확인하세요.
+강한 개성을 가진 작은 공연에 어울립니다. 장식이 많으면 세부 정보와 경쟁하므로 핵심만 강하게 강조하세요.
+
+[NN/g](https://www.nngroup.com/articles/neobrutalism/)

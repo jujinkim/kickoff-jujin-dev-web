@@ -1,8 +1,9 @@
+import { designRegistry } from "../../scripts/design-registry.mjs";
 import { test, expect } from "@playwright/test";
 import { readArticles } from "../../scripts/validate-content.mjs";
 import { readingSeconds } from "../../src/lib/reading-budget.mjs";
 
-test("57 visible introductions stay concise and localized catalog images load", async ({
+test("90 visible introductions stay concise and localized catalog images load", async ({
   page,
 }) => {
   test.setTimeout(120_000);
@@ -11,7 +12,7 @@ test("57 visible introductions stay concise and localized catalog images load", 
     await page.goto(
       `/${data.lang}/${data.kind === "guide" ? "guides" : "catalog"}/${data.articleId}/`,
     );
-    const text = await page.locator(".article-main").innerText();
+    const text = await page.locator("article.prose").innerText();
     expect(
       readingSeconds(text),
       `${data.lang}/${data.articleId}`,
@@ -22,7 +23,7 @@ test("57 visible introductions stay concise and localized catalog images load", 
     await page.goto(`/${lang}/catalog/`);
     await page.locator('button[data-view="preview"]').click();
     const images = page.locator(".style-preview-image");
-    await expect(images).toHaveCount(7);
+    await expect(images).toHaveCount(Object.keys(designRegistry).length);
     for (const img of await images.all()) {
       await img.scrollIntoViewIfNeeded();
       await expect(img).toHaveAttribute("alt", /.+/);

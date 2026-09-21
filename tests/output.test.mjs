@@ -7,7 +7,7 @@ const read = (p) => readFileSync(`dist/${p}`, "utf8");
 const catalog = JSON.parse(read("ai/catalog.json"));
 test("AI aliases resolve to published Markdown with matching title and instructions", () => {
   assert.equal(catalog.schemaVersion, 1);
-  assert.equal(catalog.articles.length, 19);
+  assert.equal(catalog.articles.length, 30);
   for (const alias of ["SRS", "요구사항", "要件"]) {
     assert.equal(
       catalog.articles.find((a) =>
@@ -113,22 +113,22 @@ test("legacy HTML redirects and Markdown preserve guide content and identity", (
       );
     }
 });
-test("seven published concepts and 51 pending candidates remain separate", () => {
+test("18 published concepts and 40 pending candidates remain separate", () => {
   assert.equal(catalog.articles.filter((a) => a.kind === "guide").length, 12);
-  assert.equal(catalog.articles.filter((a) => a.kind === "concept").length, 7);
+  assert.equal(catalog.articles.filter((a) => a.kind === "concept").length, 18);
   for (const lang of ["en", "ko", "ja"]) {
     const html = read(`${lang}/catalog/categories/styles/index.html`);
     assert.equal([...html.matchAll(/data-candidate=/g)].length, 0);
     assert.ok(html.includes(`href="/${lang}/catalog/brutalism/"`));
     assert.ok(html.includes('class="comparison"'));
-    const pending = read(`${lang}/catalog/categories/columns/index.html`);
+    const pending = read(`${lang}/catalog/categories/requirements/index.html`);
     assert.equal([...pending.matchAll(/data-candidate=/g)].length, 3);
-    assert.ok(!existsSync(`dist/${lang}/catalog/single-column/index.html`));
+    assert.ok(!existsSync(`dist/${lang}/catalog/user-story/index.html`));
   }
   const manifest = JSON.parse(read("pagefind/pagefind-entry.json"));
   assert.equal(
     Object.values(manifest.languages).reduce((n, l) => n + l.page_count, 0),
-    57,
+    90,
   );
 });
 

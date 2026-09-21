@@ -3,7 +3,7 @@ kind: concept
 articleId: flat-design
 lang: ja
 title: フラットデザイン
-summary: "模倣した奥行きを減らし、操作の分かりやすさを保ちます。"
+summary: タスクの完了と絞り込み.
 category: styles
 aliases:
   - フラットデザイン
@@ -16,31 +16,28 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: "二次元の表面は奥行きを減らします。"
-  advantages: "少数の塗りと輪郭で表せます。"
-  limitations: "手がかりを消すと操作が隠れます。"
-  suitable: "明示的なラベルとフォーカス。"
-  combinations: "密な一覧や最小限の内容。"
+  features: 単色面と明確なラベルで、奥行き表現なしに階層を作ります。
+  advantages: ラベルと単色面がタスクと操作を明確に分けます。
+  limitations: 奥行きの手がかりがない分、枠とラベルで操作を分かりやすくします。
+  suitable: 日常的なタスク管理に向きます。
+  combinations: タスクにはリスト行、概要には均等グリッドが合います。
 checked: "2026-09-21"
 ---
 
 ## 概念
 
-フラットデザインは光沢や模倣した奥行きを減らします。表面を扱い、ミニマリズムは残す内容を選びます。平面的な画面でも情報は豊富にできます。[NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)
+単色面と明確なラベルで、奥行き表現なしに階層を作ります。豊富な情報も扱えるため、ミニマリズムとは異なります。
 
 ## 実例
 
-架空のカードのグラデーションと影を除き、保存ラベルとボタン枠は残します。実行すると保存済みになり、リセットで例の状態を消します。
-
-```text
-除去: 光沢 + 影
-保持: 保存の枠 + フォーカス
-```
+3つのタスクを完了にします。完了数が更新され、未完了・完了の絞り込みで該当する項目や空の状態を示します。 リセット・再読み込みで初期状態に戻ります。
 
 ## 選ぶ条件
 
-操作前にも対象を認識できる場合に使います。密な一覧にも最小限の構成にも適します。区別の手がかりまで除くと保存が本文に見えます。
+日常的なタスク管理に向きます。奥行きの手がかりがない分、枠とラベルで操作を分かりやすくします。
+
+[NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)

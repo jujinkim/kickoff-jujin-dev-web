@@ -1,0 +1,244 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section
+  class="demo"
+  data-demo="single-column"
+  lang={lang}
+  data-reset-message={t(
+    "Initial state restored",
+    "초기 상태로 복원했습니다",
+    "初期状態に戻しました",
+  )}
+>
+  <div class="controls">
+    <label>
+      {t("Preview width", "미리보기 폭", "表示幅")}
+      <select data-width data-interactive disabled>
+        <option value="wide">{t("Wide", "넓게", "広い")}</option>
+        <option value="narrow">{t("Narrow", "좁게", "狭い")}</option>
+      </select>
+    </label>
+  </div>
+  <div class="frame">
+    <nav aria-label={t("Reading path", "읽기 경로", "読書の順序")}>
+      {t(
+        "Journal / Fieldwork / 01",
+        "저널 / 현장 조사 / 01",
+        "日誌 / フィールドワーク / 01",
+      )}
+    </nav>
+    <article>
+      <small>06:40 / {t("JOURNAL", "저널", "日誌")}</small>
+      <h2>{t("Before the city wakes", "도시가 깨기 전", "街が目覚める前")}</h2>
+      <p class="lead">
+        {t(
+          "Follow one line of thought, from the first step to the last note.",
+          "첫걸음부터 마지막 기록까지 하나의 생각을 따라갑니다.",
+          "最初の一歩から最後の記録まで、ひとつの思考をたどります。",
+        )}
+      </p>
+      <div class="landscape" aria-hidden="true"></div>
+      <p>
+        {t(
+          "At dawn, the river path belongs to walkers. A bench marks the turn. We stop, look, and continue.",
+          "새벽 강변 길은 걷는 사람들의 차지입니다. 벤치가 모퉁이를 표시합니다. 멈추고, 살피고, 다시 걷습니다.",
+          "夜明けの川沿いは歩く人のもの。ベンチが曲がり角を示します。立ち止まり、眺め、また歩きます。",
+        )}
+      </p>
+      <details>
+        <summary>
+          {t("Read another paragraph", "문단 더 읽기", "もう一段落読む")}
+        </summary>
+        <p>
+          {t(
+            "The route ends at a small bridge. Notes follow the same sequence as the walk, so the reader never has to choose a column.",
+            "작은 다리에서 길이 끝납니다. 기록도 걸음과 같은 순서여서 독자는 읽을 열을 고를 필요가 없습니다.",
+            "小さな橋で道は終わります。記録も散歩と同じ順序なので、読む列を選ぶ必要はありません。",
+          )}
+        </p>
+      </details>
+    </article>
+    <aside>
+      {t(
+        "Related reading: a map of the river walk.",
+        "함께 읽기: 강변 산책 지도.",
+        "関連する読み物：川沿いの散歩地図。",
+      )}
+    </aside>
+  </div>
+
+  <button class="reset" type="button" data-reset data-interactive disabled>
+    {t("Reset", "초기화", "リセット")}
+  </button>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mount } from "./shared";
+  mount("single-column", (root, say) => {
+    const width = root.querySelector<HTMLSelectElement>("[data-width]")!;
+    const frame = root.querySelector<HTMLElement>(".frame")!;
+    width.addEventListener("change", () => {
+      frame.dataset.width = width.value;
+      say(width.selectedOptions[0].textContent!);
+    });
+    root
+      .querySelector("details")!
+      .addEventListener("toggle", () =>
+        say(root.querySelector("summary")!.textContent!),
+      );
+    return () => {
+      width.value = "wide";
+      frame.dataset.width = "wide";
+      root.querySelector("details")!.open = false;
+    };
+  });
+</script>
+<style>
+  .demo {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: clamp(16px, 3vw, 32px);
+    color-scheme: light;
+  }
+  .demo * {
+    box-sizing: border-box;
+  }
+  h2,
+  h3,
+  p {
+    margin: 0 0 1rem;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 3.6rem);
+    line-height: 1.12;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 18px 0;
+  }
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+  button,
+  select,
+  input,
+  textarea {
+    font: inherit;
+    max-width: 100%;
+    color: inherit;
+  }
+  button,
+  select,
+  input:not([type="checkbox"]):not([type="range"]) {
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+  button,
+  select {
+    cursor: pointer;
+  }
+  button {
+    border: 1px solid currentColor;
+    background: transparent;
+  }
+  input,
+  textarea,
+  select {
+    background: #fff;
+    color: #172329;
+    border: 1px solid #67747c;
+  }
+  input[type="range"] {
+    width: 150px;
+  }
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+  :focus-visible {
+    outline: 3px dashed currentColor;
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  [role="status"] {
+    min-height: 1.5em;
+    font-size: 0.85rem;
+    margin-top: 16px;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  .reset {
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .demo * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+  .demo {
+    background: #edece6;
+    color: #343a31;
+  }
+  .frame {
+    max-width: 620px;
+    margin: auto;
+    background: #fffdf6;
+    padding: 24px;
+    container-type: inline-size;
+  }
+  .frame[data-width="narrow"] {
+    max-width: 300px;
+  }
+  nav,
+  aside {
+    padding: 14px 0;
+    border-block: 1px solid #b5b6aa;
+    font-size: 0.85rem;
+  }
+  article {
+    padding: 24px 0;
+  }
+  h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(1.8rem, 7cqi, 3rem);
+  }
+  .lead {
+    font-size: 1.2rem;
+  }
+  .landscape {
+    height: 120px;
+    margin: 24px 0;
+    background: linear-gradient(
+      165deg,
+      #dedbcc 45%,
+      #6b887e 46% 62%,
+      #9bbebc 63%
+    );
+  }
+  p {
+    line-height: 1.8;
+  }
+</style>

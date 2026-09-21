@@ -1,302 +1,364 @@
 import { test, expect } from "@playwright/test";
-
-test.describe.configure({ timeout: 60_000 });
-
-const ids = [
-  "brutalism",
-  "neobrutalism",
-  "glassmorphism",
-  "neumorphism",
-  "skeuomorphism",
-  "flat-design",
-  "minimalism",
-];
+import { designRegistry as registry } from "../../scripts/design-registry.mjs";
+import { readArticles } from "../../scripts/validate-content.mjs";
+import { mkdirSync } from "node:fs";
+const ids = Object.keys(registry);
+const articles = readArticles();
 const languages = ["en", "ko", "ja"] as const;
-const titles: Record<string, string[]> = {
-  en: [
-    "Brutalism",
-    "Neobrutalism",
-    "Glassmorphism",
-    "Neumorphism",
-    "Skeuomorphism",
-    "Flat design",
-    "Minimalism",
-  ],
-  ko: [
-    "브루탈리즘",
-    "네오브루탈리즘",
-    "글래스모피즘",
-    "뉴모피즘",
-    "스큐어모피즘",
-    "플랫 디자인",
-    "미니멀리즘",
-  ],
-  ja: [
-    "ブルータリズム",
-    "ネオブルータリズム",
-    "グラスモーフィズム",
-    "ニューモーフィズム",
-    "スキューモーフィズム",
-    "フラットデザイン",
-    "ミニマリズム",
-  ],
-};
+test.beforeEach(async ({ page }) => {
+  await page.route("https://giscus.app/**", (route) => route.abort());
+});
 for (const lang of languages) {
-  test(`${lang}: every style is searchable and linked to its siblings`, async ({
-    page,
-  }) => {
-    await page.route("https://giscus.app/**", (route) => route.abort());
-    for (const id of ids) {
-      await page.goto(`/${lang}/catalog/`);
-      await page.locator("#search").fill(titles[lang][ids.indexOf(id)]);
+  test(`${lang}: every published article is searchable`, async ({ page }) => {
+    test.setTimeout(120_000);
+    for (const { data } of articles.filter(
+      (a) => a.data.lang === lang && a.data.status === "published",
+    )) {
+      const section = data.kind === "guide" ? "guides" : "catalog";
+      await page.goto(`/${lang}/${section}/`);
+      await page.locator("#search").fill(data.title);
       await expect(
-        page.locator(`#search-results a[href="/${lang}/catalog/${id}/"]`),
-      ).toBeVisible();
-      await expect(page.locator("#search-results a").first()).toHaveAttribute(
-        "href",
-        `/${lang}/catalog/${id}/`,
-      );
-      await expect(
-        page.locator(`#search-results a[href="/${lang}/catalog/${id}/"]`),
+        page.locator(
+          `#search-results a[href="/${lang}/${section}/${data.articleId}/"]`,
+        ),
       ).toHaveCount(1);
-      await page
-        .locator(`#search-results a[href="/${lang}/catalog/${id}/"]`)
-        .click();
-      await expect(page.locator("h1")).toBeVisible();
-      await page.locator("[data-related-reading] > summary").click();
-      for (const peer of ids.filter((peer) => peer !== id))
-        await expect(
-          page.locator(`.prose a[href="/${lang}/catalog/${peer}/"]`).first(),
-        ).toBeVisible();
-      for (const other of languages)
-        await expect(
-          page.locator(`.languages a[lang="${other}"]`),
-        ).toHaveAttribute("href", `/${other}/catalog/${id}/`);
-      await expect(page.locator(".comparison tbody tr")).toHaveCount(1);
     }
   });
-}
-
-for (const lang of languages) {
-  test(`${lang}: studies retain content, focus and local state across narrow and dark views`, async ({
+  test(`${lang}: designs reflow in both themes and retain keyboard reset`, async ({
     page,
   }) => {
-    await page.route("https://giscus.app/**", (route) => route.abort());
-    const words = {
-      en: ["Save", "Saved"],
-      ko: ["저장", "저장됨"],
-      ja: ["保存", "保存済み"],
-    }[lang]!;
+    test.setTimeout(180_000);
     const errors: string[] = [];
-    page.on("pageerror", (error) => errors.push(error.message));
+    page.on("pageerror", (e) => errors.push(e.message));
+    mkdirSync("artifacts/design-demos", { recursive: true });
     for (const id of ids) {
       await page.goto(`/${lang}/catalog/${id}/`);
-      const study = page.locator(`[data-style-study="${id}"]`);
-      const save = study
-        .locator('[data-panel="variant"] [data-study-save]')
-        .first();
-      const reset = study.locator("[data-study-reset]");
-      await expect(save).toBeEnabled();
-      for (const width of [320, 1440]) {
+      const root = page.locator(`[data-demo="${id}"]`);
+      await expect(root).toHaveAttribute("data-ready", "true");
+      await page.evaluate(() => document.fonts.ready);
+      for (const width of [320, 768, 1440]) {
         await page.setViewportSize({ width, height: 1000 });
+        await page.evaluate(
+          () =>
+            new Promise((resolve) =>
+              requestAnimationFrame(() => requestAnimationFrame(resolve)),
+            ),
+        );
         for (const theme of ["light", "dark"]) {
           await page.evaluate(
-            (value) => (document.documentElement.dataset.theme = value),
+            (t) => (document.documentElement.dataset.theme = t),
             theme,
           );
           expect(
             await page.evaluate(
               () => document.documentElement.scrollWidth <= innerWidth,
             ),
+            `${id}/${width}/${theme}`,
           ).toBeTruthy();
-          await expect(study).toBeVisible();
-          const panels = await study
-            .locator(".study-panel")
-            .evaluateAll((nodes) =>
-              nodes.map((node) => {
-                const r = node.getBoundingClientRect();
-                return { x: r.x, y: r.y };
-              }),
-            );
-          if (width === 320) expect(panels[1].y).toBeGreaterThan(panels[0].y);
-          else expect(panels[1].x).toBeGreaterThan(panels[0].x);
+          await expect(root).toBeVisible();
+          expect(
+            await root.evaluate((el) => el.scrollWidth <= el.clientWidth + 2),
+            `${id} internal overflow`,
+          ).toBeTruthy();
+          if (lang === "en" && theme === "light" && width !== 768)
+            await root.screenshot({
+              path: `artifacts/design-demos/${id}-${width}.png`,
+            });
         }
       }
-      await save.focus();
-      await page.keyboard.press("Space");
-      await expect(save).toBeFocused();
-      await expect(save).toHaveAttribute("aria-pressed", "true");
-      await expect(save).toHaveText(words[1]);
-      await expect(study.locator("[data-study-status]")).toContainText(
-        words[1],
+      const first = root.locator("[data-interactive]").first();
+      await first.focus();
+      const kind = await first.evaluate((el) =>
+        el.tagName === "INPUT"
+          ? (el as HTMLInputElement).type
+          : el.tagName.toLowerCase(),
       );
-      const focus = await save.evaluate((node) => ({
-        style: getComputedStyle(node).outlineStyle,
-        width: getComputedStyle(node).outlineWidth,
-      }));
-      expect(focus.style).not.toBe("none");
-      expect(parseFloat(focus.width)).toBeGreaterThanOrEqual(3);
+      if (["select", "range"].includes(kind))
+        await page.keyboard.press("ArrowDown");
+      else if (["text", "search", "textarea"].includes(kind))
+        await page.keyboard.insertText("test");
+      else await page.keyboard.press("Space");
+      await expect(first).toBeFocused();
+      const reset = root.locator("[data-reset]");
       await reset.focus();
       await page.keyboard.press("Enter");
       await expect(reset).toBeFocused();
-      await expect(save).toHaveAttribute("aria-pressed", "false");
-      await expect(save).toHaveText(words[0]);
-      await save.click();
-      await page.reload();
-      await expect(save).toHaveAttribute("aria-pressed", "false");
+      await expect(root.locator("[role=status]")).not.toBeEmpty();
+      expect(
+        await reset.evaluate((el) =>
+          parseFloat(getComputedStyle(el).outlineWidth),
+        ),
+      ).toBeGreaterThanOrEqual(3);
+      await page.emulateMedia({ reducedMotion: "reduce" });
       await page.addStyleTag({
         content:
-          "[data-style-study] { filter: grayscale(1); } [data-style-study] * { box-shadow: none !important; text-shadow: none !important; }",
+          "[data-demo] * {box-shadow:none!important;text-shadow:none!important;}",
       });
-      await save.click();
-      await expect(study.locator("[data-study-state]").first()).toContainText(
-        words[1],
-      );
-      await study.locator("[data-study-details] > summary").click();
-      await expect(study.locator(".study-states")).toBeVisible();
+      await reset.click();
+      await expect(reset).toBeEnabled();
     }
     expect(errors).toEqual([]);
   });
-}
-
-test("style-specific modes preserve focus, report results and reset", async ({
-  page,
-}) => {
-  for (const [id, modes] of Object.entries({
-    glassmorphism: ["simple", "complex", "opaque"],
-    neumorphism: ["raised", "inset", "shadowless"],
-    "flat-design": ["retained", "failure"],
-    minimalism: ["reduced", "missing"],
-  })) {
-    await page.goto(`/en/catalog/${id}/`);
-    const study = page.locator("[data-style-study]");
-    const select = study.locator("select[data-study-mode]");
-    await select.focus();
-    await page.keyboard.press("ArrowDown");
-    await expect(select).toHaveValue(modes[1]);
-    await expect(select).toBeFocused();
-    for (const mode of modes) {
-      await select.focus();
-      await select.selectOption(mode);
-      await expect(select).toBeFocused();
-      await expect(study).toHaveAttribute("data-mode", mode);
-      await expect(study.locator("[data-study-status]")).not.toBeEmpty();
-      if (["failure", "missing"].includes(mode)) {
-        await expect(study.locator("[data-study-rejected]")).toBeVisible();
-        await expect(
-          study.locator('[data-panel="variant"] [data-study-save]'),
-        ).toBeHidden();
-      }
-      if (mode === "opaque")
-        expect(
-          await study
-            .locator('[data-panel="variant"] .study-card')
-            .evaluate((node) => getComputedStyle(node).backdropFilter),
-        ).toBe("none");
-      if (mode === "shadowless")
-        expect(
-          await study
-            .locator('[data-panel="variant"] .study-card')
-            .evaluate((node) => getComputedStyle(node).boxShadow),
-        ).toBe("none");
-    }
-    await study.locator("[data-study-reset]").click();
-    await expect(select).toHaveValue(modes[0]);
-    await expect(
-      study.locator('[data-panel="variant"] [data-study-save]'),
-    ).toBeVisible();
-  }
-});
-
-test("JavaScript-disabled studies retain their complete reading content and descriptions", async ({
-  browser,
-}) => {
-  const context = await browser.newContext({
-    javaScriptEnabled: false,
-    viewport: { width: 320, height: 900 },
-  });
-  const page = await context.newPage();
-  for (const lang of languages) {
-    for (const id of ids) {
-      await page.goto(`/${lang}/catalog/${id}/`);
-      const study = page.locator("[data-style-study]");
-      await expect(study.locator(".study-panel")).toHaveCount(2);
-      await study.locator("[data-study-details] > summary").click();
-      await expect(study.locator(".study-states")).toBeVisible();
-      await expect(study.locator("#study-description")).toBeVisible();
-      await expect(study.locator("noscript")).toBeVisible();
-      await expect(study.locator("[data-study-reset]")).toBeDisabled();
-      expect(
-        await page.evaluate(
-          () => document.documentElement.scrollWidth <= innerWidth,
-        ),
-      ).toBeTruthy();
-    }
-  }
-  await context.close();
-});
-
-test("focus and text contrast survive contrasting material and action fills", async ({
-  page,
-}) => {
-  for (const id of [
-    "glassmorphism",
-    "neumorphism",
-    "skeuomorphism",
-    "neobrutalism",
-  ]) {
-    await page.goto(`/en/catalog/${id}/`);
-    await page.evaluate(
-      () => (document.documentElement.dataset.theme = "dark"),
-    );
-    const save = page.locator('[data-panel="variant"] [data-study-save]');
-    await save.focus();
-    const ratios = await save.evaluate((node) => {
-      const parse = (value: string) => value.match(/[\d.]+/g)!.map(Number);
-      const luminance = (rgb: number[]) =>
-        rgb
-          .slice(0, 3)
-          .map((c) => {
-            const v = c / 255;
-            return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
-          })
-          .reduce((sum, c, i) => sum + c * [0.2126, 0.7152, 0.0722][i], 0);
-      const ratio = (a: number[], b: number[]) => {
-        const x = luminance(a),
-          y = luminance(b);
-        return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05);
-      };
-      const card = getComputedStyle(node.closest(".study-card")!);
-      const style = getComputedStyle(node);
-      const raw = parse(card.backgroundColor);
-      // Composite translucent white against black: conservative darkest possible backdrop.
-      const bg = raw.slice(0, 3).map((v) => v * (raw[3] ?? 1));
-      return {
-        focus: ratio(parse(style.outlineColor), bg),
-        text: ratio(parse(card.color), bg),
-        button: ratio(parse(style.color), parse(style.backgroundColor)),
-      };
+  test(`${lang}: no JavaScript retains initial screens and explanations`, async ({
+    browser,
+    baseURL,
+  }) => {
+    test.setTimeout(120_000);
+    const context = await browser.newContext({
+      javaScriptEnabled: false,
+      viewport: { width: 320, height: 900 },
     });
-    expect(ratios.focus, `${id}: focus ring`).toBeGreaterThanOrEqual(3);
-    expect(ratios.text, `${id}: body text`).toBeGreaterThanOrEqual(4.5);
-    expect(ratios.button, `${id}: button text`).toBeGreaterThanOrEqual(4.5);
-  }
-});
-
-test("exact Japanese title matches still respect category and kind filters", async ({
+    const page = await context.newPage();
+    for (const id of ids) {
+      await page.goto(`${baseURL}/${lang}/catalog/${id}/`);
+      await expect(page.locator(`[data-demo="${id}"]`)).toBeVisible();
+      await expect(page.locator(".design-demo noscript")).toBeVisible();
+      await expect(page.locator("[data-reset]")).toBeDisabled();
+      await expect(page.locator("article.prose h2")).toHaveCount(3);
+      for (const width of [320, 768, 1440]) {
+        await page.setViewportSize({ width, height: 900 });
+        for (const theme of ["light", "dark"]) {
+          await page.evaluate(
+            (t) => (document.documentElement.dataset.theme = t),
+            theme,
+          );
+          expect(
+            await page.evaluate(
+              () => document.documentElement.scrollWidth <= innerWidth,
+            ),
+            `${id}/${width}/${theme}/nojs`,
+          ).toBeTruthy();
+        }
+      }
+    }
+    await context.close();
+  });
+}
+test("representative actions handle repetition, empty inputs and reload", async ({
   page,
 }) => {
-  await page.goto("/ja/catalog/?q=ブルータリズム&category=columns");
-  await expect(page.locator("#result-status")).toContainText("見つかりません");
-  await expect(page.locator("#search-results a")).toHaveCount(0);
-  await page.locator("#category").selectOption("styles");
-  await expect(page.locator("#search-results a").first()).toHaveAttribute(
-    "href",
-    "/ja/catalog/brutalism/",
+  test.setTimeout(120_000);
+  const open = async (id: string) => {
+    await page.goto(`/en/catalog/${id}/`);
+    const root = page.locator("[data-demo]");
+    await expect(root).toHaveAttribute("data-ready", "true");
+    return root;
+  };
+  let root = await open("brutalism");
+  await root.locator("[data-search]").fill("no such document");
+  await expect(root.locator("[data-empty]")).toBeVisible();
+  await root.locator("[data-search]").fill("");
+  await root.locator("[data-filter]").selectOption("manual");
+  await expect(root.locator("[data-row]:visible")).toHaveCount(1);
+  await root.locator("[data-reset]").click();
+  await expect(root.locator("[data-row]:visible")).toHaveCount(3);
+  root = await open("neobrutalism");
+  await root.locator("[data-date]").selectOption("1");
+  await expect(root.locator("[data-lineup]")).toContainText("Velvet");
+  await page.reload();
+  await expect(root.locator("[data-date]")).toHaveValue("0");
+  root = await open("glassmorphism");
+  await root.locator("[data-night]").check();
+  await root.locator("[data-opaque]").check();
+  await expect(root).toHaveAttribute("data-night", "true");
+  expect(
+    await root
+      .locator(".glass")
+      .first()
+      .evaluate((el) => getComputedStyle(el).backdropFilter),
+  ).toBe("none");
+  root = await open("neumorphism");
+  await root.locator("[data-power]").click();
+  await expect(root.locator("output")).toHaveText("0%");
+  await root.locator("[data-power]").click();
+  await root.locator("[data-level]").fill("90");
+  await expect(root.locator("output")).toHaveText("90%");
+  root = await open("skeuomorphism");
+  await root.locator("[data-note]").fill("My first note");
+  await root.locator("[data-mark]").click();
+  await root.locator("[data-page]").selectOption("1");
+  await expect(root.locator("[data-note]")).toHaveValue("");
+  await root.locator("[data-note]").fill("Second page");
+  await root.locator("[data-page]").selectOption("0");
+  await expect(root.locator("[data-note]")).toHaveValue("My first note");
+  await expect(root.locator("[data-mark]")).toHaveAttribute(
+    "aria-pressed",
+    "true",
   );
-  await page.goto("/ja/guides/?q=ブルータリズム");
-  await expect(page.locator("#result-status")).not.toHaveText("…");
-  await expect(
-    page.locator('#search-results a[href="/ja/catalog/brutalism/"]'),
-  ).toHaveCount(0);
+  await root.locator("[data-reset]").click();
+  await expect(root.locator("[data-mark]")).toHaveAttribute(
+    "aria-pressed",
+    "false",
+  );
+  root = await open("flat-design");
+  await root.locator("[data-filter]").selectOption("done");
+  await expect(root.locator("[data-empty]")).toBeVisible();
+  await root.locator("[data-filter]").selectOption("all");
+  await root.locator("[data-check]").first().check();
+  await expect(root.locator("[data-count]")).toHaveText("1 / 3");
+  await root.locator("[data-filter]").selectOption("done");
+  await expect(root.locator("[data-task]:visible")).toHaveCount(1);
+  root = await open("minimalism");
+  await root.locator("[data-prev]").click();
+  await expect(root.locator("[data-number]")).toHaveText("03 / 03");
+  await root.locator("[data-next]").click();
+  await expect(root.locator("[data-number]")).toHaveText("01 / 03");
+  for (const id of ["single-column", "two-columns", "multiple-columns"]) {
+    root = await open(id);
+    await root.locator("[data-width]").selectOption("narrow");
+    await expect(root.locator(".frame")).toHaveAttribute(
+      "data-width",
+      "narrow",
+    );
+    if (id === "single-column") {
+      await root.locator("summary").click();
+      await expect(root.locator("details")).toHaveAttribute("open", "");
+    } else {
+      await root.locator('[data-doc="1"]').click();
+      await expect(root.locator("[data-doc-title]")).toHaveText("Materials");
+      const positions = await root
+        .locator(".workspace > *")
+        .evaluateAll((els) => els.map((el) => el.getBoundingClientRect().y));
+      expect(positions[1]).toBeGreaterThan(positions[0]);
+    }
+  }
+  root = await open("list-layout");
+  await root.locator("select[data-topic]").selectOption("type");
+  await root.locator("[data-sort]").selectOption("short");
+  await expect(root.locator("[data-row]:visible")).toHaveCount(2);
+  await expect(root.locator("[data-row]:visible").first()).toHaveAttribute(
+    "data-minutes",
+    "2",
+  );
+  root = await open("uniform-grid");
+  await root.locator("[data-filter]").selectOption("type");
+  await expect(root.locator("[data-card]:visible")).toHaveCount(3);
+  await root.locator("[data-card]:visible summary").first().click();
+  await expect(root.locator("details[open]")).toHaveCount(1);
+  root = await open("serif");
+  await root.locator("[data-terminals]").check();
+  await expect(root.locator(".terminal").first()).toBeVisible();
+  await root.locator("[data-size]").fill("64");
+  await expect(root.locator("[data-size-value]")).toHaveText("64px");
+  root = await open("sans-serif");
+  await root.locator("[data-weight]").fill("700");
+  expect(
+    await root
+      .locator("[data-sample]")
+      .evaluate((el) => getComputedStyle(el).fontWeight),
+  ).toBe("700");
+  root = await open("script");
+  await root.locator("[data-text]").fill("");
+  await expect(root.locator("[data-sample]")).toBeEmpty();
+  await root.locator("[data-text]").fill("Hello garden");
+  await expect(root.locator("[data-sample]")).toHaveText("Hello garden");
+  for (const id of ["proportional", "monospace"]) {
+    root = await open(id);
+    await root.locator("[data-text]").fill("");
+    await expect(root.locator("[data-sample]")).toBeEmpty();
+    await root.locator("[data-text]").fill("iiiWWW");
+    await root.locator("[data-guides]").check();
+    await expect(root.locator("[data-sample]")).toHaveClass(/guides/);
+    const widths = await root
+      .locator("[data-sample] span")
+      .evaluateAll((els) => els.map((el) => el.getBoundingClientRect().width));
+    if (id === "monospace")
+      expect(Math.abs(widths[0] - widths[3])).toBeLessThan(0.1);
+    else expect(widths[3]).toBeGreaterThan(widths[0] * 2);
+  }
+});
+test("masonry preserves non-overlap and DOM focus order after expansion", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/en/catalog/masonry/");
+  const root = page.locator("[data-demo]");
+  const geometry = async () =>
+    root.locator("[data-tile]").evaluateAll((els) =>
+      els.map((el) => {
+        const r = el.getBoundingClientRect();
+        return { x: r.x, y: r.y, w: r.width, h: r.height };
+      }),
+    );
+  await expect(root.locator(".board")).toHaveAttribute(
+    "data-positioned",
+    "true",
+  );
+  const before = await geometry();
+  await root.locator("summary").first().focus();
+  await page.keyboard.press("Enter");
+  await expect(root.locator("details").first()).toHaveAttribute("open", "");
+  await expect
+    .poll(async () => JSON.stringify(await geometry()))
+    .not.toBe(JSON.stringify(before));
+  await expect
+    .poll(async () => {
+      const after = await geometry();
+      for (let i = 0; i < after.length; i++)
+        for (let j = i + 1; j < after.length; j++) {
+          const a = after[i],
+            b = after[j];
+          if (!(
+            a.x + a.w <= b.x + 1 ||
+            b.x + b.w <= a.x + 1 ||
+            a.y + a.h <= b.y + 1 ||
+            b.y + b.h <= a.y + 1
+          ))
+            return false;
+        }
+      return true;
+    })
+    .toBe(true);
+  await page.keyboard.press("Tab");
+  await expect(root.locator("summary").nth(1)).toBeFocused();
+  await page.setViewportSize({ width: 320, height: 900 });
+  await expect
+    .poll(
+      async () => new Set((await geometry()).map((r) => Math.round(r.x))).size,
+    )
+    .toBe(1);
+});
+test("local fonts and CJK specimens load; tabular numbers align", async ({
+  page,
+}) => {
+  test.setTimeout(90_000);
+  for (const lang of languages)
+    for (const id of [
+      "serif",
+      "sans-serif",
+      "script",
+      "proportional",
+      "monospace",
+    ]) {
+      await page.goto(`/${lang}/catalog/${id}/`);
+      await page.evaluate(() => document.fonts.ready);
+      const loaded = await page.evaluate(() =>
+        [...document.fonts]
+          .filter((f) => f.status === "loaded")
+          .map((f) => f.family.replaceAll('"', "")),
+      );
+      const face =
+        id === "serif"
+          ? "Demo Serif"
+          : id === "script"
+            ? "Demo Script"
+            : id === "monospace"
+              ? "Demo Mono"
+              : "Demo Sans";
+      expect(loaded).toContain(face);
+      if (lang !== "en" && ["serif", "sans-serif"].includes(id))
+        expect(loaded).toContain(`${face} ${lang === "ko" ? "KR" : "JP"}`);
+    }
+  await page.goto("/en/catalog/proportional/");
+  await page.evaluate(() => document.fonts.ready);
+  const rows = page.locator(".numbers span");
+  const before = await rows.evaluateAll((els) =>
+    els.map((e) => e.getBoundingClientRect().width),
+  );
+  expect(before[0]).not.toBeCloseTo(before[1], 1);
+  await page.locator("input[data-tabular]").check();
+  const after = await rows.evaluateAll((els) =>
+    els.map((e) => e.getBoundingClientRect().width),
+  );
+  expect(after[0]).toBeCloseTo(after[1], 1);
 });

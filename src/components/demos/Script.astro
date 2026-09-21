@@ -1,0 +1,238 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+import "./fonts.css";
+---
+
+<section
+  class="demo"
+  data-demo="script"
+  lang={lang}
+  data-reset-message={t(
+    "Initial state restored",
+    "초기 상태로 복원했습니다",
+    "初期状態に戻しました",
+  )}
+>
+  <div class="invitation">
+    <small>{t("YOU ARE INVITED", "당신을 초대합니다", "ご招待")}</small>
+    <span class="flourish" aria-hidden="true">
+      ❦
+    </span>
+    <h2 data-sample lang="en">
+      An evening together
+    </h2>
+    <p>
+      {t(
+        "Join us for a quiet dinner in the garden.",
+        "정원에서 함께하는 조용한 저녁 식사.",
+        "庭で静かな夕食をご一緒に。",
+      )}
+    </p>
+    <hr />
+    <p>26.09.2026 · 18:00</p>
+    <p>
+      {t(
+        "The garden house · Fictional invitation",
+        "정원의 집 · 가상 초대장",
+        "庭の家 · 架空の招待状",
+      )}
+    </p>
+  </div>
+  <div class="controls">
+    <label>
+      {t("Latin heading", "라틴 제목", "ラテン文字の見出し")}
+      <input
+        type="text"
+        value="An evening together"
+        maxlength="60"
+        data-text
+        data-interactive
+        disabled
+      />
+    </label>
+    <label>
+      {t("Size", "크기", "サイズ")}
+      <input
+        data-size
+        type="range"
+        min="24"
+        max="72"
+        value="48"
+        data-interactive
+        disabled
+      />
+      <output data-size-value>48px</output>
+    </label>
+  </div>
+  <p class="font-note">
+    {t(
+      "Dancing Script supports this Latin heading. Unsupported characters use the plain fallback; body text stays sans-serif.",
+      "Dancing Script의 라틴 제목입니다. 지원하지 않는 문자는 일반 대체 글꼴, 본문은 산세리프로 표시합니다.",
+      "Dancing Scriptのラテン文字見出し。未対応文字は通常の代替書体、本文はサンセリフで表示します。",
+    )}
+  </p>
+
+  <button class="reset" type="button" data-reset data-interactive disabled>
+    {t("Reset", "초기화", "リセット")}
+  </button>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mount } from "./shared";
+  mount("script", (root, say) => {
+    const text = root.querySelector<HTMLInputElement>("[data-text]")!,
+      size = root.querySelector<HTMLInputElement>("[data-size]")!,
+      sample = root.querySelector<HTMLElement>("[data-sample]")!;
+    const update = () => {
+      sample.textContent = text.value;
+      sample.style.fontSize = `${size.value}px`;
+      root.querySelector("[data-size-value]")!.textContent = `${size.value}px`;
+      say(`${text.value.length} / 60 · ${size.value}px`);
+    };
+    text.addEventListener("input", update);
+    size.addEventListener("input", update);
+    return () => {
+      text.value = "An evening together";
+      size.value = "48";
+      update();
+    };
+  });
+</script>
+<style>
+  .demo {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: clamp(16px, 3vw, 32px);
+    color-scheme: light;
+  }
+  .demo * {
+    box-sizing: border-box;
+  }
+  h2,
+  h3,
+  p {
+    margin: 0 0 1rem;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 3.6rem);
+    line-height: 1.12;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 18px 0;
+  }
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+  button,
+  select,
+  input,
+  textarea {
+    font: inherit;
+    max-width: 100%;
+    color: inherit;
+  }
+  button,
+  select,
+  input:not([type="checkbox"]):not([type="range"]) {
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+  button,
+  select {
+    cursor: pointer;
+  }
+  button {
+    border: 1px solid currentColor;
+    background: transparent;
+  }
+  input,
+  textarea,
+  select {
+    background: #fff;
+    color: #172329;
+    border: 1px solid #67747c;
+  }
+  input[type="range"] {
+    width: 150px;
+  }
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+  :focus-visible {
+    outline: 3px dashed currentColor;
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  [role="status"] {
+    min-height: 1.5em;
+    font-size: 0.85rem;
+    margin-top: 16px;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  .reset {
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .demo * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+  .demo {
+    background: #eadfdb;
+    color: #633d44;
+  }
+  .invitation {
+    text-align: center;
+    background: #fffaf4;
+    border: 1px solid #b89c9b;
+    outline: 1px solid #b89c9b;
+    outline-offset: -10px;
+    padding: 40px 22px;
+  }
+  .invitation h2 {
+    font-family: "Demo Script", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.5;
+    min-height: 1.5em;
+  }
+  .flourish {
+    display: block;
+    font-size: 3rem;
+    color: #93695b;
+    margin: 16px;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid #ac8c83;
+    width: 50px;
+    margin: 24px auto;
+  }
+  .font-note {
+    font-size: 0.75rem;
+  }
+</style>

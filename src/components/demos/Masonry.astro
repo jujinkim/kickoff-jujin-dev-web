@@ -1,0 +1,285 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+const titles = [
+  t("Color atlas", "색 지도", "色の地図"),
+  t("Paper forms", "종이 형태", "紙のかたち"),
+  t("City rhythm", "도시 리듬", "街のリズム"),
+  t("Quiet geometry", "고요한 기하", "静かな幾何"),
+  t("Letter studies", "글자 연구", "文字の研究"),
+  t("Light archive", "빛 기록", "光の記録"),
+];
+---
+
+<section
+  class="demo"
+  data-demo="masonry"
+  lang={lang}
+  data-reset-message={t(
+    "Initial state restored",
+    "초기 상태로 복원했습니다",
+    "初期状態に戻しました",
+  )}
+>
+  <small>{t("COLLECTED", "수집 자료", "収集資料")} / 06</small>
+  <h2>{t("Visual fragments", "시각의 조각", "視覚のかけら")}</h2>
+  <p>
+    {t(
+      "Open a caption. Watch the shortest column take the next card.",
+      "설명을 펼치면 다음 카드가 가장 짧은 열에 놓입니다.",
+      "説明を開くと、次のカードが最も短い列に入ります。",
+    )}
+  </p>
+  <div class="board">
+    {titles.map((title, i) => (
+      <article data-tile>
+        <div class={`art art-${i}`} aria-hidden="true">
+          {["◒", "▤", "▦", "◭", "Aa", "◐"][i]}
+        </div>
+        <small>0{i + 1}</small>
+        <h3>{title}</h3>
+        <details>
+          <summary>{t("Caption", "설명", "説明")}</summary>
+          <p>
+            {t(
+              "Collected on a slow walk through the city. The changing proportions create a rhythm; each fragment keeps its place in the reading sequence.",
+              "도시를 천천히 걸으며 모았습니다. 달라지는 비율이 리듬을 만들지만 각 조각의 읽기 순서는 유지됩니다.",
+              "街をゆっくり歩きながら集めました。比率の変化がリズムを生みますが、それぞれの読む順序は保たれます。",
+            )}
+          </p>
+        </details>
+      </article>
+    ))}
+  </div>
+
+  <button class="reset" type="button" data-reset data-interactive disabled>
+    {t("Reset", "초기화", "リセット")}
+  </button>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mount } from "./shared";
+  mount("masonry", (root, say) => {
+    const board = root.querySelector<HTMLElement>(".board")!,
+      tiles = [...root.querySelectorAll<HTMLElement>("[data-tile]")];
+    let pending = false;
+    const layout = () => {
+      pending = false;
+      const columns =
+        board.clientWidth < 450 ? 1 : board.clientWidth < 650 ? 2 : 3;
+      const gap = 16,
+        w = (board.clientWidth - gap * (columns - 1)) / columns;
+      const heights = Array(columns).fill(0) as number[];
+      tiles.forEach((tile) => {
+        tile.style.width = `${w}px`;
+        const col = heights.indexOf(Math.min(...heights));
+        tile.style.transform = `translate(${col * (w + gap)}px,${heights[col]}px)`;
+        heights[col] += tile.offsetHeight + gap;
+      });
+      board.dataset.positioned = "true";
+      board.style.height = `${Math.max(...heights) - gap}px`;
+    };
+    const queue = () => {
+      if (!pending) {
+        pending = true;
+        requestAnimationFrame(layout);
+      }
+    };
+    new ResizeObserver(queue).observe(board);
+    tiles.forEach((tile) => new ResizeObserver(queue).observe(tile));
+    root.querySelectorAll("details").forEach((d) =>
+      d.addEventListener("toggle", () => {
+        queue();
+        say(d.closest("article")!.querySelector("h3")!.textContent!);
+      }),
+    );
+    document.fonts.ready.then(queue);
+    queue();
+    return () => {
+      root.querySelectorAll("details").forEach((d) => (d.open = false));
+      queue();
+    };
+  });
+</script>
+<style>
+  .demo {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: clamp(16px, 3vw, 32px);
+    color-scheme: light;
+  }
+  .demo * {
+    box-sizing: border-box;
+  }
+  h2,
+  h3,
+  p {
+    margin: 0 0 1rem;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 3.6rem);
+    line-height: 1.12;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 18px 0;
+  }
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+  button,
+  select,
+  input,
+  textarea {
+    font: inherit;
+    max-width: 100%;
+    color: inherit;
+  }
+  button,
+  select,
+  input:not([type="checkbox"]):not([type="range"]) {
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+  button,
+  select {
+    cursor: pointer;
+  }
+  button {
+    border: 1px solid currentColor;
+    background: transparent;
+  }
+  input,
+  textarea,
+  select {
+    background: #fff;
+    color: #172329;
+    border: 1px solid #67747c;
+  }
+  input[type="range"] {
+    width: 150px;
+  }
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+  :focus-visible {
+    outline: 3px dashed currentColor;
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  [role="status"] {
+    min-height: 1.5em;
+    font-size: 0.85rem;
+    margin-top: 16px;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  .reset {
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .demo * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+  .demo {
+    background: #f3ece5;
+    color: #443730;
+  }
+  .board {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    align-items: start;
+  }
+  .board[data-positioned="true"] {
+    display: block;
+  }
+  .board[data-positioned="true"] article {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  article {
+    min-width: 0;
+    padding: 14px;
+    background: #fffaf4;
+    border: 1px solid #bead9e;
+  }
+  .art {
+    display: grid;
+    place-items: center;
+    height: 150px;
+    font-size: 5rem;
+    background: #bdc9ad;
+    color: #3f5034;
+    margin-bottom: 16px;
+  }
+  .art-1 {
+    height: 240px;
+    background: #dfb29c;
+    color: #6c3924;
+  }
+  .art-2 {
+    height: 110px;
+    background: #c7cadc;
+    color: #454b70;
+  }
+  .art-3 {
+    height: 210px;
+    background: #decf99;
+    color: #665824;
+  }
+  .art-4 {
+    height: 130px;
+    background: #d1b7c5;
+    color: #664252;
+  }
+  .art-5 {
+    height: 190px;
+    background: #a8c5c2;
+    color: #315a56;
+  }
+  details p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    margin-top: 12px;
+  }
+  @media (max-width: 500px) {
+    .board {
+      grid-template-columns: 1fr;
+    }
+    /* Reflow immediately on narrow screens, even before ResizeObserver fires. */
+    .board[data-positioned="true"] {
+      display: grid;
+      height: auto !important;
+    }
+    .board[data-positioned="true"] article {
+      position: static;
+      width: auto !important;
+      transform: none !important;
+    }
+  }
+</style>

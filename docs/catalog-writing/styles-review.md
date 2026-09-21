@@ -1,3 +1,5 @@
+> Historical pilot, superseded by [independent design demos](../design-demos.md) and [current verification](../design-demos-review.md).
+
 # Styles group editorial review — 2026-09-21
 
 ## Scope and sequence

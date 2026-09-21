@@ -76,6 +76,9 @@ if (
           "Usage: npm run content:new -- --id <candidateID> | --list",
         );
       console.log(createConcept(process.argv[index + 1]).join("\n"));
+      console.log(
+        "Design demos: docs/design-demos.md · Brief: docs/templates/design-demo-brief.md",
+      );
     }
   } catch (error) {
     console.error(error.message);

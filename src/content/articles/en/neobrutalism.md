@@ -3,7 +3,7 @@ kind: concept
 articleId: neobrutalism
 lang: en
 title: Neobrutalism
-summary: "Bold framing, distinct actions."
+summary: Pick a concert date.
 category: styles
 aliases:
   - Neobrutalism
@@ -16,31 +16,32 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: Bold outlines and hard shadows.
-  advantages: Strong framing clarifies action boundaries.
-  limitations: Equal emphasis makes elements compete.
-  suitable: Playful publications with clear hierarchy.
-  combinations: Minimal content within uniform grids.
+  features: >-
+    Bright blocks, thick outlines, and hard offset shadows create graphic
+    emphasis.
+  advantages: Strong blocks emphasize dates and performers.
+  limitations: >-
+    Dense decoration competes with details; reserve strong emphasis for key
+    information.
+  suitable: Choose it for a small event with a bold voice.
+  combinations: Use a grid for several posters while keeping each lineup concise.
 checked: "2026-09-21"
 ---
 
 ## Concept
 
-Neobrutalism uses bold outlines and hard offset shadows for a deliberately graphic appearance. [NN/g](https://www.nngroup.com/articles/neobrutalism/) contrasts it with raw web brutalism; neither a bright palette nor a specific border width is mandatory.
+Bright blocks, thick outlines, and hard offset shadows create graphic emphasis. Raw brutalism need not use these playful surfaces.
 
 ## Example
 
-An illustrative reading card keeps Save and its focus indicator inside a strong frame. These dimensions are example choices.
-
-```text
-Outline: 3px; hard shadow: 4px
-Save → Saved
-```
+The concert poster starts on Friday. Choose Saturday to replace the lineup while preserving date, venue, and time hierarchy. Reset or reload restores the initial state.
 
 ## When to choose it
 
-Consider a playful publication with minimal content or a uniform grid, but equal emphasis makes elements compete. Reserve stronger framing for meaningful roles; vivid colors still need readable contrast.
+Choose it for a small event with a bold voice. Dense decoration competes with details; reserve strong emphasis for key information.
+
+[NN/g](https://www.nngroup.com/articles/neobrutalism/)

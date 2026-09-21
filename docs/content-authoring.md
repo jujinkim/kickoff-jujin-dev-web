@@ -1,6 +1,6 @@
 # Catalog and guide authoring
 
-This guide describes the authoring workflow. The first seven styles are documented in the [styles release review](catalog-writing/styles-review.md); the other 51 candidates remain planned.
+This guide describes the authoring workflow. Design implementation follows [Design demos](design-demos.md). Eighteen designs are published in three languages; 40 other candidates remain planned. The earlier [styles review](catalog-writing/styles-review.md) is historical.
 
 ## Shared data and routes
 
@@ -42,7 +42,7 @@ Verify original authors and official sources before asserting attribution, defin
 
 Write and review English first; Korean/Japanese preserve scope, evidence and caveats. Keep `articleId`, `kind`, `category`, `related` and preview choice consistent across translations. `sourceRevision` identifies reviewed English revision. Set `published` only after editorial review; placeholders must not remain.
 
-Start with the complete styles group: brutalism, neobrutalism, glassmorphism, neumorphism, skeuomorphism, flat design and minimalism. Draft and review the group together, including cross-comparison and combination conditions, before advancing to other groups. Remaining order comes from candidate `order`.
+The 18 design concepts are complete. For new designs, use [the demo brief](templates/design-demo-brief.md) and [implementation workflow](design-demos.md). Review related concepts together; remaining writing order comes from candidate `order`.
 
 Use `related` IDs to link published concepts and guides. Rendering adds incoming relationships so a concept linked to a guide appears back on that guide. Draft relationships never render. References to an unissued peer stay prose or candidate metadata until that peer is published; do not create broken body links.
 

@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "Demo Serif";
+  src: url("/fonts/notoserif.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Demo Sans";
+  src: url("/fonts/notosans.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Demo Script";
+  src: url("/fonts/dancingscript.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Demo Mono";
+  src: url("/fonts/jetbrainsmono.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Demo Serif KR";
+  src: url("/fonts/notoserifkr.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Demo Serif JP";
+  src: url("/fonts/notoserifjp.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Demo Sans KR";
+  src: url("/fonts/notosanskr.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Demo Sans JP";
+  src: url("/fonts/notosansjp.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+[data-demo][lang="ko"] {
+  --demo-serif-cjk: "Demo Serif KR";
+  --demo-sans-cjk: "Demo Sans KR";
+}
+[data-demo][lang="ja"] {
+  --demo-serif-cjk: "Demo Serif JP";
+  --demo-sans-cjk: "Demo Sans JP";
+}

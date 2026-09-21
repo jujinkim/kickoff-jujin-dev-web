@@ -92,6 +92,21 @@ test(
         conceptPath,
         matter.stringify(concept.content, concept.data),
       );
+      // Public designs require all three reviewed translations. Guides still
+      // exercise missing/stale translation behavior in this fixture.
+      for (const [lang, headings] of [
+        ["ko", ["개념", "예시", "추천 조건"]],
+        ["ja", ["概念", "実例", "選ぶ条件"]],
+      ]) {
+        let content = concept.content;
+        ["Concept", "Example", "When to choose it"].forEach((heading, i) => {
+          content = content.replace(`## ${heading}`, `## ${headings[i]}`);
+        });
+        writeFileSync(
+          join(dir, `src/content/articles/${lang}/brutalism.md`),
+          matter.stringify(content, { ...concept.data, lang }),
+        );
+      }
       // A published page must never expose this draft body/title/summary.
       for (const lang of ["en", "ko", "ja"]) {
         const path = join(
@@ -170,7 +185,7 @@ test(
       const manifest = JSON.parse(read("pagefind/pagefind-entry.json"));
       assert.equal(
         Object.values(manifest.languages).reduce((n, l) => n + l.page_count, 0),
-        38,
+        40,
       );
       const category = read("en/catalog/categories/styles/index.html");
       assert.ok(category.includes('href="/en/catalog/brutalism/"'));
@@ -215,7 +230,7 @@ test(
       );
       assert.equal(
         existsSync(join(dir, "dist/ko/catalog/brutalism/index.html")),
-        false,
+        true,
       );
       server = createServer((req, res) => {
         const path = new URL(req.url, "http://localhost").pathname;

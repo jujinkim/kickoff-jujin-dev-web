@@ -3,7 +3,7 @@ kind: concept
 articleId: brutalism
 lang: en
 title: Brutalism
-summary: "Raw surfaces, clear structure."
+summary: Search a raw document archive.
 category: styles
 aliases:
   - Brutalism
@@ -16,31 +16,30 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: Raw typography and exposed structure.
-  advantages: Few decorations clarify the example.
-  limitations: Rough tone may not fit.
-  suitable: An intentionally utilitarian publication.
-  combinations: Minimal content and single-column reading.
+  features: Exposed rules and raw typography make structure visible.
+  advantages: Exposed rules make document boundaries explicit.
+  limitations: >-
+    The rough tone can distract; keep links underlined and controls
+    recognizable.
+  suitable: Choose it for a utilitarian archive.
+  combinations: A list or single column suits sequential document scanning.
 checked: "2026-09-21"
 ---
 
 ## Concept
 
-Brutalism exposes a page’s structure through plain rules and raw typography. It does not require confusing navigation. [NN/g](https://www.nngroup.com/articles/brutalism-antidesign/) distinguishes this visual treatment from deliberately disorienting antidesign.
+Exposed rules and raw typography make structure visible. Unlike neobrutalism, this archive avoids colorful offset shadows.
 
 ## Example
 
-An illustrative reading card keeps its underlined title and recognizable Save button while removing decorative polish.
-
-```text
-Plain border + underlined title
-Save → Saved
-```
+Search the three documents and filter Notes or Manual. Results update together; an empty query restores all matching documents. Reset or reload restores the initial state.
 
 ## When to choose it
 
-Consider an intentionally utilitarian publication: minimal content and single-column reading can fit, but a rough tone may not suit its readers. Keep labels, focus, and saved status clear.
+Choose it for a utilitarian archive. The rough tone can distract; keep links underlined and controls recognizable.
+
+[NN/g](https://www.nngroup.com/articles/brutalism-antidesign/)

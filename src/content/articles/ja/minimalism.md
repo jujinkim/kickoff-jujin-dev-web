@@ -3,7 +3,7 @@ kind: concept
 articleId: minimalism
 lang: ja
 title: ミニマリズム
-summary: "重複を減らしながら、作業を保ちます。"
+summary: 余白のある作品集を巡る.
 category: styles
 aliases:
   - ミニマリズム
@@ -16,31 +16,28 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: "作業と無関係な要素を除きます。"
-  advantages: "競合する装飾が減ります。"
-  limitations: "過剰な削除は必要情報を消します。"
-  suitable: "作業と重複が明確な場合。"
-  combinations: "平面、ガラス、加工の少ない表面。"
+  features: 限られた要素と広い余白で核心に集中させます。
+  advantages: 余白がひとつの作品に注意を集めます。
+  limitations: 操作や固有の情報まで削ると、単純化ではなく作業の損失になります。
+  suitable: 焦点を絞った作品集に向きます。
+  combinations: 抑制した配置にはセリフもサンセリフも組み合わせられます。
 checked: "2026-09-21"
 ---
 
 ## 概念
 
-ミニマリズムは作業を支えない内容や装飾を除きます。白い表面や固定の要素数は必須ではありません。[NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)
+限られた要素と広い余白で核心に集中させます。フラットデザインと異なり、奥行きだけでなく何を残すかの選択です。
 
 ## 実例
 
-架空の読書カードから装飾バッジ二つと重複した保存を除きます。タイトル、要約、時間、元の操作は残します。
-
-```text
-除去: 装飾 + 重複した保存
-保持: 情報 + 保存 / 保存済み
-```
+前へ・次へで3つの抽象作品を巡ります。作品、題名、位置が一緒に変わり、端では反対側につながります。 リセット・再読み込みで初期状態に戻ります。
 
 ## 選ぶ条件
 
-削除ごとに作業上の理由がある場合に使います。平面、ガラス、加工の少ない表面と共存できます。最後の保存も消すと作業が壊れます。情報を伝えるバッジも残す必要があります。
+焦点を絞った作品集に向きます。操作や固有の情報まで削ると、単純化ではなく作業の損失になります。
+
+[NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)

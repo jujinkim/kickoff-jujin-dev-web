@@ -3,7 +3,7 @@ import type { Article } from "../lib/content";
 import { articleUrl } from "../lib/content";
 import { categoryNames, strings } from "../lib/i18n";
 import Example from "./Example.astro";
-import { styleIds, studies } from "../lib/style-study";
+import { isDesignId, designDemos } from "../lib/design-demos";
 interface Props {
   article: Article;
   index?: number;
@@ -14,13 +14,13 @@ const d = article.data;
 
 <article class="catalog-card" data-category={d.category}>
   <a class="card-link" href={articleUrl(article)}>
-    {styleIds.includes(d.articleId) && (
+    {isDesignId(d.articleId) && (
       <>
         <div class="card-preview">
           <img
             class="style-preview-image"
             src={`/thumbnails/${d.articleId}-${d.lang}.png`}
-            alt={studies[d.lang][d.articleId].caption}
+            alt={designDemos[d.articleId].caption[d.lang]}
             width="360"
             height="280"
             loading="lazy"
@@ -29,7 +29,7 @@ const d = article.data;
         <img
           class="card-thumbnail"
           src={`/thumbnails/${d.articleId}-${d.lang}.png`}
-          alt={studies[d.lang][d.articleId].caption}
+          alt={designDemos[d.articleId].caption[d.lang]}
           width="360"
           height="280"
           loading="lazy"

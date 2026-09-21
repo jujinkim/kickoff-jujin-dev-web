@@ -1,0 +1,240 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section
+  class="demo"
+  data-demo="brutalism"
+  lang={lang}
+  data-reset-message={t(
+    "Initial state restored",
+    "초기 상태로 복원했습니다",
+    "初期状態に戻しました",
+  )}
+>
+  <header>
+    <small>{t("PUBLIC INDEX", "공개 목록", "公開目録")} / 001—003</small>
+    <h2>{t("OPEN ARCHIVE", "공개 아카이브", "公開アーカイブ")}</h2>
+    <p>
+      {t(
+        "Documents, without decoration.",
+        "장식 없는 문서 보관소.",
+        "装飾のない文書庫。",
+      )}
+    </p>
+  </header>
+  <div class="controls">
+    <label>
+      {t("Search", "검색", "検索")}
+      <input type="search" data-search data-interactive disabled />
+    </label>
+    <label>
+      {t("Type", "유형", "種類")}
+      <select data-filter data-interactive disabled>
+        <option value="all">{t("All", "전체", "すべて")}</option>
+        <option value="notes">{t("Notes", "노트", "ノート")}</option>
+        <option value="manual">{t("Manual", "설명서", "手引き")}</option>
+      </select>
+    </label>
+  </div>
+  <ol>
+    {[
+      t("Walking the city", "도시 산책", "街を歩く"),
+      t("Printing manual", "인쇄 설명서", "印刷の手引き"),
+      t("Field observations", "현장 관찰", "現場観察"),
+    ].map((title, i) => (
+      <li data-row data-kind={i === 1 ? "manual" : "notes"}>
+        <span>00{i + 1} / 2026</span>
+        <a href={`#archive-${i}`}>{title}</a>
+        <details id={`archive-${i}`}>
+          <summary>{t("Read document", "문서 읽기", "文書を読む")}</summary>
+          <p>
+            {t(
+              "Record the route, materials and changes. Leave a clear trail for the next reader.",
+              "경로, 재료, 변화를 기록합니다. 다음 독자가 따라갈 흔적을 남깁니다.",
+              "経路、素材、変化を記録。次の読者がたどれる記録を残します。",
+            )}
+          </p>
+        </details>
+      </li>
+    ))}
+  </ol>
+  <p data-empty hidden>
+    {t(
+      "No documents. Clear search or change type.",
+      "문서 없음. 검색어를 지우거나 유형을 바꾸세요.",
+      "文書なし。検索語を消すか種類を変えてください。",
+    )}
+  </p>
+
+  <button class="reset" type="button" data-reset data-interactive disabled>
+    {t("Reset", "초기화", "リセット")}
+  </button>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mount } from "./shared";
+  mount("brutalism", (root, say) => {
+    const search = root.querySelector<HTMLInputElement>("[data-search]")!;
+    const filter = root.querySelector<HTMLSelectElement>("[data-filter]")!;
+    const rows = [...root.querySelectorAll<HTMLElement>("[data-row]")];
+    const update = () => {
+      let count = 0;
+      rows.forEach((row) => {
+        row.hidden =
+          !(filter.value === "all" || row.dataset.kind === filter.value) ||
+          !row
+            .textContent!.toLocaleLowerCase()
+            .includes(search.value.trim().toLocaleLowerCase());
+        if (!row.hidden) count++;
+      });
+      root.querySelector<HTMLElement>("[data-empty]")!.hidden = count > 0;
+      say(`${count} / ${rows.length}`);
+    };
+    search.addEventListener("input", update);
+    filter.addEventListener("change", update);
+    return () => {
+      search.value = "";
+      filter.value = "all";
+      root.querySelectorAll("details").forEach((d) => (d.open = false));
+      update();
+    };
+  });
+</script>
+<style>
+  .demo {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: clamp(16px, 3vw, 32px);
+    color-scheme: light;
+  }
+  .demo * {
+    box-sizing: border-box;
+  }
+  h2,
+  h3,
+  p {
+    margin: 0 0 1rem;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 3.6rem);
+    line-height: 1.12;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 18px 0;
+  }
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+  button,
+  select,
+  input,
+  textarea {
+    font: inherit;
+    max-width: 100%;
+    color: inherit;
+  }
+  button,
+  select,
+  input:not([type="checkbox"]):not([type="range"]) {
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+  button,
+  select {
+    cursor: pointer;
+  }
+  button {
+    border: 1px solid currentColor;
+    background: transparent;
+  }
+  input,
+  textarea,
+  select {
+    background: #fff;
+    color: #172329;
+    border: 1px solid #67747c;
+  }
+  input[type="range"] {
+    width: 150px;
+  }
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+  :focus-visible {
+    outline: 3px dashed currentColor;
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  [role="status"] {
+    min-height: 1.5em;
+    font-size: 0.85rem;
+    margin-top: 16px;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  .reset {
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .demo * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+  .demo {
+    background: #fff;
+    color: #111;
+    font-family: Arial, sans-serif;
+    border: 2px solid #111;
+  }
+  header {
+    border-bottom: 6px solid;
+  }
+  h2 {
+    font-weight: 900;
+    letter-spacing: -0.06em;
+  }
+  ol {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    border-top: 1px solid;
+    padding: 20px 0;
+  }
+  li span {
+    display: block;
+    font: 12px monospace;
+  }
+  a {
+    color: inherit;
+    font-size: 1.5rem;
+    text-decoration: underline;
+  }
+  details {
+    margin-top: 12px;
+  }
+</style>

@@ -1,14 +1,7 @@
+import { designRegistry } from "./design-registry.mjs";
 const origin = process.env.SITE_ORIGIN ?? "https://jujin.dev";
 let failed = 0;
-const styles = [
-  "brutalism",
-  "neobrutalism",
-  "glassmorphism",
-  "neumorphism",
-  "skeuomorphism",
-  "flat-design",
-  "minimalism",
-];
+const styles = Object.keys(designRegistry);
 async function check(path, expected) {
   try {
     const url = new URL(path, origin);
@@ -37,15 +30,12 @@ for (const lang of ["en", "ko", "ja"]) {
   for (const id of styles) {
     await check(`/${lang}/catalog/${id}/`, [
       `data-comment-term="${id}"`,
-      `data-style-study="${id}"`,
+      `data-demo="${id}"`,
       `rel="canonical" href="https://jujin.dev/${lang}/catalog/${id}/"`,
       ...["en", "ko", "ja"].map(
         (other) =>
           `hreflang="${other}" href="https://jujin.dev/${other}/catalog/${id}/"`,
       ),
-      ...styles
-        .filter((peer) => peer !== id)
-        .map((peer) => `href="/${lang}/catalog/${peer}/"`),
     ]);
     await check(`/${lang}/catalog/${id}.md`, `ID: ${id}`);
   }
@@ -65,8 +55,8 @@ await check("/ai/instructions.md", "EVERY unresolved choice");
 const catalog = await check("/ai/catalog.json", '"schemaVersion": 1');
 if (catalog) {
   try {
-    if (JSON.parse(catalog).articles.length !== 19)
-      throw new Error("Expected exactly 19 articles");
+    if (JSON.parse(catalog).articles.length !== 30)
+      throw new Error("Expected exactly 30 articles");
   } catch (error) {
     failed++;
     console.error(error.message);

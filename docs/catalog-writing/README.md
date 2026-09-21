@@ -2,13 +2,13 @@
 
 > Current publishing rule (2026-09-21): one-minute concept introductions, three short sections (Concept, Example, When to choose it), and a prominent diagram or UI image. The longer section plans and exhaustive comparisons below remain research references, not required article length. Optional comparisons and sources must not obscure the core concept.
 
-This local design pack covers **58 candidates in 19 comparison groups**. It prepares practical introductory articles: definition, concrete example, benefits, constraints, selection and combination. The original pack contained designs only. The seven styles have now progressed to English drafting, group review, Korean/Japanese translation and an interactive study; see the [styles release review](styles-review.md). The other 51 candidates remain planned.
+This local design pack covers **58 candidates in 19 comparison groups**. It prepares practical introductory articles: definition, concrete example, benefits, constraints, selection and combination. The original pack contained designs only. Eighteen designs now have independent demos and English/Korean/Japanese articles; see [Design demos](../design-demos.md). The other 40 candidates remain planned. The [styles release review](styles-review.md) describes the superseded pilot.
 
 ## How to write from this pack
 
 1. Read the group’s shared fixture, comparison axes and matrix, then its linked article designs. Every article has the six existing section headings, all five comparison fields, evidence locators, multilingual terms, concrete outcomes and a required visualization specification.
 2. Reopen the [verified sources](sources.md) at their recorded passages. Definitions/mechanisms are source-backed; suitability and proposed examples are explicitly editorial. Recheck any product, pricing, version, license, service or jurisdiction claim when writing; this pack deliberately excludes unsupported commercial details.
-3. Write and cross-review the complete group in English first. Start with all seven styles; continue by existing candidate order below. Only after English approval, translate into Korean and Japanese with the [glossary](glossary.md).
+3. Write and cross-review the complete group in English first. The design groups are implemented; continue by existing candidate order below. Only after English approval, translate into Korean and Japanese with the [glossary](glossary.md).
 4. Use the existing single-candidate scaffold command from [authoring instructions](../content-authoring.md) when drafting is separately requested. Do not run it merely to consume these designs. Drafts remain unpublished until editorial review.
 
 Every visualization must preserve the declared inputs, mobile reading order, keyboard operation where interactive, non-color distinctions, visible long description and complete Markdown text equivalent. The figures are authored explanatory examples, not performance measurements, financial forecasts or service screenshots. No visualization code is supplied here.

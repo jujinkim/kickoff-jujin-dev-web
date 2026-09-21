@@ -3,7 +3,7 @@ kind: concept
 articleId: neumorphism
 lang: en
 title: Neumorphism
-summary: "Soft relief, independently clear controls."
+summary: Adjust a soft light console.
 category: styles
 aliases:
   - Neumorphism
@@ -16,31 +16,30 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: Paired soft highlights and shadows.
-  advantages: Decorative frames gain tactile character.
-  limitations: Subtle boundaries can obscure controls.
-  suitable: Decorative panels with clear controls.
-  combinations: Flat outlined buttons inside relief.
+  features: Opposing soft shadows make controls appear molded from their background.
+  advantages: Soft depth reinforces the physical control metaphor.
+  limitations: >-
+    Shadows alone cannot identify state; retain labels, outlines, and numeric
+    feedback.
+  suitable: Choose it for a small control panel.
+  combinations: A minimal layout leaves space for shadows and explicit labels.
 checked: "2026-09-21"
 ---
 
 ## Concept
 
-Neumorphism uses soft highlights and shadows to suggest raised or inset shapes on a similar-toned surface. [IxDF](https://ixdf.org/literature/topics/neumorphism) describes this tactile effect and the risk of subtle boundaries hiding controls.
+Opposing soft shadows make controls appear molded from their background. Skeuomorphism instead refers more broadly to recognizable physical objects.
 
 ## Example
 
-Imagine a softly raised reading card with an outlined Save button. Without shadows, the decoration disappears while the action and result remain clear.
-
-```text
-Raised / inset / no shadows
-Same button; Save → Saved
-```
+The lamp starts on at 65%. Toggle power or drag brightness: the light and numeric output change, while the pressed button marks power. Reset or reload restores the initial state.
 
 ## When to choose it
 
-Consider decorative frames with independently clear, flat controls. Shadow reversal alone can mean a momentary press rather than lasting saved status, so keep explicit labels and state wording.
+Choose it for a small control panel. Shadows alone cannot identify state; retain labels, outlines, and numeric feedback.
+
+[IxDF](https://ixdf.org/literature/topics/neumorphism)

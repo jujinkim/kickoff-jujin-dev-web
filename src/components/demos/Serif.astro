@@ -1,0 +1,266 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+import "./fonts.css";
+---
+
+<section
+  class="demo"
+  data-demo="serif"
+  lang={lang}
+  data-reset-message={t(
+    "Initial state restored",
+    "초기 상태로 복원했습니다",
+    "初期状態に戻しました",
+  )}
+>
+  <header>
+    <small>THE OBSERVER / NOTO SERIF</small>
+    <p>
+      {t(
+        "A journal of everyday things",
+        "일상의 사물을 기록하는 저널",
+        "日々のものを記録する日誌",
+      )}
+    </p>
+  </header>
+  <div class="specimen">
+    <span class="letter">
+      H<span class="terminal top" aria-hidden="true"></span>
+      <span class="terminal bottom" aria-hidden="true"></span>
+    </span>
+    <div>
+      <h2>{t("The art of noticing", "관찰의 기술", "気づく技術")}</h2>
+      <p>
+        {t(
+          "Every detail has a story. Slow down and let the page unfold.",
+          "모든 세부에는 이야기가 있습니다. 속도를 늦추고 지면을 읽어보세요.",
+          "細部には物語があります。歩みを緩め、紙面を読み進めてください。",
+        )}
+      </p>
+    </div>
+  </div>
+  <p class="sample" data-sample>
+    {t("River, light & time", "강과 빛, 그리고 시간", "川と光、そして時間")}
+  </p>
+  <div class="controls">
+    <label>
+      {t("Size", "크기", "サイズ")}
+      <input
+        data-size
+        type="range"
+        min="24"
+        max="72"
+        value="48"
+        data-interactive
+        disabled
+      />
+      <output data-size-value>48px</output>
+    </label>
+    <label>
+      <input type="checkbox" data-terminals data-interactive disabled />
+      {t("Mark H terminals", "H 획 끝 표시", "Hの端を示す")}
+    </label>
+  </div>
+  <p class="font-note">
+    {t(
+      "Self-hosted specimen. Latin uses the named face; Korean and Japanese use Noto CJK subsets. Other characters may use a fallback.",
+      "자체 호스팅 표본. 라틴은 표시된 서체, 한·일은 Noto CJK 서브셋입니다. 다른 문자는 대체 글꼴로 표시될 수 있습니다.",
+      "自前配信の見本。ラテン文字は表示の書体、韓国語・日本語はNoto CJKサブセット。ほかの文字は代替書体になる場合があります。",
+    )}
+  </p>
+  <button class="reset" type="button" data-reset data-interactive disabled>
+    {t("Reset", "초기화", "リセット")}
+  </button>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mount } from "./shared";
+  mount("serif", (root, say) => {
+    const size = root.querySelector<HTMLInputElement>("[data-size]")!,
+      marks = root.querySelector<HTMLInputElement>("[data-terminals]")!;
+    const update = () => {
+      root.querySelector<HTMLElement>("[data-sample]")!.style.fontSize =
+        `${size.value}px`;
+      root.querySelector("[data-size-value]")!.textContent = `${size.value}px`;
+      root.dataset.terminals = String(marks.checked);
+      say(
+        `${size.value}px · ${marks.parentElement!.textContent}: ${marks.checked ? "✓" : "—"}`,
+      );
+    };
+    size.addEventListener("input", update);
+    marks.addEventListener("change", update);
+    return () => {
+      size.value = "48";
+      marks.checked = false;
+      update();
+    };
+  });
+</script>
+<style>
+  .demo {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: clamp(16px, 3vw, 32px);
+    color-scheme: light;
+  }
+  .demo * {
+    box-sizing: border-box;
+  }
+  h2,
+  h3,
+  p {
+    margin: 0 0 1rem;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 3.6rem);
+    line-height: 1.12;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 18px 0;
+  }
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+  button,
+  select,
+  input,
+  textarea {
+    font: inherit;
+    max-width: 100%;
+    color: inherit;
+  }
+  button,
+  select,
+  input:not([type="checkbox"]):not([type="range"]) {
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+  button,
+  select {
+    cursor: pointer;
+  }
+  button {
+    border: 1px solid currentColor;
+    background: transparent;
+  }
+  input,
+  textarea,
+  select {
+    background: #fff;
+    color: #172329;
+    border: 1px solid #67747c;
+  }
+  input[type="range"] {
+    width: 150px;
+  }
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+  :focus-visible {
+    outline: 3px dashed currentColor;
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  [role="status"] {
+    min-height: 1.5em;
+    font-size: 0.85rem;
+    margin-top: 16px;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  .reset {
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .demo * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+  .demo {
+    background: #fff9eb;
+    color: #372c23;
+    border-top: 5px solid #372c23;
+  }
+  header {
+    border-bottom: 1px solid;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+  .specimen {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+  }
+  .specimen h2,
+  .specimen p,
+  .sample,
+  .letter {
+    font-family: "Demo Serif", var(--demo-serif-cjk, serif), serif;
+  }
+  .specimen h2 {
+    font-size: 2rem;
+  }
+  .letter {
+    position: relative;
+    font-size: 140px;
+    line-height: 1.2;
+    flex: none;
+    font-weight: 400;
+  }
+  .terminal {
+    display: none;
+    position: absolute;
+    left: 2%;
+    width: 42%;
+    height: 12%;
+    border: 2px solid #b64c2b;
+    border-radius: 50%;
+  }
+  .top {
+    top: 18%;
+  }
+  .bottom {
+    bottom: 14%;
+  }
+  .demo[data-terminals="true"] .terminal {
+    display: block;
+  }
+  .sample {
+    font-size: 48px;
+    line-height: 1.5;
+    border-block: 1px solid #a4957d;
+    padding: 20px 0;
+  }
+  .font-note {
+    font-size: 0.75rem;
+  }
+  @media (max-width: 500px) {
+    .specimen {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+</style>

@@ -3,7 +3,7 @@ kind: concept
 articleId: skeuomorphism
 lang: ja
 title: スキューモーフィズム
-summary: "物のメタファーを使いながら、デジタルの操作を明示します。"
+summary: 紙のノートとしおり.
 category: styles
 aliases:
   - スキューモーフィズム
@@ -16,30 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: "物の外観や操作を参照します。"
-  advantages: "慣れた物が意味を補います。"
-  limitations: "不慣れな比喩は混乱を招きます。"
-  suitable: "読者が参照元を知る場合に適します。"
-  combinations: "平面アイコンと最小限の内容。"
+  features: 見慣れた素材や物でデジタルの作業を説明します。
+  advantages: ページとしおりの比喩がノートの作業を説明します。
+  limitations: 装飾が場所を取るため、入力とページ操作は明確にします。
+  suitable: 作業を助ける身近な比喩がある場合に向きます。
+  combinations: 紙の表面に1列の読書領域を置けます。
 checked: "2026-09-21"
 ---
 
 ## 概念
 
-スキューモーフィズムは物の外観や操作を借ります。しおりは記事を残す意味を示せますが、写実的な紙の質感は必須ではありません。[IxDF](https://ixdf.org/literature/topics/skeuomorphism)
+見慣れた素材や物でデジタルの作業を説明します。紙のノートでは製本、罫線、重なる縁、リボンのしおりを使います。
 
 ## 実例
 
-架空のカードにしおりを加え、保存ボタンは残します。実行すると保存済みとチェックが現れ、リセットで例の状態を消します。
-
-```text
-保存 → 保存済み + しおりのチェック
-```
+1ページに入力し、2ページを見て戻ると、各ページの文章が残ります。しおりは現在のページだけを示します。 リセット・再読み込みで初期状態に戻ります。
 
 ## 選ぶ条件
 
-読者が知る対象を使い、知らなくても操作を理解できるようにします。平面的なしおりと最小限の内容は共存できます。不要なドラッグは役立たない物理的制約を加えます。
+作業を助ける身近な比喩がある場合に向きます。装飾が場所を取るため、入力とページ操作は明確にします。
+
+[IxDF](https://ixdf.org/literature/topics/skeuomorphism)

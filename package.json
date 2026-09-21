@@ -15,7 +15,9 @@
     "test:e2e": "playwright test",
     "format": "prettier --write .",
     "verify:live": "node scripts/verify-live.mjs",
-    "content:new": "node scripts/content-new.mjs"
+    "content:new": "node scripts/content-new.mjs",
+    "thumbnails": "node scripts/generate-style-thumbnails.mjs",
+    "build:demo-preview": "DESIGN_CAPTURE=1 npm run build"
   },
   "dependencies": {
     "astro": "7.3.3"

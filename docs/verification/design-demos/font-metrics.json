@@ -1,0 +1,34 @@
+{
+  "proportional": {
+    "fonts": {
+      "fonts": [
+        {
+          "familyName": "Noto Sans",
+          "postScriptName": "NotoSans-Regular",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ]
+    },
+    "metrics": {
+      "font": "32px / 64px \"Demo Sans\", monospace",
+      "widths": [8, 8, 8, 30, 30, 30, 8, 18, 18, 18, 18]
+    }
+  },
+  "monospace": {
+    "fonts": {
+      "fonts": [
+        {
+          "familyName": "JetBrains Mono",
+          "postScriptName": "JetBrainsMono-Regular",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ]
+    },
+    "metrics": {
+      "font": "32px / 64px \"Demo Mono\", monospace",
+      "widths": [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19]
+    }
+  }
+}

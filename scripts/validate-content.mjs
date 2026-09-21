@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import matter from "gray-matter";
+import { validateDesigns } from "./design-registry.mjs";
 import { articleOverviewSeconds } from "../src/lib/reading-budget.mjs";
 import {
   taxonomy,
@@ -35,7 +36,12 @@ export function readArticles(root = "src/content/articles") {
     }));
 }
 export function validateArticles(articles) {
-  const errors = validateCatalog(taxonomy, candidates, articles);
+  const errors = [
+    ...validateCatalog(taxonomy, candidates, articles),
+    ...validateDesigns(articles, undefined, undefined, {
+      thumbnails: process.env.DESIGN_CAPTURE !== "1",
+    }),
+  ];
   const keys = new Set();
   const byKey = new Map();
   for (const a of articles) {

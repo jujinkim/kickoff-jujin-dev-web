@@ -1,0 +1,266 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section
+  class="demo"
+  data-demo="skeuomorphism"
+  lang={lang}
+  data-reset-message={t(
+    "Initial state restored",
+    "초기 상태로 복원했습니다",
+    "初期状態に戻しました",
+  )}
+>
+  <div class="paper">
+    <div class="ribbon" aria-hidden="true">
+      01
+    </div>
+    <small>{t("FIELD NOTEBOOK", "현장 수첩", "フィールドノート")}</small>
+    <h2>{t("Small discoveries", "작은 발견", "小さな発見")}</h2>
+    <label class="note-label">
+      {t("Note", "노트", "ノート")}
+      <textarea
+        rows="6"
+        maxlength="1200"
+        data-note
+        data-interactive
+        disabled
+      >{t("Morning light on the window.", "창문에 비치는 아침 햇살.", "窓に差し込む朝の光。")}</textarea>
+    </label>
+    <div class="controls">
+      <label>
+        {t("Page", "페이지", "ページ")}
+        <select data-page data-interactive disabled>
+          <option value="0">01</option>
+          <option value="1">02</option>
+          <option value="2">03</option>
+        </select>
+      </label>
+      <button
+        type="button"
+        data-mark
+        aria-pressed="false"
+        data-interactive
+        disabled
+      >
+        {t("Bookmark", "책갈피", "しおり")}
+      </button>
+    </div>
+  </div>
+
+  <button class="reset" type="button" data-reset data-interactive disabled>
+    {t("Reset", "초기화", "リセット")}
+  </button>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mount } from "./shared";
+  mount("skeuomorphism", (root, say) => {
+    const note = root.querySelector<HTMLTextAreaElement>("[data-note]")!,
+      page = root.querySelector<HTMLSelectElement>("[data-page]")!,
+      mark = root.querySelector<HTMLButtonElement>("[data-mark]")!;
+    const initial = note.value;
+    let notes = [initial, "", ""],
+      marks = [false, false, false],
+      current = 0;
+    const show = () => {
+      note.value = notes[current];
+      mark.setAttribute("aria-pressed", String(marks[current]));
+      root.querySelector(".ribbon")!.textContent =
+        `0${current + 1}${marks[current] ? " ✓" : ""}`;
+      say(`${current + 1} / 3 · ${note.value.length}`);
+    };
+    note.addEventListener("input", () => {
+      notes[current] = note.value;
+      say(`${current + 1} / 3 · ${note.value.length}`);
+    });
+    page.addEventListener("change", () => {
+      current = Number(page.value);
+      show();
+    });
+    mark.addEventListener("click", () => {
+      marks[current] = !marks[current];
+      show();
+    });
+    return () => {
+      notes = [initial, "", ""];
+      marks = [false, false, false];
+      current = 0;
+      page.value = "0";
+      show();
+    };
+  });
+</script>
+<style>
+  .demo {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: clamp(16px, 3vw, 32px);
+    color-scheme: light;
+  }
+  .demo * {
+    box-sizing: border-box;
+  }
+  h2,
+  h3,
+  p {
+    margin: 0 0 1rem;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 3.6rem);
+    line-height: 1.12;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 18px 0;
+  }
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+  button,
+  select,
+  input,
+  textarea {
+    font: inherit;
+    max-width: 100%;
+    color: inherit;
+  }
+  button,
+  select,
+  input:not([type="checkbox"]):not([type="range"]) {
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+  button,
+  select {
+    cursor: pointer;
+  }
+  button {
+    border: 1px solid currentColor;
+    background: transparent;
+  }
+  input,
+  textarea,
+  select {
+    background: #fff;
+    color: #172329;
+    border: 1px solid #67747c;
+  }
+  input[type="range"] {
+    width: 150px;
+  }
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+  :focus-visible {
+    outline: 3px dashed currentColor;
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  [role="status"] {
+    min-height: 1.5em;
+    font-size: 0.85rem;
+    margin-top: 16px;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  .reset {
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .demo * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+  .demo {
+    background: #6c4637;
+    color: #392c22;
+    padding: 24px 24px 24px 34px;
+    border-radius: 6px 16px 16px 6px;
+    border: 2px solid #452d24;
+    box-shadow: inset 9px 0 8px #302018;
+  }
+  .paper {
+    position: relative;
+    background: #fff5d9;
+    padding: 28px 24px;
+    border-left: 7px double #bfaaa0;
+    box-shadow:
+      4px 4px #dbceb5,
+      8px 8px #f0e5ce;
+  }
+  h2 {
+    font-family: Georgia, serif;
+    font-size: 2.4rem;
+  }
+  .ribbon {
+    position: absolute;
+    top: -28px;
+    right: 20px;
+    padding: 12px 8px 22px;
+    background: #9c372e;
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+  }
+  .note-label {
+    display: block;
+  }
+  textarea {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 8px;
+    border: 0;
+    border-left: 1px solid #bf7770;
+    background: repeating-linear-gradient(
+      transparent 0 31px,
+      #b5b2a5 31px 32px
+    );
+    line-height: 32px;
+    resize: vertical;
+  }
+  .reset {
+    color: #fff;
+  }
+  [role="status"] {
+    color: #fff;
+  }
+  button[aria-pressed="true"] {
+    background: #9c372e;
+    color: #fff;
+  }
+  @media (max-width: 450px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+    .demo {
+      padding: 20px 16px;
+    }
+    .paper {
+      padding: 22px 12px;
+    }
+  }
+</style>

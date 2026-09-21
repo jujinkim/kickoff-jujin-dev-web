@@ -1,3 +1,4 @@
+import { designRegistry } from "../../scripts/design-registry.mjs";
 import { test, expect } from "@playwright/test";
 for (const [lang, query, id] of [
   ["en", "requirements", "srs"],
@@ -163,7 +164,9 @@ for (const lang of ["en", "ko", "ja"]) {
     page,
   }) => {
     await page.goto(`/${lang}/catalog/`);
-    await expect(page.locator(".catalog-card")).toHaveCount(7);
+    await expect(page.locator(".catalog-card")).toHaveCount(
+      Object.keys(designRegistry).length,
+    );
     await page
       .locator(`.category-tree a[href="/${lang}/catalog/categories/styles/"]`)
       .click();

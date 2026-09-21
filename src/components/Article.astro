@@ -3,8 +3,8 @@ import { ancestors } from "../lib/catalog";
 import { render } from "astro:content";
 import Base from "../layouts/Base.astro";
 import Example from "../components/Example.astro";
-import StyleStudy from "../components/StyleStudy.astro";
-import { styleIds } from "../lib/style-study";
+import DesignDemo from "../components/DesignDemo.astro";
+import { isDesignId } from "../lib/design-demos";
 import Comparison from "../components/Comparison.astro";
 import Comments from "../components/Comments.astro";
 import {
@@ -84,8 +84,8 @@ const alternates = all
     )}
     <div class="article-layout">
       <div class="article-main">
-        {styleIds.includes(d.articleId) && (
-          <StyleStudy articleId={d.articleId} lang={d.lang} />
+        {isDesignId(d.articleId) && (
+          <DesignDemo articleId={d.articleId} lang={d.lang} />
         )}
         {d.example && (
           <div class="article-example" data-pagefind-ignore>

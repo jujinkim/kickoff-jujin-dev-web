@@ -1,34 +1,45 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readArticles } from "../scripts/validate-content.mjs";
-import { candidates, candidateStatus } from "../scripts/catalog-data.mjs";
+import {
+  designRegistry,
+  validateDesigns,
+} from "../scripts/design-registry.mjs";
 const articles = readArticles();
-const styles = candidates.filter((c) => c.category === "styles");
-test("reviewed styles preserve full group identity and textual examples", () => {
-  assert.equal(styles.length, 7);
-  assert.equal(
-    candidates.filter((c) => candidateStatus(c, articles) === "planned").length,
-    51,
+test("published designs have components, current translations, captions and thumbnails", () => {
+  assert.deepEqual(validateDesigns(articles), []);
+});
+test("unfinished designs cannot become public", () => {
+  const copy = structuredClone(articles);
+  const article = structuredClone(copy.find((a) => a.data.kind === "concept"));
+  article.data.articleId = "unimplemented-design";
+  copy.push(article);
+  assert.match(
+    validateDesigns(copy).join("\n"),
+    /missing design demo registration/,
   );
-  for (const candidate of styles) {
-    for (const lang of ["en", "ko", "ja"]) {
-      const article = articles.find(
-        (a) => a.data.articleId === candidate.id && a.data.lang === lang,
-      );
-      assert.ok(article);
-      assert.equal(article.data.status, "published");
-      assert.equal(article.data.kind, "concept");
-      assert.equal(article.data.category, "styles");
-      assert.equal(article.data.revision, 2);
-      assert.equal(article.data.sourceRevision, 2);
-      assert.deepEqual(
-        new Set(article.data.related),
-        new Set([
-          "theme",
-          ...styles.filter((s) => s.id !== candidate.id).map((s) => s.id),
-        ]),
-      );
-      assert.match(article.content, /```/);
-    }
-  }
+  const registry = structuredClone(designRegistry);
+  const id = Object.keys(registry)[0];
+  const wrongComponent = structuredClone(designRegistry);
+  wrongComponent[id].component = "Masonry";
+  assert.match(
+    validateDesigns(articles, wrongComponent).join("\n"),
+    /unfinished demo component contract/,
+  );
+  delete registry[id].caption.ko;
+  assert.match(
+    validateDesigns(articles, registry, () => false).join("\n"),
+    /missing thumbnail/,
+  );
+  assert.match(
+    validateDesigns(articles, registry).join("\n"),
+    /missing localized caption/,
+  );
+  copy.find(
+    (a) => a.data.articleId === id && a.data.lang === "ja",
+  ).data.status = "draft";
+  assert.match(
+    validateDesigns(copy).join("\n"),
+    /missing or stale published translation/,
+  );
 });

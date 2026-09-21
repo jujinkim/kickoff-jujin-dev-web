@@ -3,7 +3,7 @@ kind: concept
 articleId: skeuomorphism
 lang: ko
 title: 스큐어모피즘
-summary: "사물의 은유를 활용하되 디지털 행동은 명시합니다."
+summary: 종이 노트 작성·책갈피.
 category: styles
 aliases:
   - 스큐어모피즘
@@ -16,30 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-22"
 comparison:
-  features: "물리적 대상의 외형이나 동작을 참조합니다."
-  advantages: "익숙한 사물이 의미를 보완합니다."
-  limitations: "낯선 은유는 혼란을 줍니다."
-  suitable: "독자가 참조 대상을 알 때 적합합니다."
-  combinations: "평면 아이콘과 최소 콘텐츠를 조합합니다."
+  features: 익숙한 재질과 사물로 디지털 과업을 설명합니다.
+  advantages: 쪽과 책갈피의 은유가 노트 과업을 설명합니다.
+  limitations: 사실적인 장식이 공간을 차지하므로 입력·쪽 선택은 명확하게 두세요.
+  suitable: 과업을 돕는 익숙한 은유가 있을 때 어울립니다.
+  combinations: 종이 표면 안에 단일 읽기 열을 둘 수 있습니다.
 checked: "2026-09-21"
 ---
 
 ## 개념
 
-스큐어모피즘은 물리적 대상의 외형이나 동작을 빌립니다. 책갈피는 글 보관을 암시하며 사실적인 종이 질감은 필수가 아닙니다. [IxDF](https://ixdf.org/literature/topics/skeuomorphism)
+익숙한 재질과 사물로 디지털 과업을 설명합니다. 종이 노트는 제본, 줄눈, 겹친 가장자리와 리본 책갈피를 사용합니다.
 
 ## 예시
 
-가상 카드에 책갈피를 더하되 저장 버튼은 유지합니다. 실행하면 저장됨과 체크가 나타나며 초기화로 예제 상태를 지웁니다.
-
-```text
-저장 → 저장됨 + 책갈피 체크
-```
+1쪽에 입력하고 2쪽을 방문한 뒤 돌아오면 쪽마다 노트가 유지됩니다. 책갈피는 현재 쪽에만 표시됩니다. 초기화·새로고침으로 처음 상태로 돌아갑니다.
 
 ## 추천 조건
 
-독자가 아는 대상을 쓰되 몰라도 행동을 이해하게 하세요. 평면 책갈피와 최소 콘텐츠를 조합할 수 있습니다. 불필요한 끌기는 작업에 도움 없는 물리적 제약만 더합니다.
+과업을 돕는 익숙한 은유가 있을 때 어울립니다. 사실적인 장식이 공간을 차지하므로 입력·쪽 선택은 명확하게 두세요.
+
+[IxDF](https://ixdf.org/literature/topics/skeuomorphism)
