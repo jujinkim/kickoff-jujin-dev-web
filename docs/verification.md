@@ -20,7 +20,15 @@ The initial browser run found a Japanese exact-title search failure. Pagefind 1.
 
 English and both translations received mutual group review. Native-speaker editorial review, non-Chromium browser coverage, screen-reader listening, and authenticated comment posting were not performed. Automated semantics and contrast checks are bounded evidence, not a full accessibility certification.
 
-Production verification follows the reviewed commit's Pages run; the release result is recorded below after deployment.
+Production release commit [`82c8247`](https://github.com/jujinkim/jujin-dev-web/commit/82c824787d92d5b30d898ed07a082300f68f350b) was pushed to `main`. [Pages run 35587516744](https://github.com/jujinkim/jujin-dev-web/actions/runs/35587516744) passed all CI gates and deployment (build 1m41s, deploy 48s).
+
+After that deployment, `npm run verify:live` passed all 63 HTTP checks on `https://jujin.dev`, including the 21 style HTML and Markdown paths, category comparisons, canonical/hreflang, sibling links, stable comment identities, AI catalog, sitemaps and search assets. The production browser command below passed all five tests: 21 localized title searches followed through to their articles, language and sibling links, style modes/Reset, and Japanese exact-title category/kind isolation.
+
+```sh
+PLAYWRIGHT_BASE_URL=https://jujin.dev npx playwright test tests/browser/styles.spec.ts --grep 'searchable|style-specific|exact Japanese'
+```
+
+Published collections: [English](https://jujin.dev/en/catalog/categories/styles/), [Korean](https://jujin.dev/ko/catalog/categories/styles/), [Japanese](https://jujin.dev/ja/catalog/categories/styles/). This record distinguishes the completed runtime release from the subsequent documentation-only commit recording its evidence.
 
 Public baseline was refreshed before the release: all 18 existing live checks passed. Pages certificate is approved; `https_enforced` remains false. The old redirect and missing-certificate sections below are historical, not current blockers. See [deployment](deployment.md).
 

@@ -23,7 +23,7 @@ The Pages API reports `status: built`, `build_type: workflow`, CNAME `jujin.dev`
 4. Verify actual Pagefind queries and article interactions on the public origin. Keep comment IDs consistent across translations.
 5. Authenticated GitHub sign-in/comment posting remains an owner-driven manual check; this release does not post comments.
 
-See [verification](verification.md) for release-specific results and limitations.
+The seven-style release was deployed from `82c8247` in [run 35587516744](https://github.com/jujinkim/jujin-dev-web/actions/runs/35587516744). Post-deployment checks passed: 63 HTTP checks and five production browser tests covering all 21 localized style articles and search. See [verification](verification.md) for results, commands and remaining limits.
 
 If the GitHub app is later disconnected, install [giscus](https://github.com/apps/giscus) for `jujinkim/jujin-dev-web`, preserve Discussions and the existing category, and regenerate configuration at [giscus.app](https://giscus.app/). Never replace stable article IDs merely to reconnect comments.
 
