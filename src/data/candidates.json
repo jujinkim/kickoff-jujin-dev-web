@@ -7,7 +7,7 @@
       "ko": "사용자 스토리",
       "ja": "ユーザーストーリー"
     },
-    "scope": "Explain User story within requirements expression; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain a user-valued save increment, the role–goal–benefit sentence and supporting acceptance conversation. Exclude full SRS structure and mandatory Scrum practice. Distinguish: A story is not a UI task or the whole use case.",
     "compareWith": ["use-case", "job-story"],
     "relatedGuides": ["srs"],
     "order": 100
@@ -20,7 +20,7 @@
       "ko": "유스케이스",
       "ja": "ユースケース"
     },
-    "scope": "Explain Use case within requirements expression; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Describe actor goal, preconditions, main scenario and extensions for persistent saving. Exclude exhaustive UI wireframes, database schema and quality-requirement specifications. Distinguish: A use-case diagram is not the complete behavioral narrative.",
     "compareWith": ["user-story", "job-story"],
     "relatedGuides": ["srs"],
     "order": 101
@@ -33,7 +33,7 @@
       "ko": "잡 스토리",
       "ja": "ジョブストーリー"
     },
-    "scope": "Explain Job story within requirements expression; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain situation, motivation and expected outcome using an interrupted commute. Exclude complete jobs-to-be-done theory and claims that roles never matter. Distinguish: A job story is not an acceptance test or a job vacancy description.",
     "compareWith": ["user-story", "use-case"],
     "relatedGuides": ["srs"],
     "order": 102
@@ -46,7 +46,7 @@
       "ko": "계층형 아키텍처",
       "ja": "レイヤードアーキテクチャ"
     },
-    "scope": "Explain Layered architecture within architecture boundaries & dependencies; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain logical presentation, application and data layers with explicit allowed dependencies. Exclude infrastructure tier sizing and distributed-service decomposition. Distinguish: A layer is not a server tier; folder names do not enforce boundaries.",
     "compareWith": ["hexagonal-architecture", "clean-architecture"],
     "relatedGuides": ["architecture"],
     "order": 200
@@ -59,7 +59,7 @@
       "ko": "헥사고날 아키텍처",
       "ja": "ヘキサゴナルアーキテクチャ"
     },
-    "scope": "Explain Hexagonal architecture within architecture boundaries & dependencies; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain application ports and driving/driven adapters around the save use case. Exclude six mandatory components and microservice deployment recipes. Distinguish: The hexagon is a visual convention, not a fixed port count.",
     "compareWith": ["layered-architecture", "clean-architecture"],
     "relatedGuides": ["architecture"],
     "order": 201
@@ -72,7 +72,7 @@
       "ko": "클린 아키텍처",
       "ja": "クリーンアーキテクチャ"
     },
-    "scope": "Explain Clean architecture within architecture boundaries & dependencies; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain inward source dependencies, use-case orchestration, entities and boundary data for saving. Exclude mandatory four-folder recipes and framework implementation tutorials. Distinguish: Runtime calls can travel outward through interfaces while source dependencies remain inward.",
     "compareWith": ["layered-architecture", "hexagonal-architecture"],
     "relatedGuides": ["architecture"],
     "order": 202
@@ -85,7 +85,7 @@
       "ko": "모놀리스",
       "ja": "モノリス"
     },
-    "scope": "Explain Monolith within service decomposition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain one deployable application containing catalog, library and billing with internal calls. Exclude claims that monolith means no modules, one physical machine or no scaling. Distinguish: Multiple replicas of one artifact remain a monolithic deployment model.",
     "compareWith": ["modular-monolith", "microservices"],
     "relatedGuides": ["architecture"],
     "order": 300
@@ -98,7 +98,7 @@
       "ko": "모듈러 모놀리스",
       "ja": "モジュラーモノリス"
     },
-    "scope": "Explain Modular monolith within service decomposition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain explicit module APIs and owned internals within a shared application artifact. Exclude promises of effortless future service extraction and prescribed module frameworks. Distinguish: Directories alone do not enforce a module contract; this remains a monolith.",
     "compareWith": ["monolith", "microservices"],
     "relatedGuides": ["architecture"],
     "order": 301
@@ -111,7 +111,7 @@
       "ko": "마이크로서비스",
       "ja": "マイクロサービス"
     },
-    "scope": "Explain Microservices within service decomposition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain independently deployable capability services, explicit contracts and service-owned data. Exclude universal service sizes, automatic scalability and vendor orchestration tutorials. Distinguish: A service is not merely a class named Service; distributed deployment alone does not create independence.",
     "compareWith": ["monolith", "modular-monolith"],
     "relatedGuides": ["architecture"],
     "order": 302
@@ -124,7 +124,7 @@
       "ko": "리스트",
       "ja": "リスト"
     },
-    "scope": "Explain List within abstract collections; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain position-based sequence operations while leaving physical storage open. Exclude uI list layouts and language-specific collection performance rankings. Distinguish: List is not synonymous with linked list or array.",
     "compareWith": ["set", "map"],
     "relatedGuides": ["collections"],
     "order": 400
@@ -137,7 +137,7 @@
       "ko": "집합",
       "ja": "集合"
     },
-    "scope": "Explain Set within abstract collections; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain uniqueness under equality and membership queries independent of iteration order. Exclude claims that all sets are unordered in every language or always use hashing. Distinguish: Set iteration order and mathematical membership are different concerns.",
     "compareWith": ["list", "map"],
     "relatedGuides": ["collections"],
     "order": 401
@@ -150,7 +150,7 @@
       "ko": "맵",
       "ja": "マップ"
     },
-    "scope": "Explain Map within abstract collections; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain key-to-value association, replacement under the same key and explicit missing lookup. Exclude geographic maps, functional map operations and hash-table internals. Distinguish: Keys are unique; values need not be.",
     "compareWith": ["list", "set"],
     "relatedGuides": ["collections"],
     "order": 402
@@ -163,7 +163,7 @@
       "ko": "배열",
       "ja": "配列"
     },
-    "scope": "Explain Array within sequential storage structures; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain contiguous backing slots, indexed reads, length/capacity and insertion shifts. Exclude claims about all JavaScript arrays and real cache-performance measurements. Distinguish: A dynamic array wraps a fixed backing store; list is the abstract interface.",
     "compareWith": ["linked-list"],
     "relatedGuides": ["collections"],
     "order": 500
@@ -176,7 +176,7 @@
       "ko": "연결 리스트",
       "ja": "連結リスト"
     },
-    "scope": "Explain Linked list within sequential storage structures; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain doubly linked nodes, traversal, head/tail and insertion using known adjacent references. Exclude allocator internals and blanket claims that linked insertion is always faster. Distinguish: Constant-time relinking excludes finding the location.",
     "compareWith": ["array"],
     "relatedGuides": ["collections"],
     "order": 501
@@ -189,7 +189,7 @@
       "ko": "스택",
       "ja": "スタック"
     },
-    "scope": "Explain Stack within processing order; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain push, peek and pop under LIFO, including empty state. Exclude call-stack implementation and arbitrary-item priority selection. Distinguish: Storage location does not define LIFO; the removal contract does.",
     "compareWith": ["queue", "priority-queue"],
     "relatedGuides": ["collections"],
     "order": 600
@@ -202,7 +202,7 @@
       "ko": "큐",
       "ja": "キュー"
     },
-    "scope": "Explain Queue within processing order; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain enqueue and dequeue at different ends with explicit empty handling. Exclude distributed delivery guarantees and concurrent completion-order promises. Distinguish: FIFO dequeue order is not necessarily processing completion order.",
     "compareWith": ["stack", "priority-queue"],
     "relatedGuides": ["collections"],
     "order": 601
@@ -215,7 +215,7 @@
       "ko": "우선순위 큐",
       "ja": "優先度付きキュー"
     },
-    "scope": "Explain Priority queue within processing order; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain priority-based removal with a chosen comparator and tie rule. Exclude heap implementation tutorials and universal stable-tie guarantees. Distinguish: Priority queues need not iterate in sorted order or preserve equal-priority arrival order automatically.",
     "compareWith": ["stack", "queue"],
     "relatedGuides": ["collections"],
     "order": 602
@@ -228,7 +228,7 @@
       "ko": "Astro",
       "ja": "Astro"
     },
-    "scope": "Explain Astro within static site generators; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain content-oriented component rendering and optional interactive islands in a static build. Exclude server-adapter setup, latest-version ranking and benchmark promises. Distinguish: Astro is not limited to static output; an island is not a separate website.",
     "compareWith": ["hugo", "jekyll"],
     "relatedGuides": ["static-sites"],
     "order": 700
@@ -241,7 +241,7 @@
       "ko": "Hugo",
       "ja": "Hugo"
     },
-    "scope": "Explain Hugo within static site generators; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain Hugo content, templates and generated static assets using the three-article site. Exclude comparative speed numbers, plugin catalogs and Go application development. Distinguish: Hugo is written in Go; content authors do not need to turn articles into Go programs.",
     "compareWith": ["astro", "jekyll"],
     "relatedGuides": ["static-sites"],
     "order": 701
@@ -254,7 +254,7 @@
       "ko": "Jekyll",
       "ja": "Jekyll"
     },
-    "scope": "Explain Jekyll within static site generators; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain the Ruby-based Jekyll build workflow and Markdown/template inputs. Exclude hosted-platform plugin restrictions and Ruby version installation advice. Distinguish: Jekyll generation and GitHub Pages hosting are distinct choices.",
     "compareWith": ["astro", "hugo"],
     "relatedGuides": ["static-sites"],
     "order": 702
@@ -267,7 +267,7 @@
       "ko": "React",
       "ja": "React"
     },
-    "scope": "Explain React within web ui development tools; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain components, props, event handlers and state using Save. Exclude full application frameworks, router selection and optimization recipes. Distinguish: A state update requests rendering; mutating an ordinary local variable is not the same mechanism.",
     "compareWith": ["vue", "svelte"],
     "relatedGuides": ["tools"],
     "order": 800
@@ -280,7 +280,7 @@
       "ko": "Vue",
       "ja": "Vue"
     },
-    "scope": "Explain Vue within web ui development tools; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain declarative template bindings and reactive state in a single-file component. Exclude router setup, exhaustive API-style comparison and performance rankings. Distinguish: Single-file component is an authoring format, not one browser network file.",
     "compareWith": ["react", "svelte"],
     "relatedGuides": ["tools"],
     "order": 801
@@ -293,7 +293,7 @@
       "ko": "Svelte",
       "ja": "Svelte"
     },
-    "scope": "Explain Svelte within web ui development tools; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain compiled declarative components and a Save state transition. Exclude comparative bundle claims, framework routing and legacy-to-current migration. Distinguish: Svelte and SvelteKit have different scopes; compiler use does not mean zero runtime work.",
     "compareWith": ["react", "vue"],
     "relatedGuides": ["tools"],
     "order": 802
@@ -306,7 +306,7 @@
       "ko": "Godot",
       "ja": "Godot"
     },
-    "scope": "Explain Godot within game engines; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain node trees, saved scenes, instances and the main-scene entry point. Exclude engine benchmarking, platform export guarantees and licensing terms. Distinguish: A saved scene is reusable composition, not only a full game level.",
     "compareWith": ["unity", "unreal-engine"],
     "relatedGuides": ["tools"],
     "order": 900
@@ -319,7 +319,7 @@
       "ko": "Unity",
       "ja": "Unity"
     },
-    "scope": "Explain Unity within game engines; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain GameObject containers, attached components and scene composition for a collectible. Exclude asset-store comparisons, pricing, version selection and platform export guarantees. Distinguish: A GameObject name alone does not supply gameplay behavior.",
     "compareWith": ["godot", "unreal-engine"],
     "relatedGuides": ["tools"],
     "order": 901
@@ -332,7 +332,7 @@
       "ko": "Unreal Engine",
       "ja": "Unreal Engine"
     },
-    "scope": "Explain Unreal Engine within game engines; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain Actors in a level and a reusable Blueprint class with component composition. Exclude rendering feature comparisons, royalties and supported-platform promises. Distinguish: Blueprint graphs describe behavior; they are not merely decorative flowcharts.",
     "compareWith": ["godot", "unity"],
     "relatedGuides": ["tools"],
     "order": 902
@@ -345,7 +345,7 @@
       "ko": "정적 호스팅",
       "ja": "静的ホスティング"
     },
-    "scope": "Explain Static hosting within hosting execution models; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain serving HTML, CSS and JavaScript files and separating per-user writes into an API. Exclude provider plans, caching guarantees and assertions that static means noninteractive. Distinguish: Browser-side interaction is possible; private persistence is not supplied by static files.",
     "compareWith": ["always-on-server", "serverless-functions"],
     "relatedGuides": ["shipping"],
     "order": 1000
@@ -358,7 +358,7 @@
       "ko": "상시 서버",
       "ja": "常時稼働サーバー"
     },
-    "scope": "Explain Always-on server within hosting execution models; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain a listening process, request handlers, durable storage and process supervision as a separate operational concern. Exclude uptime guarantees, provider prices and production server configuration. Distinguish: A process that normally stays running can restart; memory is not durable storage.",
     "compareWith": ["static-hosting", "serverless-functions"],
     "relatedGuides": ["shipping"],
     "order": 1001
@@ -371,7 +371,7 @@
       "ko": "서버리스 함수",
       "ja": "サーバーレス関数"
     },
-    "scope": "Explain Serverless functions within hosting execution models; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain event-triggered function execution and external durable state with provider-bounded behavior. Exclude universal cold-start durations, limits, prices and all serverless compute variants. Distinguish: Serverless means managed infrastructure, not absent servers or automatic business correctness.",
     "compareWith": ["static-hosting", "always-on-server"],
     "relatedGuides": ["shipping"],
     "order": 1002
@@ -384,7 +384,7 @@
       "ko": "롤링",
       "ja": "ローリング"
     },
-    "scope": "Explain Rolling within release replacement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain replica replacement, readiness and capacity assumptions through a four-replica pool. Exclude zero-downtime guarantees and universal orchestration defaults. Distinguish: Progressive replacement alone is not canary analysis.",
     "compareWith": ["blue-green", "canary"],
     "relatedGuides": ["shipping"],
     "order": 1100
@@ -397,7 +397,7 @@
       "ko": "블루·그린",
       "ja": "ブルーグリーン"
     },
-    "scope": "Explain Blue-green within release replacement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain parallel old/new environments, traffic switch and bounded switch-back. Exclude guaranteed instant recovery and database rollback automation. Distinguish: Environment switch is not necessarily gradual exposure.",
     "compareWith": ["rolling", "canary"],
     "relatedGuides": ["shipping"],
     "order": 1101
@@ -410,7 +410,7 @@
       "ko": "카나리",
       "ja": "カナリア"
     },
-    "scope": "Explain Canary within release replacement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain a small v2 cohort, a v1 control and a predetermined evaluation rule. Exclude universal safe percentages and treating synthetic counts as production measurements. Distinguish: A canary is release risk evaluation, not automatically a product A/B experiment.",
     "compareWith": ["rolling", "blue-green"],
     "relatedGuides": ["shipping"],
     "order": 1102
@@ -423,7 +423,7 @@
       "ko": "단일 열",
       "ja": "単一カラム"
     },
-    "scope": "Explain Single column within column composition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain vertically stacked page regions and constrained text width. Exclude claims that single column requires edge-to-edge text or forbids nested grids. Distinguish: Page-region layout and item-list arrangement are separate axes.",
     "compareWith": ["two-columns", "multiple-columns"],
     "relatedGuides": ["layout"],
     "order": 1200
@@ -436,7 +436,7 @@
       "ko": "2열",
       "ja": "2カラム"
     },
-    "scope": "Explain Two columns within column composition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain a sidebar and main region with a documented narrow-screen collapse. Exclude universal sidebar widths and CSS newspaper text flow. Distinguish: Two page regions are not two streams of fragmented paragraph text.",
     "compareWith": ["single-column", "multiple-columns"],
     "relatedGuides": ["layout"],
     "order": 1201
@@ -449,7 +449,7 @@
       "ko": "다열",
       "ja": "マルチカラム"
     },
-    "scope": "Explain Multiple columns within column composition; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain three or more independent regions with a responsive stacking plan. Exclude cSS multicol text fragmentation and dense dashboard implementation. Distinguish: Independent regions differ from one paragraph flowing across columns [multicol].",
     "compareWith": ["single-column", "two-columns"],
     "relatedGuides": ["layout"],
     "order": 1202
@@ -462,7 +462,7 @@
       "ko": "리스트",
       "ja": "リスト"
     },
-    "scope": "Explain List layout within content arrangement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain a vertical series of item rows with stable field positions and order. Exclude list data-structure internals and claims that every list is text-only. Distinguish: A visual list can be stored in any suitable collection and placed inside a page column.",
     "compareWith": ["uniform-grid", "masonry"],
     "relatedGuides": ["layout"],
     "order": 1300
@@ -475,7 +475,7 @@
       "ko": "균등 그리드",
       "ja": "均等グリッド"
     },
-    "scope": "Explain Uniform grid within content arrangement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain equal-width tracks and aligned row boundaries while preserving complete card content. Exclude claims that all grids have fixed height or require cropped images. Distinguish: Uniform grid is an arrangement pattern, not every use of CSS Grid.",
     "compareWith": ["list-layout", "masonry"],
     "relatedGuides": ["layout"],
     "order": 1301
@@ -488,7 +488,7 @@
       "ko": "메이슨리",
       "ja": "メイソンリー"
     },
-    "scope": "Explain Masonry within content arrangement; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain vertical-gap packing using a deterministic two-column illustrative algorithm. Exclude native CSS support promises and claims that packing always improves usability. Distinguish: A masonry pattern is not the same thing as the Masonry library or ordinary aligned grid rows.",
     "compareWith": ["list-layout", "uniform-grid"],
     "relatedGuides": ["layout"],
     "order": 1302
@@ -501,7 +501,7 @@
       "ko": "브루탈리즘",
       "ja": "ブルータリズム"
     },
-    "scope": "Explain Brutalism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain deliberately unadorned web surfaces, visible structure and conventional controls through a reading card. Exclude architectural history, shock effects and deliberate navigation breakage. Distinguish: Antidesign is not required; a sparse page is not automatically brutalist.",
     "compareWith": [
       "neobrutalism",
       "glassmorphism",
@@ -521,7 +521,7 @@
       "ko": "네오브루탈리즘",
       "ja": "ネオブルータリズム"
     },
-    "scope": "Explain Neobrutalism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain thick outlines, hard offset shadows and expressive color while preserving reading hierarchy. Exclude universal rules, origin ownership and guaranteed engagement. Distinguish: Hard shadows differ from soft extrusion; raw and colorful are not synonyms.",
     "compareWith": [
       "brutalism",
       "glassmorphism",
@@ -541,7 +541,7 @@
       "ko": "글래스모피즘",
       "ja": "グラスモーフィズム"
     },
-    "scope": "Explain Glassmorphism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain translucent layers and backdrop blur over calm and busy backgrounds. Exclude platform material APIs, rendering benchmarks and claims that blur ensures contrast. Distinguish: Backdrop blur differs from blurring text and from opaque extrusion.",
     "compareWith": [
       "brutalism",
       "neobrutalism",
@@ -561,7 +561,7 @@
       "ko": "뉴모피즘",
       "ja": "ニューモーフィズム"
     },
-    "scope": "Explain Neumorphism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain paired highlights and shadows on a same-tone surface, separating decoration from control state. Exclude inventor claims, trend forecasts and banking-app usability claims. Distinguish: Soft extrusion differs from transparency and hard offset shadows.",
     "compareWith": [
       "brutalism",
       "neobrutalism",
@@ -581,7 +581,7 @@
       "ko": "스큐어모피즘",
       "ja": "スキューモーフィズム"
     },
-    "scope": "Explain Skeuomorphism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain a paper index-card and bookmark metaphor with an explicit digital Save label. Exclude photorealistic rendering and universally familiar objects. Distinguish: Realistic texture alone is not a functional metaphor; metaphors can be drawn flat.",
     "compareWith": [
       "brutalism",
       "neobrutalism",
@@ -601,7 +601,7 @@
       "ko": "플랫 디자인",
       "ja": "フラットデザイン"
     },
-    "scope": "Explain Flat design within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain two-dimensional surface treatment with preserved action signifiers. Exclude claims that flat means minimalist, faster or automatically accessible. Distinguish: Density is independent of depth; flat icons can retain object metaphors.",
     "compareWith": [
       "brutalism",
       "neobrutalism",
@@ -621,7 +621,7 @@
       "ko": "미니멀리즘",
       "ja": "ミニマリズム"
     },
-    "scope": "Explain Minimalism within styles; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain task-based reduction of decoration and redundancy while retaining title, summary, metadata and Save. Exclude lifestyle minimalism, mandatory monochrome and universal element counts. Distinguish: Content selection is different from flat surface treatment.",
     "compareWith": [
       "brutalism",
       "neobrutalism",
@@ -641,7 +641,7 @@
       "ko": "세리프",
       "ja": "セリフ"
     },
-    "scope": "Explain Serif within typeface shapes; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain serif stroke endings with magnified letters and multilingual fallback caveats. Exclude named font recommendations and universal readability superiority. Distinguish: Serif describes shape, not fixed/proportional width or a universal CJK category.",
     "compareWith": ["sans-serif", "script"],
     "relatedGuides": ["theme"],
     "order": 1500
@@ -654,7 +654,7 @@
       "ko": "산세리프",
       "ja": "サンセリフ"
     },
-    "scope": "Explain Sans serif within typeface shapes; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain generally unadorned stroke endings, variation within sans forms and multilingual coverage. Exclude claims that sans is always modern, more readable or monospaced. Distinguish: No serifs does not mean no shape variation or guaranteed clarity.",
     "compareWith": ["serif", "script"],
     "relatedGuides": ["theme"],
     "order": 1501
@@ -667,7 +667,7 @@
       "ko": "스크립트",
       "ja": "スクリプト"
     },
-    "scope": "Explain Script within typeface shapes; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain handwritten construction and possible joining through a short heading specimen. Exclude programming scripts, Unicode script taxonomy and decorative-font product lists. Distinguish: CSS cursive is a nearby generic category; this editorial label is not an exact universal mapping.",
     "compareWith": ["serif", "sans-serif"],
     "relatedGuides": ["theme"],
     "order": 1502
@@ -680,7 +680,7 @@
       "ko": "비례폭",
       "ja": "プロポーショナル"
     },
-    "scope": "Explain Proportional within character width; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain varying advance widths and distinguish text spacing from digit alignment. Exclude font-product recommendations and measured reading-speed claims. Distinguish: Proportional text can have tabular digits; glyph outline width is not its full advance.",
     "compareWith": ["monospace"],
     "relatedGuides": ["theme"],
     "order": 1600
@@ -693,7 +693,7 @@
       "ko": "고정폭",
       "ja": "等幅"
     },
-    "scope": "Explain Monospace within character width; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain equal advances for a defined glyph set with mixed-script and fallback limitations. Exclude claims that every Unicode character occupies one terminal cell and named font rankings. Distinguish: Monospaced glyphs can have different ink widths; terminal cells are another model.",
     "compareWith": ["proportional"],
     "relatedGuides": ["theme"],
     "order": 1601
@@ -706,7 +706,7 @@
       "ko": "고객 직접 결제",
       "ja": "顧客の直接支払い"
     },
-    "scope": "Explain Customer direct payment within revenue sources; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain customer-funded access independently of billing schedule and legal seller arrangement. Exclude revenue forecasts, checkout integration and universal tax rules. Distinguish: Direct customer revenue is not synonymous with the direct-seller responsibility model.",
     "compareWith": ["advertising", "sponsorship"],
     "relatedGuides": ["revenue"],
     "order": 1700
@@ -719,7 +719,7 @@
       "ko": "광고",
       "ja": "広告"
     },
-    "scope": "Explain Advertising within revenue sources; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain advertiser-funded placements with a publisher/network example and competing incentives. Exclude guaranteed CPM, tracking consent advice and ad-network eligibility. Distinguish: An ad-funded site may also charge readers; a direct sponsorship is not necessarily auction advertising.",
     "compareWith": ["direct-payment", "sponsorship"],
     "relatedGuides": ["revenue"],
     "order": 1701
@@ -732,7 +732,7 @@
       "ko": "후원",
       "ja": "スポンサー支援"
     },
-    "scope": "Explain Sponsorship within revenue sources; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain support for a public project, defined sponsor benefits and one-time/recurring options. Exclude universal charitable status, tax deduction and platform fee claims. Distinguish: Supporter funding may include benefits; commercial placement sponsorship can overlap advertising.",
     "compareWith": ["direct-payment", "advertising"],
     "relatedGuides": ["revenue"],
     "order": 1702
@@ -745,7 +745,7 @@
       "ko": "일회성 결제",
       "ja": "買い切り"
     },
-    "scope": "Explain One-time payment within billing methods; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain a single charge and separately specified entitlement, support and upgrade terms. Exclude lifetime-service promises, real prices and refund law. Distinguish: One payment does not inherently mean perpetual updates or permanent hosted service.",
     "compareWith": ["subscription", "usage-based"],
     "relatedGuides": ["revenue"],
     "order": 1800
@@ -758,7 +758,7 @@
       "ko": "구독",
       "ja": "サブスクリプション"
     },
-    "scope": "Explain Subscription within billing methods; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain billing intervals, recurring access and the need for failed-payment/cancellation policies. Exclude provider-specific proration, cancellation law and real plan prices. Distinguish: Subscription is not necessarily flat-rate; usage charges can recur within it.",
     "compareWith": ["one-time-payment", "usage-based"],
     "relatedGuides": ["revenue"],
     "order": 1801
@@ -771,7 +771,7 @@
       "ko": "사용량 기반 과금",
       "ja": "従量課金"
     },
-    "scope": "Explain Usage-based billing within billing methods; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain billable unit, metering, aggregation and a transparent amount calculation. Exclude provider metering APIs, real prices and complex tier formulas. Distinguish: Usage billing can be collected on a recurring subscription schedule.",
     "compareWith": ["one-time-payment", "subscription"],
     "relatedGuides": ["revenue"],
     "order": 1802
@@ -784,7 +784,7 @@
       "ko": "직접 판매자 모델",
       "ja": "直接販売者モデル"
     },
-    "scope": "Explain Direct seller model within seller responsibility models; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain the business as seller in a bounded processor arrangement and separate payment execution from transaction responsibility. Exclude country-specific tax advice, provider fees and claims about every product of a named provider. Distinguish: Direct seller concerns responsibility; customer direct payment concerns revenue source.",
     "compareWith": ["merchant-of-record"],
     "relatedGuides": ["payments"],
     "order": 1900
@@ -797,7 +797,7 @@
       "ko": "MoR 모델",
       "ja": "MoRモデル"
     },
-    "scope": "Explain Merchant of record model within seller responsibility models; definition, concrete example, benefits, limitations, selection and combination conditions. Exclude unrelated comparison axes and individual font products.",
+    "scope": "Explain a contracted MoR as seller for covered transactions, settlement to the product business and retained product obligations. Exclude universal compliance guarantees, exact tax coverage and provider fee comparisons. Distinguish: MoR is a transaction role, not automatically the product creator or provider of every support obligation.",
     "compareWith": ["direct-seller"],
     "relatedGuides": ["payments"],
     "order": 1901

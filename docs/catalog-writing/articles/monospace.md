@@ -1,0 +1,99 @@
+# Monospace / 고정폭 / 等幅
+
+Writing design only. ID: `monospace` · Group: [character-width](../groups/character-width.md) · Queue order: 1601 · Checked: 2026-09-21.
+
+## Reader question and scope
+
+**Question:** What does equal advance width align, and what can still differ?
+
+**Include:** Explain equal advances for a defined glyph set with mixed-script and fallback limitations.
+
+**Exclude:** Claims that every Unicode character occupies one terminal cell and named font rankings.
+
+**Prevent confusion:** Monospaced glyphs can have different ink widths; terminal cells are another model.
+
+**Terms (EN / KO / JA):** Monospace / 고정폭 / 等幅; Fixed advance / 고정 전진 폭 / 固定送り幅. Also use the [group terms](../groups/character-width.md) and [shared glossary](../glossary.md). These are editorial translations, not claims of standardized terminology.
+
+## Six-section article outline
+
+### 1. Definition
+
+Open by answering the reader question. Establish this boundary: Explain equal advances for a defined glyph set with mixed-script and fallback limitations. Explain the distinguishing mechanism: Fixed advance is the monospace criterion [fonts]. Immediately separate the nearby concept: Monospaced glyphs can have different ink widths; terminal cells are another model.
+
+### 2. Features and examples
+
+Use the exact group fixture below. Walk through initial state, action and result; annotate the mechanism in the required visualization. Explain every changed value rather than presenting an unexplained before/after.
+
+Input: iiiWWW. Initial: each illustrated Latin glyph advances 8 units. Action: place six boxes. Result: total 48 units; ink remains narrow for i and wide for W. Separate CJK line flags coverage for later specimen testing.
+
+### 3. Advantages and limitations
+
+Explain the conditional benefit: The authored Latin specimen aligns positions predictably. Then show its boundary: Fallback and mixed scripts may not preserve the assumed single-width grid. Use the unsuitable case below as a counterexample; do not turn editorial advice into an empirical performance or usability result.
+
+### 4. Comparison within the category
+
+Compare every sibling: [proportional](proportional.md).
+
+Use the shared axes, in this order: **advance-width rule; alignment behavior; prose spacing; tabular digits; script/fallback caveats**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/character-width.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+
+### 5. Selection and combination conditions
+
+**Suitable:** Code-like text needing explicit position alignment within a supported glyph set.
+
+**Unsuitable:** Assuming emoji, combining marks and CJK fallback all occupy one identical cell.
+
+**Combine:** Combine with serif or sans glyph shapes; use proportional prose around code.
+
+### 6. Related reading and sources
+
+Link existing guides: [theme](../../../src/content/articles/en/theme.md). Explain how they broaden this concept into its surrounding decision. Cite evidence at the factual claim, with the locators below. Unpublished peer IDs remain editorial references, not public article links.
+
+## Comparison frontmatter brief
+
+| Field          | Planned point                                                                    |
+| -------------- | -------------------------------------------------------------------------------- |
+| `features`     | Fixed advance is the monospace criterion [fonts].                                |
+| `advantages`   | The authored Latin specimen aligns positions predictably.                        |
+| `limitations`  | Fallback and mixed scripts may not preserve the assumed single-width grid.       |
+| `suitable`     | Code-like text needing explicit position alignment within a supported glyph set. |
+| `combinations` | Combine with serif or sans glyph shapes; use proportional prose around code.     |
+
+## Claim and evidence map
+
+Facts: the definition and mechanism in sections 1–2 and source-tagged points above are bounded by the following passages. Advice about suitability, tradeoffs without source tags, and combinations is **editorial judgment**, justified by the stated example and counterexample. All fixture values and predicted fixture outputs are **authored illustrations**, not measurements. No uncited claim of universal superiority is authorized.
+
+| Evidence                                    | Exact location to consult                                             | Claim boundary                                                                                         | Checked    |
+| ------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------- |
+| [fonts](https://www.w3.org/TR/css-fonts-3/) | 3.1.1 Generic font families: serif, sans-serif, cursive and monospace | [Verified claim and context](../sources.md#fonts); apply only to this mechanism, not general rankings. | 2026-09-21 |
+
+**Writing-time refresh:** Reopen these sources before writing. Product documentation is a dated capability reference, not a pinned implementation tutorial. No price, current version, license entitlement, service limit or legal guarantee is asserted by this brief. Adding any such claim requires fresh official evidence, an exact version/plan/jurisdiction scope, and a new check date. See the source-specific context in the ledger.
+
+## Required visualization specification
+
+**Purpose:** Answer “What does equal advance width align, and what can still differ?” through the fixture rather than a decorative illustration.
+
+**Shared input:** Compare iiiWWW and two rows of values 111 / 888, followed by 기록 / 記録. Use boxes to show advance width, not merely the black outline of each glyph.
+
+**Form and composition:** Same strings with labeled advance boxes and column guides; variable-width and equal-width schematic versions, not measured font samples.
+
+**Interaction/state script:** Input: iiiWWW. Initial: each illustrated Latin glyph advances 8 units. Action: place six boxes. Result: total 48 units; ink remains narrow for i and wide for W. Separate CJK line flags coverage for later specimen testing.
+
+**Annotations, caption and topic acceptance:** Show equal boxes and differing ink outlines. Caption: Equal advance does not mean equal-looking letters. Accept if total is 6×8=48 and no universal Unicode-cell claim appears.
+
+**Mobile:** Stack panels at 320 CSS px; wrap labels and keep controls before the result. For spatial diagrams, provide a numbered vertical sequence with the same node names. Do not shrink text to fit a desktop canvas.
+
+**Keyboard:** Native buttons/selects for all proposed controls, visible focus, logical tab order, and Enter/Space activation. Step examples need Previous, Next and Reset; disable unavailable steps visibly and semantically. Static studies need no artificial tab stops. No drag-only operation or timed advancement.
+
+**Non-color encoding:** Label roles, states and sequence numbers; use line patterns or shapes alongside colors. Preserve information with shadows and color removed. Text contrast follows [contrast](../sources.md#contrast); keyboard and reflow criteria follow [keyboard](../sources.md#keyboard) and [reflow](../sources.md#reflow).
+
+**Alternative description:** Use the caption as the short figure label, followed by the complete input → initial state → action → result script above as visible long description. Interactive output announces the resulting state without moving focus.
+
+**Markdown equivalent:** Include that full script as a numbered text sequence and describe each annotated relationship in words. Include all values, assumptions and failure outcomes; never substitute “see interactive example.”
+
+**Review acceptance:** Verify the stated result by tracing the authored fixture; check reset determinism, keyboard-only operation, mobile reading order, grayscale differentiation, and text/figure agreement. Label it “Illustrative example”; do not resemble an actual benchmark, transaction receipt, vendor console or production screenshot. Implementation and execution of this future visualization are outside this writing-design task.
+
+## Draft handoff
+
+No blocking editorial decision remains within this scope. Write and review this group's English originals together, then translate to Korean and Japanese using the shared terms. Source refresh and the future visualization acceptance checks are drafting/publication gates, not completed runtime work. Keep candidates pending until separately reviewed and published.
+
+[fonts]: https://www.w3.org/TR/css-fonts-3/

@@ -33,6 +33,8 @@ Title is the concept name. Frontmatter `comparison` requires `features`, `advant
 
 ## Generation brief
 
+Start with the [catalog writing designs](catalog-writing/README.md): 19 group briefs, 58 candidate briefs, a shared multilingual glossary, and a verified source ledger. Each brief maps to the six sections above and specifies its example, comparison points, evidence locations, and required accessible visualization. These are local preparation materials, not published articles. Review the group's English originals before Korean/Japanese translation; refresh dated sources when drafting. The existing generator still scaffolds one selected candidate at a time.
+
 Read candidate scope, all sibling candidate IDs, related guides, and current project instructions before drafting. Cover one concept only. Distinguish it from homonyms and nearby abstractions. Use the same five comparison dimensions for all siblings, with explicit context and concrete examples. Describe costs and limitations alongside benefits. Explain when choices can coexist: a typeface width, visual style and layout are independent axes; styles can combine. Do not invent mutually exclusive choices or include individual font products.
 
 Verify original authors and official sources before asserting attribution, definitions or product capabilities. Check volatile product/service claims at writing time and record `checked` plus dated source context; avoid unsupported pricing/version claims. Separate source-backed facts from author judgment and conditional advice. Include primary source links and a concrete textual/code example. Never fill comparison tables from candidate titles alone.
