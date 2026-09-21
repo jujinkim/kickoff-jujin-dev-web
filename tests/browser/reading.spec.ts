@@ -21,7 +21,7 @@ test("90 visible introductions stay concise and localized catalog images load", 
   }
   for (const lang of ["en", "ko", "ja"]) {
     await page.goto(`/${lang}/catalog/`);
-    await page.locator('button[data-view="preview"]').click();
+    await page.locator('button[data-view="card"]').click();
     const images = page.locator(".style-preview-image");
     await expect(images).toHaveCount(Object.keys(designRegistry).length);
     for (const img of await images.all()) {
