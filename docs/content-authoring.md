@@ -20,20 +20,21 @@ npm run content:new -- --list
 
 Creates English source and Korean/Japanese draft scaffolds, all `status: draft`. Refuses the entire operation if any target already exists. No LLM call, body generation or automatic publishing. Template implementation: `scripts/content-new.mjs` and localized sections in `scripts/catalog-data.mjs`.
 
-Concept template:
+All published articles use three short sections:
 
-1. Definition
-2. Features and examples
-3. Advantages and limitations
-4. Comparison within the category
-5. Selection and combination conditions
-6. Related reading and sources
+1. Concept
+2. Example
+3. When to choose it
 
-Title is the concept name. Frontmatter `comparison` requires `features`, `advantages`, `limitations`, `suitable`, `combinations`. The shared component renders these exact summaries in the article and category table; do not maintain a second conflicting summary. `aiPrompt` and the existing `example` preview are optional for concepts. Guides retain their existing sections, prompts and previews.
+Target 70–100 English body words, with equivalent concise Korean/Japanese. Explain recognition, one example, and one tradeoff. Lead with a useful diagram or actual UI image. No tutorial, exhaustive sibling prose, or repeated instructions. Comparison summaries, related reading and reusable AI prompts belong in optional disclosure panels.
+
+The validator estimates title, summary and body at 180 words/minute or 600 CJK characters/minute, plus 15 seconds for the visual, and rejects totals above 60 seconds. This is an editorial budget, not a measured reading-time guarantee. Keep code readable and sources linked beside claims.
+
+Frontmatter `comparison` retains `features`, `advantages`, `limitations`, `suitable`, `combinations`, each a brief clause derived from the body. Guides retain their preview and reusable `aiPrompt`; the prompt is separate from the short body.
 
 ## Generation brief
 
-Start with the [catalog writing designs](catalog-writing/README.md): 19 group briefs, 58 candidate briefs, a shared multilingual glossary, and a verified source ledger. Each brief maps to the six sections above and specifies its example, comparison points, evidence locations, and required accessible visualization. These are local preparation materials, not published articles. Review the group's English originals before Korean/Japanese translation; refresh dated sources when drafting. The existing generator still scaffolds one selected candidate at a time.
+Start with the [catalog writing designs](catalog-writing/README.md): 19 group briefs, 58 candidate briefs, a shared multilingual glossary, and a verified source ledger. Historical briefs specify evidence and comparison research; their six-section depth is superseded by the one-minute format above. These are local preparation materials, not published articles. Review the group's English originals before Korean/Japanese translation; refresh dated sources when drafting. The existing generator still scaffolds one selected candidate at a time.
 
 Read candidate scope, all sibling candidate IDs, related guides, and current project instructions before drafting. Cover one concept only. Distinguish it from homonyms and nearby abstractions. Use the same five comparison dimensions for all siblings, with explicit context and concrete examples. Describe costs and limitations alongside benefits. Explain when choices can coexist: a typeface width, visual style and layout are independent axes; styles can combine. Do not invent mutually exclusive choices or include individual font products.
 

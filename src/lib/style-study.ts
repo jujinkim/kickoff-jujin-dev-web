@@ -25,8 +25,7 @@ export const studyWords = {
     normal: "Default",
     focus: "Focus",
     tokens: "Changed tokens — example choices, not style rules",
-    local:
-      "Save changes this example only. Reset or reload clears it. Both cards share the same saved state.",
+    local: "Demo only: both cards save together. Reset or reload clears them.",
     nojs: "Static examples and descriptions remain available without JavaScript; interactive controls require JavaScript.",
     rejected: "Rejected example: the task loses its action cue or control.",
     badge: "Decoration",
@@ -66,8 +65,7 @@ export const studyWords = {
     normal: "기본",
     focus: "포커스",
     tokens: "변경 값 — 스타일 규칙이 아닌 예제 선택",
-    local:
-      "저장은 이 예제에서만 적용됩니다. 초기화하거나 새로고침하면 해제됩니다. 두 카드는 같은 저장 상태를 공유합니다.",
+    local: "예제 속 두 카드가 함께 저장됩니다. 초기화·새로고침으로 해제됩니다.",
     nojs: "JavaScript 없이도 정적 예제와 설명을 읽을 수 있습니다. 조작에는 JavaScript가 필요합니다.",
     rejected: "실패 예: 행동 단서나 조작 요소를 제거했습니다.",
     badge: "장식",
@@ -106,8 +104,7 @@ export const studyWords = {
     normal: "通常",
     focus: "フォーカス",
     tokens: "変更値 — スタイルの規則ではなく、この例の選択",
-    local:
-      "保存はこの例だけに適用されます。リセットまたは再読み込みで解除されます。両カードは同じ保存状態を共有します。",
+    local: "例の両カードを同時に保存。リセット・再読み込みで解除します。",
     nojs: "JavaScriptなしでも静的な例と説明を読めます。操作にはJavaScriptが必要です。",
     rejected: "不採用例：操作の手がかりや操作要素を削除しています。",
     badge: "装飾",

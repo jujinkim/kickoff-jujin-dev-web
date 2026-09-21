@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import matter from "gray-matter";
+import { articleOverviewSeconds } from "../src/lib/reading-budget.mjs";
 import {
   taxonomy,
   candidates,
@@ -24,35 +25,7 @@ export const examples = [
   "revenue",
   "payments",
 ];
-const sectionNames = {
-  en: [
-    "Concept",
-    "When you need it",
-    "Example",
-    "Options and tradeoffs",
-    "When to choose it",
-    "AI instructions",
-    "Related reading and sources",
-  ],
-  ko: [
-    "개념",
-    "필요한 상황",
-    "예시",
-    "선택지와 tradeoff",
-    "추천 조건",
-    "AI 지시 예시",
-    "관련 글과 출처",
-  ],
-  ja: [
-    "概念",
-    "必要な場面",
-    "実例",
-    "選択肢とトレードオフ",
-    "選ぶ条件",
-    "AIへの指示例",
-    "関連記事と出典",
-  ],
-};
+const sectionNames = conceptSections;
 export function readArticles(root = "src/content/articles") {
   return readdirSync(root, { recursive: true })
     .filter((p) => p.endsWith(".md"))
@@ -119,6 +92,8 @@ export function validateArticles(articles) {
         errors.push(`${key}: invalid ${name} date`);
     }
     if (d.status !== "published") continue;
+    if (articleOverviewSeconds(a) > 60)
+      errors.push(`${key}: overview exceeds one-minute reading budget`);
     if (d.kind === "concept") {
       for (const field of comparisonKeys)
         if (
@@ -138,12 +113,16 @@ export function validateArticles(articles) {
       )
     )
       errors.push(`${key}: sections missing or out of order`);
-    if (!a.content.includes("```"))
+    if (
+      !a.content
+        .split(`## ${sectionNames[d.lang][1]}`)[1]
+        ?.split("## ")[0]
+        .trim()
+    )
       errors.push(`${key}: missing textual/code example`);
     if (!/\]\(https:\/\//.test(a.content))
       errors.push(`${key}: missing official source`);
-    if (d.aiPrompt && !a.content.includes(d.aiPrompt))
-      errors.push(`${key}: body and copy prompt differ`);
+
     if (
       ["static-sites", "shipping", "revenue", "payments"].includes(
         d.articleId,

@@ -74,6 +74,7 @@ test("keyboard navigation, copy and AI lookup complete the reader flow", async (
   await page.keyboard.press("Enter");
   await expect(page.locator("#main")).toBeFocused();
   await page.goto("/en/guides/srs/");
+  await page.locator(".prompt-section summary").click();
   await page.locator("[data-copy]").click();
   await expect(page.locator(".prompt-section [role=status]")).toHaveText(
     "Copied",
@@ -92,7 +93,7 @@ test("keyboard navigation, copy and AI lookup complete the reader flow", async (
     new URL(article.translations.ko.markdown).pathname,
   );
   expect(md.ok()).toBeTruthy();
-  expect(await md.text()).toContain("AI 지시 예시");
+  expect(await md.text()).toContain("## 개념");
 });
 test("search failure keeps browse available and copy failure explains fallback", async ({
   page,

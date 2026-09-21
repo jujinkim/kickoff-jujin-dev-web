@@ -118,34 +118,37 @@ const initial = options[0] ?? "default";
     aria-atomic="true"
     data-study-status
   ></p>
-  <div class="study-states" data-study-states aria-label={w.states}>
-    <strong>{w.states}</strong>
-    <div>
-      <span>
-        {w.normal}: <span class="state-token">{w.save}</span>
-      </span>
-      <span>
-        {w.focus}: <span class="state-token focus-token">{w.save}</span>
-      </span>
-      <span>
-        {w.saved}: <span class="state-token">✓ {w.saved}</span>
-      </span>
+  <details data-study-details>
+    <summary>
+      {lang === "ko"
+        ? "예시 설명"
+        : lang === "ja"
+          ? "例の説明"
+          : "About this example"}
+    </summary>
+    <div class="study-states" data-study-states aria-label={w.states}>
+      <strong>{w.states}</strong>
+      <div>
+        <span>
+          {w.normal}: <span class="state-token">{w.save}</span>
+        </span>
+        <span>
+          {w.focus}: <span class="state-token focus-token">{w.save}</span>
+        </span>
+        <span>
+          {w.saved}: <span class="state-token">✓ {w.saved}</span>
+        </span>
+      </div>
     </div>
-  </div>
-  <p>
-    <strong>{w.tokens}</strong>
-    <br />
-    <code>{study.tokens}</code>
-  </p>
-  <div id="study-description">
-    <p>{study.description}</p>
-    <ol>
-      <li>{w.input}</li>
-      <li>{w.initial}</li>
-      <li>{w.action}</li>
-      <li>{w.result}</li>
-    </ol>
-  </div>
+    <p>
+      <strong>{w.tokens}</strong>
+      <br />
+      <code>{study.tokens}</code>
+    </p>
+    <div id="study-description">
+      <p>{study.description}</p>
+    </div>
+  </details>
   <noscript>
     <p>{w.nojs}</p>
   </noscript>
@@ -225,6 +228,14 @@ const initial = options[0] ?? "default";
     background: var(--surface);
     color: var(--ink);
     overflow-wrap: anywhere;
+  }
+  summary {
+    cursor: pointer;
+    margin: 0.6rem 0;
+  }
+  summary:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
   }
   figcaption {
     font-size: 1.15rem;

@@ -63,6 +63,7 @@ for (const lang of languages) {
         .locator(`#search-results a[href="/${lang}/catalog/${id}/"]`)
         .click();
       await expect(page.locator("h1")).toBeVisible();
+      await page.locator("[data-related-reading] > summary").click();
       for (const peer of ids.filter((peer) => peer !== id))
         await expect(
           page.locator(`.prose a[href="/${lang}/catalog/${peer}/"]`).first(),
@@ -151,6 +152,7 @@ for (const lang of languages) {
       await expect(study.locator("[data-study-state]").first()).toContainText(
         words[1],
       );
+      await study.locator("[data-study-details] > summary").click();
       await expect(study.locator(".study-states")).toBeVisible();
     }
     expect(errors).toEqual([]);
@@ -219,6 +221,7 @@ test("JavaScript-disabled studies retain their complete reading content and desc
       await page.goto(`/${lang}/catalog/${id}/`);
       const study = page.locator("[data-style-study]");
       await expect(study.locator(".study-panel")).toHaveCount(2);
+      await study.locator("[data-study-details] > summary").click();
       await expect(study.locator(".study-states")).toBeVisible();
       await expect(study.locator("#study-description")).toBeVisible();
       await expect(study.locator("noscript")).toBeVisible();

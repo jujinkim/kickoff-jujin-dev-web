@@ -18,48 +18,20 @@ aliases:
 related: ["srs", "static-sites"]
 example: "decision"
 status: "published"
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-21"
 aiPrompt: "Draft a proposed ADR for our rendering choice. Read existing decisions first. Include constraints, alternatives, costs, recommendation, owner, and revisit trigger. Ask me to accept, reject, or choose another option. Do not mark it accepted until I decide or explicitly delegate this decision."
 ---
 
 ## Concept
 
-A design decision chooses behavior or structure. An architectural decision record (ADR) preserves a significant choice with context, alternatives, and consequences. A commit says what changed; it rarely explains why the losing options lost.
-
-## When you need it
-
-Write a record when a choice affects multiple components, adds a durable dependency, or is expensive to reverse. Button color does not need a constitutional convention. Authentication strategy probably does.
+An architectural decision record (ADR) preserves a significant choice, its context, alternatives, and consequences.
 
 ## Example
 
-For a public catalog with no accounts, pre-rendered HTML is a candidate. Record freshness requirements, alternatives such as request-time rendering, and the cost of rebuilding. The example is an accepted decision only after its owner agrees; a generated recommendation is still proposed.
-
-```text
-ADR-001: Static catalog
-Status: accepted
-Context: public articles; no per-user data
-Decision: pre-render HTML
-Cost: publish requires a build
-Revisit: private personalized content becomes required
-```
-
-## Options and tradeoffs
-
-An informal note is fast but easy to lose. An ADR makes status and consequences visible but needs maintenance. Keeping rejected options prevents repeated debates. Keeping every trivial option turns the log into landfill.
+A public catalog chooses pre-rendered HTML. Cost: rebuild to publish. Revisit if private, personalized content becomes necessary.
 
 ## When to choose it
 
-Use proposed, accepted, rejected, and superseded states. Assign a stable number and link successor records. Preserve old reasoning instead of rewriting history to pretend you knew everything. Set a revisit trigger based on a changed constraint.
-
-## AI instructions
-
-Draft a proposed ADR for our rendering choice. Read existing decisions first. Include constraints, alternatives, costs, recommendation, owner, and revisit trigger. Ask me to accept, reject, or choose another option. Do not mark it accepted until I decide or explicitly delegate this decision.
-
-## Related reading and sources
-
-- [SRS: make ‘done’ mean something](/en/guides/srs/)
-- [Astro, Hugo, Jekyll: three ways to ship HTML](/en/guides/static-sites/)
-
-- [AWS — Architectural decision records](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html)
+Informal notes are quick but easily lost. ADRs preserve reasoning but need maintenance. Record an owner and status: proposed, accepted, rejected, or superseded. A recommendation is not approval. [AWS](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html)

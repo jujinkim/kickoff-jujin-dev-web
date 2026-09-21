@@ -23,48 +23,20 @@ aliases:
 related: ["ooad", "srs"]
 example: "collections"
 status: "published"
-revision: 1
-sourceRevision: 1
+revision: 2
+sourceRevision: 2
 updated: "2026-09-21"
 aiPrompt: "商品の選択について順序、重複、検索キー、直列化を確認して。例のデータと操作で配列・マップ・集合を比較して。未決定事項は質問し、推薦する表現と出力を示して。索引を複数持つなら同期の危険も書いて。"
 ---
 
 ## 概念
 
-配列は添字でアクセスする列、リストは実装が様々な列の抽象です。マップはキーと値を対応させ、集合は一意な要素の所属を表します。JavaScriptでは日常的なリストにArrayを使います。言語が違えばリストの性能も違います。
-
-## 必要な場面
-
-待ち行列、商品検索、選択タグ、ナビゲーションで選びます。順序、重複の意味、探し方、削除方法を確認してください。
+配列は添字付きの順序、マップはキーと値の対応、セットは重複しない項目を持ちます。リストの実装は言語で異なります。
 
 ## 実例
 
-編集段階には配列、商品ID別の価格にはマップ、選択IDには集合を使います。例ではbook-1の重複が一つになります。JavaScriptのMapのオブジェクトキーとSetのオブジェクト要素は同一性で比較するため、同じフィールドを持つ別オブジェクトは別項目です。
-
-```text
-const queue = ["draft", "review", "publish"];
-const prices = new Map([["book-1", 12000]]);
-const selected = new Set(["book-1", "book-1"]);
-// queue[0] => draft; prices.get("book-1") => 12000
-// selected.size => 1
-```
-
-## 選択肢とトレードオフ
-
-配列は順序表示が簡単ですがID検索で全件走査することがあります。マップはキー検索を明確にする反面、通常のJSON直列化には変換が必要です。集合は重複を消すと出現回数を失います。ハッシュの平均検索は一般に速くても、保証は言語と実行環境次第です。
+配列：下書き → レビュー → 公開。マップ(Map)：book-1 → 12000。セット：book-1を二回入れても一項目です。
 
 ## 選ぶ条件
 
-同一性が重要ならIDをキーにします。表示順は配列にし、検索費用や明確さが必要な場合だけマップを追加します。両方を持てば同期が必要。巧妙な索引より実際の負荷測定が先です。
-
-## AIへの指示例
-
-商品の選択について順序、重複、検索キー、直列化を確認して。例のデータと操作で配列・マップ・集合を比較して。未決定事項は質問し、推薦する表現と出力を示して。索引を複数持つなら同期の危険も書いて。
-
-## 関連記事と出典
-
-- [OOADと責務分離：それぞれに仕事を](/ja/guides/ooad/)
-- [SRSと完了条件：「完成」の意味から](/ja/guides/srs/)
-
-- [MDN — Keyed collections](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections)
-- [MDN — Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+配列は順序を保ち、マップはキー検索を明示します。セットは重複回数を失います。JavaScriptのオブジェクトキーは同一性で区別します。 同一性には安定したIDを使います。利点が同期の負担を上回る場合だけ複数の索引を保ちます。 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections) · [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)

@@ -64,8 +64,8 @@ test(
         const article = matter(readFileSync(articlePath(lang), "utf8"));
         article.data.related.push("english-only-fixture");
         if (lang === "en") {
-          article.data.revision = 2;
-          article.data.sourceRevision = 2;
+          article.data.revision += 1;
+          article.data.sourceRevision = article.data.revision;
         }
         writeFileSync(
           articlePath(lang),

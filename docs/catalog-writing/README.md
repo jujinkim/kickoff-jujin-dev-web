@@ -1,5 +1,7 @@
 # Catalog writing designs / 카탈로그 집필 설계 / カタログ執筆設計
 
+> Current publishing rule (2026-09-21): one-minute concept introductions, three short sections (Concept, Example, When to choose it), and a prominent diagram or UI image. The longer section plans and exhaustive comparisons below remain research references, not required article length. Optional comparisons and sources must not obscure the core concept.
+
 This local design pack covers **58 candidates in 19 comparison groups**. It prepares practical introductory articles: definition, concrete example, benefits, constraints, selection and combination. The original pack contained designs only. The seven styles have now progressed to English drafting, group review, Korean/Japanese translation and an interactive study; see the [styles release review](styles-review.md). The other 51 candidates remain planned.
 
 ## How to write from this pack

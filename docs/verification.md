@@ -1,5 +1,15 @@
 # Verification — 2026-09-21
 
+## One-minute introductions
+
+2026-09-21: all 57 published documents were rewritten into Concept, Example and When to choose it. The source validator caps title, summary and body at an estimated 45 seconds, reserving 15 seconds for visuals. Browser coverage additionally checks default visible article text on every canonical route against the 60-second editorial budget. This is a length constraint, not a timed reader study.
+
+Style pages retain interactive neutral/style comparisons; guide pages retain diagrams. Twenty-one localized PNG previews (about 320 KB total) show real style UI in catalog cards. Recreate them after building and serving `dist` with `node scripts/generate-style-thumbnails.mjs`, then rebuild. Optional comparison, example details, related reading and AI prompts use native disclosures and work without JavaScript.
+
+Validation for this revision: `npm run check` reports zero diagnostics and validates 57 documents; production build indexes 57 articles. `npm test` passes 21 cases. Browser checks cover all 57 short introductions, 21 localized images, search, clipboard, state controls, narrow/dark layouts and no-JavaScript reading. Screenshot inspection used the Korean neobrutalist article and its generated preview. Condensation briefly removed the literal `Map` keyword from two translations; localized examples now retain it and search regression checks pass.
+
+The older full-length release evidence below remains historical. Current content revisions/source revisions are 2; all 51 unpublished candidates remain planned. Native-speaker review, timed comprehension studies, non-Chromium coverage and authenticated comment posting remain unperformed.
+
 ## Styles release
 
 This section supersedes the historical baseline below. The source set adds seven concept IDs in English, Korean and Japanese to the existing twelve guides: 19 IDs and 57 language documents. All other 51 candidates remain planned. API schema version remains 1.

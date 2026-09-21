@@ -6,30 +6,9 @@ export const candidates = JSON.parse(
   readFileSync(new URL("../src/data/candidates.json", import.meta.url)),
 );
 export const conceptSections = {
-  en: [
-    "Definition",
-    "Features and examples",
-    "Advantages and limitations",
-    "Comparison within the category",
-    "Selection and combination conditions",
-    "Related reading and sources",
-  ],
-  ko: [
-    "정의",
-    "특징과 예시",
-    "장점과 제약",
-    "같은 범주의 비교",
-    "선택·조합 조건",
-    "관련 글과 출처",
-  ],
-  ja: [
-    "定義",
-    "特徴と実例",
-    "利点と制約",
-    "同じ分類の比較",
-    "選択・組み合わせ条件",
-    "関連記事と出典",
-  ],
+  en: ["Concept", "Example", "When to choose it"],
+  ko: ["개념", "예시", "추천 조건"],
+  ja: ["概念", "実例", "選ぶ条件"],
 };
 export const comparisonKeys = [
   "features",

@@ -54,8 +54,8 @@ test("stale translations are allowed, shared metadata drift is not", () => {
   assert.deepEqual(
     changed((a) => {
       const d = a.find((x) => x.file === "en/srs.md").data;
-      d.revision = 2;
-      d.sourceRevision = 2;
+      d.revision += 1;
+      d.sourceRevision = d.revision;
     }),
     [],
   );

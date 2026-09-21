@@ -38,3 +38,11 @@ The common component is selected by `articleId`; no new API version or frontmatt
 Both groups cross-read the complete Korean and Japanese translations. Numerical tokens, ordered peer comparisons, conditional advice, sources and failure cases match the English originals. One Korean bookmark phrase was clarified to mean the silhouette is visible but not yet checked; one literal recipe translation was changed to specification. All 21 documents were then switched together to `published`, with `checked: 2026-09-21`.
 
 Translation review and runtime results are recorded in [project verification](../verification.md). Publication occurs for the full 21-document group after review, followed by the existing check/build/test/browser gates and Pages deployment. Editorial review here is agent review, not a native-speaker or user-study certification. Authenticated comment posting and non-Chromium behavior remain outside the automated checks.
+
+## One-minute revision — 2026-09-21
+
+Supersedes the initial long-form release: all 57 articles now use three concise sections; English bodies contain approximately 69–97 visible words. All translations and comparison summaries were reviewed for preserved definitions, conditions and caveats. Style authors cross-reviewed all 21 style documents; theme/layout/tools guide translations were sampled in a separate review. Revisions and source revisions are 2. The 51 other candidates remain planned.
+
+Interactive before/after UI examples remain prominent. Supplemental state descriptions, comparison summaries, related links and copyable prompts use native disclosures. Catalog style images are localized screenshots of the actual example UI, generated with `scripts/generate-style-thumbnails.mjs` against built output. Guide cards retain their existing diagrams.
+
+Reading estimates are editorial limits, not timed usability measurements. No new factual claims or source changes were introduced by condensation.
