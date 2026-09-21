@@ -54,8 +54,8 @@ const absolute = (url: string) => new URL(url, "https://jujin.dev").href;
               ? "dark"
               : "light";
         const view = localStorage.getItem("catalog-view");
-        if (["preview", "thumbnail", "list"].includes(view))
-          document.documentElement.dataset.view = view;
+        document.documentElement.dataset.view =
+          view === "list" ? "list" : "card";
       } catch {}
     </script>
   </head>

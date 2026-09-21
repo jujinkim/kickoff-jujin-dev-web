@@ -1,7 +1,7 @@
 ---
 import Card from "./Card.astro";
 import { strings, categoryNames, type Lang } from "../lib/i18n";
-import { taxonomy } from "../lib/catalog";
+import { taxonomy, ancestors, childrenOf } from "../lib/catalog";
 import { published } from "../lib/content";
 interface Props {
   lang: Lang;
@@ -9,16 +9,24 @@ interface Props {
 }
 const { lang, kind } = Astro.props;
 const t = strings[lang];
-const categories = taxonomy
-  .filter((c) =>
-    kind === "guide"
-      ? !c.parent
-      : !taxonomy.some((child) => child.parent === c.id),
-  )
-  .map((c) => c.id);
 const articles = (await published()).filter(
   (a) => a.data.lang === lang && a.data.kind === kind,
 );
+const orderedCategories = (parent: string | null): typeof taxonomy =>
+  childrenOf(parent).flatMap((c) => [c, ...orderedCategories(c.id)]);
+const categories = orderedCategories(null).filter(
+  (c) => kind === "concept" || !c.parent,
+);
+const groupId = (category: string) => {
+  const path = ancestors(category);
+  return (path[1] ?? path[0]).id;
+};
+const groups =
+  kind === "concept"
+    ? categories.filter((c) =>
+        articles.some((a) => groupId(a.data.category) === c.id),
+      )
+    : [];
 ---
 
 <section
@@ -40,9 +48,9 @@ const articles = (await published()).filter(
       />
     </div>
     <div class="view-switch" role="group" aria-label={t.views}>
-      {["preview", "thumbnail", "list"].map((view) => (
-        <button data-view={view} aria-pressed={view === "preview"}>
-          {t[view as "preview" | "thumbnail" | "list"]}
+      {["card", "list"].map((view) => (
+        <button data-view={view} aria-pressed={view === "card"}>
+          {t[view === "card" ? "thumbnail" : "list"]}
         </button>
       ))}
     </div>
@@ -54,7 +62,11 @@ const articles = (await published()).filter(
     <select id="category">
       <option value="">{t.all}</option>
       {categories.map((c) => (
-        <option value={c}>{categoryNames[lang][c]}</option>
+        <option value={c.id}>
+          {ancestors(c.id)
+            .map((node) => categoryNames[lang][node.id])
+            .join(" / ")}
+        </option>
       ))}
     </select>
     <p id="result-status" role="status" aria-live="polite">
@@ -62,10 +74,31 @@ const articles = (await published()).filter(
     </p>
   </div>
   <div id="search-results" class="search-results" hidden></div>
-  <div class="catalog-grid" id="catalog-grid">
-    {articles.map((article, index) => (
-      <Card article={article} index={index} />
-    ))}
+  <div id="catalog-grid" class:list={{ "catalog-grid": kind === "guide" }}>
+    {kind === "guide"
+      ? articles.map((article, index) => (
+          <Card article={article} index={index} />
+        ))
+      : groups.map((group) => (
+          <section
+            class="catalog-group"
+            data-catalog-group={group.id}
+            aria-labelledby={`group-${group.id}`}
+          >
+            <h2 id={`group-${group.id}`} class="catalog-group-title">
+              {group.names[lang]}
+            </h2>
+            <div class="catalog-grid">
+              {articles
+                .filter(
+                  (article) => groupId(article.data.category) === group.id,
+                )
+                .map((article) => (
+                  <Card article={article} index={articles.indexOf(article)} />
+                ))}
+            </div>
+          </section>
+        ))}
   </div>
 </section>
 <script is:inline type="module" src="/catalog.js"></script>

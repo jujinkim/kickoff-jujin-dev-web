@@ -6,12 +6,13 @@ const resultList = document.querySelector("#search-results");
 const resultStatus = document.querySelector("#result-status");
 const buttons = document.querySelectorAll("button[data-view]");
 function setView(view) {
+  view = view === "list" ? "list" : "card";
   document.documentElement.dataset.view = view;
   buttons.forEach((b) =>
     b.setAttribute("aria-pressed", String(b.dataset.view === view)),
   );
 }
-setView(document.documentElement.dataset.view ?? "preview");
+setView(document.documentElement.dataset.view ?? "card");
 buttons.forEach((b) =>
   b.addEventListener("click", () => {
     setView(b.dataset.view);
@@ -36,7 +37,21 @@ async function update() {
     : url.searchParams.delete("category");
   history.replaceState(null, "", url);
   const cards = [...grid.querySelectorAll(".catalog-card")];
-  cards.forEach((c) => (c.hidden = !!cat && c.dataset.category !== cat));
+  cards.forEach(
+    (c) =>
+      (c.hidden = !!cat && !c.dataset.categoryPath.split(" ").includes(cat)),
+  );
+  grid.querySelectorAll("[data-catalog-group]").forEach((group) => {
+    group.hidden = !group.querySelector(".catalog-card:not([hidden])");
+  });
+  const eligibleCards = new Map(
+    cards
+      .filter((card) => !card.hidden)
+      .map((card) => [
+        new URL(card.querySelector(".card-link").href).pathname,
+        card,
+      ]),
+  );
   if (!query) {
     grid.hidden = false;
     resultList.hidden = true;
@@ -50,7 +65,6 @@ async function update() {
     const engine = await pagefind;
     const result = await engine.search(query, {
       filters: {
-        ...(cat ? { category: cat } : {}),
         ...(root.dataset.kind ? { kind: root.dataset.kind } : {}),
       },
     });
@@ -72,7 +86,7 @@ async function update() {
     const seen = new Set();
     const hits = [...exactHits, ...indexedHits].filter((hit) => {
       const path = new URL(hit.url, location.href).pathname;
-      if (seen.has(path)) return false;
+      if (!eligibleCards.has(path) || seen.has(path)) return false;
       seen.add(path);
       return true;
     });
@@ -88,7 +102,12 @@ async function update() {
         hit.summary ??
         new DOMParser().parseFromString(hit.excerpt, "text/html").body
           .textContent;
-      article.append(link, p);
+      const categoryLabel = document.createElement("div");
+      categoryLabel.className = "card-category";
+      categoryLabel.textContent = eligibleCards
+        .get(new URL(hit.url, location.href).pathname)
+        .querySelector(".card-category").textContent;
+      article.append(categoryLabel, link, p);
       resultList.append(article);
     }
     grid.hidden = true;

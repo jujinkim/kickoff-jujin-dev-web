@@ -42,7 +42,7 @@ test("views, theme and language survive navigation and reload", async ({
   page,
 }) => {
   await page.goto("/en/guides/");
-  for (const view of ["list", "thumbnail", "preview"]) {
+  for (const view of ["list", "card"]) {
     await page.locator(`button[data-view=${view}]`).click();
     await expect(page.locator("html")).toHaveAttribute("data-view", view);
     await page.reload();
@@ -180,3 +180,83 @@ for (const lang of ["en", "ko", "ja"]) {
     await expect(page.locator("h1")).toContainText("SRS");
   });
 }
+
+for (const [lang, layout, typography] of [
+  ["en", "Layout", "Typography"],
+  ["ko", "레이아웃", "타이포그래피"],
+  ["ja", "レイアウト", "タイポグラフィ"],
+]) {
+  test(`${lang}: design groups, parent filters and search labels`, async ({
+    page,
+  }) => {
+    await page.goto(`/${lang}/catalog/`);
+    await expect(page.locator("[data-catalog-group]:visible")).toHaveCount(3);
+    await page.locator("#category").selectOption("layout");
+    await expect(page.locator(".catalog-card:visible")).toHaveCount(6);
+    await expect(page.locator("[data-catalog-group]:visible h2")).toHaveText(
+      layout,
+    );
+    for (const view of ["card", "list"]) {
+      await page.locator(`button[data-view=${view}]`).click();
+      await expect(
+        page.locator(".catalog-card:visible .card-category").first(),
+      ).toContainText(layout);
+    }
+    await page.reload();
+    await expect(page.locator("#category")).toHaveValue("layout");
+    await expect(page.locator(".catalog-card:visible")).toHaveCount(6);
+    await page.locator("#category").selectOption("typography");
+    await expect(page.locator(".catalog-card:visible")).toHaveCount(5);
+    const title = await page
+      .locator(".catalog-card:visible h3")
+      .first()
+      .innerText();
+    await page.locator("#search").fill(title);
+    await expect(
+      page.locator("#search-results .card-category").first(),
+    ).toContainText(typography);
+    await page.locator("#category").selectOption("layout");
+    await expect(page.locator("#search-results article")).toHaveCount(0);
+    await page.locator("#search").fill("");
+    await expect(page.locator(".catalog-card:visible")).toHaveCount(6);
+    await page.locator("#category").selectOption("columns");
+    await expect(page.locator(".catalog-card:visible")).toHaveCount(3);
+    await page.locator("#category").selectOption("design");
+    await expect(page.locator(".catalog-card:visible")).toHaveCount(18);
+    await expect(page.locator("[data-catalog-group]:visible")).toHaveCount(3);
+  });
+}
+
+test("legacy views become cards with uncropped thumbnails", async ({
+  page,
+}) => {
+  for (const previous of ["preview", "thumbnail"]) {
+    await page.addInitScript(
+      (value) => localStorage.setItem("catalog-view", value),
+      previous,
+    );
+    await page.goto("/ko/catalog/");
+    await expect(page.locator("button[data-view]")).toHaveCount(2);
+    await expect(page.locator("button[data-view=card]")).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+    const image = page.locator('img[src="/thumbnails/masonry-ko.png"]');
+    await image.scrollIntoViewIfNeeded();
+    await expect(image).toBeVisible();
+    await expect
+      .poll(() =>
+        image.evaluate(
+          (node: HTMLImageElement) => node.complete && node.naturalHeight > 0,
+        ),
+      )
+      .toBeTruthy();
+    const dimensions = await image.evaluate((node: HTMLImageElement) => ({
+      actual: node.clientHeight / node.clientWidth,
+      original: node.naturalHeight / node.naturalWidth,
+    }));
+    expect(dimensions.actual).toBeCloseTo(dimensions.original, 2);
+    await page.locator("button[data-view=list]").click();
+    await expect(image).toBeHidden();
+  }
+});
