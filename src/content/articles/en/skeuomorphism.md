@@ -3,7 +3,7 @@ kind: concept
 articleId: skeuomorphism
 lang: en
 title: Skeuomorphism
-summary: Compare the same task list.
+summary: Explore the same project workspace.
 category: styles
 aliases:
   - Skeuomorphism
@@ -16,11 +16,13 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-22"
 comparison:
-  features: Recognizable materials and objects explain a digital task.
+  features: >-
+    Recognizable materials and objects explain a digital task. The workspace
+    opens as a paper notebook on a wooden surface.
   advantages: Paper and cover metaphors make a familiar checklist.
   limitations: Decorative realism consumes space; keep task controls explicit.
   suitable: Choose a familiar metaphor that supports the task.
@@ -34,7 +36,7 @@ Recognizable materials and objects explain a digital task.
 
 ## Example
 
-All seven styles use the same three tasks. Check a task, filter Open or Done, and watch the completed count change. An empty state appears when no tasks match. Reset or reload restores three unchecked tasks. Paper lines, stacked edges, and a stitched cover turn the list into a notebook.
+All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. The workspace opens as a paper notebook on a wooden surface.
 
 ## When to choose it
 

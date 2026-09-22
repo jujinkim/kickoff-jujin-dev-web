@@ -1,5 +1,7 @@
 # Neumorphism / 뉴모피즘 / ニューモーフィズム
 
+Current implementation follows [the workspace brief](../../design-briefs/neumorphism.md). The earlier reading-card fixture below is historical.
+
 Writing design only. ID: `neumorphism` · Group: [styles](../groups/styles.md) · Queue order: 3 · Checked: 2026-09-21.
 
 ## Reader question and scope
@@ -24,7 +26,7 @@ Open by answering the reader question. Establish this boundary: Explain paired h
 
 Use the exact group fixture below. Walk through initial state, action and result; annotate the mechanism in the required visualization. Explain every changed value rather than presenting an unexplained before/after.
 
-Input: shared card. Initial: raised frame, unsaved. Action: save and inspect inset variant. Result: Saved text and outlined control persist independently of shadow.
+Input: shared card. Initial: raised frame, unsaved. Action: save and inspect inset variant. Result: Check marks, strike-through and completed counts persist independently of shadow; focus and forced-color identification lines remain.
 
 ### 3. Advantages and limitations
 
@@ -42,7 +44,7 @@ Use the shared axes, in this order: **surface and depth; ornament; information r
 
 **Unsuitable:** A critical action indicated only by faint shadow reversal.
 
-**Combine:** Use flat outlined controls inside the soft frame; keep ornament limited.
+**Combine:** Use labeled, borderless controls with check marks and counts; keep focus and forced-color lines.
 
 ### 6. Related reading and sources
 
@@ -50,13 +52,13 @@ Link existing guides: [theme](../../../src/content/articles/en/theme.md). Explai
 
 ## Comparison frontmatter brief
 
-| Field          | Planned point                                                                 |
-| -------------- | ----------------------------------------------------------------------------- |
-| `features`     | Soft highlights and shadows model raised or inset forms [style-neu].          |
-| `advantages`   | The proposed frame provides a tactile visual character.                       |
-| `limitations`  | Subtle boundaries can hide controls [style-neu]; labels must remain explicit. |
-| `suitable`     | A decorative panel with independently clear controls.                         |
-| `combinations` | Use flat outlined controls inside the soft frame; keep ornament limited.      |
+| Field          | Planned point                                                                                    |
+| -------------- | ------------------------------------------------------------------------------------------------ |
+| `features`     | Soft highlights and shadows model raised or inset forms [style-neu].                             |
+| `advantages`   | The proposed frame provides a tactile visual character.                                          |
+| `limitations`  | Subtle boundaries can hide controls [style-neu]; labels must remain explicit.                    |
+| `suitable`     | A decorative panel with independently clear controls.                                            |
+| `combinations` | Use labeled, borderless controls with check marks and counts; keep focus and forced-color lines. |
 
 ## Claim and evidence map
 
@@ -77,9 +79,9 @@ Facts: the definition and mechanism in sections 1–2 and source-tagged points a
 
 **Form and composition:** Annotated screen studies: neutral reference and style variant. Show default, focus and saved states. Label changed tokens. These are fictional studies, not service screenshots.
 
-**Interaction/state script:** Input: shared card. Initial: raised frame, unsaved. Action: save and inspect inset variant. Result: Saved text and outlined control persist independently of shadow.
+**Interaction/state script:** Input: shared card. Initial: raised frame, unsaved. Action: save and inspect inset variant. Result: Check marks, strike-through and completed counts persist independently of shadow; focus and forced-color identification lines remain.
 
-**Annotations, caption and topic acceptance:** Show light direction, paired shadows and outline-only fallback. Caption: Shadows describe surface; labels describe state. Accept if disabling shadows preserves the task.
+**Annotations, caption and topic acceptance:** Show light direction, paired shadows and check-mark and count fallback with focus and forced-color lines. Caption: Shadows describe surface; labels describe state. Accept if disabling shadows preserves the task.
 
 **Mobile:** Stack panels at 320 CSS px; wrap labels and keep controls before the result. For spatial diagrams, provide a numbered vertical sequence with the same node names. Do not shrink text to fit a desktop canvas.
 

@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 import { readArticles } from "../../scripts/validate-content.mjs";
 import { readingSeconds } from "../../src/lib/reading-budget.mjs";
 
-test("90 visible introductions stay concise and localized catalog images load", async ({
+test("published introductions stay concise and localized catalog images load", async ({
   page,
 }) => {
   test.setTimeout(120_000);

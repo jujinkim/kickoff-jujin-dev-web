@@ -801,5 +801,57 @@
     "compareWith": ["direct-seller"],
     "relatedGuides": ["payments"],
     "order": 1901
+  },
+  {
+    "id": "liquid-glass",
+    "category": "styles",
+    "titles": {
+      "en": "Liquid Glass",
+      "ko": "Liquid Glass",
+      "ja": "Liquid Glass"
+    },
+    "scope": "Liquid Glass uses a dynamic, transparent navigation layer above content. This web study illustrates its visual cues, not Apple’s native rendering. Preserve the common project workspace and all basic actions.",
+    "compareWith": ["glassmorphism", "flat-design"],
+    "relatedGuides": ["theme"],
+    "order": 7
+  },
+  {
+    "id": "material-3-expressive",
+    "category": "styles",
+    "titles": {
+      "en": "Material 3 Expressive",
+      "ko": "Material 3 Expressive",
+      "ja": "Material 3 Expressive"
+    },
+    "scope": "Material 3 Expressive directs attention with color, shape, size, and motion. This authored study uses large task controls and varied curves. Preserve the common project workspace and all basic actions.",
+    "compareWith": ["flat-design", "neobrutalism"],
+    "relatedGuides": ["theme"],
+    "order": 8
+  },
+  {
+    "id": "tactile-collage",
+    "category": "styles",
+    "titles": {
+      "en": "Tactile collage",
+      "ko": "촉각적 콜라주",
+      "ja": "触感的コラージュ"
+    },
+    "scope": "Tactile collage layers paper, tape, and annotations. This editorial category groups handmade cues discussed in Canva’s 2026 trends; it does not date their invention. Preserve the common project workspace and all basic actions.",
+    "compareWith": ["skeuomorphism", "neobrutalism"],
+    "relatedGuides": ["theme"],
+    "order": 9
+  },
+  {
+    "id": "retro-digital",
+    "category": "styles",
+    "titles": {
+      "en": "Retro digital",
+      "ko": "레트로 디지털",
+      "ja": "レトロデジタル"
+    },
+    "scope": "Retro digital borrows early desktop windows and pixel ornaments. This editorial category relates to Canva’s 2026 early-computing trend, not a claim of invention in 2026. Preserve the common project workspace and all basic actions.",
+    "compareWith": ["brutalism", "skeuomorphism"],
+    "relatedGuides": ["theme"],
+    "order": 10
   }
 ]

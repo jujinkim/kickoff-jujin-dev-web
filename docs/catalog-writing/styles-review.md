@@ -1,5 +1,7 @@
 > Historical pilot, superseded by [independent design demos](../design-demos.md) and [current verification](../design-demos-review.md).
 
+Current eleven-style workspace contract and refreshed sources: [workspace review](../design-workspaces-review.md). The reading-card examples and numeric tokens below describe the earlier authoring stage; current border guidance is retained here for consistency.
+
 # Styles group editorial review — 2026-09-21
 
 ## Scope and sequence
@@ -12,7 +14,7 @@ The source refresh is recorded separately: [first four styles](styles-sources-a.
 
 - Brutalism keeps conventional links and native controls. It does not require antidesign, broken navigation or a particular font. Neobrutalism adds deliberately graphic framing; 3px borders and 4px hard shadows are illustration choices.
 - Glass uses 88% white fill and 12px backdrop blur while text remains opaque. Simple and complex backgrounds illustrate dependence, not exhaustive contrast proof. Opaque mode preserves the task.
-- Neumorphism uses paired ±6px/12px shadows on the frame; a 2px outlined control and Saved wording survive inset and shadowless modes. A depression does not stand in for persistent state.
+- Neumorphism uses paired ±6px/12px shadows on the frame; borderless controls retain check marks, strike-through and counts in inset and shadowless modes; focus and forced-color lines remain. A depression does not stand in for persistent state.
 - Skeuomorphism refers to a paper card and bookmark; the metaphor supplements Save. Realistic texture and physical constraints are unnecessary.
 - Flat design changes surface treatment. Minimalism changes information selection. Their combinations remain conditional and explicit, following NN/g's distinction.
 - Flat failure removes action cues; minimalist failure removes the action itself. The latter's two badges and duplicate Save are explicitly redundant only within this small fixture. Unique title, summary and reading time survive successful reduction.

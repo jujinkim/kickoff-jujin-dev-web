@@ -2,63 +2,63 @@
   "brutalism": {
     "component": "Brutalism",
     "caption": {
-      "en": "Compare the same task list",
-      "ko": "같은 작업 목록으로 스타일 비교",
-      "ja": "同じタスク一覧でスタイルを比較"
+      "en": "Explore the same project workspace",
+      "ko": "같은 프로젝트 작업실로 스타일 비교",
+      "ja": "同じプロジェクト作業室でスタイルを比較"
     },
     "capture": "[data-demo=\"brutalism\"]"
   },
   "neobrutalism": {
     "component": "Neobrutalism",
     "caption": {
-      "en": "Compare the same task list",
-      "ko": "같은 작업 목록으로 스타일 비교",
-      "ja": "同じタスク一覧でスタイルを比較"
+      "en": "Explore the same project workspace",
+      "ko": "같은 프로젝트 작업실로 스타일 비교",
+      "ja": "同じプロジェクト作業室でスタイルを比較"
     },
     "capture": "[data-demo=\"neobrutalism\"]"
   },
   "glassmorphism": {
     "component": "Glassmorphism",
     "caption": {
-      "en": "Compare the same task list",
-      "ko": "같은 작업 목록으로 스타일 비교",
-      "ja": "同じタスク一覧でスタイルを比較"
+      "en": "Explore the same project workspace",
+      "ko": "같은 프로젝트 작업실로 스타일 비교",
+      "ja": "同じプロジェクト作業室でスタイルを比較"
     },
     "capture": "[data-demo=\"glassmorphism\"]"
   },
   "neumorphism": {
     "component": "Neumorphism",
     "caption": {
-      "en": "Compare the same task list",
-      "ko": "같은 작업 목록으로 스타일 비교",
-      "ja": "同じタスク一覧でスタイルを比較"
+      "en": "Explore the same project workspace",
+      "ko": "같은 프로젝트 작업실로 스타일 비교",
+      "ja": "同じプロジェクト作業室でスタイルを比較"
     },
     "capture": "[data-demo=\"neumorphism\"]"
   },
   "skeuomorphism": {
     "component": "Skeuomorphism",
     "caption": {
-      "en": "Compare the same task list",
-      "ko": "같은 작업 목록으로 스타일 비교",
-      "ja": "同じタスク一覧でスタイルを比較"
+      "en": "Explore the same project workspace",
+      "ko": "같은 프로젝트 작업실로 스타일 비교",
+      "ja": "同じプロジェクト作業室でスタイルを比較"
     },
     "capture": "[data-demo=\"skeuomorphism\"]"
   },
   "flat-design": {
     "component": "FlatDesign",
     "caption": {
-      "en": "Compare the same task list",
-      "ko": "같은 작업 목록으로 스타일 비교",
-      "ja": "同じタスク一覧でスタイルを比較"
+      "en": "Explore the same project workspace",
+      "ko": "같은 프로젝트 작업실로 스타일 비교",
+      "ja": "同じプロジェクト作業室でスタイルを比較"
     },
     "capture": "[data-demo=\"flat-design\"]"
   },
   "minimalism": {
     "component": "Minimalism",
     "caption": {
-      "en": "Compare the same task list",
-      "ko": "같은 작업 목록으로 스타일 비교",
-      "ja": "同じタスク一覧でスタイルを比較"
+      "en": "Explore the same project workspace",
+      "ko": "같은 프로젝트 작업실로 스타일 비교",
+      "ja": "同じプロジェクト作業室でスタイルを比較"
     },
     "capture": "[data-demo=\"minimalism\"]"
   },
@@ -160,5 +160,41 @@
       "ja": "同じ文字・文章・数字で書体を比較"
     },
     "capture": "[data-demo=\"monospace\"]"
+  },
+  "liquid-glass": {
+    "component": "LiquidGlass",
+    "caption": {
+      "en": "Explore the same project workspace",
+      "ko": "같은 프로젝트 작업실로 스타일 비교",
+      "ja": "同じプロジェクト作業室でスタイルを比較"
+    },
+    "capture": "[data-demo=\"liquid-glass\"]"
+  },
+  "material-3-expressive": {
+    "component": "Material3Expressive",
+    "caption": {
+      "en": "Explore the same project workspace",
+      "ko": "같은 프로젝트 작업실로 스타일 비교",
+      "ja": "同じプロジェクト作業室でスタイルを比較"
+    },
+    "capture": "[data-demo=\"material-3-expressive\"]"
+  },
+  "tactile-collage": {
+    "component": "TactileCollage",
+    "caption": {
+      "en": "Explore the same project workspace",
+      "ko": "같은 프로젝트 작업실로 스타일 비교",
+      "ja": "同じプロジェクト作業室でスタイルを比較"
+    },
+    "capture": "[data-demo=\"tactile-collage\"]"
+  },
+  "retro-digital": {
+    "component": "RetroDigital",
+    "caption": {
+      "en": "Explore the same project workspace",
+      "ko": "같은 프로젝트 작업실로 스타일 비교",
+      "ja": "同じプロジェクト作業室でスタイルを比較"
+    },
+    "capture": "[data-demo=\"retro-digital\"]"
   }
 }

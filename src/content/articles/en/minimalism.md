@@ -3,7 +3,7 @@ kind: concept
 articleId: minimalism
 lang: en
 title: Minimalism
-summary: Compare the same task list.
+summary: Explore the same project workspace.
 category: styles
 aliases:
   - Minimalism
@@ -16,11 +16,13 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-22"
 comparison:
-  features: Limited elements and generous space focus attention on essential content.
+  features: >-
+    Limited elements and generous space focus attention on essential content.
+    Whitespace and restrained type keep all project content legible.
   advantages: Space concentrates attention on essential tasks.
   limitations: >-
     Removing navigation or unique information weakens the task rather than
@@ -36,7 +38,7 @@ Limited elements and generous space focus attention on essential content.
 
 ## Example
 
-All seven styles use the same three tasks. Check a task, filter Open or Done, and watch the completed count change. An empty state appears when no tasks match. Reset or reload restores three unchecked tasks. Extra space and restrained decoration keep the same three tasks prominent.
+All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. Whitespace and restrained type keep all project content legible.
 
 ## When to choose it
 

@@ -3,7 +3,7 @@ kind: concept
 articleId: glassmorphism
 lang: en
 title: Glassmorphism
-summary: Compare the same task list.
+summary: Explore the same project workspace.
 category: styles
 aliases:
   - Glassmorphism
@@ -16,11 +16,13 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-22"
 comparison:
-  features: Translucent panels reveal a blurred background.
+  features: >-
+    Translucent panels reveal a blurred background. Opaque panels replace the
+    frosted surfaces when selected.
   advantages: Translucent panels retain the background context.
   limitations: Contrast depends on the backdrop; offer an opaque mode and test each scene.
   suitable: Choose it when background context matters.
@@ -34,7 +36,7 @@ Translucent panels reveal a blurred background.
 
 ## Example
 
-All seven styles use the same three tasks. Check a task, filter Open or Done, and watch the completed count change. An empty state appears when no tasks match. Reset or reload restores three unchecked tasks. Switch to opaque panels to compare the blurred glass with a solid fallback.
+All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. Opaque panels replace the frosted surfaces when selected.
 
 ## When to choose it
 

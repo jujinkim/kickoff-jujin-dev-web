@@ -1,0 +1,488 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { workshop } from "./workshop";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const w = workshop(lang);
+const prefix = "liquid-glass-" + lang;
+---
+
+<section
+  class="demo"
+  data-comparison="tasks"
+  data-demo="liquid-glass"
+  lang={lang}
+  data-reset-message={w.resetMessage}
+  data-completed-label={w.completed}
+  data-progress-label={w.progress}
+>
+  <header>
+    <div>
+      <small>{w.identity} · 01</small>
+      <h2>{w.project}</h2>
+    </div>
+    <span class="mark" aria-hidden="true">
+      ✳
+    </span>
+  </header>
+  <div class="float-layer">
+    <nav aria-label={w.menu}>
+      {[
+        ["overview", w.overview],
+        ["tasks", w.tasksTitle],
+        ["resources", w.resourcesTitle],
+      ].map(([target, label]) => (
+        <a href={`#${prefix}-${target}`} data-section-link>
+          {label}
+        </a>
+      ))}
+      <button
+        class="tools-toggle"
+        type="button"
+        data-tools-toggle
+        data-interactive
+        disabled
+        aria-expanded="false"
+        aria-controls={`${prefix}-tools`}
+      >
+        {w.tools}
+      </button>
+    </nav>
+    <div class="tool-tray" data-tools id={`${prefix}-tools`} hidden>
+      <label>
+        <input type="checkbox" data-opaque data-interactive disabled />
+        {w.opaque}
+      </label>
+    </div>
+  </div>
+  <div class="workspace">
+    <div class="work-main">
+      <section
+        class="intro"
+        id={`${prefix}-overview`}
+        tabindex="-1"
+        aria-label={w.overview}
+      >
+        <h3>{w.goal}</h3>
+        <p data-description>{w.description}</p>
+      </section>
+      <section id={`${prefix}-tasks`} tabindex="-1" aria-label={w.tasksTitle}>
+        <h3>{w.tasksTitle}</h3>
+        <div class="controls">
+          <label>
+            {w.status}
+            <select data-filter data-interactive disabled>
+              <option value="all">{w.all}</option>
+              <option value="open">{w.open}</option>
+              <option value="done">{w.done}</option>
+            </select>
+          </label>
+        </div>
+        <ul>
+          {w.tasks.map((text, i) => (
+            <li data-task>
+              <label>
+                <input type="checkbox" data-check data-interactive disabled />
+                <span class="task-label">{text}</span>
+              </label>
+              <small aria-hidden="true">0{i + 1}</small>
+            </li>
+          ))}
+        </ul>
+        <p data-empty hidden>
+          {w.empty}
+        </p>
+      </section>
+    </div>
+    <aside>
+      <section class="progress-panel" aria-label={w.progress}>
+        <h3>{w.progress}</h3>
+        <div class="progress-values">
+          <span>
+            {w.completed} <strong data-count>0 / 3</strong>
+          </span>
+          <strong data-percent>0%</strong>
+        </div>
+        <progress data-progress value="0" max="3" aria-label={w.progress}>
+          0 / 3
+        </progress>
+      </section>
+      <section
+        class="resources"
+        id={`${prefix}-resources`}
+        tabindex="-1"
+        aria-label={w.resourcesTitle}
+      >
+        <h3>{w.resourcesTitle}</h3>
+        {w.resources.map((resource) => (
+          <details data-resource>
+            <summary>
+              {resource.title}
+              <span>{w.note}</span>
+            </summary>
+            <p>{resource.note}</p>
+          </details>
+        ))}
+      </section>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-line">
+      <small data-footer-summary>{w.summary}</small>
+      <button class="reset" type="button" data-reset data-interactive disabled>
+        {w.reset}
+      </button>
+    </div>
+    <p role="status" aria-live="polite" aria-atomic="true">
+      {w.initialMessage}
+    </p>
+  </footer>
+</section>
+<script>
+  import { mountTasks } from "./tasks";
+  mountTasks("liquid-glass");
+</script>
+<style>
+  /* Local control baseline. Astro scopes every selector to this component. */
+  .demo {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: clamp(16px, 3vw, 32px);
+    color-scheme: light;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  :is(h2, h3, p) {
+    margin: 0 0 1rem;
+  }
+  h2 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 18px 0;
+  }
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+  :is(button, select, input, textarea) {
+    font: inherit;
+    max-width: 100%;
+    color: inherit;
+  }
+
+  :is(button, select, input:not([type="checkbox"]):not([type="range"])) {
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+  :is(button, select) {
+    cursor: pointer;
+  }
+  button {
+    border: 1px solid currentColor;
+    background: transparent;
+  }
+  :is(input, textarea, select) {
+    background: #fff;
+    color: #172329;
+    border: 1px solid #67747c;
+  }
+  input[type="range"] {
+    width: 150px;
+  }
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+  :focus-visible {
+    outline: 3px dashed currentColor;
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  [role="status"] {
+    min-height: 1.5em;
+    font-size: 0.85rem;
+    margin-top: 16px;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  .reset {
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  [data-task] label {
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+  [data-task] input {
+    flex: none;
+  }
+  [data-task] small {
+    flex: none;
+    white-space: nowrap;
+  }
+
+  .demo {
+    container-type: inline-size;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 0;
+  }
+  header .mark {
+    font-size: 2.8rem;
+    flex: none;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 24px;
+  }
+  nav a {
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 12px;
+    text-decoration: none;
+  }
+  .workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+    gap: 24px;
+  }
+  .work-main,
+  aside {
+    min-width: 0;
+  }
+  .intro {
+    margin-bottom: 24px;
+  }
+  h2,
+  h3 {
+    font-family: inherit;
+  }
+  h3 {
+    line-height: 1.3;
+  }
+  .controls {
+    margin: 18px 0;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 20px 12px;
+  }
+  li label {
+    flex: 1;
+    min-height: 44px;
+    cursor: pointer;
+  }
+  li:has(:checked) .task-label {
+    text-decoration: line-through;
+  }
+  .progress-panel {
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .progress-values {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  progress {
+    width: 100%;
+    height: 12px;
+    display: block;
+  }
+  details {
+    margin-top: 12px;
+    padding: 16px;
+  }
+  summary {
+    cursor: pointer;
+    min-height: 44px;
+  }
+  summary span {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+  }
+  details p {
+    margin: 16px 0 0;
+    line-height: 1.6;
+  }
+  footer {
+    margin-top: 28px;
+    padding-top: 20px;
+  }
+  footer .footer-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer .reset {
+    margin: 0;
+  }
+  [data-empty] {
+    padding: 20px 0;
+  }
+  @container (width < 600px) {
+    .workspace {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  .demo {
+    background:
+      radial-gradient(ellipse at 0 0, #b9d7f0, transparent 55%),
+      radial-gradient(ellipse at 100% 25%, #edbda4, transparent 48%), #e9f0f0;
+    color: #193948;
+    border-radius: 28px;
+    position: relative;
+    isolation: isolate;
+  }
+  header {
+    padding: 12px 8px 26px;
+  }
+  header .mark {
+    color: #326d8a;
+  }
+  .float-layer {
+    position: relative;
+    z-index: 1;
+    margin: 0 8px -24px;
+    padding: 10px;
+    border: 1px solid #ffffffd9;
+    border-radius: 38px;
+    background: linear-gradient(125deg, #ffffffbc, #ffffff66 45%, #dcecf3a8);
+    backdrop-filter: blur(16px) saturate(1.3);
+    box-shadow:
+      inset 2px 2px 2px #fff,
+      inset -2px -2px 4px #688a9b66,
+      0 14px 28px #234b6a33;
+    transition:
+      border-radius 0.24s ease,
+      box-shadow 0.24s ease;
+  }
+  .float-layer:has([aria-expanded="true"]) {
+    border-radius: 24px;
+    box-shadow:
+      inset 2px 2px 2px #fff,
+      inset -2px -2px 4px #688a9b66,
+      0 20px 34px #234b6a44;
+  }
+  nav {
+    margin: 0;
+    gap: 4px;
+    align-items: center;
+  }
+  nav a {
+    border-radius: 24px;
+    font-weight: 650;
+  }
+  nav a:hover {
+    background: #ffffffa8;
+  }
+  .demo .tools-toggle {
+    border: 0;
+    border-radius: 24px;
+    background: #254f68;
+    color: white;
+    margin-left: auto;
+  }
+  .tool-tray {
+    padding: 18px 12px 8px;
+  }
+  .workspace {
+    background: #f8faf9;
+    border-radius: 24px;
+    padding: 56px 24px 24px;
+  }
+  li {
+    border-bottom: 1px solid #c0d1d6;
+    padding-inline: 0;
+  }
+  .progress-panel {
+    background: #dfeef3;
+    border-radius: 20px;
+  }
+  details {
+    background: #eaf0f1;
+    border-radius: 16px;
+  }
+  button,
+  select {
+    background: #eef6f9;
+    border: 1px solid #809fab;
+    border-radius: 20px;
+  }
+  input,
+  progress {
+    accent-color: #275c7a;
+  }
+  .demo[data-opaque="true"] .float-layer {
+    background: #e5f0f6;
+    backdrop-filter: none;
+  }
+  @supports not (backdrop-filter: blur(1px)) {
+    .float-layer {
+      background: #e5f0f6;
+    }
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .float-layer {
+      background: #e5f0f6;
+      backdrop-filter: none;
+    }
+  }
+  @container (width < 600px) {
+    .float-layer {
+      margin-inline: 0;
+    }
+    .workspace {
+      padding-inline: 16px;
+    }
+    nav a {
+      padding: 8px;
+    }
+  }
+</style>

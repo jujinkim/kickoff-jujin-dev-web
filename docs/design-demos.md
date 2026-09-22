@@ -8,7 +8,7 @@ and basic actions identical**. Change only the concept under comparison:
 
 | Category   | Shared example                                                                       | Variable                                                   |
 | ---------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
-| Styles     | Three-task checklist; completion and status filter                                   | Color, type treatment, borders, shadows, material, spacing |
+| Styles     | Project workspace; navigation, tasks, progress and resource notes                    | Color, type treatment, borders, shadows, material, spacing |
 | Layout     | Six resources; topic filter, order, notes, preview width                             | Region composition and list/grid/masonry placement         |
 | Typography | The same Latin sentence, localized phrase, `iiiWWW 0123`, numbers, 48px initial size | Typeface and measured advances                             |
 
@@ -22,13 +22,51 @@ may define its own scenario after documenting why it needs one.
 Independent Astro components still own semantic markup and scoped visual rules.
 `tasks.ts`, `resource-behavior.ts`, and `type-behavior.ts` share category behavior;
 `resources.ts` supplies the identical six-resource data. `comparison-base.css`
-scopes basic controls to `[data-comparison]`. Do not add a global visual theme.
+scopes basic controls for layout/type demos to `[data-comparison]`. Style demos
+keep their control baseline inside each component; they share only data and
+behavior. Do not add a global visual theme.
 
-The current release contains 18 designs / 54 translated design articles plus
+The current release contains 22 designs / 66 translated design articles plus
 36 guide articles. Forty candidates remain planned. Counts here describe this
 release, not runtime allowlists.
 
-Current screen evidence: [shared-example review](design-comparison-review.md).
+Current screen evidence: [workspace review](design-workspaces-review.md).
+Previous release evidence: [shared-example review](design-comparison-review.md).
+
+## Style workspace contract
+
+All eleven styles use `workshop.ts` for translated project data and `tasks.ts`
+for behavior. Each Astro file owns its markup, material, typography, spacing,
+and layout. No shared runtime style template or page-wide theme.
+
+- Header: Make room, PROJECT / TODAY, project 01. Menu: Overview, Tasks, Resources.
+- Overview: identical goal and description. Tasks: the original three checkboxes,
+  All/Open/Done filter and empty-result message.
+- Supporting content: completed count, native progress and percentage; Reference
+  board and Review checklist, each with a native expandable note.
+- Footer: three-task/two-resource summary, reset and live status.
+- Initial/reset/reload: All; three unchecked tasks; 0 / 3, 0%; closed notes.
+  Material extras reset too. Native links and details work without JavaScript.
+- Standard structure: header and menu, then overview/tasks beside progress/resources.
+  Below **600px of demo content width**, one column in reading order.
+- Exceptions preserve all information and actions: Skeuomorphism uses an open
+  notebook; Liquid Glass uses a floating navigation layer; Tactile collage uses
+  a board; Retro digital uses windows. No overlap over readable text or controls.
+- Neumorphism uses same-tone surfaces, upper-left light and lower-right dark
+  shadows, inset selected states, and **no resting decorative borders**, including
+  browser-default checkbox/select borders. Keep check marks, strike-through,
+  counts, keyboard focus outlines and forced-color identification lines.
+- Glass supports manual opaque mode, reduced transparency and missing-filter
+  fallback. Expressive motion stops under reduced motion.
+
+Component-specific plans live in [design-briefs](design-briefs/), each following
+[the template](templates/design-demo-brief.md). Liquid Glass is a web study, not
+Apple native rendering. Collage and retro digital are editorial categories;
+Canva's 2026 report is evidence of trends, not an invention date.
+
+Cards and category cards use full-width, proportional images capped at 360px,
+`object-fit: cover; object-position: top`. Short images keep natural height;
+long images crop only the bottom. Keep full demo PNGs and hide images in list view.
 
 ## Plan the example
 

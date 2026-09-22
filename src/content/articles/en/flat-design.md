@@ -3,7 +3,7 @@ kind: concept
 articleId: flat-design
 lang: en
 title: Flat design
-summary: Compare the same task list.
+summary: Explore the same project workspace.
 category: styles
 aliases:
   - Flat design
@@ -16,11 +16,13 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-22"
 comparison:
-  features: Solid surfaces and clear labels establish hierarchy without simulated depth.
+  features: >-
+    Solid surfaces and clear labels establish hierarchy without simulated depth.
+    Solid color regions separate roles without decorative depth.
   advantages: Labels and solid fills separate tasks and actions clearly.
   limitations: >-
     Without depth cues, boundaries and labels must keep actions easy to
@@ -36,7 +38,7 @@ Solid surfaces and clear labels establish hierarchy without simulated depth.
 
 ## Example
 
-All seven styles use the same three tasks. Check a task, filter Open or Done, and watch the completed count change. An empty state appears when no tasks match. Reset or reload restores three unchecked tasks. Solid fills and labels carry the hierarchy without depth effects.
+All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. Solid color regions separate roles without decorative depth.
 
 ## When to choose it
 

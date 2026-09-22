@@ -1,5 +1,7 @@
 # Design demos — local verification, 2026-09-22
 
+Historical release evidence. Current style workspaces: [workspace review](design-workspaces-review.md).
+
 Historical screen review. Current comparison examples are documented in
 [Shared design examples](design-comparison-review.md).
 

@@ -3,7 +3,7 @@ kind: concept
 articleId: brutalism
 lang: en
 title: Brutalism
-summary: Compare the same task list.
+summary: Explore the same project workspace.
 category: styles
 aliases:
   - Brutalism
@@ -16,11 +16,13 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-22"
 comparison:
-  features: Exposed rules and raw typography make structure visible.
+  features: >-
+    Exposed rules and raw typography make structure visible. Raw rules and
+    underlined navigation expose the structure.
   advantages: Exposed rules make task boundaries explicit.
   limitations: >-
     The rough tone can distract; keep links underlined and controls
@@ -36,7 +38,7 @@ Exposed rules and raw typography make structure visible.
 
 ## Example
 
-All seven styles use the same three tasks. Check a task, filter Open or Done, and watch the completed count change. An empty state appears when no tasks match. Reset or reload restores three unchecked tasks. Raw rules and underlined task labels expose the structure.
+All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. Raw rules and underlined navigation expose the structure.
 
 ## When to choose it
 

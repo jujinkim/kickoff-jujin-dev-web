@@ -4,6 +4,15 @@ import { readArticles } from "../../scripts/validate-content.mjs";
 import { mkdirSync } from "node:fs";
 const ids = Object.keys(registry);
 const articles = readArticles();
+const styleIds = ids.filter((id) =>
+  articles.some(
+    (a) =>
+      a.data.articleId === id &&
+      a.data.lang === "en" &&
+      a.data.category === "styles" &&
+      a.data.status === "published",
+  ),
+);
 const languages = ["en", "ko", "ja"] as const;
 test.beforeEach(async ({ page }) => {
   await page.route("https://giscus.app/**", (route) => route.abort());
@@ -146,15 +155,7 @@ test("representative actions handle repetition, empty inputs and reload", async 
     return root;
   };
   let root;
-  for (const id of [
-    "brutalism",
-    "neobrutalism",
-    "glassmorphism",
-    "neumorphism",
-    "skeuomorphism",
-    "flat-design",
-    "minimalism",
-  ]) {
+  for (const id of styleIds) {
     root = await open(id);
     await root.locator("[data-filter]").selectOption("done");
     await expect(root.locator("[data-empty]")).toBeVisible();
@@ -362,15 +363,7 @@ for (const lang of languages) {
     page,
   }) => {
     const groups = [
-      [
-        "brutalism",
-        "neobrutalism",
-        "glassmorphism",
-        "neumorphism",
-        "skeuomorphism",
-        "flat-design",
-        "minimalism",
-      ],
+      styleIds,
       [
         "single-column",
         "two-columns",
@@ -389,6 +382,20 @@ for (const lang of languages) {
         await expect(root).toHaveAttribute("data-ready", "true");
         const content = await root.evaluate((el) => ({
           heading: el.querySelector("h2")!.textContent!.trim(),
+          description: el
+            .querySelector("[data-description]")
+            ?.textContent?.trim(),
+          menu: [...el.querySelectorAll("[data-section-link]")].map((n) =>
+            n.textContent?.trim(),
+          ),
+          notes: [...el.querySelectorAll("[data-resource]")].map((n) =>
+            n.textContent?.replace(/\s+/g, " ").trim(),
+          ),
+          completed: el.querySelector("[data-count]")?.textContent,
+          percent: el.querySelector("[data-percent]")?.textContent,
+          footer: el
+            .querySelector("[data-footer-summary]")
+            ?.textContent?.trim(),
           tasks: [...el.querySelectorAll("[data-task] label")].map((n) =>
             n.textContent!.trim(),
           ),

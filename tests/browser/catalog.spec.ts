@@ -226,12 +226,14 @@ for (const [lang, layout, typography] of [
     await page.locator("#category").selectOption("columns");
     await expect(page.locator(".catalog-card:visible")).toHaveCount(3);
     await page.locator("#category").selectOption("design");
-    await expect(page.locator(".catalog-card:visible")).toHaveCount(18);
+    await expect(page.locator(".catalog-card:visible")).toHaveCount(
+      Object.keys(designRegistry).length,
+    );
     await expect(page.locator("[data-catalog-group]:visible")).toHaveCount(3);
   });
 }
 
-test("legacy views become cards with uncropped thumbnails", async ({
+test("legacy views become cards with full-width top-cropped thumbnails", async ({
   page,
 }) => {
   for (const previous of ["preview", "thumbnail"]) {
@@ -245,9 +247,14 @@ test("legacy views become cards with uncropped thumbnails", async ({
       "aria-pressed",
       "true",
     );
-    for (const width of [320, 1440]) {
+    for (const width of [320, 768, 1440]) {
       await page.setViewportSize({ width, height: 900 });
-      for (const id of ["single-column", "two-columns", "masonry"]) {
+      for (const id of [
+        "single-column",
+        "two-columns",
+        "masonry",
+        "liquid-glass",
+      ]) {
         const image = page.locator(`img[src="/thumbnails/${id}-ko.png"]`);
         await image.scrollIntoViewIfNeeded();
         await expect(image).toBeVisible();
@@ -263,12 +270,17 @@ test("legacy views become cards with uncropped thumbnails", async ({
           height: node.clientHeight,
           natural: (node.clientWidth * node.naturalHeight) / node.naturalWidth,
           fit: getComputedStyle(node).objectFit,
+          position: getComputedStyle(node).objectPosition,
+          width: node.clientWidth,
+          parentWidth: node.parentElement!.clientWidth,
         }));
         expect(dimensions.height).toBeLessThanOrEqual(360);
         expect(
           Math.abs(dimensions.height - Math.min(360, dimensions.natural)),
         ).toBeLessThan(1);
-        expect(dimensions.fit).toBe("contain");
+        expect(dimensions.fit).toBe("cover");
+        expect(dimensions.position).toBe("50% 0%");
+        expect(dimensions.width).toBe(dimensions.parentWidth);
       }
     }
     await page.locator("button[data-view=list]").click();

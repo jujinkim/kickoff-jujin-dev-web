@@ -1,5 +1,7 @@
 # Styles publication source refresh — group A
 
+Current eleven-style workspace contract and refreshed sources: [workspace review](../design-workspaces-review.md). The reading-card examples and numeric tokens below describe the earlier authoring stage; current border guidance is retained here for consistency.
+
 Checked 2026-09-21. Publication dates below belong to sources; the check date records this drafting review. Retained passages are paraphrased. Definitions support only the stated mechanisms; card dimensions, outcomes, counterexamples, and selection advice are authored illustrations and conditional judgments. No popularity, conversion, speed, founder, or universal accessibility claim is adopted.
 
 | Source                                                                                                 | Author / publisher                                                   | Publication date                                                       | Inspected location and retained claim                                                                                                                                                                     |
@@ -20,4 +22,4 @@ The clean Brutalism URL timed out twice in the browser tool. The same original N
 
 ## Implementation contract supplied for review
 
-Neutral reference: 1px border and 8px radius. Brutalism: 1px straight border, underlined title, no decorative shadow. Neobrutalism: 3px border and 4px 4px 0 shadow. Glass: white 88% light-mode fill, 12px backdrop blur, opaque mode; text remains opaque. Neumorphism: opposite 6px offsets with 12px blur, inset and no-shadow alternatives, 2px outlined Save. These values are authored examples. Runtime verification belongs to the publication gate, not this source ledger.
+Neutral reference: 1px border and 8px radius. Brutalism: 1px straight border, underlined title, no decorative shadow. Neobrutalism: 3px border and 4px 4px 0 shadow. Glass: white 88% light-mode fill, 12px backdrop blur, opaque mode; text remains opaque. Neumorphism: opposite 6px offsets with 12px blur, inset and no-shadow alternatives, borderless controls, explicit state marks, and focus/forced-color outlines. These values are authored examples. Runtime verification belongs to the publication gate, not this source ledger.

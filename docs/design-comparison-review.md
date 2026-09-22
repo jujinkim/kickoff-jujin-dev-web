@@ -1,5 +1,7 @@
 # Shared design examples — review
 
+Historical release evidence. Current style workspaces: [workspace review](design-workspaces-review.md).
+
 The 2026-09-22 refresh replaces unrelated example applications with one scenario
 per comparison category. It supersedes the screen descriptions in
 [the original demo review](design-demos-review.md).

@@ -3,7 +3,7 @@ kind: concept
 articleId: neobrutalism
 lang: en
 title: Neobrutalism
-summary: Compare the same task list.
+summary: Explore the same project workspace.
 category: styles
 aliases:
   - Neobrutalism
@@ -16,13 +16,13 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-22"
 comparison:
   features: >-
     Bright blocks, thick outlines, and hard offset shadows create graphic
-    emphasis.
+    emphasis. Bold outlines and hard shadows give the panels a graphic weight.
   advantages: Strong blocks emphasize tasks and actions.
   limitations: >-
     Dense decoration competes with details; reserve strong emphasis for key
@@ -38,7 +38,7 @@ Bright blocks, thick outlines, and hard offset shadows create graphic emphasis.
 
 ## Example
 
-All seven styles use the same three tasks. Check a task, filter Open or Done, and watch the completed count change. An empty state appears when no tasks match. Reset or reload restores three unchecked tasks. Bright blocks and hard offset shadows emphasize the same tasks.
+All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. Bold outlines and hard shadows give the panels a graphic weight.
 
 ## When to choose it
 
