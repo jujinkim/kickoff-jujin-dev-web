@@ -241,22 +241,33 @@ test("legacy views become cards with uncropped thumbnails", async ({
       "aria-pressed",
       "true",
     );
-    const image = page.locator('img[src="/thumbnails/masonry-ko.png"]');
-    await image.scrollIntoViewIfNeeded();
-    await expect(image).toBeVisible();
-    await expect
-      .poll(() =>
-        image.evaluate(
-          (node: HTMLImageElement) => node.complete && node.naturalHeight > 0,
-        ),
-      )
-      .toBeTruthy();
-    const dimensions = await image.evaluate((node: HTMLImageElement) => ({
-      actual: node.clientHeight / node.clientWidth,
-      original: node.naturalHeight / node.naturalWidth,
-    }));
-    expect(dimensions.actual).toBeCloseTo(dimensions.original, 2);
+    for (const width of [320, 1440]) {
+      await page.setViewportSize({ width, height: 900 });
+      for (const id of ["single-column", "two-columns", "masonry"]) {
+        const image = page.locator(`img[src="/thumbnails/${id}-ko.png"]`);
+        await image.scrollIntoViewIfNeeded();
+        await expect(image).toBeVisible();
+        await expect
+          .poll(() =>
+            image.evaluate(
+              (node: HTMLImageElement) =>
+                node.complete && node.naturalHeight > 0,
+            ),
+          )
+          .toBeTruthy();
+        const dimensions = await image.evaluate((node: HTMLImageElement) => ({
+          height: node.clientHeight,
+          natural: (node.clientWidth * node.naturalHeight) / node.naturalWidth,
+          fit: getComputedStyle(node).objectFit,
+        }));
+        expect(dimensions.height).toBeLessThanOrEqual(360);
+        expect(
+          Math.abs(dimensions.height - Math.min(360, dimensions.natural)),
+        ).toBeLessThan(1);
+        expect(dimensions.fit).toBe("contain");
+      }
+    }
     await page.locator("button[data-view=list]").click();
-    await expect(image).toBeHidden();
+    await expect(page.locator(".style-preview-image:visible")).toHaveCount(0);
   }
 });
