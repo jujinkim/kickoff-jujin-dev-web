@@ -1,6 +1,6 @@
 # Godot / Godot / Godot
 
-Writing design only. ID: `godot` · Group: [game-engines](../groups/game-engines.md) · Queue order: 900 · Checked: 2026-09-21.
+Original writing design; implemented article and demo: [review](../../platform-demos-review.md). ID: `godot` · Group: [game-engines](../groups/game-engines.md) · Queue order: 900 · Checked: 2026-09-22.
 
 ## Reader question and scope
 
@@ -64,7 +64,7 @@ Facts: the definition and mechanism in sections 1–2 and source-tagged points a
 
 | Evidence                                                                                           | Exact location to consult             | Claim boundary                                                                                         | Checked    |
 | -------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------- |
-| [godot](https://docs.godotengine.org/en/stable/getting_started/step_by_step/nodes_and_scenes.html) | Nodes; Scenes; Setting the main scene | [Verified claim and context](../sources.md#godot); apply only to this mechanism, not general rankings. | 2026-09-21 |
+| [godot](https://docs.godotengine.org/en/stable/getting_started/step_by_step/nodes_and_scenes.html) | Nodes; Scenes; Setting the main scene | [Verified claim and context](../sources.md#godot); apply only to this mechanism, not general rankings. | 2026-09-22 |
 
 **Writing-time refresh:** Reopen these sources before writing. Product documentation is a dated capability reference, not a pinned implementation tutorial. No price, current version, license entitlement, service limit or legal guarantee is asserted by this brief. Adding any such claim requires fresh official evidence, an exact version/plan/jurisdiction scope, and a new check date. See the source-specific context in the ledger.
 

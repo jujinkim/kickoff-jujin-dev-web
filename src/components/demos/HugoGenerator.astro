@@ -1,0 +1,188 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { platformText } from "./platform";
+import "./platform-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  p = platformText(lang);
+---
+
+<section
+  data-demo="hugo"
+  data-platform
+  lang={lang}
+  data-reset-message={p.resetMessage}
+>
+  <header>
+    <p class="eyebrow">{p.simulation}</p>
+    <h2>Hugo</h2>
+  </header>
+  <p>
+    {t(
+      "Next traces source → build → output → host → browser.",
+      "다음으로 소스 → 빌드 → 출력 → 호스트 → 브라우저를 따라갑니다.",
+      "次へでソース → ビルド → 出力 → ホスト → ブラウザーをたどります。",
+    )}
+  </p>
+  <div class="controls">
+    <button type="button" data-previous disabled>
+      {p.previous}
+    </button>
+    <button type="button" data-next disabled>
+      {p.next}
+    </button>
+    <button type="button" data-reset data-interactive disabled>
+      {p.reset}
+    </button>
+  </div>
+  <label>
+    <input type="checkbox" data-missing data-interactive disabled />
+    {t(
+      "Missing layout (example failure)",
+      "레이아웃 누락 (예제 실패)",
+      "レイアウト欠落（例の失敗）",
+    )}
+  </label>
+  <div class="directory">
+    <ol class="pipeline">
+      <li data-stage="0">
+        <b>01</b>{" "}
+        {t(
+          "Three Markdown articles + layout",
+          "Markdown 글 3개 + 레이아웃",
+          "Markdown記事3件 + レイアウト",
+        )}
+        <ul class="files">
+          <li>A17.md</li>
+          <li>B04.md</li>
+          <li>C99.md</li>
+          <li>{t("Shared layout", "공유 레이아웃", "共通レイアウト")}</li>
+        </ul>
+      </li>
+      <li data-stage="1">
+        <b>02</b>{" "}
+        {t("Hugo · Go templates", "Hugo · Go 템플릿", "Hugo · Goテンプレート")}
+        <p data-build-state>{p.waiting}</p>
+      </li>
+      <li data-stage="2">
+        <b>03</b>{" "}
+        {t("Generated HTML files", "생성된 HTML 파일", "生成HTMLファイル")}{" "}
+        <strong data-output-count>0</strong>
+        <p>index.html · A17.html · B04.html · C99.html</p>
+      </li>
+      <li data-stage="3">
+        <b>04</b>{" "}
+        {t(
+          "Static host · publish files",
+          "정적 호스트 · 파일 발행",
+          "静的ホスト · ファイル公開",
+        )}
+      </li>
+      <li data-stage="4">
+        <b>05</b>{" "}
+        {t(
+          "Browser · read three articles",
+          "브라우저 · 글 3개 읽기",
+          "ブラウザー · 記事3件を読む",
+        )}
+      </li>
+    </ol>
+  </div>
+  <p class="current" data-current>
+    {t(
+      "Three Markdown articles + layout",
+      "Markdown 글 3개 + 레이아웃",
+      "Markdown記事3件 + レイアウト",
+    )}
+  </p>
+  <aside class="api">
+    <h3>
+      {t(
+        "Separate personal Save path",
+        "별도 개인 저장 경로",
+        "別の個人保存経路",
+      )}
+    </h3>
+    <p>
+      {t(
+        "Browser → Save API → private store. Static article files remain readable.",
+        "브라우저 → 저장 API → 개인 저장소. 정적 글 파일은 그대로 읽힙니다.",
+        "ブラウザー → 保存API → 個人ストア。静的記事はそのまま読めます。",
+      )}
+    </p>
+  </aside>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountGenerator } from "./generator-behavior";
+  mountGenerator("hugo");
+</script>
+<style>
+  section {
+    background: #f3f6fb;
+    color: #172640;
+    padding: clamp(16px, 3vw, 30px);
+    border: 1px solid #8696ad;
+    border-radius: 12px;
+  }
+  .eyebrow {
+    color: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  header {
+    border-bottom: 1px solid #aab7c9;
+    margin-bottom: 1.2rem;
+  }
+
+  .pipeline {
+    display: grid;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+  }
+  .pipeline > li {
+    padding: 16px;
+    border: 1px solid #8191aa;
+    border-radius: 6px;
+  }
+  .files {
+    font-family: ui-monospace, monospace;
+    padding-left: 1.2rem;
+  }
+  .api {
+    padding: 16px;
+    border: 2px dashed #5d517c;
+    margin-top: 20px;
+  }
+  .current {
+    padding: 12px;
+    background: #dfe8f7;
+    border-left: 4px solid #304f83;
+  }
+
+  .pipeline {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pipeline > li:first-child {
+    grid-row: span 2;
+  }
+  .pipeline > li {
+    border-radius: 0;
+    border-left: 5px solid #365d52;
+    background: #edf5f0;
+  }
+  @container (max-width:560px) {
+    .pipeline {
+      grid-template-columns: 1fr;
+    }
+    .pipeline > li:first-child {
+      grid-row: auto;
+    }
+  }
+</style>

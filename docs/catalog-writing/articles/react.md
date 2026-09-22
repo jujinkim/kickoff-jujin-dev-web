@@ -1,6 +1,6 @@
 # React / React / React
 
-Writing design only. ID: `react` · Group: [web-ui](../groups/web-ui.md) · Queue order: 800 · Checked: 2026-09-21.
+Original writing design; implemented article and demo: [review](../../platform-demos-review.md). ID: `react` · Group: [web-ui](../groups/web-ui.md) · Queue order: 800 · Checked: 2026-09-22.
 
 ## Reader question and scope
 
@@ -64,7 +64,7 @@ Facts: the definition and mechanism in sections 1–2 and source-tagged points a
 
 | Evidence                         | Exact location to consult                                                             | Claim boundary                                                                                         | Checked    |
 | -------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------- |
-| [react](https://react.dev/learn) | Creating and nesting components; Updating the screen; Sharing data between components | [Verified claim and context](../sources.md#react); apply only to this mechanism, not general rankings. | 2026-09-21 |
+| [react](https://react.dev/learn) | Creating and nesting components; Updating the screen; Sharing data between components | [Verified claim and context](../sources.md#react); apply only to this mechanism, not general rankings. | 2026-09-22 |
 
 **Writing-time refresh:** Reopen these sources before writing. Product documentation is a dated capability reference, not a pinned implementation tutorial. No price, current version, license entitlement, service limit or legal guarantee is asserted by this brief. Adding any such claim requires fresh official evidence, an exact version/plan/jurisdiction scope, and a new check date. See the source-specific context in the ledger.
 

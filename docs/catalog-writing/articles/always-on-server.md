@@ -1,6 +1,6 @@
 # Always-on server / 상시 서버 / 常時稼働サーバー
 
-Writing design only. ID: `always-on-server` · Group: [hosting-models](../groups/hosting-models.md) · Queue order: 1001 · Checked: 2026-09-21.
+Original writing design; implemented article and demo: [review](../../platform-demos-review.md). ID: `always-on-server` · Group: [hosting-models](../groups/hosting-models.md) · Queue order: 1001 · Checked: 2026-09-22.
 
 ## Reader question and scope
 
@@ -64,7 +64,7 @@ Facts: the definition and mechanism in sections 1–2 and source-tagged points a
 
 | Evidence                                                                     | Exact location to consult                                 | Claim boundary                                                                                          | Checked    |
 | ---------------------------------------------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ---------- |
-| [server](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs) | An Example Node.js Application; server.listen explanation | [Verified claim and context](../sources.md#server); apply only to this mechanism, not general rankings. | 2026-09-21 |
+| [server](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs) | An Example Node.js Application; server.listen explanation | [Verified claim and context](../sources.md#server); apply only to this mechanism, not general rankings. | 2026-09-22 |
 
 **Writing-time refresh:** Reopen these sources before writing. Product documentation is a dated capability reference, not a pinned implementation tutorial. No price, current version, license entitlement, service limit or legal guarantee is asserted by this brief. Adding any such claim requires fresh official evidence, an exact version/plan/jurisdiction scope, and a new check date. See the source-specific context in the ledger.
 

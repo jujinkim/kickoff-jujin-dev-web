@@ -1,0 +1,44 @@
+# Platform source refresh — 2026-09-22
+
+Original pages reopened and the passages below inspected before English drafting.
+These are bounded mechanism references, not version-pinned tutorials. The five
+group briefs retain their original inputs and comparison axes. Publication uses
+three concise sections and five comparison fields, superseding the original
+six-section outline. Prices, rankings and platform eligibility are excluded.
+
+| Source                                                                                                                                 | Inspected passage                                                    | Retained claim                                                                                                                                                                                   |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Astro](https://docs.astro.build/en/concepts/why-astro/)                                                                               | Features; Server-first                                               | Content HTML and opt-in client UI have separate roles; static output is not Astro's only mode.                                                                                                   |
+| [Hugo](https://gohugo.io/about/introduction/)                                                                                          | Introduction                                                         | Go implementation and template-based static generation. Authors need not write articles as Go programs.                                                                                          |
+| [Jekyll](https://jekyllrb.com/docs/)                                                                                                   | Opening description; prerequisites; build instructions               | Markup and layouts generate static files through a Ruby-based build. No dependency version recommendation is retained.                                                                           |
+| [React](https://react.dev/learn)                                                                                                       | Updating the screen; Sharing data between components                 | State setters request UI updates; separate instances can retain independent state; shared state has an explicit owner.                                                                           |
+| [Vue](https://vuejs.org/guide/introduction.html)                                                                                       | Declarative Rendering; Reactivity; Single-File Components            | Templates bind state to output; SFC describes authoring structure.                                                                                                                               |
+| [Svelte](https://svelte.dev/docs/svelte/overview)                                                                                      | Overview and component example                                       | Components compile to JavaScript; runtime events remain; SvelteKit has a distinct application scope.                                                                                             |
+| [Godot](https://docs.godotengine.org/en/stable/getting_started/step_by_step/nodes_and_scenes.html)                                     | Nodes; Scenes; Setting the main scene                                | Nodes form reusable scenes; saved scenes have instances and a main scene provides an entry point.                                                                                                |
+| [Unity](https://docs.unity3d.com/Manual/GameObjects.html)                                                                              | Introduction to GameObjects; Details                                 | GameObjects contain components; Transform, render and collision roles are separate.                                                                                                              |
+| [Unreal Actors](https://dev.epicgames.com/documentation/en-us/unreal-engine/actors-in-unreal-engine)                                   | Actors and component types                                           | Actors compose components; the root scene component provides transform information.                                                                                                              |
+| [Blueprints](https://dev.epicgames.com/documentation/en-us/unreal-engine/introduction-to-blueprints-visual-scripting-in-unreal-engine) | Blueprint Class                                                      | Reusable classes can define interactive Actors, including collectibles.                                                                                                                          |
+| [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)                                | About GitHub Pages                                                   | A static host publishes HTML/CSS/JavaScript files. No plan entitlement or limit is claimed.                                                                                                      |
+| [Node.js](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)                                                          | Example Node.js application; server.listen                           | A process listens and handles requests. The example's external store and recovery behavior are authored application contracts.                                                                   |
+| [Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)                                                                    | Lambda Functions comparison                                          | Managed handlers serve request/response or event workloads. The current page also discusses MicroVMs; this article covers functions only. No cold-start, retry or pricing guarantee is inferred. |
+| [Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)                                                    | Updating a Deployment; Max Unavailable; Max Surge; Failed Deployment | Rolling constraints bound replica replacement. The exercise chooses desired=4, surge=1, unavailable=0 and halts on failed readiness; it does not promise automatic rollback.                     |
+| [Martin Fowler](https://martinfowler.com/bliki/BlueGreenDeployment.html)                                                               | Two environments, routing switch and database discussion             | Environment switching and data compatibility are distinct concerns. This is the author's primary account, not a cloud-console contract.                                                          |
+| [Google SRE](https://sre.google/workbook/canarying-releases/)                                                                          | Canary analysis; Requirements on Monitoring Data                     | Evaluate candidate outcomes against control with distinguishable population metrics before widening exposure.                                                                                    |
+
+Supplemental mechanism checks: [Astro islands](https://docs.astro.build/en/concepts/islands/)
+and [Hugo templates](https://gohugo.io/templates/introduction/).
+
+All datasets, counts, statuses and failure injections are authored illustrations.
+The three-article build, two-card saves, one-point collection, external-store model,
+four-replica replacement and 2/30 errors in 1,000-request windows are not vendor
+measurements. Missing layout is a required-input failure in this simulator, not
+a universal error contract across all generator configurations. Save deduplication
+uses an authored reader/article key. Restarts are not real processes, and Reset or
+reload clears the entire page-memory model. Blue-green routing history preserves
+writes; it does not demonstrate database recovery. Canary's >1% rule is exercise
+policy; zero samples supply no evidence.
+
+Conditional benefits and suitable contexts are editorial judgments from the shared
+case. They make no universal claim about speed, reliability, productivity or cost.
+English group review preceded Korean/Japanese translation; all three versions
+carry revision/sourceRevision 1 and checked 2026-09-22.

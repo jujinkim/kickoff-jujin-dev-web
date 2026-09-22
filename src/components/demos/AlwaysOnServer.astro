@@ -1,0 +1,183 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { platformText } from "./platform";
+import "./platform-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  p = platformText(lang);
+---
+
+<section
+  data-demo="always-on-server"
+  data-platform
+  lang={lang}
+  data-reset-message={p.resetMessage}
+  data-read-path={t(
+    "Browser → listening process → article HTML",
+    "브라우저 → 대기 프로세스 → 글 HTML",
+    "ブラウザー → 待機プロセス → 記事HTML",
+  )}
+  data-save-path={t(
+    "Browser → listening process → external store → acknowledged.",
+    "브라우저 → 대기 프로세스 → 외부 저장소 → 확인 응답.",
+    "ブラウザー → 待機プロセス → 外部ストア → 確認応答。",
+  )}
+>
+  <header>
+    <p class="eyebrow">{p.simulation}</p>
+    <h2>{t("Always-on server", "상시 서버", "常時稼働サーバー")}</h2>
+  </header>
+  <p>
+    {t(
+      "Read the public article, then save A17. Repeated requests share reader-01 / A17.",
+      "공개 글을 읽고 A17을 저장하세요. 반복 요청은 reader-01 / A17을 공유합니다.",
+      "公開記事を読み、A17を保存します。再送もreader-01 / A17を共有します。",
+    )}
+  </p>
+  <div class="controls">
+    <button type="button" data-read data-interactive disabled>
+      {t("Read article", "글 읽기", "記事を読む")}
+    </button>
+    <button type="button" data-save data-interactive disabled>
+      {t("Save A17", "A17 저장", "A17を保存")}
+    </button>
+    <button type="button" data-restart data-interactive disabled>
+      {t("Restart handler", "처리기 재시작", "処理器を再起動")}
+    </button>
+    <button type="button" data-reset data-interactive disabled>
+      {p.reset}
+    </button>
+  </div>
+  <label>
+    <input type="checkbox" data-fail-save data-interactive disabled />
+    {t("Fail next save", "다음 저장 실패", "次の保存を失敗させる")}
+  </label>
+  <div class="runtime">
+    <h3>
+      01 ·{" "}
+      {t(
+        "Listening process · restart boundary",
+        "대기 프로세스 · 재시작 경계",
+        "待機プロセス · 再起動の境界",
+      )}
+    </h3>
+    <div class="lanes">
+      <section>
+        <h3>GET</h3>
+        <p>
+          {t(
+            "Browser → listening process → article HTML",
+            "브라우저 → 대기 프로세스 → 글 HTML",
+            "ブラウザー → 待機プロセス → 記事HTML",
+          )}
+        </p>
+      </section>
+      <section>
+        <h3>POST A17</h3>
+        <p>
+          {t(
+            "Browser → listening process → external store → acknowledged.",
+            "브라우저 → 대기 프로세스 → 외부 저장소 → 확인 응답.",
+            "ブラウザー → 待機プロセス → 外部ストア → 確認応答。",
+          )}
+        </p>
+      </section>
+    </div>
+    <p>
+      {t("Execution generation", "실행 세대", "実行世代")}:{" "}
+      <span data-generation>1</span> ·{" "}
+      {t("Calls in this generation", "이 세대의 호출", "この世代の呼び出し")}:{" "}
+      <span data-calls>0</span>
+    </p>
+  </div>
+  <aside class="store">
+    <h3>03 · {p.store}</h3>
+    <p>
+      reader-01 / A17 →{" "}
+      {t("one key, one record", "키 하나, 기록 하나", "1キー、1記録")}
+    </p>
+    <p>
+      {p.count}: <strong data-count>0</strong> ·{" "}
+      <span data-records>{p.empty}</span>
+    </p>
+  </aside>
+  <p class="trace" data-path-state>
+    {p.waiting}
+  </p>
+  <p class="note">
+    {t(
+      "The store is simulated in page memory. Restart preserves it; Reset or reload clears it. Deduplication is authored application logic.",
+      "저장소도 페이지 메모리의 모형입니다. 재시작은 유지하고 초기화·새로고침은 지웁니다. 중복 방지는 직접 작성한 앱 로직입니다.",
+      "ストアもページメモリ上の模型です。再起動では残り、リセット・再読み込みで消えます。重複防止は独自のアプリ処理です。",
+    )}
+  </p>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountHosting } from "./hosting-behavior";
+  mountHosting("always-on-server");
+</script>
+<style>
+  section {
+    background: #f3f6fb;
+    color: #172640;
+    padding: clamp(16px, 3vw, 30px);
+    border: 1px solid #8696ad;
+    border-radius: 12px;
+  }
+  .eyebrow {
+    color: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  header {
+    border-bottom: 1px solid #aab7c9;
+    margin-bottom: 1.2rem;
+  }
+
+  .lanes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 24px 0;
+  }
+  .lanes section {
+    padding: 18px;
+    border: 1px solid #6e829e;
+    background: #fff;
+  }
+  .store {
+    padding: 20px;
+    border: 3px double #536c58;
+    background: #ebf3ed;
+    margin: 20px 0;
+  }
+  .trace {
+    padding: 14px;
+    border-left: 4px solid #496188;
+    background: #e0e9f6;
+  }
+  .note {
+    font-size: 0.85rem;
+  }
+  .runtime {
+    border: 2px dashed #486086;
+    padding: 18px;
+    margin: 20px 0;
+  }
+  @container (max-width:560px) {
+    .lanes {
+      grid-template-columns: 1fr;
+    }
+  }
+  .runtime {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+  }
+</style>

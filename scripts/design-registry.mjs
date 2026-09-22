@@ -11,6 +11,16 @@ export function isDesignCategory(id) {
       (category.parent && isDesignCategory(category.parent)))
   );
 }
+// Platform groups need the same complete-demo publication gate as designs.
+export const platformCategories = [
+  "static-generators",
+  "web-ui",
+  "game-engines",
+  "hosting-models",
+  "release-replacement",
+];
+export const requiresDemo = (id) =>
+  isDesignCategory(id) || platformCategories.includes(id);
 export function validateDesigns(
   articles,
   registry = designRegistry,
@@ -24,7 +34,7 @@ export function validateDesigns(
         (a) =>
           a.data.kind === "concept" &&
           a.data.status === "published" &&
-          isDesignCategory(a.data.category),
+          requiresDemo(a.data.category),
       )
       .map((a) => a.data.articleId),
   );

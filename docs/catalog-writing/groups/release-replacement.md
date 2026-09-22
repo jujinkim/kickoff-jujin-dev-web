@@ -1,6 +1,6 @@
 # Release replacement / 릴리스 교체 방식 / リリース切り替え方式
 
-Group ID: `release-replacement` · Checked: 2026-09-21 · Writing designs, not article bodies.
+Group ID: `release-replacement` · Checked: 2026-09-22 · Original comparison contract; [implemented release review](../../platform-demos-review.md).
 
 ## Shared case and comparison contract
 

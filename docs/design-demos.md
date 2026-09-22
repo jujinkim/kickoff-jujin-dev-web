@@ -26,11 +26,13 @@ scopes basic controls for layout/type demos to `[data-comparison]`. Style demos
 keep their control baseline inside each component; they share only data and
 behavior. Do not add a global visual theme.
 
-The current release contains 22 designs / 66 translated design articles plus
-36 guide articles. Forty candidates remain planned. Counts here describe this
+The current release contains 22 design concepts and 15 platform concepts: 37 demos,
+111 localized concept articles, and 36 guide articles (147 published documents).
+Twenty-five candidates remain planned. Counts here describe this
 release, not runtime allowlists.
 
-Current screen evidence: [workspace review](design-workspaces-review.md).
+Current platform evidence: [platform review](platform-demos-review.md).
+Previous screen evidence: [workspace review](design-workspaces-review.md).
 Previous release evidence: [shared-example review](design-comparison-review.md).
 
 ## Style workspace contract
@@ -86,8 +88,9 @@ research lives in [catalog-writing](catalog-writing/README.md).
 ## Add one design
 
 1. Register a stable candidate in `src/data/candidates.json` and an existing
-   design leaf category in `src/data/categories.json`. Add a leaf if needed;
-   descendants of `design` participate in publication validation automatically.
+   leaf category in `src/data/categories.json`. Add a leaf if needed; descendants
+   of `design` and all five platform groups participate in publication validation.
+   Extend `platformCategories` when introducing a new platform comparison group.
 2. Run `npm run content:new -- --id <id>` for all three draft files. The command
    prints this guide and template paths. Never overwrite an existing original.
 3. Write and review English first, then translate Korean and Japanese. Keep
@@ -296,3 +299,34 @@ the regular build. Rendering, capture discovery, and validation have no fixed
 > real screens, and complete the documented checks. Preserve IDs, URLs, comments,
 > API v1, and the one-minute overview. Record screenshots and actual verification
 > results. Scope: local implementation and verification; no deployment.
+
+## Platform concept simulations
+
+The platform groups use the same registry, `{ lang }`, caption and capture contract.
+Each Astro component owns its diagram and scoped visual rules. Shared TypeScript
+modules implement category behavior; `platform-controls.css` styles controls only.
+No real engine, cloud API, or extra UI framework runs inside these simulations.
+
+| Group               | Fixed fixture                                                            | Mechanism under comparison                                            |
+| ------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| Static generators   | A17/B04/C99 Markdown + shared layout → index + three article HTML files  | Astro islands, Hugo templates, Jekyll Ruby build                      |
+| Web UI              | Two Field notes cards A17/B04; independent saved IDs; total 0→1→2        | React state/render, Vue reactivity/template, Svelte compile/runtime   |
+| Game engines        | Player, floor, camera, one collectible; score 0→1, item removed          | Godot node/scene, Unity GameObject/components, Unreal Actor/Blueprint |
+| Hosting models      | Article read, Save A17, failure before write, restart, duplicate request | Public files/API, listening process, managed invocations              |
+| Release replacement | Four v1 replicas, candidate v2, compatible shared data                   | Rolling sequence, blue-green route switch, canary evaluation          |
+
+Use Previous/Next/Reset for step diagrams; disable unavailable steps and never
+auto-advance. Keep direct-action controls mounted so repeat actions can be tested
+without moving focus. Number and name states in addition to color. Reset/reload
+clears all page state. Hosting restart preserves the simulated external store;
+blue-green route reversal and Previous preserve writes until Reset/reload.
+Canary's 1,000 samples per cohort are matched illustrative windows, not a traffic
+split. Its >1% stop rule is specific to this exercise; zero samples never pass.
+Rolling's one spare slot and zero unavailable replicas are example constraints,
+not Kubernetes defaults or automatic rollback promises.
+
+Add all three articles, item brief, source refresh and browser state tests before
+capturing. The gate rejects missing components, captions, translations and PNGs
+for every published member of these five groups. Preview bypasses only absent
+first PNGs. Platform screenshots cover every language/width/theme plus forced
+colors; registry-wide tests also cover JavaScript-disabled reading and search.

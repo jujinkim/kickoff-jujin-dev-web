@@ -1,0 +1,39 @@
+---
+kind: concept
+articleId: canary
+lang: ko
+title: 카나리
+summary: 제한된 노출을 대조군과 평가합니다.
+category: release-replacement
+aliases:
+  - 카나리
+related:
+  - shipping
+  - rolling
+  - blue-green
+status: published
+revision: 1
+sourceRevision: 1
+updated: "2026-09-22"
+checked: "2026-09-22"
+comparison:
+  features: 제한 노출과 대조군 비교
+  advantages: 전체 노출 전에 중단 가능
+  limitations: 편향되거나 없는 표본은 위험
+  suitable: 결과 측정과 트래픽 제어
+  combinations: 롤링·블루그린 완료 전 검사
+---
+
+## 개념
+
+카나리 릴리스는 일부 사용자에게 후보 버전을 노출하고 대조군과 결과를 비교한 뒤 확대를 결정합니다. 유용한 신호에는 대표성 있는 표본이 필요합니다.
+
+## 예시
+
+가상 집계는 각 집단 요청 1,000건이며 v1 오류 2건, v2 오류 30건입니다. 다음은 0.2%와 3%를 계산하고 이 연습의 1% 초과 중단 규칙을 적용합니다. 후보 트래픽은 v1으로 돌아갑니다. 표본 없음을 선택하면 요청 0건은 성공이 아닌 판단 불가입니다. 이전은 앞 계산으로, 초기화·새로고침은 기본 집계로 돌아갑니다.
+
+## 추천 조건
+
+트래픽 배정과 결과 측정이 가능할 때 적합합니다. 예제 기준을 일반화하지 말고 롤링·블루그린과 조합하세요.
+
+[출처](https://sre.google/workbook/canarying-releases/)

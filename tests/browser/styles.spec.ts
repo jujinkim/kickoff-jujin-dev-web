@@ -1,9 +1,17 @@
 import { test, expect } from "@playwright/test";
-import { designRegistry as registry } from "../../scripts/design-registry.mjs";
+import {
+  designRegistry as registry,
+  platformCategories,
+} from "../../scripts/design-registry.mjs";
 import { readArticles } from "../../scripts/validate-content.mjs";
 import { mkdirSync } from "node:fs";
 const ids = Object.keys(registry);
 const articles = readArticles();
+const platformIds = new Set(
+  articles
+    .filter((a) => platformCategories.includes(a.data.category))
+    .map((a) => a.data.articleId),
+);
 const styleIds = ids.filter((id) =>
   articles.some(
     (a) =>
@@ -40,6 +48,7 @@ for (const lang of languages) {
     const errors: string[] = [];
     page.on("pageerror", (e) => errors.push(e.message));
     mkdirSync("artifacts/design-demos", { recursive: true });
+    mkdirSync("artifacts/platform-demos", { recursive: true });
     for (const id of ids) {
       await page.goto(`/${lang}/catalog/${id}/`);
       const root = page.locator(`[data-demo="${id}"]`);
@@ -69,9 +78,53 @@ for (const lang of languages) {
             await root.evaluate((el) => el.scrollWidth <= el.clientWidth + 2),
             `${id} internal overflow`,
           ).toBeTruthy();
+          if (platformIds.has(id)) {
+            const contrast = await root.evaluate((el) => {
+              const luminance = (color: string) => {
+                const rgb = color
+                  .match(/[\d.]+/g)!
+                  .slice(0, 3)
+                  .map(Number);
+                const linear = rgb.map((n) => {
+                  const v = n / 255;
+                  return v <= 0.04045
+                    ? v / 12.92
+                    : ((v + 0.055) / 1.055) ** 2.4;
+                });
+                return (
+                  linear[0] * 0.2126 + linear[1] * 0.7152 + linear[2] * 0.0722
+                );
+              };
+              const label = luminance(
+                getComputedStyle(el.querySelector(".eyebrow")!).color,
+              );
+              const surface = luminance(getComputedStyle(el).backgroundColor);
+              return (
+                (Math.max(label, surface) + 0.05) /
+                (Math.min(label, surface) + 0.05)
+              );
+            });
+            expect(
+              contrast,
+              `${id}/${theme} concept label contrast`,
+            ).toBeGreaterThanOrEqual(4.5);
+            for (const checkbox of await root
+              .locator("input[type=checkbox]")
+              .all())
+              expect(
+                await checkbox.evaluate(
+                  (el) => getComputedStyle(el).colorScheme,
+                ),
+              ).toBe("light");
+          }
           if (lang === "en" && theme === "light" && width !== 768)
             await root.screenshot({
               path: `artifacts/design-demos/${id}-${width}.png`,
+              style: ".skip-link { visibility: hidden !important; }",
+            });
+          if (platformIds.has(id))
+            await root.screenshot({
+              path: `artifacts/platform-demos/${id}-${lang}-${width}-${theme}.png`,
               style: ".skip-link { visibility: hidden !important; }",
             });
         }

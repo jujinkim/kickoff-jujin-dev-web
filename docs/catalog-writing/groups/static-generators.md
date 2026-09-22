@@ -1,6 +1,6 @@
 # Static site generators / 정적 사이트 생성기 / 静的サイトジェネレーター
 
-Group ID: `static-generators` · Checked: 2026-09-21 · Writing designs, not article bodies.
+Group ID: `static-generators` · Checked: 2026-09-22 · Original comparison contract; [implemented release review](../../platform-demos-review.md).
 
 ## Shared case and comparison contract
 

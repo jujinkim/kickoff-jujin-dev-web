@@ -1,4 +1,21 @@
-import { designRegistry } from "../../scripts/design-registry.mjs";
+import {
+  isDesignCategory,
+  platformCategories,
+} from "../../scripts/design-registry.mjs";
+import { readArticles } from "../../scripts/validate-content.mjs";
+const publishedConceptCount = readArticles().filter(
+  (a) =>
+    a.data.lang === "en" &&
+    a.data.status === "published" &&
+    a.data.kind === "concept",
+).length;
+const publishedDesignCount = readArticles().filter(
+  (a) =>
+    a.data.lang === "en" &&
+    a.data.status === "published" &&
+    a.data.kind === "concept" &&
+    isDesignCategory(a.data.category),
+).length;
 import { test, expect } from "@playwright/test";
 for (const [lang, query, id] of [
   ["en", "requirements", "srs"],
@@ -168,7 +185,7 @@ for (const lang of ["en", "ko", "ja"]) {
   }) => {
     await page.goto(`/${lang}/catalog/`);
     await expect(page.locator(".catalog-card")).toHaveCount(
-      Object.keys(designRegistry).length,
+      publishedConceptCount,
     );
     await page.locator(".category-index > summary").click();
     await page
@@ -194,7 +211,13 @@ for (const [lang, layout, typography] of [
     page,
   }) => {
     await page.goto(`/${lang}/catalog/`);
-    await expect(page.locator("[data-catalog-group]:visible")).toHaveCount(3);
+    expect(
+      await page
+        .locator("[data-catalog-group]:visible")
+        .evaluateAll((nodes) =>
+          nodes.map((node) => node.getAttribute("data-catalog-group")).sort(),
+        ),
+    ).toEqual(["styles", "layout", "typography", ...platformCategories].sort());
     await page.locator("#category").selectOption("layout");
     await expect(page.locator(".catalog-card:visible")).toHaveCount(6);
     await expect(page.locator("[data-catalog-group]:visible h2")).toHaveText(
@@ -227,7 +250,7 @@ for (const [lang, layout, typography] of [
     await expect(page.locator(".catalog-card:visible")).toHaveCount(3);
     await page.locator("#category").selectOption("design");
     await expect(page.locator(".catalog-card:visible")).toHaveCount(
-      Object.keys(designRegistry).length,
+      publishedDesignCount,
     );
     await expect(page.locator("[data-catalog-group]:visible")).toHaveCount(3);
   });

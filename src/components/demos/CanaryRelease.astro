@@ -1,0 +1,177 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { platformText } from "./platform";
+import "./platform-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  p = platformText(lang);
+---
+
+<section
+  data-demo="canary"
+  data-platform
+  lang={lang}
+  data-reset-message={p.resetMessage}
+>
+  <header>
+    <p class="eyebrow">{p.simulation}</p>
+    <h2>{t("Canary evaluation", "카나리 평가", "カナリア評価")}</h2>
+  </header>
+  <p>
+    {t(
+      "Synthetic samples: 1,000 requests in each cohort. These matched sample counts do not specify the traffic split.",
+      "가상 표본: 각 집단 요청 1,000건. 동일한 표본 수는 트래픽 배분 비율이 아닙니다.",
+      "仮の標本：各群1,000件。同数の標本は配信比率を表しません。",
+    )}
+  </p>
+  <div class="controls">
+    <button type="button" data-previous disabled>
+      {p.previous}
+    </button>
+    <button type="button" data-next disabled>
+      {p.next}
+    </button>
+    <button type="button" data-reset data-interactive disabled>
+      {p.reset}
+    </button>
+  </div>
+  <label>
+    <input type="checkbox" data-empty-samples data-interactive disabled />
+    {t("No samples", "표본 없음", "標本なし")}
+  </label>
+  <ol class="timeline">
+    <li data-stage="0">{t("Read counts", "집계 읽기", "件数を読む")}</li>
+    <li data-stage="1">
+      {t("Compute error rates", "오류율 계산", "エラー率を計算")}
+    </li>
+    <li data-stage="2">
+      {t("Evaluate stop rule", "중단 규칙 평가", "停止規則を評価")}
+    </li>
+  </ol>
+  <div class="cohorts">
+    <section>
+      <h3>v1 · {t("Control", "대조군", "対照群")}</h3>
+      <p>{t("Errors / requests", "오류 / 요청", "エラー / リクエスト")}</p>
+      <strong data-control-sample>2 / 1,000</strong>
+      <p data-control-rate>—</p>
+    </section>
+    <section>
+      <h3>v2 · {t("Candidate", "후보", "候補")}</h3>
+      <p>{t("Errors / requests", "오류 / 요청", "エラー / リクエスト")}</p>
+      <strong data-canary-sample>30 / 1,000</strong>
+      <p data-canary-rate>—</p>
+    </section>
+  </div>
+  <div class="gate">
+    <h3>
+      {t(
+        "Example stop rule: candidate errors > 1%",
+        "예제 중단 규칙: 후보 오류율 > 1%",
+        "例の停止規則：候補のエラー率 > 1%",
+      )}
+    </h3>
+    <p>
+      {t(
+        "Zero samples → insufficient evidence, never a pass. Not a universal threshold.",
+        "표본 0건 → 판단 불가. 통과 아님. 보편적 기준이 아닙니다.",
+        "標本0件 → 判断不能。合格ではありません。普遍的な基準ではありません。",
+      )}
+    </p>
+    <p data-decision>{p.waiting}</p>
+  </div>
+  <p class="current" data-current>
+    {t("Read counts", "집계 읽기", "件数を読む")}
+  </p>
+  <p data-traffic>
+    {t(
+      "v1: control · v2: limited exposure; no expansion",
+      "v1: 대조군 · v2: 제한 노출, 확대 없음",
+      "v1：対照群 · v2：限定公開、拡大なし",
+    )}
+  </p>
+  <aside class="data">
+    <h3>{t("Data lane", "데이터 영역", "データ領域")}</h3>
+    <p>{p.compatible}</p>
+  </aside>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountCanary } from "./release-behavior";
+  mountCanary();
+</script>
+<style>
+  section {
+    background: #f3f6fb;
+    color: #172640;
+    padding: clamp(16px, 3vw, 30px);
+    border: 1px solid #8696ad;
+    border-radius: 12px;
+  }
+  .eyebrow {
+    color: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  header {
+    border-bottom: 1px solid #aab7c9;
+    margin-bottom: 1.2rem;
+  }
+
+  .data {
+    padding: 18px;
+    margin-top: 20px;
+    border: 3px double #496552;
+    background: #e9f2ed;
+  }
+  .current {
+    padding: 16px;
+    border-left: 4px solid #395882;
+    background: #e1eaf8;
+  }
+  .timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+    list-style-position: inside;
+  }
+  .timeline li {
+    padding: 12px;
+    border: 1px solid #8493aa;
+    flex: 1;
+    min-width: 120px;
+  }
+  .metrics {
+    font-variant-numeric: tabular-nums;
+    font-size: 1.2rem;
+  }
+  .cohorts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 24px 0;
+  }
+  .cohorts section {
+    padding: 20px;
+    border: 1px solid #7888a0;
+  }
+  .cohorts strong {
+    font-size: 1.5rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .gate {
+    padding: 18px;
+    border: 2px dashed #875534;
+    background: #fff1e5;
+  }
+  @container (max-width:560px) {
+    .cohorts {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

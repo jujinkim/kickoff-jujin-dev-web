@@ -1,0 +1,155 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { platformText } from "./platform";
+import "./platform-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  p = platformText(lang);
+---
+
+<section
+  data-demo="rolling"
+  data-platform
+  lang={lang}
+  data-reset-message={p.resetMessage}
+>
+  <header>
+    <p class="eyebrow">{p.simulation}</p>
+    <h2>{t("Rolling replacement", "롤링 교체", "ローリング交換")}</h2>
+  </header>
+  <p>
+    {t(
+      "Four v1 replicas, one spare slot. Add → check → remove. No automatic progression.",
+      "v1 복제본 4개, 여유 슬롯 하나. 추가 → 검사 → 제거. 자동 진행 없음.",
+      "v1が4個、予備枠1つ。追加 → 確認 → 削除。自動進行なし。",
+    )}
+  </p>
+  <div class="controls">
+    <button type="button" data-previous disabled>
+      {p.previous}
+    </button>
+    <button type="button" data-next disabled>
+      {p.next}
+    </button>
+    <button type="button" data-reset data-interactive disabled>
+      {p.reset}
+    </button>
+  </div>
+  <label>
+    <input type="checkbox" data-fail-ready data-interactive disabled />
+    {t("Fail readiness", "준비 실패", "準備を失敗させる")}
+  </label>
+  <ol class="pool">
+    <li data-slot>1. v1 · {p.ready}</li>
+    <li data-slot>2. v1 · {p.ready}</li>
+    <li data-slot>3. v1 · {p.ready}</li>
+    <li data-slot>4. v1 · {p.ready}</li>
+    <li data-slot>5. {t("Spare slot", "여유 슬롯", "予備枠")}</li>
+  </ol>
+  <p class="metrics">
+    v1: <strong data-old>4</strong> · v2: <strong data-new>0</strong> ·{" "}
+    {t("Ready", "준비됨", "準備済み")}: <strong data-ready-count>4</strong>
+  </p>
+  <p class="current" data-current>
+    {t(
+      "Add one v2 in the spare slot.",
+      "여유 슬롯에 v2 하나를 추가합니다.",
+      "予備枠にv2を1個追加します。",
+    )}
+  </p>
+  <p>
+    {t(
+      "Example policy: desired 4, surge 1, unavailable 0. A readiness failure stops this simulation; it does not imply automatic Kubernetes rollback.",
+      "예제 정책: 목표 4, 추가 1, 사용 불가 0. 준비 실패는 모형을 중단하며 Kubernetes 자동 롤백을 뜻하지 않습니다.",
+      "例の規則：目標4、追加1、利用不可0。準備失敗は模型を停止し、Kubernetesの自動ロールバックを意味しません。",
+    )}
+  </p>
+  <aside class="data">
+    <h3>{t("Data lane", "데이터 영역", "データ領域")}</h3>
+    <p>{p.compatible}</p>
+  </aside>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountRolling } from "./release-behavior";
+  mountRolling();
+</script>
+<style>
+  section {
+    background: #f3f6fb;
+    color: #172640;
+    padding: clamp(16px, 3vw, 30px);
+    border: 1px solid #8696ad;
+    border-radius: 12px;
+  }
+  .eyebrow {
+    color: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  header {
+    border-bottom: 1px solid #aab7c9;
+    margin-bottom: 1.2rem;
+  }
+
+  .data {
+    padding: 18px;
+    margin-top: 20px;
+    border: 3px double #496552;
+    background: #e9f2ed;
+  }
+  .current {
+    padding: 16px;
+    border-left: 4px solid #395882;
+    background: #e1eaf8;
+  }
+  .timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+    list-style-position: inside;
+  }
+  .timeline li {
+    padding: 12px;
+    border: 1px solid #8493aa;
+    flex: 1;
+    min-width: 120px;
+  }
+  .metrics {
+    font-variant-numeric: tabular-nums;
+    font-size: 1.2rem;
+  }
+  .pool {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+    margin: 24px 0;
+  }
+  .pool li {
+    padding: 18px 10px;
+    border: 2px solid #5b779b;
+    min-height: 110px;
+  }
+  .pool li:last-child {
+    border-style: dashed;
+  }
+  .pool li[data-version="v2"] {
+    background: #e4efe7;
+  }
+  @container (max-width:560px) {
+    .pool {
+      grid-template-columns: 1fr;
+    }
+    .pool li {
+      min-height: auto;
+    }
+  }
+</style>

@@ -1,6 +1,6 @@
 # Game engines / 게임 엔진 / ゲームエンジン
 
-Group ID: `game-engines` · Checked: 2026-09-21 · Writing designs, not article bodies.
+Group ID: `game-engines` · Checked: 2026-09-22 · Original comparison contract; [implemented release review](../../platform-demos-review.md).
 
 ## Shared case and comparison contract
 

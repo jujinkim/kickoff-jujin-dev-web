@@ -1,0 +1,201 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { platformText } from "./platform";
+import "./platform-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  p = platformText(lang);
+---
+
+<section
+  data-demo="unity"
+  data-platform
+  lang={lang}
+  data-reset-message={p.resetMessage}
+>
+  <header>
+    <p class="eyebrow">{p.simulation}</p>
+    <h2>Unity</h2>
+  </header>
+  <p>
+    {t(
+      "Move the player into the item. Authored contact logic awards one point and removes it.",
+      "플레이어를 아이템으로 이동하세요. 작성한 접촉 로직이 1점을 주고 아이템을 제거합니다.",
+      "プレイヤーをアイテムへ移動します。独自の接触処理が1点を与えて削除します。",
+    )}
+  </p>
+  <div class="controls">
+    <button type="button" data-touch data-interactive disabled>
+      {t("Move to item", "아이템으로 이동", "アイテムへ移動")}
+    </button>
+    <button type="button" data-reset data-interactive disabled>
+      {p.reset}
+    </button>
+  </div>
+  <label>
+    <input type="checkbox" data-contact-off data-interactive disabled />
+    {t("Disable contact", "접촉 끄기", "接触を無効にする")}
+  </label>
+  <figure class="scene">
+    <svg
+      viewBox="0 0 360 170"
+      role="img"
+      aria-label={t(
+        "Scene schematic; object states are listed below.",
+        "씬 도식. 오브젝트 상태는 아래에 표시됩니다.",
+        "シーンの模式図。状態は下に表示します。",
+      )}
+    >
+      <path
+        d="M20 140 L320 140 L345 115 L60 115 Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      />
+      <g data-player transform="translate(0 0)">
+        <rect x="55" y="78" width="30" height="42" fill="currentColor" />
+        <text x="60" y="104" fill="white">
+          P
+        </text>
+      </g>
+      <g data-item>
+        <path
+          d="M240 82 L254 101 L240 120 L226 101 Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+        />
+        <text x="236" y="106" fill="currentColor">
+          I
+        </text>
+      </g>
+      <path
+        d="M40 20 h32 v20 h-32 Z M72 23 l14 -8 v30 l-14 -8"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      />
+      <text x="48" y="36" fill="currentColor">
+        C
+      </text>
+    </svg>
+    <figcaption>
+      P: {t("Player", "플레이어", "プレイヤー")} · I:{" "}
+      {t("Collectible", "수집 아이템", "収集アイテム")} · C:{" "}
+      {t("Camera", "카메라", "カメラ")} · ─: {t("Floor", "바닥", "床")}
+    </figcaption>
+  </figure>
+  <p class="score">
+    {t("Score", "점수", "得点")}: <strong data-score>0</strong> ·{" "}
+    {t("Collectible", "수집 아이템", "収集アイテム")}:{" "}
+    <span data-item-state>{t("Present", "있음", "存在")}</span>
+  </p>
+  <div class="composition">
+    <h3>
+      {t(
+        "Initial scene: four GameObjects",
+        "초기 씬: GameObject 4개",
+        "初期シーン：GameObject 4個",
+      )}
+    </h3>
+    <p>
+      {t("Player", "플레이어", "プレイヤー")} · {t("Floor", "바닥", "床")} ·{" "}
+      {t("Camera", "카메라", "カメラ")} ·{" "}
+      {t("Collectible", "수집 아이템", "収集アイテム")}
+    </p>
+    <div class="components">
+      <div>Transform</div>
+      <div>{t("Renderer: visual", "Renderer: 표현", "Renderer：表示")}</div>
+      <div>{t("Collider: contact", "Collider: 접촉", "Collider：接触")}</div>
+      <div>
+        {t(
+          "Script: award once",
+          "Script: 한 번만 점수 부여",
+          "Script：1回だけ加点",
+        )}
+      </div>
+    </div>
+  </div>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountEngine } from "./engine-behavior";
+  mountEngine("unity");
+</script>
+<style>
+  section {
+    background: #f3f6fb;
+    color: #172640;
+    padding: clamp(16px, 3vw, 30px);
+    border: 1px solid #8696ad;
+    border-radius: 12px;
+  }
+  .eyebrow {
+    color: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  header {
+    border-bottom: 1px solid #aab7c9;
+    margin-bottom: 1.2rem;
+  }
+
+  .scene {
+    margin: 20px 0;
+    padding: 16px;
+    background: #e2eaf4;
+    border: 1px solid #697f9c;
+  }
+  svg {
+    width: 100%;
+    max-height: 220px;
+    display: block;
+  }
+  figcaption {
+    font-size: 0.85rem;
+  }
+  .score {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  .composition {
+    padding: 18px;
+    border: 1px solid #788ba7;
+  }
+  .composition li {
+    margin: 0.5rem 0;
+  }
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style-position: inside;
+    padding: 0;
+  }
+  .flow li {
+    padding: 12px;
+    border: 1px solid #667b9a;
+    flex: 1;
+    min-width: 120px;
+  }
+  .components {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .components div {
+    padding: 14px;
+    background: #fff;
+    border: 1px solid #697c94;
+  }
+  @container (max-width:560px) {
+    .components {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

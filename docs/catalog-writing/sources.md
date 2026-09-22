@@ -1,5 +1,7 @@
 # Verified source ledger
 
+Platform publication refresh: [16 source passages, 2026-09-22](platform-sources.md).
+
 Styles publication refresh: [brutalism, neobrutalism, glassmorphism, neumorphism](styles-sources-a.md) and [skeuomorphism, flat design, minimalism, accessibility](styles-sources-b.md). These supplements distinguish original authors/publication dates from the 2026-09-21 check date and record drafting-time retrieval limitations.
 
 Original pages opened and relevant passages inspected on **2026-09-21**. Summaries below are paraphrases. A successful fetch alone was not counted: each entry records the supporting section and the narrow claim retained. Article evidence maps connect these entries to their planned claims.
@@ -233,7 +235,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://docs.astro.build/en/concepts/why-astro/](https://docs.astro.build/en/concepts/why-astro/)
 - Evidence location: Features; Content-driven; Server-first.
 - Verified claim: Astro supports content-oriented rendering with opt-in interactive components; client JavaScript is not required for every component.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Official documentation observed 2026-09-21; capabilities only. Recheck APIs and supported runtime/export targets before drafting. No current price, latest-version claim or license entitlement is retained.
 
 ## hugo
@@ -241,7 +243,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://gohugo.io/about/introduction/](https://gohugo.io/about/introduction/)
 - Evidence location: Introduction; Features.
 - Verified claim: Hugo is a static site generator written in Go with a template system and content organization features.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Official documentation observed 2026-09-21; capabilities only. Recheck APIs and supported runtime/export targets before drafting. No current price, latest-version claim or license entitlement is retained.
 
 ## jekyll
@@ -249,7 +251,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://jekyllrb.com/docs/](https://jekyllrb.com/docs/)
 - Evidence location: Quickstart steps 1–5; opening description.
 - Verified claim: Jekyll transforms content and templates into a static site, with a Ruby-based build workflow.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Official documentation observed 2026-09-21; capabilities only. Recheck APIs and supported runtime/export targets before drafting. No current price, latest-version claim or license entitlement is retained.
 
 ## react
@@ -257,7 +259,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://react.dev/learn](https://react.dev/learn)
 - Evidence location: Creating and nesting components; Updating the screen; Sharing data between components.
 - Verified claim: React components express UI; state updates trigger updated rendering, and shared state can be lifted to a common parent.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Official documentation observed 2026-09-21; capabilities only. Recheck APIs and supported runtime/export targets before drafting. No current price, latest-version claim or license entitlement is retained.
 
 ## vue
@@ -265,7 +267,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://vuejs.org/guide/introduction.html](https://vuejs.org/guide/introduction.html)
 - Evidence location: What is Vue?; Single-File Components; API Styles.
 - Verified claim: Vue combines declarative templates and reactivity; a single-file component can hold logic, template and styles.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Official documentation observed 2026-09-21; capabilities only. Recheck APIs and supported runtime/export targets before drafting. No current price, latest-version claim or license entitlement is retained.
 
 ## svelte
@@ -273,7 +275,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://svelte.dev/docs/svelte/overview](https://svelte.dev/docs/svelte/overview)
 - Evidence location: Overview opening and compiler example.
 - Verified claim: Svelte compiles declarative HTML, CSS and JavaScript components for web UI.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Official documentation observed 2026-09-21; capabilities only. Recheck APIs and supported runtime/export targets before drafting. No current price, latest-version claim or license entitlement is retained.
 
 ## godot
@@ -281,7 +283,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://docs.godotengine.org/en/stable/getting_started/step_by_step/nodes_and_scenes.html](https://docs.godotengine.org/en/stable/getting_started/step_by_step/nodes_and_scenes.html)
 - Evidence location: Nodes; Scenes; Setting the main scene.
 - Verified claim: Godot composes nodes into reusable scenes and starts a project from its main scene.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Official documentation observed 2026-09-21; capabilities only. Recheck APIs and supported runtime/export targets before drafting. No current price, latest-version claim or license entitlement is retained.
 
 ## unity
@@ -289,7 +291,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://docs.unity3d.com/Manual/GameObjects.html](https://docs.unity3d.com/Manual/GameObjects.html)
 - Evidence location: Introduction to GameObjects; component explanation.
 - Verified claim: Unity GameObjects are containers whose attached components provide behavior.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Official documentation observed 2026-09-21; capabilities only. Recheck APIs and supported runtime/export targets before drafting. No current price, latest-version claim or license entitlement is retained.
 
 ## unreal
@@ -297,7 +299,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://dev.epicgames.com/documentation/en-us/unreal-engine/actors-in-unreal-engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/actors-in-unreal-engine)
 - Evidence location: Opening; Components; GoldPickup hierarchy.
 - Verified claim: Actors can be placed in a level and hold components for rendering, collision and behavior.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Official documentation observed 2026-09-21; capabilities only. Recheck APIs and supported runtime/export targets before drafting. No current price, latest-version claim or license entitlement is retained.
 
 ## blueprints
@@ -305,7 +307,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://dev.epicgames.com/documentation/en-us/unreal-engine/introduction-to-blueprints-visual-scripting-in-unreal-engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/introduction-to-blueprints-visual-scripting-in-unreal-engine)
 - Evidence location: How Do Blueprints Work?; Blueprint Class.
 - Verified claim: Blueprint graphs connect events, functions and variables; Blueprint classes can define reusable interactive assets.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Official documentation observed 2026-09-21; capabilities only. Recheck APIs and supported runtime/export targets before drafting. No current price, latest-version claim or license entitlement is retained.
 
 ## static
@@ -313,7 +315,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 - Evidence location: About GitHub Pages.
 - Verified claim: GitHub Pages publishes HTML, CSS and JavaScript files, optionally produced by a build process.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: One static-hosting example; excludes plan entitlements, custom-domain setup and provider limits.
 
 ## server
@@ -321,7 +323,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://nodejs.org/en/learn/getting-started/introduction-to-nodejs](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
 - Evidence location: An Example Node.js Application; server.listen explanation.
 - Verified claim: A listening server process handles incoming HTTP requests.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Node example establishes the process model only; availability, scaling and supervision are deployment choices, not promises.
 
 ## functions
@@ -329,7 +331,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://docs.aws.amazon.com/lambda/latest/dg/welcome.html](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
 - Evidence location: What is AWS Lambda?; Lambda Functions.
 - Verified claim: Managed function handlers execute in response to events or API calls without users provisioning the underlying servers.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Scope: Lambda Functions, not every Lambda compute offering; no execution-limit or pricing claim. Recheck lifecycle details for chosen provider.
 
 ## rolling
@@ -337,7 +339,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://kubernetes.io/docs/concepts/workloads/controllers/deployment/](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 - Evidence location: Updating a Deployment; Rolling Update Deployment; Max Unavailable; Max Surge.
 - Verified claim: Rolling updates replace replicas progressively; readiness and configured surge/unavailability govern progress.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Kubernetes example, not a universal availability guarantee; recheck exact API defaults when drafting commands.
 
 ## blue-green
@@ -345,7 +347,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://martinfowler.com/bliki/BlueGreenDeployment.html](https://martinfowler.com/bliki/BlueGreenDeployment.html)
 - Evidence location: Two production environments; router switch; database discussion.
 - Verified claim: Traffic switches between prepared environments; switching back does not automatically undo data changes.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Conceptual reference; recheck the cited passage when drafting.
 
 ## canary
@@ -353,7 +355,7 @@ Original pages opened and relevant passages inspected on **2026-09-21**. Summari
 - Source: [https://sre.google/workbook/canarying-releases/](https://sre.google/workbook/canarying-releases/)
 - Evidence location: Opening definition; Canarying Principles; Canary Analysis.
 - Verified claim: A canary exposes a limited production subset and compares signals with a control before broader rollout.
-- Checked: 2026-09-21.
+- Checked: 2026-09-22.
 - Scope and refresh: Google SRE practice; thresholds and exposure fractions in briefs are authored examples, not universal recommendations.
 
 ## grid

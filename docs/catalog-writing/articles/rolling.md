@@ -1,6 +1,6 @@
 # Rolling / 롤링 / ローリング
 
-Writing design only. ID: `rolling` · Group: [release-replacement](../groups/release-replacement.md) · Queue order: 1100 · Checked: 2026-09-21.
+Original writing design; implemented article and demo: [review](../../platform-demos-review.md). ID: `rolling` · Group: [release-replacement](../groups/release-replacement.md) · Queue order: 1100 · Checked: 2026-09-22.
 
 ## Reader question and scope
 
@@ -64,7 +64,7 @@ Facts: the definition and mechanism in sections 1–2 and source-tagged points a
 
 | Evidence                                                                         | Exact location to consult                                                    | Claim boundary                                                                                           | Checked    |
 | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ---------- |
-| [rolling](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) | Updating a Deployment; Rolling Update Deployment; Max Unavailable; Max Surge | [Verified claim and context](../sources.md#rolling); apply only to this mechanism, not general rankings. | 2026-09-21 |
+| [rolling](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) | Updating a Deployment; Rolling Update Deployment; Max Unavailable; Max Surge | [Verified claim and context](../sources.md#rolling); apply only to this mechanism, not general rankings. | 2026-09-22 |
 
 **Writing-time refresh:** Reopen these sources before writing. Product documentation is a dated capability reference, not a pinned implementation tutorial. No price, current version, license entitlement, service limit or legal guarantee is asserted by this brief. Adding any such claim requires fresh official evidence, an exact version/plan/jurisdiction scope, and a new check date. See the source-specific context in the ledger.
 

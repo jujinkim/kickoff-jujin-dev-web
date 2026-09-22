@@ -1,6 +1,6 @@
 # Astro / Astro / Astro
 
-Writing design only. ID: `astro` · Group: [static-generators](../groups/static-generators.md) · Queue order: 700 · Checked: 2026-09-21.
+Original writing design; implemented article and demo: [review](../../platform-demos-review.md). ID: `astro` · Group: [static-generators](../groups/static-generators.md) · Queue order: 700 · Checked: 2026-09-22.
 
 ## Reader question and scope
 
@@ -64,7 +64,7 @@ Facts: the definition and mechanism in sections 1–2 and source-tagged points a
 
 | Evidence                                                 | Exact location to consult              | Claim boundary                                                                                         | Checked    |
 | -------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------- |
-| [astro](https://docs.astro.build/en/concepts/why-astro/) | Features; Content-driven; Server-first | [Verified claim and context](../sources.md#astro); apply only to this mechanism, not general rankings. | 2026-09-21 |
+| [astro](https://docs.astro.build/en/concepts/why-astro/) | Features; Content-driven; Server-first | [Verified claim and context](../sources.md#astro); apply only to this mechanism, not general rankings. | 2026-09-22 |
 
 **Writing-time refresh:** Reopen these sources before writing. Product documentation is a dated capability reference, not a pinned implementation tutorial. No price, current version, license entitlement, service limit or legal guarantee is asserted by this brief. Adding any such claim requires fresh official evidence, an exact version/plan/jurisdiction scope, and a new check date. See the source-specific context in the ledger.
 

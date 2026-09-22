@@ -1,6 +1,6 @@
 # Web UI development tools / 웹 UI 개발 도구 / Web UI開発ツール
 
-Group ID: `web-ui` · Checked: 2026-09-21 · Writing designs, not article bodies.
+Group ID: `web-ui` · Checked: 2026-09-22 · Original comparison contract; [implemented release review](../../platform-demos-review.md).
 
 ## Shared case and comparison contract
 

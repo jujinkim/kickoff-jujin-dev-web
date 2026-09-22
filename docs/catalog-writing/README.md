@@ -2,7 +2,7 @@
 
 > Current publishing rule (2026-09-21): one-minute concept introductions, three short sections (Concept, Example, When to choose it), and a prominent diagram or UI image. The longer section plans and exhaustive comparisons below remain research references, not required article length. Optional comparisons and sources must not obscure the core concept.
 
-This local design pack covers **58 candidates in 19 comparison groups**. It prepares practical introductory articles: definition, concrete example, benefits, constraints, selection and combination. The original pack contained designs only. Eighteen designs now have independent demos and English/Korean/Japanese articles; see [Design demos](../design-demos.md). The other 40 candidates remain planned. The [styles release review](styles-review.md) describes the superseded pilot.
+This local design pack covers **58 candidates in 19 comparison groups**. It prepares practical introductory articles: definition, concrete example, benefits, constraints, selection and combination. The original pack contained designs only. The current catalog has 37 concepts with independent demos and English/Korean/Japanese articles, including four later style additions; see [Design demos](../design-demos.md) and [platform review](../platform-demos-review.md). The other 25 candidates remain planned. There are 147 published language documents including the 36 guide documents. The [styles release review](styles-review.md) describes the superseded pilot.
 
 ## How to write from this pack
 

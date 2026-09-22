@@ -1,0 +1,179 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { platformText } from "./platform";
+import "./platform-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  p = platformText(lang);
+---
+
+<section
+  data-demo="svelte"
+  data-platform
+  lang={lang}
+  data-reset-message={p.resetMessage}
+  data-update-path={t(
+    "Event → runtime state → compiled update",
+    "이벤트 → 실행 중 상태 → 컴파일된 갱신",
+    "イベント → 実行中の状態 → コンパイル済み更新",
+  )}
+>
+  <header>
+    <p class="eyebrow">{p.simulation}</p>
+    <h2>Svelte</h2>
+  </header>
+  <p>
+    {t(
+      "Save either card. Each ID counts once; the other card stays unchanged.",
+      "각 카드를 저장하세요. ID마다 한 번만 집계하며 다른 카드 상태는 유지됩니다.",
+      "各カードを保存します。IDごとに1回だけ数え、もう一方は変わりません。",
+    )}
+  </p>
+  <div class="compile">
+    <h3>
+      01 ·{" "}
+      {t(
+        "Build: compile component",
+        "빌드: 컴포넌트 컴파일",
+        "ビルド：コンポーネントのコンパイル",
+      )}
+    </h3>
+    <p>
+      HTML + CSS + JavaScript →{" "}
+      {t("browser code", "브라우저 코드", "ブラウザーコード")}
+    </p>
+  </div>
+  <div class="runtime">
+    <h3>
+      02 ·{" "}
+      {t(
+        "Browser runtime: later clicks",
+        "브라우저 실행: 이후 클릭",
+        "ブラウザー実行：後のクリック",
+      )}
+    </h3>
+    <div class="cards">
+      <article>
+        <p>A17</p>
+        <h3>{p.notes}</h3>
+        <button
+          type="button"
+          data-save="A17"
+          aria-pressed="false"
+          data-interactive
+          disabled
+        >
+          {p.save}
+        </button>
+      </article>
+      <article>
+        <p>B04</p>
+        <h3>{p.notes}</h3>
+        <button
+          type="button"
+          data-save="B04"
+          aria-pressed="false"
+          data-interactive
+          disabled
+        >
+          {p.save}
+        </button>
+      </article>
+    </div>
+    <p>
+      {t(
+        "Event → runtime state → compiled update",
+        "이벤트 → 실행 중 상태 → 컴파일된 갱신",
+        "イベント → 実行中の状態 → コンパイル済み更新",
+      )}
+    </p>
+  </div>
+  <p class="total">
+    {p.count}: <strong data-count>0</strong> / 2
+  </p>
+  <p data-state>A17: 0 · B04: 0</p>
+  <p class="trace" data-path-state>
+    {p.waiting}
+  </p>
+  <div class="controls">
+    <button type="button" data-reset data-interactive disabled>
+      {p.reset}
+    </button>
+  </div>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountUi } from "./ui-behavior";
+  mountUi("svelte");
+</script>
+<style>
+  section {
+    background: #f3f6fb;
+    color: #172640;
+    padding: clamp(16px, 3vw, 30px);
+    border: 1px solid #8696ad;
+    border-radius: 12px;
+  }
+  .eyebrow {
+    color: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  header {
+    border-bottom: 1px solid #aab7c9;
+    margin-bottom: 1.2rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .cards article {
+    padding: 20px;
+    border: 1px solid #74869e;
+    background: white;
+    border-radius: 8px;
+  }
+  .total {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .trace {
+    border-left: 4px solid #395783;
+    padding: 12px;
+    background: #e0eaf7;
+  }
+  .flow {
+    display: grid;
+    gap: 12px;
+    padding: 0;
+    list-style-position: inside;
+  }
+  .flow li {
+    padding: 14px;
+    border: 1px solid #7889a2;
+  }
+  @container (max-width:560px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  .compile {
+    padding: 20px;
+    background: #fff0e7;
+    border: 2px dashed #985437;
+    margin-bottom: 18px;
+  }
+  .runtime {
+    padding: 16px;
+    border: 2px solid #985437;
+    border-radius: 12px;
+  }
+</style>

@@ -1,5 +1,7 @@
 # Project workspace style review — 2026-09-22
 
+Current platform release: [implementation and verification](platform-demos-review.md). Earlier counts below are historical.
+
 The eleven style demos now share the Make room project, its three original tasks,
 internal navigation, progress, two resource notes, and reset behavior. Each Astro
 component owns its structure, control baseline and visual rules. `workshop.ts` supplies translated

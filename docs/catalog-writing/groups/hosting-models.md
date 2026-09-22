@@ -1,6 +1,6 @@
 # Hosting execution models / 호스팅 실행 모델 / ホスティング実行モデル
 
-Group ID: `hosting-models` · Checked: 2026-09-21 · Writing designs, not article bodies.
+Group ID: `hosting-models` · Checked: 2026-09-22 · Original comparison contract; [implemented release review](../../platform-demos-review.md).
 
 ## Shared case and comparison contract
 

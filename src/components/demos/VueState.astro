@@ -1,0 +1,187 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { platformText } from "./platform";
+import "./platform-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  p = platformText(lang);
+---
+
+<section
+  data-demo="vue"
+  data-platform
+  lang={lang}
+  data-reset-message={p.resetMessage}
+  data-update-path={t(
+    "Event → reactive state → template update",
+    "이벤트 → 반응형 상태 → 템플릿 갱신",
+    "イベント → リアクティブ状態 → テンプレート更新",
+  )}
+>
+  <header>
+    <p class="eyebrow">{p.simulation}</p>
+    <h2>Vue</h2>
+  </header>
+  <p>
+    {t(
+      "Save either card. Each ID counts once; the other card stays unchanged.",
+      "각 카드를 저장하세요. ID마다 한 번만 집계하며 다른 카드 상태는 유지됩니다.",
+      "各カードを保存します。IDごとに1回だけ数え、もう一方は変わりません。",
+    )}
+  </p>
+  <div class="sfc">
+    <section>
+      <h3>
+        01 ·{" "}
+        {t(
+          "Logic: reactive state",
+          "로직: 반응형 상태",
+          "ロジック：リアクティブ状態",
+        )}
+      </h3>
+      <p>A17: 0 · B04: 0 → 1</p>
+    </section>
+    <section>
+      <h3>
+        02 ·{" "}
+        {t(
+          "Template: state bindings",
+          "템플릿: 상태 연결",
+          "テンプレート：状態の結び付け",
+        )}
+      </h3>
+      <div class="cards">
+        <article>
+          <p>A17</p>
+          <h3>{p.notes}</h3>
+          <button
+            type="button"
+            data-save="A17"
+            aria-pressed="false"
+            data-interactive
+            disabled
+          >
+            {p.save}
+          </button>
+        </article>
+        <article>
+          <p>B04</p>
+          <h3>{p.notes}</h3>
+          <button
+            type="button"
+            data-save="B04"
+            aria-pressed="false"
+            data-interactive
+            disabled
+          >
+            {p.save}
+          </button>
+        </article>
+      </div>
+    </section>
+    <section>
+      <h3>
+        03 ·{" "}
+        {t(
+          "Style: card presentation",
+          "스타일: 카드 표현",
+          "スタイル：カードの表示",
+        )}
+      </h3>
+      <p>
+        {t(
+          "One authoring file; packaging is separate.",
+          "작성 파일 하나. 배포 파일 구성은 별개입니다.",
+          "記述は1ファイル。配信時の構成は別です。",
+        )}
+      </p>
+    </section>
+  </div>
+  <p class="total">
+    {p.count}: <strong data-count>0</strong> / 2
+  </p>
+  <p data-state>A17: 0 · B04: 0</p>
+  <p class="trace" data-path-state>
+    {p.waiting}
+  </p>
+  <div class="controls">
+    <button type="button" data-reset data-interactive disabled>
+      {p.reset}
+    </button>
+  </div>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountUi } from "./ui-behavior";
+  mountUi("vue");
+</script>
+<style>
+  section {
+    background: #f3f6fb;
+    color: #172640;
+    padding: clamp(16px, 3vw, 30px);
+    border: 1px solid #8696ad;
+    border-radius: 12px;
+  }
+  .eyebrow {
+    color: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  header {
+    border-bottom: 1px solid #aab7c9;
+    margin-bottom: 1.2rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .cards article {
+    padding: 20px;
+    border: 1px solid #74869e;
+    background: white;
+    border-radius: 8px;
+  }
+  .total {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .trace {
+    border-left: 4px solid #395783;
+    padding: 12px;
+    background: #e0eaf7;
+  }
+  .flow {
+    display: grid;
+    gap: 12px;
+    padding: 0;
+    list-style-position: inside;
+  }
+  .flow li {
+    padding: 14px;
+    border: 1px solid #7889a2;
+  }
+  @container (max-width:560px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  .sfc {
+    border: 2px solid #32735a;
+  }
+  .sfc > section {
+    padding: 16px;
+    border-bottom: 1px dashed #32735a;
+  }
+  .sfc > section:first-child {
+    background: #e0f1e9;
+  }
+</style>

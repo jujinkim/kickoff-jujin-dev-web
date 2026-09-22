@@ -1,6 +1,6 @@
 # Unreal Engine / Unreal Engine / Unreal Engine
 
-Writing design only. ID: `unreal-engine` · Group: [game-engines](../groups/game-engines.md) · Queue order: 902 · Checked: 2026-09-21.
+Original writing design; implemented article and demo: [review](../../platform-demos-review.md). ID: `unreal-engine` · Group: [game-engines](../groups/game-engines.md) · Queue order: 902 · Checked: 2026-09-22.
 
 ## Reader question and scope
 
@@ -64,8 +64,8 @@ Facts: the definition and mechanism in sections 1–2 and source-tagged points a
 
 | Evidence                                                                                                                               | Exact location to consult                 | Claim boundary                                                                                              | Checked    |
 | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------- |
-| [unreal](https://dev.epicgames.com/documentation/en-us/unreal-engine/actors-in-unreal-engine)                                          | Opening; Components; GoldPickup hierarchy | [Verified claim and context](../sources.md#unreal); apply only to this mechanism, not general rankings.     | 2026-09-21 |
-| [blueprints](https://dev.epicgames.com/documentation/en-us/unreal-engine/introduction-to-blueprints-visual-scripting-in-unreal-engine) | How Do Blueprints Work?; Blueprint Class  | [Verified claim and context](../sources.md#blueprints); apply only to this mechanism, not general rankings. | 2026-09-21 |
+| [unreal](https://dev.epicgames.com/documentation/en-us/unreal-engine/actors-in-unreal-engine)                                          | Opening; Components; GoldPickup hierarchy | [Verified claim and context](../sources.md#unreal); apply only to this mechanism, not general rankings.     | 2026-09-22 |
+| [blueprints](https://dev.epicgames.com/documentation/en-us/unreal-engine/introduction-to-blueprints-visual-scripting-in-unreal-engine) | How Do Blueprints Work?; Blueprint Class  | [Verified claim and context](../sources.md#blueprints); apply only to this mechanism, not general rankings. | 2026-09-22 |
 
 **Writing-time refresh:** Reopen these sources before writing. Product documentation is a dated capability reference, not a pinned implementation tutorial. No price, current version, license entitlement, service limit or legal guarantee is asserted by this brief. Adding any such claim requires fresh official evidence, an exact version/plan/jurisdiction scope, and a new check date. See the source-specific context in the ledger.
 

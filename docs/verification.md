@@ -1,5 +1,7 @@
 # Verification — 2026-09-21
 
+Current platform release: [implementation and verification](platform-demos-review.md). Earlier counts below are historical.
+
 ## One-minute introductions
 
 2026-09-21: all 57 published documents were rewritten into Concept, Example and When to choose it. The source validator caps title, summary and body at an estimated 45 seconds, reserving 15 seconds for visuals. Browser coverage additionally checks default visible article text on every canonical route against the 60-second editorial budget. This is a length constraint, not a timed reader study.

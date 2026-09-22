@@ -1,0 +1,179 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { platformText } from "./platform";
+import "./platform-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  p = platformText(lang);
+---
+
+<section
+  data-demo="react"
+  data-platform
+  lang={lang}
+  data-reset-message={p.resetMessage}
+  data-update-path={t(
+    "Event → state setter → render",
+    "이벤트 → 상태 설정 → 렌더링",
+    "イベント → 状態設定 → 描画",
+  )}
+>
+  <header>
+    <p class="eyebrow">{p.simulation}</p>
+    <h2>React</h2>
+  </header>
+  <p>
+    {t(
+      "Save either card. Each ID counts once; the other card stays unchanged.",
+      "각 카드를 저장하세요. ID마다 한 번만 집계하며 다른 카드 상태는 유지됩니다.",
+      "各カードを保存します。IDごとに1回だけ数え、もう一方は変わりません。",
+    )}
+  </p>
+  <div class="owner">
+    <h3>
+      {t(
+        "Shared owner · saved IDs",
+        "공유 소유자 · 저장된 ID",
+        "共通の管理元 · 保存ID",
+      )}
+    </h3>
+    <p>
+      {t(
+        "Title props ↓ · state belongs to each ID",
+        "제목 프로퍼티 ↓ · 상태는 ID별 소유",
+        "タイトルのプロップス ↓ · 状態はIDごと",
+      )}
+    </p>
+    <div class="cards">
+      <article>
+        <p>A17</p>
+        <h3>{p.notes}</h3>
+        <button
+          type="button"
+          data-save="A17"
+          aria-pressed="false"
+          data-interactive
+          disabled
+        >
+          {p.save}
+        </button>
+      </article>
+      <article>
+        <p>B04</p>
+        <h3>{p.notes}</h3>
+        <button
+          type="button"
+          data-save="B04"
+          aria-pressed="false"
+          data-interactive
+          disabled
+        >
+          {p.save}
+        </button>
+      </article>
+    </div>
+  </div>
+  <ol class="flow">
+    <li>{t("Save event", "저장 이벤트", "保存イベント")}</li>
+    <li>
+      {t(
+        "State setter requests rendering",
+        "상태 설정 함수가 렌더링 요청",
+        "状態設定が描画を要求",
+      )}
+    </li>
+    <li>
+      {t("Render labels and total", "문구와 합계 렌더링", "ラベルと合計を描画")}
+    </li>
+  </ol>
+  <p class="total">
+    {p.count}: <strong data-count>0</strong> / 2
+  </p>
+  <p data-state>A17: 0 · B04: 0</p>
+  <p class="trace" data-path-state>
+    {p.waiting}
+  </p>
+  <div class="controls">
+    <button type="button" data-reset data-interactive disabled>
+      {p.reset}
+    </button>
+  </div>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountUi } from "./ui-behavior";
+  mountUi("react");
+</script>
+<style>
+  section {
+    background: #f3f6fb;
+    color: #172640;
+    padding: clamp(16px, 3vw, 30px);
+    border: 1px solid #8696ad;
+    border-radius: 12px;
+  }
+  .eyebrow {
+    color: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  header {
+    border-bottom: 1px solid #aab7c9;
+    margin-bottom: 1.2rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .cards article {
+    padding: 20px;
+    border: 1px solid #74869e;
+    background: white;
+    border-radius: 8px;
+  }
+  .total {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .trace {
+    border-left: 4px solid #395783;
+    padding: 12px;
+    background: #e0eaf7;
+  }
+  .flow {
+    display: grid;
+    gap: 12px;
+    padding: 0;
+    list-style-position: inside;
+  }
+  .flow li {
+    padding: 14px;
+    border: 1px solid #7889a2;
+  }
+  @container (max-width:560px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  .owner {
+    padding: 16px;
+    border: 2px solid #375d84;
+    border-radius: 14px;
+  }
+  .flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @container (max-width:560px) {
+    .flow {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

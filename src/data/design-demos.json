@@ -196,5 +196,140 @@
       "ja": "同じプロジェクト作業室でスタイルを比較"
     },
     "capture": "[data-demo=\"retro-digital\"]"
+  },
+  "astro": {
+    "component": "AstroGenerator",
+    "caption": {
+      "en": "Astro: concept simulation",
+      "ko": "Astro: 개념 시뮬레이션",
+      "ja": "Astro: 概念シミュレーション"
+    },
+    "capture": "[data-demo=\"astro\"]"
+  },
+  "hugo": {
+    "component": "HugoGenerator",
+    "caption": {
+      "en": "Hugo: concept simulation",
+      "ko": "Hugo: 개념 시뮬레이션",
+      "ja": "Hugo: 概念シミュレーション"
+    },
+    "capture": "[data-demo=\"hugo\"]"
+  },
+  "jekyll": {
+    "component": "JekyllGenerator",
+    "caption": {
+      "en": "Jekyll: concept simulation",
+      "ko": "Jekyll: 개념 시뮬레이션",
+      "ja": "Jekyll: 概念シミュレーション"
+    },
+    "capture": "[data-demo=\"jekyll\"]"
+  },
+  "react": {
+    "component": "ReactState",
+    "caption": {
+      "en": "React: concept simulation",
+      "ko": "React: 개념 시뮬레이션",
+      "ja": "React: 概念シミュレーション"
+    },
+    "capture": "[data-demo=\"react\"]"
+  },
+  "vue": {
+    "component": "VueState",
+    "caption": {
+      "en": "Vue: concept simulation",
+      "ko": "Vue: 개념 시뮬레이션",
+      "ja": "Vue: 概念シミュレーション"
+    },
+    "capture": "[data-demo=\"vue\"]"
+  },
+  "svelte": {
+    "component": "SvelteState",
+    "caption": {
+      "en": "Svelte: concept simulation",
+      "ko": "Svelte: 개념 시뮬레이션",
+      "ja": "Svelte: 概念シミュレーション"
+    },
+    "capture": "[data-demo=\"svelte\"]"
+  },
+  "godot": {
+    "component": "GodotScene",
+    "caption": {
+      "en": "Godot: concept simulation",
+      "ko": "Godot: 개념 시뮬레이션",
+      "ja": "Godot: 概念シミュレーション"
+    },
+    "capture": "[data-demo=\"godot\"]"
+  },
+  "unity": {
+    "component": "UnityScene",
+    "caption": {
+      "en": "Unity: concept simulation",
+      "ko": "Unity: 개념 시뮬레이션",
+      "ja": "Unity: 概念シミュレーション"
+    },
+    "capture": "[data-demo=\"unity\"]"
+  },
+  "unreal-engine": {
+    "component": "UnrealScene",
+    "caption": {
+      "en": "Unreal Engine: concept simulation",
+      "ko": "Unreal Engine: 개념 시뮬레이션",
+      "ja": "Unreal Engine: 概念シミュレーション"
+    },
+    "capture": "[data-demo=\"unreal-engine\"]"
+  },
+  "static-hosting": {
+    "component": "StaticHosting",
+    "caption": {
+      "en": "Static files and a separate API",
+      "ko": "정적 파일과 별도 API",
+      "ja": "静的ファイルと別のAPI"
+    },
+    "capture": "[data-demo=\"static-hosting\"]"
+  },
+  "always-on-server": {
+    "component": "AlwaysOnServer",
+    "caption": {
+      "en": "Process restart and retained records",
+      "ko": "프로세스 재시작과 기록 유지",
+      "ja": "プロセス再起動と記録の維持"
+    },
+    "capture": "[data-demo=\"always-on-server\"]"
+  },
+  "serverless-functions": {
+    "component": "ServerlessFunctions",
+    "caption": {
+      "en": "Invocation lifetime and duplicate handling",
+      "ko": "호출 수명과 중복 처리",
+      "ja": "呼び出しの寿命と重複処理"
+    },
+    "capture": "[data-demo=\"serverless-functions\"]"
+  },
+  "rolling": {
+    "component": "RollingRelease",
+    "caption": {
+      "en": "Four replicas and one spare slot",
+      "ko": "복제본 4개와 여유 슬롯 하나",
+      "ja": "レプリカ4個と予備枠1つ"
+    },
+    "capture": "[data-demo=\"rolling\"]"
+  },
+  "blue-green": {
+    "component": "BlueGreenRelease",
+    "caption": {
+      "en": "Traffic returns; data writes remain",
+      "ko": "트래픽 복귀, 데이터 쓰기 유지",
+      "ja": "経路は復帰、書き込みは維持"
+    },
+    "capture": "[data-demo=\"blue-green\"]"
+  },
+  "canary": {
+    "component": "CanaryRelease",
+    "caption": {
+      "en": "Synthetic errors and an explicit stop rule",
+      "ko": "가상 오류 집계와 명시적 중단 규칙",
+      "ja": "仮のエラー集計と明示的な停止規則"
+    },
+    "capture": "[data-demo=\"canary\"]"
   }
 }

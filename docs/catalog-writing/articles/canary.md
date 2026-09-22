@@ -1,6 +1,6 @@
 # Canary / 카나리 / カナリア
 
-Writing design only. ID: `canary` · Group: [release-replacement](../groups/release-replacement.md) · Queue order: 1102 · Checked: 2026-09-21.
+Original writing design; implemented article and demo: [review](../../platform-demos-review.md). ID: `canary` · Group: [release-replacement](../groups/release-replacement.md) · Queue order: 1102 · Checked: 2026-09-22.
 
 ## Reader question and scope
 
@@ -64,7 +64,7 @@ Facts: the definition and mechanism in sections 1–2 and source-tagged points a
 
 | Evidence                                                  | Exact location to consult                                 | Claim boundary                                                                                          | Checked    |
 | --------------------------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ---------- |
-| [canary](https://sre.google/workbook/canarying-releases/) | Opening definition; Canarying Principles; Canary Analysis | [Verified claim and context](../sources.md#canary); apply only to this mechanism, not general rankings. | 2026-09-21 |
+| [canary](https://sre.google/workbook/canarying-releases/) | Opening definition; Canarying Principles; Canary Analysis | [Verified claim and context](../sources.md#canary); apply only to this mechanism, not general rankings. | 2026-09-22 |
 
 **Writing-time refresh:** Reopen these sources before writing. Product documentation is a dated capability reference, not a pinned implementation tutorial. No price, current version, license entitlement, service limit or legal guarantee is asserted by this brief. Adding any such claim requires fresh official evidence, an exact version/plan/jurisdiction scope, and a new check date. See the source-specific context in the ledger.
 
