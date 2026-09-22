@@ -2,8 +2,8 @@
 kind: guide
 articleId: "shipping"
 lang: "ja"
-title: "Web・アプリ・PC・コンソールの届け方"
-summary: "「デプロイして」だけでは住所が足りません。"
+title: "配布と運用：実行環境と復旧基準を決める"
+summary: "対象機器と運用制約を決め、AIがリリース手順を設計します。"
 category: "deployment"
 aliases:
   [
@@ -22,23 +22,21 @@ aliases:
 related: ["static-sites", "payments"]
 example: "shipping"
 status: "published"
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
-aiPrompt: "確定した対象端末について実行環境、配布経路、ホスティングを分けて。成果物、署名、審査、更新、バックエンドの必要性を書いて。未決定の対象は質問し、現行の公式規則を示して。承認を仮定せず必要なアクセスを明記して。"
-checked: "2026-09-21"
+revision: 3
+sourceRevision: 3
+updated: "2026-09-23"
+aiPrompt: "合意済みの対象機器について実行環境・配布・ホスティングを分けて。未決定の経路、許容停止時間、復旧期待、運用担当、予算を質問して。成果物・アクセス権・最新のプラットフォーム規則を確認して。制約に合うリリース手順と検証基準を選び、追加容量の費用と復旧限界を説明して。費用・公開範囲・停止時間が増えるなら先に質問して。ローリング・ブルーグリーン・カナリアの用語を私に選ばせないで。計画を実際のデプロイ許可と解釈しないで。"
+checked: "2026-09-23"
 ---
 
 ## 概念
 
-実行環境はソフトが動く場所、配信は入手経路、ホスティングはネットワークサービスやファイルを置く場所です。
+実行環境はソフトウェアが動く場所、配布はユーザーが入手する経路、ホスティングはファイルやネットワークサービスを提供する場所です。
 
 ## 実例
 
-ブラウザーのカタログはURLと静的ホストを使います。ストアで配るゲームにも別の対戦サーバーが必要な場合があります。
+ブラウザーのカタログはURLと静的ホストを使います。ストアのゲームには別のマルチプレイサーバーが必要な場合もあります。ユーザーは許容停止時間、復旧期待、運用担当、予算を決めます。
 
 ## 選ぶ条件
 
-Webリンクは共有を容易にします。ネイティブアプリは専用機能と署名作業を加えます。ストアには配信規則があります。 実際の対象端末から選びます。成果物、バックエンド、署名、審査、更新、担当者を定め、最新の要件を確認します。 [GitHub](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages) · [Apple](https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases) · [Steamworks](https://partner.steamgames.com/doc/gettingstarted) · [Nintendo](https://developer.nintendo.com/)
-
-出典確認：2026-09-21。条件は変わる場合があります。
+配布基盤を選ぶ前に制約を合意します。AIがその範囲でリリース手順と検証を設計します。段階的な公開はリスクを減らせますが、意味のある評価が必要です。[Google SRE](https://sre.google/workbook/canarying-releases/) 追加容量や可用性の変更は合意が必要です。計画は実際のデプロイ許可ではありません。

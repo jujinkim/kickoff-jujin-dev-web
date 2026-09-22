@@ -185,7 +185,7 @@ test(
       const manifest = JSON.parse(read("pagefind/pagefind-entry.json"));
       assert.equal(
         Object.values(manifest.languages).reduce((n, l) => n + l.page_count, 0),
-        40,
+        31, // Nine active guides in three languages, three concepts, one English-only fixture.
       );
       const category = read("en/catalog/categories/styles/index.html");
       assert.ok(category.includes('href="/en/catalog/brutalism/"'));

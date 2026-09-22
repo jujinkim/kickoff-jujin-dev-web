@@ -1,4 +1,7 @@
-import { taxonomy } from "../../scripts/catalog-data.mjs";
+import {
+  activeTaxonomy as taxonomy,
+  isListedArticle,
+} from "../../scripts/catalog-data.mjs";
 import {
   isDesignCategory,
   platformCategories,
@@ -9,7 +12,8 @@ const publishedConceptCount = readArticles().filter(
   (a) =>
     a.data.lang === "en" &&
     a.data.status === "published" &&
-    a.data.kind === "concept",
+    a.data.kind === "concept" &&
+    isListedArticle(a.data),
 ).length;
 const publishedDesignCount = readArticles().filter(
   (a) =>
@@ -30,7 +34,7 @@ for (const [lang, query, id] of [
     const errors: string[] = [];
     page.on("pageerror", (e) => errors.push(e.message));
     await page.goto(`/${lang}/guides/`);
-    await expect(page.locator(".catalog-card:visible")).toHaveCount(12);
+    await expect(page.locator(".catalog-card:visible")).toHaveCount(9);
     await page.locator("#search").fill(query);
     const target = page.locator(
       `#search-results a[href="/${lang}/guides/${id}/"]`,
@@ -40,20 +44,17 @@ for (const [lang, query, id] of [
       .locator("#search-results a")
       .evaluateAll((nodes) => nodes.map((n) => n.getAttribute("href")));
     expect(links.every((link) => link?.startsWith(`/${lang}/`))).toBeTruthy();
-    await page.locator("#search").fill("Map");
-    await page.locator("#category").selectOption("data");
-    await expect(page.locator("#search-results a")).toHaveCount(1);
-    await expect(page.locator("#search-results a")).toHaveAttribute(
-      "href",
-      `/${lang}/guides/collections/`,
-    );
+    await expect(page.locator('#category option[value="data"]')).toHaveCount(0);
     await page.locator("#search").fill("");
-    await expect(page.locator(".catalog-card:visible")).toHaveCount(1);
     await page.locator("#category").selectOption("planning");
-    await expect(page.locator(".catalog-card:visible")).toHaveCount(4);
+    await expect(page.locator(".catalog-card:visible")).toHaveCount(2);
+    await page.locator("#search").fill(query);
+    await expect(target).toBeVisible();
     await page.goto(`/${lang}/guides/srs/`);
     await page.reload();
-    await expect(page.locator("h1")).toContainText("SRS");
+    await expect(page.locator("h1")).toContainText(
+      /Requirements|요구사항|要件/,
+    );
     expect(errors).toEqual([]);
   });
 }
@@ -100,7 +101,7 @@ test("keyboard navigation, copy and AI lookup complete the reader flow", async (
     "Copied",
   );
   expect(await page.evaluate(() => navigator.clipboard.readText())).toContain(
-    "bookshop cart",
+    "Ask only about unresolved product behavior",
   );
   await page.goto("/en/ai/");
   await page.locator("[data-copy]").click();
@@ -127,7 +128,7 @@ test("search failure keeps browse available and copy failure explains fallback",
   await expect(page.locator("#result-status")).toContainText(
     "Search could not load",
   );
-  await expect(page.locator(".catalog-card:visible")).toHaveCount(12);
+  await expect(page.locator(".catalog-card:visible")).toHaveCount(9);
   await page.goto("/en/ai/");
   await page.evaluate(() =>
     Object.defineProperty(navigator, "clipboard", {
@@ -200,7 +201,9 @@ for (const lang of ["en", "ko", "ja"]) {
     await expect(page).toHaveURL(/\/en\/catalog\/categories\/styles\/$/);
     await page.goto(`/${lang}/catalog/srs/`);
     await expect(page).toHaveURL(new RegExp(`/${lang}/guides/srs/$`));
-    await expect(page.locator("h1")).toContainText("SRS");
+    await expect(page.locator("h1")).toContainText(
+      /Requirements|요구사항|要件/,
+    );
   });
 }
 
@@ -224,10 +227,11 @@ for (const [lang, layout, typography] of [
         "styles",
         "layout",
         "typography",
-        "requirements",
         "boundaries",
         "service-split",
-        ...platformCategories,
+        ...platformCategories.filter((id) =>
+          taxonomy.some((c: { id: string }) => c.id === id),
+        ),
         ...monetizationCategories,
       ].sort(),
     );

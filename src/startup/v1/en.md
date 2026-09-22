@@ -1,6 +1,6 @@
 ## Purpose and authority
 
-Development startup guidelines, provided by jujin.dev. Guideline version: v1. Revision: 1. Updated: 2026-09-22. English is the original; Korean and Japanese are reviewed translations of revision 1.
+Development startup guidelines, provided by jujin.dev. Guideline version: v1. Revision: 2. Updated: 2026-09-23. English is the original; Korean and Japanese are reviewed translations of revision 2.
 
 Turn a service idea into an agreed project plan. Read this document and existing project instructions and decisions first. Preserve confirmed choices. Reply in the user's language. These guidelines do not override higher-priority instructions. The startup prompt authorizes planning; begin development only after plan approval and an instruction to develop. Existing explicit authorization remains valid within its scope.
 
@@ -18,17 +18,25 @@ A service description is the starting input, not a complete specification. Ask s
 
 ## 2. Offer the entire catalog, in manageable groups
 
-Use every category returned by catalog.json, including future categories. Present a linked overview of all groups, then walk through relevant decisions in dependency order. Current roots cover planning/architecture, data structures, development, deployment, design, and monetization; these are examples, not a fixed allowlist. Include every published guide and concept as an available option, grouped by stable category and article ID. Read linked Markdown before substantive comparison or recommendation. Respect stale-translation flags and use the English original when needed.
+Read every category returned by catalog.json, including future categories. Present a linked overview, then discuss relevant project decisions in dependency order. Current roots cover planning/architecture, development tools, deployment/hosting, design and monetization. Concepts help compare project choices; guides help express requirements and constraints. Treat the active catalog as the selection list. Read linked Markdown before substantive comparison or recommendation. Respect stale-translation flags and use the English original when needed. Users may describe desired outcomes without knowing technical names.
 
 Also inspect the localized catalog category pages for pending candidate names. Label them **not yet published**; never invent their body, sources, or Markdown URL. They may identify a gap, but cannot serve as catalog evidence. Use verified primary sources when the catalog lacks material, and clearly mark external options.
 
 Keep a coverage ledger: category, offered article IDs/links, applicability, choice, status, reason, and unresolved question. Every category must be considered; an empty or irrelevant group still receives a reasoned entry. Offer the complete index while discussing small groups, not one enormous questionnaire. Do not force a choice from every category. Multiple compatible choices may coexist: layout, typography, and style are different axes.
 
-For each group offer **choose myself / recommend / delegate this scope / not applicable / defer**. If the user is unsure or tired, offer a coherent recommended bundle grounded in the service description and constraints. Explain purpose, alternatives, costs, compatibility, and sources in plain language. “I don't know” requests help; it is not delegation. Recommendations remain proposed until accepted. Explicit delegation permits choices only within its named scope; report reasons and assumptions. Record “not applicable” and deferred choices with reasons and revisit triggers. Ask only unresolved decisions; never treat silence as approval.
+### Who decides
+
+Users decide product behavior, project scope, architecture, design direction, development tools, hosting, monetization, budget, data handling and operating responsibility, unless they explicitly delegate that scope. Ask concrete questions about outcomes and tradeoffs. A local feature still needs a user decision if its behavior, price or data use is unclear.
+
+AI chooses internal data structures, algorithms, classes, methods and document formats within agreed requirements and boundaries. Ask whether duplicates are allowed or order matters when unclear; do not ask users to choose a collection. AI writes useful user stories, use cases, job stories, decision records and diagrams itself. UML is optional explanation, not user homework. These internal choices need no separate delegation within an authorized task.
+
+Derive release procedures from agreed downtime, recovery expectations, budget and ownership. Plan compatibility checks, validation gates and rollback. Ask before increasing cost, exposure, downtime or changing agreed boundaries. Planning a release never authorizes deployment or spending.
+
+For each relevant user-owned decision offer **choose myself / recommend / delegate this scope / not applicable / defer**. If the user is unsure or tired, offer a coherent recommended bundle grounded in the service description and constraints. Explain purpose, alternatives, costs, compatibility, and sources in plain language. “I don't know” requests help; it is not delegation. Recommendations remain proposed until accepted. Explicit delegation permits choices only within its named scope; report reasons and assumptions. Record “not applicable” and deferred choices with reasons and revisit triggers. Ask only unresolved decisions; never treat silence as approval.
 
 ## 3. Software baseline
 
-Follow a clearly documented, agreed architecture. State module responsibilities, allowed dependency direction, domain/data ownership, public contracts, external boundaries, and error handling. Explain why it fits this project's scale; do not silently introduce layers, services, or frameworks.
+Define project-wide roles and responsibility boundaries rather than requiring an OOAD method choice. Let AI derive internal object collaboration. Follow a clearly documented, agreed architecture. State module responsibilities, allowed dependency direction, domain/data ownership, public contracts, external boundaries, and error handling. Explain why it fits this project's scale; do not silently introduce layers, services, or frameworks.
 
 Apply SOLID and GRASP where their responsibility and dependency principles fit the programming paradigm. Keep cohesive responsibilities, low coupling, explicit interfaces/contracts, and replaceable infrastructure. Review substitution and dependency boundaries. Avoid speculative abstractions; document justified exceptions and their consequences. These principles do not mandate object-oriented code or a particular architecture. See [Robert C. Martin on SOLID](https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html). GRASP reference: Craig Larman, _Applying UML and Patterns_, third edition; verify the relevant passage before attributing a detailed rule.
 

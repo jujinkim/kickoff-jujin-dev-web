@@ -1,13 +1,13 @@
-import taxonomy from "../data/categories.json";
-import { published, markdownUrl } from "../lib/content";
+import { activeTaxonomy as taxonomy } from "../lib/catalog";
+import { listed, markdownUrl } from "../lib/content";
 import { categoryNames } from "../lib/i18n";
 export async function GET() {
-  const all = await published();
+  const all = await listed();
   const text = `# jujin.dev
 
 > A development field guide: imagine outcomes, compare options, decide, then instruct AI.
 
-Read project context first. Do not re-ask confirmed decisions. Before explicit scoped delegation, ask about every unresolved choice, even with a strong recommendation. Cite evidence; report access failures.
+Read project context first. Do not re-ask confirmed decisions. Ask about unresolved product and project-level choices unless their scope is delegated. Choose internal implementation and document formats within agreed requirements yourself. Ask when behavior, cost or operating constraints are missing or change. Cite evidence; report access failures.
 
 ## Start here
 - [Latest development startup guidelines](https://jujin.dev/ai/startup/latest.md)
@@ -18,7 +18,7 @@ Read project context first. Do not re-ask confirmed decisions. Before explicit s
 - [Guides](https://jujin.dev/en/guides/)
 - [Project integration guide](https://jujin.dev/en/ai/)
 
-English originals with Korean and Japanese translations. The catalog links every published translation and marks stale revisions. Drafts are excluded. HTML pages remain localized. All Markdown links point to English originals; legacy localized Markdown URLs serve the same English content. Users can write requests in their preferred language; reply in the user's language.
+English originals with Korean and Japanese translations. The catalog links current project choices and guides with their available translations and stale-revision markers. HTML pages remain localized. All Markdown links point to English originals; legacy localized Markdown URLs serve the same English content. Users can write requests in their preferred language; reply in the user's language.
 
 ${taxonomy
   .map((c) => c.id)

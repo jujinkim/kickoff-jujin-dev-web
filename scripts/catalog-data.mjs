@@ -5,6 +5,20 @@ export const taxonomy = JSON.parse(
 export const candidates = JSON.parse(
   readFileSync(new URL("../src/data/candidates.json", import.meta.url)),
 );
+export const retirements = JSON.parse(
+  readFileSync(
+    new URL("../src/data/catalog-retirements.json", import.meta.url),
+  ),
+);
+export const isListedArticle = (data) =>
+  !retirements.articles[data.articleId] &&
+  !retirements.categories[data.category];
+export const activeTaxonomy = taxonomy.filter(
+  (c) => !retirements.categories[c.id],
+);
+export const activeCandidates = candidates.filter(
+  (c) => !retirements.categories[c.category],
+);
 export const conceptSections = {
   en: ["Concept", "Example", "When to choose it"],
   ko: ["개념", "예시", "추천 조건"],

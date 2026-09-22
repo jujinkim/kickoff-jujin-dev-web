@@ -1,0 +1,15 @@
+{
+  "categories": {
+    "data": "srs",
+    "abstract-collections": "srs",
+    "sequential-storage": "srs",
+    "processing-order": "srs",
+    "requirements": "srs",
+    "release-replacement": "shipping"
+  },
+  "articles": {
+    "collections": "srs",
+    "ooad": "architecture",
+    "adr": "srs"
+  }
+}

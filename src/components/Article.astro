@@ -1,5 +1,6 @@
 ---
 import { ancestors } from "../lib/catalog";
+import { articleReplacement, isListedArticle } from "../lib/catalog-scope";
 import { render } from "astro:content";
 import Base from "../layouts/Base.astro";
 import Example from "../components/Example.astro";
@@ -23,6 +24,8 @@ const { article } = Astro.props;
 const d = article.data;
 const t = strings[d.lang];
 const all = await published();
+const active = all.filter((a) => isListedArticle(a.data));
+const replacement = articleReplacement(d);
 const { Content, headings } = await render(article);
 const alternates = all
   .filter((a) => a.data.articleId === d.articleId)
@@ -34,8 +37,12 @@ const alternates = all
   title={d.title}
   description={d.summary}
   alternates={alternates}
+  noindex={!!replacement}
 >
-  <div data-pagefind-body>
+  <div
+    data-pagefind-body={replacement ? undefined : true}
+    data-pagefind-ignore={replacement ? "all" : undefined}
+  >
     <span hidden data-pagefind-filter={`kind:${d.kind}`}></span>
     <header class="article-heading">
       <div class="breadcrumb">
@@ -107,7 +114,7 @@ const alternates = all
             <Comparison articles={[article]} lang={d.lang} />
           </details>
         )}
-        {d.aiPrompt && (
+        {d.aiPrompt && !replacement && (
           <details class="prompt-section article-extra" data-pagefind-ignore>
             <summary>{t.copy}</summary>
             <p>{t.promptLanguage}</p>
@@ -133,7 +140,7 @@ const alternates = all
             {[
               ...new Set([
                 ...d.related,
-                ...all
+                ...active
                   .filter(
                     (a) =>
                       a.data.lang === d.lang &&
@@ -142,8 +149,8 @@ const alternates = all
                   .map((a) => a.data.articleId),
               ]),
             ].map((id) => {
-              const translated = translationFor(all, id, d.lang);
-              const target = translated ?? translationFor(all, id, "en");
+              const translated = translationFor(active, id, d.lang);
+              const target = translated ?? translationFor(active, id, "en");
               return (
                 target && (
                   <li>

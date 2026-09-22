@@ -14,16 +14,16 @@ const steps = {
       "Give your assistant the block below. Ask it to fetch the files and summarize the rules before starting.",
     ],
     [
-      "Look up a term, read the source",
-      "Try SRS, 요구사항, or 要件 in catalog.json. They resolve to the same article ID. Follow the English Markdown link. Write your own requests in your preferred language.",
+      "Describe the result, read the guide",
+      "Describe a goal such as keeping each saved link once. AI finds the relevant guide and reads its English Markdown. Write requests in your preferred language; technical names are optional.",
     ],
     [
       "Compare, decide, then build",
       "Try: ‘I want a bookshop cart. Ask about every undecided behavior and produce acceptance criteria.’ A strong recommendation still needs your decision.",
     ],
     [
-      "Delegate a bounded choice",
-      "Try: ‘Choose spacing within the approved layout; report your reasons.’ That delegates spacing, not the business model. If a source cannot load, the assistant must say so.",
+      "Let AI handle the implementation",
+      "AI chooses internal data structures and document formats within agreed requirements. You can also delegate a project decision explicitly. Missing product rules or changed cost and operating constraints still need your decision.",
     ],
   ],
   ko: [
@@ -32,16 +32,16 @@ const steps = {
       "아래 문구를 AI에게 주세요. 작업 전에 파일을 가져오고 규칙을 요약하도록 요청합니다.",
     ],
     [
-      "용어를 찾고 원문 읽기",
-      "catalog.json에서 SRS, 요구사항, 要件을 찾아보세요. 같은 글 ID로 연결됩니다. 영어 Markdown 링크를 읽게 합니다. 직접 요청할 때는 편한 언어로 작성하세요.",
+      "원하는 결과로 가이드 찾기",
+      "‘저장한 링크는 중복 없이 하나씩’처럼 원하는 결과를 설명하세요. AI가 관련 가이드를 찾아 영어 Markdown을 읽습니다. 요청은 편한 언어로 작성하고 기술 이름은 몰라도 됩니다.",
     ],
     [
       "비교하고 결정한 뒤 만들기",
       "예: ‘서점 장바구니를 만들고 싶어. 미결정 동작을 전부 질문하고 완료 조건을 작성해줘.’ 추천이 강해도 결정은 필요합니다.",
     ],
     [
-      "범위를 정해 위임하기",
-      "예: ‘확정된 레이아웃 안에서 간격을 골라주고 이유를 보고해줘.’ 간격 위임이지 수익 모델 위임이 아닙니다. 자료 접근에 실패하면 밝히도록 합니다.",
+      "내부 구현은 AI에게 맡기기",
+      "AI는 합의된 요구 안에서 자료구조와 문서 형식을 스스로 정합니다. 프로젝트의 선택도 명시적으로 범위를 정해 위임할 수 있습니다. 제품 규칙이 빠졌거나 비용·운영 제약이 바뀌면 사용자에게 확인합니다.",
     ],
   ],
   ja: [
@@ -50,16 +50,16 @@ const steps = {
       "下の文章をAIに渡します。作業前にファイルを取得し、規則を要約するよう頼みます。",
     ],
     [
-      "用語を探して原文を読む",
-      "catalog.jsonでSRS、요구사항、要件を探すと同じ記事IDに届きます。英語のMarkdownリンクを読ませます。ご自身の依頼は使いやすい言語で入力してください。",
+      "望む結果からガイドを探す",
+      "「保存したリンクは重複なく一つずつ」のように結果を説明します。AIが関連ガイドを探し、英語のMarkdownを読みます。依頼は使いやすい言語で書き、技術名は知らなくても構いません。",
     ],
     [
       "比較し、決定してから作る",
       "例：「書店のカートを作りたい。未決定の動作をすべて質問して、受け入れ条件を作って」。強い推薦にも決定が必要です。",
     ],
     [
-      "範囲を限定して委任する",
-      "例：「承認済みレイアウト内の間隔を選び、理由を報告して」。間隔の委任であって収益モデルの委任ではありません。取得失敗は報告させます。",
+      "内部実装をAIに任せる",
+      "AIは合意した要件内でデータ構造と文書形式を自分で選びます。全体の判断も明示的に範囲を定めて委任できます。製品規則が不明な場合や費用・運用制約が変わる場合は確認します。",
     ],
   ],
 }[lang];

@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import matter from "gray-matter";
 import {
-  candidates,
+  activeCandidates as candidates,
   conceptSections,
   comparisonKeys,
   candidateStatus,

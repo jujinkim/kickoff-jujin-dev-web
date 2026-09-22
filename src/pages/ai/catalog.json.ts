@@ -1,7 +1,7 @@
-import { published, articleUrl, markdownUrl, isStale } from "../../lib/content";
-import categories from "../../data/categories.json";
+import { listed, articleUrl, markdownUrl, isStale } from "../../lib/content";
+import { activeTaxonomy as categories } from "../../lib/catalog";
 export async function GET() {
-  const all = await published();
+  const all = await listed();
   const ids = [...new Set(all.map((a) => a.data.articleId))].sort();
   const articles = ids.map((id) => {
     const translations = all.filter((a) => a.data.articleId === id);
@@ -10,7 +10,7 @@ export async function GET() {
       id,
       kind: original.data.kind,
       category: original.data.category,
-      related: original.data.related,
+      related: original.data.related.filter((id) => ids.includes(id)),
       example: original.data.example,
       translations: Object.fromEntries(
         translations.map((a) => [

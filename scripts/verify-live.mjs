@@ -1,7 +1,17 @@
+import { isListedArticle } from "./catalog-data.mjs";
+import { readArticles } from "./validate-content.mjs";
 import { designRegistry } from "./design-registry.mjs";
 const origin = process.env.SITE_ORIGIN ?? "https://jujin.dev";
 let failed = 0;
-const styles = Object.keys(designRegistry);
+const activeArticles = readArticles().filter(
+  (a) =>
+    a.data.lang === "en" &&
+    a.data.status === "published" &&
+    isListedArticle(a.data),
+);
+const styles = activeArticles
+  .filter((a) => designRegistry[a.data.articleId])
+  .map((a) => a.data.articleId);
 async function check(path, expected) {
   try {
     const url = new URL(path, origin);
@@ -51,12 +61,15 @@ for (const lang of ["en", "ko", "ja"]) {
   ]);
 }
 await check("/llms.txt", "/ai/catalog.json");
-await check("/ai/instructions.md", "EVERY unresolved choice");
+await check(
+  "/ai/instructions.md",
+  "Do not ask users to choose every internal implementation detail",
+);
 const catalog = await check("/ai/catalog.json", '"schemaVersion": 1');
 if (catalog) {
   try {
-    if (JSON.parse(catalog).articles.length !== 30)
-      throw new Error("Expected exactly 30 articles");
+    if (JSON.parse(catalog).articles.length !== activeArticles.length)
+      throw new Error(`Expected ${activeArticles.length} active articles`);
   } catch (error) {
     failed++;
     console.error(error.message);

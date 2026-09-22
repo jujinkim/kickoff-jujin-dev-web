@@ -1,9 +1,9 @@
-import taxonomy from "../data/categories.json";
-import { published, articleUrl } from "./content";
+import { activeTaxonomy as taxonomy } from "./catalog";
+import { listed, articleUrl } from "./content";
 import { languages, type Lang } from "./i18n";
 const site = "https://jujin.dev";
 export async function sitemap(lang: Lang) {
-  const all = await published();
+  const all = await listed();
   const entries = [
     "",
     "start/",

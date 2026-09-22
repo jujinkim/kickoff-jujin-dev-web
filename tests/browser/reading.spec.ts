@@ -1,3 +1,4 @@
+import { isListedArticle } from "../../scripts/catalog-data.mjs";
 import { designRegistry } from "../../scripts/design-registry.mjs";
 import { test, expect } from "@playwright/test";
 import { readArticles } from "../../scripts/validate-content.mjs";
@@ -23,7 +24,14 @@ test("published introductions stay concise and localized catalog images load", a
     await page.goto(`/${lang}/catalog/`);
     await page.locator('button[data-view="card"]').click();
     const images = page.locator(".style-preview-image");
-    await expect(images).toHaveCount(Object.keys(designRegistry).length);
+    await expect(images).toHaveCount(
+      readArticles().filter(
+        (a) =>
+          a.data.lang === lang &&
+          isListedArticle(a.data) &&
+          designRegistry[a.data.articleId],
+      ).length,
+    );
     for (const img of await images.all()) {
       await img.scrollIntoViewIfNeeded();
       await expect(img).toHaveAttribute("alt", /.+/);

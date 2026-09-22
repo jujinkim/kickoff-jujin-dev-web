@@ -1,3 +1,4 @@
+import { isListedArticle } from "../scripts/catalog-data.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
@@ -76,20 +77,21 @@ test("all platform output paths retain API v1, identity, sources and localized d
   for (const a of platforms) {
     const { articleId: id, lang } = a.data,
       entry = catalog.articles.find((a) => a.id === id);
-    assert.ok(entry);
+    assert.equal(!!entry, isListedArticle(a.data));
     const html = readFileSync(`dist/${lang}/catalog/${id}/index.html`, "utf8");
     assert.ok(html.includes(`data-demo="${id}"`));
     assert.ok(html.includes(`data-comment-term="${id}"`));
     assert.ok(html.includes(`data-term="${id}"`));
-    assert.ok(html.includes(`data-pagefind-body`));
+    assert.equal(html.includes(`data-pagefind-body`), isListedArticle(a.data));
     const md = readFileSync(`dist/${lang}/catalog/${id}.md`, "utf8");
     assert.ok(md.includes("Language: en"));
     assert.ok(md.includes("## Example"));
     assert.ok(md.includes("https://"));
-    assert.ok(
+    assert.equal(
       readFileSync(`dist/sitemap-${lang}.xml`, "utf8").includes(
         `/${lang}/catalog/${id}/`,
       ),
+      isListedArticle(a.data),
     );
     assert.ok(existsSync(`dist/thumbnails/${id}-${lang}.png`));
   }

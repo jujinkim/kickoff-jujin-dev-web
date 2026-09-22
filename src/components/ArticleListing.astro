@@ -2,14 +2,14 @@
 import Card from "./Card.astro";
 import { strings, categoryNames, type Lang } from "../lib/i18n";
 import { taxonomy, ancestors, childrenOf } from "../lib/catalog";
-import { published } from "../lib/content";
+import { listed } from "../lib/content";
 interface Props {
   lang: Lang;
   kind: "guide" | "concept";
 }
 const { lang, kind } = Astro.props;
 const t = strings[lang];
-const articles = (await published()).filter(
+const articles = (await listed()).filter(
   (a) => a.data.lang === lang && a.data.kind === kind,
 );
 const orderedCategories = (parent: string | null): typeof taxonomy =>

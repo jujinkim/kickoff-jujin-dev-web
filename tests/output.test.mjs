@@ -3,9 +3,14 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { readArticles } from "../scripts/validate-content.mjs";
-import { candidates } from "../scripts/catalog-data.mjs";
+import {
+  activeCandidates as candidates,
+  isListedArticle,
+} from "../scripts/catalog-data.mjs";
 const read = (p) => readFileSync(`dist/${p}`, "utf8");
-const published = readArticles().filter((a) => a.data.status === "published");
+const published = readArticles().filter(
+  (a) => a.data.status === "published" && isListedArticle(a.data),
+);
 const publishedEnglish = published.filter((a) => a.data.lang === "en");
 const catalog = JSON.parse(read("ai/catalog.json"));
 test("AI aliases resolve to English Markdown while HTML stays localized", () => {
@@ -91,7 +96,7 @@ test("AI rules cover ambiguity, strong recommendation, delegated scope, missing 
   ])
     assert.ok(text.includes(scenario));
   for (const rule of [
-    "EVERY unresolved choice",
+    "Do not ask users to choose every internal implementation detail",
     "Do not ask again",
     "accept the recommendation",
     "search keywords",
@@ -124,7 +129,7 @@ test("legacy HTML redirects and Markdown preserve guide content and identity", (
     }
 });
 test("published concepts and pending candidates remain separate", () => {
-  assert.equal(catalog.articles.filter((a) => a.kind === "guide").length, 12);
+  assert.equal(catalog.articles.filter((a) => a.kind === "guide").length, 9);
   assert.equal(
     catalog.articles.filter((a) => a.kind === "concept").length,
     publishedEnglish.filter((a) => a.data.kind === "concept").length,
@@ -181,7 +186,7 @@ test("article and category tables render the same reviewed summaries", () => {
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#39;");
   for (const { data } of readArticles().filter(
-    (a) => a.data.kind === "concept",
+    (a) => a.data.kind === "concept" && isListedArticle(a.data),
   )) {
     const page = read(`${data.lang}/catalog/${data.articleId}/index.html`);
     const category = read(

@@ -1,3 +1,4 @@
+import { isListedArticle } from "../../scripts/catalog-data.mjs";
 import { test, expect } from "@playwright/test";
 import {
   designRegistry as registry,
@@ -39,10 +40,13 @@ test.beforeEach(async ({ page }) => {
   await page.route("https://giscus.app/**", (route) => route.abort());
 });
 for (const lang of languages) {
-  test(`${lang}: every published article is searchable`, async ({ page }) => {
+  test(`${lang}: every active article is searchable`, async ({ page }) => {
     test.setTimeout(120_000);
     for (const { data } of articles.filter(
-      (a) => a.data.lang === lang && a.data.status === "published",
+      (a) =>
+        a.data.lang === lang &&
+        a.data.status === "published" &&
+        isListedArticle(a.data),
     )) {
       const section = data.kind === "guide" ? "guides" : "catalog";
       await page.goto(`/${lang}/${section}/`);

@@ -1,8 +1,14 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import type { Lang } from "./i18n";
+import { isListedArticle } from "./catalog-scope";
 export type Article = CollectionEntry<"articles">;
 export const published = () =>
   getCollection("articles", ({ data }) => data.status === "published");
+export const listed = () =>
+  getCollection(
+    "articles",
+    ({ data }) => data.status === "published" && isListedArticle(data),
+  );
 export const articleUrl = (article: Article) =>
   `/${article.data.lang}/${article.data.kind === "guide" ? "guides" : "catalog"}/${article.data.articleId}/`;
 export const markdownUrl = (article: Article) =>

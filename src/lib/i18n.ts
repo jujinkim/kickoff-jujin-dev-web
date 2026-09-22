@@ -2,7 +2,10 @@ export const languages = ["en", "ko", "ja"] as const;
 export type Lang = (typeof languages)[number];
 export const languageNames = { en: "English", ko: "한국어", ja: "日本語" };
 import taxonomy from "../data/categories.json";
-export const categories = taxonomy.filter((c) => !c.parent).map((c) => c.id);
+import { activeTaxonomy } from "./catalog";
+export const categories = activeTaxonomy
+  .filter((c) => !c.parent)
+  .map((c) => c.id);
 export const categoryNames: Record<
   Lang,
   Record<string, string>
@@ -25,11 +28,11 @@ export const strings = {
     eyebrow: "A FIELD GUIDE FOR BUILDING THINGS",
     hero: "Know what you want.\nThen tell the machine.",
     intro:
-      "Less magic prompting. More knowing what things are called. Explore examples, compare your options, and give AI a brief worth building.",
+      "Describe what you want to build. Explore examples, choose the direction of your project, and let AI work out the implementation.",
     browse: "Explore the catalog",
     learn: "A good place to start",
     recent: "Freshly revised",
-    categories: "Six shelves. Fewer guesses.",
+    categories: "Choose the direction of your project.",
     all: "All topics",
     search: "Search the full text",
     searchHint: "Try requirements, layout, or subscription…",
@@ -59,7 +62,7 @@ export const strings = {
       "Translation needs an update. Check the English original for the latest revision.",
     missing: "Not translated — read English",
     original: "English original",
-    footer: "A little vocabulary. A lot less guesswork.",
+    footer: "Clear goals. Concrete project choices.",
     count: "field notes",
     back: "Back to catalog",
     aiIntro: "Give your AI a reading list. And some boundaries.",
@@ -87,11 +90,11 @@ export const strings = {
     eyebrow: "만들고 싶은 사람을 위한 개발 도감",
     hero: "원하는 걸 알고.\n기계에게 시키세요.",
     intro:
-      "마법의 프롬프트보다 정확한 이름 하나. 예시를 보고, 선택지를 비교하고, AI에게 만들 만한 지시를 주세요.",
+      "만들고 싶은 결과에서 시작하세요. 예시를 보고 프로젝트의 구조와 방향을 정하면, AI가 구현을 구체화합니다.",
     browse: "카탈로그 둘러보기",
     learn: "여기서 시작하세요",
     recent: "최근 손본 글",
-    categories: "여섯 칸의 지식. 줄어드는 추측.",
+    categories: "프로젝트의 방향을 정하세요.",
     all: "전체 분류",
     search: "본문 검색",
     searchHint: "요구사항, 레이아웃, 구독…",
@@ -148,11 +151,11 @@ export const strings = {
     eyebrow: "作りたい人のための開発図鑑",
     hero: "欲しいものを知る。\nそれから機械に頼む。",
     intro:
-      "魔法のプロンプトより、正確な名前。例を見て、選択肢を比べて、AIに作る価値のある指示を渡しましょう。",
+      "作りたい結果から始めましょう。実例を見て構成と方向を決め、実装の具体化はAIに任せます。",
     browse: "カタログを見る",
     learn: "まずはここから",
     recent: "最近の改訂",
-    categories: "六つの棚。減らせる思い込み。",
+    categories: "プロジェクトの方向を決めましょう。",
     all: "すべての分類",
     search: "本文を検索",
     searchHint: "要件、レイアウト、サブスクリプション…",

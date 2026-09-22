@@ -7,7 +7,11 @@ import {
   monetizationCategories,
   validateDesigns,
 } from "../scripts/design-registry.mjs";
-import { candidates, taxonomy } from "../scripts/catalog-data.mjs";
+import {
+  candidates,
+  taxonomy,
+  isListedArticle,
+} from "../scripts/catalog-data.mjs";
 import { articleOverviewSeconds } from "../src/lib/reading-budget.mjs";
 import { priceCents } from "../src/components/demos/monetization-math.mjs";
 const articles = readArticles();
@@ -177,7 +181,10 @@ test("HTML, Markdown, search, sitemap and AI output retain stable identity and v
     assert.equal(
       search.languages[lang].page_count,
       articles.filter(
-        (a) => a.data.status === "published" && a.data.lang === lang,
+        (a) =>
+          a.data.status === "published" &&
+          a.data.lang === lang &&
+          isListedArticle(a.data),
       ).length,
     );
   for (const a of money) {

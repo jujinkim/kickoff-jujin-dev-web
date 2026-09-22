@@ -1,12 +1,12 @@
 # Catalog and guide authoring
 
-This guide describes the authoring workflow. Design implementation follows [Design demos](design-demos.md). 70 concepts are published in three languages; 8 candidates remain planned. Current counts and release reviews live in the [writing index](catalog-writing/README.md). The earlier [styles review](catalog-writing/styles-review.md) is historical.
+This guide describes the authoring workflow. Design implementation follows [Design demos](design-demos.md). 64 concepts and 9 guides are active in three languages; no candidates remain pending. See [catalog scope](catalog-scope.md). Current counts and release reviews live in the [writing index](catalog-writing/README.md). The earlier [styles review](catalog-writing/styles-review.md) is historical.
 
 ## Shared data and routes
 
 - `src/data/categories.json` is the single taxonomy: stable language-independent ID, nullable parent, localized names/descriptions, sibling order. Roots are navigation shelves; concepts belong to one leaf comparison group.
-- `src/data/candidates.json` holds 78 candidates: stable ID, leaf category, en/ko/ja titles, scope, comparison peers, related guide IDs, writing order. Public pending names and the writing queue use this file.
-- `npm run content:new -- --list` shows writing order and computed English status. No file means `planned`; existing `draft` or `published` frontmatter determines subsequent states. Public pages expose only published text; an untranslated or draft candidate still displays its fixed candidate name as coming soon, with no article link.
+- `src/data/candidates.json` holds 70 existing concept records (64 active, 6 reference-only): stable ID, leaf category, en/ko/ja titles, scope, comparison peers, related guide IDs, writing order. Public pending names and the writing queue filter this file through `src/data/catalog-retirements.json`. Retired categories and guide IDs point to an active integrated guide; their existing paths and comment identities remain intact. The eight unwritten data-structure records were removed.
+- `npm run content:new -- --list` shows active writing order and computed English status. Retired concepts cannot be scaffolded. No file means `planned`; existing `draft` or `published` frontmatter determines subsequent states. Public pages expose only published text; an untranslated or draft candidate still displays its fixed candidate name as coming soon, with no article link.
 - Concepts: `/{lang}/catalog/{articleId}/`; categories: `/{lang}/catalog/categories/{categoryId}/`; guides: `/{lang}/guides/{articleId}/`. Article Markdown uses `/en/catalog/{articleId}.md` or `/en/guides/{articleId}.md` for every UI language. Existing localized Markdown URLs serve the English original; keep translated sources for HTML.
 - Legacy guide `/catalog/{articleId}/` routes are noindex static redirects with canonical guide links. Legacy Markdown serves the same source and declares the new canonical. IDs, comments and translation identity do not change.
 - `/ai/catalog.json` schema version 1 includes `kind`, taxonomy hierarchy and published comparison summaries. Candidates are not articles. Draft bodies never enter HTML, Markdown, Pagefind, sitemap, llms.txt or AI article lists.
@@ -42,9 +42,9 @@ Verify original authors and official sources before asserting attribution, defin
 
 Write and review English first; Korean/Japanese preserve scope, evidence and caveats. Keep `articleId`, `kind`, `category`, `related` and preview choice consistent across translations. `sourceRevision` identifies reviewed English revision. Set `published` only after editorial review; placeholders must not remain.
 
-The design, platform, monetization, requirements, architecture-boundary and service-decomposition groups are complete; data-structure groups remain planned. For new designs, use [the demo brief](templates/design-demo-brief.md) and [implementation workflow](design-demos.md). Review related concepts together; remaining writing order comes from candidate `order`.
+The active design, platform/hosting, monetization, architecture-boundary and service-decomposition groups are complete. Select new topics by project-level impact: product behavior, overall structure or visual direction, toolchain, operating responsibility and business choices. Internal data structures, object details, document formats and rollout mechanics belong to AI implementation guidance. For new designs, use [the demo brief](templates/design-demo-brief.md) and [implementation workflow](design-demos.md). Review related concepts together; remaining writing order comes from candidate `order`.
 
-Use `related` IDs to link published concepts and guides. Rendering adds incoming relationships so a concept linked to a guide appears back on that guide. Draft relationships never render. References to an unissued peer stay prose or candidate metadata until that peer is published; do not create broken body links.
+Use `related` IDs to link published concepts and guides. Rendering adds incoming relationships among active entries so a concept linked to a guide appears back on that guide. Reference-only articles do not appear in recommendations, AI relationships, Pagefind, sitemaps or selection menus. Draft relationships never render. References to an unissued peer stay prose or candidate metadata until that peer is published; do not create broken body links.
 
 ## Gates
 

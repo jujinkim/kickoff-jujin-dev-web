@@ -2,8 +2,8 @@
 kind: guide
 articleId: "srs"
 lang: "en"
-title: "SRS: make ‘done’ mean something"
-summary: "Turn a wish into requirements someone can actually test."
+title: "Requirements: agree on what done means"
+summary: "Describe the behavior; AI writes requirements and decision records."
 category: "planning"
 aliases:
   [
@@ -15,23 +15,23 @@ aliases:
     "要件",
     "受け入れ条件",
   ]
-related: ["adr", "ooad"]
+related: ["architecture", "shipping"]
 example: "spec"
 status: "published"
-revision: 2
-sourceRevision: 2
-updated: "2026-09-21"
-aiPrompt: "For the bookshop cart, first read our agreed requirements. List unresolved questions about stock, guest checkout, and failure behavior. Ask me to choose before implementing. Produce numbered requirements, exclusions, acceptance examples, and a small task list. Do not decide unresolved product behavior without explicit delegation."
+revision: 3
+sourceRevision: 3
+updated: "2026-09-23"
+aiPrompt: "Read our agreed requirements. Ask only about unresolved product behavior and constraints, including duplicate handling, order, stock, guest checkout and recovery. Turn the answers into numbered requirements, acceptance criteria and tasks. Write useful user stories, use cases or job stories yourself, without asking me to choose a document format. Record significant decisions, alternatives, status and revisit conditions. Choose internal data structures yourself; do not infer missing product rules."
 ---
 
 ## Concept
 
-A software requirements specification (SRS) describes observable behavior and constraints. Acceptance criteria make requirements checkable.
+Requirements describe observable behavior and constraints; acceptance criteria make them checkable. [NASA](https://swehb.nasa.gov/spaces/SWEHBVD/pages/102695421/SWE-050%2B-%2BSoftware%2BRequirements)
 
 ## Example
 
-Given an empty cart, adding the same book twice creates one row with quantity 2. Unavailable stock leaves it unchanged.
+An empty cart receives the same book twice: one row, quantity two. Unavailable stock leaves it unchanged. The user confirms this behavior; AI chooses storage structures.
 
 ## When to choose it
 
-Checklists are lightweight; user stories explain motivation; detailed specifications coordinate teams but need more maintenance. Write numbered requirements with success and failure cases. Add measurable limits only with a justified measurement method. [NASA](https://swehb.nasa.gov/display/SWEHBVD/SWE-050+-+Software+Requirements)
+Use before development to settle scope, motivation, success and failure. AI writes suitable stories or scenarios; users need not select document formats. Keep records proportional: decision records preserve important choices, context and consequences, but need maintenance. AI records these alongside acceptance criteria. [AWS](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html)

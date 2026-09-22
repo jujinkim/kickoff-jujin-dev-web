@@ -18,7 +18,9 @@ Review these scenarios with expected responses in the PR:
 - Description already supplied: reuse it; ask only for missing name/context and necessary follow-ups.
 - Unsure or tired user: explain a recommendation; uncertainty is not delegation.
 - Scoped delegation: choose inside scope, record reasons, ask about choices outside scope.
-- Full catalog: all categories and published entries offered; pending names labeled, no fabricated bodies; unrelated groups have a reason.
+- Active catalog: cover the five project-level areas; discuss only relevant user-owned choices. Use guides to express constraints. Never reintroduce reference-only topics as required choices.
+- Internal implementation: choose collections, classes and document formats within approved requirements; ask only when product behavior or material constraints are missing.
+- Operations: derive release steps from agreed downtime, recovery and budget; planning does not authorize deployment or spending.
 - Parent service or sensitive constraint: preserve inherited constraints in architecture and design.
 - Inaccessible catalog or stale translation: disclose missing evidence or use the available original.
 - Approved plan and development request: execute authorized scope without repeating permission questions.
@@ -26,6 +28,8 @@ Review these scenarios with expected responses in the PR:
 Automated checks verify publication and UI wiring; they do not prove that external assistants obey the document. Include manual scenario review when changing behavior.
 
 ## Version policy
+
+Maintainer-approved scope correction, 2026-09-23: guideline v1 revision 2 clarifies user-owned project choices and AI-owned internal implementation, integrates documentation and release planning, and keeps existing v1 URLs. Keep this explicit revision in Git and the release history; it is not a general exception for future unreviewed workflow changes.
 
 Guideline major versions (`v1`, `v2`, …) are independent of API `schemaVersion: 1` and article revisions. Keep old major HTML and Markdown URLs available. Versioned prompts remain pinned to their chosen major version. Localized startup prompts all use `/ai/startup/latest.md`; pinned prompts use `/ai/startup/v1.md`. Public Markdown is English-only. Existing `/{lang}/start/*.md` URLs serve the same English source for compatibility. Tell users to write their own requests and project descriptions in their preferred language. These endpoints return Markdown directly, generated at build time, with the actual version in the document. There is no separate latest body to edit.
 
