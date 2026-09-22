@@ -601,5 +601,35 @@
       "ja": "解決策を選ぶ前に状況・動機・望む成果を説明します。"
     },
     "capture": "[data-demo=\"job-story\"]"
+  },
+  "layered-architecture": {
+    "component": "LayeredArchitecture",
+    "caption": {
+      "en": "Logical layers can share one deployment",
+      "ko": "논리 계층은 한 배포 안에 함께 둘 수 있습니다",
+      "ja": "論理レイヤーは一つの配置に共存できます"
+    },
+    "mode": "static",
+    "capture": "[data-demo=\"layered-architecture\"]"
+  },
+  "hexagonal-architecture": {
+    "component": "HexagonalArchitecture",
+    "caption": {
+      "en": "Swap edge technology, keep application behavior",
+      "ko": "연결 기술을 바꿔도 애플리케이션 동작은 유지",
+      "ja": "接点の技術を替えてもアプリケーションの動作は保つ"
+    },
+    "mode": "static",
+    "capture": "[data-demo=\"hexagonal-architecture\"]"
+  },
+  "clean-architecture": {
+    "component": "CleanArchitecture",
+    "caption": {
+      "en": "Dependency direction is not call direction",
+      "ko": "의존 방향과 호출 방향은 다릅니다",
+      "ja": "依存の向きと呼び出しの向きは別です"
+    },
+    "mode": "static",
+    "capture": "[data-demo=\"clean-architecture\"]"
   }
 }

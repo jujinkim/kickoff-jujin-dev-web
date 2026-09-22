@@ -1,6 +1,6 @@
 # Architecture boundaries & dependencies / 아키텍처의 경계·의존 구조 / 境界と依存構造
 
-Group ID: `boundaries` · Checked: 2026-09-21 · Writing designs, not article bodies.
+Group ID: `boundaries` · Checked: 2026-09-22. Published concise articles and static diagrams now implement this research brief. See [source refresh](../boundaries-sources.md), [visualization briefs](../../design-briefs/) and [release review](../../boundaries-review.md).
 
 ## Shared case and comparison contract
 

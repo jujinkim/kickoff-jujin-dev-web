@@ -1,6 +1,6 @@
 # Clean architecture / 클린 아키텍처 / クリーンアーキテクチャ
 
-Writing design only. ID: `clean-architecture` · Group: [boundaries](../groups/boundaries.md) · Queue order: 202 · Checked: 2026-09-21.
+Research brief; concise article and static diagram implemented. See [release review](../../boundaries-review.md). ID: `clean-architecture` · Group: [boundaries](../groups/boundaries.md) · Queue order: 202 · Checked: 2026-09-21.
 
 ## Reader question and scope
 
@@ -95,6 +95,6 @@ Facts: the definition and mechanism in sections 1–2 and source-tagged points a
 
 ## Draft handoff
 
-No blocking editorial decision remains within this scope. Write and review this group's English originals together, then translate to Korean and Japanese using the shared terms. Source refresh and the future visualization acceptance checks are drafting/publication gates, not completed runtime work. Keep candidates pending until separately reviewed and published.
+No blocking editorial decision remains within this scope. Write and review this group's English originals together, then translate to Korean and Japanese using the shared terms. Source refresh and the future visualization acceptance checks are drafting/publication gates, not completed runtime work. Published implementation and verification are recorded in the linked release review.
 
 [clean]: https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html

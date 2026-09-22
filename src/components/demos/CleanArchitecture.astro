@@ -1,0 +1,254 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { boundariesText } from "./boundaries";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  b = boundariesText(lang);
+---
+
+<section data-demo="clean-architecture" lang={lang}>
+  <header>
+    <p class="eyebrow">{b.fiction}</p>
+    <h2>
+      {t(
+        "Dependencies point toward policy",
+        "의존성은 정책을 향해",
+        "依存は方針へ向かう",
+      )}
+    </h2>
+    <p data-fixture>{b.fixture}</p>
+  </header>
+  <div class="deployment" data-process>
+    <p class="process-label">{b.process}</p>
+    <div class="ring framework" data-ring="framework">
+      <h3>
+        {t(
+          "1 · Frameworks & drivers",
+          "1 · 프레임워크·드라이버",
+          "1 · フレームワーク・ドライバー",
+        )}
+      </h3>
+      <p>
+        HTTP / CLI · {b.memory} / {b.database}
+      </p>
+      <div class="inward" data-import>
+        ↓ {b.imports}
+      </div>
+      <div class="ring adapters" data-ring="adapters">
+        <h3>{t("2 · Adapters", "2 · 어댑터", "2 · アダプター")}</h3>
+        <p>
+          {t(
+            "Controllers map IDs; storage adapters map records",
+            "컨트롤러는 ID 변환 · 저장 어댑터는 레코드 변환",
+            "コントローラーはIDを変換、保存アダプターはレコードを変換",
+          )}
+        </p>
+        <div class="inward" data-import>
+          ↓ {b.imports}
+        </div>
+        <div class="ring application" data-ring="application">
+          <h3>
+            {t(
+              "3 · Application policy",
+              "3 · 애플리케이션 정책",
+              "3 · アプリケーションの方針",
+            )}
+          </h3>
+          <p>
+            <strong>SaveArticle</strong>
+          </p>
+          <p data-port-owner>
+            {t(
+              "Owns the SaveRepository interface",
+              "SaveRepository 인터페이스 소유",
+              "SaveRepositoryインターフェースを所有",
+            )}
+          </p>
+          <div class="inward" data-import>
+            ↓ {b.imports}
+          </div>
+          <div class="ring domain" data-ring="domain">
+            <h3>
+              {t("4 · Domain policy", "4 · 도메인 정책", "4 · ドメインの方針")}
+            </h3>
+            <p>
+              <strong>SavedArticle</strong>
+            </p>
+            <p>
+              {t(
+                "Rejects empty reader/article IDs",
+                "빈 독자·문서 ID 거부",
+                "空の読者・記事IDを拒否",
+              )}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="crossing">
+      <h3>{t("At the storage boundary", "저장 경계에서", "保存の境界で")}</h3>
+      <p class="source" data-storage-import>
+        <strong>← {b.imports}</strong>
+        <span>
+          {t(
+            "SaveRepository (inside) ← storage adapter",
+            "SaveRepository (안쪽) ← 저장 어댑터",
+            "SaveRepository（内側）← 保存アダプター",
+          )}
+        </span>
+      </p>
+      <p class="call" data-call>
+        <strong>{b.calls} →</strong>
+        <span>
+          {t(
+            "SaveArticle → via SaveRepository → storage adapter (outside)",
+            "SaveArticle → SaveRepository 경유 → 저장 어댑터 (바깥)",
+            "SaveArticle → SaveRepository経由 → 保存アダプター（外側）",
+          )}
+        </span>
+      </p>
+    </div>
+  </div>
+  <p class="rule" data-boundary>
+    {t(
+      "Plain IDs and Saved results cross the boundary; ORM rows stay outside. Four bands explain this example, not a required folder structure.",
+      "경계에는 단순 ID·저장 완료 결과만 전달. ORM 행은 바깥에 유지. 네 영역은 예시이며 필수 폴더 구조가 아닙니다.",
+      "境界には単純なIDと保存完了の結果のみを渡す。ORM行は外に残す。四つの領域は例であり、必須のフォルダー構成ではありません。",
+    )}
+  </p>
+  <ul class="outcomes" data-outcomes>
+    <li>{b.outcome}</li>
+    <li>{b.failure}</li>
+  </ul>
+  <p class="footnote">{b.alternatives}</p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 4vw, 28px);
+    background: #f6f1e9;
+    color: #493621;
+    border: 1px solid #a6947d;
+    border-radius: 12px;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3,
+  ul {
+    margin: 0;
+  }
+  .eyebrow {
+    color: #493621;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+    line-height: 1.3;
+    margin: 0.4rem 0 0.7rem;
+  }
+  h3 {
+    font-size: 0.85rem;
+  }
+  .deployment {
+    border: 2px dotted #866d4c;
+    padding: 1rem;
+    margin: 1.2rem 0;
+  }
+  .process-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+  .ring {
+    border: 1px solid #8d795c;
+    padding: 0.8rem;
+    border-radius: 12px;
+  }
+  .ring p {
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }
+  .framework {
+    background: #fff;
+  }
+  .adapters {
+    background: #f7eddd;
+  }
+  .application {
+    background: #e9e0cb;
+  }
+  .domain {
+    background: #fffdf3;
+    border: 2px solid #66522f;
+  }
+  .inward {
+    border-left: 2px solid #66522f;
+    margin: 0.6rem 0 0.6rem 0.5rem;
+    padding-left: 0.5rem;
+    font-size: 0.75rem;
+  }
+  .crossing {
+    margin-top: 1rem;
+  }
+  .crossing p {
+    display: grid;
+    gap: 0.25rem;
+    margin-top: 0.6rem;
+    padding: 0.6rem 0.7rem;
+    background: #fff;
+    font-size: 0.8rem;
+  }
+  .source {
+    border-left: 3px solid #66522f;
+  }
+  .call {
+    border-left: 3px dashed #66522f;
+  }
+  .rule,
+  .outcomes {
+    font-size: 0.85rem;
+  }
+  .rule {
+    font-weight: 600;
+  }
+  .outcomes {
+    padding-left: 1.2rem;
+    margin-top: 1rem;
+  }
+  .outcomes li + li {
+    margin-top: 0.35rem;
+  }
+  .footnote {
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
+  }
+  @container (max-width: 430px) {
+    .deployment {
+      padding: 0.6rem;
+    }
+    .ring {
+      padding: 0.5rem;
+      border-radius: 6px;
+    }
+    .inward {
+      margin-left: 0;
+    }
+  }
+  @media (forced-colors: active) {
+    .deployment,
+    .ring,
+    .inward,
+    .source,
+    .call {
+      border-color: CanvasText;
+    }
+  }
+</style>

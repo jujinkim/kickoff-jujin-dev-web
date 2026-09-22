@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { readArticles } from "../scripts/validate-content.mjs";
+import { candidates } from "../scripts/catalog-data.mjs";
 const read = (p) => readFileSync(`dist/${p}`, "utf8");
 const published = readArticles().filter((a) => a.data.status === "published");
 const publishedEnglish = published.filter((a) => a.data.lang === "en");
@@ -138,11 +139,31 @@ test("published concepts and pending candidates remain separate", () => {
       assert.ok(read("llms.txt").includes(`/en/catalog/${data.articleId}.md`));
     }
     assert.ok(html.includes('class="comparison"'));
-    const pending = read(`${lang}/catalog/categories/boundaries/index.html`);
-    assert.equal([...pending.matchAll(/data-candidate=/g)].length, 3);
-    assert.ok(
-      !existsSync(`dist/${lang}/catalog/layered-architecture/index.html`),
-    );
+    for (const category of new Set(candidates.map((c) => c.category))) {
+      const categoryHtml = read(
+        `${lang}/catalog/categories/${category}/index.html`,
+      );
+      const members = candidates.filter((c) => c.category === category);
+      const isPublished = (id) =>
+        published.some((a) => a.data.articleId === id && a.data.lang === lang);
+      assert.equal(
+        [...categoryHtml.matchAll(/data-candidate=/g)].length,
+        members.filter((c) => !isPublished(c.id)).length,
+        `${lang}/${category}: pending names`,
+      );
+      for (const candidate of members) {
+        assert.equal(
+          existsSync(`dist/${lang}/catalog/${candidate.id}/index.html`),
+          isPublished(candidate.id),
+          `${lang}/${candidate.id}: only published candidates have pages`,
+        );
+        assert.equal(
+          categoryHtml.includes(`href="/${lang}/catalog/${candidate.id}/"`),
+          isPublished(candidate.id),
+          `${lang}/${candidate.id}: only published candidates have links`,
+        );
+      }
+    }
   }
   const manifest = JSON.parse(read("pagefind/pagefind-entry.json"));
   assert.equal(

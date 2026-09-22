@@ -27,8 +27,8 @@ keep their control baseline inside each component; they share only data and
 behavior. Do not add a global visual theme.
 
 The current release contains 22 design concepts, 15 platform concepts, 24
-monetization concepts and 3 requirements concepts: **49 interactive demos and 15 static diagrams**, 192 localized
-concept articles and 36 guide articles (228 published documents). Fourteen
+monetization concepts, 3 requirements concepts and 3 architecture-boundary concepts: **49 interactive demos and 18 static diagrams**, 201 localized
+concept articles and 36 guide articles (237 published documents). Eleven
 candidates remain planned. Counts describe this release, not runtime allowlists.
 
 Current monetization evidence: [monetization review](monetization-review.md).
@@ -92,7 +92,7 @@ research lives in [catalog-writing](catalog-writing/README.md).
 1. Register a stable candidate in `src/data/candidates.json` and an existing
    leaf category in `src/data/categories.json`. Add a leaf if needed; descendants
    of `design`, all five platform groups, all seven monetization groups and
-   `requirements` participate in publication validation.
+   `requirements` and `boundaries` participate in publication validation.
    Extend `platformCategories` when introducing a new platform comparison group.
 2. Run `npm run content:new -- --id <id>` for all three draft files. The command
    prints this guide and template paths. Never overwrite an existing original.
@@ -383,3 +383,11 @@ The `requirements` group uses one signed-in commuter, unsaved A17 and a need to 
 Acceptance rules and failure-before-write outcomes are authored examples, not guarantees of the description format. Link saving does not promise offline reading. Each English Markdown body carries the corresponding numbered textual explanation. Static mode needs no Save control, artificial tab stops or reset; all content works without JavaScript.
 
 Read [source refresh](catalog-writing/requirements-sources.md), individual [briefs](design-briefs/) and [verification](requirements-review.md). The `requirements` category uses the same complete-publication gate as other demo categories. The normal sequential checks and first-thumbnail exception above apply.
+
+## Architecture boundary diagrams
+
+The `boundaries` group shares SaveArticle(R1, A17), initially unsaved, in one process. HTTP/CLI and memory/embedded database are alternative edges. Three independent static components show responsibility bands, ports and adapters, and nested policy boundaries. `boundaries.ts` shares only fixture text and terminology; it does not provide a visual template.
+
+Solid relations label source dependencies, dashed relations label runtime calls, and dotted enclosures label one process. Closed-layer dependencies descend; hexagonal storage adapters depend on the application-owned port; clean architecture distinguishes inward imports from calls outward through SaveRepository. All diagrams retain the same success, repeat, empty-ID and before-write failure policies. Static diagrams do not execute persistence or imply storage migration.
+
+Read the [source refresh](catalog-writing/boundaries-sources.md), [individual briefs](design-briefs/) and [release record](boundaries-review.md). The category participates in publication validation. Check localized reading order, pattern labels, forced colors, narrow widths and JavaScript-disabled output; normal sequential gates and the initial-thumbnail exception apply.

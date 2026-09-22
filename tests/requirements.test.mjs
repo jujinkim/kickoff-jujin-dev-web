@@ -7,16 +7,18 @@ import {
   validateDesigns,
 } from "../scripts/design-registry.mjs";
 
-test("requirements publication rejects missing diagrams, captures and stale translations", () => {
+test("planning publication rejects missing diagrams, captures and stale translations", () => {
   const articles = readArticles();
   assert.deepEqual(validateDesigns(articles), []);
-  const requirements = articles.filter(
-    (a) => a.data.category === "requirements" && a.data.lang === "en",
+  const planning = articles.filter(
+    (a) =>
+      ["requirements", "boundaries"].includes(a.data.category) &&
+      a.data.lang === "en",
   );
-  assert.equal(requirements.length, 3);
+  assert.equal(planning.length, 6);
   for (const {
     data: { articleId: id },
-  } of requirements) {
+  } of planning) {
     const registry = structuredClone(designRegistry);
     delete registry[id];
     assert.ok(

@@ -1,0 +1,288 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { boundariesText } from "./boundaries";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  b = boundariesText(lang);
+---
+
+<section data-demo="hexagonal-architecture" lang={lang}>
+  <header>
+    <p class="eyebrow">{b.fiction}</p>
+    <h2>
+      {t(
+        "Swap an edge, keep the application",
+        "연결부를 바꿔도 애플리케이션은 그대로",
+        "接点を替え、アプリケーションを保つ",
+      )}
+    </h2>
+    <p data-fixture>{b.fixture}</p>
+  </header>
+  <div class="deployment" data-process>
+    <p class="process-label">{b.process}</p>
+    <div class="ports-map">
+      <div class="edge" data-driving>
+        <h3>
+          {t(
+            "1 · Driving adapters",
+            "1 · 구동 어댑터",
+            "1 · 駆動するアダプター",
+          )}
+        </h3>
+        <ul>
+          <li>HTTP</li>
+          <li>CLI</li>
+        </ul>
+        <p class="import" data-import>
+          {t("Imports → input port", "참조 → 입력 포트", "参照 → 入力ポート")}
+        </p>
+      </div>
+      <div class="application" data-application>
+        <h3>
+          {t("2 · Application", "2 · 애플리케이션", "2 · アプリケーション")}
+        </h3>
+        <div class="port" data-port="input">
+          <span>{t("Input port", "입력 포트", "入力ポート")}</span>
+          <strong>SaveArticle</strong>
+        </div>
+        <p class="policy">
+          {t(
+            "Validate IDs, coordinate saving",
+            "ID 검증 · 저장 조율",
+            "IDの検証と保存の調整",
+          )}
+        </p>
+        <div class="port" data-port="output">
+          <span>
+            {t(
+              "Output port · owned here",
+              "출력 포트 · 이곳에서 소유",
+              "出力ポート · ここが所有",
+            )}
+          </span>
+          <strong>SaveRepository</strong>
+        </div>
+      </div>
+      <div class="edge" data-driven>
+        <h3>
+          {t(
+            "3 · Driven adapters",
+            "3 · 피구동 어댑터",
+            "3 · 駆動されるアダプター",
+          )}
+        </h3>
+        <ul>
+          <li>{b.memory}</li>
+          <li>{b.database}</li>
+        </ul>
+        <p class="import" data-import>
+          {t(
+            "SaveRepository ← adapter imports",
+            "SaveRepository ← 어댑터 참조",
+            "SaveRepository ← アダプターの参照",
+          )}
+        </p>
+      </div>
+    </div>
+    <div class="runtime" data-call>
+      <h3>{b.calls}</h3>
+      <ol>
+        <li>HTTP / CLI</li>
+        <li>SaveArticle</li>
+        <li>SaveRepository</li>
+        <li>
+          {b.memory} / {b.database}
+        </li>
+      </ol>
+      <p>
+        {t(
+          "Dashed path: the call reaches storage through the output port; Saved returns to the caller.",
+          "파선 경로: 출력 포트로 저장소 호출, 저장 완료는 호출자에게 반환.",
+          "破線の経路：出力ポート経由で保存先を呼び、保存完了を呼び出し元に返す。",
+        )}
+      </p>
+    </div>
+  </div>
+  <p class="rule" data-boundary>
+    {t(
+      "The application imports neither adapter implementation. Memory can stand in for the database during a test. Six sides are not six required parts.",
+      "애플리케이션은 어댑터 구현을 직접 참조하지 않습니다. 테스트에서는 메모리로 데이터베이스를 대신합니다. 여섯 구성요소가 필수는 아닙니다.",
+      "アプリケーションはアダプター実装を直接参照しません。テストではメモリがデータベースを代替できます。六つの構成要素は必須ではありません。",
+    )}
+  </p>
+  <ul class="outcomes" data-outcomes>
+    <li>{b.outcome}</li>
+    <li>{b.failure}</li>
+  </ul>
+  <p class="footnote">{b.alternatives}</p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 4vw, 28px);
+    background: #eef5ef;
+    color: #254632;
+    border: 1px solid #81988a;
+    border-radius: 12px;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3,
+  ol,
+  ul {
+    margin: 0;
+  }
+  .eyebrow {
+    color: #254632;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+    line-height: 1.3;
+    margin: 0.4rem 0 0.7rem;
+  }
+  h3 {
+    font-size: 0.85rem;
+  }
+  .deployment {
+    border: 2px dotted #527c60;
+    padding: 1rem;
+    margin: 1.2rem 0;
+  }
+  .process-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .ports-map {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 0.8rem;
+    align-items: center;
+  }
+  .ports-map > div {
+    min-width: 0;
+  }
+  .edge ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+    margin: 0.7rem 0;
+  }
+  .edge li {
+    background: #fff;
+    border: 1px solid #789582;
+    padding: 0.65rem;
+    font-size: 0.85rem;
+  }
+  .import {
+    border-top: 2px solid #345e42;
+    padding-top: 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 650;
+  }
+  .application {
+    border: 3px solid #345e42;
+    border-radius: 24px;
+    padding: 1rem 0.8rem;
+    background: #fffdf2;
+  }
+  .application h3 {
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+  .port {
+    border: 1px solid #789582;
+    padding: 0.55rem;
+    background: #fff;
+  }
+  .port span,
+  .port strong {
+    display: block;
+    font-size: 0.75rem;
+  }
+  .port strong {
+    font-family: monospace;
+    font-size: 0.9rem;
+  }
+  .policy {
+    font-size: 0.85rem;
+    padding: 1rem 0.2rem;
+    text-align: center;
+  }
+  .runtime {
+    margin-top: 1.2rem;
+    border-top: 2px dashed #345e42;
+    padding-top: 0.75rem;
+  }
+  .runtime ol {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    list-style: none;
+    padding: 0;
+    gap: 0.65rem;
+    margin: 0.6rem 0;
+    counter-reset: call;
+  }
+  .runtime li {
+    counter-increment: call;
+    border-bottom: 1px dashed #345e42;
+    padding-bottom: 0.4rem;
+    font-size: 0.8rem;
+  }
+  .runtime li::before {
+    content: counter(call) " → ";
+    font-weight: 700;
+  }
+  .runtime p,
+  .rule,
+  .outcomes {
+    font-size: 0.85rem;
+  }
+  .rule {
+    font-weight: 600;
+  }
+  .outcomes {
+    padding-left: 1.2rem;
+    margin-top: 1rem;
+  }
+  .outcomes li + li {
+    margin-top: 0.35rem;
+  }
+  .footnote {
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
+  }
+  @container (max-width: 520px) {
+    .ports-map {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .runtime ol {
+      grid-template-columns: 1fr;
+    }
+    .edge ul {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (forced-colors: active) {
+    .deployment,
+    .application,
+    .port,
+    .edge li,
+    .import,
+    .runtime,
+    .runtime li {
+      border-color: CanvasText;
+    }
+  }
+</style>
