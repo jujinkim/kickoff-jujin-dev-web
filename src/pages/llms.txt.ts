@@ -10,6 +10,8 @@ export async function GET() {
 Read project context first. Do not re-ask confirmed decisions. Before explicit scoped delegation, ask about every unresolved choice, even with a strong recommendation. Cite evidence; report access failures.
 
 ## Start here
+- [Latest development startup guidelines](https://jujin.dev/ai/startup/latest.md)
+- [Guideline versions and startup prompt](https://jujin.dev/en/start/)
 - [Behavior rules](https://jujin.dev/ai/instructions.md)
 - [Versioned multilingual catalog and aliases](https://jujin.dev/ai/catalog.json)
 - [Concept catalog](https://jujin.dev/en/catalog/)

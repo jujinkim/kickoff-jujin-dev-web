@@ -1,7 +1,7 @@
 ---
+import StartupPrompt from "../../components/StartupPrompt.astro";
 import Base from "../../layouts/Base.astro";
 import { languages, strings } from "../../lib/i18n";
-import { projectPrompt } from "../../lib/ai";
 export function getStaticPaths() {
   return languages.map((lang) => ({ params: { lang }, props: { lang } }));
 }
@@ -72,6 +72,7 @@ const steps = {
     <p>{t.aiIntro}</p>
   </section>
   <div class="guide-content">
+    <StartupPrompt lang={lang} promptId="project-prompt" />
     <p class="notice">{t.aiWarning}</p>
     <div class="steps">
       {steps.map(([title, body]) => (
@@ -83,19 +84,6 @@ const steps = {
         </section>
       ))}
     </div>
-    <section class="prompt-section">
-      <h2>{t.prompt}</h2>
-      <pre class="prompt-box" id="project-prompt">{projectPrompt[lang]}</pre>
-      <button
-        class="button primary"
-        data-copy="project-prompt"
-        data-success={t.copied}
-        data-error={t.copyError}
-      >
-        {t.copy} ⧉
-      </button>
-      <p role="status" aria-live="polite"></p>
-    </section>
     <div class="resource-links">
       <a class="button" href="/llms.txt">
         llms.txt ↗

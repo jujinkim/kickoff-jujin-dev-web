@@ -1,0 +1,46 @@
+---
+import { strings, type Lang } from "../lib/i18n";
+import { startupPrompt, startupText, startupVersion } from "../lib/startup";
+interface Props {
+  lang: Lang;
+  promptId?: string;
+  version?: string;
+}
+const { lang, promptId = "startup-prompt", version = "latest" } = Astro.props;
+const resolvedVersion = version === "latest" ? startupVersion : version;
+const t = strings[lang];
+const s = startupText[lang];
+---
+
+<section class="prompt-section" aria-labelledby="startup-title">
+  <p class="eyebrow">
+    provided by jujin.dev ·{" "}
+    {version === "latest" ? `latest (${resolvedVersion})` : version}
+  </p>
+  <h2 id="startup-title">{s.title}</h2>
+  <p>{s.intro}</p>
+  <pre class="prompt-box" id={promptId}>{startupPrompt(lang, version)}</pre>
+  <button
+    class="button primary"
+    data-copy={promptId}
+    data-success={t.copied}
+    data-error={t.copyError}
+  >
+    {t.copy} ⧉
+  </button>
+  <p role="status" aria-live="polite"></p>
+  <div class="resource-links">
+    <a class="button" href={`/${lang}/start/${resolvedVersion}/`}>
+      {s.read.replace("{version}", resolvedVersion)}
+    </a>
+    <a class="button" href={`/${lang}/start/${version}.md`}>
+      Markdown ↗
+    </a>
+    <a
+      class="button"
+      href="https://github.com/jujinkim/jujin-dev-web/blob/main/CONTRIBUTING.md"
+    >
+      {s.contribute} ↗
+    </a>
+  </div>
+</section>

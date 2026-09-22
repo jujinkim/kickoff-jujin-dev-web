@@ -76,3 +76,9 @@ npm run content:new -- --id brutalism
 The second command creates three draft scaffolds and refuses existing files. Review the complete style group before expanding to other groups.
 
 Design examples: [implementation and extension guide](docs/design-demos.md), [planning template](docs/templates/design-demo-brief.md), [verification record](docs/design-demos-review.md).
+
+## Project planning startup
+
+Start at `/{lang}/start/` and copy the one-line prompt pointing to `/{lang}/start/latest.md`. `/ai/startup/latest.md` is the English alias. Both serve the explicitly selected latest release at build time; no duplicate body is maintained. Guideline v1 is available at `/{lang}/start/v1/` and `/{lang}/start/v1.md`; `/ai/startup/v1.md` serves the same English source. It collects the service name, description, and other constraints, offers the complete catalog with recommendations and scoped delegation, and produces an approved plan before development.
+
+English, Korean, and Japanese source documents live in `src/startup/v1/`. Set `startupVersion` in `src/lib/startup.ts` to promote a reviewed version, then rebuild and deploy. Versioned URLs and their page prompts remain pinned. Guideline versions are independent of API schema v1. See [contribution and version rules](CONTRIBUTING.md) for collaborative improvements, scenario review, revisions, and future major versions.

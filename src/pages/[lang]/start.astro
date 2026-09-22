@@ -1,4 +1,6 @@
 ---
+import { startupText } from "../../lib/startup";
+import StartupPrompt from "../../components/StartupPrompt.astro";
 import Base from "../../layouts/Base.astro";
 import { languages, strings } from "../../lib/i18n";
 export function getStaticPaths() {
@@ -83,6 +85,13 @@ const steps = {
     <p>{t.startIntro}</p>
   </section>
   <div class="guide-content">
+    <StartupPrompt lang={lang} />
+    <section>
+      <h2>{startupText[lang].versions}</h2>
+      <p>
+        <a href={`/${lang}/start/v1/`}>{startupText[lang].history}</a>
+      </p>
+    </section>
     <div class="steps">
       {steps.map(([title, body, id]) => (
         <section class="step">
