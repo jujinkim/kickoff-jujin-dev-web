@@ -167,6 +167,7 @@ for (const lang of ["en", "ko", "ja"]) {
     await expect(page.locator(".catalog-card")).toHaveCount(
       Object.keys(designRegistry).length,
     );
+    await page.locator(".category-index > summary").click();
     await page
       .locator(`.category-tree a[href="/${lang}/catalog/categories/styles/"]`)
       .click();
@@ -271,3 +272,77 @@ test("legacy views become cards with uncropped thumbnails", async ({
     await expect(page.locator(".style-preview-image:visible")).toHaveCount(0);
   }
 });
+
+for (const javaScriptEnabled of [true, false]) {
+  test(`category index: compact, responsive and native (JS ${javaScriptEnabled})`, async ({
+    browser,
+  }, testInfo) => {
+    test.setTimeout(120_000);
+    const context = await browser.newContext({ javaScriptEnabled });
+    const page = await context.newPage();
+    for (const [lang, label] of [
+      ["en", "Browse categories"],
+      ["ko", "분류 탐색"],
+      ["ja", "分類を探す"],
+    ]) {
+      for (const width of [320, 768, 1440]) {
+        await page.setViewportSize({ width, height: 900 });
+        for (const theme of ["light", "dark"]) {
+          await page.goto(`/${lang}/catalog/`);
+          await page.evaluate(
+            (value) => (document.documentElement.dataset.theme = value),
+            theme,
+          );
+          const index = page.locator(".category-index");
+          const summary = index.locator("summary");
+          await expect(summary).toContainText(label);
+          await expect(index).not.toHaveAttribute("open");
+          const box = await index.boundingBox();
+          expect(box!.height).toBe(48);
+          const toolbar = await page.locator(".catalog-toolbar").boundingBox();
+          expect(toolbar!.y - box!.y - box!.height).toBe(16);
+          await page.screenshot({
+            path: testInfo.outputPath(`${lang}-${width}-${theme}-closed.png`),
+          });
+          await summary.focus();
+          await page.keyboard.press("Enter");
+          await expect(index).toHaveAttribute("open");
+          await expect(index.locator("a:visible")).toHaveCount(27);
+          const columns = await index
+            .locator('[data-root="true"]')
+            .evaluate(
+              (node) =>
+                getComputedStyle(node).gridTemplateColumns.split(" ").length,
+            );
+          expect(columns).toBe(width <= 600 ? 1 : width <= 900 ? 2 : 3);
+          expect(
+            await page.evaluate(
+              () => document.documentElement.scrollWidth <= innerWidth,
+            ),
+          ).toBeTruthy();
+          await page.screenshot({
+            path: testInfo.outputPath(`${lang}-${width}-${theme}-open.png`),
+            fullPage: true,
+          });
+          await page.keyboard.press("Space");
+          await expect(index).not.toHaveAttribute("open");
+          await page.keyboard.press("Enter");
+          await page.reload();
+          await expect(index).not.toHaveAttribute("open");
+        }
+      }
+      await page.locator(".category-index summary").click();
+      await page
+        .locator(
+          `.category-index a[href="/${lang}/catalog/categories/design/"]`,
+        )
+        .click();
+      await expect(page).toHaveURL(
+        new RegExp(`/${lang}/catalog/categories/design/$`),
+      );
+      await expect(page.locator(".category-index")).toHaveCount(0);
+      await expect(page.locator(".category-tree a").first()).toBeVisible();
+    }
+    await context.close();
+  });
+}

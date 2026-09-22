@@ -35,8 +35,64 @@ const count = (await published()).filter(
     </p>
     <a href={`/${lang}/guides/`}>{t.guides} →</a>
   </section>
-  <section class="section">
+  <details class="category-index">
+    <summary>
+      {lang === "ko"
+        ? "분류 탐색"
+        : lang === "ja"
+          ? "分類を探す"
+          : "Browse categories"}
+      <span class="category-index-arrow" aria-hidden="true">
+        ⌄
+      </span>
+    </summary>
     <CategoryTree lang={lang} />
-  </section>
+  </details>
   <ArticleListing lang={lang} kind="concept" />
 </Base>
+
+<style>
+  .category-index {
+    margin-bottom: 1rem;
+  }
+  .category-index > summary {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 700;
+  }
+  .category-index > summary::-webkit-details-marker {
+    display: none;
+  }
+  .category-index-arrow {
+    line-height: 1;
+  }
+  .category-index[open] .category-index-arrow {
+    transform: rotate(180deg);
+  }
+  .category-index :global(.category-tree) {
+    margin: 0;
+    padding-left: 1rem;
+  }
+  .category-index :global(.category-tree > li) {
+    margin: 0.35rem 0;
+  }
+  .category-index :global(.category-tree[data-root="true"]) {
+    gap: 1rem 1.5rem;
+    padding: 0.5rem 0 1rem;
+  }
+  .category-index :global(.category-tree[data-root="true"] > li) {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .category-index :global(.category-tree[data-root="true"] > li > a) {
+    font-size: 1rem;
+  }
+</style>
