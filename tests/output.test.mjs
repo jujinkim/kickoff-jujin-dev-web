@@ -5,7 +5,7 @@ import { resolve } from "node:path";
 import { readArticles } from "../scripts/validate-content.mjs";
 const read = (p) => readFileSync(`dist/${p}`, "utf8");
 const catalog = JSON.parse(read("ai/catalog.json"));
-test("AI aliases resolve to published Markdown with matching title and instructions", () => {
+test("AI aliases resolve to English Markdown while HTML stays localized", () => {
   assert.equal(catalog.schemaVersion, 1);
   assert.equal(catalog.articles.length, 30);
   for (const alias of ["SRS", "요구사항", "要件"]) {
@@ -20,7 +20,11 @@ test("AI aliases resolve to published Markdown with matching title and instructi
     assert.equal(Object.keys(article.translations).length, 3);
     for (const [lang, t] of Object.entries(article.translations)) {
       const md = read(new URL(t.markdown).pathname.slice(1));
-      assert.ok(md.startsWith(`# ${t.title}`));
+      assert.equal(t.markdown, article.translations.en.markdown);
+      assert.ok(md.startsWith(`# ${article.translations.en.title}`));
+      assert.ok(md.includes("Language: en"));
+      const kind = article.kind === "guide" ? "guides" : "catalog";
+      assert.equal(read(`${lang}/${kind}/${article.id}.md`), md);
       assert.ok(md.includes(`ID: ${article.id}`));
       assert.ok(md.includes("## "));
       const html = read(

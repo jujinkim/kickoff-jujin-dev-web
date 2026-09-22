@@ -41,18 +41,20 @@ Every article supplies kind, title, summary, category, multilingual aliases, rel
 
 ## Routes
 
-| Resource                      | Path                                                              |
-| ----------------------------- | ----------------------------------------------------------------- |
-| Home                          | `/en/`, `/ko/`, `/ja/` (root goes to English)                     |
-| Catalog                       | `/{lang}/catalog/`                                                |
-| Concept                       | `/{lang}/catalog/{articleId}/`                                    |
-| Category                      | `/{lang}/catalog/categories/{categoryId}/`                        |
-| Guides                        | `/{lang}/guides/`, `/{lang}/guides/{articleId}/`                  |
-| Same-source Markdown          | `/{lang}/catalog/{articleId}.md`, `/{lang}/guides/{articleId}.md` |
-| Assistant entrypoint          | `/llms.txt`                                                       |
-| Behavior rules                | `/ai/instructions.md`                                             |
-| Versioned catalog and aliases | `/ai/catalog.json`                                                |
-| Sitemaps                      | `/sitemap-index.xml`, `/sitemap-{lang}.xml`                       |
+| Resource                      | Path                                                      |
+| ----------------------------- | --------------------------------------------------------- |
+| Home                          | `/en/`, `/ko/`, `/ja/` (root goes to English)             |
+| Catalog                       | `/{lang}/catalog/`                                        |
+| Concept                       | `/{lang}/catalog/{articleId}/`                            |
+| Category                      | `/{lang}/catalog/categories/{categoryId}/`                |
+| Guides                        | `/{lang}/guides/`, `/{lang}/guides/{articleId}/`          |
+| English Markdown              | `/en/catalog/{articleId}.md`, `/en/guides/{articleId}.md` |
+| Assistant entrypoint          | `/llms.txt`                                               |
+| Behavior rules                | `/ai/instructions.md`                                     |
+| Versioned catalog and aliases | `/ai/catalog.json`                                        |
+| Sitemaps                      | `/sitemap-index.xml`, `/sitemap-{lang}.xml`               |
+
+Public Markdown uses English originals only. All catalog Markdown links point to English; existing Korean/Japanese Markdown URLs serve the same English content for compatibility. HTML and copyable request examples remain localized. Users write their own requests and project descriptions in their preferred language.
 
 Each localized page is self-canonical, with reciprocal published translations and English `x-default`. Article HTML alone enters Pagefind. Search reads `html[lang]` and filters by stable category ID. `public/catalog.js` remains a native browser module so Pagefind dynamic imports are not rewritten by the bundler.
 

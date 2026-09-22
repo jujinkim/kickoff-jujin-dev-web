@@ -94,7 +94,10 @@ test("keyboard navigation, copy and AI lookup complete the reader flow", async (
     new URL(article.translations.ko.markdown).pathname,
   );
   expect(md.ok()).toBeTruthy();
-  expect(await md.text()).toContain("## 개념");
+  expect(article.translations.ko.markdown).toBe(
+    article.translations.en.markdown,
+  );
+  expect(await md.text()).toContain("## Concept");
 });
 test("search failure keeps browse available and copy failure explains fallback", async ({
   page,

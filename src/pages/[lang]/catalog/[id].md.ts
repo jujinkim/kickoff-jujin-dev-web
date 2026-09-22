@@ -1,9 +1,15 @@
 import type { APIRoute } from "astro";
-import { published, articleUrl, type Article } from "../../../lib/content";
+import {
+  published,
+  articleUrl,
+  translationFor,
+  type Article,
+} from "../../../lib/content";
 export async function getStaticPaths() {
-  return (await published()).map((article) => ({
+  const all = await published();
+  return all.map((article) => ({
     params: { lang: article.data.lang, id: article.data.articleId },
-    props: { article },
+    props: { article: translationFor(all, article.data.articleId, "en")! },
   }));
 }
 export const GET: APIRoute = ({ props }) => {

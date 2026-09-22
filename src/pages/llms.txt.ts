@@ -18,7 +18,7 @@ Read project context first. Do not re-ask confirmed decisions. Before explicit s
 - [Guides](https://jujin.dev/en/guides/)
 - [Project integration guide](https://jujin.dev/en/ai/)
 
-English originals with Korean and Japanese translations. The catalog links every published translation and marks stale revisions. Drafts are excluded. A missing translation is not an English duplicate at a translated URL.
+English originals with Korean and Japanese translations. The catalog links every published translation and marks stale revisions. Drafts are excluded. HTML pages remain localized. All Markdown links point to English originals; legacy localized Markdown URLs serve the same English content. Users can write requests in their preferred language; reply in the user's language.
 
 ${taxonomy
   .map((c) => c.id)

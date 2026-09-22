@@ -34,7 +34,7 @@ export const startupText = {
   },
 };
 export function startupPrompt(lang: Lang, version = "latest") {
-  const url = `https://jujin.dev/${lang}/start/${version}.md`;
+  const url = `https://jujin.dev/ai/startup/${version}.md`;
   return {
     en: `Read ${url} and begin the project planning kickstart. Confirm and prepare.`,
     ko: `${url} 을 읽고, 프로젝트 기획 킥스타트를 시작한다. 확인 후, 준비하라.`,

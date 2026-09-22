@@ -3,12 +3,13 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 const read = (p) => readFileSync(`dist/${p}`, "utf8");
 
-test("startup versions publish same-source localized HTML and Markdown with latest discovery and pinned version pages", () => {
+test("startup versions publish localized HTML and English-only Markdown with latest discovery and pinned version pages", () => {
   for (const lang of ["en", "ko", "ja"]) {
     const source = readFileSync(`src/startup/v1/${lang}.md`, "utf8");
     const md = read(`${lang}/start/v1.md`);
     const html = read(`${lang}/start/v1/index.html`);
-    assert.ok(md.endsWith(source));
+    assert.ok(md.endsWith(readFileSync("src/startup/v1/en.md", "utf8")));
+    assert.equal(md, read("ai/startup/v1.md"));
     assert.equal(read(`${lang}/start/latest.md`), md);
     for (const heading of source.matchAll(/^## (.+)$/gm))
       assert.ok(html.includes(heading[1]));
@@ -19,7 +20,7 @@ test("startup versions publish same-source localized HTML and Markdown with late
     ]) {
       const body = read(`${lang}/${page}`);
       const version = page === "start/v1/index.html" ? "v1" : "latest";
-      assert.ok(body.includes(`https://jujin.dev/${lang}/start/${version}.md`));
+      assert.ok(body.includes(`https://jujin.dev/ai/startup/${version}.md`));
       assert.ok(
         body.includes(
           `data-copy="${page === "ai/index.html" ? "project-prompt" : "startup-prompt"}"`,

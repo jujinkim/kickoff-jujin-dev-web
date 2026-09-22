@@ -1,4 +1,3 @@
-import type { Lang } from "./i18n";
 import { startupText, startupVersion } from "./startup";
 
 const sources = import.meta.glob<string>("../startup/v*/*.md", {
@@ -7,16 +6,16 @@ const sources = import.meta.glob<string>("../startup/v*/*.md", {
   eager: true,
 });
 
-export function startupMarkdown(lang: Lang, version = startupVersion): string {
-  const source = sources[`../startup/${version}/${lang}.md`];
+export function startupMarkdown(version = startupVersion): string {
+  const source = sources[`../startup/${version}/en.md`];
   if (source === undefined) {
-    throw new Error(`Missing startup guideline source: ${version}/${lang}`);
+    throw new Error(`Missing startup guideline source: ${version}/en`);
   }
-  return `# ${startupText[lang].title} — ${version}\n\n${source}`;
+  return `# ${startupText.en.title} — ${version}\n\n${source}`;
 }
 
-export function startupMarkdownResponse(lang: Lang, version = startupVersion) {
-  return new Response(startupMarkdown(lang, version), {
+export function startupMarkdownResponse(version = startupVersion) {
+  return new Response(startupMarkdown(version), {
     headers: { "Content-Type": "text/markdown; charset=utf-8" },
   });
 }

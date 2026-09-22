@@ -46,7 +46,9 @@ export const strings = {
     copy: "Copy instructions",
     copied: "Copied",
     copyError: "Copy failed. Select and copy the text below.",
-    markdown: "Read Markdown",
+    markdown: "Read Markdown (English)",
+    promptLanguage:
+      "AI reference Markdown is in English. Write your own requests and project descriptions in your preferred language.",
     related: "Keep exploring",
     comments: "Discuss this idea",
     commentsNote:
@@ -107,7 +109,9 @@ export const strings = {
     copy: "지시문 복사",
     copied: "복사 완료",
     copyError: "복사 실패. 아래 글을 선택해 복사하세요.",
-    markdown: "Markdown 읽기",
+    markdown: "Markdown 읽기 (영어)",
+    promptLanguage:
+      "AI가 읽는 Markdown은 영어입니다. 직접 입력하는 요청과 프로젝트 설명은 편한 언어로 작성하세요.",
     related: "이어서 살펴보기",
     comments: "이 선택에 관한 이야기",
     commentsNote:
@@ -166,7 +170,9 @@ export const strings = {
     copy: "指示をコピー",
     copied: "コピーしました",
     copyError: "コピー失敗。下の文章を選択してコピーしてください。",
-    markdown: "Markdownを読む",
+    markdown: "Markdownを読む（英語）",
+    promptLanguage:
+      "AIが読むMarkdownは英語です。ご自身の依頼やプロジェクトの説明は、使いやすい言語で入力してください。",
     related: "続けて読む",
     comments: "この選択を話し合う",
     commentsNote: "コメントは全言語で共有。投稿にはGitHubログインが必要です。",

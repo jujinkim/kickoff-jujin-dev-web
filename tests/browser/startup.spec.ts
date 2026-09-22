@@ -7,17 +7,22 @@ for (const lang of ["en", "ko", "ja"]) {
   }) => {
     await context.grantPermissions(["clipboard-read", "clipboard-write"]);
     await page.goto(`/${lang}/start/`);
+    await expect(page.locator(".prompt-section")).toContainText(
+      { en: "preferred language", ko: "편한 언어", ja: "使いやすい言語" }[
+        lang
+      ]!,
+    );
     const prompt = page.locator("#startup-prompt");
-    await expect(prompt).toContainText(`/${lang}/start/latest.md`);
+    await expect(prompt).toContainText(`/ai/startup/latest.md`);
     await page.locator('[data-copy="startup-prompt"]').click();
     await expect
       .poll(() => page.evaluate(() => navigator.clipboard.readText()))
       .toBe((await prompt.textContent())!.trim());
     await page.locator(`.prompt-section a[href="/${lang}/start/v1/"]`).click();
     await expect(page.locator("#startup-prompt")).toContainText(
-      `/${lang}/start/v1.md`,
+      `/ai/startup/v1.md`,
     );
-    const latest = await page.request.get(`/${lang}/start/latest.md`);
+    const latest = await page.request.get(`/ai/startup/latest.md`);
     expect(latest.status()).toBe(200);
     expect(latest.headers()["content-type"]).toContain("text/markdown");
     await expect(page.locator(".prose h2")).toHaveCount(7);
@@ -30,7 +35,11 @@ for (const lang of ["en", "ko", "ja"]) {
     ).toBe(true);
     const md = await page.request.get(`/${lang}/start/v1.md`);
     expect(md.headers()["content-type"]).toContain("text/markdown");
-    expect(await md.text()).toContain("provided by jujin.dev");
+    const markdown = await md.text();
+    expect(markdown).toContain("Reply in the user's language");
+    expect(markdown).toBe(
+      await (await page.request.get("/ai/startup/v1.md")).text(),
+    );
     expect(await latest.text()).toBe(await md.text());
   });
 }

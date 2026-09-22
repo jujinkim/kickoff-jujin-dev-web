@@ -1,2 +1,2 @@
 import { startupMarkdownResponse } from "../../../lib/startup-markdown";
-export const GET = () => startupMarkdownResponse("en");
+export const GET = () => startupMarkdownResponse();
