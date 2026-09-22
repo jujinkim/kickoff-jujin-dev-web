@@ -1,7 +1,7 @@
 import { activeTaxonomy as taxonomy } from "./catalog";
 import { listed, articleUrl } from "./content";
 import { languages, type Lang } from "./i18n";
-const site = "https://jujin.dev";
+const site = "https://kickoff.jujin.dev";
 export async function sitemap(lang: Lang) {
   const all = await listed();
   const entries = [

@@ -1,4 +1,4 @@
-name: Validate and deploy catalog
+name: Validate and deploy Kickoff
 on:
   pull_request:
   push:

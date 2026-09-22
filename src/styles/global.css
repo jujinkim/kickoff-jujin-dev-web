@@ -151,6 +151,16 @@ main:focus {
   line-height: 1;
   padding-bottom: 5px;
 }
+.brand-name {
+  display: grid;
+  line-height: 1.1;
+  gap: 4px;
+}
+.brand-name small {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
 .brand-domain {
   font-weight: 450;
 }

@@ -8,19 +8,19 @@ const { lang } = Astro.props;
 const t = strings[lang];
 const paragraphs = {
   en: [
-    "jujin.dev helps you start a software project with AI by making its structure and direction concrete. Describe the outcome, explore examples, and agree on project choices without learning every implementation term.",
+    "Kickoff helps you start a software project with AI by making its structure and direction concrete. Describe the outcome, explore examples, and agree on project choices without learning every implementation term.",
     "The catalog covers planning and architecture, development tools, delivery and hosting, design, and monetization. You decide behavior and constraints; AI chooses internal implementation and writes the supporting documents within the agreed scope.",
     "English is the source language. Korean and Japanese translations share stable article IDs and revision tracking. Missing translations link to English; outdated translations carry a notice. Articles and machine-readable material are generated from the same Markdown.",
     "Corrections belong in the repository. Cite the article ID, the disputed claim, and an official reference. Service conditions carry a review date and need checking before a real launch. No automated translation API or built-in AI chat runs here.",
   ],
   ko: [
-    "jujin.dev는 AI와 프로젝트를 시작할 때 구조와 방향을 구체적으로 정하도록 돕는 가이드입니다. 원하는 결과를 설명하고 예시를 보며 선택합니다. 모든 구현 용어를 미리 알 필요는 없습니다.",
+    "Kickoff는 AI와 프로젝트를 시작할 때 구조와 방향을 구체적으로 정하도록 돕는 가이드입니다. 원하는 결과를 설명하고 예시를 보며 선택합니다. 모든 구현 용어를 미리 알 필요는 없습니다.",
     "기획·아키텍처, 개발 도구, 배포·호스팅, 디자인, 수익화를 다룹니다. 사용자는 원하는 동작과 제약을 결정하고, AI는 합의된 범위에서 내부 구현과 필요한 문서 작성을 맡습니다.",
     "영어가 원문입니다. 한국어·일본어 번역은 고정 글 ID와 리비전으로 연결합니다. 번역이 없으면 영어로, 뒤처지면 안내 표시로 연결합니다. 사람용 글과 기계용 자료는 같은 Markdown에서 생성됩니다.",
     "수정 제안은 저장소로 보내주세요. 글 ID, 문제인 주장, 공식 근거를 적으면 좋습니다. 서비스 조건은 확인 날짜를 남기고 실제 출시 전에 재검토해야 합니다. 자동 번역 API나 사이트 내 AI 채팅은 운영하지 않습니다.",
   ],
   ja: [
-    "jujin.devはAIとプロジェクトを始める際、構成と方向を具体的に決めるためのガイドです。望む結果を説明し、実例を見て選びます。すべての実装用語を事前に知る必要はありません。",
+    "KickoffはAIとプロジェクトを始める際、構成と方向を具体的に決めるためのガイドです。望む結果を説明し、実例を見て選びます。すべての実装用語を事前に知る必要はありません。",
     "企画・アーキテクチャ、開発道具、配布・ホスティング、デザイン、収益化を扱います。ユーザーが動作と制約を決め、AIが合意した範囲で内部実装と必要な文書作成を担当します。",
     "原文は英語。韓国語と日本語は固定IDと改訂番号で結びます。未翻訳は英語へ案内し、古い翻訳には表示を付けます。人向けの記事と機械向け資料は同じMarkdownから生成します。",
     "修正提案はリポジトリへ。記事ID、問題の主張、公式根拠を添えてください。サービス条件には確認日を記し、実際の公開前に再確認します。自動翻訳APIやサイト内AIチャットは提供していません。",
@@ -32,7 +32,7 @@ const paragraphs = {
   <section class="page-heading">
     <p class="eyebrow">A SMALL GUIDE TO BETTER QUESTIONS</p>
     <h1>
-      jujin.dev<span class="accent-dot">●</span>
+      Kickoff<span class="accent-dot">●</span>
     </h1>
     <p>{t.aboutIntro}</p>
   </section>
@@ -41,7 +41,13 @@ const paragraphs = {
       <p>{p}</p>
     ))}
     <div class="resource-links">
-      <a class="button" href="https://github.com/jujinkim/jujin-dev-web">
+      <a class="button" href="https://jujin.dev">
+        jujin.dev ↗
+      </a>
+      <a
+        class="button"
+        href="https://github.com/jujinkim/kickoff-jujin-dev-web"
+      >
         GitHub ↗
       </a>
       <a class="button" href="https://jujin.kim">

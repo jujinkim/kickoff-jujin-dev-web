@@ -1,7 +1,7 @@
 import { isListedArticle } from "./catalog-data.mjs";
 import { readArticles } from "./validate-content.mjs";
 import { designRegistry } from "./design-registry.mjs";
-const origin = process.env.SITE_ORIGIN ?? "https://jujin.dev";
+const origin = process.env.SITE_ORIGIN ?? "https://kickoff.jujin.dev";
 let failed = 0;
 const activeArticles = readArticles().filter(
   (a) =>
@@ -41,10 +41,10 @@ for (const lang of ["en", "ko", "ja"]) {
     await check(`/${lang}/catalog/${id}/`, [
       `data-comment-term="${id}"`,
       `data-demo="${id}"`,
-      `rel="canonical" href="https://jujin.dev/${lang}/catalog/${id}/"`,
+      `rel="canonical" href="https://kickoff.jujin.dev/${lang}/catalog/${id}/"`,
       ...["en", "ko", "ja"].map(
         (other) =>
-          `hreflang="${other}" href="https://jujin.dev/${other}/catalog/${id}/"`,
+          `hreflang="${other}" href="https://kickoff.jujin.dev/${other}/catalog/${id}/"`,
       ),
     ]);
     await check(`/${lang}/catalog/${id}.md`, `ID: ${id}`);
@@ -52,7 +52,7 @@ for (const lang of ["en", "ko", "ja"]) {
   await check(`/${lang}/catalog/categories/styles/`, 'class="comparison"');
   await check(
     `/${lang}/guides/srs/`,
-    `href="https://jujin.dev/${lang}/guides/srs/"`,
+    `href="https://kickoff.jujin.dev/${lang}/guides/srs/"`,
   );
   await check(`/${lang}/guides/srs.md`, "ID: srs");
   await check(`/sitemap-${lang}.xml`, [

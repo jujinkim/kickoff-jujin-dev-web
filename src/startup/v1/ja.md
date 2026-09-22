@@ -1,12 +1,12 @@
 ## 目的と適用範囲
 
-開発開始ガイドライン、provided by jujin.dev。ガイドライン: v1。リビジョン: 2。更新日: 2026-09-23。英語が原文で、日本語・韓国語は原文リビジョン2に対応します。
+開発開始ガイドライン、provided by Kickoff by jujin。ガイドライン: v1。リビジョン: 2。更新日: 2026-09-23。英語が原文で、日本語・韓国語は原文リビジョン2に対応します。
 
 サービスの案を合意済みの計画に変えます。本書と既存のプロジェクト指示・判断を先に読み、確定済みの選択を維持します。ユーザーの言語で答え、上位の指示を優先します。開始プロンプトは企画の依頼です。計画の承認と開発指示を受けてから開発します。既存の明示的な権限はその範囲で有効です。
 
 ## 1. 読んで準備し、サービス情報を受け取る
 
-[AI行動規則](https://jujin.dev/ai/instructions.md)と完全な[カタログ](https://jujin.dev/ai/catalog.json)を読みます。読んだ資料とガイドライン版を報告します。取得失敗はURLと不足する根拠を伝え、再試行か文書の提供を求めます。未読のまま準備完了とは言いません。
+[AI行動規則](https://kickoff.jujin.dev/ai/instructions.md)と完全な[カタログ](https://kickoff.jujin.dev/ai/catalog.json)を読みます。読んだ資料とガイドライン版を報告します。取得失敗はURLと不足する根拠を伝え、再試行か文書の提供を求めます。未読のまま準備完了とは言いません。
 
 最初の返答で準備を短く伝え、次の三点をまとめて聞きます。既に提供された情報は再利用します。
 
@@ -58,6 +58,6 @@ SOLID・GRASPの責任と依存性の原則をプログラミング方式に合�
 
 ## 6. 共同改善とバージョン
 
-誰でも表現、不足する話題、反例、翻訳、シナリオを[Issue](https://github.com/jujinkim/jujin-dev-web/issues)や[PR](https://github.com/jujinkim/jujin-dev-web/pulls)で提案できます。[貢献・版管理規則](https://github.com/jujinkim/jujin-dev-web/blob/main/CONTRIBUTING.md)に従い、問題、変更前後の動作、出典、期待結果を添えます。非公開情報を投稿しません。
+誰でも表現、不足する話題、反例、翻訳、シナリオを[Issue](https://github.com/jujinkim/kickoff-jujin-dev-web/issues)や[PR](https://github.com/jujinkim/kickoff-jujin-dev-web/pulls)で提案できます。[貢献・版管理規則](https://github.com/jujinkim/kickoff-jujin-dev-web/blob/main/CONTRIBUTING.md)に従い、問題、変更前後の動作、出典、期待結果を添えます。非公開情報を投稿しません。
 
 v2の登場後もv1を維持します。動作を変えない説明修正はリビジョンと変更履歴を更新し、義務や手順の変更は新しい主版にします。旧版URLを黙って置換しません。API schemaVersion 1とは独立です。新版は管理者のレビューを経て、プロジェクト側で明示的に移行します。

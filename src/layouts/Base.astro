@@ -18,7 +18,8 @@ const alternates =
     url: noindex ? `/${l}/` : path.replace(/^\/(en|ko|ja)\//, `/${l}/`),
   }));
 const english = alternates.find((a) => a.lang === "en");
-const absolute = (url: string) => new URL(url, "https://jujin.dev").href;
+const absolute = (url: string) =>
+  new URL(url, "https://kickoff.jujin.dev").href;
 ---
 
 <!doctype html>
@@ -26,7 +27,7 @@ const absolute = (url: string) => new URL(url, "https://jujin.dev").href;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} · jujin.dev</title>
+    <title>{title} · Kickoff by jujin</title>
     <meta name="description" content={description} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href={absolute(path)} />
@@ -42,7 +43,7 @@ const absolute = (url: string) => new URL(url, "https://jujin.dev").href;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={absolute(path)} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="jujin.dev" />
+    <meta property="og:site_name" content="Kickoff by jujin" />
     <meta name="color-scheme" content="light dark" />
     <script is:inline>
       try {
@@ -65,10 +66,12 @@ const absolute = (url: string) => new URL(url, "https://jujin.dev").href;
     </a>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href={`/${lang}/`} aria-label="jujin.dev">
-          <span class="brand-mark">j.</span>
-          <span>
-            jujin<span class="brand-domain">.dev</span>
+        <a class="brand" href={`/${lang}/`} aria-label="Kickoff by jujin">
+          <span class="brand-mark" aria-hidden="true">
+            k.
+          </span>
+          <span class="brand-name">
+            Kickoff<small>by jujin</small>
           </span>
         </a>
         <nav aria-label={t.catalog}>
@@ -89,6 +92,7 @@ const absolute = (url: string) => new URL(url, "https://jujin.dev").href;
         </nav>
         <div class="header-tools">
           <div class="external-links">
+            <a href="https://jujin.dev">jujin.dev ↗</a>
             <a href="https://jujin.kim">jujin.kim ↗</a>
             <a href="https://blog.jujin.kim">blog.jujin.kim ↗</a>
           </div>
@@ -136,15 +140,16 @@ const absolute = (url: string) => new URL(url, "https://jujin.dev").href;
     <footer class="site-footer">
       <div>
         <a class="brand" href={`/${lang}/`}>
-          jujin.dev<span class="accent-dot">●</span>
+          Kickoff<span class="accent-dot">●</span>
         </a>
         <p>{t.footer}</p>
       </div>
       <div class="footer-links">
+        <a href="https://jujin.dev">jujin.dev ↗</a>
         <a href="https://jujin.kim">jujin.kim ↗</a>
         <a href="https://blog.jujin.kim">blog.jujin.kim ↗</a>
         <a href="/llms.txt">llms.txt ↗</a>
-        <a href="https://github.com/jujinkim/jujin-dev-web">GitHub ↗</a>
+        <a href="https://github.com/jujinkim/kickoff-jujin-dev-web">GitHub ↗</a>
       </div>
     </footer>
     <script>

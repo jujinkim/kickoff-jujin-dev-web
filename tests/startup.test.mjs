@@ -20,7 +20,9 @@ test("startup versions publish localized HTML and English-only Markdown with lat
     ]) {
       const body = read(`${lang}/${page}`);
       const version = page === "start/v1/index.html" ? "v1" : "latest";
-      assert.ok(body.includes(`https://jujin.dev/ai/startup/${version}.md`));
+      assert.ok(
+        body.includes(`https://kickoff.jujin.dev/ai/startup/${version}.md`),
+      );
       assert.ok(
         body.includes(
           `data-copy="${page === "ai/index.html" ? "project-prompt" : "startup-prompt"}"`,
@@ -29,7 +31,7 @@ test("startup versions publish localized HTML and English-only Markdown with lat
     }
     assert.ok(
       html.includes(
-        `rel="canonical" href="https://jujin.dev/${lang}/start/v1/"`,
+        `rel="canonical" href="https://kickoff.jujin.dev/${lang}/start/v1/"`,
       ),
     );
     assert.ok(read(`sitemap-${lang}.xml`).includes(`/${lang}/start/v1/`));

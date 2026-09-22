@@ -1,6 +1,6 @@
 import { languages } from "../lib/i18n";
 export const GET = () =>
   new Response(
-    `<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${languages.map((l) => `<sitemap><loc>https://jujin.dev/sitemap-${l}.xml</loc></sitemap>`).join("")}</sitemapindex>`,
+    `<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${languages.map((l) => `<sitemap><loc>https://kickoff.jujin.dev/sitemap-${l}.xml</loc></sitemap>`).join("")}</sitemapindex>`,
     { headers: { "Content-Type": "application/xml; charset=utf-8" } },
   );

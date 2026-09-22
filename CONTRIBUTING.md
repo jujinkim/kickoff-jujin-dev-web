@@ -1,6 +1,6 @@
-# Contributing to jujin.dev
+# Contributing to Kickoff
 
-Help improve the development startup guidelines through [an issue](https://github.com/jujinkim/jujin-dev-web/issues) or a pull request. Suggestions, counterexamples, accessibility reviews, translations, and first-time contributions are welcome. No need to implement a change before discussing it.
+Help improve the development startup guidelines through [an issue](https://github.com/jujinkim/kickoff-jujin-dev-web/issues) or a pull request. Suggestions, counterexamples, accessibility reviews, translations, and first-time contributions are welcome. No need to implement a change before discussing it.
 
 ## Propose a change
 

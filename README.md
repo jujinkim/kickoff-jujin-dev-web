@@ -1,6 +1,8 @@
-# jujin.dev
+# Kickoff by jujin
 
-A multilingual guide to starting AI-assisted projects with concrete requirements, architecture, design and operating choices. Built with **Astro, TypeScript, and Markdown**. No React, CMS, translation API, or built-in AI chat. Public origin: **https://jujin.dev/**.
+A multilingual guide to starting AI-assisted projects with concrete requirements, architecture, design and operating choices. Built with **Astro, TypeScript, and Markdown**. No React, CMS, translation API, or built-in AI chat. Public origin: **https://kickoff.jujin.dev/**.
+
+This repository owns Kickoff only. The personal development hub on `jujin.dev` is a separate project. Article paths, guideline versions, comment identities, and API schema v1 stay stable within Kickoff; old pre-release URLs on `jujin.dev` have no compatibility layer. See [domain and publishing notes](docs/domain-split.md).
 
 ## Local development
 

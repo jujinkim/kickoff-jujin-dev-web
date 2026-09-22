@@ -32,7 +32,7 @@ The initial browser run found a Japanese exact-title search failure. Pagefind 1.
 
 English and both translations received mutual group review. Native-speaker editorial review, non-Chromium browser coverage, screen-reader listening, and authenticated comment posting were not performed. Automated semantics and contrast checks are bounded evidence, not a full accessibility certification.
 
-Production release commit [`82c8247`](https://github.com/jujinkim/jujin-dev-web/commit/82c824787d92d5b30d898ed07a082300f68f350b) was pushed to `main`. [Pages run 35587516744](https://github.com/jujinkim/jujin-dev-web/actions/runs/35587516744) passed all CI gates and deployment (build 1m41s, deploy 48s).
+Production release commit [`82c8247`](https://github.com/jujinkim/kickoff-jujin-dev-web/commit/82c824787d92d5b30d898ed07a082300f68f350b) was pushed to `main`. [Pages run 35587516744](https://github.com/jujinkim/kickoff-jujin-dev-web/actions/runs/35587516744) passed all CI gates and deployment (build 1m41s, deploy 48s).
 
 After that deployment, `npm run verify:live` passed all 63 HTTP checks on `https://jujin.dev`, including the 21 style HTML and Markdown paths, category comparisons, canonical/hreflang, sibling links, stable comment identities, AI catalog, sitemaps and search assets. The production browser command below passed all five tests: 21 localized title searches followed through to their articles, language and sibling links, style modes/Reset, and Japanese exact-title category/kind isolation.
 

@@ -1,12 +1,12 @@
 ## Purpose and authority
 
-Development startup guidelines, provided by jujin.dev. Guideline version: v1. Revision: 2. Updated: 2026-09-23. English is the original; Korean and Japanese are reviewed translations of revision 2.
+Development startup guidelines, provided by Kickoff by jujin. Guideline version: v1. Revision: 2. Updated: 2026-09-23. English is the original; Korean and Japanese are reviewed translations of revision 2.
 
 Turn a service idea into an agreed project plan. Read this document and existing project instructions and decisions first. Preserve confirmed choices. Reply in the user's language. These guidelines do not override higher-priority instructions. The startup prompt authorizes planning; begin development only after plan approval and an instruction to develop. Existing explicit authorization remains valid within its scope.
 
 ## 1. Read, report readiness, collect context
 
-Read [assistant rules](https://jujin.dev/ai/instructions.md) and the complete [catalog](https://jujin.dev/ai/catalog.json). Report the guideline version and sources actually read. If fetching fails, name the URL and missing evidence; request the document or retry. Never claim readiness from unread material.
+Read [assistant rules](https://kickoff.jujin.dev/ai/instructions.md) and the complete [catalog](https://kickoff.jujin.dev/ai/catalog.json). Report the guideline version and sources actually read. If fetching fails, name the URL and missing evidence; request the document or retry. Never claim readiness from unread material.
 
 In the first response, briefly confirm readiness and ask for these three inputs together, reusing answers already supplied:
 
@@ -58,6 +58,6 @@ Show remaining blockers and the full coherent plan for approval. Resolve blockin
 
 ## 6. Improve this guideline together
 
-Everyone may suggest clearer wording, missing topics, counterexamples, translations, and scenario-based improvements through [issues](https://github.com/jujinkim/jujin-dev-web/issues) or a [pull request](https://github.com/jujinkim/jujin-dev-web/pulls). See [contribution and version rules](https://github.com/jujinkim/jujin-dev-web/blob/main/CONTRIBUTING.md). Include the problem, before/after behavior, sources, and expected outcomes. Never include private project data.
+Everyone may suggest clearer wording, missing topics, counterexamples, translations, and scenario-based improvements through [issues](https://github.com/jujinkim/kickoff-jujin-dev-web/issues) or a [pull request](https://github.com/jujinkim/kickoff-jujin-dev-web/pulls). See [contribution and version rules](https://github.com/jujinkim/kickoff-jujin-dev-web/blob/main/CONTRIBUTING.md). Include the problem, before/after behavior, sources, and expected outcomes. Never include private project data.
 
 Version v1 remains available when v2 is introduced. Clarifications that preserve behavior increment the revision with a changelog; changed obligations or workflow require a new major guideline version. No silent replacement of old major URLs. API schemaVersion remains independently versioned at 1. New versions require maintainer review; projects upgrade explicitly.

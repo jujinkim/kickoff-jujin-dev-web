@@ -24,8 +24,8 @@ export async function GET() {
             sourceRevision: a.data.sourceRevision,
             stale: isStale(a, all),
             updated: a.data.updated,
-            url: `https://jujin.dev${articleUrl(a)}`,
-            markdown: `https://jujin.dev${markdownUrl(a)}`,
+            url: `https://kickoff.jujin.dev${articleUrl(a)}`,
+            markdown: `https://kickoff.jujin.dev${markdownUrl(a)}`,
           },
         ]),
       ),
@@ -35,9 +35,9 @@ export async function GET() {
     JSON.stringify(
       {
         schemaVersion: 1,
-        site: "https://jujin.dev",
+        site: "https://kickoff.jujin.dev",
         sourceLanguage: "en",
-        instructions: "https://jujin.dev/ai/instructions.md",
+        instructions: "https://kickoff.jujin.dev/ai/instructions.md",
         categories,
         articles,
       },

@@ -18,7 +18,10 @@ const { article } = Astro.props;
       <meta charset="utf-8" />
       <meta http-equiv="refresh" content={`0;url=${articleUrl(article)}`} />
       <meta name="robots" content="noindex" />
-      <link rel="canonical" href={`https://jujin.dev${articleUrl(article)}`} />
+      <link
+        rel="canonical"
+        href={`https://kickoff.jujin.dev${articleUrl(article)}`}
+      />
       <title>{article.data.title}</title>
     </head>
     <body>

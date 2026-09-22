@@ -1,12 +1,12 @@
 ## 목적과 적용 범위
 
-개발 시작 지침 문서, provided by jujin.dev. 지침 버전: v1. 리비전: 2. 갱신일: 2026-09-23. 영어가 원본이며, 한국어·일본어는 원본 리비전 2에 대응합니다.
+개발 시작 지침 문서, provided by Kickoff by jujin. 지침 버전: v1. 리비전: 2. 갱신일: 2026-09-23. 영어가 원본이며, 한국어·일본어는 원본 리비전 2에 대응합니다.
 
 서비스 아이디어를 합의된 프로젝트 기획으로 구체화합니다. 이 문서와 기존 프로젝트 지침·결정을 먼저 읽고, 확정된 선택을 보존합니다. 사용자 언어로 답합니다. 상위 지침을 우선합니다. 시작 프롬프트는 기획을 요청합니다. 기획 확정과 개발 지시를 받은 뒤 개발합니다. 이미 명시된 권한은 해당 범위 안에서 계속 유효합니다.
 
 ## 1. 읽고 준비한 뒤 서비스 정보를 받기
 
-[AI 행동 지침](https://jujin.dev/ai/instructions.md)과 전체 [카탈로그](https://jujin.dev/ai/catalog.json)를 읽습니다. 실제로 읽은 출처와 지침 버전을 알립니다. 접근 실패 시 URL과 부족한 근거를 밝히고 재시도하거나 문서 제공을 요청합니다. 읽지 않고 준비됐다고 하지 않습니다.
+[AI 행동 지침](https://kickoff.jujin.dev/ai/instructions.md)과 전체 [카탈로그](https://kickoff.jujin.dev/ai/catalog.json)를 읽습니다. 실제로 읽은 출처와 지침 버전을 알립니다. 접근 실패 시 URL과 부족한 근거를 밝히고 재시도하거나 문서 제공을 요청합니다. 읽지 않고 준비됐다고 하지 않습니다.
 
 첫 답변은 짧은 준비 확인과 아래 세 입력 요청입니다. 이미 받은 정보는 재사용합니다.
 
@@ -58,6 +58,6 @@ SOLID·GRASP의 책임 배분과 의존성 원칙을 해당 프로그래밍 방�
 
 ## 6. 함께 키우는 지침과 버전
 
-누구나 표현 개선, 빠진 주제, 반례, 번역, 시나리오 개선을 [이슈](https://github.com/jujinkim/jujin-dev-web/issues)나 [PR](https://github.com/jujinkim/jujin-dev-web/pulls)로 제안할 수 있습니다. [기여·버전 규칙](https://github.com/jujinkim/jujin-dev-web/blob/main/CONTRIBUTING.md)에 따라 문제, 변경 전후 동작, 출처, 기대 결과를 함께 남깁니다. 비공개 프로젝트 정보는 올리지 않습니다.
+누구나 표현 개선, 빠진 주제, 반례, 번역, 시나리오 개선을 [이슈](https://github.com/jujinkim/kickoff-jujin-dev-web/issues)나 [PR](https://github.com/jujinkim/kickoff-jujin-dev-web/pulls)로 제안할 수 있습니다. [기여·버전 규칙](https://github.com/jujinkim/kickoff-jujin-dev-web/blob/main/CONTRIBUTING.md)에 따라 문제, 변경 전후 동작, 출처, 기대 결과를 함께 남깁니다. 비공개 프로젝트 정보는 올리지 않습니다.
 
 v2가 나와도 v1은 유지합니다. 동작을 바꾸지 않는 설명 수정은 리비전과 변경 이력을 갱신합니다. 의무·절차가 달라지면 새 주 버전을 만듭니다. 이전 버전 URL을 몰래 교체하지 않습니다. API schemaVersion 1과 지침 버전은 별개입니다. 새 버전은 관리자의 검토를 거치며 프로젝트는 명시적으로 업그레이드합니다.
