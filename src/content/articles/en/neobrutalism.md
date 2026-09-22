@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-22"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-23"
 comparison:
   features: >-
     Bright blocks, thick outlines, and hard offset shadows create graphic
@@ -32,16 +32,18 @@ comparison:
 checked: "2026-09-21"
 ---
 
-## Concept
+## Why: the goal or problem
 
-Bright blocks, thick outlines, and hard offset shadows create graphic emphasis.
+A compact interface needs a bold identity and unmistakable grouping. Subtle surface changes may not provide enough emphasis.
 
-## Example
+## How: work toward a solution
 
-All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. Bold outlines and hard shadows give the panels a graphic weight.
+Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Bold outlines and hard shadows give the panels a graphic weight.
 
-## When to choose it
+## What: the concept
 
-Choose it for a small interface with a bold voice. Dense decoration competes with details; reserve strong emphasis for key information.
+**Neobrutalism** — Bright blocks, thick outlines, and hard offset shadows create graphic emphasis.
+
+Dense decoration competes with details; reserve strong emphasis for key information.
 
 [NN/g](https://www.nngroup.com/articles/neobrutalism/)

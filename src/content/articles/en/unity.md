@@ -12,9 +12,9 @@ related:
   - godot
   - unreal-engine
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   features: GameObjects contain components
@@ -24,16 +24,18 @@ comparison:
   combinations: Separate score logic and presentation
 ---
 
-## Concept
+## Why: the goal or problem
 
-Unity GameObjects contain components. Transform, rendering, collision, and authored scripts provide distinct responsibilities; an object name alone does not implement gameplay.
+Many game objects share capabilities but combine them differently. One large script per object repeats responsibilities.
 
-## Example
+## How: work toward a solution
 
 The schematic contains a player, floor, camera, and one collectible. Move to item triggers authored contact logic: score changes from zero to one and the item disappears. Repeat contact cannot score again. Disable contact before moving to demonstrate a missed collection: score stays zero. Reset or reload restores the player and item. This is a concept simulation.
 
-## When to choose it
+## What: the concept
 
-Choose it for component composition. Keep score ownership clear and test component references.
+Unity GameObjects contain components. Transform, rendering, collision, and authored scripts provide distinct responsibilities; an object name alone does not implement gameplay.
+
+Keep score ownership clear and test component references.
 
 [Source](https://docs.unity3d.com/Manual/GameObjects.html)

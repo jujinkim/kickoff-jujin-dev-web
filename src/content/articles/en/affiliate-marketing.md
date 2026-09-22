@@ -15,9 +15,9 @@ related:
     "transaction-fees",
   ]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -29,16 +29,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-Affiliate revenue rewards qualifying referrals to another seller. A click alone does not necessarily qualify, and eligibility follows the particular program agreement.
+Useful recommendations send buyers elsewhere. You want qualifying referrals to support the work without selling the product yourself.
 
-## Example
+## How: work toward a solution
 
 A fictional reading service labels a referral link to a bookshop. A reader buys there; the shop pays the publisher a commission if its conditions are met. Amazon Associates provides one contractual example, not universal rates or rules. The diagram excludes settlement timing, fees and refunds.
 
-## When to choose it
+## What: the concept
 
-Choose it for relevant recommendations with clear commercial disclosure. Keep editorial judgment visible; combine with reader payments without treating referrals as guaranteed income.
+**Affiliate commissions** — Affiliate revenue rewards qualifying referrals to another seller. A click alone does not necessarily qualify, and eligibility follows the particular program agreement.
+
+Keep editorial judgment visible; combine with reader payments without treating referrals as guaranteed income.
 
 [Source](https://affiliate-program.amazon.com/help/operating/agreement)

@@ -2,7 +2,7 @@
 import Base from "../../../../layouts/Base.astro";
 import CategoryTree from "../../../../components/CategoryTree.astro";
 import Comparison from "../../../../components/Comparison.astro";
-import Card from "../../../../components/Card.astro";
+import ArticleListing from "../../../../components/ArticleListing.astro";
 import { taxonomy, candidates, ancestors } from "../../../../lib/catalog";
 import { listed } from "../../../../lib/content";
 import { languages, strings } from "../../../../lib/i18n";
@@ -75,19 +75,10 @@ const pending = candidates.filter(
       </nav>
       <h1>{category.names[lang]}</h1>
       <p>{category.descriptions[lang]}</p>
-      <p>
-        {articles.length} {t.count}
-      </p>
     </section>
     <section class="section">
       <CategoryTree parent={category.id} lang={lang} />
-      {articles.length > 0 && (
-        <div class="catalog-grid">
-          {articles.map((article, index) => (
-            <Card article={article} index={index} />
-          ))}
-        </div>
-      )}
+      <ArticleListing lang={lang} kind="concept" categoryId={category.id} />
       <ul class="concept-list">
         {pending.map((c) => (
           <li data-candidate={c.id}>

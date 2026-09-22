@@ -2,7 +2,7 @@
 
 Current eleven-style content and layout contract: [design demos](../../design-demos.md#style-workspace-contract). The reading-card fixture below records the earlier authoring stage.
 
-> Current publishing rule (2026-09-21): one-minute concept introductions, three short sections (Concept, Example, When to choose it), and a prominent diagram or UI image. The longer section plans and exhaustive comparisons below remain research references, not required article length. Optional comparisons and sources must not obscure the core concept.
+> Current publishing rule (2026-09-23): follow [the shared authoring guide](../../content-authoring.md). All articles follow Why → How → What: reader problem, concrete solution, then named concept and limits. Catalog concepts stay within one minute; guides are practical 2–3 minute walkthroughs. Historical plans below are research references.
 
 Group ID: `styles` · Checked: 2026-09-21 · Writing designs, not article bodies.
 

@@ -17,9 +17,9 @@ related:
     "direct-seller",
   ]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -31,16 +31,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-Customer direct payment means users pay for product access. It identifies the revenue source; billing frequency and the contractual seller remain separate choices.
+Users receive value from your product, but operating it needs funding. You want the beneficiaries to pay for defined access.
 
-## Example
+## How: work toward a solution
 
 A fictional reading service receives 12 from a reader and grants access. The diagram separates payment from content delivery. A processor may carry the payment without becoming the seller. Amounts are illustrative; taxes, processing fees and refunds are omitted.
 
-## When to choose it
+## What: the concept
 
-Choose it when users value the product enough to pay. Combine with subscription or one-time billing; access terms still need definition.
+Customer direct payment means users pay for product access. It identifies the revenue source; billing frequency and the contractual seller remain separate choices.
+
+Combine with subscription or one-time billing; access terms still need definition.
 
 [Source](https://docs.stripe.com/payments/checkout)

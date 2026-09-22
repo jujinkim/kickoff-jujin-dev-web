@@ -12,9 +12,9 @@ related:
   - static-hosting
   - always-on-server
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   features: Event-triggered managed handlers
@@ -24,16 +24,18 @@ comparison:
   combinations: Static frontend plus external storage
 ---
 
-## Concept
+## Why: the goal or problem
 
-Serverless functions run managed handlers in response to events or requests. The platform manages servers; application correctness still belongs to the developer.
+An occasional request needs server-side work, but your team does not want to operate a continuously listening process itself.
 
-## Example
+## How: work toward a solution
 
 Read article invokes a handler. Save A17 invokes another handler and writes an external store. Repeat Save keeps one record under the example’s reader/article key. Fail next save returns failure without changing storage. Restart handler discards execution state but retains that record. Reset or reload clears this page-memory simulation, including its illustrated store.
 
-## When to choose it
+## What: the concept
 
-Choose it for event-oriented APIs. Design duplicate handling and persistence explicitly; never assume a warm instance.
+Serverless functions run managed handlers in response to events or requests. The platform manages servers; application correctness still belongs to the developer.
+
+Design duplicate handling and persistence explicitly; never assume a warm instance.
 
 [Source](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)

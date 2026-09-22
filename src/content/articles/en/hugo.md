@@ -12,9 +12,9 @@ related:
   - astro
   - jekyll
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   features: Content plus Go templates
@@ -24,16 +24,18 @@ comparison:
   combinations: Static hosting plus a Save API
 ---
 
-## Concept
+## Why: the goal or problem
 
-Hugo combines content with templates to generate static files. Its Go implementation does not require authors to write articles as Go programs.
+Many content files need consistent pages. Editing repeated HTML by hand makes site-wide changes slow and error-prone.
 
-## Example
+## How: work toward a solution
 
 Start with three Markdown articles and one layout. Next resolves templates, creates an index and three article pages, then sends files through hosting to the browser. Missing layout stops this example before output. A separate browser widget can call a Save API; the build tool never handles reader requests. Previous, Reset, or reload restores earlier states.
 
-## When to choose it
+## What: the concept
 
-Choose it for file-centered publishing. Plan template maintenance and personal storage separately.
+Hugo combines content with templates to generate static files. Its Go implementation does not require authors to write articles as Go programs.
+
+Plan template maintenance and personal storage separately.
 
 [Source](https://gohugo.io/about/introduction/)

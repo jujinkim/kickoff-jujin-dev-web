@@ -12,9 +12,9 @@ related:
   - brutalism
   - skeuomorphism
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 comparison:
   features: "Title bars, beveled windows, pixel ornaments, and fixed-width type."
   advantages: Window groups make the project feel like a compact desktop.
@@ -24,16 +24,18 @@ comparison:
 checked: "2026-09-22"
 ---
 
-## Concept
+## Why: the goal or problem
+
+A playful project wants familiar early-computer cues. Generic panels do not communicate that intended atmosphere.
+
+## How: work toward a solution
+
+Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Menus lead to task windows; resource notes unfold inside titled windows.
+
+## What: the concept
 
 Retro digital borrows early desktop windows and pixel ornaments. This editorial category relates to Canva’s 2026 early-computing trend, not a claim of invention in 2026.
 
-## Example
-
-All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. Menus lead to task windows; resource notes unfold inside titled windows.
-
-## When to choose it
-
-Choose it for a playful, compact workspace. Nostalgic decoration must not shrink text or imply unavailable actions.
+Nostalgic decoration must not shrink text or imply unavailable actions.
 
 [Canva 2026](https://www.canva.com/newsroom/news/design-trends-2026/)

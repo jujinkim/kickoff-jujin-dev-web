@@ -4,6 +4,7 @@ import { pathToFileURL } from "node:url";
 import matter from "gray-matter";
 import { validateDesigns } from "./design-registry.mjs";
 import { articleOverviewSeconds } from "../src/lib/reading-budget.mjs";
+import { readingBudgets } from "../src/lib/article-format.mjs";
 import {
   taxonomy,
   candidates,
@@ -98,8 +99,12 @@ export function validateArticles(articles) {
         errors.push(`${key}: invalid ${name} date`);
     }
     if (d.status !== "published") continue;
-    if (articleOverviewSeconds(a) > 60)
-      errors.push(`${key}: overview exceeds one-minute reading budget`);
+    const budget = readingBudgets[d.kind];
+    const seconds = articleOverviewSeconds(a);
+    if (budget && (seconds < budget.min || seconds > budget.max))
+      errors.push(
+        `${key}: ${d.kind} reading budget is ${budget.min}-${budget.max}s; got ${seconds}s`,
+      );
     if (d.kind === "concept") {
       for (const field of comparisonKeys)
         if (
@@ -119,13 +124,10 @@ export function validateArticles(articles) {
       )
     )
       errors.push(`${key}: sections missing or out of order`);
-    if (
-      !a.content
-        .split(`## ${sectionNames[d.lang][1]}`)[1]
-        ?.split("## ")[0]
-        .trim()
-    )
-      errors.push(`${key}: missing textual/code example`);
+    for (const heading of sectionNames[d.lang] ?? []) {
+      if (!a.content.split(`## ${heading}\n`)[1]?.split(/^## /m)[0].trim())
+        errors.push(`${key}: missing section content: ${heading}`);
+    }
     if (!/\]\(https:\/\//.test(a.content))
       errors.push(`${key}: missing official source`);
 

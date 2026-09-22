@@ -8,9 +8,9 @@ category: "seller-responsibility"
 aliases: ["직접 판매자 모델", "Direct seller model"]
 related: ["payments", "merchant-of-record", "direct-payment"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,16 +22,18 @@ comparison:
   }
 ---
 
-## 개념
+## 왜 필요한가
 
-직접 판매자 모델에서는 제품 사업자가 고객에게 판매합니다. 결제 처리 업체를 이용하는 것만으로 판매 책임이 이전되지는 않습니다.
+고객과의 판매 관계를 직접 운영하고 싶습니다. 카드 처리를 맡겨도 판매에 따른 책임을 맡을 주체는 필요합니다.
 
-## 예시
+## 어떻게 해결하는가
 
 가상 읽기 도구의 판매에 사업자 이름이 표시됩니다. 처리 업체는 결제를 맡고, 사업자는 예시의 영수증·환불·거래세 업무와 제품 제공을 맡습니다. 책임 도식은 가정한 계약을 설명하며 모든 업체에 적용되는 규칙은 아닙니다. 금액과 국가별 세무 규칙은 다루지 않습니다.
 
-## 추천 조건
+## 무엇이라 부르는가
 
-해당 판매 의무를 운영할 역량이 있을 때 적합합니다. 일회성·정기 과금 및 전문 지원 서비스와 조합하세요.
+직접 판매자 모델에서는 제품 사업자가 고객에게 판매합니다. 결제 처리 업체를 이용하는 것만으로 판매 책임이 이전되지는 않습니다.
+
+일회성·정기 과금 및 전문 지원 서비스와 조합하세요.
 
 [출처](https://stripe.com/resources/more/merchant-of-record)

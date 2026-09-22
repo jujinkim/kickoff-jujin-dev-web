@@ -26,7 +26,16 @@ const t = strings[d.lang];
 const all = await published();
 const active = all.filter((a) => isListedArticle(a.data));
 const replacement = articleReplacement(d);
-const { Content, headings } = await render(article);
+const { headings } = await render(article);
+// The validated Markdown has exactly three H2 sections. Render Astro's trusted,
+// precompiled HTML so the visual can follow How without changing demo styling.
+const bodySections = (article.rendered?.html ?? "")
+  .replace(/<!--[\s\S]*?-->/g, "")
+  .split(/(?=<h2\b)/)
+  .filter((section) => section.trim());
+if (bodySections.length !== 3) {
+  throw new Error(`Expected Why/How/What body for ${d.lang}/${d.articleId}`);
+}
 const alternates = all
   .filter((a) => a.data.articleId === d.articleId)
   .map((a) => ({ lang: a.data.lang, url: articleUrl(a) }));
@@ -71,11 +80,17 @@ const alternates = all
           {t.updated} {d.updated}
         </time>
         <span>
-          {d.lang === "ko"
-            ? "1분 개념"
-            : d.lang === "ja"
-              ? "1分で概要"
-              : "One-minute overview"}
+          {d.kind === "guide"
+            ? d.lang === "ko"
+              ? "2–3분 가이드"
+              : d.lang === "ja"
+                ? "2〜3分ガイド"
+                : "2–3 minute guide"
+            : d.lang === "ko"
+              ? "1분 개념"
+              : d.lang === "ja"
+                ? "1分で概要"
+                : "One-minute overview"}
         </span>
         <span>REV. {d.revision.toString().padStart(2, "0")}</span>
         <a href={markdownUrl(article)}>{t.markdown} ↗</a>
@@ -91,16 +106,20 @@ const alternates = all
     )}
     <div class="article-layout">
       <div class="article-main">
-        {isDesignId(d.articleId) && (
-          <DesignDemo articleId={d.articleId} lang={d.lang} />
-        )}
-        {d.example && (
-          <div class="article-example" data-pagefind-ignore>
-            <Example kind={d.example} lang={d.lang} />
-          </div>
-        )}
-        <article class="prose">
-          <Content />
+        <article class="article-body">
+          {bodySections.map((html, index) => (
+            <section data-article-section={["why", "how", "what"][index]}>
+              <div class="prose" set:html={html} />
+              {index === 1 && isDesignId(d.articleId) && (
+                <DesignDemo articleId={d.articleId} lang={d.lang} />
+              )}
+              {index === 1 && d.example && (
+                <div class="article-example" data-pagefind-ignore>
+                  <Example kind={d.example} lang={d.lang} />
+                </div>
+              )}
+            </section>
+          ))}
         </article>
         {d.comparison && (
           <details class="article-extra" data-pagefind-ignore>

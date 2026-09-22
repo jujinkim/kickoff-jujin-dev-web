@@ -8,9 +8,9 @@ category: "service-split"
 aliases: ["Modular monolith"]
 related: ["architecture", "monolith", "microservices"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,16 +22,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
+
+Features interfere, but separate services add unwanted operating work. You need boundaries within one deployment.
+
+## How: work toward a solution
+
+1. Fictional app v1: one team deploys Catalog, Library and Billing together; A17 has no tag.
+2. Library adds tag storage in its owned tables. Deploy app v2; Billing behavior stays unchanged. One database holds module-owned tables; direct cross-module access is forbidden.
+3. Library calls Catalog's API in-process, then writes `travel`. A lookup error leaves no tag; retry after recovery.
+
+## What: the concept
 
 A modular monolith combines one deployment with deliberate internal boundaries. Module APIs protect owned internals. It is still a monolith. [Fowler](https://martinfowler.com/bliki/MonolithFirst.html)
 
-## Example
-
-1. Fictional reading app: one team; Catalog, Library and Billing in app v1. A17 has no tag.
-2. Library adds tag storage in its owned tables. Deploy app v2; Billing behavior stays unchanged. One database hosts module-owned tables, with no direct cross-module table access.
-3. Library calls Catalog's API in-process, then writes `travel`. A lookup error leaves no tag; retry after recovery.
-
-## When to choose it
-
-Useful for clear ownership without remote calls. Enforce boundaries beyond folders; releases and process failures remain shared. Modules can use hexagonal ports.
+Enforce boundaries beyond folders; releases and process failures remain shared. Modules can use hexagonal ports.

@@ -12,9 +12,9 @@ related:
   - react
   - vue
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   features: Compiled declarative components
@@ -24,16 +24,18 @@ comparison:
   combinations: Astro island or an app framework
 ---
 
-## Concept
+## Why: the goal or problem
 
-Svelte compiles declarative components into browser code. Compilation prepares the UI; later clicks still run state updates. SvelteKit has a broader application scope.
+Interactive components need coordinated updates. Handwritten DOM changes scatter the relationship between data and displayed content.
 
-## Example
+## How: work toward a solution
 
 Two Field notes cards start unsaved. Save on A17 changes only its label to Saved; B04 stays unsaved. Saving B04 changes the shared count from one to two. Repeating Save leaves two records: each ID counts once. The diagram separates compilation from runtime updates. Reset or reload clears both cards. There is no persistent storage here.
 
-## When to choose it
+## What: the concept
 
-Choose it for a compiler-based component workflow. Add routing and persistence as separate decisions.
+Svelte compiles declarative components into browser code. Compilation prepares the UI; later clicks still run state updates. SvelteKit has a broader application scope.
+
+Add routing and persistence as separate decisions.
 
 [Source](https://svelte.dev/docs/svelte/overview)

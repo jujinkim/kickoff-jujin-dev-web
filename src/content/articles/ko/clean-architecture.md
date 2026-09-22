@@ -8,9 +8,9 @@ category: "boundaries"
 aliases: ["클린 아키텍처"]
 related: ["architecture", "layered-architecture", "hexagonal-architecture"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,16 +22,20 @@ comparison:
   }
 ---
 
-## 개념
+## 왜 필요한가
 
-클린 아키텍처는 소스 의존성을 정책 쪽으로 향하게 합니다. 실행 중 호출은 안쪽 소유 인터페이스를 통해 바깥으로 나갈 수 있습니다. [Martin](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+업무 규칙은 데이터베이스나 화면이 바뀌어도 유지되어야 합니다. 세부 기술에 직접 의존하면 기술 교체가 규칙 변경으로 번집니다.
 
-## 예시
+## 어떻게 해결하는가
 
 1. 가상 단일 프로세스: R1, A17 미저장. HTTP·CLI 컨트롤러가 ID를 SaveArticle에 전달하고 SavedArticle이 검증합니다.
 2. SaveArticle은 메모리·내장 데이터베이스 어댑터가 구현한 SaveRepository를 호출합니다. 소스 참조는 어댑터 → 유스케이스 계약 → 도메인으로, 호출은 바깥 저장소로 향합니다. 경계에는 단순 데이터만 전달하며 ORM 행은 밖에 둡니다.
 3. 저장 완료: 0 → 1건, 반복해도 1건. 빈 ID나 쓰기 전 실패는 0건 유지, 문제 수정 후 재시도.
 
-## 추천 조건
+## 무엇이라 부르는가
 
-오래 유지할 정책에 유용하지만 데이터 변환 관리가 필요합니다. 헥사고날 포트와 결합할 수 있습니다. 폴더 네 개가 필수는 아닙니다.
+클린 아키텍처는 소스 의존성을 정책 쪽으로 향하게 합니다. 실행 중 호출은 안쪽 소유 인터페이스를 통해 바깥으로 나갈 수 있습니다. [Martin](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+
+헥사고날 포트와 결합할 수 있습니다. 폴더 네 개가 필수는 아닙니다.
+
+경계의 데이터 변환은 관리 비용이 듭니다.

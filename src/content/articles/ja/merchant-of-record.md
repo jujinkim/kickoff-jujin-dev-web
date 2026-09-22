@@ -8,9 +8,9 @@ category: "seller-responsibility"
 aliases: ["MoRモデル", "Merchant of record model"]
 related: ["payments", "direct-seller", "subscription"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,16 +22,18 @@ comparison:
   }
 ---
 
-## 概念
+## なぜ必要なのか
 
-外部のMerchant of Recordは対象取引の販売者になります。責任は契約に従い、製品制作やすべての事業上の義務が自動的に移るわけではありません。
+複数の市場で売ると、チームが扱いきれない販売業務が増えます。契約上の販売者へ任せられる責任を整理する必要があります。
 
-## 実例
+## どう解決するのか
 
 架空の読書ツールでは顧客がMoRに払い、MoRが合意した代金を事業者に精算します。例示した領収書・返金・取引税の業務はMoRが担います。事業者は製品と合意した製品サポートを提供し続けます。金額・除外条件・国別の税務規則は図の対象外です。
 
-## 選ぶ条件
+## どんな考え方なのか
 
-契約の対象範囲が要件に合う場合に適します。継続課金と組み合わせ、残る義務も確認します。
+**MoRモデル** — 外部のMerchant of Recordは対象取引の販売者になります。責任は契約に従い、製品制作やすべての事業上の義務が自動的に移るわけではありません。
+
+継続課金と組み合わせ、残る義務も確認します。
 
 [出典](https://stripe.com/resources/more/merchant-of-record)

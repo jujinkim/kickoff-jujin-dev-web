@@ -15,9 +15,9 @@ related:
     "volume-pricing",
   ]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -29,16 +29,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-Usage-based billing calculates charges from measured consumption. Define the billable unit and collection schedule separately; usage can be billed within a subscription.
+Light and heavy customers consume very different resources. Charging both identically may not reflect value or operating cost.
 
-## Example
+## How: work toward a solution
 
 A fictional export tool charges 0.02 per export. Across months with 100, 300 and 600 exports, charges are 2, 6 and 12: total 20. Change month-one usage or add one export to update its charge and the total. Zero usage costs zero here. Taxes, fees and refunds are omitted.
 
-## When to choose it
+## What: the concept
 
-Choose it when consumption reflects value or cost. Explain metering and budget variability; compare prepaid credits.
+Usage-based billing calculates charges from measured consumption. Define the billable unit and collection schedule separately; usage can be billed within a subscription.
+
+Explain metering and budget variability; compare prepaid credits.
 
 [Source](https://docs.stripe.com/billing/usage-based)

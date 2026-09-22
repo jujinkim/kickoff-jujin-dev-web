@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-22"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-23"
 comparison:
   features: >-
     Recognizable materials and objects explain a digital task. The workspace
@@ -30,16 +30,18 @@ comparison:
 checked: "2026-09-21"
 ---
 
-## Concept
+## Why: the goal or problem
 
-Recognizable materials and objects explain a digital task.
+A digital task feels unfamiliar. A physical object people already understand can suggest how its controls and content relate.
 
-## Example
+## How: work toward a solution
 
-All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. The workspace opens as a paper notebook on a wooden surface.
+Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. The workspace opens as a paper notebook on a wooden surface.
 
-## When to choose it
+## What: the concept
 
-Choose a familiar metaphor that supports the task. Decorative realism consumes space; keep task controls explicit.
+**Skeuomorphism** — Recognizable materials and objects explain a digital task.
+
+Decorative realism consumes space; keep task controls explicit.
 
 [IxDF](https://ixdf.org/literature/topics/skeuomorphism)

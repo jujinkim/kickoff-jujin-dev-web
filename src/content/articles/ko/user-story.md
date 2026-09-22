@@ -8,9 +8,9 @@ category: "requirements"
 aliases: ["사용자 스토리", "User story"]
 related: ["srs", "use-case", "job-story"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,11 +22,11 @@ comparison:
   }
 ---
 
-## 개념
+## 왜 필요한가
 
-사용자 스토리는 사용자 가치의 작은 단위를 표현하며, 대화와 인수 기준으로 구체화합니다. 역할·목표·가치 문장은 대화의 시작이지 완전한 명세는 아닙니다. [출처](https://agilealliance.org/glossary/user-stories/)
+큰 기능 요청은 한꺼번에 만들거나 검토하기 어렵습니다. 사용자에게 주는 가치가 보이는 작은 결과로 나눌 필요가 있습니다.
 
-## 예시
+## 어떻게 해결하는가
 
 1. 가상 상황: 로그인한 통근자, 아직 저장하지 않은 A17.
 2. 역할 → 목표 → 가치: “독자로서 나중에 다시 찾을 수 있도록 A17 링크를 저장하고 싶다.”
@@ -34,6 +34,8 @@ comparison:
 
 링크 저장은 오프라인 읽기를 보장하지 않습니다.
 
-## 추천 조건
+## 무엇이라 부르는가
 
-작은 기능 단위를 계획할 때 적합합니다. 유스케이스로 실패 경로를, 잡 스토리로 상황과 동기를 보완하세요.
+사용자 스토리는 사용자 가치의 작은 단위를 표현하며, 대화와 인수 기준으로 구체화합니다. 역할·목표·가치 문장은 대화의 시작이지 완전한 명세는 아닙니다. [출처](https://agilealliance.org/glossary/user-stories/)
+
+유스케이스로 실패 경로를, 잡 스토리로 상황과 동기를 보완하세요.

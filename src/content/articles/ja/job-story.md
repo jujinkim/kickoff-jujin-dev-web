@@ -8,9 +8,9 @@ category: "requirements"
 aliases: ["ジョブストーリー", "Job story"]
 related: ["srs", "user-story", "use-case"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,11 +22,11 @@ comparison:
   }
 ---
 
-## 概念
+## なぜ必要なのか
 
-ジョブストーリーは解決策を選ぶ前に、状況・動機・望む成果を結びます。探索の出発点であり、受け入れテストではありません。 [出典](https://www.intercom.com/blog/using-job-stories-design-features-ui-ux/)
+機能の依頼だけでは、それが必要になった状況が抜け落ちます。文脈を知らないと別の問題を解いてしまいます。
 
-## 実例
+## どう解決するのか
 
 架空のログイン済み通勤者、未保存のA17：
 
@@ -36,6 +36,8 @@ comparison:
 
 リンク保存やリンク付きリマインダーを検討します。どちらもオフライン閲覧を保証しません。保存を選ぶなら、重複保存や書き込み失敗は別途検討します。
 
-## 選ぶ条件
+## どんな考え方なのか
 
-状況によってニーズが変わるときに適します。仮定した動機を調査で確かめ、ユーザーストーリーの開発単位とユースケースの経路を補います。
+ジョブストーリーは解決策を選ぶ前に、状況・動機・望む成果を結びます。探索の出発点であり、受け入れテストではありません。 [出典](https://www.intercom.com/blog/using-job-stories-design-features-ui-ux/)
+
+仮定した動機を調査で確かめ、ユーザーストーリーの開発単位とユースケースの経路を補います。

@@ -8,9 +8,9 @@ category: "boundaries"
 aliases: ["Layered architecture"]
 related: ["architecture", "hexagonal-architecture", "clean-architecture"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,11 +22,11 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-Layered architecture separates responsibilities and constrains dependencies. Logical layers need not be separate machines. [Microsoft](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier)
+Screen changes, business rules and storage edits are tangled together. Separate responsibilities so a change has a clearer home.
 
-## Example
+## How: work toward a solution
 
 1. Fictional single process: reader R1, A17 unsaved; memory or embedded database.
 2. HTTP or CLI presentation imports and calls application validation, which imports and calls persistence. This closed-layer example forbids skipping layers.
@@ -34,6 +34,8 @@ Layered architecture separates responsibilities and constrains dependencies. Log
 
 Switching HTTP to CLI leaves validation in place.
 
-## When to choose it
+## What: the concept
 
-Useful for stable responsibilities; pass-through layers add ceremony. Ports can invert storage dependencies. Folder names alone enforce nothing.
+Layered architecture separates responsibilities and constrains dependencies. Logical layers need not be separate machines. [Microsoft](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier)
+
+Pass-through layers add ceremony. Ports can invert storage dependencies. Folder names alone enforce nothing.

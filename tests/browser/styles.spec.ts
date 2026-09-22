@@ -49,7 +49,11 @@ for (const lang of languages) {
         isListedArticle(a.data),
     )) {
       const section = data.kind === "guide" ? "guides" : "catalog";
-      await page.goto(`/${lang}/${section}/`);
+      await page.goto(
+        data.kind === "guide"
+          ? `/${lang}/guides/`
+          : `/${lang}/catalog/categories/${data.category}/`,
+      );
       await page.locator("#search").fill(data.title);
       await expect(
         page.locator(
@@ -218,7 +222,9 @@ for (const lang of languages) {
         for (const control of await page.locator("[data-interactive]").all())
           await expect(control).toBeDisabled();
       }
-      await expect(page.locator("article.prose h2")).toHaveCount(3);
+      await expect(
+        page.locator(".article-body > section > .prose > h2"),
+      ).toHaveCount(3);
       for (const width of [320, 768, 1440]) {
         await page.setViewportSize({ width, height: 900 });
         for (const theme of ["light", "dark"]) {

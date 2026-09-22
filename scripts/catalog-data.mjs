@@ -19,11 +19,7 @@ export const activeTaxonomy = taxonomy.filter(
 export const activeCandidates = candidates.filter(
   (c) => !retirements.categories[c.category],
 );
-export const conceptSections = {
-  en: ["Concept", "Example", "When to choose it"],
-  ko: ["개념", "예시", "추천 조건"],
-  ja: ["概念", "実例", "選ぶ条件"],
-};
+export { articleSections as conceptSections } from "../src/lib/article-format.mjs";
 export const comparisonKeys = [
   "features",
   "advantages",

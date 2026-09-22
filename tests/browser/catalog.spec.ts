@@ -1,20 +1,6 @@
-import {
-  activeTaxonomy as taxonomy,
-  isListedArticle,
-} from "../../scripts/catalog-data.mjs";
-import {
-  isDesignCategory,
-  platformCategories,
-  monetizationCategories,
-} from "../../scripts/design-registry.mjs";
+import { activeTaxonomy as taxonomy } from "../../scripts/catalog-data.mjs";
+import { isDesignCategory } from "../../scripts/design-registry.mjs";
 import { readArticles } from "../../scripts/validate-content.mjs";
-const publishedConceptCount = readArticles().filter(
-  (a) =>
-    a.data.lang === "en" &&
-    a.data.status === "published" &&
-    a.data.kind === "concept" &&
-    isListedArticle(a.data),
-).length;
 const publishedDesignCount = readArticles().filter(
   (a) =>
     a.data.lang === "en" &&
@@ -117,7 +103,7 @@ test("keyboard navigation, copy and AI lookup complete the reader flow", async (
   expect(article.translations.ko.markdown).toBe(
     article.translations.en.markdown,
   );
-  expect(await md.text()).toContain("## Concept");
+  expect(await md.text()).toContain("## What: the concept");
 });
 test("search failure keeps browse available and copy failure explains fallback", async ({
   page,
@@ -187,10 +173,10 @@ for (const lang of ["en", "ko", "ja"]) {
     page,
   }) => {
     await page.goto(`/${lang}/catalog/`);
-    await expect(page.locator(".catalog-card")).toHaveCount(
-      publishedConceptCount,
-    );
-    await page.locator(".category-index > summary").click();
+    await expect(page.locator(".catalog-card")).toHaveCount(0);
+    await page
+      .locator(`.category-card[href="/${lang}/catalog/categories/design/"]`)
+      .click();
     await page
       .locator(`.category-tree a[href="/${lang}/catalog/categories/styles/"]`)
       .click();
@@ -212,29 +198,20 @@ for (const [lang, layout, typography] of [
   ["ko", "레이아웃", "타이포그래피"],
   ["ja", "レイアウト", "タイポグラフィ"],
 ]) {
-  test(`${lang}: design groups, parent filters and search labels`, async ({
+  test(`${lang}: category-scoped groups, parent filters and search labels`, async ({
     page,
   }) => {
-    await page.goto(`/${lang}/catalog/`);
+    await page.goto(`/${lang}/catalog/categories/design/`);
     expect(
       await page
         .locator("[data-catalog-group]:visible")
         .evaluateAll((nodes) =>
           nodes.map((node) => node.getAttribute("data-catalog-group")).sort(),
         ),
-    ).toEqual(
-      [
-        "styles",
-        "layout",
-        "typography",
-        "boundaries",
-        "service-split",
-        ...platformCategories.filter((id) =>
-          taxonomy.some((c: { id: string }) => c.id === id),
-        ),
-        ...monetizationCategories,
-      ].sort(),
-    );
+    ).toEqual(["styles", "layout", "typography"].sort());
+    await expect(
+      page.locator('#category option[value="business"]'),
+    ).toHaveCount(0);
     await page.locator("#category").selectOption("layout");
     await expect(page.locator(".catalog-card:visible")).toHaveCount(6);
     await expect(page.locator("[data-catalog-group]:visible h2")).toHaveText(
@@ -270,7 +247,7 @@ for (const [lang, layout, typography] of [
       publishedDesignCount,
     );
     await expect(page.locator("[data-catalog-group]:visible")).toHaveCount(3);
-    await page.locator("#category").selectOption("business");
+    await page.goto(`/${lang}/catalog/categories/business/`);
     await expect(page.locator(".catalog-card:visible")).toHaveCount(24);
     await expect(page.locator("[data-catalog-group]:visible")).toHaveCount(7);
   });
@@ -284,7 +261,7 @@ test("legacy views become cards with full-width top-cropped thumbnails", async (
       (value) => localStorage.setItem("catalog-view", value),
       previous,
     );
-    await page.goto("/ko/catalog/");
+    await page.goto("/ko/catalog/categories/design/");
     await expect(page.locator("button[data-view]")).toHaveCount(2);
     await expect(page.locator("button[data-view=card]")).toHaveAttribute(
       "aria-pressed",
@@ -332,17 +309,16 @@ test("legacy views become cards with full-width top-cropped thumbnails", async (
 });
 
 for (const javaScriptEnabled of [true, false]) {
-  test(`category index: compact, responsive and native (JS ${javaScriptEnabled})`, async ({
+  test(`category cards: responsive and keyboard accessible (JS ${javaScriptEnabled})`, async ({
     browser,
   }, testInfo) => {
     test.setTimeout(120_000);
     const context = await browser.newContext({ javaScriptEnabled });
     const page = await context.newPage();
-    for (const [lang, label] of [
-      ["en", "Browse categories"],
-      ["ko", "분류 탐색"],
-      ["ja", "分類を探す"],
-    ]) {
+    const roots = taxonomy.filter(
+      (category: { parent: string | null }) => !category.parent,
+    );
+    for (const lang of ["en", "ko", "ja"]) {
       for (const width of [320, 768, 1440]) {
         await page.setViewportSize({ width, height: 900 });
         for (const theme of ["light", "dark"]) {
@@ -351,55 +327,64 @@ for (const javaScriptEnabled of [true, false]) {
             (value) => (document.documentElement.dataset.theme = value),
             theme,
           );
-          const index = page.locator(".category-index");
-          const summary = index.locator("summary");
-          await expect(summary).toContainText(label);
-          await expect(index).not.toHaveAttribute("open");
-          const box = await index.boundingBox();
-          expect(box!.height).toBe(48);
-          const toolbar = await page.locator(".catalog-toolbar").boundingBox();
-          expect(toolbar!.y - box!.y - box!.height).toBe(16);
-          await page.screenshot({
-            path: testInfo.outputPath(`${lang}-${width}-${theme}-closed.png`),
-          });
-          await summary.focus();
-          await page.keyboard.press("Enter");
-          await expect(index).toHaveAttribute("open");
-          await expect(index.locator("a:visible")).toHaveCount(taxonomy.length);
-          const columns = await index
-            .locator('[data-root="true"]')
+          const cards = page.locator(".category-card");
+          await expect(cards).toHaveCount(roots.length);
+          await expect(
+            page.locator(".catalog-card, .catalog-toolbar, #search, #category"),
+          ).toHaveCount(0);
+          await expect(page.locator('script[src="/catalog.js"]')).toHaveCount(
+            0,
+          );
+          const columns = await page
+            .locator(".catalog-categories")
             .evaluate(
               (node) =>
                 getComputedStyle(node).gridTemplateColumns.split(" ").length,
             );
           expect(columns).toBe(width <= 600 ? 1 : width <= 900 ? 2 : 3);
           expect(
+            (await cards.first().boundingBox())!.height,
+          ).toBeGreaterThanOrEqual(220);
+          expect(
             await page.evaluate(
               () => document.documentElement.scrollWidth <= innerWidth,
             ),
           ).toBeTruthy();
-          await page.screenshot({
-            path: testInfo.outputPath(`${lang}-${width}-${theme}-open.png`),
-            fullPage: true,
-          });
-          await page.keyboard.press("Space");
-          await expect(index).not.toHaveAttribute("open");
+          await cards.first().focus();
+          await expect(cards.first()).toBeFocused();
+          if (lang === "ko") {
+            await page.screenshot({
+              path: testInfo.outputPath(`${lang}-${width}-${theme}.png`),
+              fullPage: true,
+            });
+          }
           await page.keyboard.press("Enter");
-          await page.reload();
-          await expect(index).not.toHaveAttribute("open");
+          await expect(page).toHaveURL(
+            new RegExp(`/${lang}/catalog/categories/${roots[0].id}/$`),
+          );
         }
       }
-      await page.locator(".category-index summary").click();
-      await page
-        .locator(
-          `.category-index a[href="/${lang}/catalog/categories/design/"]`,
-        )
-        .click();
-      await expect(page).toHaveURL(
-        new RegExp(`/${lang}/catalog/categories/design/$`),
-      );
-      await expect(page.locator(".category-index")).toHaveCount(0);
-      await expect(page.locator(".category-tree a").first()).toBeVisible();
+      for (const category of roots) {
+        await page.goto(`/${lang}/catalog/`);
+        await page
+          .locator(
+            `.category-card[href="/${lang}/catalog/categories/${category.id}/"]`,
+          )
+          .click();
+        await expect(page).toHaveURL(
+          new RegExp(`/${lang}/catalog/categories/${category.id}/$`),
+        );
+        await expect(page.locator("h1")).toHaveText(category.names[lang]);
+        await expect(page.locator(".catalog-card").first()).toBeVisible();
+        const paths = await page
+          .locator(".catalog-card")
+          .evaluateAll((nodes) =>
+            nodes.map((node) =>
+              node.getAttribute("data-category-path")!.split(" "),
+            ),
+          );
+        expect(paths.every((path) => path.includes(category.id))).toBeTruthy();
+      }
     }
     await context.close();
   });

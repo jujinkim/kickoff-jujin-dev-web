@@ -12,9 +12,9 @@ related:
   - astro
   - hugo
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   features: Ruby build with reusable layouts
@@ -24,16 +24,18 @@ comparison:
   combinations: CI build plus static hosting
 ---
 
-## Concept
+## Why: the goal or problem
 
-Jekyll transforms Markdown and layouts into a static site using a Ruby build workflow. Generation and hosting are separate choices.
+A text-first publishing team needs reusable layouts and predictable builds. Rewriting complete pages for each post wastes effort.
 
-## Example
+## How: work toward a solution
 
 Start with three Markdown articles and one layout. Next runs the Ruby build, creates an index and three article pages, then sends files through hosting to the browser. Missing layout stops this example before output. Reading these files needs no Ruby request handler. Personal Save records need a separate API. Previous, Reset, or reload restores earlier states.
 
-## When to choose it
+## What: the concept
 
-Choose it for an established content-and-layout workflow. Maintain build dependencies separately from hosting.
+Jekyll transforms Markdown and layouts into a static site using a Ruby build workflow. Generation and hosting are separate choices.
+
+Maintain build dependencies separately from hosting.
 
 [Source](https://jekyllrb.com/docs/)

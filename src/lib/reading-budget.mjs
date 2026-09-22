@@ -5,6 +5,7 @@ export function visibleMarkdown(text) {
     .replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1")
     .replace(/^```[^\n]*$/gm, "")
     .replace(/<[^>]*>/g, "")
+    .replace(/^\s*\d+[.)]\s+/gm, "")
     .replace(/^[#>*-]+\s*/gm, "");
 }
 export function readingSeconds(text) {

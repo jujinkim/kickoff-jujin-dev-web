@@ -12,9 +12,9 @@ related:
   - static-hosting
   - serverless-functions
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   features: Long-running request listener
@@ -24,16 +24,18 @@ comparison:
   combinations: External durable store and static frontend
 ---
 
-## Concept
+## Why: the goal or problem
 
-An always-on server intends to keep a process listening for requests. It can restart; its name does not guarantee continuous availability.
+Requests need a process whose runtime you control. Managed handlers alone may not provide the process lifecycle your service needs.
 
-## Example
+## How: work toward a solution
 
 Read article and Save A17 enter the listening process. Save writes an external store. Repeat Save keeps one record under the example’s reader/article key. Fail next save returns failure without changing storage. Restart handler replaces the process while retaining the stored record. Reset or reload clears this page-memory simulation, including its illustrated store.
 
-## When to choose it
+## What: the concept
 
-Choose it when runtime control matters and someone owns supervision, capacity, and recovery. Keep durable data external.
+An always-on server intends to keep a process listening for requests. It can restart; its name does not guarantee continuous availability.
+
+Keep durable data external; assign supervision, capacity and recovery to an owner.
 
 [Source](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)

@@ -18,20 +18,26 @@ aliases:
 related: ["architecture", "shipping"]
 example: "spec"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "Read our agreed requirements. Ask only about unresolved product behavior and constraints, including duplicate handling, order, stock, guest checkout and recovery. Turn the answers into numbered requirements, acceptance criteria and tasks. Write useful user stories, use cases or job stories yourself, without asking me to choose a document format. Record significant decisions, alternatives, status and revisit conditions. Choose internal data structures yourself; do not infer missing product rules."
 ---
 
-## Concept
+## Why: the goal or problem
 
-Requirements describe observable behavior and constraints; acceptance criteria make them checkable. [NASA](https://swehb.nasa.gov/spaces/SWEHBVD/pages/102695421/SWE-050%2B-%2BSoftware%2BRequirements)
+“Make a shopping cart” sounds clear until the same book is added twice. One person expects two rows, another expects quantity two, and a third expects duplicates to be blocked. Code can implement any of these correctly and still disappoint the user. You need an agreement about visible behavior before choosing the internal representation.
 
-## Example
+## How: work toward a solution
 
-An empty cart receives the same book twice: one row, quantity two. Unavailable stock leaves it unchanged. The user confirms this behavior; AI chooses storage structures.
+1. Start with one outcome: a reader can prepare an order without losing selected books. Identify who acts, where the action begins, and what is outside this first release. Recommendations and discount campaigns can wait if they are not part of the agreed goal.
+2. Walk through a concrete example. An empty cart receives book A once, then again. Agree that it shows one row with quantity two. Decide whether removing one copy leaves quantity one and whether unavailable stock leaves the cart unchanged. These are product decisions; an array or map is an implementation choice for AI.
+3. Add the inconvenient paths. What does the person see during saving, after a network failure, or when they press twice? Separate a deliberate second addition from delivery of the same request twice. If the behavior is unresolved, ask about that outcome rather than silently inventing it.
+4. Turn each decision into a check: given the initial cart and stock, perform the action and compare the resulting rows, quantities and feedback. Replace “fast” with an agreed condition and measurable threshold. Do not invent a universal performance target.
+5. Have AI write the scenarios, open questions and accepted decisions. Give requirements stable identifiers so implementation tasks and checks can refer back to them. When scope changes, update the affected checks and record the reason; do not keep an obsolete test as the hidden authority.
 
-## When to choose it
+Try reviewing only these examples with a collaborator. If both predict the same outcome for success, failure and repetition, the feature is ready for a more concrete implementation plan. A long document with unresolved behavior does not pass this check.
 
-Use before development to settle scope, motivation, success and failure. AI writes suitable stories or scenarios; users need not select document formats. Keep records proportional: decision records preserve important choices, context and consequences, but need maintenance. AI records these alongside acceptance criteria. [AWS](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html)
+## What: the concept
+
+This is requirements specification: describing observable behavior and constraints with verifiable acceptance criteria. An SRS is one way to organize that agreement; stories and scenarios are supporting formats, not choices the user must master. [NASA’s requirements checklist](https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/) supports clear, checkable requirements. AI can record significant decisions using [context and consequences](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html), while the user retains product decisions.

@@ -8,9 +8,9 @@ category: "purchase-types"
 aliases: ["Consumable purchase"]
 related: ["revenue", "non-consumable-purchase", "prepaid-credits", "freemium"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,16 +22,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-A consumable purchase supplies units that are depleted through use and can be bought again. It differs from a non-consumable feature entitlement.
+Hints are spent one at a time. A permanent unlock cannot express a balance that decreases and can be replenished.
 
-## Example
+## How: work toward a solution
 
 A fictional puzzle app starts with zero hints. Buy three, then use hints repeatedly: the balance falls to zero and further use is blocked. Buying another pack adds three again. This is a local simulation; no purchase is processed. Prices, taxes, fees and refunds are omitted. Reset or reload clears the example.
 
-## When to choose it
+## What: the concept
 
-Choose it for repeatable consumable value. Combine with free access while making balance and spending clear.
+A consumable purchase supplies units that are depleted through use and can be bought again. It differs from a non-consumable feature entitlement.
+
+Combine with free access while making balance and spending clear.
 
 [Source](https://developer.apple.com/help/app-store-connect/reference/in-app-purchases-and-subscriptions/in-app-purchase-types)

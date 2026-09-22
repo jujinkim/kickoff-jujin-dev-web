@@ -12,9 +12,9 @@ related:
   - always-on-server
   - serverless-functions
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   features: 사전 생성 파일 전달
@@ -24,16 +24,18 @@ comparison:
   combinations: 정적 생성기와 서버 또는 함수
 ---
 
-## 개념
+## 왜 필요한가
 
-정적 호스팅은 미리 만든 HTML·CSS·JavaScript를 전달합니다. 브라우저 조작은 가능하지만 공개 파일이 독자의 개인 기록을 저장하지는 않습니다.
+공개 글은 요청할 때마다 내용이 달라지지 않습니다. 매번 앱을 실행하는 대신 준비된 파일을 전달할 수 있습니다.
 
-## 예시
+## 어떻게 해결하는가
 
 글 읽기는 파일 경로를 따릅니다. A17 저장은 별도 API를 거쳐 외부 저장소로 갑니다. 반복 저장도 예제의 독자·글 키에 따라 기록 하나만 유지합니다. 다음 저장 실패는 저장소를 바꾸지 않고 실패를 반환합니다. 처리기 재시작 후에도 외부 기록은 남습니다. 초기화·새로고침은 가상 저장소를 포함한 페이지 메모리 전체를 지웁니다.
 
-## 추천 조건
+## 무엇이라 부르는가
 
-공개 글 제공에 적합합니다. 개인 쓰기에는 생성된 파일과 인증 API를 조합하세요.
+정적 호스팅은 미리 만든 HTML·CSS·JavaScript를 전달합니다. 브라우저 조작은 가능하지만 공개 파일이 독자의 개인 기록을 저장하지는 않습니다.
+
+개인 쓰기에는 생성된 파일과 인증 API를 조합하세요.
 
 [출처](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)

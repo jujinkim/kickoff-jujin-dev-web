@@ -8,9 +8,9 @@ category: "purchase-types"
 aliases: ["非消耗型購入", "Non-consumable purchase"]
 related: ["revenue", "consumable-purchase", "one-time-payment", "freemium"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,16 +22,18 @@ comparison:
   }
 ---
 
-## 概念
+## なぜ必要なのか
 
-非消耗型購入は、使用で減ったり期限切れになったりしない権利を開放します。消耗する数量や継続課金とは異なります。
+購入した機能は繰り返し使っても残るべきです。利用ごとに数量を減らす仕組みでは、その約束に合いません。
 
-## 実例
+## どう解決するのか
 
 架空のパズルアプリは夜のテーマがロックされた状態で始まります。一度買って繰り返し適用しても権利は残り、購入回数は1です。この例の再購入操作では再請求しません。実際の購入復元は実装範囲外です。価格・税金・手数料・返金は省略し、リセットは例だけを消去します。
 
-## 選ぶ条件
+## どんな考え方なのか
 
-持続する任意の機能に適します。無料アクセスと組み合わせ、購入復元は別に設計します。
+非消耗型購入は、使用で減ったり期限切れになったりしない権利を開放します。消耗する数量や継続課金とは異なります。
+
+無料アクセスと組み合わせ、購入復元は別に設計します。
 
 [出典](https://developer.apple.com/help/app-store-connect/reference/in-app-purchases-and-subscriptions/in-app-purchase-types)

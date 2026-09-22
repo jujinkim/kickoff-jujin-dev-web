@@ -8,9 +8,9 @@ category: "service-split"
 aliases: ["マイクロサービス"]
 related: ["architecture", "monolith", "modular-monolith"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,16 +22,18 @@ comparison:
   }
 ---
 
-## 概念
+## なぜ必要なのか
 
-マイクロサービスは明示的な契約とデータ所有権を持ち、独立してデプロイする業務機能別サービスです。プロセス分割だけでは独立性は生まれません。[Lewis・Fowler](https://martinfowler.com/articles/microservices.html)
+境界の明確な業務ごとに異なる日程や責任で公開したい。一括のリリースでは無関係な変更まで調整が必要になります。
 
-## 実例
+## どう解決するのか
 
 1. 架空の読書アプリ。一チーム、カタログ・ライブラリ・課金は各v1。A17はタグなし。
 2. 互換性を保つタグ機能をライブラリv2だけにデプロイ。カタログ・課金はv1のまま。
 3. ライブラリがネットワークでカタログを参照し、自分の保存先に`travel`を記録。書き込み前の参照タイムアウトならタグなしのまま。失敗を伝え、復旧後に再試行。
 
-## 選ぶ条件
+## どんな考え方なのか
 
-境界が安定し、独立したリリースや所有権が必要な場合に有用です。ネットワーク障害とサービス間データの調整が必要です。他の機能はモジュラーモノリスに残せます。
+マイクロサービスは明示的な契約とデータ所有権を持ち、独立してデプロイする業務機能別サービスです。プロセス分割だけでは独立性は生まれません。[Lewis・Fowler](https://martinfowler.com/articles/microservices.html)
+
+ネットワーク障害とサービス間データの調整が必要です。他の機能はモジュラーモノリスに残せます。

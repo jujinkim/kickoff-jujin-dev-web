@@ -15,9 +15,9 @@ related:
     "flat-rate-pricing",
   ]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -29,16 +29,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-A subscription repeats billing over agreed periods. It can include usage charges; recurring does not mean flat-rate.
+A service provides ongoing value and incurs ongoing costs. A single sale may not match that continuing relationship.
 
-## Example
+## How: work toward a solution
 
 A fictional export tool charges 12 monthly: three successful months total 36, with 100, 300 and 600 exports. Advance periods, disable renewal or simulate failure. Here cancellation ends access at the paid period boundary; failure pauses access until a successful retry. These are example policies. Taxes, fees and refunds are omitted.
 
-## When to choose it
+## What: the concept
 
-Choose it for continuing value. Specify renewal and failure handling; combine with usage metering when consumption varies.
+A subscription repeats billing over agreed periods. It can include usage charges; recurring does not mean flat-rate.
+
+Specify renewal and failure handling; combine with usage metering when consumption varies.
 
 [Source](https://docs.stripe.com/billing/subscriptions/overview)

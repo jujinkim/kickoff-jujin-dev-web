@@ -8,9 +8,9 @@ category: "purchase-types"
 aliases: ["Non-consumable purchase"]
 related: ["revenue", "consumable-purchase", "one-time-payment", "freemium"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,16 +22,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-A non-consumable purchase unlocks an entitlement that does not expire or decrease through use. It differs from consumable units and recurring subscriptions.
+A purchased feature should remain available after repeated use. Counting each use as a spent unit would contradict that promise.
 
-## Example
+## How: work toward a solution
 
 A fictional puzzle app begins with its night theme locked. Buy it once, then apply it repeatedly: ownership stays unlocked and the purchase count remains one. Repeat purchase attempts do not charge again here. Real purchase restoration is outside this local simulation. Prices, taxes, fees and refunds are omitted; reset clears only the example.
 
-## When to choose it
+## What: the concept
 
-Choose it for durable optional features. Combine with free access and define restoration separately.
+A non-consumable purchase unlocks an entitlement that does not expire or decrease through use. It differs from consumable units and recurring subscriptions.
+
+Combine with free access and define restoration separately.
 
 [Source](https://developer.apple.com/help/app-store-connect/reference/in-app-purchases-and-subscriptions/in-app-purchase-types)

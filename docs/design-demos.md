@@ -97,7 +97,7 @@ research lives in [catalog-writing](catalog-writing/README.md).
 2. Run `npm run content:new -- --id <id>` for all three draft files. The command
    prints this guide and template paths. Never overwrite an existing original.
 3. Write and review English first, then translate Korean and Japanese. Keep
-   `Concept`, `Example`, `When to choose it` (localized) and the one-minute
+   `Why: the goal or problem`, `How: work toward a solution`, `What: the concept` (localized), following [the shared authoring guide](content-authoring.md), and the one-minute
    budget. Describe actions and results in Markdown, because static exports
    cannot run the application. Demo text and exploration time are separate.
 4. Write `src/components/demos/YourDesign.astro`. Own the markup, styles, state,

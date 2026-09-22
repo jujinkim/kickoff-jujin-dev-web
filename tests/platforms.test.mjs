@@ -85,7 +85,7 @@ test("all platform output paths retain API v1, identity, sources and localized d
     assert.equal(html.includes(`data-pagefind-body`), isListedArticle(a.data));
     const md = readFileSync(`dist/${lang}/catalog/${id}.md`, "utf8");
     assert.ok(md.includes("Language: en"));
-    assert.ok(md.includes("## Example"));
+    assert.ok(md.includes("## How: work toward a solution"));
     assert.ok(md.includes("https://"));
     assert.equal(
       readFileSync(`dist/sitemap-${lang}.xml`, "utf8").includes(

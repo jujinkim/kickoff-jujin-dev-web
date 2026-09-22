@@ -12,9 +12,9 @@ related:
   - rolling
   - canary
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   features: Two prepared environments exchange traffic
@@ -24,16 +24,18 @@ comparison:
   combinations: Canary evaluation before full switch
 ---
 
-## Concept
+## Why: the goal or problem
 
-Blue-green deployment prepares two environments and changes which receives live traffic. Reversing that route does not undo database writes.
+Replacing the live environment in place complicates a quick return. You need to verify a replacement before routing users to it.
 
-## Example
+## How: work toward a solution
 
 Blue v1 starts with all traffic; green v2 waits. Next verifies green before switching traffic. Fail verification prevents the switch. After switching, Save A17 writes shared compatible data. Simulate failure and switch back routes traffic to blue; A17 remains. Previous revisits routing stages without erasing writes. Reset or reload clears the entire page-memory simulation.
 
-## When to choose it
+## What: the concept
 
-Choose it for controlled routing with capacity for both environments. Plan data compatibility and recovery separately.
+Blue-green deployment prepares two environments and changes which receives live traffic. Reversing that route does not undo database writes.
+
+Plan data compatibility and recovery separately.
 
 [Source](https://martinfowler.com/bliki/BlueGreenDeployment.html)

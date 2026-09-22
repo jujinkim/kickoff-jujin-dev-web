@@ -12,9 +12,9 @@ related:
   - skeuomorphism
   - neobrutalism
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 comparison:
   features: "Layered paper fragments, tape, irregular edges, and annotations."
   advantages: Material cues give an informal board a personal character.
@@ -24,16 +24,18 @@ comparison:
 checked: "2026-09-22"
 ---
 
-## Concept
+## Why: the goal or problem
+
+A creative board should feel assembled and personal. Uniform digital panels may not express the intended handmade character.
+
+## How: work toward a solution
+
+Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Layered paper, tape, and a completion mark turn the workspace into a board.
+
+## What: the concept
 
 Tactile collage layers paper, tape, and annotations. This editorial category groups handmade cues discussed in Canva’s 2026 trends; it does not date their invention.
 
-## Example
-
-All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. Layered paper, tape, and a completion mark turn the workspace into a board.
-
-## When to choose it
-
-Choose it for a small creative project board. Overlap and texture must not obscure controls or text.
+Overlap and texture must not obscure controls or text.
 
 [Canva 2026](https://www.canva.com/newsroom/news/design-trends-2026/)

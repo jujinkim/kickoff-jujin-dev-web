@@ -6,16 +6,24 @@ import { listed } from "../lib/content";
 interface Props {
   lang: Lang;
   kind: "guide" | "concept";
+  categoryId?: string;
 }
-const { lang, kind } = Astro.props;
+const { lang, kind, categoryId } = Astro.props;
 const t = strings[lang];
 const articles = (await listed()).filter(
-  (a) => a.data.lang === lang && a.data.kind === kind,
+  (a) =>
+    a.data.lang === lang &&
+    a.data.kind === kind &&
+    (!categoryId ||
+      ancestors(a.data.category).some((c) => c.id === categoryId)),
 );
 const orderedCategories = (parent: string | null): typeof taxonomy =>
   childrenOf(parent).flatMap((c) => [c, ...orderedCategories(c.id)]);
-const categories = orderedCategories(null).filter(
-  (c) => kind === "concept" || !c.parent,
+const allCategories = orderedCategories(null);
+const categories = allCategories.filter(
+  (c) =>
+    (kind === "concept" || !c.parent) &&
+    (!categoryId || ancestors(c.id).some((node) => node.id === categoryId)),
 );
 const groupId = (category: string) => {
   const path = ancestors(category);
@@ -23,7 +31,7 @@ const groupId = (category: string) => {
 };
 const groups =
   kind === "concept"
-    ? categories.filter((c) =>
+    ? allCategories.filter((c) =>
         articles.some((a) => groupId(a.data.category) === c.id),
       )
     : [];

@@ -8,9 +8,9 @@ category: "requirements"
 aliases: ["Use case"]
 related: ["srs", "user-story", "job-story"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,13 +22,13 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-A use case describes interactions toward an actor’s goal, including success and failure paths. A diagram alone is not that narrative. [Source](https://alistaircockburn.com/Unifying%20us%20uc%20sm.pdf)
+Success-only descriptions omit failed writes and retries. You need to trace how a goal succeeds or remains unmet.
 
-## Example
+## How: work toward a solution
 
-Fictional preconditions: signed-in commuter, A17 unsaved, storage initially available.
+Fictional setup: signed-in commuter, A17 unsaved, available storage.
 
 1. Reader requests saving A17’s link.
 2. System validates A17.
@@ -37,6 +37,8 @@ Fictional preconditions: signed-in commuter, A17 unsaved, storage initially avai
 
 If persistence fails before writing: report unsaved, then retry from step 1. Repeating a successful save keeps one entry. A saved link does not promise offline reading.
 
-## When to choose it
+## What: the concept
 
-Use to expose failure branches. Split delivery into user stories; record motivation with a job story. Quality requirements still need separate treatment.
+A use case describes interactions toward an actor’s goal, including success and failure paths. A diagram alone is not that narrative. [Source](https://alistaircockburn.com/Unifying%20us%20uc%20sm.pdf)
+
+Split delivery into user stories; record motivation with a job story. Quality requirements still need separate treatment.

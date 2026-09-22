@@ -12,9 +12,9 @@ related:
   - rolling
   - blue-green
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   features: Limited exposure with control comparison
@@ -24,16 +24,18 @@ comparison:
   combinations: Gate rolling or blue-green completion
 ---
 
-## Concept
+## Why: the goal or problem
 
-Canary releases expose a limited population to a candidate and compare outcomes with a control before expanding. Useful signals need representative samples.
+A release may work in testing yet fail for real users. Exposing everyone at once makes that uncertainty expensive.
 
-## Example
+## How: work toward a solution
 
 The synthetic window contains 1,000 requests per cohort: v1 has two errors, v2 thirty. Next computes 0.2% and 3%, then applies this exercise’s stop rule above 1%. Candidate traffic returns to v1. Select No samples: zero requests means insufficient evidence, never success. Previous revisits calculations; Reset or reload restores the fixture.
 
-## When to choose it
+## What: the concept
 
-Choose it when traffic assignment and outcomes are measurable. This threshold is illustrative; combine evaluation with rolling or blue-green.
+Canary releases expose a limited population to a candidate and compare outcomes with a control before expanding. Useful signals need representative samples.
+
+This threshold is illustrative; combine evaluation with rolling or blue-green.
 
 [Source](https://sre.google/workbook/canarying-releases/)

@@ -16,9 +16,9 @@ related:
     "merchant-of-record",
   ]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -30,16 +30,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-Transaction fee revenue comes from facilitating trades between buyers and sellers. It differs from referring a visitor elsewhere and does not itself determine the contractual seller.
+Your platform helps buyers and sellers complete exchanges. You want income to follow those completed transactions.
 
-## Example
+## How: work toward a solution
 
 A fictional reading marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the author. Stripe Connect illustrates application-fee flows; this is a simplified allocation, not its transfer sequence. Taxes, processing fees and refunds are omitted, so 10 is not profit.
 
-## When to choose it
+## What: the concept
 
-Choose it when the platform enables useful transactions. Define responsibilities and combine fees with optional subscriptions.
+**Transaction fees** — Transaction fee revenue comes from facilitating trades between buyers and sellers. It differs from referring a visitor elsewhere and does not itself determine the contractual seller.
+
+Define responsibilities and combine fees with optional subscriptions.
 
 [Source](https://docs.stripe.com/connect/marketplace/tasks/app-fees)

@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-22"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-23"
 comparison:
   features: >-
     Exposed rules and raw typography make structure visible. Raw rules and
@@ -32,16 +32,18 @@ comparison:
 checked: "2026-09-21"
 ---
 
-## Concept
+## Why: the goal or problem
 
-Exposed rules and raw typography make structure visible.
+A utilitarian page can hide its structure under decoration. You want its sections and links to be immediately obvious.
 
-## Example
+## How: work toward a solution
 
-All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. Raw rules and underlined navigation expose the structure.
+Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Raw rules and underlined navigation expose the structure.
 
-## When to choose it
+## What: the concept
 
-Choose it for a utilitarian task list. The rough tone can distract; keep links underlined and controls recognizable.
+**Brutalism** — Exposed rules and raw typography make structure visible.
+
+The rough tone can distract; keep links underlined and controls recognizable.
 
 [NN/g](https://www.nngroup.com/articles/brutalism-antidesign/)

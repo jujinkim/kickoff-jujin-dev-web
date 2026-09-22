@@ -12,9 +12,9 @@ related:
   - astro
   - hugo
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   features: Ruby 빌드와 재사용 레이아웃
@@ -24,16 +24,18 @@ comparison:
   combinations: CI 빌드와 정적 호스팅
 ---
 
-## 개념
+## 왜 필요한가
 
-Jekyll은 Ruby 빌드 과정에서 Markdown과 레이아웃을 정적 사이트로 바꿉니다. 생성과 호스팅은 별도 선택입니다.
+텍스트 중심으로 글을 관리하면서 화면 틀은 재사용하고 싶습니다. 글마다 페이지 전체를 다시 작성하면 작업이 반복됩니다.
 
-## 예시
+## 어떻게 해결하는가
 
 Markdown 글 3개와 레이아웃 하나로 시작합니다. 다음을 누르면 Ruby 빌드로 목록과 글 HTML 3개를 만들고 호스팅을 거쳐 브라우저에 전달합니다. 이 예제에서 레이아웃 누락은 출력 전에 빌드를 멈춥니다. 파일을 읽을 때는 Ruby 요청 처리기가 필요 없습니다. 개인 저장 기록에는 별도 API가 필요합니다. 이전은 앞 단계로, 초기화·새로고침은 처음으로 돌아갑니다.
 
-## 추천 조건
+## 무엇이라 부르는가
 
-기존 콘텐츠·레이아웃 발행 흐름에 적합합니다. 빌드 의존성과 호스팅을 구분해 관리하세요.
+Jekyll은 Ruby 빌드 과정에서 Markdown과 레이아웃을 정적 사이트로 바꿉니다. 생성과 호스팅은 별도 선택입니다.
+
+빌드 의존성과 호스팅을 구분해 관리하세요.
 
 [출처](https://jekyllrb.com/docs/)

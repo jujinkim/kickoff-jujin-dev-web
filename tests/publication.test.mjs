@@ -14,6 +14,7 @@ import { join, resolve } from "node:path";
 import { execFileSync } from "node:child_process";
 import matter from "gray-matter";
 import { createConcept } from "../scripts/content-new.mjs";
+import { articleSections } from "../src/lib/article-format.mjs";
 import {
   validateArticles,
   readArticles,
@@ -95,11 +96,11 @@ test(
       // Public designs require all three reviewed translations. Guides still
       // exercise missing/stale translation behavior in this fixture.
       for (const [lang, headings] of [
-        ["ko", ["개념", "예시", "추천 조건"]],
-        ["ja", ["概念", "実例", "選ぶ条件"]],
+        ["ko", articleSections.ko],
+        ["ja", articleSections.ja],
       ]) {
         let content = concept.content;
-        ["Concept", "Example", "When to choose it"].forEach((heading, i) => {
+        articleSections.en.forEach((heading, i) => {
           content = content.replace(`## ${heading}`, `## ${headings[i]}`);
         });
         writeFileSync(
@@ -258,7 +259,9 @@ test(
       browser = await chromium.launch({ args: ["--no-sandbox"] });
       const page = await browser.newPage();
       await page.route("https://giscus.app/**", (route) => route.abort());
-      await page.goto(`http://127.0.0.1:${server.address().port}/en/catalog/`);
+      await page.goto(
+        `http://127.0.0.1:${server.address().port}/en/catalog/categories/styles/`,
+      );
       await page.locator("#search").fill("brutalism");
       await page
         .locator('#search-results a[href="/en/catalog/brutalism/"]')

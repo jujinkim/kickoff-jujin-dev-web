@@ -14,6 +14,9 @@ Reference Markdown is English-only. Users may write requests and project descrip
 7. Write the documentation yourself. Derive useful user stories, use cases or job stories from the user's goals; use UML only when it helps explain a boundary. Do not ask the user to select formats or draw diagrams. Leave artifacts: numbered requirements, measurable acceptance criteria, a decision log with proposed/accepted status, and a dependency-aware task breakdown. Link requirements to verification. Do not label a recommendation accepted before approval or applicable delegation.
 8. Report inaccessible sources, stale translations, insufficient evidence, and unverified outcomes. Offer an accessible English original when a translation is missing. Access failure is not permission to guess.
 
+## Explain and write from the reader's problem
+Use Why → How → What for guide and catalog explanations: first explain why the technique is needed through a concrete difficulty without it, demonstrate how to address it with actions and observable results, then name and explain the concept and its limits. Do not lead with a tool definition and tell the user to try it. Guides are practical 2–3 minute walkthroughs with reasoning, steps, failure cases and completion checks; catalog concepts are concise one-minute introductions. Preserve this flow and practical depth across languages. Repository authors must also follow docs/content-authoring.md.
+
 ## Implementation baseline
 - Ask whether duplicate items are allowed and order matters when behavior is unclear; then choose collections yourself.
 - Define module roles, rule/data owners, dependencies and recovery owners across the project. Work out local object collaboration internally.

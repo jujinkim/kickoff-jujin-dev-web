@@ -12,9 +12,9 @@ related:
   - blue-green
   - canary
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   features: Progressive replica replacement
@@ -24,16 +24,18 @@ comparison:
   combinations: Canary gate before rolling replacement
 ---
 
-## Concept
+## Why: the goal or problem
 
-Rolling releases replace replicas progressively. Old and new versions coexist, so their contracts and shared data must remain compatible.
+A replicated service needs an update without replacing every instance simultaneously. Mixed old and new versions must remain compatible.
 
-## Example
+## How: work toward a solution
 
 Start with four ready v1 replicas and one spare slot. Next adds v2, checks readiness, then removes one v1. Repeat until four v2 remain. Fail readiness stops replacement before removing an old replica. Previous revisits the prior step; Reset or reload restores four v1. This authored policy uses zero unavailable replicas; readiness is not proof of correctness.
 
-## When to choose it
+## What: the concept
 
-Choose it for replicated services that tolerate mixed versions. A canary gate can precede replacement.
+Rolling releases replace replicas progressively. Old and new versions coexist, so their contracts and shared data must remain compatible.
+
+A canary gate can precede replacement.
 
 [Source](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)

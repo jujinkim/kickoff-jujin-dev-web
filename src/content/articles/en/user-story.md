@@ -8,9 +8,9 @@ category: "requirements"
 aliases: ["User story"]
 related: ["srs", "use-case", "job-story"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,11 +22,11 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-A user story describes a small increment of user value, refined through conversation and acceptance criteria. The role–goal–benefit sentence starts discussion; it is not a complete specification. [Source](https://agilealliance.org/glossary/user-stories/)
+A large feature request is hard to deliver or review at once. You need a small result whose user value is visible.
 
-## Example
+## How: work toward a solution
 
 1. Fictional setup: a signed-in commuter, A17 unsaved.
 2. Role → goal → benefit: “As a reader, I want to save A17’s link so I can return later.”
@@ -34,6 +34,8 @@ A user story describes a small increment of user value, refined through conversa
 
 Saving a link does not promise offline reading.
 
-## When to choose it
+## What: the concept
 
-Use for a small deliverable. Add use-case failure paths and job-story context.
+A user story describes a small increment of user value, refined through conversation and acceptance criteria. The role–goal–benefit sentence starts discussion; it is not a complete specification. [Source](https://agilealliance.org/glossary/user-stories/)
+
+Add use-case failure paths and job-story context.

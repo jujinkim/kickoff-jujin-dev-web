@@ -17,9 +17,9 @@ related:
     "freemium",
   ]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -31,16 +31,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-Feature-tiered pricing offers packages with different capabilities. These tiers describe what customers receive, unlike quantity tiers that change a unit price.
+Different customers need different capabilities. A single package can charge light users for functions they do not need.
 
-## Example
+## How: work toward a solution
 
 A fictional workspace has three seats and 120 monthly exports. Basic costs 20 and includes exporting; Pro costs 35 and adds approval workflows. Both cover this baseline, up to five seats and 200 exports. The static table contrasts features, not per-unit discounts. All prices are fictional; taxes, fees and refunds are omitted.
 
-## When to choose it
+## What: the concept
 
-Choose it for distinct feature needs. Combine with subscription billing or per-seat quantities while keeping each axis explicit.
+Feature-tiered pricing offers packages with different capabilities. These tiers describe what customers receive, unlike quantity tiers that change a unit price.
+
+Combine with subscription billing or per-seat quantities while keeping each axis explicit.
 
 [Source](https://docs.stripe.com/products-prices/pricing-models)

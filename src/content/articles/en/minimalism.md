@@ -16,9 +16,9 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-22"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-23"
 comparison:
   features: >-
     Limited elements and generous space focus attention on essential content.
@@ -32,16 +32,18 @@ comparison:
 checked: "2026-09-21"
 ---
 
-## Concept
+## Why: the goal or problem
 
-Limited elements and generous space focus attention on essential content.
+Secondary decoration competes with the task people came to finish. You want attention on essential information without removing needed controls.
 
-## Example
+## How: work toward a solution
 
-All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. Whitespace and restrained type keep all project content legible.
+Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Whitespace and restrained type keep all project content legible.
 
-## When to choose it
+## What: the concept
 
-Choose it for a focused workflow. Removing navigation or unique information weakens the task rather than simplifying it.
+**Minimalism** — Limited elements and generous space focus attention on essential content.
+
+Removing navigation or unique information weakens the task rather than simplifying it.
 
 [NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)

@@ -17,9 +17,9 @@ related:
     "subscription",
   ]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -31,16 +31,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-Flat-rate pricing sets one amount for a defined package and period. Included features and limits still matter; a fixed price does not promise unlimited service.
+Customers want to predict the bill without counting every action. A clearly bounded package can make that possible.
 
-## Example
+## How: work toward a solution
 
 A fictional workspace has three seats and 120 monthly exports. Its package costs 20 per month, covering up to five seats and 200 exports. At this shared baseline, the amount stays 20. The diagram lists the package boundaries; behavior beyond them needs separate terms. Taxes, fees and refunds are omitted.
 
-## When to choose it
+## What: the concept
 
-Choose it for a predictable package. Combine with subscription billing and compare per-seat pricing.
+Flat-rate pricing sets one amount for a defined package and period. Included features and limits still matter; a fixed price does not promise unlimited service.
+
+Combine with subscription billing and compare per-seat pricing.
 
 [Source](https://docs.stripe.com/products-prices/pricing-models)

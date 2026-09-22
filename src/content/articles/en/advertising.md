@@ -16,9 +16,9 @@ related:
     "banner-ads",
   ]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -30,16 +30,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-Advertising revenue comes from advertisers paying to reach an audience. Placement format is a separate decision, and reader payments may coexist with advertising.
+Readers should retain free access, but publishing still costs money. A separate payer can fund space beside the content.
 
-## Example
+## How: work toward a solution
 
 A fictional reading service keeps articles open. An advertiser funds a labeled placement through a network; the publisher supplies space and readers see the message. The diagram names each role without promising impressions, clicks or income. Settlement details and fees are omitted.
 
-## When to choose it
+## What: the concept
 
-Choose it when placements fit the reading experience. Balance advertiser incentives with reader trust; compare banner, interstitial and rewarded formats separately.
+Advertising revenue comes from advertisers paying to reach an audience. Placement format is a separate decision, and reader payments may coexist with advertising.
+
+Balance advertiser incentives with reader trust; compare banner, interstitial and rewarded formats separately.
 
 [Source](https://support.google.com/admob/answer/6128738?hl=en)

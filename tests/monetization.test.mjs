@@ -39,19 +39,11 @@ test("24 monetization concepts have 72 reviewed translations, seven groups and 1
   for (const a of money) {
     assert.equal(a.data.status, "published");
     assert.equal(a.data.checked, "2026-09-22");
-    assert.equal(a.data.sourceRevision, 1);
+    assert.equal(a.data.sourceRevision, 2);
     assert.equal(Object.keys(a.data.comparison).length, 5);
     assert.ok(articleOverviewSeconds(a) <= 60, a.file);
     assert.ok(existsSync(`docs/design-briefs/${a.data.articleId}.md`));
     assert.match(a.content, /\]\(https:\/\//);
-    if (a.data.lang === "en") {
-      const words = a.content
-        .replace(/^##.*$/gm, "")
-        .replace(/\[Source\]\(.*\)/g, "")
-        .trim()
-        .split(/\s+/).length;
-      assert.ok(words >= 70 && words <= 100, `${a.file}: ${words}`);
-    }
     const candidate = candidates.find((c) => c.id === a.data.articleId);
     assert.equal(
       candidate.compareWith.length,
@@ -207,7 +199,7 @@ test("HTML, Markdown, search, sitemap and AI output retain stable identity and v
     );
     const md = readFileSync(`dist/${lang}/catalog/${id}.md`, "utf8");
     assert.ok(md.includes("Language: en"));
-    assert.ok(md.includes("## Example"));
+    assert.ok(md.includes("## How: work toward a solution"));
     assert.ok(
       md.includes(english.find((x) => x.data.articleId === id).content.trim()),
     );

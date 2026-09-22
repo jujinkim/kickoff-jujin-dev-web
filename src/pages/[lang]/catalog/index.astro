@@ -1,18 +1,13 @@
 ---
 import Base from "../../../layouts/Base.astro";
-import ArticleListing from "../../../components/ArticleListing.astro";
-import CategoryTree from "../../../components/CategoryTree.astro";
 import { languages, strings } from "../../../lib/i18n";
-import { candidates } from "../../../lib/catalog";
-import { listed } from "../../../lib/content";
+import { childrenOf } from "../../../lib/catalog";
 export function getStaticPaths() {
   return languages.map((lang) => ({ params: { lang }, props: { lang } }));
 }
 const { lang } = Astro.props;
 const t = strings[lang];
-const count = (await listed()).filter(
-  (a) => a.data.lang === lang && a.data.kind === "concept",
-).length;
+const categories = childrenOf(null);
 ---
 
 <Base lang={lang} title={t.catalog} description={t.intro}>
@@ -20,79 +15,103 @@ const count = (await listed()).filter(
     <h1>{t.catalog}</h1>
     <p>
       {lang === "ko"
-        ? "분류를 따라 개념과 도구를 탐색하고 비교하세요."
+        ? "카테고리를 선택해 개념과 도구를 탐색하고 비교하세요."
         : lang === "ja"
-          ? "分類から概念とツールを探し、比較します。"
-          : "Explore and compare concepts and tools by category."}
+          ? "カテゴリーを選んで、概念とツールを探し、比較します。"
+          : "Choose a category to explore and compare concepts and tools."}
     </p>
-    <p>
-      {count} {t.count} · {candidates.length}{" "}
-      {lang === "ko"
-        ? "초기 후보"
-        : lang === "ja"
-          ? "初期候補"
-          : "initial candidates"}
-    </p>
-    <a href={`/${lang}/guides/`}>{t.guides} →</a>
   </section>
-  <details class="category-index">
-    <summary>
-      {lang === "ko"
-        ? "분류 탐색"
-        : lang === "ja"
-          ? "分類を探す"
-          : "Browse categories"}
-      <span class="category-index-arrow" aria-hidden="true">
-        ⌄
-      </span>
-    </summary>
-    <CategoryTree lang={lang} />
-  </details>
-  <ArticleListing lang={lang} kind="concept" />
+  <nav aria-label={t.catalog}>
+    <ul class="catalog-categories">
+      {categories.map((category, index) => (
+        <li>
+          <a
+            class="category-card"
+            href={`/${lang}/catalog/categories/${category.id}/`}
+          >
+            <span class="category-card-number" aria-hidden="true">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <h2>{category.names[lang]}</h2>
+            <p>
+              {childrenOf(category.id)
+                .map((child) => child.names[lang])
+                .join(" · ")}
+            </p>
+            <span class="category-card-arrow" aria-hidden="true">
+              →
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
 </Base>
 
 <style>
-  .category-index {
-    margin-bottom: 1rem;
-  }
-  .category-index > summary {
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    cursor: pointer;
+  .catalog-categories {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
     list-style: none;
-    font-weight: 700;
+    padding: 0 0 3.5rem;
+    margin: 0;
   }
-  .category-index > summary::-webkit-details-marker {
-    display: none;
+  .category-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 260px;
+    height: 100%;
+    padding: 1.75rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    overflow-wrap: anywhere;
+    transition:
+      background 150ms ease,
+      border-color 150ms ease;
   }
-  .category-index-arrow {
+  .category-card:hover,
+  .category-card:focus-visible {
+    background: var(--soft);
+    border-color: var(--green);
+    text-decoration: none;
+  }
+  .category-card-number {
+    margin-bottom: 1.5rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .category-card h2 {
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  }
+  .category-card p {
+    margin-bottom: 1.5rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  .category-card-arrow {
+    align-self: flex-end;
+    margin-top: auto;
+    color: var(--green);
+    font-size: 1.75rem;
     line-height: 1;
   }
-  .category-index[open] .category-index-arrow {
-    transform: rotate(180deg);
+  @media (max-width: 900px) {
+    .catalog-categories {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
-  .category-index :global(.category-tree) {
-    margin: 0;
-    padding-left: 1rem;
-  }
-  .category-index :global(.category-tree > li) {
-    margin: 0.35rem 0;
-  }
-  .category-index :global(.category-tree[data-root="true"]) {
-    gap: 1rem 1.5rem;
-    padding: 0.5rem 0 1rem;
-  }
-  .category-index :global(.category-tree[data-root="true"] > li) {
-    border: 0;
-    padding: 0;
-    margin: 0;
-    min-width: 0;
-    overflow-wrap: anywhere;
-  }
-  .category-index :global(.category-tree[data-root="true"] > li > a) {
-    font-size: 1rem;
+  @media (max-width: 600px) {
+    .catalog-categories {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .category-card {
+      min-height: 220px;
+      padding: 1.5rem;
+    }
   }
 </style>

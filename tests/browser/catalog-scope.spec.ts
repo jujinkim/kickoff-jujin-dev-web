@@ -7,7 +7,14 @@ for (const lang of ["en", "ko", "ja"]) {
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
     await page.goto(`/${lang}/catalog/`);
-    await expect(page.locator(".catalog-card")).toHaveCount(64);
+    await expect(page.locator(".catalog-card")).toHaveCount(0);
+    await expect(page.locator(".category-card")).toHaveCount(5);
+    await page
+      .locator(
+        `.category-card[href="/${lang}/catalog/categories/development/"]`,
+      )
+      .click();
+    await expect(page.locator(".catalog-card")).toHaveCount(9);
     for (const id of ["data", "requirements", "release-replacement"]) {
       await expect(page.locator(`#category option[value="${id}"]`)).toHaveCount(
         0,

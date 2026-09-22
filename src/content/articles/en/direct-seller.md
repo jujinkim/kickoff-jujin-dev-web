@@ -8,9 +8,9 @@ category: "seller-responsibility"
 aliases: ["Direct seller model"]
 related: ["payments", "merchant-of-record", "direct-payment"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,16 +22,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-In a direct seller arrangement, the product business sells to the customer. Using a payment processor alone does not transfer seller responsibilities.
+You want control of the customer sale. Outsourcing card processing still leaves someone responsible for the sales relationship.
 
-## Example
+## How: work toward a solution
 
 A fictional reading-tool license names the business on the sale. The processor handles payment; the business owns the illustrated receipt, refund and transaction-tax workflows and delivers the product. The responsibility map describes this assumed contract, not every provider arrangement. Amounts and country-specific tax rules are intentionally absent.
 
-## When to choose it
+## What: the concept
 
-Choose it when the business can operate its applicable sales obligations. Combine with one-time or recurring billing and specialist support.
+**Direct seller model** — In a direct seller arrangement, the product business sells to the customer. Using a payment processor alone does not transfer seller responsibilities.
+
+Combine with one-time or recurring billing and specialist support.
 
 [Source](https://stripe.com/resources/more/merchant-of-record)

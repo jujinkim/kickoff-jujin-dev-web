@@ -8,9 +8,9 @@ category: "seller-responsibility"
 aliases: ["直接販売者モデル", "Direct seller model"]
 related: ["payments", "merchant-of-record", "direct-payment"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,16 +22,18 @@ comparison:
   }
 ---
 
-## 概念
+## なぜ必要なのか
 
-直接販売者モデルでは製品事業者が顧客に販売します。決済処理業者を利用するだけで販売責任が移るわけではありません。
+顧客との販売関係を自分で運営したい。カード処理を委託しても、販売の責任を持つ主体は必要です。
 
-## 実例
+## どう解決するのか
 
 架空の読書ツールの販売には事業者名を表示します。処理業者は決済を担当し、事業者は例示した領収書・返金・取引税の業務と製品提供を担います。責任図は仮定した契約であり、すべての事業者に当てはまる規則ではありません。金額と国別の税務規則は扱いません。
 
-## 選ぶ条件
+## どんな考え方なのか
 
-適用される販売義務を運営できる場合に適します。買い切り・継続課金や専門サービスと組み合わせます。
+直接販売者モデルでは製品事業者が顧客に販売します。決済処理業者を利用するだけで販売責任が移るわけではありません。
+
+買い切り・継続課金や専門サービスと組み合わせます。
 
 [出典](https://stripe.com/resources/more/merchant-of-record)

@@ -15,9 +15,9 @@ related:
     "consumable-purchase",
   ]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -29,16 +29,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-Rewarded ads offer a disclosed benefit for completing a specified action. Google requires clear reward conditions and opt-in for this format, with dismissal available.
+Some users want a benefit without paying money. Any advertising exchange needs an explicit choice and a clear reward condition.
 
-## Example
+## How: work toward a solution
 
 A fictional puzzle app offers one non-transferable hint for completing one simulated ad. Choose participation, then complete or interrupt it. Completion adds one hint once; interruption adds none, and normal play remains available. Repeated completion cannot duplicate that reward. No ad request or money transfer occurs; revenue and network charges are omitted.
 
-## When to choose it
+## What: the concept
 
-Choose it for optional in-app benefits. Keep reward conditions visible before each attempt.
+Rewarded ads offer a disclosed benefit for completing a specified action. Google requires clear reward conditions and opt-in for this format, with dismissal available.
+
+Keep reward conditions visible before each attempt.
 
 [Source](https://support.google.com/admob/answer/7313578?hl=en)

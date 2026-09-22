@@ -12,9 +12,9 @@ related:
   - glassmorphism
   - flat-design
 status: published
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 comparison:
   features: >-
     Floating capsules, reflective edges, and expanding tools separate navigation
@@ -26,16 +26,18 @@ comparison:
 checked: "2026-09-22"
 ---
 
-## Concept
+## Why: the goal or problem
+
+Navigation must stay available over rich content without appearing to be another content card. A distinct floating layer can help.
+
+## How: work toward a solution
+
+Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. View tools expands the floating capsule; Opaque panels removes transparency.
+
+## What: the concept
 
 Liquid Glass uses a dynamic, transparent navigation layer above content. This web study illustrates its visual cues, not Apple’s native rendering.
 
-## Example
-
-All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. View tools expands the floating capsule; Opaque panels removes transparency.
-
-## When to choose it
-
-Choose it for a small navigation layer over rich content. Transparency needs contrast checks and an opaque fallback.
+Transparency needs contrast checks and an opaque fallback.
 
 [Apple WWDC25](https://developer.apple.com/videos/play/wwdc2025/219/)

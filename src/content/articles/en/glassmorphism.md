@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-22"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-23"
 comparison:
   features: >-
     Translucent panels reveal a blurred background. Opaque panels replace the
@@ -30,16 +30,18 @@ comparison:
 checked: "2026-09-21"
 ---
 
-## Concept
+## Why: the goal or problem
 
-Translucent panels reveal a blurred background.
+A foreground panel must remain distinct without completely hiding what lies behind it. A solid block removes that context.
 
-## Example
+## How: work toward a solution
 
-All eleven styles share a workspace: overview, three tasks, progress, and two resource notes. Follow the menu, check a task, filter Open or Done, and expand a note. Completion becomes 1 / 3 and 33%; unmatched filters show an empty message. Reset or reload restores All, three unchecked tasks, 0%, and closed notes. Opaque panels replace the frosted surfaces when selected.
+Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Opaque panels replace the frosted surfaces when selected.
 
-## When to choose it
+## What: the concept
 
-Choose it when background context matters. Contrast depends on the backdrop; offer an opaque mode and test each scene.
+**Glassmorphism** — Translucent panels reveal a blurred background.
+
+Contrast depends on the backdrop; offer an opaque mode and test each scene.
 
 [NN/g](https://www.nngroup.com/articles/glassmorphism/)

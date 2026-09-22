@@ -8,9 +8,9 @@ category: "requirements"
 aliases: ["Job story"]
 related: ["srs", "user-story", "use-case"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,11 +22,11 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-A job story connects a situation, motivation and desired outcome before selecting a solution. It starts discovery; it is not an acceptance test. [Source](https://www.intercom.com/blog/using-job-stories-design-features-ui-ux/)
+A requested feature hides the situation that caused the request. Without that context, you may solve the wrong problem.
 
-## Example
+## How: work toward a solution
 
 Fictional signed-in commuter, A17 unsaved:
 
@@ -36,6 +36,8 @@ Fictional signed-in commuter, A17 unsaved:
 
 Evaluate a saved link or a reminder containing the link. Neither promises offline reading. If choosing saving, discuss duplicate saves and persistence failures separately.
 
-## When to choose it
+## What: the concept
 
-Use when context changes someone’s needs. Check assumed motivation with research; add user-story delivery slices and use-case paths.
+A job story connects a situation, motivation and desired outcome before selecting a solution. It starts discovery; it is not an acceptance test. [Source](https://www.intercom.com/blog/using-job-stories-design-features-ui-ux/)
+
+Check assumed motivation with research; add user-story delivery slices and use-case paths.

@@ -8,9 +8,9 @@ category: "seller-responsibility"
 aliases: ["Merchant of record model"]
 related: ["payments", "direct-seller", "subscription"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,16 +22,18 @@ comparison:
   }
 ---
 
-## Concept
+## Why: the goal or problem
 
-An outsourced merchant of record acts as seller for covered transactions. Its responsibilities follow the agreement; product creation and every business obligation do not automatically transfer.
+Selling across markets adds sales administration your team may not operate. You need to know which duties a contractual seller can take on.
 
-## Example
+## How: work toward a solution
 
 For a fictional reading-tool license, the customer pays the MoR, which settles agreed proceeds to the business. The MoR owns the illustrated receipt, refund and transaction-tax workflows. The business still delivers the product and agreed product support. Amounts, exclusions and country-specific tax rules are outside this diagram.
 
-## When to choose it
+## What: the concept
 
-Choose it when the contract covers your needs. Combine with subscriptions while checking retained duties.
+**Merchant of record model** — An outsourced merchant of record acts as seller for covered transactions. Its responsibilities follow the agreement; product creation and every business obligation do not automatically transfer.
+
+Combine with subscriptions while checking retained duties.
 
 [Source](https://stripe.com/resources/more/merchant-of-record)

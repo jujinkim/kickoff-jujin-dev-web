@@ -8,9 +8,9 @@ category: "boundaries"
 aliases: ["계층형 아키텍처"]
 related: ["architecture", "hexagonal-architecture", "clean-architecture"]
 status: "published"
-revision: 1
-sourceRevision: 1
-updated: "2026-09-22"
+revision: 2
+sourceRevision: 2
+updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
   {
@@ -22,11 +22,11 @@ comparison:
   }
 ---
 
-## 개념
+## 왜 필요한가
 
-계층형 아키텍처는 책임을 나누고 계층 간 의존성을 제한합니다. 논리 계층마다 별도 서버가 필요한 것은 아닙니다. [Microsoft](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier)
+화면 변경과 업무 규칙, 저장 처리가 뒤섞여 있습니다. 무엇을 어디서 고쳐야 하는지 알 수 있도록 역할을 나눌 필요가 있습니다.
 
-## 예시
+## 어떻게 해결하는가
 
 1. 가상 단일 프로세스: 독자 R1, A17 미저장. 메모리 또는 내장 데이터베이스 사용.
 2. HTTP·CLI 표현 계층이 애플리케이션 검증 코드를 참조·호출하고, 애플리케이션은 저장 계층을 참조·호출합니다. 이 폐쇄형 예시는 계층 건너뛰기를 금지합니다.
@@ -34,6 +34,10 @@ comparison:
 
 HTTP를 CLI로 바꿔도 검증 위치는 유지됩니다.
 
-## 추천 조건
+## 무엇이라 부르는가
 
-책임이 안정적일 때 유용하지만 단순 전달 계층도 관리가 필요합니다. 포트로 저장 의존성을 역전할 수 있습니다. 폴더 이름만으로 규칙이 강제되지는 않습니다.
+계층형 아키텍처는 책임을 나누고 계층 간 의존성을 제한합니다. 논리 계층마다 별도 서버가 필요한 것은 아닙니다. [Microsoft](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier)
+
+포트로 저장 의존성을 역전할 수 있습니다. 폴더 이름만으로 규칙이 강제되지는 않습니다.
+
+단순 전달 계층도 관리 비용이 듭니다.
