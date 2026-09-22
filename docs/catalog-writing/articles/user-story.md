@@ -1,6 +1,8 @@
 # User story / 사용자 스토리 / ユーザーストーリー
 
-Writing design only. ID: `user-story` · Group: [requirements](../groups/requirements.md) · Queue order: 100 · Checked: 2026-09-21.
+Historical writing design. ID: `user-story` · Group: [requirements](../groups/requirements.md) · Queue order: 100 · Checked: 2026-09-21.
+
+Implemented in three languages on 2026-09-22; [visualization brief](../../design-briefs/user-story.md), [source refresh](../requirements-sources.md) and [review](../../requirements-review.md). The six-section outline below remains research reference; the article uses the current three-section format.
 
 ## Reader question and scope
 

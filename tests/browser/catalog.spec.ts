@@ -224,6 +224,7 @@ for (const [lang, layout, typography] of [
         "styles",
         "layout",
         "typography",
+        "requirements",
         ...platformCategories,
         ...monetizationCategories,
       ].sort(),

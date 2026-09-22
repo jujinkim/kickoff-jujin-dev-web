@@ -1,6 +1,8 @@
 # Job story / 잡 스토리 / ジョブストーリー
 
-Writing design only. ID: `job-story` · Group: [requirements](../groups/requirements.md) · Queue order: 102 · Checked: 2026-09-21.
+Historical writing design. ID: `job-story` · Group: [requirements](../groups/requirements.md) · Queue order: 102 · Checked: 2026-09-21.
+
+Implemented in three languages on 2026-09-22; [visualization brief](../../design-briefs/job-story.md), [source refresh](../requirements-sources.md) and [review](../../requirements-review.md). The six-section outline below remains research reference; the article uses the current three-section format.
 
 ## Reader question and scope
 

@@ -18,6 +18,11 @@ const moneyIds = new Set(
     .filter((a) => monetizationCategories.includes(a.data.category))
     .map((a) => a.data.articleId),
 );
+const requirementsIds = new Set(
+  articles
+    .filter((a) => a.data.category === "requirements")
+    .map((a) => a.data.articleId),
+);
 const styleIds = ids.filter((id) =>
   articles.some(
     (a) =>
@@ -86,7 +91,11 @@ for (const lang of languages) {
             await root.evaluate((el) => el.scrollWidth <= el.clientWidth + 2),
             `${id} internal overflow`,
           ).toBeTruthy();
-          if (platformIds.has(id) || moneyIds.has(id)) {
+          if (
+            platformIds.has(id) ||
+            moneyIds.has(id) ||
+            requirementsIds.has(id)
+          ) {
             const contrast = await root.evaluate((el) => {
               const luminance = (color: string) => {
                 const rgb = color

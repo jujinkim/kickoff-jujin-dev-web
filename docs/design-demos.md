@@ -26,9 +26,9 @@ scopes basic controls for layout/type demos to `[data-comparison]`. Style demos
 keep their control baseline inside each component; they share only data and
 behavior. Do not add a global visual theme.
 
-The current release contains 22 design concepts, 15 platform concepts and 24
-monetization concepts: **49 interactive demos and 12 static diagrams**, 183 localized
-concept articles and 36 guide articles (219 published documents). Seventeen
+The current release contains 22 design concepts, 15 platform concepts, 24
+monetization concepts and 3 requirements concepts: **49 interactive demos and 15 static diagrams**, 192 localized
+concept articles and 36 guide articles (228 published documents). Fourteen
 candidates remain planned. Counts describe this release, not runtime allowlists.
 
 Current monetization evidence: [monetization review](monetization-review.md).
@@ -91,7 +91,8 @@ research lives in [catalog-writing](catalog-writing/README.md).
 
 1. Register a stable candidate in `src/data/candidates.json` and an existing
    leaf category in `src/data/categories.json`. Add a leaf if needed; descendants
-   of `design` all five platform groups and all seven monetization groups participate in publication validation.
+   of `design`, all five platform groups, all seven monetization groups and
+   `requirements` participate in publication validation.
    Extend `platformCategories` when introducing a new platform comparison group.
 2. Run `npm run content:new -- --id <id>` for all three draft files. The command
    prints this guide and template paths. Never overwrite an existing original.
@@ -374,3 +375,11 @@ The normal sequence remains check → build → thumbnails → rebuild → unit/
 checks → browser tests. Use the first-capture exception only for absent PNGs.
 Retain local published status only after all gates pass. See
 `tests/monetization.test.mjs` and `tests/browser/monetization.spec.ts`.
+
+## Requirements expression diagrams
+
+The `requirements` group uses one signed-in commuter, unsaved A17 and a need to return later. Its independently composed static diagrams compare a user story's value/acceptance card, a use case's main path/extensions and a job story's situation/motivation/outcome before solution choice. `requirements.ts` shares only the localized fixture and scope boundary. Components own markup and scoped styles.
+
+Acceptance rules and failure-before-write outcomes are authored examples, not guarantees of the description format. Link saving does not promise offline reading. Each English Markdown body carries the corresponding numbered textual explanation. Static mode needs no Save control, artificial tab stops or reset; all content works without JavaScript.
+
+Read [source refresh](catalog-writing/requirements-sources.md), individual [briefs](design-briefs/) and [verification](requirements-review.md). The `requirements` category uses the same complete-publication gate as other demo categories. The normal sequential checks and first-thumbnail exception above apply.

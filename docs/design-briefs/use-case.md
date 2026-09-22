@@ -1,0 +1,25 @@
+# Use case visualization brief
+
+- Stable ID, leaf category, English/Korean/Japanese titles: `use-case`; `requirements`; Use case / 유스케이스 / ユースケース.
+- Definition (one sentence): A narrative of interactions toward an actor goal with success and failure paths.
+- Closest concept and concrete difference: A user story defines a delivery increment; this use case keeps success and failure paths together.
+- Distinguishing visual features (structure, material, typography): A numbered main sequence with actor labels beside two extensions, one dashed and one solid. Solid surfaces, readable system type, explicit text labels and numbers; color is supplementary.
+- Shared comparison category: [Requirements expression](../catalog-writing/groups/requirements.md).
+- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: signed-in commuter, A17 unsaved, link needed for later reading; storage initially available when evaluating saving. Save is a discussed action, not a connected feature. Saving a link does not promise offline reading.
+- Visual variable changed; concept-specific extra controls and their justification: A numbered main sequence with actor labels beside two extensions, one dashed and one solid. Static presentation keeps the description visible together; no controls are needed to understand it.
+- Fictional scenario and why it demonstrates the definition: Follow request → validation → persistence → confirmation. Failure before writing leaves 0 entries and retries at step 1; an existing save keeps one entry and proceeds to step 4.
+- Representative action and observable result: read the diagram in DOM order and compare its representation of the shared need. Follow request → validation → persistence → confirmation. Failure before writing leaves 0 entries and retries at step 1; an existing save keeps one entry and proceeds to step 4.
+- Initial state: the full labeled diagram is rendered on the server; the fictional starting state is A17 unsaved.
+- Changed state, repeated action, empty input/no results: no mutable UI state or input. Where saving is discussed, repeated success retains one entry and failure before writing retains zero; job-story delivery and failure behavior remain separate questions.
+- Reset and reload behavior: no reset control; reload preserves the full static description.
+- Mobile order and width thresholds: stack panels below 520px of component width. Preserve DOM order, wrap labels and render at 320px without horizontal scrolling or scaled-down text.
+- Keyboard order, focus, accessible names, live feedback: semantic lists/headings and visible caption; no artificial focus stops or live regions. Site navigation and source links remain native keyboard targets outside the diagram.
+- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: solid light surfaces within either site theme; explicit dark labels; no animation, transparency or shadow dependency. Borders and numbering remain meaningful in forced colors.
+- JavaScript-disabled initial screen and explanation: entire diagram and scope boundary remain available; no interaction or noscript warning.
+- Font families, supported characters, fallback and measurement method: system sans-serif with system CJK fallback. No new font assets or metric claims; inspect rendered localized labels for clipping.
+- Localized visible strings, input constraints, original/translation review: English group reviewed before Korean/Japanese translation on 2026-09-22. A17, roles, branches and offline boundary match. No inputs or native-speaker certification.
+- Mode: `static`; no component script, reset control or mount wait.
+- Capture selector and initial content: `[data-demo="use-case"]`, full initial diagram from `UseCase.astro`; 1440px light captures in en/ko/ja.
+- Source URLs, inspected date, claims each source supports: https://alistaircockburn.com/Unifying%20us%20uc%20sm.pdf; inspected 2026-09-22 for definition/mechanism. [Detailed source refresh](../catalog-writing/requirements-sources.md). Scenario, acceptance policy and suitability are authored examples/editorial judgment.
+- Comparison summaries: features: Actor goal, main path and extensions; advantages: Exposes failures before implementation; limitations: Needs slicing for incremental delivery; suitable: Coordinating saving and retries; combinations: User story slices and job story context.
+- Verification commands and evidence paths: [Sequential gates](../design-demos.md), `tests/requirements.test.mjs`, `tests/browser/requirements.spec.ts` and registry-wide browser checks. `public/thumbnails/use-case-{en,ko,ja}.png`; `artifacts/requirements-demos/`; [actual results](../requirements-review.md).

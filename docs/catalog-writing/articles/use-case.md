@@ -1,6 +1,8 @@
 # Use case / 유스케이스 / ユースケース
 
-Writing design only. ID: `use-case` · Group: [requirements](../groups/requirements.md) · Queue order: 101 · Checked: 2026-09-21.
+Historical writing design. ID: `use-case` · Group: [requirements](../groups/requirements.md) · Queue order: 101 · Checked: 2026-09-21.
+
+Implemented in three languages on 2026-09-22; [visualization brief](../../design-briefs/use-case.md), [source refresh](../requirements-sources.md) and [review](../../requirements-review.md). The six-section outline below remains research reference; the article uses the current three-section format.
 
 ## Reader question and scope
 

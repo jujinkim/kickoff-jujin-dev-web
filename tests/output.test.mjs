@@ -138,9 +138,11 @@ test("published concepts and pending candidates remain separate", () => {
       assert.ok(read("llms.txt").includes(`/en/catalog/${data.articleId}.md`));
     }
     assert.ok(html.includes('class="comparison"'));
-    const pending = read(`${lang}/catalog/categories/requirements/index.html`);
+    const pending = read(`${lang}/catalog/categories/boundaries/index.html`);
     assert.equal([...pending.matchAll(/data-candidate=/g)].length, 3);
-    assert.ok(!existsSync(`dist/${lang}/catalog/user-story/index.html`));
+    assert.ok(
+      !existsSync(`dist/${lang}/catalog/layered-architecture/index.html`),
+    );
   }
   const manifest = JSON.parse(read("pagefind/pagefind-entry.json"));
   assert.equal(

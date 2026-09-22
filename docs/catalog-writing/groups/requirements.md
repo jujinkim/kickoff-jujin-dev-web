@@ -1,6 +1,8 @@
 # Requirements expression / 요구사항 표현 / 要件の表現
 
-Group ID: `requirements` · Checked: 2026-09-21 · Writing designs, not article bodies.
+Group ID: `requirements` · Refreshed: 2026-09-22 · Three concepts implemented in en/ko/ja.
+
+[Source refresh](../requirements-sources.md), [visualization briefs](../../design-briefs/) and [local review](../../requirements-review.md). Historical research below supports the current three-section introductions.
 
 ## Shared case and comparison contract
 

@@ -66,7 +66,7 @@ PRs validate and build without deploying. Successful `main` builds deploy `dist`
 
 ## Concept catalog and guides
 
-Existing 12 articles in three languages are guides, with unchanged stable IDs and comments. The concept catalog starts with 58 pending candidates under a shared hierarchical taxonomy. No new concept bodies are published yet. Legacy article URLs redirect to guides; legacy Markdown remains available with the new canonical.
+The existing 12 articles in three languages remain guides, with unchanged stable IDs and comments. The concept catalog has 78 candidates: 64 published in English, Korean and Japanese, and 14 planned across architecture and data structures. See the [current writing queue](docs/catalog-writing/README.md). Legacy article URLs redirect to guides; legacy Markdown remains available with the new canonical.
 
 See [authoring and generation instructions](docs/content-authoring.md) for candidate order, templates, comparison metadata, schema v1 and publication gates.
 

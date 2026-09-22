@@ -2,7 +2,7 @@
 
 > Current publishing rule (2026-09-21): one-minute concept introductions, three short sections (Concept, Example, When to choose it), and a prominent diagram or UI image. The longer section plans and exhaustive comparisons below remain research references, not required article length. Optional comparisons and sources must not obscure the core concept.
 
-The original research pack contained **58 candidates in 19 comparison groups**. The monetization extension adds 16 writing briefs and four groups, preserving the original briefs. Current catalog: **61 published concepts** (22 design, 15 platform, 24 monetization), **183 localized concept documents**, and **36 guide documents**: **219 published documents**. Seventeen candidates remain planned. See [monetization source refresh](monetization-sources.md), [release review](../monetization-review.md) and [Design demos](../design-demos.md).
+The original research pack contained **58 candidates in 19 comparison groups**. The monetization extension adds 16 writing briefs and four groups, preserving the original briefs. Current catalog: **64 published concepts** (22 design, 15 platform, 24 monetization, 3 requirements), **192 localized concept documents**, and **36 guide documents**: **228 published documents**. Fourteen candidates remain planned. See [requirements review](../requirements-review.md) and [source refresh](requirements-sources.md). See [monetization source refresh](monetization-sources.md), [release review](../monetization-review.md) and [Design demos](../design-demos.md).
 
 ## How to write from this pack
 

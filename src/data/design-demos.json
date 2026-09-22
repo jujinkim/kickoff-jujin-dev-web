@@ -571,5 +571,35 @@
       "ja": "任意で参加し、完了条件に応じて報酬を得ます。"
     },
     "capture": "[data-demo=\"rewarded-ads\"]"
+  },
+  "user-story": {
+    "component": "UserStory",
+    "mode": "static",
+    "caption": {
+      "en": "A value statement starts the conversation; acceptance makes it reviewable.",
+      "ko": "가치 문장으로 대화를 시작하고 인수 기준으로 검토합니다.",
+      "ja": "価値を示す文で対話を始め、受け入れ基準で検証します。"
+    },
+    "capture": "[data-demo=\"user-story\"]"
+  },
+  "use-case": {
+    "component": "UseCase",
+    "mode": "static",
+    "caption": {
+      "en": "Follow the success path and name the failure extensions.",
+      "ko": "성공 경로와 실패 시 이어지는 경로를 함께 기술합니다.",
+      "ja": "成功経路と失敗時の拡張経路を併せて記述します。"
+    },
+    "capture": "[data-demo=\"use-case\"]"
+  },
+  "job-story": {
+    "component": "JobStory",
+    "mode": "static",
+    "caption": {
+      "en": "Describe the situation, motivation and outcome before selecting a solution.",
+      "ko": "해결책을 고르기 전에 상황·동기·기대 결과를 설명합니다.",
+      "ja": "解決策を選ぶ前に状況・動機・望む成果を説明します。"
+    },
+    "capture": "[data-demo=\"job-story\"]"
   }
 }

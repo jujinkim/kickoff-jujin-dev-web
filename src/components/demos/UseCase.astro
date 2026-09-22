@@ -1,0 +1,227 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { requirementsText } from "./requirements";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  r = requirementsText(lang);
+const steps = [
+  [
+    t("Reader", "독자", "読者"),
+    t(
+      "Request saving A17’s link",
+      "A17 링크 저장 요청",
+      "A17のリンク保存を依頼",
+    ),
+  ],
+  [
+    t("System", "시스템", "システム"),
+    t("Validate A17", "A17 확인", "A17を確認"),
+  ],
+  [
+    t("System", "시스템", "システム"),
+    t("Persist one saved entry", "저장 항목 1건 기록", "保存項目を1件記録"),
+  ],
+  [
+    t("System", "시스템", "システム"),
+    t("Confirm success", "성공 확인 응답", "成功を通知"),
+  ],
+];
+---
+
+<section data-demo="use-case" lang={lang}>
+  <header>
+    <p class="eyebrow">{r.fiction}</p>
+    <h2>
+      {t(
+        "Save A17: paths to a goal",
+        "A17 저장: 목표까지의 경로",
+        "A17の保存：目標への経路",
+      )}
+    </h2>
+    <p data-fixture>{r.fixture}</p>
+    <p class="precondition">
+      {t(
+        "Precondition: storage is initially available.",
+        "사전 조건: 처음에는 저장소 이용 가능.",
+        "事前条件：開始時は保存先を利用可能。",
+      )}
+    </p>
+  </header>
+  <div class="paths">
+    <div>
+      <h3>
+        {t("Main success scenario", "기본 성공 시나리오", "主成功シナリオ")}
+      </h3>
+      <ol class="main-path">
+        {steps.map(([actor, action], index) => (
+          <li data-step={index + 1}>
+            <span class="number" aria-hidden="true">
+              {index + 1}
+            </span>
+            <div>
+              <span class="actor">{actor}</span>
+              <strong>{action}</strong>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <aside>
+      <h3>{t("Extensions", "대안·실패 경로", "拡張シナリオ")}</h3>
+      <div class="branch failure" data-extension="failure">
+        <h4>
+          {t(
+            "3a · Failure before writing",
+            "3a · 쓰기 전 실패",
+            "3a · 書き込み前の失敗",
+          )}
+        </h4>
+        <p>
+          {t(
+            "0 entries. Report unsaved. Retry returns to step 1.",
+            "0건. 미저장 안내. 재시도는 1단계로 복귀.",
+            "0件。未保存を通知。再試行は手順1に戻る。",
+          )}
+        </p>
+      </div>
+      <div class="branch repeat" data-extension="duplicate">
+        <h4>{t("3b · Already saved", "3b · 이미 저장됨", "3b · 保存済み")}</h4>
+        <p>
+          {t(
+            "Keep one entry; continue to step 4. Never duplicate.",
+            "1건 유지 후 4단계로. 중복 생성 없음.",
+            "1件を保ち、手順4へ。重複を作らない。",
+          )}
+        </p>
+      </div>
+    </aside>
+  </div>
+  <p class="boundary" data-boundary>
+    {r.boundary}
+  </p>
+</section>
+<style>
+  .eyebrow {
+    color: #23394a;
+  }
+  section {
+    container-type: inline-size;
+    background: #edf3f7;
+    color: #23394a;
+    border: 1px solid #778d9b;
+    border-radius: 12px;
+    padding: clamp(16px, 4vw, 30px);
+    font-family: system-ui, sans-serif;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3,
+  h4,
+  ol {
+    margin: 0;
+  }
+  .eyebrow,
+  .actor {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+    line-height: 1.3;
+    margin: 0.4rem 0 0.7rem;
+  }
+  .precondition {
+    font-size: 0.85rem;
+    margin-top: 0.35rem;
+  }
+  .paths {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 1.2rem;
+    margin-top: 1.25rem;
+  }
+  .paths > * {
+    min-width: 0;
+  }
+  h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
+  }
+  .main-path {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.65rem;
+  }
+  li {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #778d9b;
+    padding: 0.75rem;
+  }
+  .number {
+    width: 1.7rem;
+    height: 1.7rem;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid #3e617b;
+    border-radius: 50%;
+    font-weight: 700;
+  }
+  .actor,
+  li strong {
+    display: block;
+  }
+  .actor {
+    color: #435d70;
+  }
+  li strong {
+    font-size: 0.95rem;
+  }
+  .branch {
+    padding: 0.9rem;
+    background: #fff;
+    margin-bottom: 0.8rem;
+  }
+  .failure {
+    border: 2px dashed #855032;
+  }
+  .repeat {
+    border: 2px solid #3e617b;
+  }
+  h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+  .branch p {
+    font-size: 0.9rem;
+  }
+  .boundary {
+    border-top: 1px solid #778d9b;
+    padding-top: 0.8rem;
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+  }
+  @container (max-width: 520px) {
+    .paths {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (forced-colors: active) {
+    li,
+    .number,
+    .branch,
+    .boundary {
+      border-color: CanvasText;
+    }
+  }
+</style>

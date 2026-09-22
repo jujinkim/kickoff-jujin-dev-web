@@ -1,11 +1,11 @@
 # Catalog and guide authoring
 
-This guide describes the authoring workflow. Design implementation follows [Design demos](design-demos.md). Eighteen designs are published in three languages; 40 other candidates remain planned. The earlier [styles review](catalog-writing/styles-review.md) is historical.
+This guide describes the authoring workflow. Design implementation follows [Design demos](design-demos.md). 64 concepts are published in three languages; 14 candidates remain planned. Current counts and release reviews live in the [writing index](catalog-writing/README.md). The earlier [styles review](catalog-writing/styles-review.md) is historical.
 
 ## Shared data and routes
 
 - `src/data/categories.json` is the single taxonomy: stable language-independent ID, nullable parent, localized names/descriptions, sibling order. Roots are navigation shelves; concepts belong to one leaf comparison group.
-- `src/data/candidates.json` holds 58 initial candidates: stable ID, leaf category, en/ko/ja titles, scope, comparison peers, related guide IDs, writing order. Public pending names and the writing queue use this file.
+- `src/data/candidates.json` holds 78 candidates: stable ID, leaf category, en/ko/ja titles, scope, comparison peers, related guide IDs, writing order. Public pending names and the writing queue use this file.
 - `npm run content:new -- --list` shows writing order and computed English status. No file means `planned`; existing `draft` or `published` frontmatter determines subsequent states. Public pages expose only published text; an untranslated or draft candidate still displays its fixed candidate name as coming soon, with no article link.
 - Concepts: `/{lang}/catalog/{articleId}/`; categories: `/{lang}/catalog/categories/{categoryId}/`; guides: `/{lang}/guides/{articleId}/`. Article Markdown uses `/en/catalog/{articleId}.md` or `/en/guides/{articleId}.md` for every UI language. Existing localized Markdown URLs serve the English original; keep translated sources for HTML.
 - Legacy guide `/catalog/{articleId}/` routes are noindex static redirects with canonical guide links. Legacy Markdown serves the same source and declares the new canonical. IDs, comments and translation identity do not change.
@@ -34,7 +34,7 @@ Frontmatter `comparison` retains `features`, `advantages`, `limitations`, `suita
 
 ## Generation brief
 
-Start with the [catalog writing designs](catalog-writing/README.md): 19 group briefs, 58 candidate briefs, a shared multilingual glossary, and a verified source ledger. Historical briefs specify evidence and comparison research; their six-section depth is superseded by the one-minute format above. These are local preparation materials, not published articles. Review the group's English originals before Korean/Japanese translation; refresh dated sources when drafting. The existing generator still scaffolds one selected candidate at a time.
+Start with the [catalog writing designs](catalog-writing/README.md): group and candidate briefs, a shared multilingual glossary, and source ledgers with release-specific refreshes. Historical briefs specify evidence and comparison research; their six-section depth is superseded by the one-minute format above. These are local preparation materials, not published articles. Review the group's English originals before Korean/Japanese translation; refresh dated sources when drafting. The existing generator still scaffolds one selected candidate at a time.
 
 Read candidate scope, all sibling candidate IDs, related guides, and current project instructions before drafting. Cover one concept only. Distinguish it from homonyms and nearby abstractions. Use the same five comparison dimensions for all siblings, with explicit context and concrete examples. Describe costs and limitations alongside benefits. Explain when choices can coexist: a typeface width, visual style and layout are independent axes; styles can combine. Do not invent mutually exclusive choices or include individual font products.
 
@@ -42,7 +42,7 @@ Verify original authors and official sources before asserting attribution, defin
 
 Write and review English first; Korean/Japanese preserve scope, evidence and caveats. Keep `articleId`, `kind`, `category`, `related` and preview choice consistent across translations. `sourceRevision` identifies reviewed English revision. Set `published` only after editorial review; placeholders must not remain.
 
-The 18 design concepts are complete. For new designs, use [the demo brief](templates/design-demo-brief.md) and [implementation workflow](design-demos.md). Review related concepts together; remaining writing order comes from candidate `order`.
+The design, platform, monetization and requirements groups are complete; architecture and data-structure groups remain planned. For new designs, use [the demo brief](templates/design-demo-brief.md) and [implementation workflow](design-demos.md). Review related concepts together; remaining writing order comes from candidate `order`.
 
 Use `related` IDs to link published concepts and guides. Rendering adds incoming relationships so a concept linked to a guide appears back on that guide. Draft relationships never render. References to an unissued peer stay prose or candidate metadata until that peer is published; do not create broken body links.
 
