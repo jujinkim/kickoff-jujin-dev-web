@@ -20,7 +20,9 @@ const moneyIds = new Set(
 );
 const planningIds = new Set(
   articles
-    .filter((a) => ["requirements", "boundaries"].includes(a.data.category))
+    .filter((a) =>
+      ["requirements", "boundaries", "service-split"].includes(a.data.category),
+    )
     .map((a) => a.data.articleId),
 );
 const styleIds = ids.filter((id) =>

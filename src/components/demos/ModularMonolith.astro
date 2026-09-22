@@ -1,0 +1,278 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { serviceSplitText } from "./service-split";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  s = serviceSplitText(lang);
+const modules = [
+  [
+    s.catalog,
+    t("Article lookup", "문서 조회", "記事の参照"),
+    t("Catalog-owned tables", "카탈로그 소유 테이블", "カタログ所有のテーブル"),
+  ],
+  [
+    s.library,
+    t(
+      "Set A17 tag: travel",
+      "A17 태그 설정: travel",
+      "A17のタグを設定：travel",
+    ),
+    t(
+      "Library-owned tables + tag field",
+      "보관함 소유 테이블 + 태그 필드",
+      "ライブラリ所有のテーブル＋タグ項目",
+    ),
+  ],
+  [
+    s.billing,
+    s.unchanged,
+    t("Billing-owned tables", "결제 소유 테이블", "課金所有のテーブル"),
+  ],
+];
+---
+
+<section data-demo="modular-monolith" lang={lang}>
+  <header>
+    <p class="eyebrow">{s.fiction}</p>
+    <h2>
+      {t(
+        "Internal contracts, shared release",
+        "내부 계약, 공동 배포",
+        "内部の契約、共通のリリース",
+      )}
+    </h2>
+    <p data-fixture>{s.fixture}</p>
+    <p class="change" data-change>
+      {s.change}
+    </p>
+  </header>
+  <div class="deployment" data-deployment>
+    <div class="release-heading">
+      <h3>{s.unit} · 1</h3>
+      <strong data-version>
+        {t("App v1 → App v2", "앱 v1 → 앱 v2", "アプリv1 → アプリv2")}
+      </strong>
+    </div>
+    <ol class="modules">
+      {modules.map(([name, behavior, tables], index) => (
+        <li data-module>
+          <div class="module-heading">
+            <span aria-hidden="true">0{index + 1}</span>
+            <h4>{name}</h4>
+            {index === 1 && <span class="change-label">{s.tagAdded}</span>}
+          </div>
+          <div class="module-body">
+            <div class="gate" data-api>
+              <strong>API</strong>
+              <span>{behavior}</span>
+            </div>
+            <div class="private" data-owned-tables>
+              <strong>
+                {t("Owned internals", "소유한 내부 구현", "所有する内部実装")}
+              </strong>
+              <span>{tables}</span>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <p class="call" data-communication>
+      {s.library} → {s.catalog} API · {s.local}
+    </p>
+    <p class="guard" data-table-rule>
+      {t(
+        "No direct access to another module's tables. Calls enter through its API.",
+        "다른 모듈 테이블에 직접 접근 금지. 호출은 해당 모듈 API를 통과.",
+        "他モジュールのテーブルに直接アクセスしない。呼び出しはそのAPIを通す。",
+      )}
+    </p>
+  </div>
+  <p class="database" data-store>
+    {t(
+      "One shared database; separate table ownership. Library changes its storage inside the common release.",
+      "공유 데이터베이스 하나, 테이블 소유권은 분리. 보관함 저장 변경도 공동 배포에 포함.",
+      "一つの共有データベース、テーブルの所有権は分離。ライブラリの保存変更も共通リリースに含む。",
+    )}
+  </p>
+  <ol class="outcomes" data-outcomes>
+    <li data-result="success">{s.success}</li>
+    <li data-result="failure">{s.failure}</li>
+  </ol>
+  <p class="boundary" data-boundary>
+    {t(
+      "A monolith subtype: one release and shared process failures. Enforce API boundaries with code rules and tests; folders alone cannot protect them.",
+      "모놀리스의 한 유형: 배포와 프로세스 장애 공유. 코드 규칙·검사로 API 경계를 강제해야 하며 폴더만으로는 보호되지 않습니다.",
+      "モノリスの一種：リリースとプロセス障害を共有。API境界はコード規則とテストで守り、フォルダーだけに頼りません。",
+    )}
+  </p>
+  <p class="footnote">{s.storeNote}</p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 4vw, 28px);
+    color: #284632;
+    background: #eff5ec;
+    border: 1px solid #869c82;
+    border-radius: 12px;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3,
+  h4,
+  ol {
+    margin: 0;
+  }
+  .eyebrow {
+    color: #284632;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+    line-height: 1.3;
+    margin: 0.4rem 0 0.7rem;
+  }
+  h3,
+  h4 {
+    font-size: 0.95rem;
+  }
+  .change {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  .deployment {
+    border: 2px dotted #547452;
+    padding: 1rem;
+    margin: 1.2rem 0;
+  }
+  .release-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .release-heading strong {
+    border: 1px solid #547452;
+    padding: 0.25rem 0.6rem;
+    background: #fff;
+    border-radius: 4px;
+  }
+  .modules {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+  .modules li {
+    border: 1px solid #71896b;
+    background: #fff;
+  }
+  .module-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 0.55rem 0.7rem;
+    background: #e4eddf;
+    border-bottom: 1px solid #71896b;
+  }
+  .module-heading > span {
+    font-size: 0.8rem;
+  }
+  .change-label {
+    margin-left: auto;
+    font-weight: 700;
+  }
+  .module-body {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 0.8rem;
+    padding: 0.8rem;
+  }
+  .module-body strong,
+  .module-body span {
+    display: block;
+    font-size: 0.8rem;
+  }
+  .module-body span {
+    margin-top: 0.3rem;
+  }
+  .gate {
+    border: 2px solid #547452;
+    padding: 0.5rem;
+  }
+  .private {
+    border-left: 1px dashed #547452;
+    padding-left: 0.8rem;
+  }
+  .call {
+    border-top: 2px solid #547452;
+    margin-top: 1rem;
+    padding-top: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .guard {
+    font-size: 0.8rem;
+    margin-top: 0.6rem;
+  }
+  .database {
+    font-size: 0.85rem;
+    border: 1px solid #869c82;
+    padding: 0.8rem;
+    background: #fff;
+  }
+  .outcomes {
+    padding-left: 1.3rem;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+  }
+  .outcomes li + li {
+    margin-top: 0.5rem;
+  }
+  .boundary {
+    border-top: 1px solid #869c82;
+    padding-top: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .footnote {
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
+  }
+  @container (max-width: 430px) {
+    .module-body {
+      grid-template-columns: 1fr;
+    }
+    .private {
+      border-left: 0;
+      border-top: 1px dashed #547452;
+      padding: 0.6rem 0 0;
+    }
+    .change-label {
+      margin-left: 0;
+    }
+  }
+  @media (forced-colors: active) {
+    .deployment,
+    .modules li,
+    .module-heading,
+    .gate,
+    .private,
+    .call,
+    .database,
+    .boundary {
+      border-color: CanvasText;
+    }
+  }
+</style>

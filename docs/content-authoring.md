@@ -1,6 +1,6 @@
 # Catalog and guide authoring
 
-This guide describes the authoring workflow. Design implementation follows [Design demos](design-demos.md). 67 concepts are published in three languages; 11 candidates remain planned. Current counts and release reviews live in the [writing index](catalog-writing/README.md). The earlier [styles review](catalog-writing/styles-review.md) is historical.
+This guide describes the authoring workflow. Design implementation follows [Design demos](design-demos.md). 70 concepts are published in three languages; 8 candidates remain planned. Current counts and release reviews live in the [writing index](catalog-writing/README.md). The earlier [styles review](catalog-writing/styles-review.md) is historical.
 
 ## Shared data and routes
 
@@ -42,7 +42,7 @@ Verify original authors and official sources before asserting attribution, defin
 
 Write and review English first; Korean/Japanese preserve scope, evidence and caveats. Keep `articleId`, `kind`, `category`, `related` and preview choice consistent across translations. `sourceRevision` identifies reviewed English revision. Set `published` only after editorial review; placeholders must not remain.
 
-The design, platform, monetization, requirements and architecture-boundary groups are complete; service decomposition and data-structure groups remain planned. For new designs, use [the demo brief](templates/design-demo-brief.md) and [implementation workflow](design-demos.md). Review related concepts together; remaining writing order comes from candidate `order`.
+The design, platform, monetization, requirements, architecture-boundary and service-decomposition groups are complete; data-structure groups remain planned. For new designs, use [the demo brief](templates/design-demo-brief.md) and [implementation workflow](design-demos.md). Review related concepts together; remaining writing order comes from candidate `order`.
 
 Use `related` IDs to link published concepts and guides. Rendering adds incoming relationships so a concept linked to a guide appears back on that guide. Draft relationships never render. References to an unissued peer stay prose or candidate metadata until that peer is published; do not create broken body links.
 

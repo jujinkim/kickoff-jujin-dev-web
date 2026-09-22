@@ -631,5 +631,35 @@
     },
     "mode": "static",
     "capture": "[data-demo=\"clean-architecture\"]"
+  },
+  "monolith": {
+    "component": "Monolith",
+    "caption": {
+      "en": "One release unit can contain many capabilities",
+      "ko": "여러 기능을 담은 하나의 배포 단위",
+      "ja": "複数の機能を含む一つのデプロイ単位"
+    },
+    "mode": "static",
+    "capture": "[data-demo=\"monolith\"]"
+  },
+  "modular-monolith": {
+    "component": "ModularMonolith",
+    "caption": {
+      "en": "Internal contracts, shared release",
+      "ko": "내부 계약, 공동 배포",
+      "ja": "内部の契約、共通のリリース"
+    },
+    "mode": "static",
+    "capture": "[data-demo=\"modular-monolith\"]"
+  },
+  "microservices": {
+    "component": "Microservices",
+    "caption": {
+      "en": "Independent releases introduce remote failure cases",
+      "ko": "독립 배포와 함께 다뤄야 할 원격 장애",
+      "ja": "独立リリースには遠隔障害への対処が必要"
+    },
+    "mode": "static",
+    "capture": "[data-demo=\"microservices\"]"
   }
 }

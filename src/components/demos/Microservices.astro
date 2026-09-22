@@ -1,0 +1,249 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { serviceSplitText } from "./service-split";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  s = serviceSplitText(lang);
+---
+
+<section data-demo="microservices" lang={lang}>
+  <header>
+    <p class="eyebrow">{s.fiction}</p>
+    <h2>
+      {t(
+        "One capability can release alone",
+        "기능 하나만 독립 배포",
+        "一つの機能だけをリリース",
+      )}
+    </h2>
+    <p data-fixture>{s.fixture}</p>
+    <p class="change" data-change>
+      {s.change}
+    </p>
+  </header>
+  <p class="condition" data-contract>
+    {t(
+      "Compatible contract: only Library needs a new release.",
+      "호환 계약 유지: 보관함만 새 배포 필요.",
+      "契約の互換性を維持：新しいリリースはライブラリのみ。",
+    )}
+  </p>
+  <ol class="services">
+    {[s.catalog, s.library, s.billing].map((name, index) => (
+      <li
+        data-deployment
+        data-service={
+          index === 0 ? "catalog" : index === 1 ? "library" : "billing"
+        }
+      >
+        <p class="unit">
+          {s.unit} · {index + 1}
+        </p>
+        <h3>{name}</h3>
+        <strong class="version" data-version>
+          {index === 1 ? "v1 → v2" : "v1 → v1"}
+        </strong>
+        <p class="behavior">{index === 1 ? s.tagAdded : s.unchanged}</p>
+        <div class="store" data-store>
+          <span aria-hidden="true">↓</span>
+          <strong>{t("Owned store", "자체 저장소", "所有する保存先")}</strong>
+          <span>{name}</span>
+        </div>
+      </li>
+    ))}
+  </ol>
+  <div class="network" data-communication>
+    <h3>
+      {t(
+        "Network lookup · before the tag write",
+        "네트워크 조회 · 태그 쓰기 이전",
+        "ネットワーク参照 · タグの書き込み前",
+      )}
+    </h3>
+    <p class="request">
+      {s.library} → {s.catalog} API
+    </p>
+    <p>
+      {t(
+        "A remote return is not guaranteed. Billing is outside this lookup path.",
+        "원격 응답은 보장되지 않습니다. 결제는 이 조회 경로에 참여하지 않습니다.",
+        "遠隔応答は保証されません。課金はこの参照経路に参加しません。",
+      )}
+    </p>
+  </div>
+  <ol class="outcomes" data-outcomes>
+    <li data-success>
+      <h3>{t("1 · Success", "1 · 성공", "1 · 成功")}</h3>
+      <p data-result="success">{s.success}</p>
+    </li>
+    <li data-timeout>
+      <h3>
+        {t(
+          "2 · Catalog lookup timeout",
+          "2 · 카탈로그 조회 시간 초과",
+          "2 · カタログ参照タイムアウト",
+        )}
+      </h3>
+      <p data-result="failure">{s.failure}</p>
+    </li>
+  </ol>
+  <p class="boundary" data-boundary>
+    {t(
+      "Each service owns its data; no direct reads of another service's tables. Independent releases still need monitoring and failure handling; downstream failures can propagate.",
+      "각 서비스가 데이터를 소유하며 다른 서비스 테이블을 직접 읽지 않습니다. 독립 배포에도 관측·장애 처리가 필요하며 의존 서비스의 장애가 전파될 수 있습니다.",
+      "各サービスがデータを所有し、他サービスのテーブルを直接読みません。独立リリースでも監視と障害処理が必要で、依存先の障害は波及し得ます。",
+    )}
+  </p>
+  <p class="footnote">{s.storeNote}</p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 4vw, 28px);
+    color: #4c362a;
+    background: #f8f0e8;
+    border: 1px solid #a28c78;
+    border-radius: 12px;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3,
+  ol {
+    margin: 0;
+  }
+  .eyebrow {
+    color: #4c362a;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+    line-height: 1.3;
+    margin: 0.4rem 0 0.7rem;
+  }
+  h3 {
+    font-size: 0.95rem;
+  }
+  .change {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  .condition {
+    border-left: 4px solid #86603e;
+    padding-left: 0.75rem;
+    font-size: 0.85rem;
+    margin-top: 1.2rem;
+    font-weight: 650;
+  }
+  .services {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+    margin: 1rem 0;
+  }
+  .services > li {
+    border: 2px dotted #947150;
+    padding: 0.8rem;
+    background: #fff;
+  }
+  .unit {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .version {
+    display: inline-block;
+    border: 1px solid #947150;
+    padding: 0.2rem 0.5rem;
+    margin: 0.7rem 0;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+  [data-service="library"] .version {
+    border: 2px solid #4c362a;
+    background: #f5e1c8;
+  }
+  .behavior {
+    font-size: 0.8rem;
+  }
+  .store {
+    display: grid;
+    gap: 0.1rem;
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+  }
+  .store strong {
+    border-top: 1px solid #947150;
+    padding-top: 0.6rem;
+  }
+  .network {
+    border-top: 2px dashed #947150;
+    border-bottom: 2px dashed #947150;
+    padding: 0.8rem 0;
+  }
+  .network p {
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+  }
+  .network .request {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .outcomes {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin: 1rem 0;
+  }
+  .outcomes li {
+    border: 1px solid #a28c78;
+    border-left: 4px solid #86603e;
+    padding: 0.8rem;
+    background: #fff;
+  }
+  .outcomes [data-timeout] {
+    border-left-style: dashed;
+  }
+  .outcomes p {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  .boundary {
+    border-top: 1px solid #a28c78;
+    padding-top: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .footnote {
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
+  }
+  @container (max-width: 520px) {
+    .services,
+    .outcomes {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (forced-colors: active) {
+    .condition,
+    .services > li,
+    .version,
+    [data-service="library"] .version,
+    .store strong,
+    .network,
+    .outcomes li,
+    .boundary {
+      border-color: CanvasText;
+    }
+  }
+</style>

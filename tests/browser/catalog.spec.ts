@@ -226,6 +226,7 @@ for (const [lang, layout, typography] of [
         "typography",
         "requirements",
         "boundaries",
+        "service-split",
         ...platformCategories,
         ...monetizationCategories,
       ].sort(),

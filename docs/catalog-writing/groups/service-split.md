@@ -1,6 +1,6 @@
 # Service decomposition / 서비스 분할 / サービス分割
 
-Group ID: `service-split` · Checked: 2026-09-21 · Writing designs, not article bodies.
+Group ID: `service-split` · Checked: 2026-09-22. Published concise articles and independent static diagrams implement this research brief. See [source refresh](../service-split-sources.md), [visualization briefs](../../design-briefs/) and [release review](../../service-split-review.md).
 
 ## Shared case and comparison contract
 

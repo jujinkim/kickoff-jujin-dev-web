@@ -1,0 +1,25 @@
+# Monolith visualization brief
+
+- Stable ID, leaf category, English/Korean/Japanese titles: `monolith`; `service-split`; Monolith / 모놀리스 / モノリス.
+- Definition (one sentence): One server application is deployed as one unit.
+- Closest concept and concrete difference: A modular monolith is a subtype with explicit internal boundaries; monolith alone does not specify internal modularity.
+- Distinguishing visual features (structure, material, typography): One dotted deployment enclosure contains three capability cards and a shared artifact v1 → v2. A separate database panel is owned by the application. Solid surfaces, readable system type, numbered steps and explicit labels; color is supplementary.
+- Shared comparison category: [Service decomposition](../catalog-writing/groups/service-split.md).
+- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: reading application with Catalog, Library and Billing, initially one team and v1; A17 has no tag. Library adds a compatible tag feature; Billing behavior remains unchanged. Set the literal tag `travel` after Catalog lookup succeeds.
+- Visual variable changed; concept-specific extra controls and their justification: One dotted deployment enclosure contains three capability cards and a shared artifact v1 → v2. A separate database panel is owned by the application. Static mode keeps release units, ownership and failure paths visible together. No pretend deployment or database controls.
+- Fictional scenario and why it demonstrates the definition: Release app v2; all three capabilities ship together although only Library behavior changes. Version labels identify release artifacts, not claims that unchanged capabilities acquired new behavior.
+- Representative action and observable result: Release app v2; all three capabilities ship together although only Library behavior changes. Successful lookup then write changes A17 from no tag to `travel`.
+- Initial state: server-rendered full diagram; fictional app/services v1 and no tag.
+- Changed state, repeated action, empty input/no results: no mutable UI or text input. The trace uses valid A17 and literal `travel`; assigning that same tag again retains it under the illustrative assignment policy. A failed Catalog read occurs before any write, leaves no tag, reports failure and permits retry after recovery. For microservices this branch is an explicit lookup timeout; it says nothing about uncertain write timeouts or automatic retries.
+- Reset and reload behavior: no reset control; static content is identical after reload.
+- Mobile order and width thresholds: stack cards below 520px component width; module rows stack below 430px. Preserve release → capabilities/modules/services → ownership → runtime outcome reading order at 320px; wrap text without scaling it down.
+- Keyboard order, focus, accessible names, live feedback: semantic headings, lists and visible descriptions. No artificial tab stops or live regions. Native page/source links remain keyboard accessible.
+- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: solid authored light surfaces with explicit dark text in either surrounding theme. No animation/transparency/shadow dependency. Borders and labeled version changes remain meaningful in forced colors.
+- JavaScript-disabled initial screen and explanation: all topology, versions, data ownership and success/failure descriptions remain readable.
+- Font families, supported characters, fallback and measurement method: system sans-serif with CJK fallback; monospace for literal identifiers. No new fonts or metrics claims.
+- Localized visible strings, input constraints, original/translation review: English group reviewed first on 2026-09-22; Korean/Japanese preserve the compatible-contract condition, shared fixture and failure timing. `A17`, `v1`, `v2` and `travel` are literal sample values. No native-speaker review claimed.
+- Mode: `static`; no script, reset or mount wait.
+- Capture selector and initial content: `[data-demo="monolith"]`; complete static diagram in three languages, 1440px light thumbnails.
+- Source URLs, inspected date, claims each source supports: https://martinfowler.com/articles/microservices.html; inspected 2026-09-22. [Source refresh](../catalog-writing/service-split-sources.md) records mechanisms and limitations. Fixture, table ownership policy and suitability are editorial choices, not measurements.
+- Comparison summaries: all five fields follow the reviewed English frontmatter and group matrix: deployment/module mechanism, conditional benefit, coordination cost, suitability and permitted combination. No automatic scaling, isolation or effortless extraction claim.
+- Verification commands and evidence paths: [Sequential gates](../design-demos.md); publication mutation tests, output tests and `tests/browser/service-split.spec.ts`. `public/thumbnails/monolith-{en,ko,ja}.png`, ignored `artifacts/service-split-demos/`, [release record](../service-split-review.md).

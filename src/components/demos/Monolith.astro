@@ -1,0 +1,229 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { serviceSplitText } from "./service-split";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  s = serviceSplitText(lang);
+---
+
+<section data-demo="monolith" lang={lang}>
+  <header>
+    <p class="eyebrow">{s.fiction}</p>
+    <h2>
+      {t(
+        "One artifact moves together",
+        "하나의 배포물이 함께 이동",
+        "一つの成果物をまとめて更新",
+      )}
+    </h2>
+    <p data-fixture>{s.fixture}</p>
+    <p class="change" data-change>
+      {s.change}
+    </p>
+  </header>
+  <div class="release" data-deployment>
+    <div class="release-heading">
+      <h3>{s.unit} · 1</h3>
+      <strong data-version>
+        {t("App v1 → App v2", "앱 v1 → 앱 v2", "アプリv1 → アプリv2")}
+      </strong>
+    </div>
+    <p class="scope">
+      {t(
+        "Build and release the whole server application",
+        "서버 애플리케이션 전체 빌드·배포",
+        "サーバーアプリケーション全体をビルド・デプロイ",
+      )}
+    </p>
+    <ol class="capabilities">
+      {[s.catalog, s.library, s.billing].map((name, index) => (
+        <li data-capability class:list={{ changed: index === 1 }}>
+          <span class="number" aria-hidden="true">
+            0{index + 1}
+          </span>
+          <h4>{name}</h4>
+          <p>{index === 1 ? s.tagAdded : s.unchanged}</p>
+        </li>
+      ))}
+    </ol>
+    <p class="local" data-communication>
+      {s.library} → {s.catalog} · {s.local}
+    </p>
+    <p class="scope">
+      {t(
+        "Capability boxes leave internal modularity unspecified.",
+        "기능 상자는 내부 모듈 구성 여부를 정하지 않습니다.",
+        "機能の枠は内部のモジュール構成を規定しません。",
+      )}
+    </p>
+  </div>
+  <div class="store" data-store>
+    <h3>
+      {t(
+        "Shared database · owner: application",
+        "공유 데이터베이스 · 소유자: 앱",
+        "共有データベース · 所有者：アプリ",
+      )}
+    </h3>
+    <p>
+      {s.catalog} / {s.library} / {s.billing}
+    </p>
+    <p>
+      {t(
+        "Library writes the tag after Catalog lookup succeeds.",
+        "카탈로그 조회 성공 후 보관함이 태그 기록.",
+        "カタログ参照の成功後、ライブラリがタグを記録。",
+      )}
+    </p>
+  </div>
+  <ol class="outcomes" data-outcomes>
+    <li data-result="success">{s.success}</li>
+    <li data-result="failure">{s.failure}</li>
+  </ol>
+  <p class="boundary" data-boundary>
+    {t(
+      "Replicas are copies of the same artifact, not separate services. A process crash can affect all capabilities in that replica.",
+      "복제본은 같은 배포물의 사본이며 별도 서비스가 아닙니다. 프로세스가 죽으면 해당 복제본의 모든 기능이 영향을 받습니다.",
+      "レプリカは同じ成果物のコピーで、別サービスではありません。プロセス停止はそのレプリカの全機能に影響し得ます。",
+    )}
+  </p>
+  <p class="footnote">{s.storeNote}</p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 4vw, 28px);
+    color: #294054;
+    background: #eef3f8;
+    border: 1px solid #8094a5;
+    border-radius: 12px;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3,
+  h4,
+  ol {
+    margin: 0;
+  }
+  .eyebrow {
+    color: #294054;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+    line-height: 1.3;
+    margin: 0.4rem 0 0.7rem;
+  }
+  h3,
+  h4 {
+    font-size: 0.95rem;
+  }
+  .change {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  .release {
+    border: 2px dotted #597993;
+    padding: 1rem;
+    margin: 1.2rem 0;
+  }
+  .release-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .release-heading strong {
+    background: #294054;
+    color: #fff;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid;
+    border-radius: 4px;
+  }
+  .scope {
+    font-size: 0.8rem;
+    margin-top: 0.6rem;
+  }
+  .capabilities {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    list-style: none;
+    padding: 0;
+    gap: 0.7rem;
+    margin-top: 1rem;
+  }
+  .capabilities li {
+    background: #fff;
+    border: 1px solid #8094a5;
+    padding: 0.8rem;
+  }
+  .capabilities .changed {
+    border: 2px solid #294054;
+  }
+  .number {
+    font-family: monospace;
+    font-size: 0.8rem;
+  }
+  .capabilities p {
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+  }
+  .local {
+    border-top: 2px solid #597993;
+    padding-top: 0.6rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .store {
+    border: 1px solid #8094a5;
+    border-left: 5px solid #597993;
+    padding: 0.8rem;
+    background: #fff;
+  }
+  .store p {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+  }
+  .outcomes {
+    padding-left: 1.3rem;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+  }
+  .outcomes li + li {
+    margin-top: 0.5rem;
+  }
+  .boundary {
+    border-top: 1px solid #8094a5;
+    padding-top: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .footnote {
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
+  }
+  @container (max-width: 520px) {
+    .capabilities {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (forced-colors: active) {
+    .release,
+    .capabilities li,
+    .store,
+    .local,
+    .boundary {
+      border-color: CanvasText;
+    }
+  }
+</style>

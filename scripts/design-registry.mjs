@@ -30,7 +30,7 @@ export const monetizationCategories = [
 ];
 export const requiresDemo = (id) =>
   isDesignCategory(id) ||
-  ["requirements", "boundaries"].includes(id) ||
+  ["requirements", "boundaries", "service-split"].includes(id) ||
   platformCategories.includes(id) ||
   monetizationCategories.includes(id);
 export function validateDesigns(

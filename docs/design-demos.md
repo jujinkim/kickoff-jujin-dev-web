@@ -27,8 +27,8 @@ keep their control baseline inside each component; they share only data and
 behavior. Do not add a global visual theme.
 
 The current release contains 22 design concepts, 15 platform concepts, 24
-monetization concepts, 3 requirements concepts and 3 architecture-boundary concepts: **49 interactive demos and 18 static diagrams**, 201 localized
-concept articles and 36 guide articles (237 published documents). Eleven
+monetization concepts, 3 requirements concepts, 3 architecture-boundary concepts and 3 service-decomposition concepts: **49 interactive demos and 21 static diagrams**, 210 localized
+concept articles and 36 guide articles (246 published documents). Eight
 candidates remain planned. Counts describe this release, not runtime allowlists.
 
 Current monetization evidence: [monetization review](monetization-review.md).
@@ -92,7 +92,7 @@ research lives in [catalog-writing](catalog-writing/README.md).
 1. Register a stable candidate in `src/data/candidates.json` and an existing
    leaf category in `src/data/categories.json`. Add a leaf if needed; descendants
    of `design`, all five platform groups, all seven monetization groups and
-   `requirements` and `boundaries` participate in publication validation.
+   `requirements`, `boundaries` and `service-split` participate in publication validation.
    Extend `platformCategories` when introducing a new platform comparison group.
 2. Run `npm run content:new -- --id <id>` for all three draft files. The command
    prints this guide and template paths. Never overwrite an existing original.
@@ -391,3 +391,11 @@ The `boundaries` group shares SaveArticle(R1, A17), initially unsaved, in one pr
 Solid relations label source dependencies, dashed relations label runtime calls, and dotted enclosures label one process. Closed-layer dependencies descend; hexagonal storage adapters depend on the application-owned port; clean architecture distinguishes inward imports from calls outward through SaveRepository. All diagrams retain the same success, repeat, empty-ID and before-write failure policies. Static diagrams do not execute persistence or imply storage migration.
 
 Read the [source refresh](catalog-writing/boundaries-sources.md), [individual briefs](design-briefs/) and [release record](boundaries-review.md). The category participates in publication validation. Check localized reading order, pattern labels, forced colors, narrow widths and JavaScript-disabled output; normal sequential gates and the initial-thumbnail exception apply.
+
+## Service decomposition diagrams
+
+The `service-split` group shares a reading app with Catalog, Library and Billing, one initial team and no tag on A17. The change adds a compatible Library tag feature while Billing behavior stays the same. `service-split.ts` shares fixture strings only; three components own their layouts and scoped styles.
+
+Monolith shows one artifact release and application-owned storage. Modular monolith shows API gates and module-owned tables within one release; the database may be shared. Microservices shows three release units with owned stores, changing only Library from v1 to v2, plus a Catalog-read timeout before the tag write. Deployment enclosures do not specify physical-machine counts; independent releases do not guarantee failure isolation.
+
+Static diagrams retain the complete release and lookup success/failure traces without controls or JavaScript. Read the [source refresh](catalog-writing/service-split-sources.md), [individual briefs](design-briefs/) and [release record](service-split-review.md). Publication validation includes the `service-split` category; normal sequential gates and the first-thumbnail exception apply.

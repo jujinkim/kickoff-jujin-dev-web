@@ -12,10 +12,11 @@ test("planning publication rejects missing diagrams, captures and stale translat
   assert.deepEqual(validateDesigns(articles), []);
   const planning = articles.filter(
     (a) =>
-      ["requirements", "boundaries"].includes(a.data.category) &&
-      a.data.lang === "en",
+      ["requirements", "boundaries", "service-split"].includes(
+        a.data.category,
+      ) && a.data.lang === "en",
   );
-  assert.equal(planning.length, 6);
+  assert.equal(planning.length, 9);
   for (const {
     data: { articleId: id },
   } of planning) {
