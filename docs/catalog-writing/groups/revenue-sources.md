@@ -33,3 +33,19 @@ Review every English draft in this group together before translation. Confirm th
 [ads]: https://support.google.com/adsense/answer/6242051?hl=en
 [checkout]: https://docs.stripe.com/payments/checkout
 [sponsors]: https://docs.github.com/en/sponsors/getting-started-with-github-sponsors/about-github-sponsors
+
+## Current monetization release (2026-09-22)
+
+Shared fixture: A reading service with reader, publisher and optional advertiser, supporter, shop or marketplace; compare payer and value exchanged. No income forecast.
+
+Revenue source, billing timing, amount calculation, access, purchase rights and seller responsibility remain separate axes. Only siblings in this group populate `compareWith`; combinations go in related reading. Figures and conversion outcomes are fictional; taxes, fees and refunds are omitted unless the example names the platform fee as its subject.
+
+English definitions/examples/comparison fields were reviewed together before Korean/Japanese translation. [Source refresh](../monetization-sources.md), [verification](../../monetization-review.md).
+
+| Concept                                                     | Mode   | Distinguishing mechanism           |
+| ----------------------------------------------------------- | ------ | ---------------------------------- |
+| [Customer direct payment](../articles/direct-payment.md)    | static | Customer funds access              |
+| [Advertising](../articles/advertising.md)                   | static | Advertiser funds placement         |
+| [Sponsorship](../articles/sponsorship.md)                   | static | Support funds continued work       |
+| [Affiliate commissions](../articles/affiliate-marketing.md) | static | Commission on qualifying referrals |
+| [Transaction fees](../articles/transaction-fees.md)         | static | Fee on mediated sale               |

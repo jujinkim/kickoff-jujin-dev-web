@@ -331,5 +331,245 @@
       "ja": "仮のエラー集計と明示的な停止規則"
     },
     "capture": "[data-demo=\"canary\"]"
+  },
+  "direct-payment": {
+    "component": "DirectPayment",
+    "mode": "static",
+    "caption": {
+      "en": "Customers fund access to the product.",
+      "ko": "고객이 제품 접근 비용을 지불합니다.",
+      "ja": "顧客が製品へのアクセス費用を払います。"
+    },
+    "capture": "[data-demo=\"direct-payment\"]"
+  },
+  "advertising": {
+    "component": "Advertising",
+    "mode": "static",
+    "caption": {
+      "en": "Advertisers fund placements around content.",
+      "ko": "광고주가 콘텐츠 주변의 광고 지면을 지원합니다.",
+      "ja": "広告主がコンテンツ周辺の広告枠に対価を払います。"
+    },
+    "capture": "[data-demo=\"advertising\"]"
+  },
+  "sponsorship": {
+    "component": "Sponsorship",
+    "mode": "static",
+    "caption": {
+      "en": "Supporters fund continued public work.",
+      "ko": "후원자가 공개 작업의 지속을 지원합니다.",
+      "ja": "支援者が公開活動の継続を支えます。"
+    },
+    "capture": "[data-demo=\"sponsorship\"]"
+  },
+  "affiliate-marketing": {
+    "component": "AffiliateMarketing",
+    "mode": "static",
+    "caption": {
+      "en": "Qualifying referrals can earn a commission.",
+      "ko": "조건을 충족한 소개로 수수료를 받습니다.",
+      "ja": "条件を満たす紹介から手数料を得ます。"
+    },
+    "capture": "[data-demo=\"affiliate-marketing\"]"
+  },
+  "transaction-fees": {
+    "component": "TransactionFees",
+    "mode": "static",
+    "caption": {
+      "en": "A platform takes a share of a mediated sale.",
+      "ko": "플랫폼이 중개한 거래에서 일부를 받습니다.",
+      "ja": "プラットフォームが仲介した売上の一部を受け取ります。"
+    },
+    "capture": "[data-demo=\"transaction-fees\"]"
+  },
+  "one-time-payment": {
+    "component": "OneTimePayment",
+    "mode": "static",
+    "caption": {
+      "en": "One charge for a defined entitlement.",
+      "ko": "정해진 이용 권리에 한 번 청구합니다.",
+      "ja": "定めた利用権に一度だけ請求します。"
+    },
+    "capture": "[data-demo=\"one-time-payment\"]"
+  },
+  "subscription": {
+    "component": "Subscription",
+    "mode": "interactive",
+    "caption": {
+      "en": "Recurring billing with explicit access policies.",
+      "ko": "반복 청구와 접근 정책을 함께 정합니다.",
+      "ja": "継続課金とアクセス方針を定めます。"
+    },
+    "capture": "[data-demo=\"subscription\"]"
+  },
+  "usage-based": {
+    "component": "UsageBased",
+    "mode": "interactive",
+    "caption": {
+      "en": "Meter units, then calculate the charge.",
+      "ko": "사용 단위를 측정해 요금을 계산합니다.",
+      "ja": "利用単位を測り、料金を計算します。"
+    },
+    "capture": "[data-demo=\"usage-based\"]"
+  },
+  "prepaid-credits": {
+    "component": "PrepaidCredits",
+    "mode": "interactive",
+    "caption": {
+      "en": "Buy a balance before consuming units.",
+      "ko": "먼저 잔액을 확보하고 사용량만큼 차감합니다.",
+      "ja": "先に残高を用意し、利用量に応じて減らします。"
+    },
+    "capture": "[data-demo=\"prepaid-credits\"]"
+  },
+  "direct-seller": {
+    "component": "DirectSeller",
+    "mode": "static",
+    "caption": {
+      "en": "The product business remains the seller.",
+      "ko": "제품 사업자가 판매자로 남습니다.",
+      "ja": "製品事業者が販売者を担います。"
+    },
+    "capture": "[data-demo=\"direct-seller\"]"
+  },
+  "merchant-of-record": {
+    "component": "MerchantOfRecord",
+    "mode": "static",
+    "caption": {
+      "en": "A contracted seller handles covered transactions.",
+      "ko": "계약한 판매자가 적용 대상 거래를 담당합니다.",
+      "ja": "契約した販売者が対象取引を担当します。"
+    },
+    "capture": "[data-demo=\"merchant-of-record\"]"
+  },
+  "flat-rate-pricing": {
+    "component": "FlatRatePricing",
+    "mode": "static",
+    "caption": {
+      "en": "A fixed price for a defined package.",
+      "ko": "정해진 상품 범위에 고정 금액을 부과합니다.",
+      "ja": "定めたパッケージに固定額を課します。"
+    },
+    "capture": "[data-demo=\"flat-rate-pricing\"]"
+  },
+  "per-seat-pricing": {
+    "component": "PerSeatPricing",
+    "mode": "interactive",
+    "caption": {
+      "en": "Charge for each licensed seat.",
+      "ko": "이용 권한을 부여한 좌석마다 청구합니다.",
+      "ja": "利用権を持つ席ごとに請求します。"
+    },
+    "capture": "[data-demo=\"per-seat-pricing\"]"
+  },
+  "feature-tiered-pricing": {
+    "component": "FeatureTieredPricing",
+    "mode": "static",
+    "caption": {
+      "en": "Packages differ by included capabilities.",
+      "ko": "포함 기능이 다른 상품 묶음을 제공합니다.",
+      "ja": "含まれる機能が異なるパッケージです。"
+    },
+    "capture": "[data-demo=\"feature-tiered-pricing\"]"
+  },
+  "volume-pricing": {
+    "component": "VolumePricing",
+    "mode": "interactive",
+    "caption": {
+      "en": "The final quantity selects one rate for all units.",
+      "ko": "최종 수량 구간의 단가를 전체에 적용합니다.",
+      "ja": "最終数量の区分で全単位の単価を決めます。"
+    },
+    "capture": "[data-demo=\"volume-pricing\"]"
+  },
+  "graduated-pricing": {
+    "component": "GraduatedPricing",
+    "mode": "interactive",
+    "caption": {
+      "en": "Each slice keeps its own unit price.",
+      "ko": "각 구간의 사용량을 따로 계산해 더합니다.",
+      "ja": "各区分の利用量を別々に計算して合計します。"
+    },
+    "capture": "[data-demo=\"graduated-pricing\"]"
+  },
+  "base-plus-overage": {
+    "component": "BasePlusOverage",
+    "mode": "interactive",
+    "caption": {
+      "en": "Pay a base, then only for excess usage.",
+      "ko": "기본료를 내고 포함량 초과분만 추가합니다.",
+      "ja": "基本料に含まれる量を超えた分だけ加算します。"
+    },
+    "capture": "[data-demo=\"base-plus-overage\"]"
+  },
+  "freemium": {
+    "component": "Freemium",
+    "mode": "interactive",
+    "caption": {
+      "en": "A lasting free tier with optional paid features.",
+      "ko": "무료 기능을 유지하며 유료 기능을 선택하게 합니다.",
+      "ja": "無料機能を維持し、有料機能を選べます。"
+    },
+    "capture": "[data-demo=\"freemium\"]"
+  },
+  "free-trial": {
+    "component": "FreeTrial",
+    "mode": "interactive",
+    "caption": {
+      "en": "Evaluate paid features for a limited period.",
+      "ko": "제한된 기간 동안 유료 기능을 평가합니다.",
+      "ja": "限られた期間で有料機能を評価します。"
+    },
+    "capture": "[data-demo=\"free-trial\"]"
+  },
+  "consumable-purchase": {
+    "component": "ConsumablePurchase",
+    "mode": "interactive",
+    "caption": {
+      "en": "Purchased units decrease when used.",
+      "ko": "구매한 수량이 사용하면서 줄어듭니다.",
+      "ja": "購入した数量が使用で減ります。"
+    },
+    "capture": "[data-demo=\"consumable-purchase\"]"
+  },
+  "non-consumable-purchase": {
+    "component": "NonConsumablePurchase",
+    "mode": "interactive",
+    "caption": {
+      "en": "A purchased entitlement survives repeated use.",
+      "ko": "반복 사용해도 구매한 권한이 유지됩니다.",
+      "ja": "繰り返し使っても購入権が残ります。"
+    },
+    "capture": "[data-demo=\"non-consumable-purchase\"]"
+  },
+  "banner-ads": {
+    "component": "BannerAds",
+    "mode": "static",
+    "caption": {
+      "en": "A labeled ad region beside the main content.",
+      "ko": "주 콘텐츠 옆의 구분된 영역에 광고를 둡니다.",
+      "ja": "主な内容の隣に区別した広告領域を置きます。"
+    },
+    "capture": "[data-demo=\"banner-ads\"]"
+  },
+  "interstitial-ads": {
+    "component": "InterstitialAds",
+    "mode": "static",
+    "caption": {
+      "en": "A full-screen ad at a natural transition.",
+      "ko": "자연스러운 전환 지점에서 화면을 덮습니다.",
+      "ja": "自然な切り替わりで画面を覆います。"
+    },
+    "capture": "[data-demo=\"interstitial-ads\"]"
+  },
+  "rewarded-ads": {
+    "component": "RewardedAds",
+    "mode": "interactive",
+    "caption": {
+      "en": "Optional participation with a stated completion reward.",
+      "ko": "선택적으로 참여하고 완료 조건에 따라 보상받습니다.",
+      "ja": "任意で参加し、完了条件に応じて報酬を得ます。"
+    },
+    "capture": "[data-demo=\"rewarded-ads\"]"
   }
 }

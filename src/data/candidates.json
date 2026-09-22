@@ -707,7 +707,12 @@
       "ja": "顧客の直接支払い"
     },
     "scope": "Explain customer-funded access independently of billing schedule and legal seller arrangement. Exclude revenue forecasts, checkout integration and universal tax rules. Distinguish: Direct customer revenue is not synonymous with the direct-seller responsibility model.",
-    "compareWith": ["advertising", "sponsorship"],
+    "compareWith": [
+      "advertising",
+      "sponsorship",
+      "affiliate-marketing",
+      "transaction-fees"
+    ],
     "relatedGuides": ["revenue"],
     "order": 1700
   },
@@ -720,7 +725,12 @@
       "ja": "広告"
     },
     "scope": "Explain advertiser-funded placements with a publisher/network example and competing incentives. Exclude guaranteed CPM, tracking consent advice and ad-network eligibility. Distinguish: An ad-funded site may also charge readers; a direct sponsorship is not necessarily auction advertising.",
-    "compareWith": ["direct-payment", "sponsorship"],
+    "compareWith": [
+      "direct-payment",
+      "sponsorship",
+      "affiliate-marketing",
+      "transaction-fees"
+    ],
     "relatedGuides": ["revenue"],
     "order": 1701
   },
@@ -733,7 +743,12 @@
       "ja": "スポンサー支援"
     },
     "scope": "Explain support for a public project, defined sponsor benefits and one-time/recurring options. Exclude universal charitable status, tax deduction and platform fee claims. Distinguish: Supporter funding may include benefits; commercial placement sponsorship can overlap advertising.",
-    "compareWith": ["direct-payment", "advertising"],
+    "compareWith": [
+      "direct-payment",
+      "advertising",
+      "affiliate-marketing",
+      "transaction-fees"
+    ],
     "relatedGuides": ["revenue"],
     "order": 1702
   },
@@ -746,7 +761,7 @@
       "ja": "買い切り"
     },
     "scope": "Explain a single charge and separately specified entitlement, support and upgrade terms. Exclude lifetime-service promises, real prices and refund law. Distinguish: One payment does not inherently mean perpetual updates or permanent hosted service.",
-    "compareWith": ["subscription", "usage-based"],
+    "compareWith": ["subscription", "usage-based", "prepaid-credits"],
     "relatedGuides": ["revenue"],
     "order": 1800
   },
@@ -759,7 +774,7 @@
       "ja": "サブスクリプション"
     },
     "scope": "Explain billing intervals, recurring access and the need for failed-payment/cancellation policies. Exclude provider-specific proration, cancellation law and real plan prices. Distinguish: Subscription is not necessarily flat-rate; usage charges can recur within it.",
-    "compareWith": ["one-time-payment", "usage-based"],
+    "compareWith": ["one-time-payment", "usage-based", "prepaid-credits"],
     "relatedGuides": ["revenue"],
     "order": 1801
   },
@@ -772,7 +787,7 @@
       "ja": "従量課金"
     },
     "scope": "Explain billable unit, metering, aggregation and a transparent amount calculation. Exclude provider metering APIs, real prices and complex tier formulas. Distinguish: Usage billing can be collected on a recurring subscription schedule.",
-    "compareWith": ["one-time-payment", "subscription"],
+    "compareWith": ["one-time-payment", "subscription", "prepaid-credits"],
     "relatedGuides": ["revenue"],
     "order": 1802
   },
@@ -853,5 +868,259 @@
     "compareWith": ["brutalism", "skeuomorphism"],
     "relatedGuides": ["theme"],
     "order": 10
+  },
+  {
+    "id": "affiliate-marketing",
+    "category": "revenue-sources",
+    "titles": {
+      "en": "Affiliate commissions",
+      "ko": "제휴 수수료",
+      "ja": "アフィリエイト手数料"
+    },
+    "scope": "Affiliate revenue rewards qualifying referrals to another seller. A click alone does not necessarily qualify, and eligibility follows the particular program agreement. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": [
+      "direct-payment",
+      "advertising",
+      "sponsorship",
+      "transaction-fees"
+    ],
+    "relatedGuides": ["revenue"],
+    "order": 1703
+  },
+  {
+    "id": "transaction-fees",
+    "category": "revenue-sources",
+    "titles": {
+      "en": "Transaction fees",
+      "ko": "거래 중개 수수료",
+      "ja": "取引仲介手数料"
+    },
+    "scope": "Transaction fee revenue comes from facilitating trades between buyers and sellers. It differs from referring a visitor elsewhere and does not itself determine the contractual seller. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": [
+      "direct-payment",
+      "advertising",
+      "sponsorship",
+      "affiliate-marketing"
+    ],
+    "relatedGuides": ["revenue"],
+    "order": 1704
+  },
+  {
+    "id": "prepaid-credits",
+    "category": "billing",
+    "titles": {
+      "en": "Prepaid credits",
+      "ko": "선불 크레딧",
+      "ja": "前払いクレジット"
+    },
+    "scope": "Prepaid credits collect payment before usage and reduce a balance as units are consumed. Credit value, expiry and eligible uses depend on the offer. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": ["one-time-payment", "subscription", "usage-based"],
+    "relatedGuides": ["revenue"],
+    "order": 1803
+  },
+  {
+    "id": "flat-rate-pricing",
+    "category": "pricing-models",
+    "titles": {
+      "en": "Flat-rate pricing",
+      "ko": "정액 요금",
+      "ja": "定額料金"
+    },
+    "scope": "Flat-rate pricing sets one amount for a defined package and period. Included features and limits still matter; a fixed price does not promise unlimited service. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": [
+      "per-seat-pricing",
+      "feature-tiered-pricing",
+      "volume-pricing",
+      "graduated-pricing",
+      "base-plus-overage"
+    ],
+    "relatedGuides": ["revenue"],
+    "order": 2000
+  },
+  {
+    "id": "per-seat-pricing",
+    "category": "pricing-models",
+    "titles": {
+      "en": "Per-seat pricing",
+      "ko": "좌석 과금",
+      "ja": "席数課金"
+    },
+    "scope": "Per-seat pricing multiplies a seat count by a unit price. Specify which seats are billable; activity and usage are different measurements. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": [
+      "flat-rate-pricing",
+      "feature-tiered-pricing",
+      "volume-pricing",
+      "graduated-pricing",
+      "base-plus-overage"
+    ],
+    "relatedGuides": ["revenue"],
+    "order": 2001
+  },
+  {
+    "id": "feature-tiered-pricing",
+    "category": "pricing-models",
+    "titles": {
+      "en": "Feature-tiered pricing",
+      "ko": "기능별 요금제",
+      "ja": "機能別料金プラン"
+    },
+    "scope": "Feature-tiered pricing offers packages with different capabilities. These tiers describe what customers receive, unlike quantity tiers that change a unit price. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": [
+      "flat-rate-pricing",
+      "per-seat-pricing",
+      "volume-pricing",
+      "graduated-pricing",
+      "base-plus-overage"
+    ],
+    "relatedGuides": ["revenue"],
+    "order": 2002
+  },
+  {
+    "id": "volume-pricing",
+    "category": "pricing-models",
+    "titles": {
+      "en": "Volume pricing",
+      "ko": "전체 수량 구간 단가",
+      "ja": "全数量段階単価"
+    },
+    "scope": "Volume pricing uses the final quantity tier to price every unit. Crossing a threshold can reduce the total, unlike graduated pricing. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": [
+      "flat-rate-pricing",
+      "per-seat-pricing",
+      "feature-tiered-pricing",
+      "graduated-pricing",
+      "base-plus-overage"
+    ],
+    "relatedGuides": ["revenue"],
+    "order": 2003
+  },
+  {
+    "id": "graduated-pricing",
+    "category": "pricing-models",
+    "titles": {
+      "en": "Graduated pricing",
+      "ko": "구간별 누진 단가",
+      "ja": "区分別累進単価"
+    },
+    "scope": "Graduated pricing prices units within each tier separately and adds the subtotals. Reaching a cheaper tier does not reprice earlier units. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": [
+      "flat-rate-pricing",
+      "per-seat-pricing",
+      "feature-tiered-pricing",
+      "volume-pricing",
+      "base-plus-overage"
+    ],
+    "relatedGuides": ["revenue"],
+    "order": 2004
+  },
+  {
+    "id": "base-plus-overage",
+    "category": "pricing-models",
+    "titles": {
+      "en": "Base fee plus overage",
+      "ko": "기본료+초과 사용량",
+      "ja": "基本料＋超過利用量"
+    },
+    "scope": "Base fee plus overage combines a fixed charge with included usage and a rate for excess units. The base remains payable even with no usage. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": [
+      "flat-rate-pricing",
+      "per-seat-pricing",
+      "feature-tiered-pricing",
+      "volume-pricing",
+      "graduated-pricing"
+    ],
+    "relatedGuides": ["revenue"],
+    "order": 2005
+  },
+  {
+    "id": "freemium",
+    "category": "access-strategies",
+    "titles": {
+      "en": "Freemium",
+      "ko": "프리미엄 무료 모델",
+      "ja": "フリーミアム"
+    },
+    "scope": "Freemium keeps a usable free offering while charging for enhancements. The boundary is functionality or allowance, rather than a temporary evaluation deadline. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": ["free-trial"],
+    "relatedGuides": ["revenue"],
+    "order": 2100
+  },
+  {
+    "id": "free-trial",
+    "category": "access-strategies",
+    "titles": {
+      "en": "Free trial",
+      "ko": "무료 체험",
+      "ja": "無料トライアル"
+    },
+    "scope": "A free trial grants temporary access to evaluate a paid offering. Its duration and conversion policy must be stated; automatic charging is not inherent to every trial. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": ["freemium"],
+    "relatedGuides": ["revenue"],
+    "order": 2101
+  },
+  {
+    "id": "consumable-purchase",
+    "category": "purchase-types",
+    "titles": {
+      "en": "Consumable purchase",
+      "ko": "소모성 구매",
+      "ja": "消耗型購入"
+    },
+    "scope": "A consumable purchase supplies units that are depleted through use and can be bought again. It differs from a non-consumable feature entitlement. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": ["non-consumable-purchase"],
+    "relatedGuides": ["revenue"],
+    "order": 2200
+  },
+  {
+    "id": "non-consumable-purchase",
+    "category": "purchase-types",
+    "titles": {
+      "en": "Non-consumable purchase",
+      "ko": "비소모성 구매",
+      "ja": "非消耗型購入"
+    },
+    "scope": "A non-consumable purchase unlocks an entitlement that does not expire or decrease through use. It differs from consumable units and recurring subscriptions. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": ["consumable-purchase"],
+    "relatedGuides": ["revenue"],
+    "order": 2201
+  },
+  {
+    "id": "banner-ads",
+    "category": "ad-formats",
+    "titles": {
+      "en": "Banner ads",
+      "ko": "배너 광고",
+      "ja": "バナー広告"
+    },
+    "scope": "Banner ads occupy a bounded region while the main app remains visible. Format describes placement, not a guaranteed revenue level or targeting method. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": ["interstitial-ads", "rewarded-ads"],
+    "relatedGuides": ["revenue"],
+    "order": 2300
+  },
+  {
+    "id": "interstitial-ads",
+    "category": "ad-formats",
+    "titles": {
+      "en": "Interstitial ads",
+      "ko": "전면 광고",
+      "ja": "インタースティシャル広告"
+    },
+    "scope": "Interstitial ads cover the app at a natural break, such as completing a level. They interrupt the screen flow, unlike a banner beside content. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": ["banner-ads", "rewarded-ads"],
+    "relatedGuides": ["revenue"],
+    "order": 2301
+  },
+  {
+    "id": "rewarded-ads",
+    "category": "ad-formats",
+    "titles": {
+      "en": "Rewarded ads",
+      "ko": "보상형 광고",
+      "ja": "リワード広告"
+    },
+    "scope": "Rewarded ads offer a disclosed benefit for completing a specified action. Google requires clear reward conditions and opt-in for this format, with dismissal available. Exclude real prices, revenue forecasts and country-specific tax advice.",
+    "compareWith": ["banner-ads", "interstitial-ads"],
+    "relatedGuides": ["revenue"],
+    "order": 2302
   }
 ]

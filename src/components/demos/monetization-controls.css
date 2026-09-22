@@ -1,0 +1,129 @@
+/* Controls and text safety only. Each diagram owns its composition. */
+[data-money] {
+  color-scheme: light;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #192d37;
+  background: #f7f5ef;
+  padding: clamp(12px, 3vw, 28px);
+  border: 1px solid #9caaa9;
+  border-radius: 12px;
+  font-family: system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  container-type: inline-size;
+}
+[data-money] * {
+  box-sizing: border-box;
+}
+[data-money] h2 {
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  margin: 0.3rem 0 1rem;
+}
+[data-money] h3 {
+  font-size: 1.05rem;
+}
+[data-money] p {
+  line-height: 1.6;
+}
+[data-money] .eyebrow {
+  color: #28564c;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+[data-money] button,
+[data-money] input {
+  font: inherit;
+  max-width: 100%;
+  color: #192d37;
+  background: #fff;
+  border: 1px solid #647875;
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  min-height: 44px;
+}
+[data-money] button {
+  cursor: pointer;
+  white-space: normal;
+}
+[data-money] button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+[data-money] button[aria-disabled="true"] {
+  border-style: dashed;
+  color: #596763;
+}
+[data-money] button[aria-pressed="true"] {
+  background: #d1ebdf;
+  border-width: 2px;
+}
+[data-money] :focus-visible {
+  outline: 3px dashed #005a79;
+  outline-offset: 3px;
+}
+[data-money] .controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1rem 0;
+  align-items: center;
+}
+[data-money] label {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+[data-money] input {
+  width: 100%;
+}
+[data-money] [role="status"] {
+  min-height: 1.8em;
+  margin-bottom: 0;
+}
+[data-money] .assumptions {
+  font-size: 0.85rem;
+}
+[data-money] table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+[data-money] th,
+[data-money] td {
+  padding: 0.6rem 0.35rem;
+  text-align: start;
+  border-bottom: 1px solid #9caaa9;
+  overflow-wrap: anywhere;
+}
+[data-money] caption {
+  text-align: start;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+[data-money] output {
+  display: block;
+  font-size: 1.65rem;
+  font-weight: 700;
+}
+[data-money] progress {
+  width: 100%;
+  accent-color: #216653;
+}
+@media (forced-colors: active) {
+  [data-money] {
+    background: Canvas;
+    color: CanvasText;
+  }
+  [data-money] button,
+  [data-money] input {
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+  }
+  [data-money] :focus-visible {
+    outline-color: Highlight;
+  }
+}

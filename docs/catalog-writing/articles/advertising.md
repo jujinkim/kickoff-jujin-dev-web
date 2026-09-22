@@ -1,3 +1,5 @@
+> Current implementation (2026-09-22): [visualization brief](../../design-briefs/advertising.md), [source refresh](../monetization-sources.md), [release review](../../monetization-review.md). Historical long-form outline below is research; current articles use three short sections.
+
 # Advertising / 광고 / 広告
 
 Writing design only. ID: `advertising` · Group: [revenue-sources](../groups/revenue-sources.md) · Queue order: 1701 · Checked: 2026-09-21.

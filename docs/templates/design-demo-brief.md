@@ -20,6 +20,7 @@ Copy this file for one candidate. Resolve every field before publishing.
 - JavaScript-disabled initial screen and explanation:
 - Font families, supported characters, fallback and measurement method:
 - Localized visible strings, input constraints, original/translation review:
+- Mode (`interactive` by default or `static` with no script/reset/mount wait):
 - Capture selector and initial content:
 - Source URLs, inspected date, claims each source supports:
 - Comparison summaries: features, advantages, limitations, suitable, combinations:

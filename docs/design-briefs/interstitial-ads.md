@@ -1,0 +1,24 @@
+# Interstitial ads visualization brief
+
+- Stable ID, leaf category, English/Korean/Japanese titles: `interstitial-ads`; `ad-formats`; Interstitial ads / 전면 광고 / インタースティシャル広告.
+- Definition (one sentence): Interstitial ads cover the app at a natural break, such as completing a level. They interrupt the screen flow, unlike a banner beside content.
+- Closest concept and concrete difference: same-category peers banner-ads, rewarded-ads; Full-screen transition placement. Cross-category combinations are related reading, not comparison peers.
+- Distinguishing visual features (structure, material, typography): Three numbered screen states, middle full-screen ad and textual closing transition. Solid surfaces and text/number labels; color is not the only encoding.
+- Shared comparison category: [ad-formats](../catalog-writing/groups/ad-formats.md).
+- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: The same puzzle app: a reserved bottom banner, a level-boundary full-screen ad, or optional participation for one non-transferable hint. No real ad requests or revenue estimates.
+- Visual variable changed; concept-specific extra controls and their justification: Three numbered screen states, middle full-screen ad and textual closing transition. Static mode has no controls, scripts, artificial focus stops or mount dependency.
+- Fictional scenario and why it demonstrates the definition: A fictional puzzle app shows a numbered sequence: level complete, labeled full-screen ad, next level. The closing action is drawn as a label in this static diagram, not a working ad control. No ad is requested and no reward is promised. Timing, revenue and network charges are omitted.
+- Representative action and observable result: Read the numbered relationships/table in source order. A fictional puzzle app shows a numbered sequence: level complete, labeled full-screen ad, next level. The closing action is drawn as a label in this static diagram, not a working ad control. No ad is requested and no reward is promised. Timing, revenue and network charges are omitted.
+- Initial state: Three numbered screen states, middle full-screen ad and textual closing transition.
+- Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
+- Reset and reload behavior: No mutable state or reset control.
+- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
+- Keyboard order, focus, accessible names, live feedback: No artificial tab stops. Semantic lists, tables and visible descriptions work without JavaScript.
+- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
+- JavaScript-disabled initial screen and explanation: Full static diagram; no interaction instruction or noscript warning.
+- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
+- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
+- Capture selector and initial content: `[data-demo="interstitial-ads"]`; mode `static`; 1440px light surroundings in en/ko/ja; initial state above.
+- Source URLs, inspected date, claims each source supports: https://support.google.com/admob/answer/6128738?hl=en; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
+- Comparison summaries: features: Full-screen transition placement; advantages: Uses a natural break; limitations: Interrupts app flow; suitable: Clear level or task boundaries; combinations: Advertising revenue.
+- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/interstitial-ads-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).

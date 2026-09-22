@@ -1,3 +1,5 @@
+> Current implementation (2026-09-22): [visualization brief](../../design-briefs/direct-seller.md), [source refresh](../monetization-sources.md), [release review](../../monetization-review.md). Historical long-form outline below is research; current articles use three short sections.
+
 # Direct seller model / 직접 판매자 모델 / 直接販売者モデル
 
 Writing design only. ID: `direct-seller` · Group: [seller-responsibility](../groups/seller-responsibility.md) · Queue order: 1900 · Checked: 2026-09-21.

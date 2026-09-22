@@ -1,0 +1,96 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section
+  data-demo="base-plus-overage"
+  data-money
+  lang={lang}
+  data-reset-message={m.resetMessage}
+>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>
+      {t("Base fee plus overage", "기본료+초과 사용량", "基本料＋超過利用量")}
+    </h2>
+  </header>
+  <p>{m.baseline}</p>
+  <div class="included">
+    <strong>
+      {t(
+        "Base 20 · includes 100 exports",
+        "기본료 20 · 100회 포함",
+        "基本料20 · 100回を含む",
+      )}
+    </strong>
+    <p>
+      {t(
+        "Extra exports: 0.10 each",
+        "초과 내보내기: 회당 0.10",
+        "超過出力：1回0.10",
+      )}
+    </p>
+  </div>
+  <label>
+    {m.exports}
+    <input
+      type="number"
+      min="0"
+      max="10000"
+      step="1"
+      value="120"
+      data-quantity
+      data-interactive
+      disabled
+    />
+  </label>
+  <div class="controls">
+    <button type="button" data-less data-interactive disabled>
+      {t("Remove one", "1 감소", "1減らす")}
+    </button>
+    <button type="button" data-more data-interactive disabled>
+      {t("Add one", "1 추가", "1増やす")}
+    </button>
+  </div>
+  <div class="result">
+    <span>{m.total}</span>
+    <output data-total>22.00</output>
+    <p data-formula>20.00 + 20 × 0.10 = 22.00</p>
+  </div>
+  <p class="assumptions">{m.omitted}</p>
+  <div class="controls">
+    <button type="button" data-reset data-interactive disabled>
+      {m.reset}
+    </button>
+  </div>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountPricing } from "./monetization-pricing";
+  mountPricing("base-plus-overage", 120);
+</script>
+<style>
+  .included {
+    padding: 1rem;
+    border-left: 5px solid #52766e;
+    background: #fff;
+  }
+  .result {
+    background: #e1ece8;
+    border: 2px solid #52766e;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .result p {
+    margin-bottom: 0;
+  }
+</style>

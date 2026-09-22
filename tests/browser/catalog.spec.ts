@@ -1,6 +1,8 @@
+import { taxonomy } from "../../scripts/catalog-data.mjs";
 import {
   isDesignCategory,
   platformCategories,
+  monetizationCategories,
 } from "../../scripts/design-registry.mjs";
 import { readArticles } from "../../scripts/validate-content.mjs";
 const publishedConceptCount = readArticles().filter(
@@ -217,7 +219,15 @@ for (const [lang, layout, typography] of [
         .evaluateAll((nodes) =>
           nodes.map((node) => node.getAttribute("data-catalog-group")).sort(),
         ),
-    ).toEqual(["styles", "layout", "typography", ...platformCategories].sort());
+    ).toEqual(
+      [
+        "styles",
+        "layout",
+        "typography",
+        ...platformCategories,
+        ...monetizationCategories,
+      ].sort(),
+    );
     await page.locator("#category").selectOption("layout");
     await expect(page.locator(".catalog-card:visible")).toHaveCount(6);
     await expect(page.locator("[data-catalog-group]:visible h2")).toHaveText(
@@ -253,6 +263,9 @@ for (const [lang, layout, typography] of [
       publishedDesignCount,
     );
     await expect(page.locator("[data-catalog-group]:visible")).toHaveCount(3);
+    await page.locator("#category").selectOption("business");
+    await expect(page.locator(".catalog-card:visible")).toHaveCount(24);
+    await expect(page.locator("[data-catalog-group]:visible")).toHaveCount(7);
   });
 }
 
@@ -345,7 +358,7 @@ for (const javaScriptEnabled of [true, false]) {
           await summary.focus();
           await page.keyboard.press("Enter");
           await expect(index).toHaveAttribute("open");
-          await expect(index.locator("a:visible")).toHaveCount(27);
+          await expect(index.locator("a:visible")).toHaveCount(taxonomy.length);
           const columns = await index
             .locator('[data-root="true"]')
             .evaluate(

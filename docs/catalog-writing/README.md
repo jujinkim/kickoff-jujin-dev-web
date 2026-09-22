@@ -2,16 +2,16 @@
 
 > Current publishing rule (2026-09-21): one-minute concept introductions, three short sections (Concept, Example, When to choose it), and a prominent diagram or UI image. The longer section plans and exhaustive comparisons below remain research references, not required article length. Optional comparisons and sources must not obscure the core concept.
 
-This local design pack covers **58 candidates in 19 comparison groups**. It prepares practical introductory articles: definition, concrete example, benefits, constraints, selection and combination. The original pack contained designs only. The current catalog has 37 concepts with independent demos and English/Korean/Japanese articles, including four later style additions; see [Design demos](../design-demos.md) and [platform review](../platform-demos-review.md). The other 25 candidates remain planned. There are 147 published language documents including the 36 guide documents. The [styles release review](styles-review.md) describes the superseded pilot.
+The original research pack contained **58 candidates in 19 comparison groups**. The monetization extension adds 16 writing briefs and four groups, preserving the original briefs. Current catalog: **61 published concepts** (22 design, 15 platform, 24 monetization), **183 localized concept documents**, and **36 guide documents**: **219 published documents**. Seventeen candidates remain planned. See [monetization source refresh](monetization-sources.md), [release review](../monetization-review.md) and [Design demos](../design-demos.md).
 
 ## How to write from this pack
 
-1. Read the group’s shared fixture, comparison axes and matrix, then its linked article designs. Every article has the six existing section headings, all five comparison fields, evidence locators, multilingual terms, concrete outcomes and a required visualization specification.
+1. Read the group’s shared fixture, comparison axes and matrix, then its linked article designs. Historical designs include six research sections; published articles use three short sections. Each design records, all five comparison fields, evidence locators, multilingual terms, concrete outcomes and a required visualization specification.
 2. Reopen the [verified sources](sources.md) at their recorded passages. Definitions/mechanisms are source-backed; suitability and proposed examples are explicitly editorial. Recheck any product, pricing, version, license, service or jurisdiction claim when writing; this pack deliberately excludes unsupported commercial details.
 3. Write and cross-review the complete group in English first. The design groups are implemented; continue by existing candidate order below. Only after English approval, translate into Korean and Japanese with the [glossary](glossary.md).
 4. Use the existing single-candidate scaffold command from [authoring instructions](../content-authoring.md) when drafting is separately requested. Do not run it merely to consume these designs. Drafts remain unpublished until editorial review.
 
-Every visualization must preserve the declared inputs, mobile reading order, keyboard operation where interactive, non-color distinctions, visible long description and complete Markdown text equivalent. The figures are authored explanatory examples, not performance measurements, financial forecasts or service screenshots. No visualization code is supplied here.
+Every visualization must preserve the declared inputs, mobile reading order, keyboard operation where interactive, non-color distinctions, visible long description and complete Markdown text equivalent. The figures are authored explanatory examples, not performance measurements, financial forecasts or service screenshots. Current implementations and complete visualization briefs are linked from each released group.
 
 ## Writing queue and coverage
 
@@ -44,3 +44,30 @@ Stable candidate order, title, ID, category, comparison peers and related guides
 The [source ledger](sources.md) records successful original-page inspection on 2026-09-21 and rejected retrievals. Style accounts are cross-read rather than treated as official definitions; no sole-founder attribution is used. Product documentation is evidence for the specific mechanism, not a comparative benchmark. The styles pilot review is recorded in its [group design](groups/styles.md).
 
 There are no unresolved editorial choices blocking drafting within these scopes. Later source refresh, English editorial review, translation review and visualization implementation remain intentional future work. Local checks and coverage results are recorded in [verification](verification.md). No commit, push or deployment belongs to this task.
+
+## Monetization extension index
+
+- [Customer direct payment](articles/direct-payment.md) — `direct-payment`, `revenue-sources`, static.
+- [Advertising](articles/advertising.md) — `advertising`, `revenue-sources`, static.
+- [Sponsorship](articles/sponsorship.md) — `sponsorship`, `revenue-sources`, static.
+- [Affiliate commissions](articles/affiliate-marketing.md) — `affiliate-marketing`, `revenue-sources`, static.
+- [Transaction fees](articles/transaction-fees.md) — `transaction-fees`, `revenue-sources`, static.
+- [One-time payment](articles/one-time-payment.md) — `one-time-payment`, `billing`, static.
+- [Subscription](articles/subscription.md) — `subscription`, `billing`, interactive.
+- [Usage-based billing](articles/usage-based.md) — `usage-based`, `billing`, interactive.
+- [Prepaid credits](articles/prepaid-credits.md) — `prepaid-credits`, `billing`, interactive.
+- [Direct seller model](articles/direct-seller.md) — `direct-seller`, `seller-responsibility`, static.
+- [Merchant of record model](articles/merchant-of-record.md) — `merchant-of-record`, `seller-responsibility`, static.
+- [Flat-rate pricing](articles/flat-rate-pricing.md) — `flat-rate-pricing`, `pricing-models`, static.
+- [Per-seat pricing](articles/per-seat-pricing.md) — `per-seat-pricing`, `pricing-models`, interactive.
+- [Feature-tiered pricing](articles/feature-tiered-pricing.md) — `feature-tiered-pricing`, `pricing-models`, static.
+- [Volume pricing](articles/volume-pricing.md) — `volume-pricing`, `pricing-models`, interactive.
+- [Graduated pricing](articles/graduated-pricing.md) — `graduated-pricing`, `pricing-models`, interactive.
+- [Base fee plus overage](articles/base-plus-overage.md) — `base-plus-overage`, `pricing-models`, interactive.
+- [Freemium](articles/freemium.md) — `freemium`, `access-strategies`, interactive.
+- [Free trial](articles/free-trial.md) — `free-trial`, `access-strategies`, interactive.
+- [Consumable purchase](articles/consumable-purchase.md) — `consumable-purchase`, `purchase-types`, interactive.
+- [Non-consumable purchase](articles/non-consumable-purchase.md) — `non-consumable-purchase`, `purchase-types`, interactive.
+- [Banner ads](articles/banner-ads.md) — `banner-ads`, `ad-formats`, static.
+- [Interstitial ads](articles/interstitial-ads.md) — `interstitial-ads`, `ad-formats`, static.
+- [Rewarded ads](articles/rewarded-ads.md) — `rewarded-ads`, `ad-formats`, interactive.

@@ -1,0 +1,128 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section
+  data-demo="non-consumable-purchase"
+  data-money
+  lang={lang}
+  data-reset-message={m.resetMessage}
+>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Non-consumable purchase", "비소모성 구매", "非消耗型購入")}</h2>
+  </header>
+  <p>
+    {m.puzzle} ·{" "}
+    {t(
+      "No purchased items initially",
+      "처음에는 구매한 항목 없음",
+      "最初は購入済みアイテムなし",
+    )}
+  </p>
+  <div class="purchase-scene">
+    <div class="puzzle-board" aria-hidden="true">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+      <span>6</span>
+      <span>7</span>
+      <span>8</span>
+      <span>0</span>
+    </div>
+    <div class="inventory">
+      <h3>{t("Night theme", "야간 테마", "夜のテーマ")}</h3>
+      <output data-inventory>{m.locked}</output>
+      <p>
+        {m.purchases}: <b data-purchases>0</b>
+      </p>
+    </div>
+  </div>
+  <div class="controls">
+    <button type="button" data-buy data-interactive disabled>
+      {t(
+        "Buy theme once (simulated)",
+        "테마 1회 구매 (가상)",
+        "テーマを一度購入（仮）",
+      )}
+    </button>
+    <button type="button" data-use data-interactive disabled>
+      {t("Apply purchased theme", "구매한 테마 적용", "購入したテーマを適用")}
+    </button>
+  </div>
+  <p>
+    {t("Uses completed", "완료한 사용", "使用完了回数")}: <b data-uses>0</b>
+  </p>
+  <p>
+    {t(
+      "Applying never consumes ownership. Repeat purchase adds no charge. Real purchase restoration is outside this demo.",
+      "적용해도 소유 권한은 소모되지 않습니다. 재구매해도 청구하지 않습니다. 실제 구매 복원은 데모 범위 밖입니다.",
+      "適用しても所有権は減りません。再購入で請求しません。実際の購入復元はデモの範囲外です。",
+    )}
+  </p>
+  <p class="assumptions">
+    {t(
+      "No real purchase. Prices, taxes, fees and refunds omitted.",
+      "실제 구매가 아닙니다. 가격·세금·수수료·환불은 생략했습니다.",
+      "実際の購入ではありません。価格・税金・手数料・返金は省略しています。",
+    )}
+  </p>
+  <div class="controls">
+    <button type="button" data-reset data-interactive disabled>
+      {m.reset}
+    </button>
+  </div>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountPurchase } from "./monetization-purchase";
+  mountPurchase("non-consumable-purchase", false);
+</script>
+<style>
+  .purchase-scene {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+  .puzzle-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+    background: #fff;
+    padding: 0.8rem;
+    border: 2px solid #52766e;
+  }
+  .puzzle-board span {
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid #52766e;
+  }
+  .inventory {
+    padding: 1rem;
+    border: 2px dashed #52766e;
+  }
+  [data-applied="true"] .puzzle-board {
+    background: #203843;
+    color: #fff;
+  }
+  [data-applied="true"] .puzzle-board span {
+    border-color: #aec6c7;
+  }
+  @container (max-width:450px) {
+    .purchase-scene {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

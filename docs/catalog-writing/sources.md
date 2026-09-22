@@ -1,3 +1,5 @@
+> [2026-09-22 monetization source refresh](monetization-sources.md). Earlier evidence below remains historical.
+
 # Verified source ledger
 
 Platform publication refresh: [16 source passages, 2026-09-22](platform-sources.md).

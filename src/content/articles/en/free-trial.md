@@ -1,0 +1,37 @@
+---
+kind: "concept"
+articleId: "free-trial"
+lang: "en"
+title: "Free trial"
+summary: "Evaluate paid features for a limited period."
+category: "access-strategies"
+aliases: ["Free trial"]
+related: ["revenue", "freemium", "subscription"]
+status: "published"
+revision: 1
+sourceRevision: 1
+updated: "2026-09-22"
+checked: "2026-09-22"
+comparison:
+  {
+    "features": "Time-limited evaluation",
+    "advantages": "Try paid capabilities",
+    "limitations": "Expiry and conversion decisions",
+    "suitable": "Value visible during trial",
+    "combinations": "Subscription after explicit choice",
+  }
+---
+
+## Concept
+
+A free trial grants temporary access to evaluate a paid offering. Its duration and conversion policy must be stated; automatic charging is not inherent to every trial.
+
+## Example
+
+A fictional notebook starts a three-day trial with editing and PDF export. Advance days manually: at day three both lock. Explicitly choose the simulated paid plan to restore access. No payment method is collected, and expiry never charges automatically in this example. Prices, taxes, fees and refunds are omitted.
+
+## When to choose it
+
+Choose it when users need time to evaluate value. Compare a lasting freemium tier.
+
+[Source](https://docs.stripe.com/billing/subscriptions/trials)

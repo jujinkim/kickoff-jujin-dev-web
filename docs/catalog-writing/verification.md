@@ -1,3 +1,5 @@
+> [Current monetization implementation and verification](../monetization-review.md). Earlier evidence below remains historical.
+
 # Local writing-design verification
 
 Current platform release: [implementation and verification](../platform-demos-review.md). Earlier counts below are historical.

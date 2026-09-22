@@ -403,5 +403,65 @@
       "ja": "販売責任モデルの項目を探します。"
     },
     "order": 18
+  },
+  {
+    "id": "pricing-models",
+    "parent": "business",
+    "names": {
+      "en": "Pricing models",
+      "ko": "요금 설계",
+      "ja": "料金設計"
+    },
+    "descriptions": {
+      "en": "How the amount is calculated.",
+      "ko": "청구 금액을 계산하는 방식입니다.",
+      "ja": "請求額の計算方法です。"
+    },
+    "order": 19
+  },
+  {
+    "id": "access-strategies",
+    "parent": "business",
+    "names": {
+      "en": "Free access strategies",
+      "ko": "무료 접근 전략",
+      "ja": "無料アクセス戦略"
+    },
+    "descriptions": {
+      "en": "What stays free and for how long.",
+      "ko": "무료 범위와 기간을 구분합니다.",
+      "ja": "無料の範囲と期間を分けます。"
+    },
+    "order": 20
+  },
+  {
+    "id": "purchase-types",
+    "parent": "business",
+    "names": {
+      "en": "In-app purchase types",
+      "ko": "인앱 구매 유형",
+      "ja": "アプリ内購入の種類"
+    },
+    "descriptions": {
+      "en": "What a purchase grants.",
+      "ko": "구매로 얻는 권리를 구분합니다.",
+      "ja": "購入で得る権利を分けます。"
+    },
+    "order": 21
+  },
+  {
+    "id": "ad-formats",
+    "parent": "business",
+    "names": {
+      "en": "Ad formats",
+      "ko": "광고 형식",
+      "ja": "広告形式"
+    },
+    "descriptions": {
+      "en": "Where ads appear and how participation works.",
+      "ko": "광고 위치와 참여 방식을 구분합니다.",
+      "ja": "広告の位置と参加方法を分けます。"
+    },
+    "order": 22
   }
 ]

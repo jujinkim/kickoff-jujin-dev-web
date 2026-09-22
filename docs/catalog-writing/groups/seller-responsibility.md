@@ -30,3 +30,16 @@ Keep the fixture, comparison-axis order and five frontmatter dimensions consiste
 Review every English draft in this group together before translation. Confirm the figures preserve identical inputs and label changed assumptions. Reject unsupported speed, revenue, accessibility or popularity rankings. Translate the approved argument with the group terms, not by substituting product marketing language.
 
 [mor]: https://stripe.com/resources/more/merchant-of-record
+
+## Current monetization release (2026-09-22)
+
+Shared fixture: One reading-tool license. Name contractual seller, payment path, receipt owner, refund/transaction-tax workflow and retained product support under an assumed contract.
+
+Revenue source, billing timing, amount calculation, access, purchase rights and seller responsibility remain separate axes. Only siblings in this group populate `compareWith`; combinations go in related reading. Figures and conversion outcomes are fictional; taxes, fees and refunds are omitted unless the example names the platform fee as its subject.
+
+English definitions/examples/comparison fields were reviewed together before Korean/Japanese translation. [Source refresh](../monetization-sources.md), [verification](../../monetization-review.md).
+
+| Concept                                                       | Mode   | Distinguishing mechanism       |
+| ------------------------------------------------------------- | ------ | ------------------------------ |
+| [Direct seller model](../articles/direct-seller.md)           | static | Business is contractual seller |
+| [Merchant of record model](../articles/merchant-of-record.md) | static | Contracted transaction seller  |

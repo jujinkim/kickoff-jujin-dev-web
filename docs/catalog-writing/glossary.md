@@ -179,3 +179,34 @@ Keep **List** (collection) separate from **List layout** (visual arrangement), *
 | Billable unit            | 과금 단위          | 課金単位                   | Use the article’s scoped meaning; not a claim of a universal translation.                             |
 | Seller obligation        | 판매자 의무        | 販売者の義務               | Use the article’s scoped meaning; not a claim of a universal translation.                             |
 | Covered transaction      | 적용 대상 거래     | 対象取引                   | Use the article’s scoped meaning; not a claim of a universal translation.                             |
+
+## Monetization terminology (2026-09-22)
+
+| English                  | Korean              | Japanese                 |
+| ------------------------ | ------------------- | ------------------------ |
+| Customer direct payment  | 고객 직접 결제      | 顧客の直接支払い         |
+| Advertising              | 광고                | 広告                     |
+| Sponsorship              | 후원                | スポンサー支援           |
+| Affiliate commissions    | 제휴 수수료         | アフィリエイト手数料     |
+| Transaction fees         | 거래 중개 수수료    | 取引仲介手数料           |
+| One-time payment         | 일회성 결제         | 買い切り                 |
+| Subscription             | 구독                | サブスクリプション       |
+| Usage-based billing      | 사용량 기반 과금    | 従量課金                 |
+| Prepaid credits          | 선불 크레딧         | 前払いクレジット         |
+| Direct seller model      | 직접 판매자 모델    | 直接販売者モデル         |
+| Merchant of record model | MoR 모델            | MoRモデル                |
+| Flat-rate pricing        | 정액 요금           | 定額料金                 |
+| Per-seat pricing         | 좌석 과금           | 席数課金                 |
+| Feature-tiered pricing   | 기능별 요금제       | 機能別料金プラン         |
+| Volume pricing           | 전체 수량 구간 단가 | 全数量段階単価           |
+| Graduated pricing        | 구간별 누진 단가    | 区分別累進単価           |
+| Base fee plus overage    | 기본료+초과 사용량  | 基本料＋超過利用量       |
+| Freemium                 | 프리미엄 무료 모델  | フリーミアム             |
+| Free trial               | 무료 체험           | 無料トライアル           |
+| Consumable purchase      | 소모성 구매         | 消耗型購入               |
+| Non-consumable purchase  | 비소모성 구매       | 非消耗型購入             |
+| Banner ads               | 배너 광고           | バナー広告               |
+| Interstitial ads         | 전면 광고           | インタースティシャル広告 |
+| Rewarded ads             | 보상형 광고         | リワード広告             |
+
+Feature tiers group capabilities. Volume pricing applies one selected rate to every unit; graduated pricing prices each slice. Subscription is a billing period, not necessarily a flat amount. Customer direct payment identifies funding; direct seller identifies responsibility. These translations are editorial labels, not claims of standardized legal terms.

@@ -1,0 +1,83 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section data-demo="advertising" data-money lang={lang}>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Advertising", "광고", "広告")}</h2>
+  </header>
+  <p>
+    {t(
+      "Reading service · articles remain open",
+      "읽기 서비스 · 글은 무료 공개",
+      "読書サービス · 記事は無料公開",
+    )}
+  </p>
+  <div class="lanes">
+    <ol class="exchange">
+      <li>
+        {t(
+          "Advertiser → placement payment → Network → Publisher",
+          "광고주 → 지면 대금 → 네트워크 → 발행자",
+          "広告主 → 広告枠の代金 → ネットワーク → 発行者",
+        )}
+      </li>
+      <li>
+        {t(
+          "Publisher → labeled ad + article → Reader",
+          "발행자 → 표시된 광고 + 글 → 독자",
+          "発行者 → 明示した広告 + 記事 → 読者",
+        )}
+      </li>
+    </ol>
+    <aside>
+      {t(
+        "Reader attention is the audience. No income, impression or click guarantee. Settlement and fees omitted.",
+        "독자의 관심이 광고의 대상입니다. 수입·노출·클릭을 보장하지 않습니다. 정산·수수료는 생략했습니다.",
+        "読者の注意が広告の対象です。収入・表示・クリックを保証しません。精算と手数料は省略しています。",
+      )}
+    </aside>
+  </div>
+</section>
+<style>
+  .exchange {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    counter-reset: path;
+  }
+  .exchange li {
+    border: 2px solid #567a73;
+    background: #fff;
+    padding: 1rem;
+    counter-increment: path;
+  }
+  .exchange li::before {
+    content: counter(path, decimal-leading-zero);
+    display: block;
+    font-weight: 800;
+    color: #25634f;
+    margin-bottom: 0.5rem;
+  }
+  .value {
+    border-left: 5px solid #b07838;
+    padding: 0.7rem 1rem;
+    background: #fff;
+  }
+  aside {
+    padding: 1rem;
+    border: 1px dashed #567a73;
+  }
+</style>

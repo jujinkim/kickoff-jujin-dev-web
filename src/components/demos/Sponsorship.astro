@@ -1,0 +1,78 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section data-demo="sponsorship" data-money lang={lang}>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Sponsorship", "후원", "スポンサー支援")}</h2>
+  </header>
+  <p>
+    {t(
+      "Reading service · public maintenance",
+      "읽기 서비스 · 공개 서비스 유지",
+      "読書サービス · 公開サービスの保守",
+    )}
+  </p>
+  <ol class="exchange">
+    <li>
+      {t(
+        "Supporter → 12 for maintenance → Publisher",
+        "후원자 → 유지 관리비 12 → 발행자",
+        "支援者 → 保守費12 → 発行者",
+      )}
+    </li>
+    <li>
+      {t(
+        "Publisher → acknowledgment → Supporter",
+        "발행자 → 이름 표시 → 후원자",
+        "発行者 → 名前の掲載 → 支援者",
+      )}
+    </li>
+  </ol>
+  <p class="value">
+    {t(
+      "Public articles remain available to everyone. Support buys no exclusive access in this example.",
+      "이 예제에서 글은 모두에게 공개되며 후원으로 독점 접근을 얻지 않습니다.",
+      "この例では記事は全員に公開され、支援で限定アクセスは得ません。",
+    )}
+  </p>
+  <p class="assumptions">{m.omitted}</p>
+</section>
+<style>
+  .exchange {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    counter-reset: path;
+  }
+  .exchange li {
+    border: 2px solid #567a73;
+    background: #fff;
+    padding: 1rem;
+    counter-increment: path;
+  }
+  .exchange li::before {
+    content: counter(path, decimal-leading-zero);
+    display: block;
+    font-weight: 800;
+    color: #25634f;
+    margin-bottom: 0.5rem;
+  }
+  .value {
+    border-left: 5px solid #b07838;
+    padding: 0.7rem 1rem;
+    background: #fff;
+  }
+</style>

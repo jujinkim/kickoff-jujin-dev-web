@@ -1,0 +1,24 @@
+# Flat-rate pricing visualization brief
+
+- Stable ID, leaf category, English/Korean/Japanese titles: `flat-rate-pricing`; `pricing-models`; Flat-rate pricing / 정액 요금 / 定額料金.
+- Definition (one sentence): Flat-rate pricing sets one amount for a defined package and period. Included features and limits still matter; a fixed price does not promise unlimited service.
+- Closest concept and concrete difference: same-category peers per-seat-pricing, feature-tiered-pricing, volume-pricing, graduated-pricing, base-plus-overage; Fixed package amount. Cross-category combinations are related reading, not comparison peers.
+- Distinguishing visual features (structure, material, typography): One fixed package amount beside explicit included limits. Solid surfaces and text/number labels; color is not the only encoding.
+- Shared comparison category: [pricing-models](../catalog-writing/groups/pricing-models.md).
+- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: A workspace with 3 licensed seats and 120 exports/month. Seat price 8; flat package 20 includes up to 5 seats and 200 exports; Pro 35 adds approvals. Tier rates: up to 100 at 0.20, thereafter 0.10. Base 20 includes 100, overage 0.10.
+- Visual variable changed; concept-specific extra controls and their justification: One fixed package amount beside explicit included limits. Static mode has no controls, scripts, artificial focus stops or mount dependency.
+- Fictional scenario and why it demonstrates the definition: A fictional workspace has three seats and 120 monthly exports. Its package costs 20 per month, covering up to five seats and 200 exports. At this shared baseline, the amount stays 20. The diagram lists the package boundaries; behavior beyond them needs separate terms. Taxes, fees and refunds are omitted.
+- Representative action and observable result: Read the numbered relationships/table in source order. A fictional workspace has three seats and 120 monthly exports. Its package costs 20 per month, covering up to five seats and 200 exports. At this shared baseline, the amount stays 20. The diagram lists the package boundaries; behavior beyond them needs separate terms. Taxes, fees and refunds are omitted.
+- Initial state: One fixed package amount beside explicit included limits.
+- Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
+- Reset and reload behavior: No mutable state or reset control.
+- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
+- Keyboard order, focus, accessible names, live feedback: No artificial tab stops. Semantic lists, tables and visible descriptions work without JavaScript.
+- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
+- JavaScript-disabled initial screen and explanation: Full static diagram; no interaction instruction or noscript warning.
+- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
+- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
+- Capture selector and initial content: `[data-demo="flat-rate-pricing"]`; mode `static`; 1440px light surroundings in en/ko/ja; initial state above.
+- Source URLs, inspected date, claims each source supports: https://docs.stripe.com/products-prices/pricing-models; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
+- Comparison summaries: features: Fixed package amount; advantages: Predictable within limits; limitations: Package boundaries matter; suitable: Stable service bundles; combinations: Subscription billing.
+- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/flat-rate-pricing-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).

@@ -1,3 +1,5 @@
+> Current implementation (2026-09-22): [visualization brief](../../design-briefs/sponsorship.md), [source refresh](../monetization-sources.md), [release review](../../monetization-review.md). Historical long-form outline below is research; current articles use three short sections.
+
 # Sponsorship / 후원 / スポンサー支援
 
 Writing design only. ID: `sponsorship` · Group: [revenue-sources](../groups/revenue-sources.md) · Queue order: 1702 · Checked: 2026-09-21.

@@ -19,8 +19,19 @@ export const platformCategories = [
   "hosting-models",
   "release-replacement",
 ];
+export const monetizationCategories = [
+  "revenue-sources",
+  "billing",
+  "seller-responsibility",
+  "pricing-models",
+  "access-strategies",
+  "purchase-types",
+  "ad-formats",
+];
 export const requiresDemo = (id) =>
-  isDesignCategory(id) || platformCategories.includes(id);
+  isDesignCategory(id) ||
+  platformCategories.includes(id) ||
+  monetizationCategories.includes(id);
 export function validateDesigns(
   articles,
   registry = designRegistry,
@@ -44,6 +55,9 @@ export function validateDesigns(
       errors.push(`${id}: missing design demo registration`);
       continue;
     }
+    const mode = entry.mode === undefined ? "interactive" : entry.mode;
+    if (!["interactive", "static"].includes(mode))
+      errors.push(`${id}: invalid demo mode`);
     if (
       !entry.component ||
       !exists(`src/components/demos/${entry.component}.astro`)
@@ -56,8 +70,11 @@ export function validateDesigns(
       );
       if (
         !source.includes(`data-demo="${id}"`) ||
-        !source.includes("data-reset") ||
-        !/<script[\s>]/.test(source) ||
+        (mode === "interactive" &&
+          (!source.includes("data-reset") || !/<script[\s>]/.test(source))) ||
+        (mode === "static" &&
+          (/<script[\s>]/.test(source) ||
+            /data-(?:reset|interactive)\b/.test(source))) ||
         /\bTODO\b/.test(source)
       )
         errors.push(`${id}: unfinished demo component contract`);

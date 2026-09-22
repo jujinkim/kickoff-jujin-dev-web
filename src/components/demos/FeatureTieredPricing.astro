@@ -1,0 +1,65 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section data-demo="feature-tiered-pricing" data-money lang={lang}>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Feature-tiered pricing", "기능별 요금제", "機能別料金プラン")}</h2>
+  </header>
+  <p>{m.baseline}</p>
+  <table>
+    <caption>
+      {t(
+        "Feature packages · fictional monthly amounts",
+        "기능 묶음 · 가상 월 금액",
+        "機能パッケージ · 架空の月額",
+      )}
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">{t("Feature", "기능", "機能")}</th>
+        <th scope="col">{t("Basic · 20", "기본 · 20", "基本 · 20")}</th>
+        <th scope="col">{t("Pro · 35", "프로 · 35", "プロ · 35")}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{m.exports}</th>
+        <td>{t("Included", "포함", "含む")}</td>
+        <td>{t("Included", "포함", "含む")}</td>
+      </tr>
+      <tr>
+        <th scope="row">{t("Approval workflow", "승인 절차", "承認フロー")}</th>
+        <td>{t("Not included", "미포함", "含まない")}</td>
+        <td>{t("Included", "포함", "含む")}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    {t(
+      "Both: up to 5 seats and 200 exports/month. Features differ; these are not quantity-price tiers.",
+      "모두 최대 5좌석·월 200회입니다. 기능 차이이며 수량 단가 구간이 아닙니다.",
+      "どちらも最大5席・月200回です。機能差であり、数量単価の区分ではありません。",
+    )}
+  </p>
+  <p class="assumptions">{m.omitted}</p>
+</section>
+<style>
+  table {
+    background: #fff;
+    border: 2px solid #567a73;
+  }
+  thead {
+    background: #e1ece8;
+  }
+</style>

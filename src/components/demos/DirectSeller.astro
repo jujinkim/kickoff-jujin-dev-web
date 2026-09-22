@@ -1,0 +1,104 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section data-demo="direct-seller" data-money lang={lang}>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Direct seller model", "직접 판매자 모델", "直接販売者モデル")}</h2>
+  </header>
+  <p>
+    {t(
+      "Reading-tool license · assumed contract",
+      "읽기 도구 이용권 · 가정한 계약",
+      "読書ツールの利用権 · 仮定した契約",
+    )}
+  </p>
+  <div class="contract">
+    <strong>{t("Sale contract", "판매 계약", "販売契約")}</strong>
+    <p>
+      {t("Customer", "고객", "顧客")} ↔{" "}
+      {t("Product business", "제품 사업자", "製品事業者")}
+    </p>
+  </div>
+  <p class="money">
+    {t(
+      "Customer → processor → settlement → Business",
+      "고객 → 결제 처리 업체 → 정산 → 사업자",
+      "顧客 → 決済処理業者 → 精算 → 事業者",
+    )}
+  </p>
+  <table>
+    <caption>
+      {t(
+        "Responsibility owner in this example",
+        "예제의 책임 담당자",
+        "この例の責任担当者",
+      )}
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">{t("Task", "업무", "業務")}</th>
+        <th scope="col">{t("Owner", "담당자", "担当者")}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          {t("Receipt identity", "영수증 판매자", "領収書の販売者")}
+        </th>
+        <td>{t("Product business", "제품 사업자", "製品事業者")}</td>
+      </tr>
+      <tr>
+        <th scope="row">
+          {t(
+            "Refund / transaction-tax workflow",
+            "환불 / 거래세 업무",
+            "返金 / 取引税の業務",
+          )}
+        </th>
+        <td>{t("Product business", "제품 사업자", "製品事業者")}</td>
+      </tr>
+      <tr>
+        <th scope="row">
+          {t(
+            "Product and product support",
+            "제품과 제품 지원",
+            "製品と製品サポート",
+          )}
+        </th>
+        <td>{t("Product business", "제품 사업자", "製品事業者")}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    {t(
+      "Covered duties follow the agreement. No country-specific tax rules or universal coverage claim.",
+      "적용 대상 의무는 계약을 따릅니다. 국가별 세무 규칙이나 보편적 적용을 주장하지 않습니다.",
+      "対象の義務は契約に従います。国別の税務規則や普遍的な対応範囲は示しません。",
+    )}
+  </p>
+</section>
+<style>
+  .contract {
+    border: 2px dashed #567a73;
+    padding: 1rem;
+    background: #fff;
+  }
+  .contract p {
+    margin-bottom: 0;
+  }
+  .money {
+    border-bottom: 3px solid #567a73;
+    padding-bottom: 1rem;
+  }
+</style>

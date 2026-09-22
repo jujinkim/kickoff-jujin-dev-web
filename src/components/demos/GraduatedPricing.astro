@@ -1,0 +1,140 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section
+  data-demo="graduated-pricing"
+  data-money
+  lang={lang}
+  data-reset-message={m.resetMessage}
+>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Graduated pricing", "구간별 누진 단가", "区分別累進単価")}</h2>
+  </header>
+  <p>{m.baseline}</p>
+  <table>
+    <caption>{t("Shared tier table", "공통 구간표", "共通の区分表")}</caption>
+    <thead>
+      <tr>
+        <th scope="col">{m.exports}</th>
+        <th scope="col">{t("Unit price", "단가", "単価")}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">0–100</th>
+        <td>0.20</td>
+      </tr>
+      <tr>
+        <th scope="row">101+</th>
+        <td>0.10</td>
+      </tr>
+    </tbody>
+  </table>
+  <ol class="slices">
+    <li>
+      {t(
+        "First slice: up to 100 × 0.20",
+        "첫 구간: 최대 100 × 0.20",
+        "最初の区分：最大100 × 0.20",
+      )}
+    </li>
+    <li>
+      {t(
+        "Later slice: remainder × 0.10",
+        "다음 구간: 나머지 × 0.10",
+        "次の区分：残り × 0.10",
+      )}
+    </li>
+  </ol>
+  <label>
+    {m.exports}
+    <input
+      type="number"
+      min="0"
+      max="10000"
+      step="1"
+      value="120"
+      data-quantity
+      data-interactive
+      disabled
+    />
+  </label>
+  <div class="controls">
+    <button type="button" data-less data-interactive disabled>
+      {t("Remove one", "1 감소", "1減らす")}
+    </button>
+    <button type="button" data-more data-interactive disabled>
+      {t("Add one", "1 추가", "1増やす")}
+    </button>
+  </div>
+  <div class="result">
+    <span>{m.total}</span>
+    <output data-total>22.00</output>
+    <p data-formula>100 × 0.20 + 20 × 0.10 = 22.00</p>
+  </div>
+  <p>
+    {t(
+      "Same usage with the other tier method",
+      "같은 사용량의 다른 구간 방식",
+      "同じ利用量で別の区分方式",
+    )}
+    : <b data-peer>12.00</b>
+  </p>
+  <p>
+    {t(
+      "No tier flat fees. Zero usage costs zero.",
+      "구간 고정료는 없습니다. 사용량 0은 요금도 0입니다.",
+      "区分固定料はありません。利用量0は料金も0です。",
+    )}
+  </p>
+  <p class="assumptions">{m.omitted}</p>
+  <div class="controls">
+    <button type="button" data-reset data-interactive disabled>
+      {m.reset}
+    </button>
+  </div>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountPricing } from "./monetization-pricing";
+  mountPricing("graduated-pricing", 120);
+</script>
+<style>
+  .slices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    list-style: none;
+    padding: 0;
+  }
+  .slices li {
+    border-bottom: 4px solid #52766e;
+    padding: 0.8rem;
+    background: #fff;
+  }
+  @container (max-width:450px) {
+    .slices {
+      grid-template-columns: 1fr;
+    }
+  }
+  .result {
+    background: #e1ece8;
+    border: 2px solid #52766e;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .result p {
+    margin-bottom: 0;
+  }
+</style>

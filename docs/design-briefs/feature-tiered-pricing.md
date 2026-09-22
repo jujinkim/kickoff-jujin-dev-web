@@ -1,0 +1,24 @@
+# Feature-tiered pricing visualization brief
+
+- Stable ID, leaf category, English/Korean/Japanese titles: `feature-tiered-pricing`; `pricing-models`; Feature-tiered pricing / 기능별 요금제 / 機能別料金プラン.
+- Definition (one sentence): Feature-tiered pricing offers packages with different capabilities. These tiers describe what customers receive, unlike quantity tiers that change a unit price.
+- Closest concept and concrete difference: same-category peers flat-rate-pricing, per-seat-pricing, volume-pricing, graduated-pricing, base-plus-overage; Different feature packages. Cross-category combinations are related reading, not comparison peers.
+- Distinguishing visual features (structure, material, typography): Feature-by-plan table with explicit included/not included text. Solid surfaces and text/number labels; color is not the only encoding.
+- Shared comparison category: [pricing-models](../catalog-writing/groups/pricing-models.md).
+- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: A workspace with 3 licensed seats and 120 exports/month. Seat price 8; flat package 20 includes up to 5 seats and 200 exports; Pro 35 adds approvals. Tier rates: up to 100 at 0.20, thereafter 0.10. Base 20 includes 100, overage 0.10.
+- Visual variable changed; concept-specific extra controls and their justification: Feature-by-plan table with explicit included/not included text. Static mode has no controls, scripts, artificial focus stops or mount dependency.
+- Fictional scenario and why it demonstrates the definition: A fictional workspace has three seats and 120 monthly exports. Basic costs 20 and includes exporting; Pro costs 35 and adds approval workflows. Both cover this baseline, up to five seats and 200 exports. The static table contrasts features, not per-unit discounts. All prices are fictional; taxes, fees and refunds are omitted.
+- Representative action and observable result: Read the numbered relationships/table in source order. A fictional workspace has three seats and 120 monthly exports. Basic costs 20 and includes exporting; Pro costs 35 and adds approval workflows. Both cover this baseline, up to five seats and 200 exports. The static table contrasts features, not per-unit discounts. All prices are fictional; taxes, fees and refunds are omitted.
+- Initial state: Feature-by-plan table with explicit included/not included text.
+- Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
+- Reset and reload behavior: No mutable state or reset control.
+- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
+- Keyboard order, focus, accessible names, live feedback: No artificial tab stops. Semantic lists, tables and visible descriptions work without JavaScript.
+- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
+- JavaScript-disabled initial screen and explanation: Full static diagram; no interaction instruction or noscript warning.
+- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
+- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
+- Capture selector and initial content: `[data-demo="feature-tiered-pricing"]`; mode `static`; 1440px light surroundings in en/ko/ja; initial state above.
+- Source URLs, inspected date, claims each source supports: https://docs.stripe.com/products-prices/pricing-models; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
+- Comparison summaries: features: Different feature packages; advantages: Matches distinct needs; limitations: Package boundaries can confuse; suitable: Products with optional capabilities; combinations: Subscription or seat pricing.
+- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/feature-tiered-pricing-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).

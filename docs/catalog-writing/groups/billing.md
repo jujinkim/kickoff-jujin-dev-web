@@ -33,3 +33,18 @@ Review every English draft in this group together before translation. Confirm th
 [checkout]: https://docs.stripe.com/payments/checkout
 [subscription]: https://docs.stripe.com/billing/subscriptions/overview
 [usage]: https://docs.stripe.com/billing/subscriptions/usage-based
+
+## Current monetization release (2026-09-22)
+
+Shared fixture: The same export tool over three months: 100, 300, 600 exports. One-time 30; subscription 12/month; metered 0.02/export; prepaid starts at 1,000 credits and consumes 1/export.
+
+Revenue source, billing timing, amount calculation, access, purchase rights and seller responsibility remain separate axes. Only siblings in this group populate `compareWith`; combinations go in related reading. Figures and conversion outcomes are fictional; taxes, fees and refunds are omitted unless the example names the platform fee as its subject.
+
+English definitions/examples/comparison fields were reviewed together before Korean/Japanese translation. [Source refresh](../monetization-sources.md), [verification](../../monetization-review.md).
+
+| Concept                                             | Mode        | Distinguishing mechanism  |
+| --------------------------------------------------- | ----------- | ------------------------- |
+| [One-time payment](../articles/one-time-payment.md) | static      | One charge                |
+| [Subscription](../articles/subscription.md)         | interactive | Recurring billing periods |
+| [Usage-based billing](../articles/usage-based.md)   | interactive | Metered billable units    |
+| [Prepaid credits](../articles/prepaid-credits.md)   | interactive | Pre-funded usage balance  |

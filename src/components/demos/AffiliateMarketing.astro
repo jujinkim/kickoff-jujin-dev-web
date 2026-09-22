@@ -1,0 +1,93 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section data-demo="affiliate-marketing" data-money lang={lang}>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Affiliate commissions", "제휴 수수료", "アフィリエイト手数料")}</h2>
+  </header>
+  <p>
+    {t(
+      "Reading service · disclosed book referral",
+      "읽기 서비스 · 관계를 표시한 도서 소개",
+      "読書サービス · 関係を明示した書籍紹介",
+    )}
+  </p>
+  <ol class="referral">
+    <li>
+      {t(
+        "Publisher → disclosed referral link → Reader",
+        "발행자 → 제휴 관계가 표시된 링크 → 독자",
+        "発行者 → 関係を明示したリンク → 読者",
+      )}
+    </li>
+    <li>
+      {t(
+        "Reader → purchase → External bookshop",
+        "독자 → 구매 → 외부 서점",
+        "読者 → 購入 → 外部書店",
+      )}
+    </li>
+    <li>
+      {t(
+        "Qualifying purchase? Shop → commission → Publisher",
+        "조건 충족 구매? 서점 → 수수료 → 발행자",
+        "対象の購入？ 書店 → 手数料 → 発行者",
+      )}
+    </li>
+  </ol>
+  <p class="value">
+    {t(
+      "A click alone need not qualify. Program terms govern eligibility. Settlement, costs and refunds omitted.",
+      "클릭만으로 인정되지 않을 수 있습니다. 인정 조건은 프로그램 계약을 따릅니다. 정산·비용·환불은 생략했습니다.",
+      "クリックだけでは対象にならない場合があります。条件は契約に従います。精算・費用・返金は省略しています。",
+    )}
+  </p>
+</section>
+<style>
+  .exchange {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    counter-reset: path;
+  }
+  .exchange li {
+    border: 2px solid #567a73;
+    background: #fff;
+    padding: 1rem;
+    counter-increment: path;
+  }
+  .exchange li::before {
+    content: counter(path, decimal-leading-zero);
+    display: block;
+    font-weight: 800;
+    color: #25634f;
+    margin-bottom: 0.5rem;
+  }
+  .value {
+    border-left: 5px solid #b07838;
+    padding: 0.7rem 1rem;
+    background: #fff;
+  }
+  .referral {
+    padding-left: 1.5rem;
+  }
+  .referral li {
+    padding: 0.8rem;
+    margin: 0.6rem 0;
+    border-bottom: 2px dashed #567a73;
+    background: #fff;
+  }
+</style>

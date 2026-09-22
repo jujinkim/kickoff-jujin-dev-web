@@ -1,3 +1,5 @@
+> Current implementation (2026-09-22): [visualization brief](../../design-briefs/one-time-payment.md), [source refresh](../monetization-sources.md), [release review](../../monetization-review.md). Historical long-form outline below is research; current articles use three short sections.
+
 # One-time payment / 일회성 결제 / 買い切り
 
 Writing design only. ID: `one-time-payment` · Group: [billing](../groups/billing.md) · Queue order: 1800 · Checked: 2026-09-21.

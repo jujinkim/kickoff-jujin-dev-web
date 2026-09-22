@@ -29,15 +29,25 @@ try {
     for (const lang of ["en", "ko", "ja"]) {
       const response = await page.goto(`${origin}/${lang}/catalog/${id}/`);
       if (!response.ok()) throw new Error(`Missing demo route: ${id}/${lang}`);
-      await page.locator(`${entry.capture}[data-ready="true"]`).waitFor();
+      await page
+        .locator(
+          entry.mode === "static"
+            ? entry.capture
+            : `${entry.capture}[data-ready="true"]`,
+        )
+        .waitFor();
       await page.evaluate(() => document.fonts.ready);
       await page.evaluate(
         () => (document.documentElement.dataset.theme = "light"),
       );
-      await page.locator(`${entry.capture} [data-reset]`).click();
-      await page.evaluate(() => {
-        document.querySelector('[data-demo] [role="status"]').textContent = "";
-      });
+      if (entry.mode !== "static") {
+        await page.locator(`${entry.capture} [data-reset]`).click();
+        await page
+          .locator(`${entry.capture} [role="status"]`)
+          .evaluate((node) => {
+            node.textContent = "";
+          });
+      }
       await page.evaluate(
         () =>
           new Promise((resolve) =>

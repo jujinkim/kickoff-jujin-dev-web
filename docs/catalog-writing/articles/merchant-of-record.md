@@ -1,3 +1,5 @@
+> Current implementation (2026-09-22): [visualization brief](../../design-briefs/merchant-of-record.md), [source refresh](../monetization-sources.md), [release review](../../monetization-review.md). Historical long-form outline below is research; current articles use three short sections.
+
 # Merchant of record model / MoR 모델 / MoRモデル
 
 Writing design only. ID: `merchant-of-record` · Group: [seller-responsibility](../groups/seller-responsibility.md) · Queue order: 1901 · Checked: 2026-09-21.

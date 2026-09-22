@@ -1,0 +1,24 @@
+# Direct seller model visualization brief
+
+- Stable ID, leaf category, English/Korean/Japanese titles: `direct-seller`; `seller-responsibility`; Direct seller model / 직접 판매자 모델 / 直接販売者モデル.
+- Definition (one sentence): In a direct seller arrangement, the product business sells to the customer. Using a payment processor alone does not transfer seller responsibilities.
+- Closest concept and concrete difference: same-category peers merchant-of-record; Business is contractual seller. Cross-category combinations are related reading, not comparison peers.
+- Distinguishing visual features (structure, material, typography): Dashed sale contract, solid money path and task/owner table. Solid surfaces and text/number labels; color is not the only encoding.
+- Shared comparison category: [seller-responsibility](../catalog-writing/groups/seller-responsibility.md).
+- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: One reading-tool license. Name contractual seller, payment path, receipt owner, refund/transaction-tax workflow and retained product support under an assumed contract.
+- Visual variable changed; concept-specific extra controls and their justification: Dashed sale contract, solid money path and task/owner table. Static mode has no controls, scripts, artificial focus stops or mount dependency.
+- Fictional scenario and why it demonstrates the definition: A fictional reading-tool license names the business on the sale. The processor handles payment; the business owns the illustrated receipt, refund and transaction-tax workflows and delivers the product. The responsibility map describes this assumed contract, not every provider arrangement. Amounts and country-specific tax rules are intentionally absent.
+- Representative action and observable result: Read the numbered relationships/table in source order. A fictional reading-tool license names the business on the sale. The processor handles payment; the business owns the illustrated receipt, refund and transaction-tax workflows and delivers the product. The responsibility map describes this assumed contract, not every provider arrangement. Amounts and country-specific tax rules are intentionally absent.
+- Initial state: Dashed sale contract, solid money path and task/owner table.
+- Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
+- Reset and reload behavior: No mutable state or reset control.
+- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
+- Keyboard order, focus, accessible names, live feedback: No artificial tab stops. Semantic lists, tables and visible descriptions work without JavaScript.
+- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
+- JavaScript-disabled initial screen and explanation: Full static diagram; no interaction instruction or noscript warning.
+- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
+- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
+- Capture selector and initial content: `[data-demo="direct-seller"]`; mode `static`; 1440px light surroundings in en/ko/ja; initial state above.
+- Source URLs, inspected date, claims each source supports: https://stripe.com/resources/more/merchant-of-record; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
+- Comparison summaries: features: Business is contractual seller; advantages: Control over sales relationship; limitations: Seller obligations remain; suitable: Capacity to operate sales; combinations: Processor plus billing method.
+- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/direct-seller-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).

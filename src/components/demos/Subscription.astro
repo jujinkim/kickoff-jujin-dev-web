@@ -1,0 +1,232 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section
+  data-demo="subscription"
+  data-money
+  lang={lang}
+  data-reset-message={m.resetMessage}
+>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Subscription", "구독", "サブスクリプション")}</h2>
+  </header>
+  <p>{m.billing}</p>
+  <p>
+    {t(
+      "12 per month · three-period illustration",
+      "월 12 · 세 기간 예시",
+      "月12 · 3期間の例",
+    )}
+  </p>
+  <div class="period">
+    <div>
+      <span>{m.month}</span>
+      <output data-month>1</output>
+    </div>
+    <div>
+      <span>{t("Paid so far", "지불 합계", "支払済み合計")}</span>
+      <output data-paid>12.00</output>
+    </div>
+  </div>
+  <div class="entitlement">
+    <strong>
+      {m.access}: <span data-access>{m.available}</span>
+    </strong>
+    <p data-state>
+      {t(
+        "Paid period · renewal on",
+        "결제한 기간 · 갱신 켜짐",
+        "支払済み期間 · 更新あり",
+      )}
+    </p>
+  </div>
+  <div class="controls">
+    <button type="button" data-next data-interactive disabled>
+      {t("Advance period", "기간 진행", "期間を進める")}
+    </button>
+    <button
+      type="button"
+      data-renew
+      aria-pressed="true"
+      data-interactive
+      disabled
+    >
+      {t("Turn renewal off/on", "갱신 끄기/켜기", "更新を切り替える")}
+    </button>
+    <button
+      type="button"
+      data-retry
+      aria-disabled="true"
+      data-interactive
+      disabled
+    >
+      {t("Retry payment", "결제 재시도", "支払いを再試行")}
+    </button>
+  </div>
+  <label class="failure">
+    <input type="checkbox" data-failure data-interactive disabled />
+    {t("Fail payment attempts", "결제 시도 실패", "支払い試行を失敗させる")}
+  </label>
+  <p class="policy">
+    {t(
+      "Example policy: renewal off keeps access until the paid boundary. Failure pauses access; uncheck failure and retry to restore it. After three periods the illustration ends.",
+      "예제 정책: 갱신을 꺼도 결제한 기간 끝까지 접근합니다. 실패하면 중지되며 실패 설정을 끄고 재시도하면 복원됩니다. 세 기간 후 예제가 끝납니다.",
+      "例の方針：更新停止後も支払済み期間の終わりまで利用できます。失敗で停止し、失敗設定を外して再試行すると復元します。3期間で例は終了します。",
+    )}
+  </p>
+  <p class="assumptions">{m.omitted}</p>
+  <div class="controls">
+    <button type="button" data-reset data-interactive disabled>
+      {m.reset}
+    </button>
+  </div>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import type { Lang } from "../../lib/i18n";
+  import { mount, local } from "./shared";
+  import { moneyText, moneyField as field } from "./monetization";
+  mount("subscription", (root, say) => {
+    const m = moneyText(root.lang as Lang),
+      t = local(root.lang as Lang);
+    const fail = field<HTMLInputElement>(root, "[data-failure]");
+    let month = 1,
+      paid = 12,
+      renew = true,
+      phase: "active" | "past-due" | "ended" = "active";
+    const update = (announce = true) => {
+      root.dataset.phase = phase;
+      field(root, "[data-month]").textContent = String(month);
+      field(root, "[data-paid]").textContent = paid.toFixed(2);
+      field(root, "[data-access]").textContent =
+        phase === "active" ? m.available : m.locked;
+      const state =
+        phase === "past-due"
+          ? t(
+              "Payment failed · retry needed",
+              "결제 실패 · 재시도 필요",
+              "支払い失敗 · 再試行が必要",
+            )
+          : phase === "ended"
+            ? t(
+                "Period ended · access ended",
+                "기간 종료 · 접근 종료",
+                "期間終了 · アクセス終了",
+              )
+            : renew
+              ? t(
+                  "Paid period · renewal on",
+                  "결제한 기간 · 갱신 켜짐",
+                  "支払済み期間 · 更新あり",
+                )
+              : t(
+                  "Paid period · renewal off",
+                  "결제한 기간 · 갱신 꺼짐",
+                  "支払済み期間 · 更新なし",
+                );
+      field(root, "[data-state]").textContent = state;
+      field(root, "[data-renew]").setAttribute("aria-pressed", String(renew));
+      field(root, "[data-next]").setAttribute(
+        "aria-disabled",
+        String(phase !== "active"),
+      );
+      field(root, "[data-renew]").setAttribute(
+        "aria-disabled",
+        String(phase !== "active"),
+      );
+      field(root, "[data-retry]").setAttribute(
+        "aria-disabled",
+        String(phase !== "past-due"),
+      );
+      if (announce)
+        say(
+          `${state}. ${m.access}: ${phase === "active" ? m.available : m.locked}. ${m.total}: ${paid.toFixed(2)}`,
+        );
+    };
+    field(root, "[data-next]").addEventListener("click", () => {
+      if (phase !== "active") {
+        say(m.blocked);
+        return;
+      }
+      if (!renew || month === 3) phase = "ended";
+      else {
+        month++;
+        if (fail.checked) phase = "past-due";
+        else paid += 12;
+      }
+      update();
+    });
+    field(root, "[data-renew]").addEventListener("click", () => {
+      if (phase === "active") {
+        renew = !renew;
+        update();
+      } else say(m.blocked);
+    });
+    field(root, "[data-retry]").addEventListener("click", () => {
+      if (phase !== "past-due") {
+        say(m.blocked);
+        return;
+      }
+      if (!fail.checked) {
+        paid += 12;
+        phase = "active";
+      }
+      update();
+    });
+    update(false);
+    return () => {
+      month = 1;
+      paid = 12;
+      renew = true;
+      phase = "active";
+      fail.checked = false;
+      update(false);
+    };
+  });
+</script>
+<style>
+  .period {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .period > div {
+    padding: 1rem;
+    background: #fff;
+    border-top: 4px solid #52766e;
+  }
+  .entitlement {
+    padding: 1rem;
+    border: 2px solid #52766e;
+    margin: 1rem 0;
+  }
+  .failure {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .failure input {
+    width: 1.2rem;
+    min-height: 1.2rem;
+  }
+  .policy {
+    border-left: 4px solid #ac773d;
+    padding-left: 0.9rem;
+  }
+  @container (max-width:350px) {
+    .period {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

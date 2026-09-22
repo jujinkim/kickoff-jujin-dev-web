@@ -1,3 +1,5 @@
+> Current implementation (2026-09-22): [visualization brief](../../design-briefs/subscription.md), [source refresh](../monetization-sources.md), [release review](../../monetization-review.md). Historical long-form outline below is research; current articles use three short sections.
+
 # Subscription / 구독 / サブスクリプション
 
 Writing design only. ID: `subscription` · Group: [billing](../groups/billing.md) · Queue order: 1801 · Checked: 2026-09-21.

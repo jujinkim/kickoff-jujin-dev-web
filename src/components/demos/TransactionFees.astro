@@ -1,0 +1,79 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section data-demo="transaction-fees" data-money lang={lang}>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Transaction fees", "거래 중개 수수료", "取引仲介手数料")}</h2>
+  </header>
+  <p>
+    {t(
+      "Reading marketplace · one sale",
+      "읽기 장터 · 거래 1건",
+      "読書マーケット · 1件の売上",
+    )}
+  </p>
+  <div class="sale">
+    <strong>
+      {t("Reader pays 100", "독자 결제 100", "読者が100を支払う")}
+    </strong>
+    <div class="split">
+      <div>
+        <span>{t("Author allocation", "저자 배분", "著者への配分")}</span>
+        <b>90</b>
+      </div>
+      <div>
+        <span>
+          {t("Platform fee", "플랫폼 수수료", "プラットフォーム手数料")}
+        </span>
+        <b>10</b>
+      </div>
+    </div>
+  </div>
+  <p>
+    {t(
+      "100 = 90 + 10. Allocation only; not the transfer sequence. The fee is not profit.",
+      "100 = 90 + 10. 배분만 나타내며 이체 순서는 아닙니다. 수수료는 순이익이 아닙니다.",
+      "100 = 90 + 10。配分のみで送金順序ではありません。手数料は利益ではありません。",
+    )}
+  </p>
+  <p class="assumptions">{m.omitted}</p>
+</section>
+<style>
+  .sale {
+    text-align: center;
+    padding: 1rem;
+    background: #fff;
+    border: 2px solid #567a73;
+  }
+  .split {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0.7rem;
+    margin-top: 1rem;
+  }
+  .split div {
+    border-top: 4px solid #567a73;
+    padding: 1rem 0.4rem;
+    background: #e1ece8;
+  }
+  .split b {
+    display: block;
+    font-size: 2rem;
+  }
+  @container (max-width:400px) {
+    .split {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

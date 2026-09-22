@@ -1,0 +1,76 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section data-demo="banner-ads" data-money lang={lang}>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Banner ads", "배너 광고", "バナー広告")}</h2>
+  </header>
+  <p>{m.puzzle}</p>
+  <div class="phone">
+    <h3>
+      {t("Level 1 · play area", "레벨 1 · 플레이 영역", "レベル1 · プレイ領域")}
+    </h3>
+    <div class="board" aria-hidden="true">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+      <span>6</span>
+      <span>7</span>
+      <span>8</span>
+      <span>0</span>
+    </div>
+    <p>{t("Game controls area", "게임 조작 영역", "ゲーム操作領域")}</p>
+    <aside>
+      {t(
+        "Advertisement · reserved bottom region",
+        "광고 · 예약한 하단 영역",
+        "広告 · 確保した下部領域",
+      )}
+    </aside>
+  </div>
+  <p>
+    {t(
+      "The board remains visible. Ad and game controls are separated. Static diagram; no ad request, reward or revenue forecast.",
+      "보드가 계속 보이고 광고와 조작부가 분리됩니다. 정적 도식이며 실제 광고·보상·수익 예측은 없습니다.",
+      "盤面は見えたままで広告と操作部を分けます。静的な図で、実際の広告・報酬・収益予測はありません。",
+    )}
+  </p>
+</section>
+<style>
+  .phone {
+    max-width: 320px;
+    margin: auto;
+    border: 3px solid #567a73;
+    border-radius: 20px;
+    padding: 1rem;
+    background: #fff;
+  }
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+  .board span {
+    padding: 0.6rem;
+    text-align: center;
+    border: 1px solid #567a73;
+  }
+  aside {
+    border: 2px dashed #956122;
+    padding: 0.8rem;
+    background: #faecd5;
+  }
+</style>

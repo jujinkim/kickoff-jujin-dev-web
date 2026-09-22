@@ -26,10 +26,12 @@ scopes basic controls for layout/type demos to `[data-comparison]`. Style demos
 keep their control baseline inside each component; they share only data and
 behavior. Do not add a global visual theme.
 
-The current release contains 22 design concepts and 15 platform concepts: 37 demos,
-111 localized concept articles, and 36 guide articles (147 published documents).
-Twenty-five candidates remain planned. Counts here describe this
-release, not runtime allowlists.
+The current release contains 22 design concepts, 15 platform concepts and 24
+monetization concepts: **49 interactive demos and 12 static diagrams**, 183 localized
+concept articles and 36 guide articles (219 published documents). Seventeen
+candidates remain planned. Counts describe this release, not runtime allowlists.
+
+Current monetization evidence: [monetization review](monetization-review.md).
 
 Current platform evidence: [platform review](platform-demos-review.md).
 Previous screen evidence: [workspace review](design-workspaces-review.md).
@@ -89,7 +91,7 @@ research lives in [catalog-writing](catalog-writing/README.md).
 
 1. Register a stable candidate in `src/data/candidates.json` and an existing
    leaf category in `src/data/categories.json`. Add a leaf if needed; descendants
-   of `design` and all five platform groups participate in publication validation.
+   of `design` all five platform groups and all seven monetization groups participate in publication validation.
    Extend `platformCategories` when introducing a new platform comparison group.
 2. Run `npm run content:new -- --id <id>` for all three draft files. The command
    prints this guide and template paths. Never overwrite an existing original.
@@ -102,7 +104,7 @@ research lives in [catalog-writing](catalog-writing/README.md).
    after mount. State belongs to the current page, never account/server/storage.
 5. Add one entry to `src/data/design-demos.json`. The renderer uses an Astro
    glob to resolve the component; **do not edit `DesignDemo.astro` or Card**.
-   `DesignId` derives from registry keys. Registry maps only component, caption,
+   `DesignId` derives from registry keys. Registry maps only component, caption, mode,
    and capture selector; do not place application state or visual variants here.
 6. Review translations and comparison summaries. Set matching `revision` and
    `sourceRevision`; increment the English revision on material changes. Once
@@ -248,7 +250,7 @@ to bypass only thumbnail existence checks. Component, caption, translation, and
 content checks remain active. Do not publish a preview build.
 
 `STYLE_PREVIEW_ORIGIN` overrides the capture server URL (default port 4322).
-The generator rejects unknown `--id`, waits for mount and fonts, restores the
+The generator rejects unknown `--id`, waits for fonts and interactive mount, restores the
 initial state, selects light site theme, clears the reset announcement, and
 captures the registry selector. It writes `public/thumbnails/<id>-<lang>.png`.
 Cards, previews, and list markup use that same path. Rebuild to copy captures
@@ -330,3 +332,45 @@ capturing. The gate rejects missing components, captions, translations and PNGs
 for every published member of these five groups. Preview bypasses only absent
 first PNGs. Platform screenshots cover every language/width/theme plus forced
 colors; registry-wide tests also cover JavaScript-disabled reading and search.
+
+## Static diagrams and monetization
+
+`mode` is optional in `src/data/design-demos.json`: omitted or `"interactive"`
+retains the existing lifecycle. `"static"` selects a complete server-rendered
+HTML/SVG explanation. Each item still owns a separate Astro component, caption,
+capture root, localized text and three thumbnails. Static mode has no script,
+`data-interactive`, reset control, mount wait or interaction/no-JavaScript note.
+Never label a static component interactive merely to satisfy a capture tool.
+The publication gate validates both modes and rejects unknown mode values.
+
+Static example:
+
+```json
+{
+  "banner-ads": {
+    "component": "BannerAds",
+    "mode": "static",
+    "caption": { "en": "Ad placement", "ko": "광고 배치", "ja": "広告配置" },
+    "capture": "[data-demo=\"banner-ads\"]"
+  }
+}
+```
+
+Monetization uses seven independent comparison groups under `business`.
+[Source refresh](catalog-writing/monetization-sources.md) and individual
+[briefs](design-briefs/) record their shared fixtures. Billing keeps the
+100/300/600-export scenario; pricing uses 3 seats and 120 monthly exports.
+All prices and outcomes are fictional, with omitted costs stated. Define
+billing period, price calculation, access and seller duties separately.
+No payment, advertising SDK, account or persistence is connected.
+
+`monetization-math.mjs` uses integer hundredths; pricing components own their
+formulas and layouts. Category helpers share behavior, not a page-wide visual
+template. Invalid numbers never yield a charge, balances cannot overspend,
+non-consumable purchase is idempotent, and each completed ad attempt grants
+exactly one hint. Local reset is not a real purchase cancellation/restoration.
+
+The normal sequence remains check → build → thumbnails → rebuild → unit/output
+checks → browser tests. Use the first-capture exception only for absent PNGs.
+Retain local published status only after all gates pass. See
+`tests/monetization.test.mjs` and `tests/browser/monetization.spec.ts`.

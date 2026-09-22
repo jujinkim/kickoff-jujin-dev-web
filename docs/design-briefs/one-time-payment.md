@@ -1,0 +1,24 @@
+# One-time payment visualization brief
+
+- Stable ID, leaf category, English/Korean/Japanese titles: `one-time-payment`; `billing`; One-time payment / 일회성 결제 / 買い切り.
+- Definition (one sentence): One-time payment charges once for a specified purchase. The entitlement must separately define access, support and upgrades; one payment does not promise a lifetime hosted service.
+- Closest concept and concrete difference: same-category peers subscription, usage-based, prepaid-credits; One charge. Cross-category combinations are related reading, not comparison peers.
+- Distinguishing visual features (structure, material, typography): Three-month timeline with charge and usage on each month. Solid surfaces and text/number labels; color is not the only encoding.
+- Shared comparison category: [billing](../catalog-writing/groups/billing.md).
+- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: The same export tool over three months: 100, 300, 600 exports. One-time 30; subscription 12/month; metered 0.02/export; prepaid starts at 1,000 credits and consumes 1/export.
+- Visual variable changed; concept-specific extra controls and their justification: Three-month timeline with charge and usage on each month. Static mode has no controls, scripts, artificial focus stops or mount dependency.
+- Fictional scenario and why it demonstrates the definition: A fictional export tool charges 30 in month one and zero in months two and three: total 30. The shared usage is 100, 300 and 600 exports. Here the license covers that example; taxes, fees and refunds are omitted. The timeline separates charges from usage.
+- Representative action and observable result: Read the numbered relationships/table in source order. A fictional export tool charges 30 in month one and zero in months two and three: total 30. The shared usage is 100, 300 and 600 exports. Here the license covers that example; taxes, fees and refunds are omitted. The timeline separates charges from usage.
+- Initial state: Three-month timeline with charge and usage on each month.
+- Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
+- Reset and reload behavior: No mutable state or reset control.
+- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
+- Keyboard order, focus, accessible names, live feedback: No artificial tab stops. Semantic lists, tables and visible descriptions work without JavaScript.
+- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
+- JavaScript-disabled initial screen and explanation: Full static diagram; no interaction instruction or noscript warning.
+- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
+- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
+- Capture selector and initial content: `[data-demo="one-time-payment"]`; mode `static`; 1440px light surroundings in en/ko/ja; initial state above.
+- Source URLs, inspected date, claims each source supports: https://docs.stripe.com/payments/checkout; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
+- Comparison summaries: features: One charge; advantages: Clear purchase amount; limitations: Future service terms needed; suitable: Bounded deliverables; combinations: Non-consumable entitlement.
+- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/one-time-payment-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).

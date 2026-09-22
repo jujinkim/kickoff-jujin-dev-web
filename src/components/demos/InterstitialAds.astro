@@ -1,0 +1,67 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section data-demo="interstitial-ads" data-money lang={lang}>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Interstitial ads", "전면 광고", "インタースティシャル広告")}</h2>
+  </header>
+  <p>{m.puzzle}</p>
+  <ol class="screens">
+    <li>{t("1 · Level complete", "1 · 레벨 완료", "1 · レベル完了")}</li>
+    <li class="ad">
+      <strong>
+        {t("2 · Full-screen advertisement", "2 · 전면 광고", "2 · 全画面広告")}
+      </strong>
+      <p>
+        {t("Close ad → continue", "광고 닫기 → 계속", "広告を閉じる → 続行")}
+      </p>
+    </li>
+    <li>{t("3 · Next level", "3 · 다음 레벨", "3 · 次のレベル")}</li>
+  </ol>
+  <p>
+    {t(
+      "Sequence diagram. Close is a label, not a control. No ad request or reward; timing and revenue omitted.",
+      "순서 도식입니다. 닫기는 설명 문구이며 조작 버튼이 아닙니다. 실제 광고·보상은 없고 노출 시점·수익은 생략했습니다.",
+      "順序の図です。閉じるは説明文で操作ボタンではありません。実際の広告・報酬はなく、表示時期と収益は省略しています。",
+    )}
+  </p>
+</section>
+<style>
+  .screens {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+  .screens li {
+    border: 2px solid #567a73;
+    border-radius: 12px;
+    padding: 1.3rem 0.8rem;
+    min-height: 170px;
+    background: #fff;
+  }
+  .screens .ad {
+    border: 3px dashed #956122;
+    background: #faecd5;
+  }
+  @container (max-width:520px) {
+    .screens {
+      grid-template-columns: 1fr;
+    }
+    .screens li {
+      min-height: 80px;
+    }
+  }
+</style>

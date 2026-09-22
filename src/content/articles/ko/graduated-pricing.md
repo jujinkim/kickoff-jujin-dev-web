@@ -1,0 +1,46 @@
+---
+kind: "concept"
+articleId: "graduated-pricing"
+lang: "ko"
+title: "구간별 누진 단가"
+summary: "각 구간의 사용량을 따로 계산해 더합니다."
+category: "pricing-models"
+aliases: ["구간별 누진 단가", "Graduated pricing"]
+related:
+  [
+    "revenue",
+    "flat-rate-pricing",
+    "per-seat-pricing",
+    "feature-tiered-pricing",
+    "volume-pricing",
+    "base-plus-overage",
+    "usage-based",
+  ]
+status: "published"
+revision: 1
+sourceRevision: 1
+updated: "2026-09-22"
+checked: "2026-09-22"
+comparison:
+  {
+    "features": "구간별 계산 후 합산",
+    "advantages": "이전 단위의 가격 유지",
+    "limitations": "계산 설명이 더 필요",
+    "suitable": "단계적인 사용량 할인",
+    "combinations": "사용량 측정과 구독",
+  }
+---
+
+## 개념
+
+구간별 누진 단가는 각 구간의 사용량을 해당 단가로 계산한 뒤 합산합니다. 더 저렴한 구간에 도달해도 이전 단위의 가격은 바뀌지 않습니다.
+
+## 예시
+
+가상 작업 공간은 3좌석·월 120회 내보내기를 사용합니다. 처음 100회는 회당 0.20, 이후는 0.10입니다. 따라서 100 × 0.20 + 20 × 0.10 = 22입니다. 사용량을 바꾸면 100회는 20, 101회는 20.10, 0회는 0입니다. 세금·수수료·환불·구간 고정료는 생략했습니다.
+
+## 추천 조건
+
+추가 수량에 단계적으로 할인할 때 적합합니다. 같은 경계로 전체 수량 구간 단가와 비교하세요.
+
+[출처](https://docs.stripe.com/subscriptions/pricing-models/tiered-pricing)

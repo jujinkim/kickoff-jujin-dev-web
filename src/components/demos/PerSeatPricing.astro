@@ -1,0 +1,102 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section
+  data-demo="per-seat-pricing"
+  data-money
+  lang={lang}
+  data-reset-message={m.resetMessage}
+>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Per-seat pricing", "좌석 과금", "席数課金")}</h2>
+  </header>
+  <p>{m.baseline}</p>
+  <div class="seat-plan">
+    <div class="licenses">
+      <p>
+        {t("8 per licensed seat / month", "월 이용 좌석당 8", "月額1席あたり8")}
+      </p>
+      <label>
+        {m.seats}
+        <input
+          type="number"
+          min="0"
+          max="10000"
+          step="1"
+          value="3"
+          data-quantity
+          data-interactive
+          disabled
+        />
+      </label>
+      <div class="controls">
+        <button type="button" data-less data-interactive disabled>
+          {t("Remove one", "1 감소", "1減らす")}
+        </button>
+        <button type="button" data-more data-interactive disabled>
+          {t("Add one", "1 추가", "1増やす")}
+        </button>
+      </div>
+    </div>
+    <div class="result">
+      <span>{m.total}</span>
+      <output data-total>24.00</output>
+      <p data-formula>3 × 8.00 = 24.00</p>
+    </div>
+  </div>
+  <p>
+    {t(
+      "Exports do not change this price. Proration omitted.",
+      "내보내기 횟수는 가격에 영향을 주지 않습니다. 일할 계산은 생략했습니다.",
+      "出力回数は価格に影響しません。日割りは省略しています。",
+    )}
+  </p>
+  <p class="assumptions">{m.omitted}</p>
+  <div class="controls">
+    <button type="button" data-reset data-interactive disabled>
+      {m.reset}
+    </button>
+  </div>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountPricing } from "./monetization-pricing";
+  mountPricing("per-seat-pricing", 3);
+</script>
+<style>
+  .seat-plan {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .licenses {
+    border: 2px solid #52766e;
+    padding: 1rem;
+    background: #fff;
+  }
+  @container (max-width:480px) {
+    .seat-plan {
+      grid-template-columns: 1fr;
+    }
+  }
+  .result {
+    background: #e1ece8;
+    border: 2px solid #52766e;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .result p {
+    margin-bottom: 0;
+  }
+</style>

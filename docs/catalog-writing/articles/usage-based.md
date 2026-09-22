@@ -1,3 +1,5 @@
+> Current implementation (2026-09-22): [visualization brief](../../design-briefs/usage-based.md), [source refresh](../monetization-sources.md), [release review](../../monetization-review.md). Historical long-form outline below is research; current articles use three short sections.
+
 # Usage-based billing / 사용량 기반 과금 / 従量課金
 
 Writing design only. ID: `usage-based` · Group: [billing](../groups/billing.md) · Queue order: 1802 · Checked: 2026-09-21.

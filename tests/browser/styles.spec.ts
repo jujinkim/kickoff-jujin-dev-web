@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 import {
   designRegistry as registry,
   platformCategories,
+  monetizationCategories,
 } from "../../scripts/design-registry.mjs";
 import { readArticles } from "../../scripts/validate-content.mjs";
 import { mkdirSync } from "node:fs";
@@ -10,6 +11,11 @@ const articles = readArticles();
 const platformIds = new Set(
   articles
     .filter((a) => platformCategories.includes(a.data.category))
+    .map((a) => a.data.articleId),
+);
+const moneyIds = new Set(
+  articles
+    .filter((a) => monetizationCategories.includes(a.data.category))
     .map((a) => a.data.articleId),
 );
 const styleIds = ids.filter((id) =>
@@ -44,15 +50,17 @@ for (const lang of languages) {
   test(`${lang}: designs reflow in both themes and retain keyboard reset`, async ({
     page,
   }) => {
-    test.setTimeout(180_000);
+    test.setTimeout(300_000);
     const errors: string[] = [];
     page.on("pageerror", (e) => errors.push(e.message));
     mkdirSync("artifacts/design-demos", { recursive: true });
     mkdirSync("artifacts/platform-demos", { recursive: true });
+    mkdirSync("artifacts/monetization-demos", { recursive: true });
     for (const id of ids) {
       await page.goto(`/${lang}/catalog/${id}/`);
       const root = page.locator(`[data-demo="${id}"]`);
-      await expect(root).toHaveAttribute("data-ready", "true");
+      if (registry[id].mode === "static") await expect(root).toBeVisible();
+      else await expect(root).toHaveAttribute("data-ready", "true");
       await page.evaluate(() => document.fonts.ready);
       for (const width of [320, 768, 1440]) {
         await page.setViewportSize({ width, height: 1000 });
@@ -78,7 +86,7 @@ for (const lang of languages) {
             await root.evaluate((el) => el.scrollWidth <= el.clientWidth + 2),
             `${id} internal overflow`,
           ).toBeTruthy();
-          if (platformIds.has(id)) {
+          if (platformIds.has(id) || moneyIds.has(id)) {
             const contrast = await root.evaluate((el) => {
               const luminance = (color: string) => {
                 const rgb = color
@@ -122,12 +130,26 @@ for (const lang of languages) {
               path: `artifacts/design-demos/${id}-${width}.png`,
               style: ".skip-link { visibility: hidden !important; }",
             });
+          if (moneyIds.has(id))
+            await root.screenshot({
+              path: `artifacts/monetization-demos/${id}-${lang}-${width}-${theme}.png`,
+              style: ".skip-link { visibility: hidden !important; }",
+            });
           if (platformIds.has(id))
             await root.screenshot({
               path: `artifacts/platform-demos/${id}-${lang}-${width}-${theme}.png`,
               style: ".skip-link { visibility: hidden !important; }",
             });
         }
+      }
+      if (registry[id].mode === "static") {
+        await expect(root.locator("button, input, [data-reset]")).toHaveCount(
+          0,
+        );
+        await expect(
+          page.locator(".design-demo .demo-note, .design-demo noscript"),
+        ).toHaveCount(0);
+        continue;
       }
       const first = root.locator("[data-interactive]").first();
       await first.focus();
@@ -175,8 +197,16 @@ for (const lang of languages) {
     for (const id of ids) {
       await page.goto(`${baseURL}/${lang}/catalog/${id}/`);
       await expect(page.locator(`[data-demo="${id}"]`)).toBeVisible();
-      await expect(page.locator(".design-demo noscript")).toBeVisible();
-      await expect(page.locator("[data-reset]")).toBeDisabled();
+      if (registry[id].mode === "static") {
+        await expect(
+          page.locator(".design-demo noscript, [data-reset]"),
+        ).toHaveCount(0);
+      } else {
+        await expect(page.locator(".design-demo noscript")).toBeVisible();
+        await expect(page.locator("[data-reset]")).toBeDisabled();
+        for (const control of await page.locator("[data-interactive]").all())
+          await expect(control).toBeDisabled();
+      }
       await expect(page.locator("article.prose h2")).toHaveCount(3);
       for (const width of [320, 768, 1440]) {
         await page.setViewportSize({ width, height: 900 });

@@ -1,0 +1,127 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+import { moneyText } from "./monetization";
+import "./monetization-controls.css";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang),
+  m = moneyText(lang);
+---
+
+<section
+  data-demo="free-trial"
+  data-money
+  lang={lang}
+  data-reset-message={m.resetMessage}
+>
+  <header>
+    <p class="eyebrow">{m.fiction}</p>
+    <h2>{t("Free trial", "무료 체험", "無料トライアル")}</h2>
+  </header>
+  <p>
+    {t(
+      "Notebook · editing and PDF export · shared three-day clock",
+      "노트 앱 · 편집과 PDF 내보내기 · 공통 3일 시계",
+      "ノートアプリ · 編集とPDF出力 · 共通の3日間の時計",
+    )}
+  </p>
+  <div class="trial">
+    <h3>{t("Three-day evaluation", "3일 평가", "3日間の評価")}</h3>
+    <div class="clock">
+      <span>
+        {m.day}: <b data-day>0</b> / 3
+      </span>
+      <button type="button" data-day-next data-interactive disabled>
+        {t("Advance one day", "하루 진행", "1日進める")}
+      </button>
+    </div>
+    <p data-plan>{t("Trial active", "체험 중", "体験中")}</p>
+  </div>
+  <div class="features">
+    <div>
+      <h3>{t("Editing", "편집", "編集")}</h3>
+      <strong data-edit-access>{m.available}</strong>
+    </div>
+    <div>
+      <h3>PDF</h3>
+      <strong data-export-access>{m.available}</strong>
+    </div>
+  </div>
+  <div class="controls">
+    <button type="button" data-edit data-interactive disabled>
+      {t("Edit a note", "노트 편집", "ノートを編集")}
+    </button>
+    <button type="button" data-export data-interactive disabled>
+      {t("Export PDF", "PDF 내보내기", "PDF出力")}
+    </button>
+  </div>
+  <p>
+    {t("Completed actions", "완료 동작", "完了した操作")}: <b data-actions>0</b>
+  </p>
+  <div class="controls">
+    <button type="button" data-upgrade data-interactive disabled>
+      {t(
+        "Choose paid access (simulated)",
+        "유료 이용 선택 (가상)",
+        "有料利用を選ぶ（仮）",
+      )}
+    </button>
+  </div>
+  <p>
+    {t(
+      "Day three locks both features. Only explicit paid choice restores access; no automatic charge or payment method.",
+      "3일째 두 기능이 잠깁니다. 명시적 유료 선택으로만 복원되며 자동 청구나 결제 수단은 없습니다.",
+      "3日目に両機能をロックします。明示的な有料選択でのみ復元し、自動請求や決済手段はありません。",
+    )}
+  </p>
+  <p class="assumptions">
+    {t(
+      "Prices, taxes, fees and refunds omitted.",
+      "가격·세금·수수료·환불은 생략했습니다.",
+      "価格・税金・手数料・返金は省略しています。",
+    )}
+  </p>
+  <div class="controls">
+    <button type="button" data-reset data-interactive disabled>
+      {m.reset}
+    </button>
+  </div>
+  <p role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  import { mountAccess } from "./monetization-access";
+  mountAccess("free-trial", true);
+</script>
+<style>
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .features > div {
+    background: #fff;
+    padding: 1rem;
+    border: 2px solid #52766e;
+  }
+  .clock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  .trial {
+    border-left: 5px solid #956122;
+    background: #faecd5;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  @container (max-width:350px) {
+    .features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

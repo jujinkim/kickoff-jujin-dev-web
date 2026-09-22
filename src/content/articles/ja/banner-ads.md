@@ -1,0 +1,37 @@
+---
+kind: "concept"
+articleId: "banner-ads"
+lang: "ja"
+title: "バナー広告"
+summary: "主な内容の隣に区別した広告領域を置きます。"
+category: "ad-formats"
+aliases: ["バナー広告", "Banner ads"]
+related: ["revenue", "interstitial-ads", "rewarded-ads", "advertising"]
+status: "published"
+revision: 1
+sourceRevision: 1
+updated: "2026-09-22"
+checked: "2026-09-22"
+comparison:
+  {
+    "features": "画面の一部に配置",
+    "advantages": "本文が見え続ける",
+    "limitations": "限られた画面領域を使用",
+    "suitable": "広告領域を確保した画面",
+    "combinations": "広告収益",
+  }
+---
+
+## 概念
+
+バナー広告はアプリの本文が見える間、限定した領域を占めます。形式は配置を表し、収益水準やターゲティング方法を保証しません。
+
+## 実例
+
+架空のパズルアプリは盤面の下に広告と明記したバナーを置き、ゲーム操作部と分けます。静的な図はプレイ領域を覆わずに残します。実際の広告リクエストも報酬もありません。広告サイズ・配信率・収益・ネットワーク費用はこの例では扱いません。
+
+## 選ぶ条件
+
+確保した広告領域が画面に合う場合に適します。操作部を明確に分け、インタースティシャルによる中断と比較します。
+
+[出典](https://support.google.com/admob/answer/6128738?hl=en)
