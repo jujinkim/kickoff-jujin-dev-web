@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -34,6 +34,8 @@ checked: "2026-09-22"
 ---
 
 ## Why: the goal or problem
+
+Imagine making a daily-stretch tracker. People mark each stretch as done on a calm screen and need to tell which control they have pressed.
 
 A daily-stretch tracker needs a clear pressed state on one quiet surface. Flat color changes alone do not express that desired material impression.
 

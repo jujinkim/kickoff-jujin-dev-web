@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["クリーンアーキテクチャ"]
 related: ["architecture", "layered-architecture", "hexagonal-architecture"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## なぜ必要なのか
 
-家計簿ガイドの保存規則は画面やDBが替わっても残したいものですが、直接参照すると方針まで結び付いてしまいます。
+役立つページを保存できる家計予算ガイドを作るとします。保存規則から画面とDBを直接参照すると、どちらかの変更が規則にも広がります。
 
 ## どう解決するのか
 

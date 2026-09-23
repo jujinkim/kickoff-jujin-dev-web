@@ -12,8 +12,8 @@ related:
   - flat-design
   - neobrutalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: 색면·다양한 곡률·큰 조작부·짧은 형태 반응을 사용합니다.
@@ -25,6 +25,8 @@ checked: "2026-09-22"
 ---
 
 ## 왜 필요한가
+
+동네 소풍 준비 앱을 만든다고 가정해 봅시다. 이웃은 모임 장소와 음식 담당을 확인하고 다음에 할 일을 찾아야 합니다.
 
 동네 소풍 준비 화면에서는 다음 할 일을 바로 찾아야 합니다.
 

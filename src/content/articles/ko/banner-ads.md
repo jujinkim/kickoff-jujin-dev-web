@@ -8,8 +8,8 @@ category: "ad-formats"
 aliases: ["배너 광고", "Banner ads"]
 related: ["revenue", "interstitial-ads", "rewarded-ads", "advertising"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+휴대전화로 즐기는 숫자 퍼즐을 만든다고 가정해 봅시다. 플레이어는 보드를 보고 숫자를 고르며 진행 상태를 확인해야 합니다.
 
 숫자 퍼즐은 광고가 옆에 보이더라도 보드와 조작부를 가리지 않아야 합니다.
 

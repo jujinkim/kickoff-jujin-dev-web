@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: 鮮やかな色面、太い枠、硬いオフセット影で強調します。 太い枠と硬い影でパネルを強調します。
@@ -29,6 +29,8 @@ checked: "2026-09-21"
 ---
 
 ## なぜ必要なのか
+
+多くの出店が並ぶ学校祭の案内板を作るとします。家族はたくさんの告知から、食べ物、遊び、集合場所を探します。
 
 学校祭の掲示板では多くの出店をはっきり区切る必要があります。わずかな面の違いだけでは強調が足りない場合があります。
 

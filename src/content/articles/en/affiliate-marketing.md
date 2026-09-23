@@ -15,8 +15,8 @@ related:
     "transaction-fees",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,7 +31,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A hiking book guide helps readers choose a book, but sending them to a shop brings the guide no direct sale.
+Imagine a hiking-book guide with reviews and shop links. Readers can buy elsewhere, but those referrals do not automatically fund the guide.
 
 ## How: work toward a solution
 

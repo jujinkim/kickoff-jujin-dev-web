@@ -12,8 +12,8 @@ related:
   - astro
   - jekyll
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+小さな町の観光ガイドを作るとします。散歩道、見どころ、営業時間の記事があり、訪問者はページ間を移動できます。
 
 町の観光案内では同じ案内を多くのページに載せるため、各ファイルへ複製すると更新が遅くなります。
 

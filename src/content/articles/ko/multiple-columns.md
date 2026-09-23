@@ -12,8 +12,8 @@ related:
   - single-column
   - two-columns
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 세 개 이상의 영역으로 탐색·작업·맥락을 가까이 둡니다.
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+박물관 방문 화면을 만든다고 가정해 봅시다. 방문자는 동선과 전시 목록, 설명을 함께 보며 다음에 볼 것을 고릅니다.
 
 작업하면서 탐색과 참고 정보를 함께 봐야 합니다. 별도 화면을 계속 오가면 비교와 작업 흐름이 끊깁니다.
 

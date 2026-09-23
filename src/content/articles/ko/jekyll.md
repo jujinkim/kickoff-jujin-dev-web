@@ -12,8 +12,8 @@ related:
   - astro
   - hugo
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+가족 요리법 보관 사이트를 만든다고 가정해 봅시다. 가족은 재료와 조리법을 올리고, 모든 페이지에는 같은 머리말과 탐색 메뉴가 있습니다.
 
 가족 요리법 보관함에 새 글을 자주 더하는데 매번 페이지 전체를 복사하면 공통 틀 수정이 번거롭습니다.
 

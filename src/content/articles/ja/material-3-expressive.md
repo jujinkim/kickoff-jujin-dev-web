@@ -12,8 +12,8 @@ related:
   - flat-design
   - neobrutalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: 色面・多様な曲率・大きな操作部・短い形の反応を使います。
@@ -25,6 +25,8 @@ checked: "2026-09-22"
 ---
 
 ## なぜ必要なのか
+
+地域のピクニック準備アプリを作るとします。近所の人は集合場所と食べ物の担当を確かめ、次の作業を探します。
 
 ピクニックの準備画面では次の作業をすぐ見つけたいものです。読む順序とラベルの分かりやすさを保ちながら、強調を付けたい場面です。
 

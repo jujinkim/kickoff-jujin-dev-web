@@ -15,8 +15,8 @@ related:
     "consumable-purchase",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+막힐 때 힌트를 요청할 수 있는 언어 퀴즈를 만든다고 가정해 봅시다. 플레이어는 힌트를 얻기 위해 잠시 멈출지 스스로 결정하고 싶어 합니다.
 
 언어 퀴즈의 힌트를 원해도 결제나 강제 광고 시청을 원하지 않는 이용자가 있습니다.
 

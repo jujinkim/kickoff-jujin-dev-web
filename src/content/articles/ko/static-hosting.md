@@ -12,8 +12,8 @@ related:
   - always-on-server
   - serverless-functions
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## 왜 필요한가
 
-동네 소식지는 모두에게 같은 글을 보여주므로 읽기마다 코드를 실행하면 화면 변화 없이 운영 부담만 늘어납니다.
+글과 저장 버튼이 있는 동네 소식지 사이트를 만든다고 가정해 봅시다. 모두 같은 글을 읽으므로 읽기마다 코드를 실행하면 운영 일만 늘어납니다.
 
 ## 어떻게 해결하는가
 

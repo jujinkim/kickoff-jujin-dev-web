@@ -8,8 +8,8 @@ category: "seller-responsibility"
 aliases: ["직접 판매자 모델", "Direct seller model"]
 related: ["payments", "merchant-of-record", "direct-payment"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+자체 사이트에서 짧은 언어 강좌 이용권을 판다고 가정해 봅시다. 학습자는 강좌를 골라 결제하고, 맞지 않으면 환불 담당자를 찾아야 합니다.
 
 언어 학습 이용권 판매자는 영수증에 자기 이름을 쓰고 싶지만 결제 처리 업체를 쓰면 환불 담당자가 모호해질 수 있습니다.
 

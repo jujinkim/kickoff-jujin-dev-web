@@ -12,8 +12,8 @@ related:
   - serif
   - script
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: サンセリフはセリフの飾りを省きますが、端の形や比率はさまざまです。
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+交通案内の画面を作るとします。乗客は急ぎながら少し離れた場所から路線名と時刻を読み取ります。
 
 画面には末端の装飾を抑えた文字を使いたい。分類名だけで選ぶと、似た字を見分けにくい場合があります。
 

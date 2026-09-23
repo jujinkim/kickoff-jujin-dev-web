@@ -16,8 +16,8 @@ related:
     "banner-ads",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,6 +31,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+誰でも読める料理ブログを作るとします。各レシピに材料、手順、写真を載せ、新しい記事も出し続けます。
 
 料理ブログはレシピを無料公開したいものの、編集と配信には費用がかかります。
 

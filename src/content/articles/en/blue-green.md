@@ -12,8 +12,8 @@ related:
   - rolling
   - canary
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-An online store must check a replacement before moving checkout traffic. You need to verify a replacement before routing users to it.
+Imagine a shop where customers check out all day. A replacement order flow needs testing before shoppers use it.
 
 ## How: work toward a solution
 

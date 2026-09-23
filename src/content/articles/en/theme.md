@@ -20,13 +20,15 @@ aliases:
 related: ["layout", "architecture"]
 example: "theme"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "Audit our colors, typography, and spacing. Propose semantic tokens and font fallbacks for English, Korean, and Japanese. Show light/dark examples and contrast measurements. Ask me to choose unresolved visual directions before applying them. Preserve keyboard focus and saved theme preference."
 ---
 
 ## Why: the goal or problem
+
+Imagine running a community event site with articles, cards, and signup buttons. Organizers want the same brand colors and readable text on light and dark screens.
 
 Changing a brand color should not mean hunting through dozens of components. Yet independent color and spacing choices drift, while a dark background can leave old text colors unreadable. You need shared visual decisions that preserve each element's role and can be checked in the actual combinations users will see.
 

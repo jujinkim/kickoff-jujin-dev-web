@@ -11,8 +11,8 @@ related:
   - theme
   - proportional
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 等幅ラテン文字は輪郭が違っても送り幅を共有します。
@@ -24,7 +24,7 @@ comparison:
 
 ## なぜ必要なのか
 
-コードや文字だけの表では位置をそろえたい。ラテン文字の幅が異なると、列がずれてしまいます。
+天気の記録を文字だけの表で示す画面を作るとします。測定値を列で比べる際、ラテン文字の幅が異なると位置がずれます。
 
 ## どう解決するのか
 

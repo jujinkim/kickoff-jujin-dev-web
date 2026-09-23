@@ -12,8 +12,8 @@ related:
   - react
   - vue
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+バス時刻表と登山ルートがある旅行計画アプリを作るとします。旅行者は二つのカードを比べ、表示後に片方の選択を変えます。
 
 旅行計画にはバス時刻表と登山ルートがあり、表示後のクリックでは該当カードだけ更新したいものです。
 

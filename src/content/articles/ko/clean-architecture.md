@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["클린 아키텍처"]
 related: ["architecture", "layered-architecture", "hexagonal-architecture"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## 왜 필요한가
 
-가계부 안내의 저장 규칙은 화면이나 데이터베이스가 바뀌어도 유지되어야 하지만 직접 참조하면 정책까지 묶입니다.
+필요한 글을 저장하는 가계 예산 안내 앱을 만든다고 가정해 봅시다. 저장 규칙이 화면과 데이터베이스를 직접 참조하면 한쪽의 변경이 규칙에도 번집니다.
 
 ## 어떻게 해결하는가
 

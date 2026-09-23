@@ -8,8 +8,8 @@ category: "service-split"
 aliases: ["モジュラーモノリス"]
 related: ["architecture", "monolith", "microservices"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## なぜ必要なのか
 
-登山ガイドの資料タグ変更はその機能の中に収めたいものの、小さなチームに複数サービスの運用は重い仕事です。
+登山ルートと資料を扱うガイドを作るとします。資料タグの変更は局所化したいものの、小さなチームに複数サービスの運用は重すぎます。
 
 ## どう解決するのか
 

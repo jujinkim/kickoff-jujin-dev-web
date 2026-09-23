@@ -16,8 +16,8 @@ related:
     "merchant-of-record",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,6 +31,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+作り手が品物を出し、買い手が注文する手作り品の市場を作るとします。よく売る作り手も、何週間も売れない作り手もいます。
 
 手作り品の市場は作り手と買い手をつなぎますが、固定料金では売れない日にも費用が発生します。
 

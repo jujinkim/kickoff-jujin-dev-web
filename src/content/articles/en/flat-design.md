@@ -16,8 +16,8 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -34,7 +34,7 @@ checked: "2026-09-21"
 
 ## Why: the goal or problem
 
-A clinic booking screen needs clear actions without decorative shadows. You want clear groups and controls with fewer visual layers.
+Imagine a clinic visit planner showing appointment tasks and notes. Patients need to recognize actions clearly without decorative shadows.
 
 ## How: work toward a solution
 

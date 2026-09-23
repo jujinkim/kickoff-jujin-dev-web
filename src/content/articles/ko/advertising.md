@@ -16,8 +16,8 @@ related:
     "banner-ads",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,6 +31,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+누구나 읽을 수 있는 요리 블로그를 만든다고 가정해 봅시다. 레시피마다 재료와 조리 순서, 사진을 담고 새 글도 계속 올려야 합니다.
 
 요리 블로그는 레시피를 무료로 공개하고 싶지만 편집과 호스팅에는 비용이 듭니다.
 

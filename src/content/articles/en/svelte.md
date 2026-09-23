@@ -12,8 +12,8 @@ related:
   - react
   - vue
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A trip planner shows a bus timetable and hiking route; clicks should update the right card after the page loads.
+Imagine a trip planner with bus and hiking cards. A click should update the chosen card without hand-editing both.
 
 ## How: work toward a solution
 

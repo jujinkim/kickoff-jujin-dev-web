@@ -12,8 +12,8 @@ related:
   - glassmorphism
   - flat-design
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: 부유 캡슐·반사 가장자리·확장 도구로 탐색층을 콘텐츠와 구분합니다.
@@ -25,6 +25,8 @@ checked: "2026-09-22"
 ---
 
 ## 왜 필요한가
+
+바닷가 사진 일기를 만든다고 가정해 봅시다. 독자는 큰 사진과 일기 글 사이를 이동하며 사진 위의 탐색 메뉴도 써야 합니다.
 
 해변 사진 일기에서는 큰 사진 위에도 탐색이 보여야 합니다.
 

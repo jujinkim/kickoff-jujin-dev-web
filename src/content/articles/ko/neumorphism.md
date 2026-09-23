@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -31,6 +31,8 @@ checked: "2026-09-22"
 ---
 
 ## 왜 필요한가
+
+매일 하는 스트레칭 기록 화면을 만든다고 가정해 봅시다. 이용자는 차분한 화면에서 동작을 완료로 표시하고 방금 누른 조작부를 알아봐야 합니다.
 
 스트레칭 기록 화면에는 차분한 바탕 위에서도 누른 상태가 보여야 합니다.
 

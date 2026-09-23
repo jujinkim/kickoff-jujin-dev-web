@@ -12,8 +12,8 @@ related:
   - always-on-server
   - serverless-functions
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## なぜ必要なのか
 
-地域の便りは誰にも同じ記事を見せるため、閲覧ごとにコードを動かしてもページは変わらず運用だけ増えます。
+記事と保存ボタンがある地域の便りサイトを作るとします。誰もが同じ記事を読むため、閲覧ごとにコードを動かすと運用の仕事が増えます。
 
 ## どう解決するのか
 

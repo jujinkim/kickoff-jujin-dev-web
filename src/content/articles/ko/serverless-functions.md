@@ -12,8 +12,8 @@ related:
   - static-hosting
   - always-on-server
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+주로 일정 글을 보여주는 축제 안내 사이트를 만든다고 가정해 봅시다. 방문자가 가끔 행사를 개인 목록에 저장해 짧은 쓰기 요청이 생깁니다.
 
 축제 일정은 저장 요청이 가끔 들어오므로 상시 실행 앱은 하루 대부분을 대기합니다.
 

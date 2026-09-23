@@ -12,8 +12,8 @@ related:
   - vue
   - svelte
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A home planner shows Shopping List and Weekly Menu side by side; saving one must update its label and total without changing the other.
+Imagine a home planner with shopping and menu panels. Saving one item must update its label and total without disturbing the other panel.
 
 ## How: work toward a solution
 

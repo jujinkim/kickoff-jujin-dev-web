@@ -8,8 +8,8 @@ category: "service-split"
 aliases: ["Monolith"]
 related: ["architecture", "modular-monolith", "microservices"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A community cookbook has one small team and a shared release schedule; separate deployment pipelines for tags and billing would add coordination.
+Imagine a community cookbook with recipes, tags, and billing. One small team releases them together; separate pipelines add coordination.
 
 ## How: work toward a solution
 

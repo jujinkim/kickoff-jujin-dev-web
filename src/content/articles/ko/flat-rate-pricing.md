@@ -17,8 +17,8 @@ related:
     "subscription",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+가족용 식단 계획 앱을 만든다고 가정해 봅시다. 가족은 요리법을 살펴보고 필요한 만큼 주간 식단에 음식을 넣습니다.
 
 식단 계획 서비스를 쓰는 가족은 요리법을 하나 더 살펴보기 전에 월 청구액을 알고 싶습니다.
 

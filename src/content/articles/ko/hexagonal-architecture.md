@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["헥사고날 아키텍처"]
 related: ["architecture", "layered-architecture", "clean-architecture"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## 왜 필요한가
 
-수업 일정 저장 규칙을 시험할 때마다 웹 서버와 데이터베이스를 띄워야 한다면 검증이 느려집니다.
+교사가 수업 일정 글을 저장하는 안내 앱을 만든다고 가정해 봅시다. 저장 규칙을 시험할 때마다 웹 서버와 데이터베이스를 띄워야 하면 확인이 느려집니다.
 
 ## 어떻게 해결하는가
 

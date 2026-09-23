@@ -12,8 +12,8 @@ related:
   - list-layout
   - masonry
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: Equal-width cards align in shared rows.
@@ -25,7 +25,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A plant catalog must let readers compare many similar entries quickly. Inconsistent widths and positions make equal attributes harder to scan.
+Imagine a plant catalog with light and watering facts. Uneven card widths make the same facts hard to compare.
 
 ## How: work toward a solution
 

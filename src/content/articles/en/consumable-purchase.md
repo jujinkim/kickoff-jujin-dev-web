@@ -8,8 +8,8 @@ category: "purchase-types"
 aliases: ["Consumable purchase"]
 related: ["revenue", "non-consumable-purchase", "prepaid-credits", "freemium"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A crossword player uses one hint now and may need another later; an unlimited unlock would not track that spending.
+Imagine a crossword app offering hints while players solve clues. Each hint is spent; a permanent unlock misrepresents that choice.
 
 ## How: work toward a solution
 

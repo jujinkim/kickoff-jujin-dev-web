@@ -32,7 +32,7 @@ Use these three level-two sections, in order; guides may use level-three subsect
 | How  | How: work toward a solution | 어떻게 해결하는가 | どう解決するのか   |
 | What | What: the concept           | 무엇이라 부르는가 | どんな考え方なのか |
 
-1. **Why:** answer **“Why is this technique needed?”** first. Show the concrete difficulty without it, the desired outcome, and why that difficulty calls for this approach. A generic goal disconnected from the technique is insufficient. Explain what the reader needs to improve before introducing terminology. “This exists, so try it” is not a motivation.
+1. **Why:** answer **“Why is this technique needed?”** first. Before the problem, introduce a familiar setting: what the example app, page, or service is for, who uses it, and which ordinary actions they need. Then show a specific action going wrong or becoming difficult, the desired outcome, and why that difficulty calls for this approach. Do not start with an unexplained person, app name, or implementation detail. A generic goal disconnected from the technique is insufficient. Explain what the reader needs to improve before introducing terminology. “This exists, so try it” is not a motivation.
 2. **How:** connect that problem to a concrete approach. Show inputs, actions, observable results, failure handling, and a way to check success. Use the illustration or interactive demo here, after the problem is established. The text must work without the visual or JavaScript.
 3. **What:** name and define the approach just demonstrated. Explain its boundaries, costs, alternatives, and when to reconsider it. Avoid presenting a conditional option as a universal prescription.
 
@@ -40,6 +40,9 @@ Choose a distinct, familiar situation for each article, including siblings in
 the same comparison group. Keep the article's problem, worked result, visual,
 caption, comparison summary, and translations about that situation. Opaque
 fixture codes are not reader-facing examples; name the person, item, and action.
+When revising an opening, read the English Why and How together before translating:
+the setup should make the later worked example unsurprising. Preserve that
+setup, problem, and result in Korean and Japanese without padding short concepts.
 
 **Guides are practical walkthroughs, about 2–3 minutes each.** Expand the reasoning and method: a worked scenario, actionable steps, why those steps matter, a common mistake or failure case, and an observable completion check. Readers should know what to do next without having to learn internal implementation vocabulary. AI writes appropriate documentation and chooses internal details within agreed product behavior. Add useful detail, never repeated filler to meet a word count.
 

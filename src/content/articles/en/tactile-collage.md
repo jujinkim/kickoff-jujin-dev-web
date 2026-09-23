@@ -12,8 +12,8 @@ related:
   - skeuomorphism
   - neobrutalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: "Layered paper fragments, tape, irregular edges, and annotations."
@@ -26,7 +26,7 @@ checked: "2026-09-22"
 
 ## Why: the goal or problem
 
-A memory board should preserve the feel of assembled photos and tickets. Uniform digital panels may not express the intended handmade character.
+Imagine a memory board of trip photos and saved tickets. Uniform panels lose the feel of keepsakes placed by hand.
 
 ## How: work toward a solution
 

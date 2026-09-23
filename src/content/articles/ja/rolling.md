@@ -12,8 +12,8 @@ related:
   - blue-green
   - canary
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+四つの実行中の複製で天気の通知サービスを運営するとします。通知形式の変更を公開する間も、登録者には知らせを届け続ける必要があります。
 
 天気の通知はレプリカ4個を更新する間も利用できる必要があります。旧版と新版が混在する時間を扱う方法が必要です。
 

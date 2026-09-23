@@ -9,14 +9,16 @@ aliases: ["Astro", "Hugo", "Jekyll", "SSG", "정적 사이트", "静的サイト
 related: ["tools", "shipping", "adr"]
 example: "generators"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "確定した執筆手順に対してAstro・Hugo・Jekyllを比較して。多言語、実例、検索、配信の方法と保守費用、公式資料を示して。構成変更前に推薦の採用・却下・別候補を質問して。"
 checked: "2026-09-23"
 ---
 
 ## なぜ必要なのか
+
+何十本もの記事がある公開ガイドを作るとします。各記事には安定したアドレス、言語へのリンク、共通の案内が必要で、編集者は新しいページを加え続けます。
 
 公開サイトに一貫した記事を増やしたいのに、HTML全体を複製すると共通の修正が遅くなり漏れも出ます。多くの訪問者に同じ内容を返すためだけにサーバーを動かすと運用も増えます。ページを再現可能な手順で準備し、必要な操作を別に追加する方法が必要です。
 

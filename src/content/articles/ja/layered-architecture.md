@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["レイヤードアーキテクチャ"]
 related: ["architecture", "hexagonal-architecture", "clean-architecture"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## なぜ必要なのか
 
-ジュンが図書館案内から貸出ルールを保存します。画面が検証と保存を直接担うと、CLIを加える際に検証を複製し、保存先を替える際に画面も直すことになります。
+貸出ルールを読んで保存する図書館アプリを作るとします。画面が検証と保存を直に担うと、CLI追加時に規則が重複し、保存先の変更も画面に及びます。
 
 ## どう解決するのか
 

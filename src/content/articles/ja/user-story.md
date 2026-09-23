@@ -8,8 +8,8 @@ category: "requirements"
 aliases: ["ユーザーストーリー", "User story"]
 related: ["srs", "use-case", "job-story"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+短い地域ガイドを読むアプリを作るとします。通勤者は行きの電車で記事を読み、後から最初から探さずに見つけたいものです。
 
 通勤者は朝の散歩の記事を後で探したいものの、読書リスト全体では一度に確認する範囲が広すぎます。
 

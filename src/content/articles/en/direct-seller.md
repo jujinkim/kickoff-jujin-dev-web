@@ -8,8 +8,8 @@ category: "seller-responsibility"
 aliases: ["Direct seller model"]
 related: ["payments", "merchant-of-record", "direct-payment"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A language lesson business wants its own name on the receipt, but using a payment processor can obscure who handles refunds.
+Imagine selling language lessons through your own site. Buyers pay and may request refunds, but a processor can obscure who handles them.
 
 ## How: work toward a solution
 

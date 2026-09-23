@@ -12,8 +12,8 @@ related:
   - skeuomorphism
   - neobrutalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: 종이 조각·테이프·불규칙한 가장자리·주석을 겹칩니다.
@@ -25,6 +25,8 @@ checked: "2026-09-22"
 ---
 
 ## 왜 필요한가
+
+여행 사진과 모아 둔 표로 추억 보드를 만든다고 가정해 봅시다. 친구는 여러 조각을 함께 보며 손으로 모은 기념물처럼 느끼고 싶어 합니다.
 
 추억 보드는 사진과 표를 손으로 모은 느낌을 살리고 싶습니다.
 

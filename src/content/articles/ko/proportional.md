@@ -11,8 +11,8 @@ related:
   - theme
   - monospace
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 비례폭 글자는 서로 다른 전진 폭을 씁니다.
@@ -24,7 +24,7 @@ comparison:
 
 ## 왜 필요한가
 
-긴 글을 글자 형태에 맞춰 자연스럽게 읽고 싶습니다. 좁은 글자와 넓은 글자에 같은 공간을 주면 간격이 어색해질 수 있습니다.
+긴 문단이 있는 정원 소식지를 만든다고 가정해 봅시다. 독자가 이어진 글을 읽을 때 좁고 넓은 글자에 같은 폭을 주면 간격이 어색해질 수 있습니다.
 
 ## 어떻게 해결하는가
 

@@ -12,8 +12,8 @@ related:
   - godot
   - unreal-engine
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## なぜ必要なのか
 
-博物館の迷路ゲームは複数の部屋で鍵を使い、一つずつ大きなスクリプトを書くと拾う動作が重複します。
+複数の部屋に鍵がある博物館の迷路ゲームを作るとします。鍵を拾うたびに得点を増やしながら、同じ動作を鍵ごとに複製したくはありません。
 
 ## どう解決するのか
 

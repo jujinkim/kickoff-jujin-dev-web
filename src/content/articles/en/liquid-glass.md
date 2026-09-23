@@ -12,8 +12,8 @@ related:
   - glassmorphism
   - flat-design
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -27,6 +27,8 @@ checked: "2026-09-22"
 ---
 
 ## Why: the goal or problem
+
+Imagine designing a coastal photo diary. Readers move among large photos and diary entries while keeping the navigation visible over the image.
 
 A coastal photo diary needs navigation above full-size photos. A distinct floating layer can help.
 

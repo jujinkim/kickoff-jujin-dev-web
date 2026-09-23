@@ -12,8 +12,8 @@ related:
   - list-layout
   - masonry
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 同じ幅のカードを共通の行に揃えます。
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+園芸を始める人向けの植物一覧を作るとします。各項目に写真、必要な日光、水やりのメモを示し、似た植物を比べられるようにします。
 
 植物カタログでは似た項目を素早く見比べたいものです。幅と位置がばらばらでは、同じ属性を見渡しにくくなります。
 

@@ -12,8 +12,8 @@ related:
   - sans-serif
   - script
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 세리프는 획 끝에 마무리 장식이 있습니다.
@@ -25,7 +25,7 @@ comparison:
 
 ## 왜 필요한가
 
-편집물 같은 인쇄물의 분위기를 만들고 싶습니다. 독자가 실제로 읽을 언어에서 획의 마감과 인상을 확인해야 합니다.
+인터뷰와 긴 글을 싣는 지역 역사 잡지를 만든다고 가정해 봅시다. 편집자는 인쇄물 같은 분위기를 원하지만 독자가 쓰는 언어도 읽기 쉬워야 합니다.
 
 ## 어떻게 해결하는가
 

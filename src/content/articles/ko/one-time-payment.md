@@ -15,8 +15,8 @@ related:
     "non-consumable-purchase",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+발표 자료를 내려받을 수 있는 슬라이드 파일로 바꾸는 도구를 만든다고 가정해 봅시다. 고객은 파일 하나를 올리고 결과물을 받으면 그 작업을 마칩니다.
 
 슬라이드 내보내기 도구는 정해진 결과물을 주므로 매달 같은 요금을 받는 근거가 약합니다.
 

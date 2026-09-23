@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: 반투명 패널 뒤로 흐려진 배경이 보입니다. 불투명 패널을 켜면 반투명 표면을 단색으로 바꿉니다.
@@ -30,9 +30,7 @@ checked: "2026-09-21"
 
 ## 왜 필요한가
 
-사진 산책 지도는 경로를 가리지 않고 사진 위에 조작부를 두어야 합니다.
-
-앞쪽 패널을 구분하면서 뒤의 맥락도 남기고 싶습니다. 불투명한 덩어리로 덮으면 배경 정보가 사라집니다.
+경로 사진과 할 일, 메모가 있는 산책 계획 화면을 만든다고 가정해 봅시다. 불투명한 조작부가 사진을 가리면 이용자가 장소의 맥락을 잃습니다.
 
 ## 어떻게 해결하는가
 

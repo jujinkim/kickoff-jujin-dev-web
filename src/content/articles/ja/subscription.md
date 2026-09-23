@@ -15,8 +15,8 @@ related:
     "flat-rate-pricing",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+家族写真のバックアップアプリを作るとします。家族は写真を送り、何か月後にも探し出し、問題があれば支援を受ける必要があります。
 
 家族写真のバックアップは契約後も毎月ファイルを保管し、容量とサポートの費用が続きます。
 

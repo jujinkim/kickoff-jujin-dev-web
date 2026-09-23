@@ -8,8 +8,8 @@ category: "service-split"
 aliases: ["マイクロサービス"]
 related: ["architecture", "monolith", "modular-monolith"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## なぜ必要なのか
 
-学校行事アプリでは今週ボランティアのタグが必要でも、請求担当には別の公開日程があります。
+家族が行事を見て、ボランティアが申し込む学校アプリを作るとします。タグの変更は急ぎでも、請求担当の公開日程は別です。
 
 ## どう解決するのか
 

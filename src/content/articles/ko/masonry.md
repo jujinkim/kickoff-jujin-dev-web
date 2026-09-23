@@ -12,8 +12,8 @@ related:
   - list-layout
   - uniform-grid
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 높이가 다른 카드를 현재 가장 짧은 열에 넣습니다.
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+친구들과 보는 여행 사진첩을 만든다고 가정해 봅시다. 세로·가로 사진과 짧은 메모를 훑어볼 때 어느 사진도 중요한 부분이 잘리면 안 됩니다.
 
 이미지와 메모의 높이가 제각각입니다. 줄 높이를 통일하면 빈 공간이 늘거나 필요한 내용이 잘릴 수 있습니다.
 

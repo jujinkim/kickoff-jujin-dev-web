@@ -8,8 +8,8 @@ category: "access-strategies"
 aliases: ["프리미엄 무료 모델", "Freemium"]
 related: ["revenue", "free-trial", "subscription", "non-consumable-purchase"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+메모를 저장하고 나중에 찾을 수 있는 개인 노트 앱을 만든다고 가정해 봅시다. 일부 이용자는 공유할 PDF로 정리해 내보내고 싶어 합니다.
 
 개인 노트는 유료 전환을 하지 않아도 쓸모 있어야 하지만 PDF 내보내기에는 추가 비용이 듭니다.
 

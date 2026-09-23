@@ -12,8 +12,8 @@ related:
   - two-columns
   - multiple-columns
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: フィルター、資料、案内がひとつの縦の流れをたどります。
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+立ち寄り先を順に示す散歩道ガイドを作るとします。訪問者はスマートフォンで一か所ずつ読み、次へ向かいます。
 
 散歩道ガイドでは立ち寄り先を歩く順に示したいものです。横の領域が競合すると読む順序が曖昧になります。
 

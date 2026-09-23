@@ -15,8 +15,8 @@ related:
     "non-consumable-purchase",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+発表資料をダウンロードできるスライドに変えるツールを作るとします。顧客は一つのファイルを送り、成果物を受け取って作業を終えます。
 
 スライド出力ツールは決まった成果物を渡すため、毎月同じ料金を求める理由が弱くなります。
 

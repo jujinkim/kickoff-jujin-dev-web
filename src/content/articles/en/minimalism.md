@@ -16,8 +16,8 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -33,6 +33,8 @@ checked: "2026-09-21"
 ---
 
 ## Why: the goal or problem
+
+Imagine designing a hiking checklist for a day trip. Walkers must find water, clothing, and safety items quickly before leaving home.
 
 A hiking checklist gets harder to scan when decoration crowds the essentials. You want attention on essential information without removing needed controls.
 

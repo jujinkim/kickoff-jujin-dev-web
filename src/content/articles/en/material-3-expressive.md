@@ -12,8 +12,8 @@ related:
   - flat-design
   - neobrutalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: "Color blocks, varied curves, large controls, and brief shape reactions."
@@ -26,7 +26,7 @@ checked: "2026-09-22"
 
 ## Why: the goal or problem
 
-A picnic planner must make the next organizing action easy to find. You need stronger emphasis while keeping labels and reading order understandable.
+Imagine a picnic planner showing place, supplies, and next tasks. The next action needs emphasis without hiding labels.
 
 ## How: work toward a solution
 

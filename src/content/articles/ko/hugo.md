@@ -12,8 +12,8 @@ related:
   - astro
   - jekyll
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+작은 마을의 관광 안내 사이트를 만든다고 가정해 봅시다. 산책길과 볼거리, 운영 시간 글을 두고 방문자가 페이지 사이를 이동할 수 있어야 합니다.
 
 마을 여행 안내는 모든 페이지에 같은 탐색 메뉴가 있어 파일마다 복사하면 수정이 느려집니다.
 

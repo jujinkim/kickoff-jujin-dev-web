@@ -12,8 +12,8 @@ related:
   - react
   - svelte
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+책과 글을 저장하는 읽을거리 목록을 만든다고 가정해 봅시다. 독자는 항목을 추가하거나 지우고 이름 표시와 전체 개수가 즉시 맞길 기대합니다.
 
 읽을거리 목록에 도서관 책과 정원 글이 보입니다.
 

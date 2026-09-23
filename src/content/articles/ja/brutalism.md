@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: 露出した罫線と無骨な文字が構造を示します。 太い区切りと下線付きメニューで構造を示します。
@@ -30,7 +30,7 @@ checked: "2026-09-21"
 
 ## なぜ必要なのか
 
-修理会の案内で装飾に埋もれたブース一覧は探しにくくなります。区切りとリンクをすぐに見分けられるようにしたい場面です。
+修理のブース、手伝う作業、メモを示す地域の修理会の画面を作るとします。訪問者はブースをすぐ探したいのに、装飾に一覧が埋もれます。
 
 ## どう解決するのか
 

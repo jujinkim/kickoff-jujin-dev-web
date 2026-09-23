@@ -23,13 +23,15 @@ aliases:
 related: ["ooad", "srs"]
 example: "collections"
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 aiPrompt: "For our product selection, clarify ordering, duplicate handling, lookup keys, and serialization. Compare array, map, and set using example data and expected operations. Ask about unresolved requirements. Recommend a representation, show its output, and list synchronization risks if multiple indexes are kept."
 ---
 
 ## Why: the goal or problem
+
+Imagine a reading app where people save books to return to later. They can add a book twice, reorder the list, and edit a displayed title, so the app needs predictable behavior for each action.
 
 A saved-book list shows duplicates, changes order unexpectedly, or cannot find the right entry after a title is edited. Choosing a familiar data structure will not resolve those ambiguities. First decide what counts as the same book, whether order matters, and what repeated actions should mean. Then choose a representation that preserves those rules.
 

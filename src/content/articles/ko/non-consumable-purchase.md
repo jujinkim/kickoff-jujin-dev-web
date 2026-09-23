@@ -8,8 +8,8 @@ category: "purchase-types"
 aliases: ["비소모성 구매", "Non-consumable purchase"]
 related: ["revenue", "consumable-purchase", "one-time-payment", "freemium"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+어두운 화면 옵션이 있는 야간 퍼즐 앱을 만든다고 가정해 봅시다. 플레이어는 상점에서 테마를 산 뒤 다음에 게임을 열어도 다시 선택할 수 있길 기대합니다.
 
 야간 퍼즐의 어두운 테마를 한 번 산 이용자는 다음 판에서도 계속 쓰길 기대합니다.
 

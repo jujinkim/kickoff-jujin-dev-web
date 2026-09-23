@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -32,7 +32,7 @@ checked: "2026-09-21"
 
 ## Why: the goal or problem
 
-A photo-walk map needs controls over images without hiding the route. A solid block removes that context.
+Imagine a photo-walk planner with route images, tasks, and notes. Opaque controls hide the scenery walkers need for context.
 
 ## How: work toward a solution
 

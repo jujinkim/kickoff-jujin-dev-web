@@ -23,15 +23,17 @@ aliases:
 related: ["static-sites", "shipping"]
 example: "tools"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "Classify our candidates as language, library, framework, engine, or a combination. Read the agreed output and runtime constraints. Explain which tools can coexist and compare alternatives at the same layer. Ask about undecided requirements before recommending a stack."
 ---
 
 ## Why: the goal or problem
 
-“TypeScript, React or a game engine?” mixes choices that solve different problems. Picking a popular name first can leave the team without the required export target, publishing workflow or maintainable development setup. You need to describe the result and operating constraints before comparing tools that might contribute to it.
+Imagine planning a public article catalog. Editors need to write in several languages, readers need pages on phones, and the team needs a way to publish updates.
+
+During planning, someone asks whether to choose TypeScript, React or a game engine. Those names describe different roles; an engine does not answer this catalog's publishing need. Picking a popular name first can leave the team without the required export target, publishing workflow or maintainable development setup. Describe the result and operating constraints before comparing tools that might contribute to it.
 
 ## How: work toward a solution
 

@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -31,6 +31,8 @@ checked: "2026-09-21"
 ---
 
 ## Why: the goal or problem
+
+Imagine making a recipe app for people who keep handwritten cooking notebooks. They need to find a recipe, turn to its steps, and mark what they have tried.
 
 A recipe app can feel unfamiliar to someone used to a paper notebook. A physical object people already understand can suggest how its controls and content relate.
 

@@ -12,8 +12,8 @@ related:
   - uniform-grid
   - masonry
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 반복 행이 제목·요약·메타데이터를 일정한 위치에 둡니다.
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+도서관 검색 화면을 만든다고 가정해 봅시다. 이용자는 제목과 저자, 대출 가능 여부를 훑고 결과를 열며 긴 책 제목도 읽어야 합니다.
 
 긴 제목과 메타데이터를 빠르게 비교하고 싶습니다. 카드마다 정보 위치가 다르면 같은 항목을 계속 찾아야 합니다.
 

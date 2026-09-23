@@ -17,8 +17,8 @@ related:
     "usage-based",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+教師が教材を作って出力するツールを作るとします。一つの学級は数枚だけでも、学校全体では一か月に何百枚も使うかもしれません。
 
 教材作成ツールは百回を超えた分を安くしつつ、先に使った分の料金は変えたくありません。
 

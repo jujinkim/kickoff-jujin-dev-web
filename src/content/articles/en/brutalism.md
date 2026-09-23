@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -34,7 +34,7 @@ checked: "2026-09-21"
 
 ## Why: the goal or problem
 
-A repair-day notice hides its station list beneath decoration. You want its sections and links to be immediately obvious.
+Imagine a repair-day planner listing stations, volunteer tasks, and notes. Visitors need the station list quickly, but decoration buries it.
 
 ## How: work toward a solution
 

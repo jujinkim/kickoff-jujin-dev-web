@@ -8,8 +8,8 @@ category: "requirements"
 aliases: ["ジョブストーリー", "Job story"]
 related: ["srs", "user-story", "use-case"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+庭仕事を計画しながら読む植え付けガイドを作るとします。読者は手順を確認していても、読み終える前に席を離れることがあります。
 
 庭師が植え付けガイドを途中で離れ、保存ボタンを求めます。
 

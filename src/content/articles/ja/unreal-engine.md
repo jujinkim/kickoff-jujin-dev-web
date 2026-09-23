@@ -12,8 +12,8 @@ related:
   - godot
   - unity
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+村を探検するゲームを作るとします。プレイヤーは各所のコインを集め、拾うと得点が増え、そのコインが消える必要があります。
 
 村のゲームでは各所にコインがあり、どの重なりイベントが得点を加えコインを消すか確認する必要があります。
 

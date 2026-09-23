@@ -15,8 +15,8 @@ related:
     "volume-pricing",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,7 +31,7 @@ comparison:
 
 ## Why: the goal or problem
 
-One map exporter customer makes a few images while another makes hundreds; charging both the same can feel unfair.
+Imagine a map-export tool for reports. Some customers make a few images; others make hundreds, so one price hides usage differences.
 
 ## How: work toward a solution
 

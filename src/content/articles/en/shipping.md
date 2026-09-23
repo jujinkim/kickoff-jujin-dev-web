@@ -22,14 +22,16 @@ aliases:
 related: ["static-sites", "payments"]
 example: "shipping"
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 aiPrompt: "Separate runtime, distribution and hosting for our agreed target devices. Ask about unresolved channels, acceptable downtime, recovery expectations, operating responsibility and budget. Identify artifacts, access needs and current platform rules. Choose a release procedure and validation gates that fit the approved constraints; explain capacity costs and recovery limits. Ask before increasing cost, exposure or downtime. Do not require me to choose rolling, blue-green or canary terminology. Plan execution is not deployment permission."
 checked: "2026-09-23"
 ---
 
 ## Why: the goal or problem
+
+Imagine finishing a public article catalog that readers will open from a browser. Editors need to release updates, readers need stable links, and someone must restore the site if a release fails.
 
 “It works on my computer” does not tell a user how to obtain the product or who restores it after a failure. A browser page, downloadable game and online multiplayer service have different delivery and operating needs. You need to connect the intended user experience to a repeatable release and a recoverable running system.
 

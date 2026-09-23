@@ -8,8 +8,8 @@ category: "service-split"
 aliases: ["Modular monolith"]
 related: ["architecture", "monolith", "microservices"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A hiking guide's Library tag change should stay within Library code, yet a tiny team cannot maintain several services.
+Imagine a hiking guide with saved articles. Library changes spread, but its small team cannot operate many services.
 
 ## How: work toward a solution
 

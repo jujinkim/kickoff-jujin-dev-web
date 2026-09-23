@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: 익숙한 재질과 사물로 디지털 과업을 설명합니다. 나무 바탕 위 펼친 종이 수첩으로 요리 수첩 화면을 구성합니다.
@@ -29,6 +29,8 @@ checked: "2026-09-21"
 ---
 
 ## 왜 필요한가
+
+손으로 쓴 요리 수첩에 익숙한 사람을 위한 앱을 만든다고 가정해 봅시다. 요리법을 찾아 순서를 읽고 만들어 본 항목을 표시해야 합니다.
 
 종이 수첩에 익숙한 사람에게 요리 앱은 낯설 수 있습니다.
 

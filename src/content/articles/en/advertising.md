@@ -16,8 +16,8 @@ related:
     "banner-ads",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,7 +32,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A cooking blog wants its recipes open, but editing and hosting still have costs.
+Imagine a free cooking blog with recipes and photos. Readers pay nothing, but the team still funds writing and hosting.
 
 ## How: work toward a solution
 

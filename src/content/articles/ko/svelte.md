@@ -12,8 +12,8 @@ related:
   - react
   - vue
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+버스 시간표와 등산 경로가 있는 여행 계획 앱을 만든다고 가정해 봅시다. 여행자는 두 항목을 비교하고 화면이 열린 뒤 한쪽 선택을 바꿉니다.
 
 여행 계획에 버스 시간표와 등산 경로가 보입니다.
 

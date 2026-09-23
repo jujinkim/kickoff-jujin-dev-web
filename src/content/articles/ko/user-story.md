@@ -8,8 +8,8 @@ category: "requirements"
 aliases: ["사용자 스토리", "User story"]
 related: ["srs", "use-case", "job-story"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+짧은 지역 안내 글을 읽는 앱을 만든다고 가정해 봅시다. 통근자는 출근길에 글을 보고 나중에 처음부터 검색하지 않고 다시 찾고 싶습니다.
 
 통근자는 아침 산책 글을 다시 찾고 싶지만 전체 읽기 목록 기능은 한 번에 검토하기엔 너무 큽니다.
 

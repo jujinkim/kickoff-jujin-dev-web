@@ -8,8 +8,8 @@ category: "ad-formats"
 aliases: ["インタースティシャル広告", "Interstitial ads"]
 related: ["revenue", "banner-ads", "rewarded-ads", "advertising"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+短いステージを進むパズルゲームを作るとします。プレイヤーは盤面に集中し、一段階を終えてから次へ進みます。
 
 ステージ型パズルにはクリア後の区切りがありますが、プレイ中の全画面表示は集中を妨げます。
 

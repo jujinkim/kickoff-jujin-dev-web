@@ -12,8 +12,8 @@ related:
   - two-columns
   - multiple-columns
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 필터·자료·안내가 하나의 세로 흐름을 따릅니다.
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+순서대로 들를 곳을 보여주는 산책길 안내를 만든다고 가정해 봅시다. 방문자는 휴대전화로 한 장소씩 읽으며 다음 장소로 이동합니다.
 
 특히 좁은 화면에서는 다음에 읽을 내용이 분명해야 합니다. 옆 영역이 경쟁하면 읽는 순서가 흐려질 수 있습니다.
 

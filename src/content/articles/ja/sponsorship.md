@@ -15,8 +15,8 @@ related:
     "transaction-fees",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+無料の地域の庭ガイドを作るとします。近所の人は植える時期と手伝う日を調べ、少人数の運営側が内容を更新します。
 
 地域の庭ガイドは無料で読めますが、保守費用をずっとボランティアだけで賄えません。
 

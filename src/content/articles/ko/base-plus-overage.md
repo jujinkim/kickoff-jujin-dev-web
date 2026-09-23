@@ -18,8 +18,8 @@ related:
     "usage-based",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -33,6 +33,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+작은 제작자를 위한 팟캐스트 전사 서비스를 만든다고 가정해 봅시다. 고객은 에피소드를 올리고 매달 텍스트를 내보내는데, 작업량은 달마다 크게 다릅니다.
 
 팟캐스트 전사 서비스는 한가한 달에도 기본 설비비가 들고 바쁜 달에는 추가 내보내기 비용이 듭니다.
 

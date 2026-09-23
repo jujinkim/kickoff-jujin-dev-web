@@ -8,8 +8,8 @@ category: "purchase-types"
 aliases: ["消耗型購入", "Consumable purchase"]
 related: ["revenue", "non-consumable-purchase", "prepaid-credits", "freemium"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+行き詰まったときにヒントを使えるクロスワードアプリを作るとします。プレイヤーは一つ手掛かりを得て、同じ問題を解き続けます。
 
 クロスワードのヒントは使うたびに減るため、無制限の解除では消費を表せません。
 

@@ -12,8 +12,8 @@ related:
   - single-column
   - two-columns
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: "Three or more page regions keep navigation, active work, and context nearby."
@@ -25,7 +25,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Museum visitors need the route, exhibit list, and notes together. Moving between separate screens repeatedly breaks that comparison.
+Imagine a museum page with a route, exhibit list, and notes. Visitors need all three together; switching screens breaks comparison.
 
 ## How: work toward a solution
 

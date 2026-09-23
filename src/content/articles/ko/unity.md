@@ -12,8 +12,8 @@ related:
   - godot
   - unreal-engine
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## 왜 필요한가
 
-박물관 미로 게임은 여러 방에서 열쇠를 다시 씁니다.
+여러 방에 열쇠가 있는 박물관 미로 게임을 만든다고 가정해 봅시다. 플레이어가 열쇠를 주울 때마다 점수가 오르되 같은 동작을 열쇠마다 복사하고 싶지는 않습니다.
 
 ## 어떻게 해결하는가
 

@@ -12,8 +12,8 @@ related:
   - rolling
   - canary
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+하루 종일 주문이 들어오는 온라인 상점을 운영한다고 가정해 봅시다. 새 버전이 주문 확인 절차를 바꾸므로, 고객에게 적용하기 전에 동작을 확인해야 합니다.
 
 온라인 상점은 결제 트래픽을 옮기기 전에 새 버전을 확인해야 합니다.
 

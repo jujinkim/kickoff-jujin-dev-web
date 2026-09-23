@@ -12,8 +12,8 @@ related:
   - hugo
   - jekyll
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A neighborhood journal needs readable articles and one Save control, but sending an entire client app for each article adds work for readers.
+Imagine a neighborhood journal with articles and one Save control. Sending a whole client app for each article burdens readers.
 
 ## How: work toward a solution
 

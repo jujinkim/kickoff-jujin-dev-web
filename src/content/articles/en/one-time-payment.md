@@ -15,8 +15,8 @@ related:
     "non-consumable-purchase",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,7 +31,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A slide exporter gives a customer a defined download, so an ongoing monthly charge would be hard to justify.
+Imagine a tool that exports a slide package for download. Once delivered, a recurring charge is hard to justify.
 
 ## How: work toward a solution
 

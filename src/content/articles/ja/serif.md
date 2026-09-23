@@ -12,8 +12,8 @@ related:
   - sans-serif
   - script
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: セリフは線の端に仕上げの飾りを持ちます。
@@ -25,7 +25,7 @@ comparison:
 
 ## なぜ必要なのか
 
-編集物らしい印刷の雰囲気を作りたい。読者が実際に使う言語で、画線の終わり方と印象を確かめる必要があります。
+インタビューと長い記事を載せる地域史の雑誌を作るとします。編集者は印刷物らしい印象を求めますが、読者の言語でも読みやすくする必要があります。
 
 ## どう解決するのか
 

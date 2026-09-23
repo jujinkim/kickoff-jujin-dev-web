@@ -12,8 +12,8 @@ related:
   - serif
   - sans-serif
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: Script type borrows handwritten strokes and possible joins.
@@ -27,7 +27,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A short heading needs the personal impression of handwriting. Ordinary body text shapes may not convey that expressive role.
+Imagine a dinner invitation with place and time. Its short heading needs a handwritten greeting, but ordinary body lettering cannot create it.
 
 ## How: work toward a solution
 

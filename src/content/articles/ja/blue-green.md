@@ -12,8 +12,8 @@ related:
   - rolling
   - canary
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+一日中注文が入るオンライン店を運営するとします。新版で注文の確認手順が変わるため、買い物客に使わせる前に動作を確かめたい場面です。
 
 オンライン店では決済の経路を移す前に新版を確かめる必要があります。切り替え前に別の環境を検証したい場面です。
 

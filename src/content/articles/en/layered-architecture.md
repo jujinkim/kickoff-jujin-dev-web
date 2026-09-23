@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["Layered architecture"]
 related: ["architecture", "hexagonal-architecture", "clean-architecture"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,12 +24,12 @@ comparison:
 
 ## Why: the goal or problem
 
-Jun saves Borrowing Rules on a library page. If that page validates and writes storage directly, adding CLI access duplicates checks and changing storage touches the screen.
+Imagine a library guide for reading and saving borrowing rules. If its page validates and stores saves, CLI access duplicates rules and storage changes reach the screen.
 
 ## How: work toward a solution
 
-1. Fictional single process: reader Jun, Borrowing Rules unsaved; memory or embedded database.
-2. HTTP or CLI presentation imports and calls application validation, which imports and calls persistence. This closed-layer example forbids skipping layers.
+1. One process: reader Jun, Borrowing Rules unsaved; memory or embedded database.
+2. HTTP or CLI presentation imports and calls application validation, which imports and calls persistence. No layer skipping.
 3. Saved returns upward: 0 → 1 entries; repeat → 1. Empty IDs or failure before writing → 0; retry after correction.
 
 Switching HTTP to CLI leaves validation in place.

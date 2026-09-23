@@ -12,8 +12,8 @@ related:
   - astro
   - hugo
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A family recipe archive adds new posts often; copying a complete page for each recipe makes shared layout changes tedious.
+Imagine a family recipe site where relatives add new dishes. Copying whole pages makes shared layout changes tedious.
 
 ## How: work toward a solution
 

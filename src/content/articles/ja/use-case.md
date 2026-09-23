@@ -8,8 +8,8 @@ category: "requirements"
 aliases: ["ユースケース", "Use case"]
 related: ["srs", "user-story", "job-story"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+レシピを探してお気に入りを保存する家庭料理アプリを作るとします。週末の食事を考える人は、戻ったときも保存したレシピが残ると期待します。
 
 家庭料理をする人が週末のレシピを保存します。
 

@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -33,6 +33,8 @@ checked: "2026-09-21"
 ---
 
 ## Why: the goal or problem
+
+Imagine making a board for a school fair with dozens of stalls. Families need to spot food, games, and meeting points among many announcements.
 
 A school-fair board needs bold grouping among many stalls. Subtle surface changes may not provide enough emphasis.
 

@@ -12,8 +12,8 @@ related:
   - unity
   - unreal-engine
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+캐릭터가 사과를 줍는 과수원 게임을 만든다고 가정해 봅시다. 사과에 닿으면 사과가 사라지고 점수가 하나 올라가야 합니다.
 
 과수원 게임의 사과 여러 개가 같은 점수를 줍니다.
 

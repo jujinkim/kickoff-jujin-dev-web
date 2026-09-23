@@ -12,8 +12,8 @@ related:
   - serif
   - sans-serif
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 스크립트 서체는 손글씨의 획과 연결을 빌립니다.
@@ -25,7 +25,7 @@ comparison:
 
 ## 왜 필요한가
 
-짧은 제목에 손으로 쓴 듯한 개성을 담고 싶습니다. 일반 본문용 글자만으로는 원하는 표현이 부족할 수 있습니다.
+장소와 시간을 알리는 저녁 모임 초대장을 만든다고 가정해 봅시다. 짧은 제목에는 손편지 같은 인사를 담고 싶은데 일반 본문 글자만으로는 부족합니다.
 
 ## 어떻게 해결하는가
 

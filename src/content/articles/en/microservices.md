@@ -8,8 +8,8 @@ category: "service-split"
 aliases: ["Microservices"]
 related: ["architecture", "monolith", "modular-monolith"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A school events app needs a volunteer tag this week, while its billing team has a different release calendar.
+Imagine a school-events app for families, volunteers, and staff. Volunteer tags need a quick release, but the billing team has another schedule.
 
 ## How: work toward a solution
 

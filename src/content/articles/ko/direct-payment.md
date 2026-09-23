@@ -17,8 +17,8 @@ related:
     "direct-seller",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+온라인 동네 신문을 만든다고 가정해 봅시다. 주민은 지역 기사와 행사 소식을 읽고, 작은 편집팀은 다음 호를 준비합니다.
 
 동네 신문에는 독자가 있지만 다음 호 제작비는 독자 수만으로 충당되지 않습니다.
 

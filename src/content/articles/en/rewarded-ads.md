@@ -15,8 +15,8 @@ related:
     "consumable-purchase",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,7 +31,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A language quiz offers hints, but some players want one without paying or being forced to view an ad.
+Imagine a language quiz where players request hints. Some want one without paying or watching an ad they did not choose.
 
 ## How: work toward a solution
 

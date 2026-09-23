@@ -12,8 +12,8 @@ related:
   - static-hosting
   - serverless-functions
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+利用者が本を探して読書リストを保存する図書館アプリを作るとします。開館中、別々の時刻に届く保存要求を同じリストに反映する必要があります。
 
 図書館の読書リストには開館中ずっと保存要求が届き、チームは待ち受けるプロセスを管理する必要があります。
 

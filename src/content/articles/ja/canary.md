@@ -12,8 +12,8 @@ related:
   - rolling
   - blue-green
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+公演チケットの予約サイトを運営するとします。訪問者が席を探して予約する間に、新しい予約手順を公開する準備をします。
 
 公演チケット予約の変更は実際の利用時にだけ失敗することがあります。不確かな変更を全員へ一度に公開すると影響が大きくなります。
 

@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: 半透明のパネル越しにぼかした背景が見えます。 不透明パネルを選ぶと半透明の面を単色に替えます。
@@ -30,7 +30,7 @@ checked: "2026-09-21"
 
 ## なぜ必要なのか
 
-写真散歩の地図では経路を隠さず写真の上に操作を置きたいものです。不透明な面で覆うと背景の情報が見えなくなります。
+経路の写真、作業、メモを載せた散歩計画画面を作るとします。不透明な操作部分で写真を覆うと、歩く人は場所の様子をつかめません。
 
 ## どう解決するのか
 

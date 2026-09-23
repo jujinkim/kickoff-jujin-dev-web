@@ -8,8 +8,8 @@ category: "service-split"
 aliases: ["마이크로서비스"]
 related: ["architecture", "monolith", "modular-monolith"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+학교 행사 앱을 운영한다고 가정해 봅시다. 가족은 행사를 보고 자원봉사자는 신청하며 직원은 결제를 처리합니다. 각 기능은 다른 팀이 맡습니다.
 
 학교 행사 앱에는 이번 주 자원봉사 태그가 필요하지만 결제 담당 팀은 다른 배포 일정을 갖고 있습니다.
 

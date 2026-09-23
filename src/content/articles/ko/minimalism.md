@@ -16,8 +16,8 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: 제한된 요소와 넉넉한 여백으로 핵심에 집중합니다. 여백과 절제한 글자로 프로젝트 정보를 읽기 쉽게 배치합니다.
@@ -29,6 +29,8 @@ checked: "2026-09-21"
 ---
 
 ## 왜 필요한가
+
+당일 등산을 위한 준비 목록을 만든다고 가정해 봅시다. 출발 전 물과 옷, 안전 장비를 빠르게 확인할 수 있어야 합니다.
 
 등산 준비 목록에 장식이 많으면 꼭 필요한 물건을 놓치기 쉽습니다.
 

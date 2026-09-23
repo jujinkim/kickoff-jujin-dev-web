@@ -12,8 +12,8 @@ related:
   - brutalism
   - skeuomorphism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: タイトルバー・立体的な窓枠・ピクセル装飾・等幅文字を使います。
@@ -25,6 +25,8 @@ checked: "2026-09-22"
 ---
 
 ## なぜ必要なのか
+
+ゲームセンターの集まりの招待ページを作るとします。参加者は場所と時刻を調べ、画面から催しの遊び心も感じ取ります。
 
 ゲームセンターの招待状では昔のコンピューターの遊び心を伝えたいものです。一般的なパネルだけでは意図した印象が伝わりません。
 

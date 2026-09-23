@@ -15,8 +15,8 @@ related:
     "volume-pricing",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+보고서용 지도 이미지를 내보내는 도구를 만든다고 가정해 봅시다. 한 고객은 발표 한 번에 몇 장만 필요하지만 다른 고객은 매일 지도를 만듭니다.
 
 지도 이미지 내보내기 고객 중 한 명은 몇 장만, 다른 고객은 수백 장을 만들기에 같은 요금은 어울리지 않을 수 있습니다.
 

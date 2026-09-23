@@ -12,8 +12,8 @@ related:
   - single-column
   - multiple-columns
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: Two adjacent regions separate filters from resources.
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## Why: the goal or problem
+
+Imagine a recipe index where cooks browse many dishes. They keep filtering by ingredient while scanning names and preparation times.
 
 A recipe index needs filters beside a long list of dishes. Scrolling back to controls repeatedly interrupts exploration.
 

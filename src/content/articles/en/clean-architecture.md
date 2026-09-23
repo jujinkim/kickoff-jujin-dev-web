@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["Clean architecture"]
 related: ["architecture", "layered-architecture", "hexagonal-architecture"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A budget guide's save rule should survive a new database or screen, but direct imports from those tools tie policy to them.
+Imagine a budget guide where readers save useful pages. Direct links from its saving rule to screen and database make changes spread.
 
 ## How: work toward a solution
 

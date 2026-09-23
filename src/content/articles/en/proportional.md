@@ -11,8 +11,8 @@ related:
   - theme
   - monospace
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: Proportional letters use varying advance widths.
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Long text should flow with each letter's natural shape. Giving narrow and wide letters identical space can make prose feel uneven.
+Imagine a garden newsletter with long paragraphs. Giving narrow and wide letters equal space can make its prose uneven.
 
 ## How: work toward a solution
 

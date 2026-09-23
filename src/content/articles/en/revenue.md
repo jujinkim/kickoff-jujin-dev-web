@@ -20,14 +20,16 @@ aliases:
 related: ["payments", "srs"]
 example: "revenue"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "Compare subscription, one-time purchase, and advertising for our audience and ongoing costs. Separate gross revenue from costs with explicit assumptions. Ask about entitlement duration, cancellation, and privacy choices. Do not select a business model without delegation; return a decision record and acceptance criteria."
 checked: "2026-09-23"
 ---
 
 ## Why: the goal or problem
+
+Imagine running a small map-export tool. People make maps and share the results, while the team pays for processing and support each month.
 
 A product may have enthusiastic users and still run out of money. A monthly price chosen by copying a competitor says little about what customers receive or what it costs to deliver. You need to connect continuing value, willingness to pay and operating costs before selecting a billing label.
 

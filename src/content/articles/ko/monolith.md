@@ -8,8 +8,8 @@ category: "service-split"
 aliases: ["모놀리스"]
 related: ["architecture", "modular-monolith", "microservices"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+요리법과 태그, 유료 부가 기능이 있는 동네 요리책을 만든다고 가정해 봅시다. 작은 팀 하나가 세 기능을 맡고 같은 일정으로 배포합니다.
 
 동네 요리책은 작은 팀 하나가 함께 배포합니다.
 

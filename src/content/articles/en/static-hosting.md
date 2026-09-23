@@ -12,8 +12,8 @@ related:
   - always-on-server
   - serverless-functions
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A community newsletter serves the same article to every visitor; running code for each read adds maintenance without changing the page.
+Imagine a community newsletter with articles and a Save button. Reads return identical files; running code per read adds work.
 
 ## How: work toward a solution
 

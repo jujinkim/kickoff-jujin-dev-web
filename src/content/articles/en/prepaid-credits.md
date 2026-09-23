@@ -15,8 +15,8 @@ related:
     "consumable-purchase",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,7 +31,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A teacher making classroom posters wants to know the spending limit before starting a large batch.
+Imagine teachers exporting classroom posters. Before making a large set, one teacher needs a clear spending limit.
 
 ## How: work toward a solution
 

@@ -12,8 +12,8 @@ related:
   - rolling
   - blue-green
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A ticket-booking change may fail only under real visitor traffic. Exposing everyone at once makes that uncertainty expensive.
+Imagine a concert-ticket site where visitors choose seats. A booking change may fail under real traffic; releasing to everyone raises the cost.
 
 ## How: work toward a solution
 

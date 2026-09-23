@@ -8,8 +8,8 @@ category: "seller-responsibility"
 aliases: ["Merchant of record model"]
 related: ["payments", "direct-seller", "subscription"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A small music practice app reaches customers abroad, but its team cannot assume it can administer every market's sales duties.
+Imagine a music-practice app sold in several countries. Buyers need receipts and help, but its small team cannot handle every market's sales duties.
 
 ## How: work toward a solution
 

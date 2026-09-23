@@ -12,8 +12,8 @@ related:
   - react
   - svelte
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A reading shelf shows Library Book and Garden Article; manually changing every label after a save risks contradictory counts.
+Imagine a reading shelf of saved books and articles. Hand-edited labels and counts after a save can contradict each other.
 
 ## How: work toward a solution
 

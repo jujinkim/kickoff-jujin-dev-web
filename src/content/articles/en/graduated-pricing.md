@@ -17,8 +17,8 @@ related:
     "usage-based",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -33,7 +33,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A worksheet maker can offer cheaper exports after the first hundred without changing the price of earlier work.
+Imagine teachers exporting worksheets from a design tool. A school wants cheaper later exports without repricing earlier ones.
 
 ## How: work toward a solution
 

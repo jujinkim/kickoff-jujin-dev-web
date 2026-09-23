@@ -18,13 +18,15 @@ aliases:
 related: ["srs", "tools"]
 example: "layers"
 status: "published"
-revision: 5
-sourceRevision: 5
+revision: 6
+sourceRevision: 6
 updated: "2026-09-23"
 aiPrompt: "Read our confirmed requirements and constraints. Propose project-wide modules, responsibilities, data and rule ownership, allowed dependencies, public contracts, and failure recovery owners. Explain alternatives and maintenance costs. Ask about unresolved architectural choices; preserve approved decisions. Choose internal classes, methods and data structures yourself within these boundaries. Draw UML only if it clarifies a decision; do not require me to supply it."
 ---
 
 ## Why: the goal or problem
+
+Imagine building an online shop where customers choose goods, place orders, and pay. Stock, order status, and payment results must stay consistent even when the payment provider changes.
 
 Changing a payment provider should not require rewriting order rules and every screen. Yet that happens when features reach directly into each other's storage and responsibilities have no clear owner. Before drawing boxes or picking a fashionable pattern, you need to decide where a change belongs and what other parts may rely on.
 

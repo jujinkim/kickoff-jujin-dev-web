@@ -15,8 +15,8 @@ related:
     "transaction-fees",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+무료 동네 정원 안내를 만든다고 가정해 봅시다. 이웃은 심는 시기와 봉사 날짜를 찾아보고 작은 운영팀은 내용을 계속 고칩니다.
 
 동네 정원 안내는 무료로 읽히지만 자원봉사만으로 관리비를 계속 감당하기 어렵습니다.
 

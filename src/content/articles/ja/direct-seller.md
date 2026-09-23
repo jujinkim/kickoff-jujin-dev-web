@@ -8,8 +8,8 @@ category: "seller-responsibility"
 aliases: ["直接販売者モデル", "Direct seller model"]
 related: ["payments", "merchant-of-record", "direct-payment"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+自社サイトで短い語学講座の利用権を売るとします。学習者は講座を選んで支払い、合わなければ返金の担当を探します。
 
 語学学習の利用権を売る事業者は領収書に自分の名を載せたいものの、決済会社を使うと返金の担当が曖昧になりがちです。
 

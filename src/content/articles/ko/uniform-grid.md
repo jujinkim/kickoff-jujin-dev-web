@@ -12,8 +12,8 @@ related:
   - list-layout
   - masonry
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 같은 폭의 카드를 공통 행에 정렬합니다.
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+초보 정원사를 위한 식물 목록을 만든다고 가정해 봅시다. 항목마다 사진과 필요한 빛, 물주기 메모를 보여줘 비슷한 식물을 비교하게 합니다.
 
 비슷한 항목을 빠르게 비교하고 싶습니다. 폭과 위치가 제각각이면 같은 속성을 훑어보기 어렵습니다.
 

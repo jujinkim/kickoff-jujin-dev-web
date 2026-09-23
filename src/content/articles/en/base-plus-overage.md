@@ -18,8 +18,8 @@ related:
     "usage-based",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -34,7 +34,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A podcast transcript service pays for baseline capacity even in quiet months, then processes extra exports in busy months.
+Imagine a podcast service that transcribes and exports episodes. Quiet months still cost money; busy months add processing.
 
 ## How: work toward a solution
 

@@ -17,8 +17,8 @@ related:
     "freemium",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+프리랜서와 작업실이 쓰는 사진 편집기를 만든다고 가정해 봅시다. 모두 이미지 내보내기가 필요하지만 작업실은 공개 전 승인도 함께 진행합니다.
 
 사진 편집기의 개인 사용자는 내보내기만 필요하지만 작업실은 공개 전 승인 절차도 필요합니다.
 

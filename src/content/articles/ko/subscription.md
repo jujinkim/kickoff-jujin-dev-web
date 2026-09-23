@@ -15,8 +15,8 @@ related:
     "flat-rate-pricing",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+가족 사진 백업 앱을 만든다고 가정해 봅시다. 가족은 사진을 올리고 여러 달 뒤에도 다시 찾아야 하며, 문제가 생기면 도움을 받아야 합니다.
 
 가족 사진 백업은 가입 뒤에도 매달 파일을 보관하며 저장 공간과 지원 비용이 계속 듭니다.
 

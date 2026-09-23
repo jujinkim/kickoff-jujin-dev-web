@@ -12,8 +12,8 @@ related:
   - uniform-grid
   - masonry
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: "Repeated rows keep title, summary, and metadata in predictable positions."
@@ -25,7 +25,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A library search page must show long book titles and details consistently. Scattered card contents force them to hunt for the same field repeatedly.
+Imagine a library search showing titles, authors, and availability. Scattered card fields make readers hunt for the same detail repeatedly.
 
 ## How: work toward a solution
 

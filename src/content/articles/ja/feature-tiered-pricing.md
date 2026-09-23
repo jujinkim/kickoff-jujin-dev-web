@@ -17,8 +17,8 @@ related:
     "freemium",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+個人と制作スタジオが使う写真編集ツールを作るとします。どちらも画像を出力しますが、スタジオは公開前の承認も行います。
 
 写真編集ツールの個人利用者には出力で足りますが、制作スタジオには公開前の承認も必要です。
 

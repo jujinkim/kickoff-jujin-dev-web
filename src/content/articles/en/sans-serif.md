@@ -12,8 +12,8 @@ related:
   - serif
   - script
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -29,7 +29,7 @@ comparison:
 
 ## Why: the goal or problem
 
-An interface needs a restrained letter style with fewer terminal ornaments. Typeface names alone cannot establish whether its labels remain distinguishable.
+Imagine a transit screen with routes and times. Travelers scan quickly, but a typeface category alone cannot prove similar labels remain distinct.
 
 ## How: work toward a solution
 

@@ -11,8 +11,8 @@ related:
   - theme
   - proportional
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 고정폭 라틴 글자는 윤곽이 달라도 전진 폭이 같습니다.
@@ -24,7 +24,7 @@ comparison:
 
 ## 왜 필요한가
 
-코드와 텍스트 표에서는 글자의 위치가 맞아야 합니다. 라틴 문자의 폭이 제각각이면 열이 어긋납니다.
+날씨 기록을 텍스트 표로 보여주는 화면을 만든다고 가정해 봅시다. 측정값을 열로 비교하려는데 라틴 글자 폭이 제각각이면 위치가 어긋납니다.
 
 ## 어떻게 해결하는가
 

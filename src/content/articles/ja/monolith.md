@@ -8,8 +8,8 @@ category: "service-split"
 aliases: ["モノリス"]
 related: ["architecture", "modular-monolith", "microservices"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+レシピ、タグ、有料の追加機能がある地域の料理本を作るとします。少人数の一チームがすべてを担当し、同じ日程で更新します。
 
 地域の料理本は少人数の一チームで更新し、タグと請求を別々に配布すると調整が増えます。
 

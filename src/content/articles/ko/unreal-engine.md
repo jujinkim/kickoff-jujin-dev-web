@@ -12,8 +12,8 @@ related:
   - godot
   - unity
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+마을 탐험 게임을 만든다고 가정해 봅시다. 플레이어는 곳곳의 동전을 모으고, 줍는 순간 점수가 오르며 그 동전이 사라져야 합니다.
 
 마을 게임 곳곳에 동전이 있습니다.
 

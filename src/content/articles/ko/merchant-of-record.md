@@ -8,8 +8,8 @@ category: "seller-responsibility"
 aliases: ["MoR 모델", "Merchant of record model"]
 related: ["payments", "direct-seller", "subscription"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+여러 나라의 학습자에게 음악 연습 앱을 판다고 가정해 봅시다. 고객은 이용권을 골라 결제하고, 문제가 생기면 영수증과 도움을 기대합니다.
 
 작은 음악 연습 앱이 해외 고객을 만나도 팀이 모든 시장의 판매 업무를 맡을 수는 없습니다.
 

@@ -9,14 +9,16 @@ aliases: ["Astro", "Hugo", "Jekyll", "SSG", "정적 사이트", "静的サイト
 related: ["tools", "shipping", "adr"]
 example: "generators"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "Compare Astro, Hugo, and Jekyll for our agreed content workflow. Show how each handles multilingual pages, previews, search, and deployment. Include maintenance costs and official references. Ask me to accept your recommendation, reject it, or choose another candidate before changing the stack."
 checked: "2026-09-23"
 ---
 
 ## Why: the goal or problem
+
+Imagine publishing a public guide with dozens of articles. Each article needs a stable address, language links, and the same navigation, while editors keep adding new pages.
 
 A public site needs many consistent articles, but copying complete HTML pages makes shared changes slow and error-prone. Running a server for every read may add operating work even though most visitors receive identical content. You need a repeatable publishing process that prepares those pages and keeps necessary interaction separate.
 

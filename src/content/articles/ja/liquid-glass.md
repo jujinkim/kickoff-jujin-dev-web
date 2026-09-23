@@ -12,8 +12,8 @@ related:
   - glassmorphism
   - flat-design
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: 浮遊カプセル・反射する縁・広がるツールで操作層をコンテンツと分けます。
@@ -25,6 +25,8 @@ checked: "2026-09-22"
 ---
 
 ## なぜ必要なのか
+
+海辺の写真日記を作るとします。読者は大きな写真と日記を行き来し、写真の上にある案内も使います。
 
 海辺の写真日記では大きな写真の上でも案内が必要です。道具を内容のカードと区別できる層が必要です。
 

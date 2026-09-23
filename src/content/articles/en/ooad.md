@@ -17,13 +17,15 @@ aliases:
 related: ["architecture", "srs"]
 example: "objects"
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 aiPrompt: "Review our concert-ticket checkout use case. Identify domain concepts, invariants, and responsibility owners. Compare a transaction script with a small domain model using our actual complexity. Ask about unresolved boundaries; do not add an inheritance tree by default. Return a responsibility table, call sequence, failure ownership, and tests."
 ---
 
 ## Why: the goal or problem
+
+Imagine a concert-ticket service where a customer can pay at a kiosk or manage an order online. Both paths must agree on seat availability and whether a paid order can still change.
 
 A concert ticket order can be marked paid at a kiosk but remain editable on the website. Validation is copied between buttons, handlers and database code, so a rule change fixes one path and misses another. You need one owner for each business rule and a clear account of how the owners cooperate, including when a step fails.
 

@@ -12,8 +12,8 @@ related:
   - two-columns
   - multiple-columns
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: "Filters, resources, and guidance follow one vertical stream."
@@ -27,7 +27,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A walking route guide must show each stop in order. Competing side regions can obscure what comes next.
+Imagine a walking guide with stops in order. Side content can obscure which stop a visitor should read next.
 
 ## How: work toward a solution
 

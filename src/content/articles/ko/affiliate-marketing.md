@@ -15,8 +15,8 @@ related:
     "transaction-fees",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+등산객이 다음 여행에 가져갈 책을 고르는 안내 사이트를 만든다고 가정해 봅시다. 독자는 주제와 난도를 비교하고 마음에 드는 책의 서점 링크를 엽니다.
 
 등산 책 안내는 독자의 선택을 돕지만 서점으로 보내는 것만으로 안내 운영비가 생기지는 않습니다.
 

@@ -12,8 +12,8 @@ related:
   - hugo
   - jekyll
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+주민을 위한 동네 소식지를 만든다고 가정해 봅시다. 독자는 주로 글을 읽고, 필요한 글에는 저장 버튼을 눌러 나중에 다시 봅니다.
 
 동네 소식지는 읽기 쉬운 글과 저장 버튼 하나가 필요하지만 글마다 전체 클라이언트 앱을 보내면 독자에게 부담을 줍니다.
 

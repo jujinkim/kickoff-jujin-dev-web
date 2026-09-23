@@ -15,8 +15,8 @@ related:
     "transaction-fees",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+登山者が次の旅に持っていく本を選ぶガイドを作るとします。読者は内容と難しさを比べ、気に入った本の書店リンクを開きます。
 
 登山本のガイドは選書を助けても、書店へ送るだけでは運営費を得られません。
 

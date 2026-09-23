@@ -12,8 +12,8 @@ related:
   - unity
   - unreal-engine
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-An orchard game has several apples that all award one point; copying separate contact code into each apple makes changes error-prone.
+Imagine an orchard game where collecting apples adds points. Copying contact code into each apple makes a scoring change easy to miss.
 
 ## How: work toward a solution
 

@@ -12,8 +12,8 @@ related:
   - astro
   - jekyll
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A town visitor guide has many pages with the same navigation, and copying that navigation into each file makes updates slow.
+Imagine a town guide with pages for walks and landmarks. Copying their shared navigation into each page makes updates repetitive.
 
 ## How: work toward a solution
 

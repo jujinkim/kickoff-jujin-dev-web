@@ -12,8 +12,8 @@ related:
   - rolling
   - blue-green
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+공연 표 예매 사이트를 운영한다고 가정해 봅시다. 방문자가 좌석을 찾고 예약하는 동안 새 예매 절차를 공개할 준비를 합니다.
 
 공연 표 예약 변경은 실제 방문자 트래픽에서만 실패할 수 있습니다.
 

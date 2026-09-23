@@ -12,8 +12,8 @@ related:
   - single-column
   - multiple-columns
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 나란한 두 영역이 필터와 자료를 나눕니다.
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+요리하는 사람이 여러 음식을 찾는 요리법 목록을 만든다고 가정해 봅시다. 재료로 거르면서 이름과 준비 시간을 계속 훑어봐야 합니다.
 
 긴 목록을 탐색하면서 필터도 계속 써야 합니다. 조작부로 매번 스크롤을 되돌리면 탐색이 끊깁니다.
 

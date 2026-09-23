@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: 見慣れた素材や物でデジタルの作業を説明します。 木の面に開いた紙の手帳として料理ノートを表します。
@@ -29,6 +29,8 @@ checked: "2026-09-21"
 ---
 
 ## なぜ必要なのか
+
+手書きの料理ノートに慣れた人向けのアプリを作るとします。レシピを探し、手順を読み、試したものに印を付けます。
 
 紙のノートに慣れた人には料理アプリの操作が分かりにくいことがあります。知っている道具の形を借りると、内容と操作の関係を伝えやすくなります。
 

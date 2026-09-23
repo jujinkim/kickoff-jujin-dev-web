@@ -18,8 +18,8 @@ related:
     "usage-based",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -33,6 +33,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+小規模な配信者向けのポッドキャスト文字起こしサービスを作るとします。顧客は毎月エピソードを送り、文章を出力しますが、作業量は月ごとに変わります。
 
 ポッドキャストの文字起こしには静かな月も基本費用がかかり、忙しい月には追加出力の費用が増えます。
 

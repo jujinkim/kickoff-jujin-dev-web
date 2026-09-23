@@ -12,8 +12,8 @@ related:
   - hugo
   - jekyll
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+住民向けの地域の便りを作るとします。読者は主に記事を読み、役立つ記事は保存して後で読み返します。
 
 地域の便りには読みやすい記事と保存操作一つが必要ですが、記事ごとにアプリ全体を送ると読者の負担が増えます。
 

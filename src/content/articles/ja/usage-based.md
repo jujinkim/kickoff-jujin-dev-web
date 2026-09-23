@@ -15,8 +15,8 @@ related:
     "volume-pricing",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+報告書用の地図画像を出力するツールを作るとします。一度の発表に数枚だけ使う顧客も、毎日地図を作る顧客もいます。
 
 地図画像を数枚だけ出す人と何百枚も出す人に同じ料金を求めると、利用量の違いを反映できません。
 

@@ -12,8 +12,8 @@ related:
   - brutalism
   - skeuomorphism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: 제목 표시줄·입체 창 테두리·픽셀 장식·고정폭 글자를 사용합니다.
@@ -25,6 +25,8 @@ checked: "2026-09-22"
 ---
 
 ## 왜 필요한가
+
+오락실 모임 초대 페이지를 만든다고 가정해 봅시다. 손님은 장소와 시간을 찾아야 하고 화면에서는 행사의 놀이 분위기도 느껴져야 합니다.
 
 오락실 모임 초대장은 옛 컴퓨터의 놀이 분위기를 전하고 싶습니다.
 

@@ -15,8 +15,8 @@ related:
     "consumable-purchase",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+교사가 포스터를 만들고 내보내는 도구를 만든다고 가정해 봅시다. 행사용으로 여러 장을 준비하더라도 학교 예산 안에서 써야 합니다.
 
 교실 포스터를 만드는 교사는 대량 작업 전에 지출 한도를 알고 싶습니다.
 

@@ -17,8 +17,8 @@ related:
     "usage-based",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -33,7 +33,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A print shop's design tool becomes cheaper per export at high volume, but customers need to know whether the discount covers every export.
+Imagine a print-shop tool that exports poster designs. Shops need to know whether a bulk discount covers every export or only later ones.
 
 ## How: work toward a solution
 

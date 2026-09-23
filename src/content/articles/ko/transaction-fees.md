@@ -16,8 +16,8 @@ related:
     "merchant-of-record",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,6 +31,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+제작자가 물건을 올리고 구매자가 주문하는 수공예 장터를 만든다고 가정해 봅시다. 어떤 제작자는 자주 팔지만 다른 제작자는 몇 주 동안 거래가 없을 수도 있습니다.
 
 수공예 장터는 제작자와 구매자를 연결하지만 고정 요금은 거래가 없는 날에도 부과됩니다.
 

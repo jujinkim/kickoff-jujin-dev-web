@@ -8,8 +8,8 @@ category: "ad-formats"
 aliases: ["전면 광고", "Interstitial ads"]
 related: ["revenue", "banner-ads", "rewarded-ads", "advertising"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+짧은 단계로 진행하는 퍼즐 게임을 만든다고 가정해 봅시다. 플레이어는 보드에 집중해 한 단계를 마친 뒤 다음 단계로 넘어갑니다.
 
 단계형 퍼즐은 레벨을 마친 뒤 잠시 멈추지만 플레이 중 전면 메시지가 나오면 집중이 끊깁니다.
 

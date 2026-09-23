@@ -12,8 +12,8 @@ related:
   - single-column
   - multiple-columns
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 隣り合う2領域でフィルターと資料を分けます。
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+料理する人が多くの料理を探すレシピ一覧を作るとします。材料で絞り込みながら、名前と準備時間を見比べます。
 
 長いレシピ一覧を見ながら材料で絞り込みたいものです。操作部へ毎回スクロールで戻ると、探索が中断されます。
 

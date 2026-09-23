@@ -12,8 +12,8 @@ related:
   - uniform-grid
   - masonry
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 繰り返す行が題名、要約、メタデータを一定の位置に置きます。
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+図書館の検索画面を作るとします。利用者は書名、著者、貸出状況を見比べ、長い題名も読んでから結果を開きます。
 
 図書館検索では長い書名と詳細を一定の順で示す必要があります。カードごとに位置が違うと、同じ項目を繰り返し探すことになります。
 

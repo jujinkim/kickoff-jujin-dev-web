@@ -12,8 +12,8 @@ related:
   - astro
   - hugo
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+家族のレシピ集を公開するとします。家族が材料と作り方を追加し、どのページにも同じ見出しと案内があります。
 
 家族のレシピ集では新しい記事をよく加えますが、毎回ページ全体を複製すると共通の型を直すのが大変です。
 

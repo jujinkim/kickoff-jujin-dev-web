@@ -12,8 +12,8 @@ related:
   - static-hosting
   - always-on-server
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+主に予定を読む祭りの案内サイトを作るとします。訪問者が時々催しを個人リストへ保存し、短い書き込み要求が発生します。
 
 祭りの日程には時々保存要求が届く程度で、常時稼働のアプリは一日の大半を待機します。
 

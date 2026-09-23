@@ -12,8 +12,8 @@ related:
   - blue-green
   - canary
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+네 개의 복제본으로 날씨 알림 서비스를 운영한다고 가정해 봅시다. 알림 형식을 고쳐 배포하는 동안에도 구독자는 계속 알림을 받아야 합니다.
 
 날씨 알림은 복제본 네 개를 바꾸는 동안에도 계속 제공돼야 합니다.
 

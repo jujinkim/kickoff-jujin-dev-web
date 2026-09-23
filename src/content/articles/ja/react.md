@@ -12,8 +12,8 @@ related:
   - vue
   - svelte
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+買い物リストと週間メニューが同じ画面にある家庭用の計画アプリを作るとします。家族は項目を追加し、名前と合計をすぐ確かめます。
 
 家庭の計画には買い物リストと週間メニューが並びます。
 

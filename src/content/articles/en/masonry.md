@@ -12,8 +12,8 @@ related:
   - list-layout
   - uniform-grid
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: Cards of different heights enter the shortest available column.
@@ -27,7 +27,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A travel album contains portrait and landscape photos with different heights. Forcing equal rows can waste space or crop information that readers need.
+Imagine a travel album with tall and wide photos plus notes. Equal-height rows waste space or crop useful details.
 
 ## How: work toward a solution
 

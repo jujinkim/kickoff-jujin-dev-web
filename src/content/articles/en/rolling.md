@@ -12,8 +12,8 @@ related:
   - blue-green
   - canary
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Weather alerts need continuous availability while four replicas update. Mixed old and new versions must remain compatible.
+Imagine four copies of a weather-alert service. Subscribers need continuous alerts while old and new versions overlap during release.
 
 ## How: work toward a solution
 

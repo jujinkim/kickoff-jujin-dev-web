@@ -8,8 +8,8 @@ category: "requirements"
 aliases: ["Job story"]
 related: ["srs", "user-story", "use-case"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A gardener asks for a Save button after leaving a planting guide halfway through; the real need may be returning to it at home.
+Imagine a gardening guide with planting steps. A reader asks for Save before leaving, but really needs to resume at home.
 
 ## How: work toward a solution
 

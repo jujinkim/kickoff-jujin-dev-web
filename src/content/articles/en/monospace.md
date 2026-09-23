@@ -11,8 +11,8 @@ related:
   - theme
   - proportional
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -28,7 +28,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Code and text tables rely on aligned positions. Variable Latin character widths make those positions drift.
+Imagine a weather log with readings aligned in text tables. Variable Latin letter widths make its columns drift.
 
 ## How: work toward a solution
 

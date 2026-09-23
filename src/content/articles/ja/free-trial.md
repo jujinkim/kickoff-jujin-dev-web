@@ -8,8 +8,8 @@ category: "access-strategies"
 aliases: ["無料トライアル", "Free trial"]
 related: ["revenue", "freemium", "subscription"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+同僚が作業を割り当て、予定を一緒に直すチーム計画ツールを作るとします。導入を考えるチームは、実際の一週間の仕事に合うか試したいものです。
 
 チーム計画ツールが編集機能を約束しても、実務に合うか判断するには数日使う必要があります。
 

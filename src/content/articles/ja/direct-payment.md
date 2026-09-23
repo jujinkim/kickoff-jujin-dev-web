@@ -17,8 +17,8 @@ related:
     "direct-seller",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+オンラインの地域新聞を作るとします。住民は地元の記事や催しを読み、少人数の編集部が次号を準備します。
 
 地域の新聞には読者がいますが、読まれるだけでは次号の制作費を賄えません。
 

@@ -15,8 +15,8 @@ related:
     "flat-rate-pricing",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,7 +31,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A family photo backup keeps files available every month, and both storage and support continue after signup.
+Imagine a family-photo app that stores pictures for later visits. Storage and support costs continue long after signup.
 
 ## How: work toward a solution
 

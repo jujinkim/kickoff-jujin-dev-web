@@ -8,8 +8,8 @@ category: "requirements"
 aliases: ["Use case"]
 related: ["srs", "user-story", "job-story"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A home cook saves Weekend Recipes, but a failed write could leave the screen saying Saved with no record to return to.
+Imagine a cooking app for browsing and saving recipes. A failed write might show Saved even though the recipe cannot be found later.
 
 ## How: work toward a solution
 

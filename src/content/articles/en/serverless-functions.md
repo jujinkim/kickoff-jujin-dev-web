@@ -12,8 +12,8 @@ related:
   - static-hosting
   - always-on-server
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A festival schedule gets occasional save requests, and a constantly running app would sit idle most of the day.
+Imagine a festival site with schedules and occasional saves. An always-running app would sit idle through most of this read-heavy day.
 
 ## How: work toward a solution
 

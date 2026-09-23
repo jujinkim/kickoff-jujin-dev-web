@@ -18,13 +18,15 @@ aliases:
 related: ["architecture", "shipping"]
 example: "spec"
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 aiPrompt: "Read our agreed requirements. Ask only about unresolved product behavior and constraints, including duplicate handling, order, stock, guest checkout and recovery. Turn the answers into numbered requirements, acceptance criteria and tasks. Write useful user stories, use cases or job stories yourself, without asking me to choose a document format. Record significant decisions, alternatives, status and revisit conditions. Choose internal data structures yourself; do not infer missing product rules."
 ---
 
 ## Why: the goal or problem
+
+Imagine asking a team to build a bookshop cart. Shoppers must add a book, see what they selected, and change the amount before ordering.
 
 “Make a shopping cart” sounds clear until the same book is added twice. One person expects two rows, another expects quantity two, and a third expects duplicates to be blocked. Code can implement any of these correctly and still disappoint the user. You need an agreement about visible behavior before choosing the internal representation.
 

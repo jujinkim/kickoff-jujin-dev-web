@@ -17,8 +17,8 @@ related:
     "subscription",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+접수 직원과 의사가 함께 쓰는 진료 일정 도구를 만든다고 가정해 봅시다. 구성원마다 예약을 볼 계정이 필요하지만 의원마다 팀 규모가 다릅니다.
 
 진료 일정 도구는 규모가 다른 팀이 쓰므로 두 명인 의원과 큰 병원에 같은 요금을 매기면 차이가 반영되지 않습니다.
 

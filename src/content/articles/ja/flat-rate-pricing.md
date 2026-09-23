@@ -17,8 +17,8 @@ related:
     "subscription",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+家族向けの献立アプリを作るとします。家族はレシピを調べ、必要な料理を週間の計画に加えます。
 
 献立サービスを使う家族は、レシピをもう一つ試す前に月額を把握したいと考えます。
 

@@ -8,8 +8,8 @@ category: "purchase-types"
 aliases: ["非消耗型購入", "Non-consumable purchase"]
 related: ["revenue", "consumable-purchase", "one-time-payment", "freemium"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+暗い画面を選べる夜のパズルアプリを作るとします。プレイヤーは店でテーマを買い、次に開いたときも選べると期待します。
 
 夜のパズルで暗いテーマを一度買った人は、その後のプレイでも使えると期待します。
 

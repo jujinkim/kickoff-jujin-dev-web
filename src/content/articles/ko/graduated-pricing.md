@@ -17,8 +17,8 @@ related:
     "usage-based",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+교사가 학습지를 만들어 내보내는 도구를 만든다고 가정해 봅시다. 한 학급은 몇 장만 쓰지만 학교 전체는 한 달에 수백 장을 요청할 수 있습니다.
 
 학습지 제작 도구는 처음 백 회 이후의 내보내기를 할인하면서 이미 사용한 분의 요금은 유지하려 합니다.
 

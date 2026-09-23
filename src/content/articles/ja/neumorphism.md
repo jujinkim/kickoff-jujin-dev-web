@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: 同系色の面に左上の明るい影と右下の暗い影を使い、通常時の枠は設けません。 完了行は内側に沈み、影を消してもチェックと取り消し線が残ります。
@@ -29,6 +29,8 @@ checked: "2026-09-22"
 ---
 
 ## なぜ必要なのか
+
+毎日のストレッチ記録画面を作るとします。利用者は落ち着いた画面で動作を完了にし、押した操作を見分ける必要があります。
 
 ストレッチ記録では落ち着いた面の上でも押した状態が見える必要があります。色の変化だけでは狙った質感を表せません。
 

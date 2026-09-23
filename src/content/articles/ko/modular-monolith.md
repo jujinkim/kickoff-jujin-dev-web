@@ -8,8 +8,8 @@ category: "service-split"
 aliases: ["모듈러 모놀리스"]
 related: ["architecture", "monolith", "microservices"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+등산 경로와 저장한 자료를 보여주는 안내 사이트를 만든다고 가정해 봅시다. 작은 팀 하나가 두 기능을 고치고 사이트 전체를 함께 배포합니다.
 
 등산 안내의 자료실 태그 수정은 자료실 코드에 머물러야 하지만 작은 팀이 여러 서비스를 운영하기는 어렵습니다.
 

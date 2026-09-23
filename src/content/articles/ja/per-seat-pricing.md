@@ -17,8 +17,8 @@ related:
     "subscription",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+受付担当と医師が使う診察予定ツールを作るとします。各メンバーに予約を見るアカウントが必要ですが、診療所ごとに人数が違います。
 
 診察予定ツールは規模の異なるチームが使い、二人の診療所と大きな医院を同額にすると差が反映されません。
 

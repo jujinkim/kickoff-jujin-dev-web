@@ -8,8 +8,8 @@ category: "requirements"
 aliases: ["잡 스토리", "Job story"]
 related: ["srs", "user-story", "use-case"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+정원 일을 준비하며 읽는 심기 안내 사이트를 만든다고 가정해 봅시다. 독자는 재배 순서를 살피다가 글을 다 읽기 전에 자리를 떠나기도 합니다.
 
 정원사가 심기 안내를 읽다 떠나며 저장 버튼을 요청합니다.
 

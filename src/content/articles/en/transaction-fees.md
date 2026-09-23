@@ -16,8 +16,8 @@ related:
     "merchant-of-record",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,7 +32,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A craft marketplace helps makers find buyers, yet a fixed charge would apply even when nothing sells.
+Imagine a craft market where makers list goods and buyers order. Fixed charges reach makers even on weeks without a sale.
 
 ## How: work toward a solution
 

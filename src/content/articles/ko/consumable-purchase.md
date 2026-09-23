@@ -8,8 +8,8 @@ category: "purchase-types"
 aliases: ["소모성 구매", "Consumable purchase"]
 related: ["revenue", "non-consumable-purchase", "prepaid-credits", "freemium"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+막혔을 때 힌트를 쓸 수 있는 낱말 퍼즐 앱을 만든다고 가정해 봅시다. 플레이어는 힌트 하나를 받아 같은 퍼즐을 계속 풉니다.
 
 낱말 퍼즐의 힌트는 사용할 때마다 하나씩 줄어드므로 무제한 해제로는 그 소비를 나타낼 수 없습니다.
 

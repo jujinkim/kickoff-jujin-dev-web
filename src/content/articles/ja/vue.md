@@ -12,8 +12,8 @@ related:
   - react
   - svelte
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+本と記事を保存する読むものリストを作るとします。読者は項目を加えたり消したりして、表示名と総数がすぐ一致することを期待します。
 
 読むものリストに図書館の本と庭の記事があります。
 

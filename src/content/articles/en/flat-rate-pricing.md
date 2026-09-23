@@ -17,8 +17,8 @@ related:
     "subscription",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -33,7 +33,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A meal planner's families want to know the monthly bill before trying another recipe.
+Imagine a meal planner where families try recipes and arrange dinners. They need a predictable bill as they use it.
 
 ## How: work toward a solution
 

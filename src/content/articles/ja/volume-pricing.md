@@ -17,8 +17,8 @@ related:
     "usage-based",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+印刷店がポスターを出力するデザインツールを作るとします。一人の顧客向けに数枚だけ作ることも、催し向けに大量に作ることもあります。
 
 印刷店のデザインツールは大量出力で単価が下がりますが、割引が全量に及ぶか明確にする必要があります。
 

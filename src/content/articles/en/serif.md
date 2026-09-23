@@ -12,8 +12,8 @@ related:
   - sans-serif
   - script
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: Serifs add finishing strokes at letter terminals.
@@ -27,7 +27,7 @@ comparison:
 
 ## Why: the goal or problem
 
-An editorial page needs a deliberate printed tone. You want to evaluate finishing strokes in the actual languages readers use.
+Imagine a local history magazine with interviews and long articles. Editors want a printed tone while keeping its languages legible.
 
 ## How: work toward a solution
 

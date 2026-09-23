@@ -12,8 +12,8 @@ related:
   - list-layout
   - uniform-grid
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 高さの違うカードを、その時点で最も短い列に置きます。
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+友人と見る旅行アルバムを作るとします。縦横の写真と短いメモを眺めるとき、大事な部分は切り取りたくありません。
 
 旅のアルバムには高さの違う縦横の写真があります。行の高さをそろえると、余白が増えたり必要な情報を切り取ったりします。
 

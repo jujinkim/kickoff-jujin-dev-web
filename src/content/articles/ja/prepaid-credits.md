@@ -15,8 +15,8 @@ related:
     "consumable-purchase",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -30,6 +30,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+教師がポスターを作って出力するツールを作るとします。行事用に何枚も作る場合でも、学校の予算内に収める必要があります。
 
 教室のポスターを作る教師は、大量に出力する前に支出の上限を知りたいと考えます。
 

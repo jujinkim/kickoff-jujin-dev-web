@@ -12,8 +12,8 @@ related:
   - static-hosting
   - serverless-functions
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+도서관 이용자가 책을 찾고 읽기 목록을 저장하는 앱을 만든다고 가정해 봅시다. 운영 시간 동안 서로 다른 시각에 들어오는 저장 요청이 같은 목록에 반영돼야 합니다.
 
 도서관 읽기 목록은 운영 시간 내내 저장 요청을 받고, 팀은 계속 대기하는 프로세스를 직접 관리해야 합니다.
 

@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["Hexagonal architecture"]
 related: ["architecture", "layered-architecture", "clean-architecture"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A class schedule save rule is hard to test when every test must start a web server and database.
+Imagine a class guide where teachers save schedule pages. Testing its save rule should not require a running web server and database.
 
 ## How: work toward a solution
 

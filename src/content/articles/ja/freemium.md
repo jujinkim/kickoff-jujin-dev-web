@@ -8,8 +8,8 @@ category: "access-strategies"
 aliases: ["フリーミアム", "Freemium"]
 related: ["revenue", "free-trial", "subscription", "non-consumable-purchase"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+メモを保存して後から探せる個人ノートを作るとします。一部の利用者は共有用のPDFとして書き出したいと考えます。
 
 個人ノートは有料化しなくても役立つ必要があり、PDF出力には追加費用がかかります。
 

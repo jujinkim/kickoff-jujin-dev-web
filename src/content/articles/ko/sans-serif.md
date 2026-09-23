@@ -12,8 +12,8 @@ related:
   - serif
   - script
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 산세리프는 세리프 장식이 없지만 획 끝과 비율은 다양합니다.
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+대중교통 안내 화면을 만든다고 가정해 봅시다. 승객은 서둘러 이동하며 멀리서 노선 이름과 시간을 훑어봅니다.
 
 화면의 글자를 끝 장식이 적고 간결한 인상으로 구성하고 싶습니다. 이름만 보고 고르면 비슷한 글자를 구분하기 어려울 수 있습니다.
 

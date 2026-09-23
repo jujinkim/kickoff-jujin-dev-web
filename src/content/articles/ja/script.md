@@ -12,8 +12,8 @@ related:
   - serif
   - sans-serif
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: スクリプト書体は手書きの線やつながりを借ります。
@@ -25,7 +25,7 @@ comparison:
 
 ## なぜ必要なのか
 
-短い見出しに手書きの個性を添えたい。一般的な本文用の文字では、狙う表情が出ない場合があります。
+場所と時刻を伝える夕食会の招待状を作るとします。短い見出しには手書きの挨拶らしさが欲しいものの、本文用の文字だけでは足りません。
 
 ## どう解決するのか
 

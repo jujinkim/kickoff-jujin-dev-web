@@ -12,8 +12,8 @@ related:
   - godot
   - unreal-engine
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A museum maze game reuses keys in several rooms; one huge script per key repeats the same pickup behavior.
+Imagine a museum maze where players collect keys in several rooms. Each pickup should add a point without copying its behavior into every key.
 
 ## How: work toward a solution
 

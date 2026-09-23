@@ -8,8 +8,8 @@ category: "access-strategies"
 aliases: ["Free trial"]
 related: ["revenue", "freemium", "subscription"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A team planner can promise useful editing, but a team needs a few days of real work to judge it.
+Imagine a planner where teams assign work and share schedules. A feature list cannot prove it fits their working week.
 
 ## How: work toward a solution
 

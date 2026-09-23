@@ -12,8 +12,8 @@ related:
   - godot
   - unity
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A village game has coins in many places; the team needs to see which overlap event adds a point and removes the coin.
+Imagine a village game with coins scattered around. Each pickup should add a point and remove the touched coin.
 
 ## How: work toward a solution
 

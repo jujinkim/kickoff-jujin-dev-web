@@ -21,13 +21,15 @@ aliases:
 related: ["theme", "srs"]
 example: "layout"
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 aiPrompt: "Describe this catalog using named regions and components. Propose mobile and desktop layouts, reading order, keyboard behavior, and empty/loading/error states. Ask about unresolved information priorities before choosing a layout. Return a text wireframe and testable acceptance criteria."
 ---
 
 ## Why: the goal or problem
+
+Imagine designing a catalog where visitors find and compare items. Each page needs navigation, filters, results, and enough detail to make a choice, including on a phone.
 
 A screen can contain every required feature while making the main task difficult to find. On a narrow device, sidebars squeeze text and controls jump out of reading order. You need to organize information around what the reader is trying to accomplish before deciding how many columns or cards look attractive.
 

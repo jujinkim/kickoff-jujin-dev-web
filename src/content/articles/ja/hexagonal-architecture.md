@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["ヘキサゴナルアーキテクチャ"]
 related: ["architecture", "layered-architecture", "clean-architecture"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## なぜ必要なのか
 
-授業予定の保存規則を試すたびにWebサーバーとデータベースが要ると、確認が遅くなります。
+教師が授業予定の記事を保存するガイドを作るとします。保存規則を試すたびにWebサーバーとDBを起動するのは手間です。
 
 ## どう解決するのか
 

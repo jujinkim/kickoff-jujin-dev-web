@@ -8,8 +8,8 @@ category: "ad-formats"
 aliases: ["バナー広告", "Banner ads"]
 related: ["revenue", "interstitial-ads", "rewarded-ads", "advertising"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+スマートフォンで遊ぶ数字パズルを作るとします。プレイヤーは盤面を見て数字を選び、進み具合を確かめます。
 
 数字パズルでは広告を近くに表示しても、盤面と操作を隠してはいけません。
 

@@ -17,8 +17,8 @@ related:
     "usage-based",
   ]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,6 +32,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+인쇄소가 포스터를 내보내는 디자인 도구를 만든다고 가정해 봅시다. 한 고객을 위해 몇 장만 만들 수도 있고 행사에는 대량으로 내보낼 수도 있습니다.
 
 인쇄소 디자인 도구의 대량 내보내기는 단가가 낮아지지만 그 할인 단가가 전체에 적용되는지 알아야 합니다.
 

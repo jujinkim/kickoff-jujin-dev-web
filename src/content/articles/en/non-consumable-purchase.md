@@ -8,8 +8,8 @@ category: "purchase-types"
 aliases: ["Non-consumable purchase"]
 related: ["revenue", "consumable-purchase", "one-time-payment", "freemium"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A night puzzle player bought a dark theme once and expects it to work on every later play.
+Imagine a night puzzle selling a dark theme. A player buys it once and expects it in later sessions.
 
 ## How: work toward a solution
 

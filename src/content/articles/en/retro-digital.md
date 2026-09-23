@@ -12,8 +12,8 @@ related:
   - brutalism
   - skeuomorphism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: "Title bars, beveled windows, pixel ornaments, and fixed-width type."
@@ -26,7 +26,7 @@ checked: "2026-09-22"
 
 ## Why: the goal or problem
 
-An arcade-night invitation needs a playful early-computer mood. Generic panels do not communicate that intended atmosphere.
+Imagine an arcade-night invitation showing place and time. Generic panels fail to convey the event's playful early-computer mood.
 
 ## How: work toward a solution
 

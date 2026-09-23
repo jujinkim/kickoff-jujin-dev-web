@@ -11,8 +11,8 @@ related:
   - theme
   - monospace
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 比例幅の文字は異なる送り幅を使います。
@@ -24,7 +24,7 @@ comparison:
 
 ## なぜ必要なのか
 
-長い文章を文字の形に沿って自然に読ませたい。細い文字と広い文字を同じ幅に収めると、間隔が不自然になります。
+長い段落がある庭の便りを作るとします。読者が続く文章を読む際、細い文字と広い文字に同じ幅を与えると間隔が不自然になります。
 
 ## どう解決するのか
 

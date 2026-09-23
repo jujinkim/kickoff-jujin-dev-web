@@ -8,8 +8,8 @@ category: "access-strategies"
 aliases: ["Freemium"]
 related: ["revenue", "free-trial", "subscription", "non-consumable-purchase"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A personal notebook must remain useful for someone who never upgrades, while PDF export costs more to provide.
+Imagine a personal notebook for saving and finding notes. Everyone needs useful basics, while PDF export costs extra to provide.
 
 ## How: work toward a solution
 

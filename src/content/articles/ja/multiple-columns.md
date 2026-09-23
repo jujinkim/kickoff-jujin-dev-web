@@ -12,8 +12,8 @@ related:
   - single-column
   - two-columns
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: 3つ以上の領域でナビゲーション、作業、背景情報を近くに置きます。
@@ -24,6 +24,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+博物館の訪問画面を作るとします。来館者は順路、展示一覧、説明を一緒に見ながら次に見るものを選びます。
 
 博物館では順路・展示一覧・説明を一緒に見たいものです。別画面を何度も往復すると、比較と作業の流れが途切れます。
 

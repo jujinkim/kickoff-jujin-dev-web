@@ -12,8 +12,8 @@ related:
   - skeuomorphism
   - neobrutalism
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: 紙片・テープ・不揃いな縁・注釈を重ねます。
@@ -25,6 +25,8 @@ checked: "2026-09-22"
 ---
 
 ## なぜ必要なのか
+
+旅の写真と取っておいた切符で思い出ボードを作るとします。友人は一緒に眺め、集めた記念品らしさを感じたいものです。
 
 思い出ボードでは写真や切符を手で集めた感じを残したいものです。均一なパネルだけでは、その手作り感が足りません。
 

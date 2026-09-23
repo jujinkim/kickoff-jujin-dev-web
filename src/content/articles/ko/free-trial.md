@@ -8,8 +8,8 @@ category: "access-strategies"
 aliases: ["무료 체험", "Free trial"]
 related: ["revenue", "freemium", "subscription"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+동료가 작업을 나누고 일정을 함께 고치는 팀 계획 도구를 만든다고 가정해 봅시다. 도입을 고민하는 팀은 실제 업무 한 주에 맞는지 살펴보고 싶어 합니다.
 
 팀 계획 도구가 편집 기능을 약속해도 실제 업무에 맞는지 보려면 며칠 써 봐야 합니다.
 

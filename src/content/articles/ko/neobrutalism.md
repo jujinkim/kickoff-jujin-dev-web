@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 7
-sourceRevision: 7
+revision: 8
+sourceRevision: 8
 updated: "2026-09-23"
 comparison:
   features: "선명한 색면, 굵은 테두리, 단단한 오프셋 그림자로 강조합니다. 두꺼운 테두리와 단단한 그림자로 패널을 강조합니다."
@@ -29,6 +29,8 @@ checked: "2026-09-21"
 ---
 
 ## 왜 필요한가
+
+부스가 수십 개 있는 학교 축제 안내판을 만든다고 가정해 봅시다. 가족은 여러 공지 사이에서 먹거리와 놀이, 만날 장소를 찾아야 합니다.
 
 학교 축제 게시판은 많은 부스를 굵직하게 구분해야 합니다.
 

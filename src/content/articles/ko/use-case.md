@@ -8,8 +8,8 @@ category: "requirements"
 aliases: ["유스케이스", "Use case"]
 related: ["srs", "user-story", "job-story"]
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -23,6 +23,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+요리법을 찾고 마음에 드는 글을 저장하는 가정 요리 앱을 만든다고 가정해 봅시다. 주말 식사를 준비하는 사람은 다시 열었을 때 저장한 요리법이 남아 있길 기대합니다.
 
 집에서 요리하는 사람이 주말 요리법을 저장합니다.
 

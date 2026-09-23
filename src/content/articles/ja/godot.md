@@ -12,8 +12,8 @@ related:
   - unity
   - unreal-engine
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## なぜ必要なのか
+
+主人公がリンゴを集める果樹園ゲームを作るとします。リンゴに触れると消え、得点が一点増える必要があります。
 
 果樹園ゲームのリンゴはどれも一点を与えます。
 
