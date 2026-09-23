@@ -5,9 +5,11 @@ Read `/home/jujin/.codex/RTK.md` for shell command conventions.
 All article work follows [the shared authoring guide](docs/content-authoring.md).
 Guides are practical walkthroughs taking about 2–3 minutes to read; catalog
 concepts stay concise. Every article, in every language, follows Why → How →
-What: first explain why this technique is needed through a concrete problem
-without it, show a concrete solution and its result, then name and explain the
-concept and its limits. Do not merely reorder
+What: first establish what the example app, page, or service does, who uses it,
+and their ordinary actions; then show a concrete problem without the technique.
+Carry that same situation through How's solution and result, then name and
+explain the concept and its limits. Never introduce an unexplained person or app
+in the opening. Do not merely reorder
 definition-first paragraphs or introduce a tool and tell readers to try it.
 
 Design work must follow [docs/design-demos.md](docs/design-demos.md) and use

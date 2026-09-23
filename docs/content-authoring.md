@@ -44,6 +44,24 @@ When revising an opening, read the English Why and How together before translati
 the setup should make the later worked example unsurprising. Preserve that
 setup, problem, and result in Korean and Japanese without padding short concepts.
 
+Before approving a Why section, check its opening in this order:
+
+1. Can a new reader tell what the imagined app, page, or service does and who uses it before a named example actor or failure appears?
+2. Does it name the ordinary actions needed in that setting, then show a specific problem with one of those actions? A bare app name or a generic wish is not enough.
+3. Does How continue the same situation and show a result that answers that problem? Do the visual, caption, comparison summary, and all three translations agree?
+
+For example, do not open with “Jun saves Borrowing Rules” before explaining the
+library guide. A usable opening in each language is:
+
+- EN: “Imagine building a library guide. Readers find borrowing rules and save useful pages. If the page itself validates and stores every save, a second entry point duplicates those checks.”
+- KO: “도서관 안내 앱을 만든다고 가정해 봅시다. 독자는 대출 규칙을 찾아보고 필요한 글을 저장합니다. 화면이 검증과 저장을 모두 맡으면 다른 입력 경로에서 같은 규칙을 복사해야 합니다.”
+- JA: “図書館の案内アプリを作るとします。読者は貸出ルールを探し、役立つ記事を保存します。画面だけで検証と保存を担うと、別の入口で同じ規則を複製することになります。”
+
+Adapt the scene to each article; do not reuse this library example across a
+comparison group. A concise concept can combine setup and problem in one
+paragraph. Replace repetitive lead-in text instead of exceeding its reading
+budget.
+
 **Guides are practical walkthroughs, about 2–3 minutes each.** Expand the reasoning and method: a worked scenario, actionable steps, why those steps matter, a common mistake or failure case, and an observable completion check. Readers should know what to do next without having to learn internal implementation vocabulary. AI writes appropriate documentation and chooses internal details within agreed product behavior. Add useful detail, never repeated filler to meet a word count.
 
 **Catalog concepts remain short introductions, about one minute.** Keep one problem, one concrete solution/example, and the definition with a meaningful tradeoff. Their purpose is recognizing and comparing a choice; the related guide provides the longer procedure. Optional comparison tables, related reading, and reusable AI prompts remain disclosure panels.

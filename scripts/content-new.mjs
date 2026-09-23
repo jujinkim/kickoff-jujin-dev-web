@@ -38,7 +38,7 @@ export function createConcept(id, root = "src/content/articles") {
         ),
       };
       const content =
-        `\n<!-- One-minute concept: Why (why this technique is needed; concrete reader problem) -> How (concrete solution and result) -> What (name, definition, tradeoff). Do not start by recommending a concept. Follow docs/content-authoring.md. Guides instead require practical 2–3 minute walkthroughs.\n${candidate.scope}\nCompare: ${candidate.compareWith.join(", ")}\n${lang === "en" ? "Write and review English original first." : "Translate reviewed English original; preserve its claims and sources."} -->\n\n` +
+        `\n<!-- One-minute concept: Why (introduce the imagined app/page, user actions, then a concrete problem) -> How (solve that problem in the same situation and show the result) -> What (name, definition, tradeoff). Do not start with an unexplained person/app or recommend a concept before the problem. Follow docs/content-authoring.md. Guides instead require practical 2–3 minute walkthroughs.\n${candidate.scope}\nCompare: ${candidate.compareWith.join(", ")}\n${lang === "en" ? "Write and review English original first." : "Translate reviewed English original; preserve its scenario, claims and sources."} -->\n\n` +
         conceptSections[lang]
           .map((section) => `## ${section}\n\nTODO\n`)
           .join("\n");

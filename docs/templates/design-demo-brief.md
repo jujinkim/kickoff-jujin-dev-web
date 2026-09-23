@@ -7,7 +7,9 @@ Copy this file for one candidate. Resolve every field before publishing.
 - Closest concept and concrete difference:
 - Distinguishing visual features (structure, material, typography):
 - Comparison category (documented leaf group):
+- Why opening: app/page purpose, user, ordinary actions, then the problem in English/Korean/Japanese:
 - Distinct familiar situation, dataset, labels, actions, and initial state for this article:
+- How/visual link: which action in that opening leads to the illustrated result:
 - Visual decisions and controls that demonstrate this concept:
 - Fictional scenario and why it demonstrates the definition:
 - Representative action and observable result:
