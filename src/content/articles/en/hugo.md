@@ -12,8 +12,8 @@ related:
   - astro
   - jekyll
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a town guide with pages for walks and landmarks. Copying their shared navigation into each page makes updates repetitive.
+Imagine a town guide for walks and landmarks. Its team uses Go templates and Markdown to build files, without page-specific client components.
 
 ## How: work toward a solution
 

@@ -8,8 +8,8 @@ category: "ad-formats"
 aliases: ["Interstitial ads"]
 related: ["revenue", "banner-ads", "rewarded-ads", "advertising"]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a puzzle game with short levels and a next-level button. A full-screen message during play breaks concentration.
+Imagine a puzzle game where players finish short levels. A sponsor needs a full-screen message between levels; showing it during play breaks focus, while a permanent banner competes with the controls.
 
 ## How: work toward a solution
 

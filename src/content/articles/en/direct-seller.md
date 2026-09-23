@@ -8,8 +8,8 @@ category: "seller-responsibility"
 aliases: ["Direct seller model"]
 related: ["payments", "merchant-of-record", "direct-payment"]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine selling language lessons through your own site. Buyers pay and may request refunds, but a processor can obscure who handles them.
+Imagine selling language lessons on your site. Buyers may request refunds; the business wants to remain the seller and accepts receipt, refund, and tax work.
 
 ## How: work toward a solution
 

@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
+revision: 9
+sourceRevision: 9
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -34,7 +34,7 @@ checked: "2026-09-21"
 
 ## Why: the goal or problem
 
-Imagine a repair-day planner listing stations, volunteer tasks, and notes. Visitors need the station list quickly, but decoration buries it.
+Imagine a repair-day planner where visitors find stations and volunteer tasks. Decorative polish hides the urgent station list; the team prefers exposed rules and underlined links over a quieter, stripped-down surface.
 
 ## How: work toward a solution
 

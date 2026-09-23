@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["クリーンアーキテクチャ"]
 related: ["architecture", "layered-architecture", "hexagonal-architecture"]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## なぜ必要なのか
 
-役立つページを保存できる家計予算ガイドを作るとします。保存規則から画面とDBを直接参照すると、どちらかの変更が規則にも広がります。
+読者がWebとCLIで記事を保存する家計ガイドを作るとします。画面や保存先が変わっても規則は保ちたい。制作側は直接依存より内側のユースケースを重視します。
 
 ## どう解決するのか
 

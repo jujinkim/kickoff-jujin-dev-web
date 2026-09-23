@@ -16,8 +16,8 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
+revision: 9
+sourceRevision: 9
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -34,7 +34,7 @@ checked: "2026-09-21"
 
 ## Why: the goal or problem
 
-Imagine a clinic visit planner showing appointment tasks and notes. Patients need to recognize actions clearly without decorative shadows.
+Imagine a clinic visit planner where patients check appointments, tasks, and notes. They need distinct actions without decorative depth; the team keeps all task details while using clear color and shape instead of shadows.
 
 ## How: work toward a solution
 

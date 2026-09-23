@@ -12,8 +12,8 @@ related:
   - unity
   - unreal-engine
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,9 +26,7 @@ comparison:
 
 ## なぜ必要なのか
 
-主人公がリンゴを集める果樹園ゲームを作るとします。リンゴに触れると消え、得点が一点増える必要があります。
-
-果樹園ゲームのリンゴはどれも一点を与えます。
+プレイヤーがリンゴを集めて得点する果樹園ゲームを作るとします。制作側は各リンゴをノードで組んだシーンの実体として再利用し、接触時の動作を一つずつ直さずに済ませたいと考えます。
 
 ## どう解決するのか
 

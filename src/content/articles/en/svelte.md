@@ -12,8 +12,8 @@ related:
   - react
   - vue
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a trip planner with bus and hiking cards. A click should update the chosen card without hand-editing both.
+Imagine a trip planner where travelers save bus and hiking cards. Labels and totals must agree; its team prefers declarative components compiled before runtime.
 
 ## How: work toward a solution
 

@@ -8,8 +8,8 @@ category: "ad-formats"
 aliases: ["インタースティシャル広告", "Interstitial ads"]
 related: ["revenue", "banner-ads", "rewarded-ads", "advertising"]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,9 +24,7 @@ comparison:
 
 ## なぜ必要なのか
 
-短いステージを進むパズルゲームを作るとします。プレイヤーは盤面に集中し、一段階を終えてから次へ進みます。
-
-ステージ型パズルにはクリア後の区切りがありますが、プレイ中の全画面表示は集中を妨げます。
+プレイヤーが短いステージを解くパズルゲームを作るとします。スポンサーの告知はステージ間に全画面で見せたい。プレイ中なら集中を妨げ、常設バナーなら操作部と競合します。
 
 ## どう解決するのか
 

@@ -12,8 +12,8 @@ related:
   - unity
   - unreal-engine
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine an orchard game where collecting apples adds points. Copying contact code into each apple makes a scoring change easy to miss.
+Imagine an orchard game where collecting apples scores points. The team reuses each apple as a node-built scene instance, so contact changes need one edit.
 
 ## How: work toward a solution
 

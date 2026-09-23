@@ -12,8 +12,8 @@ related:
   - vue
   - svelte
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a home planner with shopping and menu panels. Saving one item must update its label and total without disturbing the other panel.
+Imagine a home planner where families save shopping and menu items. Cards and totals must update together; its team prefers JavaScript functions that render from state.
 
 ## How: work toward a solution
 

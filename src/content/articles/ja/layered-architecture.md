@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["レイヤードアーキテクチャ"]
 related: ["architecture", "hexagonal-architecture", "clean-architecture"]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## なぜ必要なのか
 
-貸出ルールを読んで保存する図書館アプリを作るとします。画面が検証と保存を直に担うと、CLI追加時に規則が重複し、保存先の変更も画面に及びます。
+読者がWebかCLIから貸出規則を保存する図書館ガイドを作るとします。画面に検証と保存を置くと規則が重複します。制作側は一つのプロセス内で表示・処理・保存の流れを分けたいと考えます。
 
 ## どう解決するのか
 

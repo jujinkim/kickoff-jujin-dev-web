@@ -15,8 +15,8 @@ related:
     "transaction-fees",
   ]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,7 +31,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a free garden guide with planting dates and volunteer days. Volunteers cannot cover ongoing upkeep indefinitely.
+Imagine a free garden guide where volunteers share planting dates and event plans. Ongoing upkeep needs funding; the community prefers acknowledging supporters while keeping articles open, without relying on ad impressions.
 
 ## How: work toward a solution
 

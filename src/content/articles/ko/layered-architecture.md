@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["계층형 아키텍처"]
 related: ["architecture", "hexagonal-architecture", "clean-architecture"]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## 왜 필요한가
 
-대출 규칙을 읽고 저장하는 도서관 앱을 만든다고 가정해 봅시다. 화면이 검증과 저장을 직접 맡으면 명령줄 기능에서 규칙이 중복되고 저장소 변경도 화면에 번집니다.
+독자가 웹이나 명령줄에서 대출 규칙을 저장하는 도서관 안내를 만든다고 가정해 봅시다. 화면에 검증과 저장을 두면 규칙이 중복됩니다. 제작팀은 한 프로세스 안에서 화면·응용·저장 흐름을 분리하려 합니다.
 
 ## 어떻게 해결하는가
 

@@ -12,8 +12,8 @@ related:
   - godot
   - unreal-engine
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a museum maze where players collect keys in several rooms. Each pickup should add a point without copying its behavior into every key.
+Imagine a museum maze where players collect keys. Each pickup should score once; the team wants reusable behavior attached to game objects rather than copying key logic.
 
 ## How: work toward a solution
 

@@ -17,8 +17,8 @@ related:
     "direct-seller",
   ]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -33,9 +33,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine publishing a neighborhood newspaper online. Residents can read local reports and event notices, and a small team prepares each new issue.
-
-A neighborhood newspaper has readers, but the next issue cannot be funded by readership alone.
+Imagine an online neighborhood newspaper where residents read reports and event notices. The small team needs to fund each issue and prefers payment from readers who value it over selling ad space or seeking sponsors.
 
 ## How: work toward a solution
 

@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["Clean architecture"]
 related: ["architecture", "layered-architecture", "hexagonal-architecture"]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a budget guide where readers save useful pages. Direct links from its saving rule to screen and database make changes spread.
+Imagine a budget guide where readers save pages from web and CLI. Screen or database changes must spare the saving rule; use cases cannot import either.
 
 ## How: work toward a solution
 

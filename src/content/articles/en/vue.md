@@ -12,8 +12,8 @@ related:
   - react
   - svelte
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a reading shelf of saved books and articles. Hand-edited labels and counts after a save can contradict each other.
+Imagine a reading shelf for books and articles. Labels and counts must agree; its team prefers reactive HTML-like templates over manual edits.
 
 ## How: work toward a solution
 

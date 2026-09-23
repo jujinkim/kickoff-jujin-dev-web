@@ -16,8 +16,8 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
+revision: 9
+sourceRevision: 9
 updated: "2026-09-23"
 comparison:
   features: 単色面と明確なラベルで、奥行き表現なしに階層を作ります。 奥行きの装飾を使わず、単色の領域で役割を分けます。
@@ -30,7 +30,7 @@ checked: "2026-09-21"
 
 ## なぜ必要なのか
 
-診察の準備作業とメモを示す画面を作るとします。患者は飾りの影がなくても、それぞれの操作を見分ける必要があります。
+患者が予約・作業・メモを確認する通院計画画面を作るとします。立体的な装飾なしでも操作を見分けたい。制作側は情報を削る代わりに色と形で区別します。
 
 ## どう解決するのか
 

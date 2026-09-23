@@ -12,8 +12,8 @@ related:
   - serif
   - script
 status: published
-revision: 5
-sourceRevision: 5
+revision: 6
+sourceRevision: 6
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -29,7 +29,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a transit screen with routes and times. Travelers scan quickly, but a typeface category alone cannot prove similar labels remain distinct.
+Imagine a transit screen where travelers scan routes and times. Editors favor plain letterforms over a printed tone for quick reading, while still checking whether similar labels remain distinct.
 
 ## How: work toward a solution
 

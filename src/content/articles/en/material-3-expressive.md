@@ -12,8 +12,8 @@ related:
   - flat-design
   - neobrutalism
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 comparison:
   features: "Color blocks, varied curves, large controls, and brief shape reactions."
@@ -26,7 +26,7 @@ checked: "2026-09-22"
 
 ## Why: the goal or problem
 
-Imagine a picnic planner showing place, supplies, and next tasks. The next action needs emphasis without hiding labels.
+Imagine a picnic planner where volunteers check supplies and their next task. The next action needs color, shape, and motion for emphasis without hiding labels; subdued flat surfaces would not guide attention enough.
 
 ## How: work toward a solution
 

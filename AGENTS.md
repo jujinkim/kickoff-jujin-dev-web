@@ -11,6 +11,11 @@ Carry that same situation through How's solution and result, then name and
 explain the concept and its limits. Never introduce an unexplained person or app
 in the opening. Do not merely reorder
 definition-first paragraphs or introduce a tool and tell readers to try it.
+For catalog concepts, Why must also make the scenario's selection criterion
+clear against relevant siblings in its leaf category. Show which priority makes
+this option fit and what competing priority would favor a peer. Comparisons
+may be implicit, but generic problems shared by every sibling are insufficient.
+Do not invent mutual exclusion where options can coexist.
 
 Design work must follow [docs/design-demos.md](docs/design-demos.md) and use
 [the planning template](docs/templates/design-demo-brief.md). Each design lives

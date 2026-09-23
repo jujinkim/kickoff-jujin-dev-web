@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["Layered architecture"]
 related: ["architecture", "hexagonal-architecture", "clean-architecture"]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a library guide for reading and saving borrowing rules. If its page validates and stores saves, CLI access duplicates rules and storage changes reach the screen.
+Imagine a library guide where readers save borrowing rules from web or CLI. Page-owned validation duplicates rules; the team wants a simple presentation–application–storage path.
 
 ## How: work toward a solution
 

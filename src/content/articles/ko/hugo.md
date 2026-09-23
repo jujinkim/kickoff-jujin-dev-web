@@ -12,8 +12,8 @@ related:
   - astro
   - jekyll
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,9 +26,7 @@ comparison:
 
 ## 왜 필요한가
 
-작은 마을의 관광 안내 사이트를 만든다고 가정해 봅시다. 산책길과 볼거리, 운영 시간 글을 두고 방문자가 페이지 사이를 이동할 수 있어야 합니다.
-
-마을 여행 안내는 모든 페이지에 같은 탐색 메뉴가 있어 파일마다 복사하면 수정이 느려집니다.
+방문자가 산책길과 명소 글을 읽는 마을 안내 사이트를 만든다고 가정해 봅시다. 제작팀은 Go 템플릿과 Markdown에 익숙합니다. 글마다 별도 클라이언트 컴포넌트를 만들지 않고 파일로 배포하려 합니다.
 
 ## 어떻게 해결하는가
 

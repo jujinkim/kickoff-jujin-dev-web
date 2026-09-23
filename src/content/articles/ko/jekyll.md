@@ -12,8 +12,8 @@ related:
   - astro
   - hugo
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,9 +26,7 @@ comparison:
 
 ## 왜 필요한가
 
-가족 요리법 보관 사이트를 만든다고 가정해 봅시다. 가족은 재료와 조리법을 올리고, 모든 페이지에는 같은 머리말과 탐색 메뉴가 있습니다.
-
-가족 요리법 보관함에 새 글을 자주 더하는데 매번 페이지 전체를 복사하면 공통 틀 수정이 번거롭습니다.
+가족이 Markdown으로 요리법을 더하는 사이트를 만든다고 가정해 봅시다. 제작팀은 이미 Ruby 템플릿을 관리합니다. 요리 글을 통째로 복사하지 않고 공통 레이아웃 변경을 모든 페이지에 적용하려 합니다.
 
 ## 어떻게 해결하는가
 

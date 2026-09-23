@@ -12,8 +12,8 @@ related:
   - astro
   - hugo
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a family recipe site where relatives add new dishes. Copying whole pages makes shared layout changes tedious.
+Imagine a family recipe site where relatives add Markdown dishes. Its team uses Ruby templates so layout changes reach every page without copying recipes.
 
 ## How: work toward a solution
 

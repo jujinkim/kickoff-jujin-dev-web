@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
+revision: 9
+sourceRevision: 9
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -32,7 +32,7 @@ checked: "2026-09-21"
 
 ## Why: the goal or problem
 
-Imagine a photo-walk planner with route images, tasks, and notes. Opaque controls hide the scenery walkers need for context.
+Imagine a photo-walk planner where walkers check route images and tasks. Opaque panels hide the scenery, but controls must stay readable; the team wants stable frosted cards rather than a moving navigation layer.
 
 ## How: work toward a solution
 

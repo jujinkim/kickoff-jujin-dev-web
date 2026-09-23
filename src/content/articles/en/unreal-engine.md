@@ -12,8 +12,8 @@ related:
   - godot
   - unity
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a village game with coins scattered around. Each pickup should add a point and remove the touched coin.
+Imagine a village game where players collect coins. Each coin scores once, then disappears; the team wants one visual behavior graph reused across coin actors.
 
 ## How: work toward a solution
 

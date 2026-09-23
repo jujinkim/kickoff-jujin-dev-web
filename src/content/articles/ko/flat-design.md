@@ -16,8 +16,8 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
+revision: 9
+sourceRevision: 9
 updated: "2026-09-23"
 comparison:
   features: 단색 면과 명확한 라벨로 깊이 묘사 없이 위계를 만듭니다. 깊이 장식 없이 단색 영역으로 역할을 나눕니다.
@@ -30,7 +30,7 @@ checked: "2026-09-21"
 
 ## 왜 필요한가
 
-진료에 필요한 할 일과 메모를 보여주는 방문 준비 화면을 만든다고 가정해 봅시다. 환자는 장식적인 그림자 없이도 어떤 동작을 할 수 있는지 구분해야 합니다.
+환자가 예약·할 일·메모를 확인하는 진료 계획 화면을 만든다고 가정해 봅시다. 입체 장식 없이도 행동을 구분해야 합니다. 제작팀은 정보를 덜어내기보다 색과 형태로 구분합니다.
 
 ## 어떻게 해결하는가
 

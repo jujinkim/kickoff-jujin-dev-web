@@ -12,8 +12,8 @@ related:
   - vue
   - svelte
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,9 +26,7 @@ comparison:
 
 ## 왜 필요한가
 
-장보기 목록과 주간 식단이 한 화면에 있는 가정용 계획 앱을 만든다고 가정해 봅시다. 가족이 항목을 추가하면 이름과 합계를 바로 확인합니다.
-
-집안 계획 화면의 장보기 목록과 주간 식단은 함께 보입니다.
+가족이 장보기와 식단 항목을 저장하는 계획 앱을 만든다고 가정해 봅시다. 각 카드와 전체 합계가 함께 갱신돼야 합니다. 제작팀은 바뀌는 상태를 바탕으로 JavaScript 함수에서 UI를 표현하려 합니다.
 
 ## 어떻게 해결하는가
 

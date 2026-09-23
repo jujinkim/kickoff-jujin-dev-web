@@ -8,8 +8,8 @@ category: "ad-formats"
 aliases: ["전면 광고", "Interstitial ads"]
 related: ["revenue", "banner-ads", "rewarded-ads", "advertising"]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,9 +24,7 @@ comparison:
 
 ## 왜 필요한가
 
-짧은 단계로 진행하는 퍼즐 게임을 만든다고 가정해 봅시다. 플레이어는 보드에 집중해 한 단계를 마친 뒤 다음 단계로 넘어갑니다.
-
-단계형 퍼즐은 레벨을 마친 뒤 잠시 멈추지만 플레이 중 전면 메시지가 나오면 집중이 끊깁니다.
+플레이어가 짧은 단계를 푸는 퍼즐 게임을 만든다고 가정해 봅시다. 후원 메시지는 단계 사이에 화면 전체로 보여 줄 필요가 있습니다. 플레이 중에는 집중을 깨고, 상시 배너는 조작부와 경쟁합니다.
 
 ## 어떻게 해결하는가
 

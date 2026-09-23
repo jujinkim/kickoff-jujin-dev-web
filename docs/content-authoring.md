@@ -32,9 +32,9 @@ Use these three level-two sections, in order; guides may use level-three subsect
 | How  | How: work toward a solution | 어떻게 해결하는가 | どう解決するのか   |
 | What | What: the concept           | 무엇이라 부르는가 | どんな考え方なのか |
 
-1. **Why:** answer **“Why is this technique needed?”** first. Before the problem, introduce a familiar setting: what the example app, page, or service is for, who uses it, and which ordinary actions they need. Then show a specific action going wrong or becoming difficult, the desired outcome, and why that difficulty calls for this approach. Do not start with an unexplained person, app name, or implementation detail. A generic goal disconnected from the technique is insufficient. Explain what the reader needs to improve before introducing terminology. “This exists, so try it” is not a motivation.
+1. **Why:** answer **“Why is this technique needed here?”** first. Before the problem, introduce a familiar setting: what the example app, page, or service is for, who uses it, and which ordinary actions they need. Then show a specific action going wrong or becoming difficult, the desired outcome, and why that difficulty calls for this approach. For a catalog concept, make the deciding priority visible against its leaf-category peers: what does this situation gain by choosing this approach, and what different priority would make a sibling more suitable? The comparison can be implicit in the problem; an exhaustive peer list is unnecessary. Do not start with an unexplained person, app name, or implementation detail. A generic goal shared by every sibling is insufficient. Explain what the reader needs to improve before introducing terminology. “This exists, so try it” is not a motivation.
 2. **How:** connect that problem to a concrete approach. Show inputs, actions, observable results, failure handling, and a way to check success. Use the illustration or interactive demo here, after the problem is established. The text must work without the visual or JavaScript.
-3. **What:** name and define the approach just demonstrated. Explain its boundaries, costs, alternatives, and when to reconsider it. Avoid presenting a conditional option as a universal prescription.
+3. **What:** name and define the approach just demonstrated. Explain its boundaries, costs, alternatives, and when to reconsider it. Keep the selection reason in Why; What's tradeoff list cannot substitute for it. Avoid presenting a conditional option as a universal prescription.
 
 Choose a distinct, familiar situation for each article, including siblings in
 the same comparison group. Keep the article's problem, worked result, visual,
@@ -49,6 +49,7 @@ Before approving a Why section, check its opening in this order:
 1. Can a new reader tell what the imagined app, page, or service does and who uses it before a named example actor or failure appears?
 2. Does it name the ordinary actions needed in that setting, then show a specific problem with one of those actions? A bare app name or a generic wish is not enough.
 3. Does How continue the same situation and show a result that answers that problem? Do the visual, caption, comparison summary, and all three translations agree?
+4. For a catalog concept, would a sibling's name fit the same Why unchanged? If so, state the concrete priority that makes this choice apt. Check whether a different priority favors a peer, without forcing independent or combinable options into a false either-or choice.
 
 For example, do not open with “Jun saves Borrowing Rules” before explaining the
 library guide. A usable opening in each language is:
@@ -64,7 +65,7 @@ budget.
 
 **Guides are practical walkthroughs, about 2–3 minutes each.** Expand the reasoning and method: a worked scenario, actionable steps, why those steps matter, a common mistake or failure case, and an observable completion check. Readers should know what to do next without having to learn internal implementation vocabulary. AI writes appropriate documentation and chooses internal details within agreed product behavior. Add useful detail, never repeated filler to meet a word count.
 
-**Catalog concepts remain short introductions, about one minute.** Keep one problem, one concrete solution/example, and the definition with a meaningful tradeoff. Their purpose is recognizing and comparing a choice; the related guide provides the longer procedure. Optional comparison tables, related reading, and reusable AI prompts remain disclosure panels.
+**Catalog concepts remain short introductions, about one minute.** Keep one problem with a distinguishing selection criterion, one concrete solution/example, and the definition with a meaningful tradeoff. Their purpose is recognizing and comparing a choice; the related guide provides the longer procedure. Optional comparison tables, related reading, and reusable AI prompts remain disclosure panels.
 
 The editorial estimate uses title, summary, and body at 180 words/minute or 600 CJK characters/minute, plus 15 seconds for a visual. Published guides must fall within **120–180 seconds**; published concepts must stay at **60 seconds or less**. These estimates are not a guarantee of anyone's reading speed. Translations preserve the same decisions, examples, caveats, and practical depth; check each language independently. Source URLs and optional panels do not pad the budget.
 

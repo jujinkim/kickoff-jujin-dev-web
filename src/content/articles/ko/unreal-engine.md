@@ -12,8 +12,8 @@ related:
   - godot
   - unity
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,9 +26,7 @@ comparison:
 
 ## 왜 필요한가
 
-마을 탐험 게임을 만든다고 가정해 봅시다. 플레이어는 곳곳의 동전을 모으고, 줍는 순간 점수가 오르며 그 동전이 사라져야 합니다.
-
-마을 게임 곳곳에 동전이 있습니다.
+플레이어가 흩어진 동전을 모으는 마을 게임을 만든다고 가정해 봅시다. 동전은 한 번만 점수를 주고 사라져야 합니다. 제작팀은 인스턴스를 각각 고치기보다 동전 액터에 쓸 시각적 동작 그래프 하나를 원합니다.
 
 ## 어떻게 해결하는가
 

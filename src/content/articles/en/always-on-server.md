@@ -12,8 +12,8 @@ related:
   - static-hosting
   - serverless-functions
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a library app that saves reading lists. Requests arrive all opening hours, so a listening process needs an owner.
+Imagine a library app where readers save lists daily. Records must survive visits, so its team accepts managing a listening process.
 
 ## How: work toward a solution
 

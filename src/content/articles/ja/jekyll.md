@@ -12,8 +12,8 @@ related:
   - astro
   - hugo
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,9 +26,7 @@ comparison:
 
 ## なぜ必要なのか
 
-家族のレシピ集を公開するとします。家族が材料と作り方を追加し、どのページにも同じ見出しと案内があります。
-
-家族のレシピ集では新しい記事をよく加えますが、毎回ページ全体を複製すると共通の型を直すのが大変です。
+家族がMarkdownでレシピを加えるサイトを作るとします。制作側はすでにRubyのテンプレートを管理しています。ページを丸ごと複製せず、共通レイアウトの変更を全記事に反映したいと考えます。
 
 ## どう解決するのか
 

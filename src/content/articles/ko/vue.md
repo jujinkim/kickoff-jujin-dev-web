@@ -12,8 +12,8 @@ related:
   - react
   - svelte
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,9 +26,7 @@ comparison:
 
 ## 왜 필요한가
 
-책과 글을 저장하는 읽을거리 목록을 만든다고 가정해 봅시다. 독자는 항목을 추가하거나 지우고 이름 표시와 전체 개수가 즉시 맞길 기대합니다.
-
-읽을거리 목록에 도서관 책과 정원 글이 보입니다.
+독자가 책과 글을 저장하는 읽기 목록을 만든다고 가정해 봅시다. 문구와 개수가 일치해야 합니다. 제작팀은 표시를 하나씩 고치기보다 HTML과 비슷한 템플릿을 반응형 상태에 묶으려 합니다.
 
 ## 어떻게 해결하는가
 

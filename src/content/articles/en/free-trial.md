@@ -8,8 +8,8 @@ category: "access-strategies"
 aliases: ["Free trial"]
 related: ["revenue", "freemium", "subscription"]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,7 +24,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a planner where teams assign work and share schedules. A feature list cannot prove it fits their working week.
+Imagine a team planner for tasks and schedules. Teams need to test its full paid workflow for days; a limited free tier cannot show whether it fits their week.
 
 ## How: work toward a solution
 

@@ -8,8 +8,8 @@ category: "seller-responsibility"
 aliases: ["직접 판매자 모델", "Direct seller model"]
 related: ["payments", "merchant-of-record", "direct-payment"]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,9 +24,7 @@ comparison:
 
 ## 왜 필요한가
 
-자체 사이트에서 짧은 언어 강좌 이용권을 판다고 가정해 봅시다. 학습자는 강좌를 골라 결제하고, 맞지 않으면 환불 담당자를 찾아야 합니다.
-
-언어 학습 이용권 판매자는 영수증에 자기 이름을 쓰고 싶지만 결제 처리 업체를 쓰면 환불 담당자가 모호해질 수 있습니다.
+구매자가 결제하고 환불을 요청할 수 있는 어학 수업 사이트를 운영한다고 가정해 봅시다. 사업자는 판매자 관계를 직접 유지하려 하며, 그에 따르는 영수증·환불·세금 업무도 맡습니다.
 
 ## 어떻게 해결하는가
 

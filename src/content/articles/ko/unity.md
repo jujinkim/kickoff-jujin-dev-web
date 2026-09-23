@@ -12,8 +12,8 @@ related:
   - godot
   - unreal-engine
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## 왜 필요한가
 
-여러 방에 열쇠가 있는 박물관 미로 게임을 만든다고 가정해 봅시다. 플레이어가 열쇠를 주울 때마다 점수가 오르되 같은 동작을 열쇠마다 복사하고 싶지는 않습니다.
+플레이어가 여러 방의 열쇠를 모으는 박물관 미로를 만든다고 가정해 봅시다. 열쇠마다 한 번만 점수가 올라야 합니다. 제작팀은 코드를 각 열쇠에 복사하지 않고 게임 오브젝트에 재사용 동작을 붙이려 합니다.
 
 ## 어떻게 해결하는가
 

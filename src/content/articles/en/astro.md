@@ -12,8 +12,8 @@ related:
   - hugo
   - jekyll
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a neighborhood journal with articles and one Save control. Sending a whole client app for each article burdens readers.
+Imagine a neighborhood journal where residents read and save articles. Its team wants component-built pages and one interactive Save control without sending a full app.
 
 ## How: work toward a solution
 

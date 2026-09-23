@@ -16,8 +16,8 @@ related:
     "banner-ads",
   ]
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,7 +32,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a free cooking blog with recipes and photos. Readers pay nothing, but the team still funds writing and hosting.
+Imagine a free cooking blog where readers follow recipes and view photos. The team needs funding without charging readers or waiting for individual sponsors, and can reserve labeled space for advertisers.
 
 ## How: work toward a solution
 

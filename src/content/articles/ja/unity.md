@@ -12,8 +12,8 @@ related:
   - godot
   - unreal-engine
 status: published
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## なぜ必要なのか
 
-複数の部屋に鍵がある博物館の迷路ゲームを作るとします。鍵を拾うたびに得点を増やしながら、同じ動作を鍵ごとに複製したくはありません。
+プレイヤーが複数の部屋で鍵を集める博物館迷路を作るとします。鍵ごとに得点は一度だけです。制作側は各鍵へ処理を複製せず、ゲームオブジェクトに再利用できる動作を付けたいと考えます。
 
 ## どう解決するのか
 
