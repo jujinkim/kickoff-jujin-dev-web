@@ -34,7 +34,7 @@ Explain the conditional benefit: The fixture supports side-by-side comparison of
 
 Compare every sibling: [list-layout](list-layout.md), [masonry](masonry.md).
 
-Use the shared axes, in this order: **item scan path; alignment; variable height; ordering semantics; density; responsive behavior**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/content-arrangement.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **item scan path; alignment; variable height; ordering semantics; density; responsive behavior**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/content-arrangement.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

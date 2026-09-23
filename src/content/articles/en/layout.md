@@ -21,8 +21,8 @@ aliases:
 related: ["theme", "srs"]
 example: "layout"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "Describe this catalog using named regions and components. Propose mobile and desktop layouts, reading order, keyboard behavior, and empty/loading/error states. Ask about unresolved information priorities before choosing a layout. Return a text wireframe and testable acceptance criteria."
 ---

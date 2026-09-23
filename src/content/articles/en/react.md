@@ -12,8 +12,8 @@ related:
   - vue
   - svelte
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Several controls reflect the same changing data. Updating each label separately risks showing contradictory states.
+A home planner shows Shopping List and Weekly Menu side by side; saving one must update its label and total without changing the other.
 
 ## How: work toward a solution
 
-Two Field notes cards start unsaved. Save on A17 changes only its label to Saved; B04 stays unsaved. Saving B04 changes the shared count from one to two. Repeating Save leaves two records: each ID counts once. The diagram traces event, state update, and rendering. Reset or reload clears both cards. There is no persistent storage here.
+Two cards in a home planner start unsaved. Save on Shopping List changes only its label to Saved; Weekly Menu stays unsaved. Saving Weekly Menu changes the shared count from one to two. Repeating Save leaves two records: each card counts once. The diagram traces event, state update, and rendering. Reset or reload clears both cards. There is no persistent storage here.
 
 ## What: the concept
 

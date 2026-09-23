@@ -34,7 +34,7 @@ Explain the conditional benefit: The example serves earlier waiting tasks first.
 
 Compare every sibling: [stack](stack.md), [priority-queue](priority-queue.md).
 
-Use the shared axes, in this order: **next-removal rule; tie policy; empty behavior; starvation risk; possible backing structure**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/processing-order.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **next-removal rule; tie policy; empty behavior; starvation risk; possible backing structure**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/processing-order.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

@@ -131,8 +131,14 @@ test("integrated guides and startup sources preserve ownership across languages"
       const a = articles.find(
         (a) => a.data.articleId === id && a.data.lang === lang,
       );
-      assert.equal(a.data.revision, 4);
-      assert.equal(a.data.sourceRevision, 4);
+      assert.ok(a.data.revision >= 4);
+      assert.equal(
+        a.data.sourceRevision,
+        articles.find(
+          (original) =>
+            original.data.articleId === id && original.data.lang === "en",
+        ).data.revision,
+      );
     }
     const startup = readFileSync(`src/startup/v1/${lang}.md`, "utf8");
     assert.ok(startup.includes("2026-09-23"));

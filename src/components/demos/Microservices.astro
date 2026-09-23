@@ -7,7 +7,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  s = serviceSplitText(lang);
+  s = serviceSplitText(lang, "microservices");
 ---
 
 <section data-demo="microservices" lang={lang}>

@@ -12,8 +12,8 @@ related:
   - godot
   - unreal-engine
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Many game objects share capabilities but combine them differently. One large script per object repeats responsibilities.
+A museum maze game reuses keys in several rooms; one huge script per key repeats the same pickup behavior.
 
 ## How: work toward a solution
 
-The schematic contains a player, floor, camera, and one collectible. Move to item triggers authored contact logic: score changes from zero to one and the item disappears. Repeat contact cannot score again. Disable contact before moving to demonstrate a missed collection: score stays zero. Reset or reload restores the player and item. This is a concept simulation.
+The schematic contains a player, floor, camera, and one key. Move to item triggers authored contact logic: score changes from zero to one and the item disappears. Repeat contact cannot score again. Disable contact before moving to demonstrate a missed collection: score stays zero. Reset or reload restores the player and item. This is a concept simulation.
 
 ## What: the concept
 

@@ -8,8 +8,8 @@ category: "purchase-types"
 aliases: ["Non-consumable purchase"]
 related: ["revenue", "consumable-purchase", "one-time-payment", "freemium"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## Why: the goal or problem
 
-A purchased feature should remain available after repeated use. Counting each use as a spent unit would contradict that promise.
+A night puzzle player bought a dark theme once and expects it to work on every later play.
 
 ## How: work toward a solution
 
-A fictional puzzle app begins with its night theme locked. Buy it once, then apply it repeatedly: ownership stays unlocked and the purchase count remains one. Repeat purchase attempts do not charge again here. Real purchase restoration is outside this local simulation. Prices, taxes, fees and refunds are omitted; reset clears only the example.
+A fictional night puzzle app begins with its night theme locked. Buy it once, then apply it repeatedly: ownership stays unlocked and the purchase count remains one. Repeat purchase attempts do not charge again here. Real purchase restoration is outside this local simulation. Prices, taxes, fees and refunds are omitted; reset clears only the example.
 
 ## What: the concept
 

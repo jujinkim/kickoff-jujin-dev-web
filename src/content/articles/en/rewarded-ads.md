@@ -15,8 +15,8 @@ related:
     "consumable-purchase",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,11 +31,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Some users want a benefit without paying money. Any advertising exchange needs an explicit choice and a clear reward condition.
+A language quiz offers hints, but some players want one without paying or being forced to view an ad.
 
 ## How: work toward a solution
 
-A fictional puzzle app offers one non-transferable hint for completing one simulated ad. Choose participation, then complete or interrupt it. Completion adds one hint once; interruption adds none, and normal play remains available. Repeated completion cannot duplicate that reward. No ad request or money transfer occurs; revenue and network charges are omitted.
+A fictional language quiz app offers one non-transferable hint for completing one simulated ad. Choose participation, then complete or interrupt it. Completion adds one hint once; interruption adds none, and normal play remains available. Repeated completion cannot duplicate that reward. No ad request or money transfer occurs; revenue and network charges are omitted.
 
 ## What: the concept
 

@@ -16,8 +16,8 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 6
-sourceRevision: 6
+revision: 7
+sourceRevision: 7
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -34,11 +34,11 @@ checked: "2026-09-21"
 
 ## Why: the goal or problem
 
-Secondary decoration competes with the task people came to finish. You want attention on essential information without removing needed controls.
+A hiking checklist gets harder to scan when decoration crowds the essentials. You want attention on essential information without removing needed controls.
 
 ## How: work toward a solution
 
-Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Whitespace and restrained type keep all project content legible.
+For the hiking checklist, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Whitespace and restrained type keep all project content legible.
 
 ## What: the concept
 

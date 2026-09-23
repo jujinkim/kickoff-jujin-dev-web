@@ -6,9 +6,9 @@ Copy this file for one candidate. Resolve every field before publishing.
 - Definition (one sentence):
 - Closest concept and concrete difference:
 - Distinguishing visual features (structure, material, typography):
-- Shared comparison category (styles / layout / typography / a documented platform group):
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group:
-- Visual variable changed; concept-specific extra controls and their justification:
+- Comparison category (documented leaf group):
+- Distinct familiar situation, dataset, labels, actions, and initial state for this article:
+- Visual decisions and controls that demonstrate this concept:
 - Fictional scenario and why it demonstrates the definition:
 - Representative action and observable result:
 - Initial state:

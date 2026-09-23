@@ -34,7 +34,7 @@ Explain the conditional benefit: The wide fixture exposes navigation, article an
 
 Compare every sibling: [single-column](single-column.md), [two-columns](two-columns.md).
 
-Use the shared axes, in this order: **page-region count; primary/secondary hierarchy; reading order; available width; narrow-screen collapse**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/columns.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **page-region count; primary/secondary hierarchy; reading order; available width; narrow-screen collapse**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/columns.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

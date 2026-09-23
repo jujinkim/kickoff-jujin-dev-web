@@ -1,0 +1,156 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="collections" lang={lang}>
+  <header>
+    <p class="eyebrow">
+      {t("Saved reading list", "저장한 글 목록", "保存した記事の一覧")}
+    </p>
+    <h2>
+      {t(
+        "Keep order and ignore repeat saves",
+        "순서를 지키고 중복 저장 막기",
+        "順序を保ち、重複保存を防ぐ",
+      )}
+    </h2>
+    <p>
+      {t(
+        "Save Soup Cookbook, then Train Travel Guide, then Soup Cookbook again.",
+        "수프 요리책, 기차 여행책, 수프 요리책 순서로 저장합니다.",
+        "スープの料理本、列車旅行ガイド、スープの料理本の順に保存します。",
+      )}
+    </p>
+  </header>
+  <div class="structures">
+    <div>
+      <strong>{t("Ordered list", "순서 있는 목록", "順序のある一覧")}</strong>
+      <ol>
+        <li>{t("Soup Cookbook", "수프 요리책", "スープの料理本")}</li>
+        <li>{t("Train Travel Guide", "기차 여행책", "列車旅行ガイド")}</li>
+      </ol>
+      <p>
+        {t(
+          "First save decides position.",
+          "첫 저장이 위치를 정합니다.",
+          "最初の保存で位置が決まります。",
+        )}
+      </p>
+    </div>
+    <div>
+      <strong>{t("Key → title", "키 → 제목", "キー → 題名")}</strong>
+      <p>
+        {t(
+          "Recipe link → Soup Cookbook",
+          "요리 링크 → 수프 요리책",
+          "レシピのリンク → スープの料理本",
+        )}
+      </p>
+      <p>
+        {t(
+          "Train link → Train Travel Guide",
+          "기차 링크 → 기차 여행책",
+          "列車のリンク → 列車旅行ガイド",
+        )}
+      </p>
+      <p>
+        {t(
+          "A changed title does not create a new saved link.",
+          "제목이 바뀌어도 저장한 링크는 새 항목이 되지 않습니다.",
+          "題名が変わっても保存済みのリンクは新しい項目になりません。",
+        )}
+      </p>
+    </div>
+    <div>
+      <strong>{t("Unique keys", "중복 없는 키", "重複しないキー")}</strong>
+      <p>
+        {t(
+          "Recipe link · Train link",
+          "요리 링크 · 기차 링크",
+          "レシピのリンク · 列車のリンク",
+        )}
+      </p>
+      <p>
+        {t(
+          "Repeat Recipe link → still two saved entries.",
+          "요리 링크 다시 저장 → 여전히 두 건.",
+          "レシピのリンクを再保存 → 依然として2件。",
+        )}
+      </p>
+    </div>
+  </div>
+  <p class="note">
+    {t(
+      "Choose a stable key and define whether repeating a save changes its order; this example keeps the original order.",
+      "안정적인 키와 재저장 시 순서 규칙을 정하세요. 이 예시는 처음 순서를 유지합니다.",
+      "安定したキーと再保存時の順序規則を定めます。この例は最初の順序を保ちます。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 3vw, 28px);
+    color: #2d352a;
+    background: #f5f4e9;
+    border: 1px solid #838568;
+    border-radius: 12px;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  h2,
+  p,
+  ol {
+    margin: 0;
+  }
+  .eyebrow {
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+  h2 {
+    margin: 0.3rem 0;
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+  }
+  .structures {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+  .structures > div {
+    background: #fff;
+    border: 1px solid #838568;
+    border-top: 4px solid #506747;
+    padding: 0.8rem;
+  }
+  .structures strong {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .structures p,
+  .structures li {
+    font-size: 0.83rem;
+  }
+  .structures p + p {
+    margin-top: 0.45rem;
+  }
+  ol {
+    padding-left: 1.2rem;
+  }
+  .note {
+    border-left: 4px solid #506747;
+    padding: 0.5rem 0.8rem;
+  }
+  @container (max-width:600px) {
+    .structures {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

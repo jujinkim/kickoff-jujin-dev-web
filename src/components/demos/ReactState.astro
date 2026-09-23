@@ -28,33 +28,28 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Save either card. Each ID counts once; the other card stays unchanged.",
-      "각 카드를 저장하세요. ID마다 한 번만 집계하며 다른 카드 상태는 유지됩니다.",
-      "各カードを保存します。IDごとに1回だけ数え、もう一方は変わりません。",
+      "Save either card. Each card counts once; the other card stays unchanged.",
+      "각 카드를 저장하세요. 카드마다 한 번만 집계하며 다른 카드 상태는 유지됩니다.",
+      "各カードを保存します。カードごとに1回だけ数え、もう一方は変わりません。",
     )}
   </p>
   <div class="owner">
-    <h3>
-      {t(
-        "Shared owner · saved IDs",
-        "공유 소유자 · 저장된 ID",
-        "共通の管理元 · 保存ID",
-      )}
-    </h3>
+    <h3>{t("Shared save state", "공유 저장 상태", "共通の保存状態")}</h3>
     <p>
       {t(
-        "Title props ↓ · state belongs to each ID",
-        "제목 프로퍼티 ↓ · 상태는 ID별 소유",
-        "タイトルのプロップス ↓ · 状態はIDごと",
+        "Title props ↓ · save status belongs to each card",
+        "제목 프로퍼티 ↓ · 저장 상태는 카드별로 관리",
+        "タイトルのプロップス ↓ · 保存状態はカードごと",
       )}
     </p>
     <div class="cards">
       <article>
-        <p>A17</p>
-        <h3>{p.notes}</h3>
+        <p>{t("Shopping List", "장보기 목록", "買い物リスト")}</p>
+        <h3>{t("Home planner", "집안 계획", "家庭の計画")}</h3>
         <button
           type="button"
-          data-save="A17"
+          data-save="Shopping List"
+          data-label={t("Shopping List", "장보기 목록", "買い物リスト")}
           aria-pressed="false"
           data-interactive
           disabled
@@ -63,11 +58,12 @@ const t = local(lang),
         </button>
       </article>
       <article>
-        <p>B04</p>
-        <h3>{p.notes}</h3>
+        <p>{t("Weekly Menu", "주간 식단", "週間メニュー")}</p>
+        <h3>{t("Home planner", "집안 계획", "家庭の計画")}</h3>
         <button
           type="button"
-          data-save="B04"
+          data-save="Weekly Menu"
+          data-label={t("Weekly Menu", "주간 식단", "週間メニュー")}
           aria-pressed="false"
           data-interactive
           disabled
@@ -93,7 +89,10 @@ const t = local(lang),
   <p class="total">
     {p.count}: <strong data-count>0</strong> / 2
   </p>
-  <p data-state>A17: 0 · B04: 0</p>
+  <p data-state>
+    {t("Shopping List", "장보기 목록", "買い物リスト")}: 0 ·{" "}
+    {t("Weekly Menu", "주간 식단", "週間メニュー")}: 0
+  </p>
   <p class="trace" data-path-state>
     {p.waiting}
   </p>

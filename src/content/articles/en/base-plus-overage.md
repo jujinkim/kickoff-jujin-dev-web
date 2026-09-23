@@ -18,8 +18,8 @@ related:
     "usage-based",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -34,11 +34,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Keeping service available costs money even at zero usage, while heavy usage adds cost. One charge must account for both.
+A podcast transcript service pays for baseline capacity even in quiet months, then processes extra exports in busy months.
 
 ## How: work toward a solution
 
-A fictional workspace has three seats and 120 monthly exports. The monthly base is 20, including 100 exports; each extra export costs 0.10. Total: 20 + 20 × 0.10 = 22. Change usage: zero and 100 both cost 20; 101 costs 20.10. Taxes, fees and refunds are omitted.
+A fictional podcast transcript tool has three seats and 120 monthly exports. The monthly base is 20, including 100 exports; each extra export costs 0.10. Total: 20 + 20 × 0.10 = 22. Change usage: zero and 100 both cost 20; 101 costs 20.10. Taxes, fees and refunds are omitted.
 
 ## What: the concept
 

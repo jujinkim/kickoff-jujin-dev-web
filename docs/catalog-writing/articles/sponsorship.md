@@ -36,7 +36,7 @@ Explain the conditional benefit: The fictional public catalog can remain open wh
 
 Compare every sibling: [direct-payment](direct-payment.md), [advertising](advertising.md).
 
-Use the shared axes, in this order: **payer; value exchanged; user access; dependency on third parties; incentives; compatible billing**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/revenue-sources.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **payer; value exchanged; user access; dependency on third parties; incentives; compatible billing**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/revenue-sources.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

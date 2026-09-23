@@ -9,11 +9,18 @@ interface Props {
 const { lang } = Astro.props;
 const t = local(lang),
   p = platformText(lang);
+const item = t(
+  "Library Reading List",
+  "도서관 읽기 목록",
+  "図書館の読書リスト",
+);
+const reader = t("Mina", "민아", "美奈");
 ---
 
 <section
   data-demo="always-on-server"
   data-platform
+  data-record-label={`${reader} / ${item}`}
   lang={lang}
   data-reset-message={p.resetMessage}
   data-read-path={t(
@@ -33,9 +40,9 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Read the public article, then save A17. Repeated requests share reader-01 / A17.",
-      "공개 글을 읽고 A17을 저장하세요. 반복 요청은 reader-01 / A17을 공유합니다.",
-      "公開記事を読み、A17を保存します。再送もreader-01 / A17を共有します。",
+      "Read the public article, then save Library Reading List. Repeated requests share Mina / Library Reading List.",
+      "공개 글을 읽고 도서관 읽기 목록을 저장하세요. 반복 요청은 민아 / 도서관 읽기 목록을 공유합니다.",
+      "公開記事を読み、図書館の読書リストを保存します。再送も美奈 / 図書館の読書リストを共有します。",
     )}
   </p>
   <div class="controls">
@@ -43,7 +50,11 @@ const t = local(lang),
       {t("Read article", "글 읽기", "記事を読む")}
     </button>
     <button type="button" data-save data-interactive disabled>
-      {t("Save A17", "A17 저장", "A17を保存")}
+      {t(
+        "Save Library Reading List",
+        "도서관 읽기 목록 저장",
+        "図書館の読書リストを保存",
+      )}
     </button>
     <button type="button" data-restart data-interactive disabled>
       {t("Restart handler", "처리기 재시작", "処理器を再起動")}
@@ -77,7 +88,7 @@ const t = local(lang),
         </p>
       </section>
       <section>
-        <h3>POST A17</h3>
+        <h3>POST {item}</h3>
         <p>
           {t(
             "Browser → listening process → external store → acknowledged.",
@@ -97,7 +108,7 @@ const t = local(lang),
   <aside class="store">
     <h3>03 · {p.store}</h3>
     <p>
-      reader-01 / A17 →{" "}
+      {reader} / {item} →{" "}
       {t("one key, one record", "키 하나, 기록 하나", "1キー、1記録")}
     </p>
     <p>

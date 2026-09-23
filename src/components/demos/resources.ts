@@ -1,5 +1,83 @@
 import type { Lang } from "../../lib/i18n";
 import { local } from "./shared";
+export function resourceScene(lang: Lang, id: string) {
+  const t = local(lang);
+  const scenes: Record<string, { title: string; goal: string }> = {
+    "single-column": {
+      title: t(
+        "Trail guide references",
+        "산책로 안내 참고 자료",
+        "散歩道ガイドの参考資料",
+      ),
+      goal: t(
+        "Browse six visual references while designing a walking route guide.",
+        "산책로 안내를 만들며 시각 자료 여섯 개를 살핍니다.",
+        "散歩道ガイドを作りながら六つの視覚資料を見ます。",
+      ),
+    },
+    "two-columns": {
+      title: t(
+        "Recipe index references",
+        "요리법 목록 참고 자료",
+        "レシピ一覧の参考資料",
+      ),
+      goal: t(
+        "Keep filters beside visual references for a recipe index.",
+        "요리법 목록 참고 자료 옆에 필터를 둡니다.",
+        "レシピ一覧の参考資料の横に絞り込みを置きます。",
+      ),
+    },
+    "multiple-columns": {
+      title: t(
+        "Museum guide references",
+        "박물관 안내 참고 자료",
+        "博物館ガイドの参考資料",
+      ),
+      goal: t(
+        "See navigation, visual references, and notes together.",
+        "탐색·시각 자료·메모를 함께 봅니다.",
+        "案内・視覚資料・メモを一緒に見ます。",
+      ),
+    },
+    "list-layout": {
+      title: t(
+        "Library search references",
+        "도서관 검색 참고 자료",
+        "図書館検索の参考資料",
+      ),
+      goal: t(
+        "Compare reference titles and details line by line.",
+        "참고 자료 제목과 설명을 줄마다 비교합니다.",
+        "参考資料の題名と詳細を行ごとに比べます。",
+      ),
+    },
+    "uniform-grid": {
+      title: t(
+        "Plant catalog references",
+        "식물 목록 참고 자료",
+        "植物カタログの参考資料",
+      ),
+      goal: t(
+        "Compare equally sized visual references for a plant catalog.",
+        "식물 목록에 쓸 같은 크기의 시각 자료를 비교합니다.",
+        "植物カタログ用の同じ大きさの視覚資料を比べます。",
+      ),
+    },
+    masonry: {
+      title: t(
+        "Travel album references",
+        "여행 앨범 참고 자료",
+        "旅のアルバムの参考資料",
+      ),
+      goal: t(
+        "Keep visual references at their varied natural heights.",
+        "서로 다른 높이의 시각 자료를 그대로 둡니다.",
+        "高さの異なる視覚資料をそのまま並べます。",
+      ),
+    },
+  };
+  return scenes[id];
+}
 export function resources(lang: Lang) {
   const t = local(lang);
   return [

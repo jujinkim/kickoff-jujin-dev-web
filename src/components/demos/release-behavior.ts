@@ -109,7 +109,9 @@ export function mountBlueGreen() {
         : step > 0
           ? p.ready
           : p.waiting;
-      field(root, "[data-records]").textContent = saved ? "A17" : p.empty;
+      field(root, "[data-records]").textContent = saved
+        ? root.dataset.savedLabel!
+        : p.empty;
       field(root, "[data-count]").textContent = saved ? "1" : "0";
       prev.disabled = step === 0 && !failed;
       next.disabled = failed || step === 3;
@@ -134,7 +136,7 @@ export function mountBlueGreen() {
     save.addEventListener("click", () => {
       saved = true;
       update();
-      say(`A17: ${p.saved}. ${p.count}: 1.`);
+      say(`${root.dataset.savedLabel}: ${p.saved}. ${p.count}: 1.`);
     });
     rollback.addEventListener("click", () => {
       step = 3;

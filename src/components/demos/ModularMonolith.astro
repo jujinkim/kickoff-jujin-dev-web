@@ -7,7 +7,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  s = serviceSplitText(lang);
+  s = serviceSplitText(lang, "modular-monolith");
 const modules = [
   [
     s.catalog,
@@ -17,9 +17,9 @@ const modules = [
   [
     s.library,
     t(
-      "Set A17 tag: travel",
-      "A17 태그 설정: travel",
-      "A17のタグを設定：travel",
+      "Set Hiking Guide tag: weekend",
+      "등산 안내 태그 설정: 주말",
+      "登山ガイドのタグを設定：週末",
     ),
     t(
       "Library-owned tables + tag field",

@@ -12,8 +12,8 @@ related:
   - serif
   - sans-serif
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: Script type borrows handwritten strokes and possible joins.
@@ -31,7 +31,7 @@ A short heading needs the personal impression of handwriting. Ordinary body text
 
 ## How: work toward a solution
 
-All five specimens share a sentence, iiiWWW 0123, and the same numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Dancing Script demonstrates Latin handwriting; localized text uses a Noto fallback.
+For a dinner invitation, compare a phrase with iiiWWW 0123 and aligned numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Dancing Script demonstrates Latin handwriting; localized text uses a Noto fallback.
 
 ## What: the concept
 

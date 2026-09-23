@@ -1,0 +1,181 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+const path = [
+  [
+    t("Customer", "고객", "顧客"),
+    t(
+      "Starts checkout for one purchase",
+      "구매 한 건의 결제를 시작",
+      "一件の購入で決済を開始",
+    ),
+  ],
+  [
+    t("Payment provider", "결제 제공자", "決済事業者"),
+    t(
+      "Sends a payment event to the server",
+      "서버에 결제 이벤트를 보냄",
+      "サーバーに決済イベントを送る",
+    ),
+  ],
+  [
+    t("Application server", "애플리케이션 서버", "アプリケーションサーバー"),
+    t(
+      "Verifies event and payment state",
+      "이벤트와 결제 상태 확인",
+      "イベントと決済状態を検証",
+    ),
+  ],
+  [
+    t("Access record", "이용 권한 기록", "利用権の記録"),
+    t(
+      "Grants access once for the purchase",
+      "구매 한 건에 권한을 한 번 부여",
+      "一件の購入に一度だけ利用権を付与",
+    ),
+  ],
+];
+---
+
+<section data-demo="payments" lang={lang}>
+  <header>
+    <p class="eyebrow">
+      {t(
+        "Digital course · one purchase",
+        "디지털 강좌 · 구매 한 건",
+        "デジタル講座 · 一件の購入",
+      )}
+    </p>
+    <h2>
+      {t(
+        "Verify before granting access",
+        "확인한 뒤 이용 권한 부여",
+        "検証してから利用権を付与",
+      )}
+    </h2>
+    <p>
+      {t(
+        "A success page alone cannot prove that payment completed.",
+        "성공 화면만으로 결제 완료를 증명할 수는 없습니다.",
+        "成功画面だけでは決済の完了を証明できません。",
+      )}
+    </p>
+  </header>
+  <ol class="path">
+    {path.map(([name, action], index) => (
+      <li>
+        <span class="number-label">{index + 1}</span>
+        <strong>{name}</strong>
+        <span>{action}</span>
+      </li>
+    ))}
+  </ol>
+  <div class="branches">
+    <p>
+      <strong>{t("Duplicate event", "중복 이벤트", "重複イベント")}</strong>{" "}
+      {t(
+        "Same purchase stays at one access grant.",
+        "같은 구매는 권한 한 건으로 유지합니다.",
+        "同じ購入の利用権は一件のままです。",
+      )}
+    </p>
+    <p>
+      <strong>{t("Failed payment", "결제 실패", "決済失敗")}</strong>{" "}
+      {t(
+        "No access grant; show a recoverable status.",
+        "권한을 주지 않고 재시도할 수 있는 상태를 보여 줍니다.",
+        "利用権を付与せず、再試行できる状態を示します。",
+      )}
+    </p>
+  </div>
+  <p class="note">
+    {t(
+      "Provider events can be delayed or repeated. Define the exact verified event and fulfillment rule for the provider you use.",
+      "제공자 이벤트는 늦거나 반복될 수 있습니다. 사용하는 제공자의 검증 이벤트와 권한 부여 규칙을 정하세요.",
+      "事業者のイベントは遅延・重複し得ます。使う事業者の検証イベントと提供規則を定めます。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 3vw, 28px);
+    color: #253328;
+    background: #f1f6ef;
+    border: 1px solid #66836c;
+    border-radius: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    font-family: system-ui, sans-serif;
+  }
+  h2,
+  p,
+  ol {
+    margin: 0;
+  }
+  .eyebrow {
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+  h2 {
+    margin: 0.3rem 0;
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+  }
+  .path {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .path li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    background: #fff;
+    border: 1px solid #6b8c74;
+    border-top: 4px solid #396c4d;
+    padding: 0.75rem;
+  }
+  .number-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .path li span:last-child {
+    font-size: 0.82rem;
+  }
+  .branches {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .branches p {
+    background: #fff;
+    border-left: 4px solid #50745b;
+    padding: 0.75rem;
+  }
+  .branches p:last-child {
+    border-left-color: #ae683f;
+  }
+  .note {
+    margin-top: 0.8rem;
+    font-size: 0.82rem;
+  }
+  @container (max-width:640px) {
+    .path {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @container (max-width:420px) {
+    .path,
+    .branches {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

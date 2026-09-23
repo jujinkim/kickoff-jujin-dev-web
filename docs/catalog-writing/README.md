@@ -8,7 +8,7 @@ The original research pack contained **58 candidates in 19 comparison groups**. 
 
 ## How to write from this pack
 
-1. Read the group’s shared fixture, comparison axes and matrix, then its linked article designs. Historical designs include six research sections; published articles use three short sections. Each design records, all five comparison fields, evidence locators, multilingual terms, concrete outcomes and a required visualization specification.
+1. Read the group’s comparison axes and matrix, then its linked article designs. Treat old shared fixtures as historical research and choose a different familiar situation for each published article. Historical designs include six research sections; published articles use three short sections. Each design records, all five comparison fields, evidence locators, multilingual terms, concrete outcomes and a required visualization specification.
 2. Reopen the [verified sources](sources.md) at their recorded passages. Definitions/mechanisms are source-backed; suitability and proposed examples are explicitly editorial. Recheck any product, pricing, version, license, service or jurisdiction claim when writing; this pack deliberately excludes unsupported commercial details.
 3. Write and cross-review the complete group in English first. The design groups are implemented; continue by existing candidate order below. Only after English approval, translate into Korean and Japanese with the [glossary](glossary.md).
 4. Use the existing single-candidate scaffold command from [authoring instructions](../content-authoring.md) when drafting is separately requested. Do not run it merely to consume these designs. Drafts remain unpublished until editorial review.

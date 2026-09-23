@@ -8,7 +8,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  m = moneyText(lang);
+  m = moneyText(lang, "prepaid-credits");
 ---
 
 <section
@@ -97,7 +97,7 @@ const t = local(lang),
   import { mount, local } from "./shared";
   import { moneyText, moneyField as field, readQuantity } from "./monetization";
   mount("prepaid-credits", (root, say) => {
-    const m = moneyText(root.lang as Lang),
+    const m = moneyText(root.lang as Lang, root.dataset.demo!),
       t = local(root.lang as Lang),
       input = field<HTMLInputElement>(root, "[data-quantity]");
     let balance = 1000,

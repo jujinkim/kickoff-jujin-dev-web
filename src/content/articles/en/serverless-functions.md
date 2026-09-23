@@ -12,8 +12,8 @@ related:
   - static-hosting
   - always-on-server
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-An occasional request needs server-side work, but your team does not want to operate a continuously listening process itself.
+A festival schedule gets occasional save requests, and a constantly running app would sit idle most of the day.
 
 ## How: work toward a solution
 
-Read article invokes a handler. Save A17 invokes another handler and writes an external store. Repeat Save keeps one record under the example’s reader/article key. Fail next save returns failure without changing storage. Restart handler discards execution state but retains that record. Reset or reload clears this page-memory simulation, including its illustrated store.
+Read article invokes a handler. Save Festival Schedule invokes another handler and writes an external store. Repeat Save keeps one record under the example’s reader/article key. Fail next save returns failure without changing storage. Restart handler discards execution state but retains that record. Reset or reload clears this page-memory simulation, including its illustrated store.
 
 ## What: the concept
 

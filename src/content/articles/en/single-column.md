@@ -3,7 +3,7 @@ kind: concept
 articleId: single-column
 lang: en
 title: Single column
-summary: Compare the same six resources.
+summary: Arrange visual references for a walking route guide.
 category: columns
 aliases:
   - Single column
@@ -12,8 +12,8 @@ related:
   - two-columns
   - multiple-columns
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: "Filters, resources, and guidance follow one vertical stream."
@@ -27,11 +27,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Readers need one clear sequence, especially on narrow screens. Competing side regions can obscure what comes next.
+A walking route guide must show each stop in order. Competing side regions can obscure what comes next.
 
 ## How: work toward a solution
 
-All six layouts use the same six resources, labels, and colors. Filter a topic, reverse collection order, open study notes, or narrow the preview. Compare the reading flow while the content stays the same. Reset or reload restores the full collection and original order. Filters, resources, and guidance form one vertical stream.
+While designing a walking route guide, gather six visual references. Filter a topic, reverse collection order, open study notes, or narrow the preview. Check whether the arrangement helps people find each reference. Reset or reload restores the full collection and original order. Filters, resources, and guidance form one vertical stream.
 
 ## What: the concept
 

@@ -36,6 +36,11 @@ Use these three level-two sections, in order; guides may use level-three subsect
 2. **How:** connect that problem to a concrete approach. Show inputs, actions, observable results, failure handling, and a way to check success. Use the illustration or interactive demo here, after the problem is established. The text must work without the visual or JavaScript.
 3. **What:** name and define the approach just demonstrated. Explain its boundaries, costs, alternatives, and when to reconsider it. Avoid presenting a conditional option as a universal prescription.
 
+Choose a distinct, familiar situation for each article, including siblings in
+the same comparison group. Keep the article's problem, worked result, visual,
+caption, comparison summary, and translations about that situation. Opaque
+fixture codes are not reader-facing examples; name the person, item, and action.
+
 **Guides are practical walkthroughs, about 2–3 minutes each.** Expand the reasoning and method: a worked scenario, actionable steps, why those steps matter, a common mistake or failure case, and an observable completion check. Readers should know what to do next without having to learn internal implementation vocabulary. AI writes appropriate documentation and chooses internal details within agreed product behavior. Add useful detail, never repeated filler to meet a word count.
 
 **Catalog concepts remain short introductions, about one minute.** Keep one problem, one concrete solution/example, and the definition with a meaningful tradeoff. Their purpose is recognizing and comparing a choice; the related guide provides the longer procedure. Optional comparison tables, related reading, and reusable AI prompts remain disclosure panels.

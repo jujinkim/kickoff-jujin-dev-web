@@ -8,8 +8,8 @@ category: "requirements"
 aliases: ["Use case"]
 related: ["srs", "user-story", "job-story"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,14 +24,14 @@ comparison:
 
 ## Why: the goal or problem
 
-Success-only descriptions omit failed writes and retries. You need to trace how a goal succeeds or remains unmet.
+A home cook saves Weekend Recipes, but a failed write could leave the screen saying Saved with no record to return to.
 
 ## How: work toward a solution
 
-Fictional setup: signed-in commuter, A17 unsaved, available storage.
+Weekend Recipes is unsaved; storage is available.
 
-1. Reader requests saving A17’s link.
-2. System validates A17.
+1. Cook requests saving the Weekend Recipes link.
+2. System validates the link.
 3. System persists one entry.
 4. System confirms success.
 
@@ -41,4 +41,4 @@ If persistence fails before writing: report unsaved, then retry from step 1. Rep
 
 A use case describes interactions toward an actor’s goal, including success and failure paths. A diagram alone is not that narrative. [Source](https://alistaircockburn.com/Unifying%20us%20uc%20sm.pdf)
 
-Split delivery into user stories; record motivation with a job story. Quality requirements still need separate treatment.
+User stories split delivery; job stories explain motivation. Quality needs separate treatment.

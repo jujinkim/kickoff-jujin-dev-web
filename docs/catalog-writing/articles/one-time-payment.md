@@ -36,7 +36,7 @@ Explain the conditional benefit: The example gives an upfront amount for the sta
 
 Compare every sibling: [subscription](subscription.md), [usage-based](usage-based.md).
 
-Use the shared axes, in this order: **charge trigger; amount calculation; billing timing; access entitlement; forecasting uncertainty; lifecycle obligations**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/billing.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **charge trigger; amount calculation; billing timing; access entitlement; forecasting uncertainty; lifecycle obligations**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/billing.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

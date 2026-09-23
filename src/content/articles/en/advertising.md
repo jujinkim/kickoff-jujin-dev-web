@@ -16,8 +16,8 @@ related:
     "banner-ads",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,11 +32,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Readers should retain free access, but publishing still costs money. A separate payer can fund space beside the content.
+A cooking blog wants its recipes open, but editing and hosting still have costs.
 
 ## How: work toward a solution
 
-A fictional reading service keeps articles open. An advertiser funds a labeled placement through a network; the publisher supplies space and readers see the message. The diagram names each role without promising impressions, clicks or income. Settlement details and fees are omitted.
+A fictional cooking blog keeps articles open. An advertiser funds a labeled placement through a network; the publisher supplies space and readers see the message. The diagram names each role without promising impressions, clicks or income. Settlement details and fees are omitted.
 
 ## What: the concept
 

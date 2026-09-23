@@ -1,0 +1,179 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+const owners = [
+  [
+    t("Order", "주문", "注文"),
+    t(
+      "Decides whether confirmation is allowed",
+      "확정 가능한 주문인지 결정",
+      "確定できる注文か判断",
+    ),
+  ],
+  [
+    t("Inventory", "재고", "在庫"),
+    t(
+      "Reserves and releases stock",
+      "재고 예약과 해제 담당",
+      "在庫の確保と解除を担当",
+    ),
+  ],
+  [
+    t("Payment integration", "결제 연동", "決済連携"),
+    t(
+      "Translates provider requests and errors",
+      "결제사 요청과 오류 변환",
+      "決済事業者への要求とエラーを変換",
+    ),
+  ],
+];
+---
+
+<section data-demo="architecture" lang={lang}>
+  <header>
+    <p class="eyebrow">
+      {t(
+        "Online shop · confirming one order",
+        "온라인 상점 · 주문 한 건 확정",
+        "オンライン店 · 一件の注文を確定",
+      )}
+    </p>
+    <h2>
+      {t(
+        "Give each decision one owner",
+        "결정마다 담당자 하나",
+        "各判断に一つの担当を置く",
+      )}
+    </h2>
+    <p>
+      {t(
+        "A provider timeout after stock reservation needs an owner for recovery.",
+        "재고를 예약한 뒤 결제사 응답이 늦어지면 복구 담당이 필요합니다.",
+        "在庫を確保した後に決済事業者が応答しなければ、復旧の担当が必要です。",
+      )}
+    </p>
+  </header>
+  <div class="coordinator">
+    <strong>{t("Checkout coordinator", "결제 조율자", "決済の調整役")}</strong>
+    <span>
+      {t(
+        "Owns sequence and recovery status",
+        "순서와 복구 상태 담당",
+        "順序と復旧状態を担当",
+      )}
+    </span>
+  </div>
+  <ol class="owners">
+    {owners.map(([name, responsibility], index) => (
+      <li>
+        <span class="number-label">{index + 1}</span>
+        <strong>{name}</strong>
+        <span>{responsibility}</span>
+      </li>
+    ))}
+  </ol>
+  <div class="outcomes">
+    <p>
+      <strong>{t("Success", "성공", "成功")}</strong>{" "}
+      {t(
+        "Confirmed order and one payment result are recorded.",
+        "확정한 주문과 결제 결과 한 건을 기록합니다.",
+        "確定した注文と一件の決済結果を記録します。",
+      )}
+    </p>
+    <p>
+      <strong>{t("Timeout", "시간 초과", "タイムアウト")}</strong>{" "}
+      {t(
+        "Keep status unresolved until the provider result is known; coordinator follows the agreed retry or release policy.",
+        "결제 결과를 알 때까지 미확정으로 두고, 조율자가 합의한 재시도·예약 해제 규칙을 따릅니다.",
+        "決済結果が分かるまで未確定とし、調整役が合意した再試行・在庫解除の規則に従います。",
+      )}
+    </p>
+  </div>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 3vw, 28px);
+    color: #182d41;
+    background: #edf4f8;
+    border: 1px solid #58768c;
+    border-radius: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    font-family: system-ui, sans-serif;
+  }
+  h2,
+  p,
+  ol {
+    margin: 0;
+  }
+  .eyebrow {
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+  h2 {
+    margin: 0.3rem 0;
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+  }
+  .coordinator {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    align-items: baseline;
+    margin: 1rem 0;
+    padding: 0.8rem 1rem;
+    color: #fff;
+    background: #284c69;
+    border-radius: 8px;
+  }
+  .owners {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+    padding: 0;
+    list-style: none;
+  }
+  .owners li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    background: #fff;
+    border: 1px solid #7793a6;
+    border-top: 4px solid #284c69;
+  }
+  .number-label {
+    font-weight: 700;
+    font-size: 0.82rem;
+  }
+  .owners strong {
+    font-size: 0.95rem;
+  }
+  .owners span:last-child {
+    font-size: 0.82rem;
+  }
+  .outcomes {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .outcomes p {
+    padding: 0.7rem 0.9rem;
+    background: #fff;
+    border-left: 4px solid #487080;
+  }
+  .outcomes p:last-child {
+    border-left-color: #a46032;
+  }
+  @container (max-width:560px) {
+    .owners {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

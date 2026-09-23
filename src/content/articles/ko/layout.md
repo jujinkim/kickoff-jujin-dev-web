@@ -21,8 +21,8 @@ aliases:
 related: ["theme", "srs"]
 example: "layout"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "카탈로그를 이름 있는 영역과 컴포넌트로 설명해줘. 모바일·데스크톱 배치, 읽기 순서, 키보드 동작, 빈 상태·로딩·오류를 제안해줘. 정보 우선순위가 미정이면 배치 선택 전에 질문해줘. 텍스트 와이어프레임과 검증 가능한 완료 조건을 남겨줘."
 ---

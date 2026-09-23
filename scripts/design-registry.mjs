@@ -44,9 +44,9 @@ export function validateDesigns(
     articles
       .filter(
         (a) =>
-          a.data.kind === "concept" &&
           a.data.status === "published" &&
-          requiresDemo(a.data.category),
+          ((a.data.kind === "concept" && requiresDemo(a.data.category)) ||
+            (a.data.kind === "guide" && !!registry[a.data.articleId])),
       )
       .map((a) => a.data.articleId),
   );

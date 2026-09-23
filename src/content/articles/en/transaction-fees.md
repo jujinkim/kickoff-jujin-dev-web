@@ -16,8 +16,8 @@ related:
     "merchant-of-record",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -32,11 +32,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Your platform helps buyers and sellers complete exchanges. You want income to follow those completed transactions.
+A craft marketplace helps makers find buyers, yet a fixed charge would apply even when nothing sells.
 
 ## How: work toward a solution
 
-A fictional reading marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the author. Stripe Connect illustrates application-fee flows; this is a simplified allocation, not its transfer sequence. Taxes, processing fees and refunds are omitted, so 10 is not profit.
+A fictional craft marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the maker. Stripe Connect illustrates application-fee flows; this is a simplified allocation, not its transfer sequence. Taxes, processing fees and refunds are omitted, so 10 is not profit.
 
 ## What: the concept
 

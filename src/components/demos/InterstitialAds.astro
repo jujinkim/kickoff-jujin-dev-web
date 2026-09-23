@@ -8,7 +8,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  m = moneyText(lang);
+  m = moneyText(lang, "interstitial-ads");
 ---
 
 <section data-demo="interstitial-ads" data-money lang={lang}>

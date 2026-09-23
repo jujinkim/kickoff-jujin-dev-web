@@ -34,7 +34,7 @@ Explain the conditional benefit: The card behavior can be reused with different 
 
 Compare every sibling: [vue](vue.md), [svelte](svelte.md).
 
-Use the shared axes, in this order: **component expression; state update; event handling; build/runtime responsibility; shared state; surrounding application needs**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/web-ui.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **component expression; state update; event handling; build/runtime responsibility; shared state; surrounding application needs**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/web-ui.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

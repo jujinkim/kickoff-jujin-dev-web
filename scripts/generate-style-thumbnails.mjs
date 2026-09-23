@@ -27,7 +27,11 @@ try {
       ),
   )) {
     for (const lang of ["en", "ko", "ja"]) {
-      const response = await page.goto(`${origin}/${lang}/catalog/${id}/`);
+      const article = articles.find(
+        (a) => a.data.articleId === id && a.data.lang === lang,
+      );
+      const kind = article?.data.kind === "guide" ? "guides" : "catalog";
+      const response = await page.goto(`${origin}/${lang}/${kind}/${id}/`);
       if (!response.ok()) throw new Error(`Missing demo route: ${id}/${lang}`);
       await page
         .locator(

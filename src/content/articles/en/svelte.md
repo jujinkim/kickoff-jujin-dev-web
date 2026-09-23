@@ -12,8 +12,8 @@ related:
   - react
   - vue
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Interactive components need coordinated updates. Handwritten DOM changes scatter the relationship between data and displayed content.
+A trip planner shows a bus timetable and hiking route; clicks should update the right card after the page loads.
 
 ## How: work toward a solution
 
-Two Field notes cards start unsaved. Save on A17 changes only its label to Saved; B04 stays unsaved. Saving B04 changes the shared count from one to two. Repeating Save leaves two records: each ID counts once. The diagram separates compilation from runtime updates. Reset or reload clears both cards. There is no persistent storage here.
+Two cards in a trip planner start unsaved. Save on Bus Timetable changes only its label to Saved; Hiking Route stays unsaved. Saving Hiking Route changes the shared count from one to two. Repeating Save leaves two records: each card counts once. The diagram separates compilation from runtime updates. Reset or reload clears both cards. There is no persistent storage here.
 
 ## What: the concept
 

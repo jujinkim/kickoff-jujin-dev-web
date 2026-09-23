@@ -17,8 +17,8 @@ related:
     "subscription",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -33,11 +33,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Customer value grows with the number of people given access. A single package price may ignore large differences in team size.
+A clinic scheduler serves teams of different sizes; charging a two-person clinic like a large office misses that difference.
 
 ## How: work toward a solution
 
-A fictional workspace begins with three licensed seats and 120 monthly exports. At 8 per seat monthly, the total is 24. Change the seat count: four costs 32; zero costs zero in this example. Exports do not change this calculation. Proration, taxes, fees and refunds are omitted.
+A fictional clinic scheduler begins with three licensed seats and 120 monthly exports. At 8 per seat monthly, the total is 24. Change the seat count: four costs 32; zero costs zero in this example. Exports do not change this calculation. Proration, taxes, fees and refunds are omitted.
 
 ## What: the concept
 

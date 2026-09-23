@@ -8,8 +8,8 @@ category: "purchase-types"
 aliases: ["Consumable purchase"]
 related: ["revenue", "non-consumable-purchase", "prepaid-credits", "freemium"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Hints are spent one at a time. A permanent unlock cannot express a balance that decreases and can be replenished.
+A crossword player uses one hint now and may need another later; an unlimited unlock would not track that spending.
 
 ## How: work toward a solution
 
-A fictional puzzle app starts with zero hints. Buy three, then use hints repeatedly: the balance falls to zero and further use is blocked. Buying another pack adds three again. This is a local simulation; no purchase is processed. Prices, taxes, fees and refunds are omitted. Reset or reload clears the example.
+A fictional crossword app starts with zero hints. Buy three, then use hints repeatedly: the balance falls to zero and further use is blocked. Buying another pack adds three again. This is a local simulation; no purchase is processed. Prices, taxes, fees and refunds are omitted. Reset or reload clears the example.
 
 ## What: the concept
 

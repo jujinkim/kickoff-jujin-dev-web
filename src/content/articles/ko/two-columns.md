@@ -3,7 +3,7 @@ kind: concept
 articleId: two-columns
 lang: ko
 title: 2열
-summary: 같은 자료 6개로 배치 비교.
+summary: 요리법 목록의 시각 자료를 배치합니다.
 category: columns
 aliases:
   - 2열
@@ -12,8 +12,8 @@ related:
   - single-column
   - multiple-columns
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: 나란한 두 영역이 필터와 자료를 나눕니다.
@@ -29,7 +29,7 @@ comparison:
 
 ## 어떻게 해결하는가
 
-여섯 레이아웃은 같은 자료 6개, 라벨, 색을 사용합니다. 주제 필터·수집 역순·연구 메모 펼침·미리보기 폭을 조절합니다. 내용은 그대로 두고 읽기 흐름을 비교하세요. 초기화·새로고침하면 전체 자료와 수집 순서로 돌아갑니다. 필터가 자료 목록 옆에 놓이고 안내는 목록 뒤에 이어집니다.
+요리법 목록을 설계하며 시각 자료 여섯 개를 모읍니다. 주제 필터·수집 역순·연구 메모 펼침·미리보기 폭을 조절합니다. 자료를 찾는 흐름이 분명한지 확인하세요. 초기화·새로고침하면 전체 자료와 수집 순서로 돌아갑니다. 필터가 자료 목록 옆에 놓이고 안내는 목록 뒤에 이어집니다.
 
 ## 무엇이라 부르는가
 

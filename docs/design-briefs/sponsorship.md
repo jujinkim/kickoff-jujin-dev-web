@@ -5,10 +5,10 @@
 - Closest concept and concrete difference: same-category peers direct-payment, advertising, affiliate-marketing, transaction-fees; Support funds continued work. Cross-category combinations are related reading, not comparison peers.
 - Distinguishing visual features (structure, material, typography): Support payment and acknowledgment return, with a public-access band. Solid surfaces and text/number labels; color is not the only encoding.
 - Shared comparison category: [revenue-sources](../catalog-writing/groups/revenue-sources.md).
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: A reading service with reader, publisher and optional advertiser, supporter, shop or marketplace; compare payer and value exchanged. No income forecast.
+- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional community garden guide keeps articles open.
 - Visual variable changed; concept-specific extra controls and their justification: Support payment and acknowledgment return, with a public-access band. Static mode has no controls, scripts, artificial focus stops or mount dependency.
-- Fictional scenario and why it demonstrates the definition: A fictional reading service keeps articles open. A supporter contributes 12 toward maintenance and receives acknowledgment, not exclusive access. GitHub Sponsors illustrates one-time and recurring support; its conditions are provider-specific. This is a fictional amount; taxes, fees and refunds are omitted.
-- Representative action and observable result: Read the numbered relationships/table in source order. A fictional reading service keeps articles open. A supporter contributes 12 toward maintenance and receives acknowledgment, not exclusive access. GitHub Sponsors illustrates one-time and recurring support; its conditions are provider-specific. This is a fictional amount; taxes, fees and refunds are omitted.
+- Fictional scenario and why it demonstrates the definition: A community garden guide has useful free advice, but volunteers cannot cover its upkeep indefinitely. A fictional community garden guide keeps articles open.
+- Representative action and observable result: A fictional community garden guide keeps articles open. A supporter contributes 12 toward maintenance and receives acknowledgment, not exclusive access.
 - Initial state: Support payment and acknowledgment return, with a public-access band.
 - Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
 - Reset and reload behavior: No mutable state or reset control.

@@ -34,7 +34,7 @@ Explain the conditional benefit: The proposed card gives title and Save fewer co
 
 Compare every sibling: [brutalism](brutalism.md), [neobrutalism](neobrutalism.md), [glassmorphism](glassmorphism.md), [neumorphism](neumorphism.md), [skeuomorphism](skeuomorphism.md), [flat-design](flat-design.md).
 
-Use the shared axes, in this order: **surface and depth; ornament; information retained; action signifiers; background dependence; state visibility**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/styles.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **surface and depth; ornament; information retained; action signifiers; background dependence; state visibility**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/styles.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

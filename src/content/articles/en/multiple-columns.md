@@ -3,7 +3,7 @@ kind: concept
 articleId: multiple-columns
 lang: en
 title: Multiple columns
-summary: Compare the same six resources.
+summary: Arrange visual references for a museum guide.
 category: columns
 aliases:
   - Multiple columns
@@ -12,8 +12,8 @@ related:
   - single-column
   - two-columns
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: "Three or more page regions keep navigation, active work, and context nearby."
@@ -25,11 +25,11 @@ comparison:
 
 ## Why: the goal or problem
 
-People must consult navigation and context while working. Moving between separate screens repeatedly breaks that comparison.
+Museum visitors need the route, exhibit list, and notes together. Moving between separate screens repeatedly breaks that comparison.
 
 ## How: work toward a solution
 
-All six layouts use the same six resources, labels, and colors. Filter a topic, reverse collection order, open study notes, or narrow the preview. Compare the reading flow while the content stays the same. Reset or reload restores the full collection and original order. Filters, resources, and guidance occupy three adjacent regions.
+While designing a museum guide, gather six visual references. Filter a topic, reverse collection order, open study notes, or narrow the preview. Check whether the arrangement helps people find each reference. Reset or reload restores the full collection and original order. Filters, resources, and guidance occupy three adjacent regions.
 
 ## What: the concept
 

@@ -5,10 +5,10 @@
 - Closest concept and concrete difference: same-category peers advertising, sponsorship, affiliate-marketing, transaction-fees; Customer funds access. Cross-category combinations are related reading, not comparison peers.
 - Distinguishing visual features (structure, material, typography): Two numbered money/value lanes and separate processor contract note. Solid surfaces and text/number labels; color is not the only encoding.
 - Shared comparison category: [revenue-sources](../catalog-writing/groups/revenue-sources.md).
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: A reading service with reader, publisher and optional advertiser, supporter, shop or marketplace; compare payer and value exchanged. No income forecast.
+- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional neighborhood newspaper receives 12 from a reader and grants access.
 - Visual variable changed; concept-specific extra controls and their justification: Two numbered money/value lanes and separate processor contract note. Static mode has no controls, scripts, artificial focus stops or mount dependency.
-- Fictional scenario and why it demonstrates the definition: A fictional reading service receives 12 from a reader and grants access. The diagram separates payment from content delivery. A processor may carry the payment without becoming the seller. Amounts are illustrative; taxes, processing fees and refunds are omitted.
-- Representative action and observable result: Read the numbered relationships/table in source order. A fictional reading service receives 12 from a reader and grants access. The diagram separates payment from content delivery. A processor may carry the payment without becoming the seller. Amounts are illustrative; taxes, processing fees and refunds are omitted.
+- Fictional scenario and why it demonstrates the definition: A neighborhood newspaper has readers, but the next issue cannot be funded by readership alone. A fictional neighborhood newspaper receives 12 from a reader and grants access.
+- Representative action and observable result: A fictional neighborhood newspaper receives 12 from a reader and grants access. The diagram separates payment from content delivery.
 - Initial state: Two numbered money/value lanes and separate processor contract note.
 - Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
 - Reset and reload behavior: No mutable state or reset control.

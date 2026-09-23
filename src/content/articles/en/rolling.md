@@ -12,8 +12,8 @@ related:
   - blue-green
   - canary
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A replicated service needs an update without replacing every instance simultaneously. Mixed old and new versions must remain compatible.
+Weather alerts need continuous availability while four replicas update. Mixed old and new versions must remain compatible.
 
 ## How: work toward a solution
 

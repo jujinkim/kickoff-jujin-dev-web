@@ -12,8 +12,8 @@ related:
   - unity
   - unreal-engine
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-A game repeats objects made from smaller parts. Rebuilding each object separately makes shared behavior hard to maintain.
+An orchard game has several apples that all award one point; copying separate contact code into each apple makes changes error-prone.
 
 ## How: work toward a solution
 
-The schematic contains a player, floor, camera, and one collectible instance. Move to item triggers authored contact logic: score changes from zero to one and the item disappears. Repeat contact cannot score again. Disable contact before moving to demonstrate a missed collection: score stays zero. Reset or reload restores the player and item. This is a concept simulation.
+The schematic contains a player, floor, camera, and one apple instance. Move to item triggers authored contact logic: score changes from zero to one and the item disappears. Repeat contact cannot score again. Disable contact before moving to demonstrate a missed collection: score stays zero. Reset or reload restores the player and item. This is a concept simulation.
 
 ## What: the concept
 

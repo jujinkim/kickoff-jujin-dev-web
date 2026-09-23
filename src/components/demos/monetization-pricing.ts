@@ -4,7 +4,7 @@ import { moneyText, moneyField as field, readQuantity } from "./monetization";
 import { priceCents, amount } from "./monetization-math.mjs";
 export function mountPricing(id: string, initial: number) {
   mount(id, (root, say) => {
-    const m = moneyText(root.lang as Lang),
+    const m = moneyText(root.lang as Lang, root.dataset.demo!),
       input = field<HTMLInputElement>(root, "[data-quantity]");
     function update(announce = true) {
       const q = readQuantity(input),

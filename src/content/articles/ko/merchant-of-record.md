@@ -8,8 +8,8 @@ category: "seller-responsibility"
 aliases: ["MoR 모델", "Merchant of record model"]
 related: ["payments", "direct-seller", "subscription"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## 왜 필요한가
 
-여러 시장에서 판매하면 팀이 감당하기 어려운 판매 업무가 늘어납니다. 계약상 판매자에게 어떤 책임을 맡길 수 있는지 구분해야 합니다.
+작은 음악 연습 앱이 해외 고객을 만나도 팀이 모든 시장의 판매 업무를 맡을 수는 없습니다.
 
 ## 어떻게 해결하는가
 
-가상 읽기 도구에서 고객은 MoR에 결제하고 MoR는 약정된 대금을 사업자에게 정산합니다. 예시의 영수증·환불·거래세 업무는 MoR가 맡습니다. 사업자는 제품과 약정된 제품 지원을 계속 제공합니다. 금액·제외 조건·국가별 세무 규칙은 도식 범위 밖입니다.
+가상 음악 연습 이용권 판매에서 고객은 MoR에 결제하고 MoR는 약정된 대금을 사업자에게 정산합니다. 예시의 영수증·환불·거래세 업무는 MoR가 맡습니다. 사업자는 제품과 약정된 제품 지원을 계속 제공합니다. 금액·제외 조건·국가별 세무 규칙은 도식 범위 밖입니다.
 
 ## 무엇이라 부르는가
 

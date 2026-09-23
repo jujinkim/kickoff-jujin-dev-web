@@ -23,14 +23,14 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Move the player into the item. Authored contact logic awards one point and removes it.",
-      "플레이어를 아이템으로 이동하세요. 작성한 접촉 로직이 1점을 주고 아이템을 제거합니다.",
-      "プレイヤーをアイテムへ移動します。独自の接触処理が1点を与えて削除します。",
+      "In an orchard, move the player into the apple. Authored contact logic awards one point and removes it.",
+      "과수원에서 플레이어를 사과로 이동하세요. 작성한 접촉 로직이 1점을 주고 대상을 제거합니다.",
+      "果樹園でプレイヤーをリンゴへ移動します。独自の接触処理が1点を与えて削除します。",
     )}
   </p>
   <div class="controls">
     <button type="button" data-touch data-interactive disabled>
-      {t("Move to item", "아이템으로 이동", "アイテムへ移動")}
+      {t("Move to apple", "사과로 이동", "リンゴへ移動")}
     </button>
     <button type="button" data-reset data-interactive disabled>
       {p.reset}
@@ -85,13 +85,13 @@ const t = local(lang),
     </svg>
     <figcaption>
       P: {t("Player", "플레이어", "プレイヤー")} · I:{" "}
-      {t("Collectible", "수집 아이템", "収集アイテム")} · C:{" "}
-      {t("Camera", "카메라", "カメラ")} · ─: {t("Floor", "바닥", "床")}
+      {t("Apple", "사과", "リンゴ")} · C: {t("Camera", "카메라", "カメラ")} · ─:{" "}
+      {t("Floor", "바닥", "床")}
     </figcaption>
   </figure>
   <p class="score">
     {t("Score", "점수", "得点")}: <strong data-score>0</strong> ·{" "}
-    {t("Collectible", "수집 아이템", "収集アイテム")}:{" "}
+    {t("Apple", "사과", "リンゴ")}:{" "}
     <span data-item-state>{t("Present", "있음", "存在")}</span>
   </p>
   <div class="composition">
@@ -107,7 +107,7 @@ const t = local(lang),
       <li>{t("Floor", "바닥", "床")} · StaticBody3D</li>
       <li>{t("Camera", "카메라", "カメラ")} · Camera3D</li>
       <li>
-        {t("Collectible", "수집 아이템", "収集アイテム")} ·{" "}
+        {t("Apple", "사과", "リンゴ")} ·{" "}
         {t("scene instance", "씬 인스턴스", "シーンのインスタンス")}
         <ul>
           <li>Area3D → CollisionShape3D</li>

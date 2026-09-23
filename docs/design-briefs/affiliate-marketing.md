@@ -5,10 +5,10 @@
 - Closest concept and concrete difference: same-category peers direct-payment, advertising, sponsorship, transaction-fees; Commission on qualifying referrals. Cross-category combinations are related reading, not comparison peers.
 - Distinguishing visual features (structure, material, typography): Numbered referral, external purchase and conditional commission path. Solid surfaces and text/number labels; color is not the only encoding.
 - Shared comparison category: [revenue-sources](../catalog-writing/groups/revenue-sources.md).
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: A reading service with reader, publisher and optional advertiser, supporter, shop or marketplace; compare payer and value exchanged. No income forecast.
+- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional hiking book guide labels a referral link to a bookshop.
 - Visual variable changed; concept-specific extra controls and their justification: Numbered referral, external purchase and conditional commission path. Static mode has no controls, scripts, artificial focus stops or mount dependency.
-- Fictional scenario and why it demonstrates the definition: A fictional reading service labels a referral link to a bookshop. A reader buys there; the shop pays the publisher a commission if its conditions are met. Amazon Associates provides one contractual example, not universal rates or rules. The diagram excludes settlement timing, fees and refunds.
-- Representative action and observable result: Read the numbered relationships/table in source order. A fictional reading service labels a referral link to a bookshop. A reader buys there; the shop pays the publisher a commission if its conditions are met. Amazon Associates provides one contractual example, not universal rates or rules. The diagram excludes settlement timing, fees and refunds.
+- Fictional scenario and why it demonstrates the definition: A hiking book guide helps readers choose a book, but sending them to a shop brings the guide no direct sale. A fictional hiking book guide labels a referral link to a bookshop.
+- Representative action and observable result: A fictional hiking book guide labels a referral link to a bookshop. A reader buys there; the shop pays the publisher a commission if its conditions are met.
 - Initial state: Numbered referral, external purchase and conditional commission path.
 - Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
 - Reset and reload behavior: No mutable state or reset control.

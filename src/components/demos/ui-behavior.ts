@@ -15,8 +15,12 @@ export function mountUi(id: string) {
         b.setAttribute("aria-pressed", String(active));
       }
       field(root, "[data-count]").textContent = String(saved.size);
-      field(root, "[data-state]").textContent =
-        `A17: ${saved.has("A17") ? "1" : "0"} · B04: ${saved.has("B04") ? "1" : "0"}`;
+      field(root, "[data-state]").textContent = buttons
+        .map(
+          (b) =>
+            `${b.dataset.label ?? b.dataset.save}: ${saved.has(b.dataset.save!) ? "1" : "0"}`,
+        )
+        .join(" · ");
     };
     buttons.forEach((b) =>
       b.addEventListener("click", () => {

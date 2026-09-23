@@ -73,8 +73,8 @@ for (const lang of ["en", "ko", "ja"]) {
   }) => {
     for (const id of ui) {
       const root = await open(page, lang, id),
-        a = root.locator('[data-save="A17"]'),
-        b = root.locator('[data-save="B04"]');
+        a = root.locator("[data-save]").first(),
+        b = root.locator("[data-save]").last();
       await key(page, a);
       await expect(a).toBeFocused();
       await expect(a).toHaveAttribute("aria-pressed", "true");
@@ -145,8 +145,8 @@ for (const lang of ["en", "ko", "ja"]) {
       await root.locator("[data-restart]").click();
       await expect(root.locator("[data-generation]")).toHaveText("2");
       await expect(root.locator("[data-calls]")).toHaveText("0");
-      await expect(root.locator("[data-records]")).toContainText(
-        "reader-01 / A17",
+      await expect(root.locator("[data-records]")).toHaveText(
+        (await root.getAttribute("data-record-label"))!,
       );
       await save.click();
       await expect(root.locator("[data-count]")).toHaveText("1");
@@ -216,10 +216,14 @@ for (const lang of ["en", "ko", "ja"]) {
     await expect(root.locator("[data-count]")).toHaveText("1");
     await root.locator("[data-rollback]").click();
     await expect(root).toHaveAttribute("data-route", "blue");
-    await expect(root.locator("[data-records]")).toHaveText("A17");
+    await expect(root.locator("[data-records]")).toHaveText(
+      (await root.getAttribute("data-saved-label"))!,
+    );
     await root.locator("[data-previous]").click();
     await expect(root).toHaveAttribute("data-route", "green");
-    await expect(root.locator("[data-records]")).toHaveText("A17");
+    await expect(root.locator("[data-records]")).toHaveText(
+      (await root.getAttribute("data-saved-label"))!,
+    );
     await reset(page, root);
     await expect(root.locator("[data-count]")).toHaveText("0");
     await root.locator("[data-next]").click();

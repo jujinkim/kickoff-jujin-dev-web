@@ -12,8 +12,8 @@ related:
   - rolling
   - blue-green
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+공연 표 예약 변경은 실제 방문자 트래픽에서만 실패할 수 있습니다.
 
 테스트를 통과한 변경도 실제 사용자에게는 실패할 수 있습니다. 불확실한 변경을 모두에게 한꺼번에 노출하면 피해가 커집니다.
 

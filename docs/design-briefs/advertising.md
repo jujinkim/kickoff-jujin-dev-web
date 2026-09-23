@@ -5,10 +5,10 @@
 - Closest concept and concrete difference: same-category peers direct-payment, sponsorship, affiliate-marketing, transaction-fees; Advertiser funds placement. Cross-category combinations are related reading, not comparison peers.
 - Distinguishing visual features (structure, material, typography): Advertiser/network payment lane beside publisher/reader delivery lane. Solid surfaces and text/number labels; color is not the only encoding.
 - Shared comparison category: [revenue-sources](../catalog-writing/groups/revenue-sources.md).
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: A reading service with reader, publisher and optional advertiser, supporter, shop or marketplace; compare payer and value exchanged. No income forecast.
+- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional cooking blog keeps articles open.
 - Visual variable changed; concept-specific extra controls and their justification: Advertiser/network payment lane beside publisher/reader delivery lane. Static mode has no controls, scripts, artificial focus stops or mount dependency.
-- Fictional scenario and why it demonstrates the definition: A fictional reading service keeps articles open. An advertiser funds a labeled placement through a network; the publisher supplies space and readers see the message. The diagram names each role without promising impressions, clicks or income. Settlement details and fees are omitted.
-- Representative action and observable result: Read the numbered relationships/table in source order. A fictional reading service keeps articles open. An advertiser funds a labeled placement through a network; the publisher supplies space and readers see the message. The diagram names each role without promising impressions, clicks or income. Settlement details and fees are omitted.
+- Fictional scenario and why it demonstrates the definition: A cooking blog wants its recipes open, but editing and hosting still have costs. A fictional cooking blog keeps articles open.
+- Representative action and observable result: A fictional cooking blog keeps articles open. An advertiser funds a labeled placement through a network; the publisher supplies space and readers see the message.
 - Initial state: Advertiser/network payment lane beside publisher/reader delivery lane.
 - Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
 - Reset and reload behavior: No mutable state or reset control.

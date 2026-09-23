@@ -15,8 +15,8 @@ related:
     "transaction-fees",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,11 +31,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Useful recommendations send buyers elsewhere. You want qualifying referrals to support the work without selling the product yourself.
+A hiking book guide helps readers choose a book, but sending them to a shop brings the guide no direct sale.
 
 ## How: work toward a solution
 
-A fictional reading service labels a referral link to a bookshop. A reader buys there; the shop pays the publisher a commission if its conditions are met. Amazon Associates provides one contractual example, not universal rates or rules. The diagram excludes settlement timing, fees and refunds.
+A fictional hiking book guide labels a referral link to a bookshop. A reader buys there; the shop pays the publisher a commission if its conditions are met. Amazon Associates provides one contractual example, not universal rates or rules. The diagram excludes settlement timing, fees and refunds.
 
 ## What: the concept
 

@@ -2,225 +2,225 @@
   "brutalism": {
     "component": "Brutalism",
     "caption": {
-      "en": "Explore the same project workspace",
-      "ko": "같은 프로젝트 작업실로 스타일 비교",
-      "ja": "同じプロジェクト作業室でスタイルを比較"
+      "en": "Explore the repair day project",
+      "ko": "수리 행사 프로젝트 살펴보기",
+      "ja": "修理会の企画を見る"
     },
     "capture": "[data-demo=\"brutalism\"]"
   },
   "neobrutalism": {
     "component": "Neobrutalism",
     "caption": {
-      "en": "Explore the same project workspace",
-      "ko": "같은 프로젝트 작업실로 스타일 비교",
-      "ja": "同じプロジェクト作業室でスタイルを比較"
+      "en": "Explore the school fair project",
+      "ko": "학교 축제 프로젝트 살펴보기",
+      "ja": "学校祭の企画を見る"
     },
     "capture": "[data-demo=\"neobrutalism\"]"
   },
   "glassmorphism": {
     "component": "Glassmorphism",
     "caption": {
-      "en": "Explore the same project workspace",
-      "ko": "같은 프로젝트 작업실로 스타일 비교",
-      "ja": "同じプロジェクト作業室でスタイルを比較"
+      "en": "Explore the photo walk project",
+      "ko": "사진 산책 프로젝트 살펴보기",
+      "ja": "写真散歩の企画を見る"
     },
     "capture": "[data-demo=\"glassmorphism\"]"
   },
   "neumorphism": {
     "component": "Neumorphism",
     "caption": {
-      "en": "Explore the same project workspace",
-      "ko": "같은 프로젝트 작업실로 스타일 비교",
-      "ja": "同じプロジェクト作業室でスタイルを比較"
+      "en": "Explore the daily stretch routine project",
+      "ko": "매일 스트레칭 프로젝트 살펴보기",
+      "ja": "毎日のストレッチの企画を見る"
     },
     "capture": "[data-demo=\"neumorphism\"]"
   },
   "skeuomorphism": {
     "component": "Skeuomorphism",
     "caption": {
-      "en": "Explore the same project workspace",
-      "ko": "같은 프로젝트 작업실로 스타일 비교",
-      "ja": "同じプロジェクト作業室でスタイルを比較"
+      "en": "Explore the recipe notebook project",
+      "ko": "요리 수첩 프로젝트 살펴보기",
+      "ja": "料理ノートの企画を見る"
     },
     "capture": "[data-demo=\"skeuomorphism\"]"
   },
   "flat-design": {
     "component": "FlatDesign",
     "caption": {
-      "en": "Explore the same project workspace",
-      "ko": "같은 프로젝트 작업실로 스타일 비교",
-      "ja": "同じプロジェクト作業室でスタイルを比較"
+      "en": "Explore the clinic visit project",
+      "ko": "진료 예약 프로젝트 살펴보기",
+      "ja": "診察予約の企画を見る"
     },
     "capture": "[data-demo=\"flat-design\"]"
   },
   "minimalism": {
     "component": "Minimalism",
     "caption": {
-      "en": "Explore the same project workspace",
-      "ko": "같은 프로젝트 작업실로 스타일 비교",
-      "ja": "同じプロジェクト作業室でスタイルを比較"
+      "en": "Explore the hiking checklist project",
+      "ko": "등산 준비 목록 프로젝트 살펴보기",
+      "ja": "登山の持ち物の企画を見る"
     },
     "capture": "[data-demo=\"minimalism\"]"
   },
   "single-column": {
     "component": "SingleColumn",
     "caption": {
-      "en": "Compare the same six resources",
-      "ko": "같은 자료 6개로 배치 비교",
-      "ja": "同じ6件の資料で配置を比較"
+      "en": "Explore visual references for a walking route guide",
+      "ko": "산책로 안내 참고 자료 살펴보기",
+      "ja": "散歩道ガイドの参考資料を見る"
     },
     "capture": "[data-demo=\"single-column\"]"
   },
   "two-columns": {
     "component": "TwoColumns",
     "caption": {
-      "en": "Compare the same six resources",
-      "ko": "같은 자료 6개로 배치 비교",
-      "ja": "同じ6件の資料で配置を比較"
+      "en": "Explore visual references for a recipe index",
+      "ko": "요리법 목록 참고 자료 살펴보기",
+      "ja": "レシピ一覧の参考資料を見る"
     },
     "capture": "[data-demo=\"two-columns\"]"
   },
   "multiple-columns": {
     "component": "MultipleColumns",
     "caption": {
-      "en": "Compare the same six resources",
-      "ko": "같은 자료 6개로 배치 비교",
-      "ja": "同じ6件の資料で配置を比較"
+      "en": "Explore visual references for a museum guide",
+      "ko": "박물관 안내 참고 자료 살펴보기",
+      "ja": "博物館ガイドの参考資料を見る"
     },
     "capture": "[data-demo=\"multiple-columns\"]"
   },
   "list-layout": {
     "component": "ListLayout",
     "caption": {
-      "en": "Compare the same six resources",
-      "ko": "같은 자료 6개로 배치 비교",
-      "ja": "同じ6件の資料で配置を比較"
+      "en": "Explore visual references for a library search page",
+      "ko": "도서관 검색 화면 참고 자료 살펴보기",
+      "ja": "図書館の検索画面の参考資料を見る"
     },
     "capture": "[data-demo=\"list-layout\"]"
   },
   "uniform-grid": {
     "component": "UniformGrid",
     "caption": {
-      "en": "Compare the same six resources",
-      "ko": "같은 자료 6개로 배치 비교",
-      "ja": "同じ6件の資料で配置を比較"
+      "en": "Explore visual references for a plant catalog",
+      "ko": "식물 목록 참고 자료 살펴보기",
+      "ja": "植物カタログの参考資料を見る"
     },
     "capture": "[data-demo=\"uniform-grid\"]"
   },
   "masonry": {
     "component": "Masonry",
     "caption": {
-      "en": "Compare the same six resources",
-      "ko": "같은 자료 6개로 배치 비교",
-      "ja": "同じ6件の資料で配置を比較"
+      "en": "Explore visual references for a travel album",
+      "ko": "여행 앨범 참고 자료 살펴보기",
+      "ja": "旅のアルバムの参考資料を見る"
     },
     "capture": "[data-demo=\"masonry\"]"
   },
   "serif": {
     "component": "Serif",
     "caption": {
-      "en": "Compare the same text specimen",
-      "ko": "같은 글자·문장·숫자로 서체 비교",
-      "ja": "同じ文字・文章・数字で書体を比較"
+      "en": "Inspect type for a local history magazine",
+      "ko": "지역 역사 잡지의 글자 살펴보기",
+      "ja": "地域史の雑誌の文字を見る"
     },
     "capture": "[data-demo=\"serif\"]"
   },
   "sans-serif": {
     "component": "SansSerif",
     "caption": {
-      "en": "Compare the same text specimen",
-      "ko": "같은 글자·문장·숫자로 서체 비교",
-      "ja": "同じ文字・文章・数字で書体を比較"
+      "en": "Inspect type for a train information board",
+      "ko": "열차 안내판의 글자 살펴보기",
+      "ja": "列車案内板の文字を見る"
     },
     "capture": "[data-demo=\"sans-serif\"]"
   },
   "script": {
     "component": "Script",
     "caption": {
-      "en": "Compare the same text specimen",
-      "ko": "같은 글자·문장·숫자로 서체 비교",
-      "ja": "同じ文字・文章・数字で書体を比較"
+      "en": "Inspect type for a dinner invitation",
+      "ko": "저녁 초대장의 글자 살펴보기",
+      "ja": "夕食への招待状の文字を見る"
     },
     "capture": "[data-demo=\"script\"]"
   },
   "proportional": {
     "component": "Proportional",
     "caption": {
-      "en": "Compare the same text specimen",
-      "ko": "같은 글자·문장·숫자로 서체 비교",
-      "ja": "同じ文字・文章・数字で書体を比較"
+      "en": "Inspect type for a garden newsletter",
+      "ko": "정원 소식지의 글자 살펴보기",
+      "ja": "庭の便りの文字を見る"
     },
     "capture": "[data-demo=\"proportional\"]"
   },
   "monospace": {
     "component": "Monospace",
     "caption": {
-      "en": "Compare the same text specimen",
-      "ko": "같은 글자·문장·숫자로 서체 비교",
-      "ja": "同じ文字・文章・数字で書体を比較"
+      "en": "Inspect type for a weather log",
+      "ko": "날씨 기록표의 글자 살펴보기",
+      "ja": "天気の記録の文字を見る"
     },
     "capture": "[data-demo=\"monospace\"]"
   },
   "liquid-glass": {
     "component": "LiquidGlass",
     "caption": {
-      "en": "Explore the same project workspace",
-      "ko": "같은 프로젝트 작업실로 스타일 비교",
-      "ja": "同じプロジェクト作業室でスタイルを比較"
+      "en": "Explore the coastal photo diary project",
+      "ko": "해변 사진 일기 프로젝트 살펴보기",
+      "ja": "海辺の写真日記の企画を見る"
     },
     "capture": "[data-demo=\"liquid-glass\"]"
   },
   "material-3-expressive": {
     "component": "Material3Expressive",
     "caption": {
-      "en": "Explore the same project workspace",
-      "ko": "같은 프로젝트 작업실로 스타일 비교",
-      "ja": "同じプロジェクト作業室でスタイルを比較"
+      "en": "Explore the community picnic project",
+      "ko": "동네 소풍 프로젝트 살펴보기",
+      "ja": "地域のピクニックの企画を見る"
     },
     "capture": "[data-demo=\"material-3-expressive\"]"
   },
   "tactile-collage": {
     "component": "TactileCollage",
     "caption": {
-      "en": "Explore the same project workspace",
-      "ko": "같은 프로젝트 작업실로 스타일 비교",
-      "ja": "同じプロジェクト作業室でスタイルを比較"
+      "en": "Explore the memory board project",
+      "ko": "추억 보드 프로젝트 살펴보기",
+      "ja": "思い出ボードの企画を見る"
     },
     "capture": "[data-demo=\"tactile-collage\"]"
   },
   "retro-digital": {
     "component": "RetroDigital",
     "caption": {
-      "en": "Explore the same project workspace",
-      "ko": "같은 프로젝트 작업실로 스타일 비교",
-      "ja": "同じプロジェクト作業室でスタイルを比較"
+      "en": "Explore the arcade night project",
+      "ko": "오락실 모임 프로젝트 살펴보기",
+      "ja": "ゲームセンターの夜の企画を見る"
     },
     "capture": "[data-demo=\"retro-digital\"]"
   },
   "astro": {
     "component": "AstroGenerator",
     "caption": {
-      "en": "Astro: concept simulation",
-      "ko": "Astro: 개념 시뮬레이션",
-      "ja": "Astro: 概念シミュレーション"
+      "en": "Build a neighborhood journal",
+      "ko": "동네 소식지 빌드",
+      "ja": "地域の便りをビルド"
     },
     "capture": "[data-demo=\"astro\"]"
   },
   "hugo": {
     "component": "HugoGenerator",
     "caption": {
-      "en": "Hugo: concept simulation",
-      "ko": "Hugo: 개념 시뮬레이션",
-      "ja": "Hugo: 概念シミュレーション"
+      "en": "Build a town visitor guide",
+      "ko": "마을 여행 안내 빌드",
+      "ja": "町の観光案内をビルド"
     },
     "capture": "[data-demo=\"hugo\"]"
   },
   "jekyll": {
     "component": "JekyllGenerator",
     "caption": {
-      "en": "Jekyll: concept simulation",
-      "ko": "Jekyll: 개념 시뮬레이션",
-      "ja": "Jekyll: 概念シミュレーション"
+      "en": "Build a family recipe archive",
+      "ko": "가족 요리법 보관함 빌드",
+      "ja": "家族のレシピ集をビルド"
     },
     "capture": "[data-demo=\"jekyll\"]"
   },
@@ -254,27 +254,27 @@
   "godot": {
     "component": "GodotScene",
     "caption": {
-      "en": "Godot: concept simulation",
-      "ko": "Godot: 개념 시뮬레이션",
-      "ja": "Godot: 概念シミュレーション"
+      "en": "Explore a orchard scene",
+      "ko": "과수원 씬 살펴보기",
+      "ja": "果樹園のシーンを見る"
     },
     "capture": "[data-demo=\"godot\"]"
   },
   "unity": {
     "component": "UnityScene",
     "caption": {
-      "en": "Unity: concept simulation",
-      "ko": "Unity: 개념 시뮬레이션",
-      "ja": "Unity: 概念シミュレーション"
+      "en": "Explore a museum maze scene",
+      "ko": "박물관 미로 씬 살펴보기",
+      "ja": "博物館の迷路のシーンを見る"
     },
     "capture": "[data-demo=\"unity\"]"
   },
   "unreal-engine": {
     "component": "UnrealScene",
     "caption": {
-      "en": "Unreal Engine: concept simulation",
-      "ko": "Unreal Engine: 개념 시뮬레이션",
-      "ja": "Unreal Engine: 概念シミュレーション"
+      "en": "Explore a village game scene",
+      "ko": "마을 게임 씬 살펴보기",
+      "ja": "村のゲームのシーンを見る"
     },
     "capture": "[data-demo=\"unreal-engine\"]"
   },
@@ -308,27 +308,27 @@
   "rolling": {
     "component": "RollingRelease",
     "caption": {
-      "en": "Four replicas and one spare slot",
-      "ko": "복제본 4개와 여유 슬롯 하나",
-      "ja": "レプリカ4個と予備枠1つ"
+      "en": "Replace weather-alert replicas",
+      "ko": "날씨 알림 복제본 교체",
+      "ja": "天気通知のレプリカを交換"
     },
     "capture": "[data-demo=\"rolling\"]"
   },
   "blue-green": {
     "component": "BlueGreenRelease",
     "caption": {
-      "en": "Traffic returns; data writes remain",
-      "ko": "트래픽 복귀, 데이터 쓰기 유지",
-      "ja": "経路は復帰、書き込みは維持"
+      "en": "Switch online-store traffic",
+      "ko": "온라인 상점 트래픽 전환",
+      "ja": "オンライン店の経路を切り替え"
     },
     "capture": "[data-demo=\"blue-green\"]"
   },
   "canary": {
     "component": "CanaryRelease",
     "caption": {
-      "en": "Synthetic errors and an explicit stop rule",
-      "ko": "가상 오류 집계와 명시적 중단 규칙",
-      "ja": "仮のエラー集計と明示的な停止規則"
+      "en": "Evaluate a ticket-booking release",
+      "ko": "공연 표 예약 배포 평가",
+      "ja": "チケット予約の新版を評価"
     },
     "capture": "[data-demo=\"canary\"]"
   },
@@ -661,5 +661,55 @@
     },
     "mode": "static",
     "capture": "[data-demo=\"microservices\"]"
+  },
+  "architecture": {
+    "component": "ArchitectureGuide",
+    "mode": "static",
+    "caption": {
+      "en": "Order responsibilities and recovery path",
+      "ko": "주문 책임과 복구 경로",
+      "ja": "注文の担当と復旧経路"
+    },
+    "capture": "[data-demo=\"architecture\"]"
+  },
+  "payments": {
+    "component": "PaymentsGuide",
+    "mode": "static",
+    "caption": {
+      "en": "Verified payment before access",
+      "ko": "결제 검증 뒤 이용 권한 부여",
+      "ja": "決済を検証してから利用権を付与"
+    },
+    "capture": "[data-demo=\"payments\"]"
+  },
+  "layout": {
+    "component": "LayoutGuide",
+    "mode": "static",
+    "caption": {
+      "en": "Find and compare catalog entries",
+      "ko": "카탈로그 항목 찾고 비교하기",
+      "ja": "カタログ項目を探して比べる"
+    },
+    "capture": "[data-demo=\"layout\"]"
+  },
+  "collections": {
+    "component": "CollectionsGuide",
+    "mode": "static",
+    "caption": {
+      "en": "Ordered saved links and duplicate handling",
+      "ko": "저장 링크의 순서와 중복 처리",
+      "ja": "保存リンクの順序と重複処理"
+    },
+    "capture": "[data-demo=\"collections\"]"
+  },
+  "adr": {
+    "component": "AdrGuide",
+    "mode": "static",
+    "caption": {
+      "en": "Static catalog decision and tradeoff",
+      "ko": "정적 카탈로그 결정과 비용",
+      "ja": "静的カタログの決定と負担"
+    },
+    "capture": "[data-demo=\"adr\"]"
   }
 }

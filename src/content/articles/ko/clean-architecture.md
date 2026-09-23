@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["클린 아키텍처"]
 related: ["architecture", "layered-architecture", "hexagonal-architecture"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## 왜 필요한가
 
-업무 규칙은 데이터베이스나 화면이 바뀌어도 유지되어야 합니다. 세부 기술에 직접 의존하면 기술 교체가 규칙 변경으로 번집니다.
+가계부 안내의 저장 규칙은 화면이나 데이터베이스가 바뀌어도 유지되어야 하지만 직접 참조하면 정책까지 묶입니다.
 
 ## 어떻게 해결하는가
 
-1. 가상 단일 프로세스: R1, A17 미저장. HTTP·CLI 컨트롤러가 ID를 SaveArticle에 전달하고 SavedArticle이 검증합니다.
+1. 가상 단일 프로세스: 하나, 가계부 안내 미저장. HTTP·CLI 컨트롤러가 ID를 SaveArticle에 전달하고 SavedArticle이 검증합니다.
 2. SaveArticle은 메모리·내장 데이터베이스 어댑터가 구현한 SaveRepository를 호출합니다. 소스 참조는 어댑터 → 유스케이스 계약 → 도메인으로, 호출은 바깥 저장소로 향합니다. 경계에는 단순 데이터만 전달하며 ORM 행은 밖에 둡니다.
 3. 저장 완료: 0 → 1건, 반복해도 1건. 빈 ID나 쓰기 전 실패는 0건 유지, 문제 수정 후 재시도.
 

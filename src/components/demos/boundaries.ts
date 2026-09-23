@@ -1,20 +1,33 @@
 import type { Lang } from "../../lib/i18n";
 import { local } from "./shared";
 
-// Shared scenario and vocabulary only. Each diagram owns its composition.
-export function boundariesText(lang: Lang) {
+// Shared boundary vocabulary; each diagram names a separate use case.
+export function boundariesText(lang: Lang, id: string) {
   const t = local(lang);
+  const fixtures: Record<string, string> = {
+    "layered-architecture": t(
+      "Jun wants to save the Borrowing Rules page · initially unsaved",
+      "준이 대출 규칙 글을 저장하려 함 · 처음에는 미저장",
+      "ジュンが貸出ルールのページを保存したい · 最初は未保存",
+    ),
+    "hexagonal-architecture": t(
+      "Dani wants to save the Class Schedule · initially unsaved",
+      "다니가 수업 일정을 저장하려 함 · 처음에는 미저장",
+      "ダニが授業予定を保存したい · 最初は未保存",
+    ),
+    "clean-architecture": t(
+      "Hana wants to save the Budget Guide · initially unsaved",
+      "하나가 가계부 안내를 저장하려 함 · 처음에는 미저장",
+      "ハナが家計簿ガイドを保存したい · 最初は未保存",
+    ),
+  };
   return {
     fiction: t(
       "Illustrative example",
       "설명을 위한 가상 예시",
       "説明用の架空の例",
     ),
-    fixture: t(
-      "R1 · A17 · initially unsaved",
-      "R1 · A17 · 처음에는 미저장",
-      "R1 · A17 · 最初は未保存",
-    ),
+    fixture: fixtures[id],
     process: t(
       "One process · dotted enclosure",
       "단일 프로세스 · 점선 테두리",

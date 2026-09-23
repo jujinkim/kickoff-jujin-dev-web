@@ -3,33 +3,31 @@
 All designs belong **inside the article body**. Site header, navigation, title,
 description, comments, URLs, and API v1 remain the surrounding catalog. A demo
 may choose its own background, typography, material, layout, and controls.
-Within each comparison category, keep **scenario, data, labels, initial state,
-and basic actions identical**. Change only the concept under comparison:
+Give each article a distinct, familiar situation. Keep only the controls needed
+to demonstrate its concept. A comparison may reuse a measurement or reset
+mechanism, but its story, visible labels, and outcome must fit that article.
+Document the chosen situation and why each control teaches the concept in the
+article's brief. The English body, translations, caption, visual, and thumbnail
+must describe the same case.
 
-| Category   | Shared example                                                                       | Variable                                                   |
-| ---------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
-| Styles     | Project workspace; navigation, tasks, progress and resource notes                    | Color, type treatment, borders, shadows, material, spacing |
-| Layout     | Six resources; topic filter, order, notes, preview width                             | Region composition and list/grid/masonry placement         |
-| Typography | The same Latin sentence, localized phrase, `iiiWWW 0123`, numbers, 48px initial size | Typeface and measured advances                             |
-
-Keep material-specific aids (opaque glass), serif terminal marks, and weight
-controls as labeled extras. Do not replace the shared task with a weather app,
-concert poster, or invitation. Typography shape and width are different axes:
-Noto Sans intentionally appears in both sans-serif and proportional examples.
-A future candidate joins the relevant shared scenario; an unrelated category
-may define its own scenario after documenting why it needs one.
+Styles now use separate three-task projects. Layouts use visual references for
+different design jobs. Typography examples use different publishing contexts;
+`iiiWWW 0123` remains an explicit width-measurement input, not their shared
+story. Noto Sans can still appear in both sans-serif and proportional examples
+because shape and width are different axes.
 
 Independent Astro components still own semantic markup and scoped visual rules.
 `tasks.ts`, `resource-behavior.ts`, and `type-behavior.ts` share category behavior;
-`resources.ts` supplies the identical six-resource data. `comparison-base.css`
+`resources.ts` supplies visual reference data and per-article situations. `comparison-base.css`
 scopes basic controls for layout/type demos to `[data-comparison]`. Style demos
 keep their control baseline inside each component; they share only data and
 behavior. Do not add a global visual theme.
 
 The current release contains 22 design concepts, 15 platform concepts, 24
 monetization concepts, 3 requirements concepts, 3 architecture-boundary concepts and 3 service-decomposition concepts: **49 interactive demos and 21 static diagrams**, 210 localized
-concept articles and 36 guide articles (246 published documents). Eight
-candidates remain planned. Counts describe this release, not runtime allowlists.
+concept articles and 36 guide articles (246 published documents). The eight
+unwritten data-structure candidates are outside the current writing queue.
+Counts describe this release, not runtime allowlists.
 
 Current monetization evidence: [monetization review](monetization-review.md).
 
@@ -37,17 +35,18 @@ Current platform evidence: [platform review](platform-demos-review.md).
 Previous screen evidence: [workspace review](design-workspaces-review.md).
 Previous release evidence: [shared-example review](design-comparison-review.md).
 
-## Style workspace contract
+## Style project contract
 
-All eleven styles use `workshop.ts` for translated project data and `tasks.ts`
-for behavior. Each Astro file owns its markup, material, typography, spacing,
-and layout. No shared runtime style template or page-wide theme.
+All eleven styles use `workshop.ts` for translated, article-specific project
+data and `tasks.ts` for behavior. Each Astro file owns its markup, material,
+typography, spacing, and layout. No shared runtime style template or page-wide
+theme.
 
-- Header: Make room, PROJECT / TODAY, project 01. Menu: Overview, Tasks, Resources.
-- Overview: identical goal and description. Tasks: the original three checkboxes,
+- Header names the article's project. Menu: Overview, Tasks, Resources.
+- Overview explains that project. Tasks: three project-specific checkboxes,
   All/Open/Done filter and empty-result message.
-- Supporting content: completed count, native progress and percentage; Reference
-  board and Review checklist, each with a native expandable note.
+- Supporting content: completed count, native progress and percentage; two
+  native expandable notes.
 - Footer: three-task/two-resource summary, reset and live status.
 - Initial/reset/reload: All; three unchecked tasks; 0 / 3, 0%; closed notes.
   Material extras reset too. Native links and details work without JavaScript.
@@ -76,8 +75,8 @@ long images crop only the bottom. Keep full demo PNGs and hide images in list vi
 
 Copy [the brief](templates/design-demo-brief.md). Define the concept, its nearest
 neighbor, visible distinguishing features, scenario, representative action,
-initial/changed/reset states, mobile order, and sources. Record the shared
-comparison category, fixed content, and exactly which visual property changes. Explain why the example
+initial/changed/reset states, mobile order, and sources. Record the
+comparison category, article-specific content, and exactly which visual property changes. Explain why the example
 demonstrates the concept. Keep decorative choices distinct from universal rules.
 
 Sources for implementation: [Astro scoped styles](https://docs.astro.build/en/guides/styling/),
@@ -259,8 +258,9 @@ into `dist`. Thumbnail dimensions may differ because the actual screens differ.
 
 ## Completion and debugging
 
-- Same-category demos retain identical content, basic actions, and initial state.
-  Browser tests compare their actual text and reset behavior across three languages.
+- Each demo has an understandable article-specific situation. Browser tests
+  check distinct titles within comparison groups and each example's reset
+  behavior across three languages.
 - Visible structure, material, and typography demonstrate the declared concept.
   Compare desktop and mobile captures side by side; a passing build is not a
   visual review. Browser tests save captures in `artifacts/design-demos/`.
@@ -296,7 +296,7 @@ the regular build. Rendering, capture discovery, and validation have no fixed
 
 > Implement candidate `<id>` using `docs/design-demos.md` and
 > `docs/templates/design-demo-brief.md`. Read candidate scope and neighboring
-> concepts. Join the category shared scenario and build an independent article-body Astro demo with localized initial,
+> concepts. Choose a distinct familiar situation and build an independent article-body Astro demo with localized initial,
 > changed, reset, empty, keyboard, mobile, and no-JavaScript states. Review English
 > then Korean/Japanese, register through `src/data/design-demos.json`, capture the
 > real screens, and complete the documented checks. Preserve IDs, URLs, comments,
@@ -310,13 +310,13 @@ Each Astro component owns its diagram and scoped visual rules. Shared TypeScript
 modules implement category behavior; `platform-controls.css` styles controls only.
 No real engine, cloud API, or extra UI framework runs inside these simulations.
 
-| Group               | Fixed fixture                                                            | Mechanism under comparison                                            |
-| ------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------- |
-| Static generators   | A17/B04/C99 Markdown + shared layout → index + three article HTML files  | Astro islands, Hugo templates, Jekyll Ruby build                      |
-| Web UI              | Two Field notes cards A17/B04; independent saved IDs; total 0→1→2        | React state/render, Vue reactivity/template, Svelte compile/runtime   |
-| Game engines        | Player, floor, camera, one collectible; score 0→1, item removed          | Godot node/scene, Unity GameObject/components, Unreal Actor/Blueprint |
-| Hosting models      | Article read, Save A17, failure before write, restart, duplicate request | Public files/API, listening process, managed invocations              |
-| Release replacement | Four v1 replicas, candidate v2, compatible shared data                   | Rolling sequence, blue-green route switch, canary evaluation          |
+| Group               | Article situations                               | Mechanism explained                                                   |
+| ------------------- | ------------------------------------------------ | --------------------------------------------------------------------- |
+| Static generators   | Neighborhood journal, town guide, family recipes | Astro islands, Hugo templates, Jekyll Ruby build                      |
+| Web UI              | Shopping plan, library list, travel routes       | React state/render, Vue reactivity/template, Svelte compile/runtime   |
+| Game engines        | Orchard apple, museum key, village coin          | Godot node/scene, Unity GameObject/components, Unreal Actor/Blueprint |
+| Hosting models      | Newsletter, reading list, festival schedule      | Public files/API, listening process, managed invocations              |
+| Release replacement | Weather alerts, online store, ticket booking     | Rolling sequence, blue-green route switch, canary evaluation          |
 
 Use Previous/Next/Reset for step diagrams; disable unavailable steps and never
 auto-advance. Keep direct-action controls mounted so repeat actions can be tested
@@ -344,6 +344,14 @@ capture root, localized text and three thumbnails. Static mode has no script,
 Never label a static component interactive merely to satisfy a capture tool.
 The publication gate validates both modes and rejects unknown mode values.
 
+Guides with an inaccurate older `Example.astro` sketch may also register a
+static article-body infographic. Current replacements are `architecture`,
+`layout`, `payments`, `collections`, and `adr`. Their original `example` metadata remains for API v1,
+while article and card rendering choose the registered figure. The registry
+gate checks their three translations and thumbnails. Each guide figure has its
+own brief in `docs/design-briefs/` and must explain the worked guide situation
+without JavaScript or fake controls.
+
 Static example:
 
 ```json
@@ -359,8 +367,8 @@ Static example:
 
 Monetization uses seven independent comparison groups under `business`.
 [Source refresh](catalog-writing/monetization-sources.md) and individual
-[briefs](design-briefs/) record their shared fixtures. Billing keeps the
-100/300/600-export scenario; pricing uses 3 seats and 120 monthly exports.
+[briefs](design-briefs/) record each article's situation and result. Billing keeps the 100/300/600-export arithmetic; pricing keeps the
+3-seat, 120-export arithmetic while naming a different service in each article.
 All prices and outcomes are fictional, with omitted costs stated. Define
 billing period, price calculation, access and seller duties separately.
 No payment, advertising SDK, account or persistence is connected.
@@ -378,7 +386,7 @@ Retain local published status only after all gates pass. See
 
 ## Requirements expression diagrams
 
-The `requirements` group uses one signed-in commuter, unsaved A17 and a need to return later. Its independently composed static diagrams compare a user story's value/acceptance card, a use case's main path/extensions and a job story's situation/motivation/outcome before solution choice. `requirements.ts` shares only the localized fixture and scope boundary. Components own markup and scoped styles.
+The `requirements` group uses a commuter's walking article, a cook's recipe and a gardener's planting note. Its independently composed static diagrams compare a user story's value/acceptance card, a use case's main path/extensions and a job story's situation/motivation/outcome before solution choice. `requirements.ts` holds localized situations and the scope boundary. Components own markup and scoped styles.
 
 Acceptance rules and failure-before-write outcomes are authored examples, not guarantees of the description format. Link saving does not promise offline reading. Each English Markdown body carries the corresponding numbered textual explanation. Static mode needs no Save control, artificial tab stops or reset; all content works without JavaScript.
 
@@ -386,7 +394,7 @@ Read [source refresh](catalog-writing/requirements-sources.md), individual [brie
 
 ## Architecture boundary diagrams
 
-The `boundaries` group shares SaveArticle(R1, A17), initially unsaved, in one process. HTTP/CLI and memory/embedded database are alternative edges. Three independent static components show responsibility bands, ports and adapters, and nested policy boundaries. `boundaries.ts` shares only fixture text and terminology; it does not provide a visual template.
+The `boundaries` group shows a walking article, a class schedule and a budget guide saved in one process. HTTP/CLI and memory/embedded database are alternative edges. Three independent static components show responsibility bands, ports and adapters, and nested policy boundaries. `boundaries.ts` holds localized situations and terminology; it does not provide a visual template.
 
 Solid relations label source dependencies, dashed relations label runtime calls, and dotted enclosures label one process. Closed-layer dependencies descend; hexagonal storage adapters depend on the application-owned port; clean architecture distinguishes inward imports from calls outward through SaveRepository. All diagrams retain the same success, repeat, empty-ID and before-write failure policies. Static diagrams do not execute persistence or imply storage migration.
 
@@ -394,7 +402,7 @@ Read the [source refresh](catalog-writing/boundaries-sources.md), [individual br
 
 ## Service decomposition diagrams
 
-The `service-split` group shares a reading app with Catalog, Library and Billing, one initial team and no tag on A17. The change adds a compatible Library tag feature while Billing behavior stays the same. `service-split.ts` shares fixture strings only; three components own their layouts and scoped styles.
+The `service-split` group uses a recipe app, hiking app and school-events app. Each has Catalog, Library and Billing, one initial team and an untagged item. The change adds a compatible Library tag feature while Billing behavior stays the same. `service-split.ts` shares terminology only; three components own their layouts and scoped styles.
 
 Monolith shows one artifact release and application-owned storage. Modular monolith shows API gates and module-owned tables within one release; the database may be shared. Microservices shows three release units with owned stores, changing only Library from v1 to v2, plus a Catalog-read timeout before the tag write. Deployment enclosures do not specify physical-machine counts; independent releases do not guarantee failure isolation.
 

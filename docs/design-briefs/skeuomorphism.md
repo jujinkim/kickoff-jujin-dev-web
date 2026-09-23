@@ -7,10 +7,10 @@ Based on [the planning template](../templates/design-demo-brief.md). Implementat
 - Closest concept and concrete difference: Neumorphism suggests generic molded surfaces; skeuomorphism models a recognizable paper notebook and binding.
 - Distinguishing visual features (structure, material, typography): Recognizable materials and objects explain a digital task. The workspace opens as a paper notebook on a wooden surface. Open notebook: the left page contains overview and tasks; the right page contains progress and resources. Binding is decorative.
 - Shared comparison category (styles / layout / typography): styles.
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: Make room / PROJECT TODAY 01; overview and description; Gather references, Draw the first draft, Review labels; progress; Reference board and Review checklist with native expandable notes; footer with 3 tasks / 2 resources. All filter, unchecked tasks, 0 / 3, 0%, closed notes. Copy comes from `workshop.ts`.
+- Distinct familiar situation, dataset, labels, actions, and initial state for this article: For the recipe notebook, track three tasks and two notes.
 - Visual variable changed; concept-specific extra controls and their justification: The workspace opens as a paper notebook on a wooden surface. No extra task actions.
-- Fictional scenario and why it demonstrates the definition: A small project workspace gives every style the same navigation, content, controls and supporting information to render. Open notebook: the left page contains overview and tasks; the right page contains progress and resources. Binding is decorative.
-- Representative action and observable result: Complete Gather references; show a tick, strike-through, 1 / 3, and 33%. Filter Done to show only that row. Open a reference note.
+- Fictional scenario and why it demonstrates the definition: A recipe app can feel unfamiliar to someone used to a paper notebook. For the recipe notebook, track three tasks and two notes.
+- Representative action and observable result: For the recipe notebook, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%.
 - Initial state: All, three unchecked tasks, 0 / 3, 0%, two closed notes, ready status.
 - Changed state, repeated action, empty input/no results: Toggling a task twice restores it; Done before completion yields an empty message. Open with all tasks complete also yields empty. Notes can independently open and close. No free-text input.
 - Reset and reload behavior: Reset all controls, progress, details and material extras. Keep focus on Reset and announce restoration. Reload uses server-rendered initial state; no storage.

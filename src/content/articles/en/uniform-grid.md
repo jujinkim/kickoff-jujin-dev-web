@@ -3,7 +3,7 @@ kind: concept
 articleId: uniform-grid
 lang: en
 title: Uniform grid
-summary: Compare the same six resources.
+summary: Arrange visual references for a plant catalog.
 category: content-arrangement
 aliases:
   - Uniform grid
@@ -12,8 +12,8 @@ related:
   - list-layout
   - masonry
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: Equal-width cards align in shared rows.
@@ -25,11 +25,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Similar items need quick comparison. Inconsistent widths and positions make equal attributes harder to scan.
+A plant catalog must let readers compare many similar entries quickly. Inconsistent widths and positions make equal attributes harder to scan.
 
 ## How: work toward a solution
 
-All six layouts use the same six resources, labels, and colors. Filter a topic, reverse collection order, open study notes, or narrow the preview. Compare the reading flow while the content stays the same. Reset or reload restores the full collection and original order. Equal-width cards share row heights, including room for longer text.
+While designing a plant catalog, gather six visual references. Filter a topic, reverse collection order, open study notes, or narrow the preview. Check whether the arrangement helps people find each reference. Reset or reload restores the full collection and original order. Equal-width cards share row heights, including room for longer text.
 
 ## What: the concept
 

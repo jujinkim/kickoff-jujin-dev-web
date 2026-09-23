@@ -11,8 +11,8 @@ related:
   - theme
   - proportional
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -32,7 +32,7 @@ Code and text tables rely on aligned positions. Variable Latin character widths 
 
 ## How: work toward a solution
 
-All five specimens share a sentence, iiiWWW 0123, and the same numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Supported Latin characters share an advance width; fallback characters may differ.
+For a weather log, compare a phrase with iiiWWW 0123 and aligned numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Supported Latin characters share an advance width; fallback characters may differ.
 
 ## What: the concept
 

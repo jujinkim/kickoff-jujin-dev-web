@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["クリーンアーキテクチャ"]
 related: ["architecture", "layered-architecture", "hexagonal-architecture"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## なぜ必要なのか
 
-業務ルールは画面やデータベースが変わっても保ちたい。詳細技術への直接依存があると、交換がルール変更へ波及します。
+家計簿ガイドの保存規則は画面やDBが替わっても残したいものですが、直接参照すると方針まで結び付いてしまいます。
 
 ## どう解決するのか
 
-1. 単一プロセスでR1のA17は未保存。HTTP・CLIからSaveArticleへIDを渡し、SavedArticleで検証。
+1. 単一プロセスでハナの家計簿ガイドは未保存。HTTP・CLIからSaveArticleへIDを渡し、SavedArticleで検証。
 2. SaveRepository経由でメモリ・組み込みDBへ保存。依存はアダプター → ユースケース契約 → ドメイン。呼び出しは外へも進むが、境界は単純なデータだけ。ORM行は外に置く。
 3. 成功は0 → 1件、反復も1件。空ID・書き込み前の失敗は0件。修正後に再試行。
 

@@ -18,8 +18,8 @@ aliases:
 related: ["srs", "tools"]
 example: "layers"
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 aiPrompt: "Read our confirmed requirements and constraints. Propose project-wide modules, responsibilities, data and rule ownership, allowed dependencies, public contracts, and failure recovery owners. Explain alternatives and maintenance costs. Ask about unresolved architectural choices; preserve approved decisions. Choose internal classes, methods and data structures yourself within these boundaries. Draw UML only if it clarifies a decision; do not require me to supply it."
 ---

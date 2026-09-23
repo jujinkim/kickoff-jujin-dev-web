@@ -5,10 +5,10 @@
 - Closest concept and concrete difference: same-category peers direct-payment, advertising, sponsorship, affiliate-marketing; Fee on mediated sale. Cross-category combinations are related reading, not comparison peers.
 - Distinguishing visual features (structure, material, typography): 100 input split into labeled author 90 and platform 10 blocks. Solid surfaces and text/number labels; color is not the only encoding.
 - Shared comparison category: [revenue-sources](../catalog-writing/groups/revenue-sources.md).
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: A reading service with reader, publisher and optional advertiser, supporter, shop or marketplace; compare payer and value exchanged. No income forecast.
+- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional craft marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the maker.
 - Visual variable changed; concept-specific extra controls and their justification: 100 input split into labeled author 90 and platform 10 blocks. Static mode has no controls, scripts, artificial focus stops or mount dependency.
-- Fictional scenario and why it demonstrates the definition: A fictional reading marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the author. Stripe Connect illustrates application-fee flows; this is a simplified allocation, not its transfer sequence. Taxes, processing fees and refunds are omitted, so 10 is not profit.
-- Representative action and observable result: Read the numbered relationships/table in source order. A fictional reading marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the author. Stripe Connect illustrates application-fee flows; this is a simplified allocation, not its transfer sequence. Taxes, processing fees and refunds are omitted, so 10 is not profit.
+- Fictional scenario and why it demonstrates the definition: A craft marketplace helps makers find buyers, yet a fixed charge would apply even when nothing sells. A fictional craft marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the maker.
+- Representative action and observable result: A fictional craft marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the maker. Stripe Connect illustrates application-fee flows; this is a simplified allocation, not its transfer sequence.
 - Initial state: 100 input split into labeled author 90 and platform 10 blocks.
 - Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
 - Reset and reload behavior: No mutable state or reset control.

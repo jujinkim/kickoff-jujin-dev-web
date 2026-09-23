@@ -34,7 +34,7 @@ Explain the conditional benefit: The example exposes event-to-score behavior as 
 
 Compare every sibling: [godot](godot.md), [unity](unity.md).
 
-Use the shared axes, in this order: **scene/world unit; object composition; behavior authoring; resource reuse; play/test loop; export validation**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/game-engines.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **scene/world unit; object composition; behavior authoring; resource reuse; play/test loop; export validation**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/game-engines.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

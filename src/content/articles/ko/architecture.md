@@ -18,8 +18,8 @@ aliases:
 related: ["srs", "tools"]
 example: "layers"
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 aiPrompt: "확정된 요구사항과 제약을 읽어줘. 프로젝트 전체의 모듈, 책임, 데이터·규칙 소유권, 허용 의존 방향, 공개 계약, 실패 복구 담당을 제안해줘. 대안과 유지 비용을 설명하고 미결정 아키텍처만 질문해줘. 승인된 결정은 보존해. 경계 안의 클래스·메서드·자료구조는 스스로 정해줘. UML은 판단을 설명하는 데 필요할 때 작성하고 나에게 작성을 요구하지 마."
 ---

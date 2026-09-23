@@ -5,11 +5,11 @@
 - Closest concept and concrete difference: A use case details goal paths; this story frames one deliverable and its acceptance.
 - Distinguishing visual features (structure, material, typography): A paper-like role/goal/benefit card above two numbered acceptance examples. Solid surfaces, readable system type, explicit text labels and numbers; color is supplementary.
 - Shared comparison category: [Requirements expression](../catalog-writing/groups/requirements.md).
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: signed-in commuter, A17 unsaved, link needed for later reading; storage initially available when evaluating saving. Save is a discussed action, not a connected feature. Saving a link does not promise offline reading.
+- Article-specific scenario, dataset, labels, actions, and initial state: signed-in commuter, Morning Walk unsaved, link needed for later reading; storage initially available when evaluating saving. Save is a discussed action, not a connected feature. Saving a link does not promise offline reading.
 - Visual variable changed; concept-specific extra controls and their justification: A paper-like role/goal/benefit card above two numbered acceptance examples. Static presentation keeps the description visible together; no controls are needed to understand it.
-- Fictional scenario and why it demonstrates the definition: Read role, goal and benefit, then trace 0 → 1 → 1 saved entries and failure before writing → 0 with retry feedback.
-- Representative action and observable result: read the diagram in DOM order and compare its representation of the shared need. Read role, goal and benefit, then trace 0 → 1 → 1 saved entries and failure before writing → 0 with retry feedback.
-- Initial state: the full labeled diagram is rendered on the server; the fictional starting state is A17 unsaved.
+- Fictional scenario and why it demonstrates the definition: A commuter wants to find Morning Walk again, but a broad reading-list feature is too large to review in one change. Fictional setup: a signed-in commuter, Morning Walk unsaved.
+- Representative action and observable result: Fictional setup: a signed-in commuter, Morning Walk unsaved. Acceptance: saving creates one entry; repeating keeps one. Failure before writing leaves it unsaved, with retry feedback.
+- Initial state: the full labeled diagram is rendered on the server; the fictional starting state is Morning Walk unsaved.
 - Changed state, repeated action, empty input/no results: no mutable UI state or input. Where saving is discussed, repeated success retains one entry and failure before writing retains zero; job-story delivery and failure behavior remain separate questions.
 - Reset and reload behavior: no reset control; reload preserves the full static description.
 - Mobile order and width thresholds: stack panels below 430px of component width. Preserve DOM order, wrap labels and render at 320px without horizontal scrolling or scaled-down text.
@@ -17,7 +17,7 @@
 - Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: solid light surfaces within either site theme; explicit dark labels; no animation, transparency or shadow dependency. Borders and numbering remain meaningful in forced colors.
 - JavaScript-disabled initial screen and explanation: entire diagram and scope boundary remain available; no interaction or noscript warning.
 - Font families, supported characters, fallback and measurement method: system sans-serif with system CJK fallback. No new font assets or metric claims; inspect rendered localized labels for clipping.
-- Localized visible strings, input constraints, original/translation review: English group reviewed before Korean/Japanese translation on 2026-09-22. A17, roles, branches and offline boundary match. No inputs or native-speaker certification.
+- Localized visible strings, input constraints, original/translation review: English group reviewed before Korean/Japanese translation on 2026-09-22. Morning Walk, roles, branches and offline boundary match. No inputs or native-speaker certification.
 - Mode: `static`; no component script, reset control or mount wait.
 - Capture selector and initial content: `[data-demo="user-story"]`, full initial diagram from `UserStory.astro`; 1440px light captures in en/ko/ja.
 - Source URLs, inspected date, claims each source supports: https://agilealliance.org/glossary/user-stories/; inspected 2026-09-22 for definition/mechanism. [Detailed source refresh](../catalog-writing/requirements-sources.md). Scenario, acceptance policy and suitability are authored examples/editorial judgment.

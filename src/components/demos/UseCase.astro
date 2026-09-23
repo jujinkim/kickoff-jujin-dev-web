@@ -7,19 +7,19 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  r = requirementsText(lang);
+  r = requirementsText(lang, "use-case");
 const steps = [
   [
-    t("Reader", "독자", "読者"),
+    t("Home cook", "집에서 요리하는 사람", "家庭の料理人"),
     t(
-      "Request saving A17’s link",
-      "A17 링크 저장 요청",
-      "A17のリンク保存を依頼",
+      "Request saving the Weekend Recipes link",
+      "주말 요리법 링크 저장 요청",
+      "週末のレシピのリンク保存を依頼",
     ),
   ],
   [
     t("System", "시스템", "システム"),
-    t("Validate A17", "A17 확인", "A17を確認"),
+    t("Validate Weekend Recipes", "주말 요리법 확인", "週末のレシピを確認"),
   ],
   [
     t("System", "시스템", "システム"),
@@ -37,9 +37,9 @@ const steps = [
     <p class="eyebrow">{r.fiction}</p>
     <h2>
       {t(
-        "Save A17: paths to a goal",
-        "A17 저장: 목표까지의 경로",
-        "A17の保存：目標への経路",
+        "Save Weekend Recipes: paths to a goal",
+        "주말 요리법 저장: 목표까지의 경로",
+        "週末のレシピの保存：目標への経路",
       )}
     </h2>
     <p data-fixture>{r.fixture}</p>

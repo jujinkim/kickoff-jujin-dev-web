@@ -8,7 +8,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  m = moneyText(lang);
+  m = moneyText(lang, "per-seat-pricing");
 ---
 
 <section

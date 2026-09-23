@@ -5,10 +5,10 @@
 - Closest concept and concrete difference: same-category peers interstitial-ads, rewarded-ads; Bounded on-screen placement. Cross-category combinations are related reading, not comparison peers.
 - Distinguishing visual features (structure, material, typography): Puzzle board and game-control region above a separate labeled ad band. Solid surfaces and text/number labels; color is not the only encoding.
 - Shared comparison category: [ad-formats](../catalog-writing/groups/ad-formats.md).
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: The same puzzle app: a reserved bottom banner, a level-boundary full-screen ad, or optional participation for one non-transferable hint. No real ad requests or revenue estimates.
+- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional number puzzle app shows its board above a labeled bottom banner, separated from game controls.
 - Visual variable changed; concept-specific extra controls and their justification: Puzzle board and game-control region above a separate labeled ad band. Static mode has no controls, scripts, artificial focus stops or mount dependency.
-- Fictional scenario and why it demonstrates the definition: A fictional puzzle app shows its board above a labeled bottom banner, separated from game controls. The static diagram preserves the play area instead of covering it. No ad is requested and no reward is granted. Ad size, fill, revenue and network charges are intentionally outside this example.
-- Representative action and observable result: Read the numbered relationships/table in source order. A fictional puzzle app shows its board above a labeled bottom banner, separated from game controls. The static diagram preserves the play area instead of covering it. No ad is requested and no reward is granted. Ad size, fill, revenue and network charges are intentionally outside this example.
+- Fictional scenario and why it demonstrates the definition: A number puzzle needs its board and controls visible while a sponsor message appears nearby. A fictional number puzzle app shows its board above a labeled bottom banner, separated from game controls.
+- Representative action and observable result: A fictional number puzzle app shows its board above a labeled bottom banner, separated from game controls. The static diagram preserves the play area instead of covering it.
 - Initial state: Puzzle board and game-control region above a separate labeled ad band.
 - Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
 - Reset and reload behavior: No mutable state or reset control.

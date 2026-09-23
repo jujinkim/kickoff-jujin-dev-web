@@ -20,8 +20,8 @@ aliases:
 related: ["revenue", "shipping"]
 example: "payments"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "For our product and seller location, compare Toss Payments PG, Lemon Squeezy MoR, and any required store billing. Ask for missing jurisdiction, customer, and channel details. Use dated official sources for eligibility, fees, tax scope, refunds, and settlement. Report unknowns; ask before selecting a provider. Include server verification and idempotent entitlement handling in the requirements."
 checked: "2026-09-23"
@@ -29,7 +29,7 @@ checked: "2026-09-23"
 
 ## Why: the goal or problem
 
-A customer reaches a success page but never receives access, or repeated notifications grant the same purchase twice. A checkout screen alone cannot establish a trustworthy sale. You need to connect an order, verified payment evidence and exactly the entitlement promised, while making sales and support responsibilities explicit.
+A digital-course buyer can land on a thank-you page while payment is still pending. A customer reaches a success page but never receives access, or repeated notifications grant the same purchase twice. A checkout screen alone cannot establish a trustworthy sale. You need to connect an order, verified payment evidence and exactly the entitlement promised, while making sales and support responsibilities explicit.
 
 ## How: work toward a solution
 

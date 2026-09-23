@@ -12,8 +12,8 @@ related:
   - skeuomorphism
   - neobrutalism
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 comparison:
   features: "Layered paper fragments, tape, irregular edges, and annotations."
@@ -26,11 +26,11 @@ checked: "2026-09-22"
 
 ## Why: the goal or problem
 
-A creative board should feel assembled and personal. Uniform digital panels may not express the intended handmade character.
+A memory board should preserve the feel of assembled photos and tickets. Uniform digital panels may not express the intended handmade character.
 
 ## How: work toward a solution
 
-Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Layered paper, tape, and a completion mark turn the workspace into a board.
+For the memory board, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Layered paper, tape, and a completion mark turn the memory board into a board.
 
 ## What: the concept
 

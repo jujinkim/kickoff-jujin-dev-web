@@ -34,7 +34,7 @@ Explain the conditional benefit: Index 2 can select C99 without walking prior va
 
 Compare every sibling: [linked-list](linked-list.md).
 
-Use the shared axes, in this order: **storage relation; indexed access; locating insertion point; edit work; capacity; reference overhead**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/sequential-storage.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **storage relation; indexed access; locating insertion point; edit work; capacity; reference overhead**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/sequential-storage.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

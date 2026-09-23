@@ -16,7 +16,7 @@ Event values A17, B04, A17 arrive in that order. Also associate A17 with title A
 
 ## Sibling review matrix
 
-All rows use the same case. Features describe mechanisms; benefits and choice advice are conditional editorial judgments. Read each article's evidence map for source-backed boundaries.
+Rows share comparison dimensions and assumptions; published articles use distinct situations. Features describe mechanisms; benefits and choice advice are conditional editorial judgments. Read each article's evidence map for source-backed boundaries.
 
 | Concept                                       | Distinguishing feature                                         | Conditional advantage                                     | Limitation                                                                                    | Suitable context                                                | Combination                                                                           |
 | --------------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------- |

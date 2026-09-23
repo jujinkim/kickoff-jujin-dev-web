@@ -12,8 +12,8 @@ related:
   - rolling
   - canary
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Replacing the live environment in place complicates a quick return. You need to verify a replacement before routing users to it.
+An online store must check a replacement before moving checkout traffic. You need to verify a replacement before routing users to it.
 
 ## How: work toward a solution
 
-Blue v1 starts with all traffic; green v2 waits. Next verifies green before switching traffic. Fail verification prevents the switch. After switching, Save A17 writes shared compatible data. Simulate failure and switch back routes traffic to blue; A17 remains. Previous revisits routing stages without erasing writes. Reset or reload clears the entire page-memory simulation.
+Blue v1 starts with all traffic; green v2 waits. Next verifies green before switching traffic. Fail verification prevents the switch. After switching, Save Order Receipt writes shared compatible data. Simulate failure and switch back routes traffic to blue; Order Receipt remains. Previous revisits routing stages without erasing writes. Reset or reload clears the entire page-memory simulation.
 
 ## What: the concept
 

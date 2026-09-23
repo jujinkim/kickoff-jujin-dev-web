@@ -15,8 +15,8 @@ related:
     "volume-pricing",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,11 +31,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Light and heavy customers consume very different resources. Charging both identically may not reflect value or operating cost.
+One map exporter customer makes a few images while another makes hundreds; charging both the same can feel unfair.
 
 ## How: work toward a solution
 
-A fictional export tool charges 0.02 per export. Across months with 100, 300 and 600 exports, charges are 2, 6 and 12: total 20. Change month-one usage or add one export to update its charge and the total. Zero usage costs zero here. Taxes, fees and refunds are omitted.
+A fictional map image exporter charges 0.02 per export. Across months with 100, 300 and 600 exports, charges are 2, 6 and 12: total 20. Change month-one usage or add one export to update its charge and the total. Zero usage costs zero here. Taxes, fees and refunds are omitted.
 
 ## What: the concept
 

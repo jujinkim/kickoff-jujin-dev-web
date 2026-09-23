@@ -12,8 +12,8 @@ related:
   - sans-serif
   - script
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: Serifs add finishing strokes at letter terminals.
@@ -31,7 +31,7 @@ An editorial page needs a deliberate printed tone. You want to evaluate finishin
 
 ## How: work toward a solution
 
-All five specimens share a sentence, iiiWWW 0123, and the same numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Mark H terminals to inspect the serif details.
+For a local history magazine, compare a phrase with iiiWWW 0123 and aligned numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Mark H terminals to inspect the serif details.
 
 ## What: the concept
 

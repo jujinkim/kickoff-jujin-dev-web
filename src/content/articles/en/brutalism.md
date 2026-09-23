@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 6
-sourceRevision: 6
+revision: 7
+sourceRevision: 7
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -34,11 +34,11 @@ checked: "2026-09-21"
 
 ## Why: the goal or problem
 
-A utilitarian page can hide its structure under decoration. You want its sections and links to be immediately obvious.
+A repair-day notice hides its station list beneath decoration. You want its sections and links to be immediately obvious.
 
 ## How: work toward a solution
 
-Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Raw rules and underlined navigation expose the structure.
+For the repair day, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Raw rules and underlined navigation expose the structure.
 
 ## What: the concept
 

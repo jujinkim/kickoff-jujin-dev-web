@@ -459,7 +459,7 @@ test("local fonts and CJK specimens load; tabular numbers align", async ({
 });
 
 for (const lang of languages) {
-  test(`${lang}: comparison categories share content and initial state`, async ({
+  test(`${lang}: comparison examples have distinct situations`, async ({
     page,
   }) => {
     const groups = [
@@ -475,43 +475,17 @@ for (const lang of languages) {
       ["serif", "sans-serif", "script", "proportional", "monospace"],
     ];
     for (const group of groups) {
-      let baseline: unknown;
+      const headings = new Set<string>();
       for (const id of group) {
         await page.goto(`/${lang}/catalog/${id}/`);
         const root = page.locator("[data-comparison]");
         await expect(root).toHaveAttribute("data-ready", "true");
-        const content = await root.evaluate((el) => ({
-          heading: el.querySelector("h2")!.textContent!.trim(),
-          description: el
-            .querySelector("[data-description]")
-            ?.textContent?.trim(),
-          menu: [...el.querySelectorAll("[data-section-link]")].map((n) =>
-            n.textContent?.trim(),
-          ),
-          notes: [...el.querySelectorAll("[data-resource]")].map((n) =>
-            n.textContent?.replace(/\s+/g, " ").trim(),
-          ),
-          completed: el.querySelector("[data-count]")?.textContent,
-          percent: el.querySelector("[data-percent]")?.textContent,
-          footer: el
-            .querySelector("[data-footer-summary]")
-            ?.textContent?.trim(),
-          tasks: [...el.querySelectorAll("[data-task] label")].map((n) =>
-            n.textContent!.trim(),
-          ),
-          resources: [...el.querySelectorAll("[data-tile] .description")].map(
-            (n) => n.textContent!.replace(/\s+/g, " ").trim(),
-          ),
-          specimen: el
-            .querySelector(".specimen")
-            ?.textContent?.replace(/\s+/g, " ")
-            .trim(),
-          input: el.querySelector<HTMLInputElement>("[data-text]")?.value,
-          size: el.querySelector<HTMLInputElement>("[data-size]")?.value,
-        }));
-        if (!baseline) baseline = content;
-        else expect(content, id).toEqual(baseline);
+        const heading = (await root.locator("h2").first().innerText()).trim();
+        expect(heading.length, id).toBeGreaterThan(0);
+        expect(headings.has(heading), `${id} reused ${heading}`).toBe(false);
+        headings.add(heading);
       }
+      expect(headings.size).toBe(group.length);
     }
   });
 }

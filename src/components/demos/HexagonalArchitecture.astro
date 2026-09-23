@@ -7,7 +7,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  b = boundariesText(lang);
+  b = boundariesText(lang, "hexagonal-architecture");
 ---
 
 <section data-demo="hexagonal-architecture" lang={lang}>

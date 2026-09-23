@@ -8,7 +8,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  m = moneyText(lang);
+  m = moneyText(lang, "rewarded-ads");
 ---
 
 <section
@@ -99,7 +99,7 @@ const t = local(lang),
   import { mount, local } from "./shared";
   import { moneyText, moneyField as field } from "./monetization";
   mount("rewarded-ads", (root, say) => {
-    const m = moneyText(root.lang as Lang),
+    const m = moneyText(root.lang as Lang, root.dataset.demo!),
       t = local(root.lang as Lang);
     let phase: "idle" | "watching" | "completed" | "skipped" = "idle",
       rewards = 0,

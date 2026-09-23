@@ -14,6 +14,7 @@ const t = local(lang),
 <section
   data-demo="blue-green"
   data-platform
+  data-saved-label={t("Order Receipt", "주문 영수증", "注文の領収書")}
   lang={lang}
   data-reset-message={p.resetMessage}
 >
@@ -25,9 +26,9 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Verify green, switch traffic, write A17, then simulate failure and switch back.",
-      "그린 검증 → 트래픽 전환 → A17 저장 → 장애·복귀 순서로 진행합니다.",
-      "グリーン検証 → 切り替え → A17保存 → 障害・復帰の順に進めます。",
+      "In an online store, verify green, switch traffic, save an Order Receipt, then simulate failure and switch back.",
+      "온라인 상점에서 그린 검증 → 트래픽 전환 → 주문 영수증 저장 → 장애·복귀 순서로 진행합니다.",
+      "オンライン店でグリーン検証 → 切り替え → 注文の領収書を保存 → 障害・復帰の順に進めます。",
     )}
   </p>
   <div class="controls">
@@ -89,7 +90,7 @@ const t = local(lang),
   </div>
   <div class="controls">
     <button type="button" data-save disabled>
-      {t("Save A17", "A17 저장", "A17を保存")}
+      {t("Save Order Receipt", "주문 영수증 저장", "注文の領収書を保存")}
     </button>
     <button type="button" data-rollback disabled>
       {t("Simulate failure and switch back", "장애·복귀", "障害・復帰")}

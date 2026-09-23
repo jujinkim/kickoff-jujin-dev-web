@@ -12,8 +12,8 @@ related:
   - blue-green
   - canary
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## なぜ必要なのか
 
-複数の実行単位を一度に止めず更新したい。旧版と新版が混在する時間を扱う方法が必要です。
+天気の通知はレプリカ4個を更新する間も利用できる必要があります。旧版と新版が混在する時間を扱う方法が必要です。
 
 ## どう解決するのか
 

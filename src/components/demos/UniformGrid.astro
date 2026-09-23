@@ -1,7 +1,7 @@
 ---
 import type { Lang } from "../../lib/i18n";
 import { local } from "./shared";
-import { resources } from "./resources";
+import { resources, resourceScene } from "./resources";
 import "./comparison-base.css";
 interface Props {
   lang: Lang;
@@ -9,6 +9,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = local(lang);
 const items = resources(lang);
+const scene = resourceScene(lang, "uniform-grid");
 ---
 
 <section
@@ -24,14 +25,8 @@ const items = resources(lang);
 >
   <header>
     <small>{t("COLLECTED / 06", "수집 자료 / 06", "収集資料 / 06")}</small>
-    <h2>{t("Visual fragments", "시각의 조각", "視覚のかけら")}</h2>
-    <p>
-      {t(
-        "Browse the same six resources; compare how the layout changes the reading flow.",
-        "같은 자료 6개를 살펴보며 배치에 따른 읽기 흐름을 비교하세요.",
-        "同じ6件の資料で、配置による読む流れの違いを比べてください。",
-      )}
-    </p>
+    <h2>{scene.title}</h2>
+    <p>{scene.goal}</p>
   </header>
   <div class="controls">
     <label>

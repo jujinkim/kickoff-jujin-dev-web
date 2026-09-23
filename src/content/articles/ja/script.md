@@ -12,8 +12,8 @@ related:
   - serif
   - sans-serif
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: スクリプト書体は手書きの線やつながりを借ります。
@@ -29,7 +29,7 @@ comparison:
 
 ## どう解決するのか
 
-5種類の見本で同じ文章、iiiWWW 0123、数字を使います。文字入力、サイズ、実測幅ガイド、数字の整列を操作します。文字列の接続形を保ちます。リセット・再読み込みで最初の文字と48pxに戻ります。 Dancing Scriptでラテン文字の筆記体を示し、翻訳文にはNotoの代替書体を使います。
+夕食への招待状に使う言葉とiiiWWW 0123、数字を比べます。文字入力、サイズ、実測幅ガイド、数字の整列を操作します。文字列の接続形を保ちます。リセット・再読み込みで最初の文字と48pxに戻ります。 Dancing Scriptでラテン文字の筆記体を示し、翻訳文にはNotoの代替書体を使います。
 
 ## どんな考え方なのか
 

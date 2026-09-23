@@ -2,6 +2,11 @@ import { test, expect } from "@playwright/test";
 import { mkdirSync } from "node:fs";
 
 const ids = ["user-story", "use-case", "job-story"];
+const examples = {
+  en: ["Morning Walk", "Weekend Recipes", "Garden Notes"],
+  ko: ["아침 산책", "주말 요리법", "정원 기록"],
+  ja: ["朝の散歩", "週末のレシピ", "庭の記録"],
+};
 for (const lang of ["en", "ko", "ja"]) {
   test(`${lang}: requirements diagrams preserve distinct meanings and accessible reading order`, async ({
     page,
@@ -10,11 +15,13 @@ for (const lang of ["en", "ko", "ja"]) {
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
     mkdirSync("artifacts/requirements-demos", { recursive: true });
-    for (const id of ids) {
+    for (const [index, id] of ids.entries()) {
       await page.goto(`/${lang}/catalog/${id}/`);
       const root = page.locator(`[data-demo="${id}"]`);
       await expect(root).toBeVisible();
-      await expect(root.locator("[data-fixture]")).toContainText("A17");
+      await expect(root.locator("[data-fixture]")).toContainText(
+        examples[lang as keyof typeof examples][index],
+      );
       await expect(root.locator("[data-boundary]")).toContainText(
         lang === "ko" ? "오프라인" : lang === "ja" ? "オフライン" : "offline",
       );
@@ -46,7 +53,9 @@ for (const lang of ["en", "ko", "ja"]) {
       } else {
         await expect(root.locator("ol > li")).toHaveCount(3);
         await expect(root.locator("ul > li")).toHaveCount(2);
-        await expect(root.locator("ul > li").last()).toContainText("A17");
+        await expect(root.locator("ul > li").last()).toContainText(
+          examples[lang as keyof typeof examples][index],
+        );
       }
       const content = await root.innerText();
       for (const width of [320, 768, 1440]) {

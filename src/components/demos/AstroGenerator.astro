@@ -23,9 +23,9 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Next traces source → build → output → host → browser.",
-      "다음으로 소스 → 빌드 → 출력 → 호스트 → 브라우저를 따라갑니다.",
-      "次へでソース → ビルド → 出力 → ホスト → ブラウザーをたどります。",
+      "For a neighborhood journal, Next traces source → build → output → host → browser.",
+      "동네 소식지에서 다음을 눌러 소스 → 빌드 → 출력 → 호스트 → 브라우저를 따라갑니다.",
+      "地域の便りで次へを押し、ソース → ビルド → 出力 → ホスト → ブラウザーをたどります。",
     )}
   </p>
   <div class="controls">
@@ -56,9 +56,9 @@ const t = local(lang),
         "Markdown記事3件 + レイアウト",
       )}
       <ul class="files">
-        <li>A17.md</li>
-        <li>B04.md</li>
-        <li>C99.md</li>
+        <li>block-party.md</li>
+        <li>pet-adoption.md</li>
+        <li>community-meeting.md</li>
         <li>{t("Shared layout", "공유 레이아웃", "共通レイアウト")}</li>
       </ul>
     </li>
@@ -75,7 +75,10 @@ const t = local(lang),
       <b>03</b>{" "}
       {t("Generated HTML files", "생성된 HTML 파일", "生成HTMLファイル")}{" "}
       <strong data-output-count>0</strong>
-      <p>index.html · A17.html · B04.html · C99.html</p>
+      <p>
+        index.html · morning-walk.html · weekend-recipes.html ·
+        garden-notes.html
+      </p>
     </li>
     <li data-stage="3">
       <b>04</b>{" "}

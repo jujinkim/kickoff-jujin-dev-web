@@ -3,7 +3,7 @@ import { mount, local } from "./shared";
 import { moneyText, moneyField as field } from "./monetization";
 export function mountPurchase(id: string, consumable: boolean) {
   mount(id, (root, say) => {
-    const m = moneyText(root.lang as Lang),
+    const m = moneyText(root.lang as Lang, root.dataset.demo!),
       t = local(root.lang as Lang);
     let count = 0,
       purchases = 0,

@@ -12,8 +12,8 @@ related:
   - static-hosting
   - serverless-functions
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Requests need a process whose runtime you control. Managed handlers alone may not provide the process lifecycle your service needs.
+A library reading-list service receives saves throughout opening hours, and its team needs control over a continuously listening process.
 
 ## How: work toward a solution
 
-Read article and Save A17 enter the listening process. Save writes an external store. Repeat Save keeps one record under the example’s reader/article key. Fail next save returns failure without changing storage. Restart handler replaces the process while retaining the stored record. Reset or reload clears this page-memory simulation, including its illustrated store.
+Read article and Save Library Reading List enter the listening process. Save writes an external store. Repeat Save keeps one record under the example’s reader/article key. Fail next save returns failure without changing storage. Restart handler replaces the process while retaining the stored record. Reset or reload clears this page-memory simulation, including its illustrated store.
 
 ## What: the concept
 

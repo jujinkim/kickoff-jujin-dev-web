@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["レイヤードアーキテクチャ"]
 related: ["architecture", "hexagonal-architecture", "clean-architecture"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## なぜ必要なのか
 
-画面変更、業務ルール、保存処理が絡まっています。何をどこで直すか分かるよう、役割を分ける必要があります。
+ジュンが図書館案内から貸出ルールを保存します。画面が検証と保存を直接担うと、CLIを加える際に検証を複製し、保存先を替える際に画面も直すことになります。
 
 ## どう解決するのか
 
-1. 単一プロセスでR1のA17は未保存。メモリまたは組み込みDBを使う。
+1. 単一プロセスでジュンの貸出ルールのページは未保存。メモリまたは組み込みDBを使う。
 2. HTTP・CLIの表示層がアプリ層の検証を参照・呼び出し、そこから保存層を参照・呼び出す。この閉鎖型の例では飛び越しは禁止。
 3. 成功は0 → 1件、反復も1件。空ID・書き込み前の失敗は0件。修正後に再試行。
 

@@ -36,7 +36,7 @@ Explain the conditional benefit: The fictional service can offer public reading 
 
 Compare every sibling: [direct-payment](direct-payment.md), [sponsorship](sponsorship.md).
 
-Use the shared axes, in this order: **payer; value exchanged; user access; dependency on third parties; incentives; compatible billing**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/revenue-sources.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **payer; value exchanged; user access; dependency on third parties; incentives; compatible billing**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/revenue-sources.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

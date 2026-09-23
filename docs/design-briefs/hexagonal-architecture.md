@@ -5,10 +5,10 @@
 - Closest concept and concrete difference: Layered architecture emphasizes responsibility levels; this example emphasizes replaceable edges around an application.
 - Distinguishing visual features (structure, material, typography): Two driving adapters beside a central application with two named ports, then two driven adapters; import and call directions are labeled independently. Solid surfaces, system type and labels remain meaningful without color.
 - Shared comparison category: [Architecture boundaries](../catalog-writing/groups/boundaries.md).
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: reader R1, article A17 unsaved, one process, HTTP/CLI entry and memory/embedded-database storage. SaveArticle rejects empty IDs, returns Saved after successful persistence, and uses an idempotent fixture policy.
+- Article-specific scenario, dataset, labels, actions, and initial state: reader Dani, article Class Schedule unsaved, one process, HTTP/CLI entry and memory/embedded-database storage. SaveArticle rejects empty IDs, returns Saved after successful persistence, and uses an idempotent fixture policy.
 - Visual variable changed; concept-specific extra controls and their justification: Two driving adapters beside a central application with two named ports, then two driven adapters; import and call directions are labeled independently. Static mode shows structure and execution together without implying a functioning database. No controls needed.
-- Fictional scenario and why it demonstrates the definition: HTTP/CLI → input port → SaveArticle → SaveRepository → memory/embedded database. Dependency and call directions are separate relations; logical boundaries do not prescribe deployment topology.
-- Representative action and observable result: trace SaveArticle(R1, A17) through the named boundaries; success takes 0 → 1 entries, repeating retains 1. This is a labeled authored trace, not executable persistence.
+- Fictional scenario and why it demonstrates the definition: A class schedule save rule is hard to test when every test must start a web server and database. Fictional single process: Dani, Class Schedule unsaved.
+- Representative action and observable result: Fictional single process: Dani, Class Schedule unsaved. HTTP or CLI adapters call SaveArticle through its input port. Saved: 0 → 1 entries; repeat → 1. Empty IDs or failure before writing → 0; retry after correction.
 - Initial state: complete server-rendered diagram; fictional store empty.
 - Changed state, repeated action, empty input/no results: success 0 → 1 → 1; empty IDs or failure before writing keep 0. Retry after correction. These are independent cases from an empty store, not guarantees about every storage failure. Swapping storage means alternative implementations, not data migration.
 - Reset and reload behavior: static; no reset control or mutable state; reload preserves all descriptions.
@@ -17,7 +17,7 @@
 - Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: authored solid light palette in either theme, explicit dark labels; no animation, transparent surface or shadow dependency. Dotted enclosure and solid/dashed arrow patterns survive forced colors.
 - JavaScript-disabled initial screen and explanation: complete diagram, fixture and outcomes remain readable.
 - Font families, supported characters, fallback and measurement method: system sans-serif and monospace for identifiers, system CJK fallback; no font assets or metrics claims.
-- Localized visible strings, input constraints, original/translation review: English originals reviewed together before Korean/Japanese translation on 2026-09-22. Preserve R1/A17, empty-ID validation, source/call distinction and conditional suitability. No native-speaker review claimed.
+- Localized visible strings, input constraints, original/translation review: English originals reviewed together before Korean/Japanese translation on 2026-09-22. Preserve Dani/Class Schedule, empty-ID validation, source/call distinction and conditional suitability. No native-speaker review claimed.
 - Mode: `static`; no script, reset or mount wait.
 - Capture selector and initial content: `[data-demo="hexagonal-architecture"]`, complete diagram, 1440px light captures in en/ko/ja.
 - Source URLs, inspected date, claims each source supports: https://alistair.cockburn.us/hexagonal-architecture; inspected 2026-09-22 for definition/mechanism. [Source refresh](../catalog-writing/boundaries-sources.md). Example policies and suitability are editorial.

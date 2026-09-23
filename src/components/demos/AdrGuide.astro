@@ -1,0 +1,129 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="adr" lang={lang}>
+  <header>
+    <p class="eyebrow">
+      {t(
+        "Public catalog · architecture decision",
+        "공개 카탈로그 · 구조 결정",
+        "公開カタログ · 構造の決定",
+      )}
+    </p>
+    <h2>
+      {t(
+        "Build pages before publication",
+        "공개 전 페이지 빌드",
+        "公開前にページをビルド",
+      )}
+    </h2>
+    <p>
+      {t(
+        "Decision record: accepted after comparing a static build with a request-time server.",
+        "결정 기록: 정적 빌드와 요청 시 서버 처리를 비교한 뒤 채택했습니다.",
+        "決定記録：静的ビルドとリクエスト時のサーバー処理を比較して採用。",
+      )}
+    </p>
+  </header>
+  <dl class="record">
+    <div>
+      <dt>{t("Why", "이유", "理由")}</dt>
+      <dd>
+        {t(
+          "Articles change less often than they are read; a small team wants simple hosting.",
+          "글 수정은 조회보다 드물고 작은 팀은 단순한 호스팅을 원합니다.",
+          "記事の更新は閲覧より少なく、少人数のチームは単純な運用を望みます。",
+        )}
+      </dd>
+    </div>
+    <div>
+      <dt>{t("Choice", "선택", "選択")}</dt>
+      <dd>
+        {t(
+          "Generate article HTML from Markdown at build time.",
+          "빌드할 때 Markdown에서 글 HTML을 만듭니다.",
+          "ビルド時にMarkdownから記事HTMLを生成します。",
+        )}
+      </dd>
+    </div>
+    <div>
+      <dt>{t("Cost and revisit", "비용과 재검토", "負担と再検討")}</dt>
+      <dd>
+        {t(
+          "Publishing needs a rebuild. Revisit if readers need personalized pages on every request.",
+          "글을 공개하려면 재빌드해야 합니다. 매 요청마다 개인화한 페이지가 필요하면 재검토합니다.",
+          "公開には再ビルドが必要。毎回個別のページが必要になれば再検討します。",
+        )}
+      </dd>
+    </div>
+  </dl>
+  <p class="note">
+    {t(
+      "A record preserves the reason; it does not prove the implementation still follows the choice.",
+      "기록은 결정 이유를 남기지만 현재 코드가 그대로 따르는지 증명하지는 않습니다.",
+      "記録は理由を残しますが、現在の実装が従っている証拠にはなりません。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 3vw, 28px);
+    color: #343126;
+    background: #f8f4e8;
+    border: 1px solid #9b8863;
+    border-radius: 12px;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  h2,
+  p,
+  dl,
+  dd {
+    margin: 0;
+  }
+  .eyebrow {
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+  h2 {
+    margin: 0.3rem 0;
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+  }
+  .record {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+  .record > div {
+    padding: 0.8rem;
+    background: #fff;
+    border: 1px solid #ae9b75;
+    border-top: 4px solid #745d37;
+  }
+  dt {
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  dd {
+    font-size: 0.85rem;
+  }
+  .note {
+    border-left: 4px solid #745d37;
+    padding: 0.5rem 0.8rem;
+  }
+  @container (max-width:600px) {
+    .record {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

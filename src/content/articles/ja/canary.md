@@ -12,8 +12,8 @@ related:
   - rolling
   - blue-green
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## なぜ必要なのか
 
-テストを通った変更も実際の利用では失敗します。不確かな変更を全員へ一度に公開すると影響が大きくなります。
+公演チケット予約の変更は実際の利用時にだけ失敗することがあります。不確かな変更を全員へ一度に公開すると影響が大きくなります。
 
 ## どう解決するのか
 

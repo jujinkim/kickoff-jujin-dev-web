@@ -8,8 +8,8 @@ category: "service-split"
 aliases: ["Microservices"]
 related: ["architecture", "monolith", "modular-monolith"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,13 +24,13 @@ comparison:
 
 ## Why: the goal or problem
 
-Stable business capabilities need different release schedules or owners. One shared release can force unrelated teams to coordinate every change.
+A school events app needs a volunteer tag this week, while its billing team has a different release calendar.
 
 ## How: work toward a solution
 
-1. Fictional reading app: one team; Catalog, Library and Billing each v1. A17 has no tag.
+1. Fictional school events app: one team; Catalog, Library and Billing each v1. School Events has no tag.
 2. Deploy only Library v2 with a compatible tag feature; Catalog and Billing stay v1.
-3. Library queries Catalog over the network, then writes `travel` to its own store. A lookup timeout before writing leaves no tag; report failure and retry after recovery.
+3. Library queries Catalog over the network, then writes `volunteer` to its own store. A lookup timeout before writing leaves no tag; report failure and retry after recovery.
 
 ## What: the concept
 

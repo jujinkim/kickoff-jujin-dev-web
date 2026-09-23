@@ -34,7 +34,7 @@ const categoryPath = ancestors(d.category);
         </div>
       </>
     )}
-    {d.example && (
+    {d.example && !isDesignId(d.articleId) && (
       <>
         <div class="card-preview">
           <Example kind={d.example} lang={d.lang} />

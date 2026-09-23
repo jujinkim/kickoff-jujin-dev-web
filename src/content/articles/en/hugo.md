@@ -12,8 +12,8 @@ related:
   - astro
   - jekyll
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Many content files need consistent pages. Editing repeated HTML by hand makes site-wide changes slow and error-prone.
+A town visitor guide has many pages with the same navigation, and copying that navigation into each file makes updates slow.
 
 ## How: work toward a solution
 
-Start with three Markdown articles and one layout. Next resolves templates, creates an index and three article pages, then sends files through hosting to the browser. Missing layout stops this example before output. A separate browser widget can call a Save API; the build tool never handles reader requests. Previous, Reset, or reload restores earlier states.
+Start a town visitor guide with three Markdown articles and one layout. Next resolves templates, creates an index and three article pages, then sends files through hosting to the browser. Missing layout stops this example before output. A separate browser widget can call a Save API; the build tool never handles reader requests. Previous, Reset, or reload restores earlier states.
 
 ## What: the concept
 

@@ -28,9 +28,9 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Save either card. Each ID counts once; the other card stays unchanged.",
-      "각 카드를 저장하세요. ID마다 한 번만 집계하며 다른 카드 상태는 유지됩니다.",
-      "各カードを保存します。IDごとに1回だけ数え、もう一方は変わりません。",
+      "Save either card. Each card counts once; the other card stays unchanged.",
+      "각 카드를 저장하세요. 카드마다 한 번만 집계하며 다른 카드 상태는 유지됩니다.",
+      "各カードを保存します。カードごとに1回だけ数え、もう一方は変わりません。",
     )}
   </p>
   <div class="compile">
@@ -58,11 +58,12 @@ const t = local(lang),
     </h3>
     <div class="cards">
       <article>
-        <p>A17</p>
-        <h3>{p.notes}</h3>
+        <p>{t("Bus Timetable", "버스 시간표", "バス時刻表")}</p>
+        <h3>{t("Trip planner", "여행 계획", "旅行計画")}</h3>
         <button
           type="button"
-          data-save="A17"
+          data-save="Bus Timetable"
+          data-label={t("Bus Timetable", "버스 시간표", "バス時刻表")}
           aria-pressed="false"
           data-interactive
           disabled
@@ -71,11 +72,12 @@ const t = local(lang),
         </button>
       </article>
       <article>
-        <p>B04</p>
-        <h3>{p.notes}</h3>
+        <p>{t("Hiking Route", "등산 경로", "登山ルート")}</p>
+        <h3>{t("Trip planner", "여행 계획", "旅行計画")}</h3>
         <button
           type="button"
-          data-save="B04"
+          data-save="Hiking Route"
+          data-label={t("Hiking Route", "등산 경로", "登山ルート")}
           aria-pressed="false"
           data-interactive
           disabled
@@ -95,7 +97,10 @@ const t = local(lang),
   <p class="total">
     {p.count}: <strong data-count>0</strong> / 2
   </p>
-  <p data-state>A17: 0 · B04: 0</p>
+  <p data-state>
+    {t("Bus Timetable", "버스 시간표", "バス時刻表")}: 0 ·{" "}
+    {t("Hiking Route", "등산 경로", "登山ルート")}: 0
+  </p>
   <p class="trace" data-path-state>
     {p.waiting}
   </p>

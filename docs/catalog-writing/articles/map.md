@@ -34,7 +34,7 @@ Explain the conditional benefit: An article ID can directly name its current tit
 
 Compare every sibling: [list](list.md), [set](set.md).
 
-Use the shared axes, in this order: **order contract; duplicates; lookup identity; update behavior; implementation independence**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/abstract-collections.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **order contract; duplicates; lookup identity; update behavior; implementation independence**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/abstract-collections.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

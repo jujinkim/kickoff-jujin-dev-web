@@ -8,7 +8,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  m = moneyText(lang);
+  m = moneyText(lang, "direct-payment");
 ---
 
 <section data-demo="direct-payment" data-money lang={lang}>
@@ -20,9 +20,9 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Reading service · customer-funded access",
-      "읽기 서비스 · 고객이 접근 비용 부담",
-      "読書サービス · 顧客がアクセス費用を負担",
+      "Neighborhood newspaper · customer-funded access",
+      "동네 신문 · 고객이 접근 비용 부담",
+      "地域の新聞 · 顧客がアクセス費用を負担",
     )}
   </p>
   <ol class="exchange">
@@ -31,9 +31,9 @@ const t = local(lang),
     </li>
     <li>
       {t(
-        "Publisher → reading access → Reader",
-        "발행자 → 읽기 접근 → 독자",
-        "発行者 → 読書アクセス → 読者",
+        "Publisher → newspaper access → Reader",
+        "발행자 → 신문 접근 → 독자",
+        "発行者 → 新聞の閲覧 → 読者",
       )}
     </li>
   </ol>

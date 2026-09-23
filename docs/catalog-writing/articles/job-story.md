@@ -36,7 +36,7 @@ Explain the conditional benefit: The team can consider reminders or saving befor
 
 Compare every sibling: [user-story](user-story.md), [use-case](use-case.md).
 
-Use the shared axes, in this order: **focus of description; unit of work; preconditions; failure coverage; acceptance evidence; complementary artifacts**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/requirements.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **focus of description; unit of work; preconditions; failure coverage; acceptance evidence; complementary artifacts**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/requirements.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

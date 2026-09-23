@@ -6,6 +6,11 @@ const ids = [
   "hexagonal-architecture",
   "clean-architecture",
 ];
+const examples = {
+  en: ["Borrowing Rules", "Class Schedule", "Budget Guide"],
+  ko: ["대출 규칙", "수업 일정", "가계부 안내"],
+  ja: ["貸出ルール", "授業予定", "家計簿ガイド"],
+};
 // These diagrams must convey their complete meaning without client scripts.
 test.use({ javaScriptEnabled: false });
 for (const lang of ["en", "ko", "ja"]) {
@@ -14,8 +19,8 @@ for (const lang of ["en", "ko", "ja"]) {
   }) => {
     await page.route("https://giscus.app/**", (route) => route.abort());
     mkdirSync("artifacts/boundaries-demos", { recursive: true });
-    let sharedFixture: string | undefined, sharedOutcomes: string | undefined;
-    for (const id of ids) {
+    const fixtures = new Set<string>();
+    for (const [index, id] of ids.entries()) {
       await page.goto(`/${lang}/catalog/${id}/`);
       const root = page.locator(`[data-demo="${id}"]`);
       await expect(root).toBeVisible();
@@ -24,15 +29,9 @@ for (const lang of ["en", "ko", "ja"]) {
       ).toHaveCount(0);
       const fixture = await root.locator("[data-fixture]").innerText();
       const outcomes = await root.locator("[data-outcomes]").innerText();
-      if (sharedFixture) {
-        expect(fixture).toBe(sharedFixture);
-        expect(outcomes).toBe(sharedOutcomes);
-      } else {
-        sharedFixture = fixture;
-        sharedOutcomes = outcomes;
-      }
-      expect(fixture).toContain("R1");
-      expect(fixture).toContain("A17");
+      expect(fixtures.has(fixture)).toBe(false);
+      fixtures.add(fixture);
+      expect(fixture).toContain(examples[lang as keyof typeof examples][index]);
       expect(outcomes).toContain("0 → 1 → 1");
       expect(
         await root

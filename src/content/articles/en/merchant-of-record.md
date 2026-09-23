@@ -8,8 +8,8 @@ category: "seller-responsibility"
 aliases: ["Merchant of record model"]
 related: ["payments", "direct-seller", "subscription"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Selling across markets adds sales administration your team may not operate. You need to know which duties a contractual seller can take on.
+A small music practice app reaches customers abroad, but its team cannot assume it can administer every market's sales duties.
 
 ## How: work toward a solution
 
-For a fictional reading-tool license, the customer pays the MoR, which settles agreed proceeds to the business. The MoR owns the illustrated receipt, refund and transaction-tax workflows. The business still delivers the product and agreed product support. Amounts, exclusions and country-specific tax rules are outside this diagram.
+For a fictional music practice license, the customer pays the MoR, which settles agreed proceeds to the business. The MoR owns the illustrated receipt, refund and transaction-tax workflows. The business still delivers the product and agreed product support. Amounts, exclusions and country-specific tax rules are outside this diagram.
 
 ## What: the concept
 

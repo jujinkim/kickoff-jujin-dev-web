@@ -36,7 +36,7 @@ Explain the conditional benefit: The authored business can delegate covered tran
 
 Compare every sibling: [direct-seller](direct-seller.md).
 
-Use the shared axes, in this order: **contractual seller; payment handling; receipt identity; refund/dispute route; transaction-tax role; retained product obligations**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/seller-responsibility.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **contractual seller; payment handling; receipt identity; refund/dispute route; transaction-tax role; retained product obligations**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/seller-responsibility.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

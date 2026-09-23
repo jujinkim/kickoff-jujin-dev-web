@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["ヘキサゴナルアーキテクチャ"]
 related: ["architecture", "layered-architecture", "clean-architecture"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## なぜ必要なのか
 
-業務ルールのテストに実際のデータベースやサーバーが必要だと負担が増えます。外部ツールを交換できる接続点が必要です。
+授業予定の保存規則を試すたびにWebサーバーとデータベースが要ると、確認が遅くなります。
 
 ## どう解決するのか
 
-1. 単一プロセスでR1のA17は未保存。HTTP・CLIアダプターが入力ポートからSaveArticleを呼ぶ。
+1. 単一プロセスでダニの授業予定は未保存。HTTP・CLIアダプターが入力ポートからSaveArticleを呼ぶ。
 2. IDを検証し、SaveRepository経由でメモリ・組み込みDBへ保存。保存アダプターはアプリ所有のポートに依存し、アプリは保存実装を直接参照しない。
 3. 成功は0 → 1件、反復も1件。空ID・書き込み前の失敗は0件。修正後に再試行。
 

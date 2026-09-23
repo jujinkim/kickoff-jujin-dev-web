@@ -12,8 +12,8 @@ related:
   - serif
   - sans-serif
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: 스크립트 서체는 손글씨의 획과 연결을 빌립니다.
@@ -29,7 +29,7 @@ comparison:
 
 ## 어떻게 해결하는가
 
-다섯 표본은 같은 문장, iiiWWW 0123, 숫자를 사용합니다. 표본 입력·크기·실측 폭 가이드·숫자 정렬을 조절합니다. 글자는 하나의 문자열로 연결 형태를 유지합니다. 초기화·새로고침하면 처음 글과 48px 크기로 돌아갑니다. Dancing Script는 라틴 손글씨를 보여주며 현지화 글은 Noto 대체 서체를 사용합니다.
+저녁 초대장에 쓸 문구와 iiiWWW 0123, 숫자를 함께 비교합니다. 표본 입력·크기·실측 폭 가이드·숫자 정렬을 조절합니다. 글자는 하나의 문자열로 연결 형태를 유지합니다. 초기화·새로고침하면 처음 글과 48px 크기로 돌아갑니다. Dancing Script는 라틴 손글씨를 보여주며 현지화 글은 Noto 대체 서체를 사용합니다.
 
 ## 무엇이라 부르는가
 

@@ -2,6 +2,11 @@ import { test, expect } from "@playwright/test";
 import { mkdirSync } from "node:fs";
 
 const ids = ["monolith", "modular-monolith", "microservices"];
+const examples = {
+  en: ["Community Cookbook", "Hiking Guide", "School Events"],
+  ko: ["동네 요리책", "등산 안내", "학교 행사"],
+  ja: ["地域の料理本", "登山ガイド", "学校行事"],
+};
 test.use({ javaScriptEnabled: false });
 for (const lang of ["en", "ko", "ja"]) {
   test(`${lang}: service diagrams preserve release scope and failure timing without JavaScript`, async ({
@@ -9,8 +14,8 @@ for (const lang of ["en", "ko", "ja"]) {
   }) => {
     await page.route("https://giscus.app/**", (route) => route.abort());
     mkdirSync("artifacts/service-split-demos", { recursive: true });
-    let shared: string[] | undefined;
-    for (const id of ids) {
+    const fixtures = new Set<string>();
+    for (const [index, id] of ids.entries()) {
       await page.goto(`/${lang}/catalog/${id}/`);
       const root = page.locator(`[data-demo="${id}"]`);
       await expect(root).toBeVisible();
@@ -25,10 +30,11 @@ for (const lang of ["en", "ko", "ja"]) {
           '[data-result="failure"]',
         ].map((selector) => root.locator(selector).innerText()),
       );
-      if (shared) expect(values).toEqual(shared);
-      else shared = values;
-      expect(values[0]).toContain("A17");
-      expect(values[2]).toContain("travel");
+      expect(fixtures.has(values[0])).toBe(false);
+      fixtures.add(values[0]);
+      expect(values[0]).toContain(
+        examples[lang as keyof typeof examples][index],
+      );
       await expect(root.locator("[data-deployment]")).toHaveCount(
         id === "microservices" ? 3 : 1,
       );

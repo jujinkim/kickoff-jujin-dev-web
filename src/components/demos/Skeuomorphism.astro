@@ -5,7 +5,7 @@ interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
-const w = workshop(lang);
+const w = workshop(lang, "skeuomorphism");
 const prefix = "skeuomorphism-" + lang;
 ---
 

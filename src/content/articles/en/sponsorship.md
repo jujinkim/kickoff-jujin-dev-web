@@ -15,8 +15,8 @@ related:
     "transaction-fees",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,11 +31,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Useful public work costs time and money, yet you want it to remain open. Supporters may fund its continuation.
+A community garden guide has useful free advice, but volunteers cannot cover its upkeep indefinitely.
 
 ## How: work toward a solution
 
-A fictional reading service keeps articles open. A supporter contributes 12 toward maintenance and receives acknowledgment, not exclusive access. GitHub Sponsors illustrates one-time and recurring support; its conditions are provider-specific. This is a fictional amount; taxes, fees and refunds are omitted.
+A fictional community garden guide keeps articles open. A supporter contributes 12 toward maintenance and receives acknowledgment, not exclusive access. GitHub Sponsors illustrates one-time and recurring support; its conditions are provider-specific. This is a fictional amount; taxes, fees and refunds are omitted.
 
 ## What: the concept
 

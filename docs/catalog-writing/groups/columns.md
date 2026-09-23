@@ -16,7 +16,7 @@ A page contains navigation N, article content M and related reading R, in that l
 
 ## Sibling review matrix
 
-All rows use the same case. Features describe mechanisms; benefits and choice advice are conditional editorial judgments. Read each article's evidence map for source-backed boundaries.
+Rows share comparison dimensions and assumptions; published articles use distinct situations. Features describe mechanisms; benefits and choice advice are conditional editorial judgments. Read each article's evidence map for source-backed boundaries.
 
 | Concept                                                                   | Distinguishing feature                                                            | Conditional advantage                                                      | Limitation                                                             | Suitable context                                                            | Combination                                                                                           |
 | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |

@@ -34,7 +34,7 @@ Explain the conditional benefit: The example can host custom long-lived applicat
 
 Compare every sibling: [static-hosting](static-hosting.md), [serverless-functions](serverless-functions.md).
 
-Use the shared axes, in this order: **request path; execution lifetime; persistent state location; scaling responsibility; failure handling; build/runtime split**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/hosting-models.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **request path; execution lifetime; persistent state location; scaling responsibility; failure handling; build/runtime split**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/hosting-models.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

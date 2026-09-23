@@ -34,7 +34,7 @@ Explain the conditional benefit: The proposed team can ship the tag change throu
 
 Compare every sibling: [modular-monolith](modular-monolith.md), [microservices](microservices.md).
 
-Use the shared axes, in this order: **deployment unit; module boundaries; communication; data ownership; failure boundary; operational effort**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/service-split.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **deployment unit; module boundaries; communication; data ownership; failure boundary; operational effort**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/service-split.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

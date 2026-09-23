@@ -9,11 +9,14 @@ interface Props {
 const { lang } = Astro.props;
 const t = local(lang),
   p = platformText(lang);
+const item = t("Festival Schedule", "축제 일정", "祭りの日程");
+const reader = t("Mina", "민아", "美奈");
 ---
 
 <section
   data-demo="serverless-functions"
   data-platform
+  data-record-label={`${reader} / ${item}`}
   lang={lang}
   data-reset-message={p.resetMessage}
   data-read-path={t(
@@ -33,9 +36,9 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Read the public article, then save A17. Repeated requests share reader-01 / A17.",
-      "공개 글을 읽고 A17을 저장하세요. 반복 요청은 reader-01 / A17을 공유합니다.",
-      "公開記事を読み、A17を保存します。再送もreader-01 / A17を共有します。",
+      "Read the public article, then save Festival Schedule. Repeated requests share Mina / Festival Schedule.",
+      "공개 글을 읽고 축제 일정을 저장하세요. 반복 요청은 민아 / 축제 일정을 공유합니다.",
+      "公開記事を読み、祭りの日程を保存します。再送も美奈 / 祭りの日程を共有します。",
     )}
   </p>
   <div class="controls">
@@ -43,7 +46,7 @@ const t = local(lang),
       {t("Read article", "글 읽기", "記事を読む")}
     </button>
     <button type="button" data-save data-interactive disabled>
-      {t("Save A17", "A17 저장", "A17を保存")}
+      {t("Save Festival Schedule", "축제 일정 저장", "祭りの日程を保存")}
     </button>
     <button type="button" data-restart data-interactive disabled>
       {t("Restart handler", "처리기 재시작", "処理器を再起動")}
@@ -68,11 +71,15 @@ const t = local(lang),
     <div class="lanes">
       <section>
         <h3>02A · {t("Save invocation", "저장 호출", "保存の呼び出し")}</h3>
-        <p>reader-01 / A17</p>
+        <p>
+          {reader} / {item}
+        </p>
       </section>
       <section>
         <h3>02B · {t("Repeated invocation", "반복 호출", "再度の呼び出し")}</h3>
-        <p>reader-01 / A17</p>
+        <p>
+          {reader} / {item}
+        </p>
       </section>
     </div>
     <p>
@@ -88,7 +95,7 @@ const t = local(lang),
   <aside class="store">
     <h3>03 · {p.store}</h3>
     <p>
-      reader-01 / A17 →{" "}
+      {reader} / {item} →{" "}
       {t("one key, one record", "키 하나, 기록 하나", "1キー、1記録")}
     </p>
     <p>

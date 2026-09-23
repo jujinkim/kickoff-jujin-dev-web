@@ -5,10 +5,10 @@
 - Closest concept and concrete difference: same-category peers per-seat-pricing, feature-tiered-pricing, volume-pricing, graduated-pricing, base-plus-overage; Fixed package amount. Cross-category combinations are related reading, not comparison peers.
 - Distinguishing visual features (structure, material, typography): One fixed package amount beside explicit included limits. Solid surfaces and text/number labels; color is not the only encoding.
 - Shared comparison category: [pricing-models](../catalog-writing/groups/pricing-models.md).
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: A workspace with 3 licensed seats and 120 exports/month. Seat price 8; flat package 20 includes up to 5 seats and 200 exports; Pro 35 adds approvals. Tier rates: up to 100 at 0.20, thereafter 0.10. Base 20 includes 100, overage 0.10.
+- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional meal planner has three seats and 120 monthly exports.
 - Visual variable changed; concept-specific extra controls and their justification: One fixed package amount beside explicit included limits. Static mode has no controls, scripts, artificial focus stops or mount dependency.
-- Fictional scenario and why it demonstrates the definition: A fictional workspace has three seats and 120 monthly exports. Its package costs 20 per month, covering up to five seats and 200 exports. At this shared baseline, the amount stays 20. The diagram lists the package boundaries; behavior beyond them needs separate terms. Taxes, fees and refunds are omitted.
-- Representative action and observable result: Read the numbered relationships/table in source order. A fictional workspace has three seats and 120 monthly exports. Its package costs 20 per month, covering up to five seats and 200 exports. At this shared baseline, the amount stays 20. The diagram lists the package boundaries; behavior beyond them needs separate terms. Taxes, fees and refunds are omitted.
+- Fictional scenario and why it demonstrates the definition: A meal planner's families want to know the monthly bill before trying another recipe. A fictional meal planner has three seats and 120 monthly exports.
+- Representative action and observable result: A fictional meal planner has three seats and 120 monthly exports. Its package costs 20 per month, covering up to five seats and 200 exports.
 - Initial state: One fixed package amount beside explicit included limits.
 - Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
 - Reset and reload behavior: No mutable state or reset control.

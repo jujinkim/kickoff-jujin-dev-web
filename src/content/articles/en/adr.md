@@ -18,8 +18,8 @@ aliases:
 related: ["srs", "static-sites"]
 example: "decision"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "Draft a proposed ADR for our rendering choice. Read existing decisions first. Include constraints, alternatives, costs, recommendation, owner, and revisit trigger. Ask me to accept, reject, or choose another option. Do not mark it accepted until I decide or explicitly delegate this decision."
 ---

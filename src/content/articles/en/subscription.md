@@ -15,8 +15,8 @@ related:
     "flat-rate-pricing",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,11 +31,11 @@ comparison:
 
 ## Why: the goal or problem
 
-A service provides ongoing value and incurs ongoing costs. A single sale may not match that continuing relationship.
+A family photo backup keeps files available every month, and both storage and support continue after signup.
 
 ## How: work toward a solution
 
-A fictional export tool charges 12 monthly: three successful months total 36, with 100, 300 and 600 exports. Advance periods, disable renewal or simulate failure. Here cancellation ends access at the paid period boundary; failure pauses access until a successful retry. These are example policies. Taxes, fees and refunds are omitted.
+A fictional family photo backup charges 12 monthly: three successful months total 36, with 100, 300 and 600 exports. Advance periods, disable renewal or simulate failure. Here cancellation ends access at the paid period boundary; failure pauses access until a successful retry. These are example policies. Taxes, fees and refunds are omitted.
 
 ## What: the concept
 

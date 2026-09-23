@@ -18,8 +18,8 @@ aliases:
 related: ["srs", "tools"]
 example: "layers"
 status: "published"
-revision: 4
-sourceRevision: 4
+revision: 5
+sourceRevision: 5
 updated: "2026-09-23"
 aiPrompt: "確定済みの要件と制約を読んで。全体のモジュール、責任、データと規則の所有、依存方向、公開契約、障害復旧の担当を提案して。代案と保守費用を説明し、未決定のアーキテクチャだけ質問して。承認済みの判断を守り、境界内のクラス・メソッド・データ構造は自分で選んで。UMLは判断の説明に必要な場合に作成し、私に作成を求めないで。"
 ---

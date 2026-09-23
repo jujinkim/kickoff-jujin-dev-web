@@ -8,8 +8,8 @@ category: "requirements"
 aliases: ["Job story"]
 related: ["srs", "user-story", "use-case"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,17 +24,17 @@ comparison:
 
 ## Why: the goal or problem
 
-A requested feature hides the situation that caused the request. Without that context, you may solve the wrong problem.
+A gardener asks for a Save button after leaving a planting guide halfway through; the real need may be returning to it at home.
 
 ## How: work toward a solution
 
-Fictional signed-in commuter, A17 unsaved:
+Gardener, Garden Notes unsaved:
 
-1. When my journey interrupts reading,
-2. I want a way back to A17,
-3. so I can finish later.
+1. When I leave before finishing the planting guide,
+2. I want a way back to Garden Notes,
+3. so I can finish the planting plan at home.
 
-Evaluate a saved link or a reminder containing the link. Neither promises offline reading. If choosing saving, discuss duplicate saves and persistence failures separately.
+Evaluate a saved link or a reminder containing it. Neither promises offline reading. Saving needs duplicate and failure rules.
 
 ## What: the concept
 

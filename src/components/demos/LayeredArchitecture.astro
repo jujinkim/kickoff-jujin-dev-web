@@ -7,7 +7,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  b = boundariesText(lang);
+  b = boundariesText(lang, "layered-architecture");
 const layers = [
   [
     t("Presentation", "표현", "表示"),
@@ -20,7 +20,11 @@ const layers = [
   ],
   [
     t("Application", "애플리케이션", "アプリケーション"),
-    "SaveArticle(R1, A17)",
+    t(
+      "SaveArticle(Jun, Borrowing Rules)",
+      "SaveArticle(준, 대출 규칙)",
+      "SaveArticle(ジュン, 貸出ルール)",
+    ),
     t(
       "Validates IDs; coordinates saving",
       "ID 검증 · 저장 조율",

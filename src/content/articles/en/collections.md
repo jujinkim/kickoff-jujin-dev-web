@@ -23,8 +23,8 @@ aliases:
 related: ["ooad", "srs"]
 example: "collections"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "For our product selection, clarify ordering, duplicate handling, lookup keys, and serialization. Compare array, map, and set using example data and expected operations. Ask about unresolved requirements. Recommend a representation, show its output, and list synchronization risks if multiple indexes are kept."
 ---
@@ -35,7 +35,7 @@ A saved-book list shows duplicates, changes order unexpectedly, or cannot find t
 
 ## How: work toward a solution
 
-1. Describe the visible behavior with a few identifiers. Save A17, save B04, then save A17 again. Suppose the agreed result is two entries, in their original insertion order. A title is display text; a stable ID distinguishes identity from later edits or two books sharing a name.
+1. Describe the visible behavior with a few identifiers. Save Soup Cookbook, save Train Travel Guide, then save Soup Cookbook again. Suppose the agreed result is two entries, in their original insertion order. A title is display text; a stable ID distinguishes identity from later edits or two books sharing a name.
 2. List the operations. Reading in sequence, locating an item by ID, checking membership and counting repeated purchases are different jobs. Do not discard duplicates if they represent quantity. A cart with two copies is not the same requirement as a collection of unique bookmarks.
 3. Let AI choose an initial structure. An array can hold an ordered sequence. A map associates each key with a value. A set records unique membership. In JavaScript, maps and sets iterate in insertion order, but that language-specific behavior should not be assumed for every collection in every language.
 4. Test identity explicitly. Two separately created JavaScript objects are different keys even if both contain the same book ID. Use the agreed stable ID as the lookup key when that is the product's identity rule. Define missing-item and deletion behavior instead of treating every lookup as a success.

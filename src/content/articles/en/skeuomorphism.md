@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 6
-sourceRevision: 6
+revision: 7
+sourceRevision: 7
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -32,11 +32,11 @@ checked: "2026-09-21"
 
 ## Why: the goal or problem
 
-A digital task feels unfamiliar. A physical object people already understand can suggest how its controls and content relate.
+A recipe app can feel unfamiliar to someone used to a paper notebook. A physical object people already understand can suggest how its controls and content relate.
 
 ## How: work toward a solution
 
-Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. The workspace opens as a paper notebook on a wooden surface.
+For the recipe notebook, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. The recipe notebook opens as a paper notebook on a wooden surface.
 
 ## What: the concept
 

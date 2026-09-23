@@ -5,10 +5,10 @@
 - Closest concept and concrete difference: same-category peers subscription, usage-based, prepaid-credits; One charge. Cross-category combinations are related reading, not comparison peers.
 - Distinguishing visual features (structure, material, typography): Three-month timeline with charge and usage on each month. Solid surfaces and text/number labels; color is not the only encoding.
 - Shared comparison category: [billing](../catalog-writing/groups/billing.md).
-- Fixed scenario, dataset, labels, actions, and initial state inherited from that group: The same export tool over three months: 100, 300, 600 exports. One-time 30; subscription 12/month; metered 0.02/export; prepaid starts at 1,000 credits and consumes 1/export.
+- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional slide exporter charges 30 in month one and zero in months two and three: total 30.
 - Visual variable changed; concept-specific extra controls and their justification: Three-month timeline with charge and usage on each month. Static mode has no controls, scripts, artificial focus stops or mount dependency.
-- Fictional scenario and why it demonstrates the definition: A fictional export tool charges 30 in month one and zero in months two and three: total 30. The shared usage is 100, 300 and 600 exports. Here the license covers that example; taxes, fees and refunds are omitted. The timeline separates charges from usage.
-- Representative action and observable result: Read the numbered relationships/table in source order. A fictional export tool charges 30 in month one and zero in months two and three: total 30. The shared usage is 100, 300 and 600 exports. Here the license covers that example; taxes, fees and refunds are omitted. The timeline separates charges from usage.
+- Fictional scenario and why it demonstrates the definition: A slide exporter gives a customer a defined download, so an ongoing monthly charge would be hard to justify. A fictional slide exporter charges 30 in month one and zero in months two and three: total 30.
+- Representative action and observable result: A fictional slide exporter charges 30 in month one and zero in months two and three: total 30. The shared usage is 100, 300 and 600 exports.
 - Initial state: Three-month timeline with charge and usage on each month.
 - Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
 - Reset and reload behavior: No mutable state or reset control.

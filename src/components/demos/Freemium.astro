@@ -8,7 +8,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  m = moneyText(lang);
+  m = moneyText(lang, "freemium");
 ---
 
 <section
@@ -23,9 +23,9 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Notebook · editing and PDF export · shared three-day clock",
-      "노트 앱 · 편집과 PDF 내보내기 · 공통 3일 시계",
-      "ノートアプリ · 編集とPDF出力 · 共通の3日間の時計",
+      "Personal notebook · editing and PDF export · three-day clock",
+      "개인 노트 앱 · 편집과 PDF 내보내기 · 3일 시계",
+      "個人ノートアプリ · 編集とPDF出力 · 3日間の時計",
     )}
   </p>
   <p data-plan>{m.free}</p>

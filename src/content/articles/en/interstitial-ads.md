@@ -8,8 +8,8 @@ category: "ad-formats"
 aliases: ["Interstitial ads"]
 related: ["revenue", "banner-ads", "rewarded-ads", "advertising"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## Why: the goal or problem
 
-An ad needs attention, but interrupting active play is disruptive. A completed task provides a more deliberate transition point.
+A level puzzle has a natural pause after a level, but a full-screen message during play would break concentration.
 
 ## How: work toward a solution
 
-A fictional puzzle app shows a numbered sequence: level complete, labeled full-screen ad, next level. The closing action is drawn as a label in this static diagram, not a working ad control. No ad is requested and no reward is promised. Timing, revenue and network charges are omitted.
+A fictional level puzzle app shows a numbered sequence: level complete, labeled full-screen ad, next level. The closing action is drawn as a label in this static diagram, not a working ad control. No ad is requested and no reward is promised. Timing, revenue and network charges are omitted.
 
 ## What: the concept
 

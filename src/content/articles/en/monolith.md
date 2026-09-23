@@ -8,8 +8,8 @@ category: "service-split"
 aliases: ["Monolith"]
 related: ["architecture", "modular-monolith", "microservices"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,13 +24,13 @@ comparison:
 
 ## Why: the goal or problem
 
-A small app needs manageable releases. Coordinating separate services can cost more than the problem warrants.
+A community cookbook has one small team and a shared release schedule; separate deployment pipelines for tags and billing would add coordination.
 
 ## How: work toward a solution
 
-1. Fictional app v1: one team deploys Catalog, Library and Billing together; A17 has no tag.
+1. One team ships Catalog, Library and Billing; Community Cookbook has no tag.
 2. Add tag support in Library; deploy app v2. Billing behavior stays unchanged, but ships in the same artifact. The app owns a shared database.
-3. Library calls Catalog in-process, then writes `travel`. A Catalog error before writing leaves no tag; retry after recovery.
+3. Library calls Catalog in-process, then writes `family`. A Catalog error before writing leaves no tag; retry after recovery.
 
 ## What: the concept
 

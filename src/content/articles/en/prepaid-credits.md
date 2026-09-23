@@ -15,8 +15,8 @@ related:
     "consumable-purchase",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -31,11 +31,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Customers need a spending ceiling before consuming variable resources. An unrestricted bill at month-end makes budgeting difficult.
+A teacher making classroom posters wants to know the spending limit before starting a large batch.
 
 ## How: work toward a solution
 
-A fictional export tool starts with 1,000 credits, spending one per export. Run the shared months of 100, 300 and 600 exports: balances become 900, 600 and zero. Any further export is blocked until a simulated top-up. Credits here do not expire; purchase price, taxes, fees and refunds are omitted.
+A fictional classroom poster exporter starts with 1,000 credits, spending one per export. Run the shared months of 100, 300 and 600 exports: balances become 900, 600 and zero. Any further export is blocked until a simulated top-up. Credits here do not expire; purchase price, taxes, fees and refunds are omitted.
 
 ## What: the concept
 

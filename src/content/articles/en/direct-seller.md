@@ -8,8 +8,8 @@ category: "seller-responsibility"
 aliases: ["Direct seller model"]
 related: ["payments", "merchant-of-record", "direct-payment"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## Why: the goal or problem
 
-You want control of the customer sale. Outsourcing card processing still leaves someone responsible for the sales relationship.
+A language lesson business wants its own name on the receipt, but using a payment processor can obscure who handles refunds.
 
 ## How: work toward a solution
 
-A fictional reading-tool license names the business on the sale. The processor handles payment; the business owns the illustrated receipt, refund and transaction-tax workflows and delivers the product. The responsibility map describes this assumed contract, not every provider arrangement. Amounts and country-specific tax rules are intentionally absent.
+A fictional language lesson license names the business on the sale. The processor handles payment; the business owns the illustrated receipt, refund and transaction-tax workflows and delivers the product. The responsibility map describes this assumed contract, not every provider arrangement. Amounts and country-specific tax rules are intentionally absent.
 
 ## What: the concept
 

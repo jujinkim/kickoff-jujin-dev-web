@@ -18,8 +18,8 @@ aliases:
 related: ["srs", "static-sites"]
 example: "decision"
 status: "published"
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 aiPrompt: "우리 렌더링 방식의 ADR을 제안 상태로 작성해줘. 기존 결정을 먼저 읽고 제약, 대안, 비용, 추천, 책임자, 재검토 조건을 적어줘. 채택·거절·다른 선택을 물어봐. 내가 결정하거나 해당 결정을 명시적으로 위임하기 전에는 채택으로 표시하지 마."
 ---

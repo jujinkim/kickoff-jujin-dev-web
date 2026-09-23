@@ -8,8 +8,8 @@ category: "boundaries"
 aliases: ["Clean architecture"]
 related: ["architecture", "layered-architecture", "hexagonal-architecture"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Business rules should outlive a database or interface. If they import those details, replacing either forces policy changes too.
+A budget guide's save rule should survive a new database or screen, but direct imports from those tools tie policy to them.
 
 ## How: work toward a solution
 
-1. Fictional single process: R1, A17 unsaved. HTTP/CLI controller maps IDs into SaveArticle; SavedArticle validates them.
+1. Fictional single process: Hana, Budget Guide unsaved. HTTP/CLI controller maps IDs into SaveArticle; SavedArticle validates them.
 2. SaveArticle calls SaveRepository, implemented by memory/embedded-database adapters. Imports point inward: adapters → use-case contracts → domain; calls reach outward to storage. Only plain data crosses; ORM rows stay outside.
 3. Saved: 0 → 1 entries; repeat → 1. Empty IDs or failure before writing → 0; retry after correction.
 

@@ -8,7 +8,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  m = moneyText(lang);
+  m = moneyText(lang, "direct-seller");
 ---
 
 <section data-demo="direct-seller" data-money lang={lang}>
@@ -18,9 +18,9 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Reading-tool license · assumed contract",
-      "읽기 도구 이용권 · 가정한 계약",
-      "読書ツールの利用権 · 仮定した契約",
+      "Language lesson license · assumed contract",
+      "언어 학습 이용권 · 가정한 계약",
+      "語学学習の利用権 · 仮定した契約",
     )}
   </p>
   <div class="contract">

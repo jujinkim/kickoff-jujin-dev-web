@@ -113,7 +113,7 @@ const alternates = all
               {index === 1 && isDesignId(d.articleId) && (
                 <DesignDemo articleId={d.articleId} lang={d.lang} />
               )}
-              {index === 1 && d.example && (
+              {index === 1 && d.example && !isDesignId(d.articleId) && (
                 <div class="article-example" data-pagefind-ignore>
                   <Example kind={d.example} lang={d.lang} />
                 </div>

@@ -12,8 +12,8 @@ related:
   - serif
   - script
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -33,7 +33,7 @@ An interface needs a restrained letter style with fewer terminal ornaments. Type
 
 ## How: work toward a solution
 
-All five specimens share a sentence, iiiWWW 0123, and the same numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Change weight to compare the same glyphs at different strengths.
+For a train information board, compare a phrase with iiiWWW 0123 and aligned numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Change weight to compare the same glyphs at different strengths.
 
 ## What: the concept
 

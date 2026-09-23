@@ -17,8 +17,8 @@ related:
     "direct-seller",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -33,11 +33,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Users receive value from your product, but operating it needs funding. You want the beneficiaries to pay for defined access.
+A neighborhood newspaper has readers, but the next issue cannot be funded by readership alone.
 
 ## How: work toward a solution
 
-A fictional reading service receives 12 from a reader and grants access. The diagram separates payment from content delivery. A processor may carry the payment without becoming the seller. Amounts are illustrative; taxes, processing fees and refunds are omitted.
+A fictional neighborhood newspaper receives 12 from a reader and grants access. The diagram separates payment from content delivery. A processor may carry the payment without becoming the seller. Amounts are illustrative; taxes, processing fees and refunds are omitted.
 
 ## What: the concept
 

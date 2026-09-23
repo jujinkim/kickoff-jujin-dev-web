@@ -7,30 +7,30 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  r = requirementsText(lang);
+  r = requirementsText(lang, "job-story");
 const stages = [
   [
     t("When · situation", "언제 · 상황", "いつ · 状況"),
     t(
-      "My journey interrupts reading",
-      "이동 중 읽기를 멈춰야 할 때",
-      "移動中に読書を中断するとき",
+      "I leave the garden before finishing the planting guide",
+      "정원에서 심기 안내를 다 읽기 전에 돌아갈 때",
+      "庭で植え方の案内を読み終える前に帰るとき",
     ),
   ],
   [
     t("I want · motivation", "원하는 것 · 동기", "したい · 動機"),
     t(
-      "I want a way back to A17",
-      "A17로 돌아올 방법을 남기고 싶다",
-      "A17に戻る手がかりがほしい",
+      "I want a way back to Garden Notes",
+      "정원 기록으로 돌아올 방법을 남기고 싶다",
+      "庭の記録に戻る手がかりがほしい",
     ),
   ],
   [
     t("So I can · outcome", "이유 · 기대 결과", "その結果 · 望む成果"),
     t(
-      "So I can finish later",
-      "나중에 마저 읽을 수 있도록",
-      "後で最後まで読めるように",
+      "So I can finish the planting plan at home",
+      "집에서 심기 계획을 마칠 수 있도록",
+      "帰宅後に植え付け計画を終えられるように",
     ),
   ],
 ];
@@ -41,9 +41,9 @@ const stages = [
     <p class="eyebrow">{r.fiction}</p>
     <h2>
       {t(
-        "Understand the interruption",
-        "읽기를 멈추는 상황 이해",
-        "読書を中断する状況を理解",
+        "Understand the gardener's interruption",
+        "정원사의 중단 상황 이해",
+        "園芸家が中断する状況を理解",
       )}
     </h2>
     <p data-fixture>{r.fixture}</p>
@@ -70,12 +70,18 @@ const stages = [
       )}
     </h3>
     <ul>
-      <li>{t("Save A17’s link", "A17 링크 저장", "A17のリンクを保存")}</li>
       <li>
         {t(
-          "Reminder with A17’s link",
-          "A17 링크를 담은 알림",
-          "A17のリンク付きリマインダー",
+          "Save Garden Notes’s link",
+          "정원 기록 링크 저장",
+          "庭の記録のリンクを保存",
+        )}
+      </li>
+      <li>
+        {t(
+          "Reminder with Garden Notes’s link",
+          "정원 기록 링크를 담은 알림",
+          "庭の記録のリンク付きリマインダー",
         )}
       </li>
     </ul>

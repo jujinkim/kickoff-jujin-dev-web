@@ -7,15 +7,15 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  r = requirementsText(lang);
+  r = requirementsText(lang, "user-story");
 const clauses = [
   [t("Role", "역할", "役割"), t("As a reader", "독자로서", "読者として")],
   [
     t("Goal", "목표", "目標"),
     t(
-      "I want to save A17’s link",
-      "A17 링크를 저장하고 싶다",
-      "A17のリンクを保存したい",
+      "I want to save Morning Walk’s link",
+      "아침 산책 링크를 저장하고 싶다",
+      "朝の散歩のリンクを保存したい",
     ),
   ],
   [

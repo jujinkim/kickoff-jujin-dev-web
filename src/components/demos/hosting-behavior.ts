@@ -11,7 +11,7 @@ export function mountHosting(id: string) {
       calls = 0;
     const update = () => {
       field(root, "[data-records]").textContent = records.size
-        ? "reader-01 / A17"
+        ? root.dataset.recordLabel!
         : p.empty;
       field(root, "[data-count]").textContent = String(records.size);
       field(root, "[data-generation]").textContent = String(generation);
@@ -40,7 +40,7 @@ export function mountHosting(id: string) {
           ),
         );
       } else {
-        records.add("reader-01/A17");
+        records.add(root.dataset.recordLabel!);
         path("save", `${root.dataset.savePath} ${p.count}: ${records.size}.`);
       }
     });

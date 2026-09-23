@@ -39,7 +39,11 @@ test("24 monetization concepts have 72 reviewed translations, seven groups and 1
   for (const a of money) {
     assert.equal(a.data.status, "published");
     assert.equal(a.data.checked, "2026-09-22");
-    assert.equal(a.data.sourceRevision, 2);
+    assert.equal(
+      a.data.sourceRevision,
+      english.find((original) => original.data.articleId === a.data.articleId)
+        .data.revision,
+    );
     assert.equal(Object.keys(a.data.comparison).length, 5);
     assert.ok(articleOverviewSeconds(a) <= 60, a.file);
     assert.ok(existsSync(`docs/design-briefs/${a.data.articleId}.md`));

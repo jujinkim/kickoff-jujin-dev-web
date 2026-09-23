@@ -34,7 +34,7 @@ Explain the conditional benefit: The example can reuse a pool while keeping read
 
 Compare every sibling: [blue-green](blue-green.md), [canary](canary.md).
 
-Use the shared axes, in this order: **replacement unit; simultaneous versions; traffic routing; evaluation gate; rollback action; data compatibility**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/release-replacement.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **replacement unit; simultaneous versions; traffic routing; evaluation gate; rollback action; data compatibility**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/release-replacement.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

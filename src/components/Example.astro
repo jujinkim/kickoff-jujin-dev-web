@@ -89,7 +89,12 @@ const words = {
   {kind === "decision" && (
     <div class="decision-demo">
       <span class="tiny-label">
-        ADR—001 <em>{words.accepted}</em>
+        {lang === "en"
+          ? "Decision record"
+          : lang === "ko"
+            ? "결정 기록"
+            : "決定記録"}{" "}
+        <em>{words.accepted}</em>
       </span>
       <strong>{words.decision}</strong>
       <small>{words.cost}</small>

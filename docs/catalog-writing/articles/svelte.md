@@ -34,7 +34,7 @@ Explain the conditional benefit: The example can express UI and state near each 
 
 Compare every sibling: [react](react.md), [vue](vue.md).
 
-Use the shared axes, in this order: **component expression; state update; event handling; build/runtime responsibility; shared state; surrounding application needs**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/web-ui.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **component expression; state update; event handling; build/runtime responsibility; shared state; surrounding application needs**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/web-ui.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

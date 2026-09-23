@@ -34,7 +34,7 @@ Explain the conditional benefit: The proposed UI label can keep decorative strok
 
 Compare every sibling: [serif](serif.md), [script](script.md).
 
-Use the shared axes, in this order: **stroke endings; construction; handwritten reference; script coverage; intended text role; independence from width**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/type-shapes.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **stroke endings; construction; handwritten reference; script coverage; intended text role; independence from width**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/type-shapes.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

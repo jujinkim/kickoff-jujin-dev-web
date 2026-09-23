@@ -12,8 +12,8 @@ related:
   - godot
   - unity
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-A team needs reusable world objects and visible gameplay event flows. Scattered one-off event handlers make collaboration difficult.
+A village game has coins in many places; the team needs to see which overlap event adds a point and removes the coin.
 
 ## How: work toward a solution
 
-The schematic contains a player, floor, camera, and one collectible Actor. Move to item triggers an authored overlap guard: score changes from zero to one and the Actor disappears. Repeat contact cannot score again. Disable contact before moving to demonstrate a missed collection: score stays zero. Reset or reload restores everything. This is a concept simulation.
+The schematic contains a player, floor, camera, and one coin Actor. Move to item triggers an authored overlap guard: score changes from zero to one and the Actor disappears. Repeat contact cannot score again. Disable contact before moving to demonstrate a missed collection: score stays zero. Reset or reload restores everything. This is a concept simulation.
 
 ## What: the concept
 

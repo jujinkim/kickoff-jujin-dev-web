@@ -8,8 +8,8 @@ category: "access-strategies"
 aliases: ["Freemium"]
 related: ["revenue", "free-trial", "subscription", "non-consumable-purchase"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## Why: the goal or problem
 
-People need a useful starting point without a deadline, while advanced capabilities must help fund continued service.
+A personal notebook must remain useful for someone who never upgrades, while PDF export costs more to provide.
 
 ## How: work toward a solution
 
-A fictional notebook starts with free editing and locked PDF export. Try each feature, advance the shared three-day clock, then explicitly upgrade: editing stays free, while upgrading unlocks export. Unlike the trial, passing day three does not remove free editing. No money moves; prices, taxes, fees and refunds are omitted.
+A fictional personal notebook starts with free editing and locked PDF export. Try each feature, advance the shared three-day clock, then explicitly upgrade: editing stays free, while upgrading unlocks export. Unlike the trial, passing day three does not remove free editing. No money moves; prices, taxes, fees and refunds are omitted.
 
 ## What: the concept
 

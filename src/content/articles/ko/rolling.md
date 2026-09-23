@@ -12,8 +12,8 @@ related:
   - blue-green
   - canary
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -25,6 +25,8 @@ comparison:
 ---
 
 ## 왜 필요한가
+
+날씨 알림은 복제본 네 개를 바꾸는 동안에도 계속 제공돼야 합니다.
 
 여러 복제본을 한꺼번에 교체하지 않고 업데이트하고 싶습니다. 이전 버전과 새 버전이 섞이는 시간을 다룰 방법이 필요합니다.
 

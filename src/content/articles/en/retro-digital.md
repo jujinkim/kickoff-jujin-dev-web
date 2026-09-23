@@ -12,8 +12,8 @@ related:
   - brutalism
   - skeuomorphism
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 comparison:
   features: "Title bars, beveled windows, pixel ornaments, and fixed-width type."
@@ -26,11 +26,11 @@ checked: "2026-09-22"
 
 ## Why: the goal or problem
 
-A playful project wants familiar early-computer cues. Generic panels do not communicate that intended atmosphere.
+An arcade-night invitation needs a playful early-computer mood. Generic panels do not communicate that intended atmosphere.
 
 ## How: work toward a solution
 
-Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Menus lead to task windows; resource notes unfold inside titled windows.
+For the arcade night, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Menus lead to task windows; resource notes unfold inside titled windows.
 
 ## What: the concept
 

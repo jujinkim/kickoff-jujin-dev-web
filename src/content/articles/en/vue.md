@@ -12,8 +12,8 @@ related:
   - react
   - svelte
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Templates and changing data must stay synchronized. Updating visible fields individually creates duplicate work and inconsistent screens.
+A reading shelf shows Library Book and Garden Article; manually changing every label after a save risks contradictory counts.
 
 ## How: work toward a solution
 
-Two Field notes cards start unsaved. Save on A17 changes only its label to Saved; B04 stays unsaved. Saving B04 changes the shared count from one to two. Repeating Save leaves two records: each ID counts once. The diagram connects reactive state to the template. Reset or reload clears both cards. There is no persistent storage here.
+Two cards in a reading shelf start unsaved. Save on Library Book changes only its label to Saved; Garden Article stays unsaved. Saving Garden Article changes the shared count from one to two. Repeating Save leaves two records: each card counts once. The diagram connects reactive state to the template. Reset or reload clears both cards. There is no persistent storage here.
 
 ## What: the concept
 

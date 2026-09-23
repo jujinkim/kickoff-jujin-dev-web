@@ -16,7 +16,7 @@ Compare iiiWWW and two rows of values 111 / 888, followed by 기록 / 記録. Us
 
 ## Sibling review matrix
 
-All rows use the same case. Features describe mechanisms; benefits and choice advice are conditional editorial judgments. Read each article's evidence map for source-backed boundaries.
+Rows share comparison dimensions and assumptions; published articles use distinct situations. Features describe mechanisms; benefits and choice advice are conditional editorial judgments. Read each article's evidence map for source-backed boundaries.
 
 | Concept                                                                 | Distinguishing feature                                                                                                      | Conditional advantage                                                                | Limitation                                                                 | Suitable context                                                                 | Combination                                                                       |
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |

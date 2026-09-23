@@ -34,7 +34,7 @@ Explain the conditional benefit: Arrival history can retain both occurrences of 
 
 Compare every sibling: [set](set.md), [map](map.md).
 
-Use the shared axes, in this order: **order contract; duplicates; lookup identity; update behavior; implementation independence**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/abstract-collections.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **order contract; duplicates; lookup identity; update behavior; implementation independence**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/abstract-collections.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

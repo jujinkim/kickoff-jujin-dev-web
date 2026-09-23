@@ -16,8 +16,8 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 6
-sourceRevision: 6
+revision: 7
+sourceRevision: 7
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -35,11 +35,11 @@ checked: "2026-09-22"
 
 ## Why: the goal or problem
 
-Controls should feel raised or pressed within one surface. Flat color changes alone do not express that desired material impression.
+A daily-stretch tracker needs a clear pressed state on one quiet surface. Flat color changes alone do not express that desired material impression.
 
 ## How: work toward a solution
 
-Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. The checked row sinks inward; its tick and strike-through remain without shadows.
+For the daily stretch routine, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. The checked row sinks inward; its tick and strike-through remain without shadows.
 
 ## What: the concept
 

@@ -12,8 +12,8 @@ related:
   - astro
   - hugo
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-A text-first publishing team needs reusable layouts and predictable builds. Rewriting complete pages for each post wastes effort.
+A family recipe archive adds new posts often; copying a complete page for each recipe makes shared layout changes tedious.
 
 ## How: work toward a solution
 
-Start with three Markdown articles and one layout. Next runs the Ruby build, creates an index and three article pages, then sends files through hosting to the browser. Missing layout stops this example before output. Reading these files needs no Ruby request handler. Personal Save records need a separate API. Previous, Reset, or reload restores earlier states.
+Start a family recipe archive with three Markdown articles and one layout. Next runs the Ruby build, creates an index and three article pages, then sends files through hosting to the browser. Missing layout stops this example before output. Reading these files needs no Ruby request handler. Personal Save records need a separate API. Previous, Reset, or reload restores earlier states.
 
 ## What: the concept
 

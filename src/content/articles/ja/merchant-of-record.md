@@ -8,8 +8,8 @@ category: "seller-responsibility"
 aliases: ["MoRモデル", "Merchant of record model"]
 related: ["payments", "direct-seller", "subscription"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## なぜ必要なのか
 
-複数の市場で売ると、チームが扱いきれない販売業務が増えます。契約上の販売者へ任せられる責任を整理する必要があります。
+小さな音楽練習アプリに海外の顧客がいても、チームが各市場の販売実務をすべて担えるとは限りません。
 
 ## どう解決するのか
 
-架空の読書ツールでは顧客がMoRに払い、MoRが合意した代金を事業者に精算します。例示した領収書・返金・取引税の業務はMoRが担います。事業者は製品と合意した製品サポートを提供し続けます。金額・除外条件・国別の税務規則は図の対象外です。
+架空の音楽練習の利用権では顧客がMoRに払い、MoRが合意した代金を事業者に精算します。例示した領収書・返金・取引税の業務はMoRが担います。事業者は製品と合意した製品サポートを提供し続けます。金額・除外条件・国別の税務規則は図の対象外です。
 
 ## どんな考え方なのか
 

@@ -12,8 +12,8 @@ related:
   - rolling
   - blue-green
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-A release may work in testing yet fail for real users. Exposing everyone at once makes that uncertainty expensive.
+A ticket-booking change may fail only under real visitor traffic. Exposing everyone at once makes that uncertainty expensive.
 
 ## How: work toward a solution
 

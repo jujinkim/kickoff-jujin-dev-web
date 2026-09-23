@@ -17,8 +17,8 @@ related:
     "subscription",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -33,11 +33,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Customers want to predict the bill without counting every action. A clearly bounded package can make that possible.
+A meal planner's families want to know the monthly bill before trying another recipe.
 
 ## How: work toward a solution
 
-A fictional workspace has three seats and 120 monthly exports. Its package costs 20 per month, covering up to five seats and 200 exports. At this shared baseline, the amount stays 20. The diagram lists the package boundaries; behavior beyond them needs separate terms. Taxes, fees and refunds are omitted.
+A fictional meal planner has three seats and 120 monthly exports. Its package costs 20 per month, covering up to five seats and 200 exports. At this shared baseline, the amount stays 20. The diagram lists the package boundaries; behavior beyond them needs separate terms. Taxes, fees and refunds are omitted.
 
 ## What: the concept
 

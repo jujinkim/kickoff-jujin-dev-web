@@ -8,7 +8,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  m = moneyText(lang);
+  m = moneyText(lang, "sponsorship");
 ---
 
 <section data-demo="sponsorship" data-money lang={lang}>
@@ -18,9 +18,9 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Reading service · public maintenance",
-      "읽기 서비스 · 공개 서비스 유지",
-      "読書サービス · 公開サービスの保守",
+      "Community garden guide · public maintenance",
+      "동네 정원 안내 · 공개 서비스 유지",
+      "地域の庭ガイド · 公開サービスの保守",
     )}
   </p>
   <ol class="exchange">

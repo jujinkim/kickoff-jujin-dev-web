@@ -12,8 +12,8 @@ related:
   - always-on-server
   - serverless-functions
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Public articles do not change for each request. Running application logic for every read adds work that file delivery can avoid.
+A community newsletter serves the same article to every visitor; running code for each read adds maintenance without changing the page.
 
 ## How: work toward a solution
 
-Read article follows the file path. Save A17 follows a separate API path into an external store. Repeat Save keeps one record under the example’s reader/article key. Fail next save returns failure without changing storage. Restart handler keeps the record because storage is outside the handler. Reset or reload clears this page-memory simulation, including its illustrated store.
+Read article follows the file path. Save Community Newsletter follows a separate API path into an external store. Repeat Save keeps one record under the example’s reader/article key. Fail next save returns failure without changing storage. Restart handler keeps the record because storage is outside the handler. Reset or reload clears this page-memory simulation, including its illustrated store.
 
 ## What: the concept
 

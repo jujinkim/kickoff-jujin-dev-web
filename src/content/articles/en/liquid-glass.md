@@ -12,8 +12,8 @@ related:
   - glassmorphism
   - flat-design
 status: published
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 comparison:
   features: >-
@@ -28,11 +28,11 @@ checked: "2026-09-22"
 
 ## Why: the goal or problem
 
-Navigation must stay available over rich content without appearing to be another content card. A distinct floating layer can help.
+A coastal photo diary needs navigation above full-size photos. A distinct floating layer can help.
 
 ## How: work toward a solution
 
-Use the workspace’s three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. View tools expands the floating capsule; Opaque panels removes transparency.
+For the coastal photo diary, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. View tools expands the floating capsule; Opaque panels removes transparency.
 
 ## What: the concept
 

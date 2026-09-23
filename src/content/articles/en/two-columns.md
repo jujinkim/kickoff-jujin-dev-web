@@ -3,7 +3,7 @@ kind: concept
 articleId: two-columns
 lang: en
 title: Two columns
-summary: Compare the same six resources.
+summary: Arrange visual references for a recipe index.
 category: columns
 aliases:
   - Two columns
@@ -12,8 +12,8 @@ related:
   - single-column
   - multiple-columns
 status: published
-revision: 3
-sourceRevision: 3
+revision: 4
+sourceRevision: 4
 updated: "2026-09-23"
 comparison:
   features: Two adjacent regions separate filters from resources.
@@ -25,11 +25,11 @@ comparison:
 
 ## Why: the goal or problem
 
-People need filters while browsing a long collection. Scrolling back to controls repeatedly interrupts exploration.
+A recipe index needs filters beside a long list of dishes. Scrolling back to controls repeatedly interrupts exploration.
 
 ## How: work toward a solution
 
-All six layouts use the same six resources, labels, and colors. Filter a topic, reverse collection order, open study notes, or narrow the preview. Compare the reading flow while the content stays the same. Reset or reload restores the full collection and original order. Filters sit beside the resource list; guidance follows the list.
+While designing a recipe index, gather six visual references. Filter a topic, reverse collection order, open study notes, or narrow the preview. Check whether the arrangement helps people find each reference. Reset or reload restores the full collection and original order. Filters sit beside the resource list; guidance follows the list.
 
 ## What: the concept
 

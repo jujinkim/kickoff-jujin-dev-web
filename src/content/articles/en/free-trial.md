@@ -8,8 +8,8 @@ category: "access-strategies"
 aliases: ["Free trial"]
 related: ["revenue", "freemium", "subscription"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## Why: the goal or problem
 
-People cannot judge a paid tool from a description alone. They need time to test its value before deciding.
+A team planner can promise useful editing, but a team needs a few days of real work to judge it.
 
 ## How: work toward a solution
 
-A fictional notebook starts a three-day trial with editing and PDF export. Advance days manually: at day three both lock. Explicitly choose the simulated paid plan to restore access. No payment method is collected, and expiry never charges automatically in this example. Prices, taxes, fees and refunds are omitted.
+A fictional team planner starts a three-day trial with editing and PDF export. Advance days manually: at day three both lock. Explicitly choose the simulated paid plan to restore access. No payment method is collected, and expiry never charges automatically in this example. Prices, taxes, fees and refunds are omitted.
 
 ## What: the concept
 

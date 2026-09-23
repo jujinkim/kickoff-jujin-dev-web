@@ -17,8 +17,8 @@ related:
     "usage-based",
   ]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -33,11 +33,11 @@ comparison:
 
 ## Why: the goal or problem
 
-You want bulk discounts without repricing earlier usage whenever a threshold is crossed. Charge each band separately.
+A worksheet maker can offer cheaper exports after the first hundred without changing the price of earlier work.
 
 ## How: work toward a solution
 
-A fictional workspace has three seats and 120 monthly exports. The first 100 cost 0.20 each; later exports cost 0.10 each. Thus 100 × 0.20 + 20 × 0.10 = 22. Change usage: 100 costs 20, 101 costs 20.10 and zero costs zero. Taxes, fees, refunds and tier flat fees are omitted.
+A fictional worksheet maker has three seats and 120 monthly exports. The first 100 cost 0.20 each; later exports cost 0.10 each. Thus 100 × 0.20 + 20 × 0.10 = 22. Change usage: 100 costs 20, 101 costs 20.10 and zero costs zero. Taxes, fees, refunds and tier flat fees are omitted.
 
 ## What: the concept
 

@@ -8,7 +8,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = local(lang),
-  m = moneyText(lang);
+  m = moneyText(lang, "transaction-fees");
 ---
 
 <section data-demo="transaction-fees" data-money lang={lang}>
@@ -18,18 +18,18 @@ const t = local(lang),
   </header>
   <p>
     {t(
-      "Reading marketplace · one sale",
-      "읽기 장터 · 거래 1건",
-      "読書マーケット · 1件の売上",
+      "Craft marketplace · one sale",
+      "수공예 장터 · 거래 1건",
+      "手作り品の市場 · 1件の売上",
     )}
   </p>
   <div class="sale">
     <strong>
-      {t("Reader pays 100", "독자 결제 100", "読者が100を支払う")}
+      {t("Buyer pays 100", "구매자 결제 100", "購入者が100を支払う")}
     </strong>
     <div class="split">
       <div>
-        <span>{t("Author allocation", "저자 배분", "著者への配分")}</span>
+        <span>{t("Maker allocation", "제작자 배분", "制作者への配分")}</span>
         <b>90</b>
       </div>
       <div>

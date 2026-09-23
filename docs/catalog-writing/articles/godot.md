@@ -34,7 +34,7 @@ Explain the conditional benefit: The collectible composition can be reused witho
 
 Compare every sibling: [unity](unity.md), [unreal-engine](unreal-engine.md).
 
-Use the shared axes, in this order: **scene/world unit; object composition; behavior authoring; resource reuse; play/test loop; export validation**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/game-engines.md) before drafting peer comparisons; differences must use the same fixture and assumptions.
+Use the shared axes, in this order: **scene/world unit; object composition; behavior authoring; resource reuse; play/test loop; export validation**. Populate the five comparison fields below from this same argument. Read the [group matrix](../groups/game-engines.md) before drafting peer comparisons; compare the same dimensions and assumptions while each published article uses its own familiar situation.
 
 ### 5. Selection and combination conditions
 

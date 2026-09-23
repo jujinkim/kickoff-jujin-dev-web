@@ -8,8 +8,8 @@ category: "ad-formats"
 aliases: ["Banner ads"]
 related: ["revenue", "interstitial-ads", "rewarded-ads", "advertising"]
 status: "published"
-revision: 2
-sourceRevision: 2
+revision: 3
+sourceRevision: 3
 updated: "2026-09-23"
 checked: "2026-09-22"
 comparison:
@@ -24,11 +24,11 @@ comparison:
 
 ## Why: the goal or problem
 
-You want advertising support while keeping the current task visible. Covering the whole screen would interrupt the user.
+A number puzzle needs its board and controls visible while a sponsor message appears nearby.
 
 ## How: work toward a solution
 
-A fictional puzzle app shows its board above a labeled bottom banner, separated from game controls. The static diagram preserves the play area instead of covering it. No ad is requested and no reward is granted. Ad size, fill, revenue and network charges are intentionally outside this example.
+A fictional number puzzle app shows its board above a labeled bottom banner, separated from game controls. The static diagram preserves the play area instead of covering it. No ad is requested and no reward is granted. Ad size, fill, revenue and network charges are intentionally outside this example.
 
 ## What: the concept
 
