@@ -85,27 +85,34 @@ test("all internal HTML links and local assets resolve in static output", () => 
     }
   }
 });
-test("AI rules cover ambiguity, strong recommendation, delegated scope, missing topic, and access failure", () => {
+test("AI rules keep decision ownership and selective evidence; scenarios live in contributor guidance", () => {
   const text = read("ai/instructions.md");
+  const contributor = readFileSync("CONTRIBUTING.md", "utf8");
   for (const scenario of [
-    "Ambiguous request",
-    "Single strong recommendation",
-    "Explicit delegation",
-    "Missing subject",
-    "Access failure",
+    "Uncatalogued option",
+    "Specific article requested",
+    "Optional source unavailable",
+    "Confirmed choice",
+    "Limited delegation",
+    "Approved development",
   ])
-    assert.ok(text.includes(scenario));
+    assert.ok(contributor.includes(scenario), scenario);
   for (const rule of [
-    "Do not ask users to choose every internal implementation detail",
-    "Do not ask again",
-    "accept the recommendation",
-    "search keywords",
-    "ONLY to its stated scope",
+    "These internal choices need no separate delegation",
+    "Preserve confirmed choices and authorization",
+    "Offer acceptance, rejection, or another option",
+    "Delegation applies only to its explicit scope",
+    "Use model knowledge for general concepts",
+    "using relevant official sources",
+    "Read an article before citing it",
+    "catalog access failure alone must not block planning",
     "acceptance criteria",
-    "inaccessible sources",
   ])
-    assert.ok(text.includes(rule));
-  assert.ok(read("llms.txt").includes("/ai/catalog.json"));
+    assert.ok(text.includes(rule), rule);
+  assert.ok(!text.includes("## Acceptance scenarios"));
+  const llms = read("llms.txt");
+  assert.ok(llms.includes("Optional reference index"));
+  assert.ok(llms.includes("/ai/catalog.json"));
 });
 
 test("legacy HTML redirects and Markdown preserve guide content and identity", () => {

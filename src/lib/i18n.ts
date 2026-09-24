@@ -27,6 +27,7 @@ export const strings = {
     guides: "Project planning",
     pending: "Coming soon",
     ai: "Connect your AI",
+    aiRules: "AI behavior rules",
     about: "About",
     theme: "Dark mode",
     skip: "Skip to content",
@@ -70,7 +71,7 @@ export const strings = {
     footer: "Clear goals. Concrete project choices.",
     count: "field notes",
     back: "Back to catalog",
-    aiIntro: "Give your AI a reading list. And some boundaries.",
+    aiIntro: "Give your AI the planning process and decision rules.",
     aiWarning:
       "Publishing files does not make an AI obey them. Tell it to read, apply, and report what it could not access.",
     aboutIntro:
@@ -95,6 +96,7 @@ export const strings = {
     guides: "프로젝트 기획",
     pending: "준비 중",
     ai: "AI 연결",
+    aiRules: "AI 행동 지침",
     about: "소개",
     theme: "다크 모드",
     skip: "본문으로 이동",
@@ -137,7 +139,7 @@ export const strings = {
     footer: "용어는 조금. 삽질은 훨씬 적게.",
     count: "편의 글",
     back: "카탈로그로",
-    aiIntro: "AI에게 읽을거리와 행동 규칙을 주세요.",
+    aiIntro: "AI에게 기획 절차와 판단 규칙을 주세요.",
     aiWarning:
       "파일을 공개한다고 AI가 따르지는 않습니다. 읽고 적용할 절차와 접근 실패 보고를 직접 지시하세요.",
     aboutIntro:
@@ -162,6 +164,7 @@ export const strings = {
     guides: "プロジェクト企画",
     pending: "準備中",
     ai: "AIとつなぐ",
+    aiRules: "AI行動規則",
     about: "このサイト",
     theme: "ダークモード",
     skip: "本文へ移動",
@@ -203,7 +206,7 @@ export const strings = {
     footer: "少しの語彙で、ずっと少ない遠回り。",
     count: "記事",
     back: "カタログへ",
-    aiIntro: "AIに参考資料と行動規則を渡しましょう。",
+    aiIntro: "AIに企画の手順と判断の規則を渡しましょう。",
     aiWarning:
       "ファイルの公開だけではAIの遵守を保証できません。読む手順、適用、アクセス失敗の報告を指示してください。",
     aboutIntro:

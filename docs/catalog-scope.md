@@ -40,7 +40,7 @@ Nine guides remain active: `srs`, `architecture`, `tools`, `static-sites`, `ship
 
 Active lists, category navigation, homepage recommendations, authoring queue, related links, AI catalog, llms.txt, sitemaps and Pagefind use the same scope. Existing article URLs retain their content and comments with noindex, no Pagefind body and no old copyable request. Former category URLs lead to the integrated guide. No removal notices or retirement badges appear in the product.
 
-API schema remains 1. Content inventory is still 246 localized published reference/article documents; 219 belong to active discovery (64 concepts plus 9 guides, three languages). The startup guideline remains v1, revision 2, with a recorded approved scope correction and matching English/Korean/Japanese sources.
+API schema remains 1. Content inventory is still 246 localized published reference/article documents; 219 belong to active discovery (64 concepts plus 9 guides, three languages). The startup guideline remains v1; revision 3 makes the catalog optional learning material and derives decisions from project requirements. See [the guidance review](ai-guidance-review.md). The catalog inventory and JSON structure are unchanged.
 
 ## Sources and editorial judgment
 

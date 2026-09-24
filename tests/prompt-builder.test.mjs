@@ -14,6 +14,8 @@ const moduleURL = (source) =>
     }).outputText,
   ).toString("base64")}`;
 const startupURL = moduleURL(read("src/lib/startup.ts"));
+const { startupPrompt } = await import(startupURL);
+const { projectPrompt } = await import(moduleURL(read("src/lib/ai.ts")));
 const { composeStartupPrompt } = await import(
   moduleURL(
     read("src/lib/prompt-builder.ts").replace(
@@ -48,6 +50,22 @@ for (const [lang, name, notes] of [
     );
     assert.ok(minimal.includes(`:\n${name}\n\n`));
     assert.ok(minimal.includes(`:\n${notes}\n\n`));
+    const siteUrls = (prompt) =>
+      [...prompt.matchAll(/https:\/\/kickoff\.jujin\.dev\/[a-z0-9/.-]+/g)]
+        .map((match) => match[0].replace(/\.$/, ""))
+        .sort();
+    for (const version of ["latest", "v1"]) {
+      const expected = [
+        "https://kickoff.jujin.dev/ai/instructions.md",
+        `https://kickoff.jujin.dev/ai/startup/${version}.md`,
+      ];
+      assert.deepEqual(siteUrls(startupPrompt(lang, version)), expected);
+    }
+    const expected = siteUrls(startupPrompt(lang));
+    assert.deepEqual(siteUrls(minimal), expected);
+    assert.deepEqual(siteUrls(projectPrompt[lang]), expected);
+    for (const prompt of [minimal, projectPrompt[lang]])
+      assert.doesNotMatch(prompt, /llms\.txt|catalog\.json|\/categories\//);
     const literal = '<script>alert("x")</script> & <b>books</b>\nSecond line';
     const complete = composeStartupPrompt(lang, {
       name: "Book & Book",

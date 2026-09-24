@@ -15,6 +15,10 @@ for (const lang of ["en", "ko", "ja"]) {
     await page.locator("#service-description").fill("Neighbors lend books");
     const prompt = page.locator("#prompt-preview");
     await expect(prompt).toHaveValue(/\/ai\/startup\/latest.md/);
+    await expect(prompt).toHaveValue(/\/ai\/instructions.md/);
+    await expect(prompt).not.toHaveValue(
+      /llms\.txt|catalog\.json|\/categories\//,
+    );
     await page.locator("[data-copy-prompt]").click();
     await expect
       .poll(() => page.evaluate(() => navigator.clipboard.readText()))
@@ -48,6 +52,14 @@ for (const lang of ["en", "ko", "ja"]) {
       await (await page.request.get("/ai/startup/v1.md")).text(),
     );
     expect(await latest.text()).toBe(await md.text());
+    await page.goto(`/${lang}/ai/`);
+    const aiPrompt = page.locator("#project-prompt");
+    await expect(aiPrompt).toContainText("/ai/instructions.md");
+    await expect(aiPrompt).not.toContainText(/llms\.txt|catalog\.json/);
+    await page.locator('[data-copy="project-prompt"]').click();
+    await expect
+      .poll(() => page.evaluate(() => navigator.clipboard.readText()))
+      .toBe(await aiPrompt.textContent());
   });
 }
 

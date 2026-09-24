@@ -53,7 +53,7 @@ Every article supplies kind, title, summary, category, multilingual aliases, rel
 | Category                      | `/{lang}/catalog/categories/{categoryId}/`                |
 | Project planning              | `/{lang}/guides/`, `/{lang}/guides/{articleId}/`          |
 | English Markdown              | `/en/catalog/{articleId}.md`, `/en/guides/{articleId}.md` |
-| Assistant entrypoint          | `/llms.txt`                                               |
+| Optional reference index      | `/llms.txt`                                               |
 | Behavior rules                | `/ai/instructions.md`                                     |
 | Versioned catalog and aliases | `/ai/catalog.json`                                        |
 | Sitemaps                      | `/sitemap-index.xml`, `/sitemap-{lang}.xml`               |
@@ -91,4 +91,6 @@ Start at `/{lang}/start/` and enter a service description, with an optional name
 
 `/{lang}/start/latest.md` and `/ai/startup/latest.md` both serve the explicitly selected latest English release at build time; no duplicate body is maintained. Guideline v1 is available at `/{lang}/start/v1/` and `/{lang}/start/v1.md`; `/ai/startup/v1.md` serves the same English source. It collects the service name, description, and other constraints, offers relevant project choices with recommendations and scoped delegation, lets AI select internal implementation and write supporting documents, and produces an approved plan before development.
 
-English, Korean, and Japanese source documents live in `src/startup/v1/`. Set `startupVersion` in `src/lib/startup.ts` to promote a reviewed version, then rebuild and deploy. Versioned URLs and their page prompts remain pinned. Guideline versions are independent of API schema v1. See [contribution and version rules](CONTRIBUTING.md) for collaborative improvements, scenario review, revisions, and future major versions.
+Required site reading is limited to `/ai/startup/latest.md` and `/ai/instructions.md`. Decisions come from service requirements and constraints, including architectures, tools, visual designs, and operations outside this site. The catalog and `/llms.txt` are optional learning and lookup resources; no complete catalog/category review is required. Use model knowledge for general concepts and relevant official sources for changing or uncertain facts. Read any specific article before citing it.
+
+English, Korean, and Japanese source documents live in `src/startup/v1/`. The approved pre-release policy keeps guideline v1, now revision 3, with the existing latest pointer and routes. Guideline versions are independent of API schema v1; the catalog JSON structure is unchanged. See [contribution and version rules](CONTRIBUTING.md) and [revision 3 verification](docs/ai-guidance-review.md) for scenario review and the 3,000-token initial document budget.

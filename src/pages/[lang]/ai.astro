@@ -11,11 +11,11 @@ const steps = {
   en: [
     [
       "Paste into project instructions",
-      "Give your assistant the block below. Ask it to fetch the files and summarize the rules before starting.",
+      "Give your assistant the block below. It requests the startup guidelines and behavior rules, the only two required site documents.",
     ],
     [
-      "Describe the result, read the guide",
-      "Describe a goal such as keeping each saved link once. AI finds the relevant guide and reads its English Markdown. Write requests in your preferred language; technical names are optional.",
+      "Describe the result and constraints",
+      "Describe a goal such as keeping each saved link once. AI derives decisions from your requirements, including options outside this site. Read catalog articles when requested or helpful. Write in your preferred language; technical names are optional.",
     ],
     [
       "Compare, decide, then build",
@@ -29,11 +29,11 @@ const steps = {
   ko: [
     [
       "프로젝트 지침에 붙여넣기",
-      "아래 문구를 AI에게 주세요. 작업 전에 파일을 가져오고 규칙을 요약하도록 요청합니다.",
+      "아래 문구를 AI에게 주세요. 필수 사이트 문서인 개발 시작 지침과 AI 행동 지침 두 개를 읽도록 요청합니다.",
     ],
     [
-      "원하는 결과로 가이드 찾기",
-      "‘저장한 링크는 중복 없이 하나씩’처럼 원하는 결과를 설명하세요. AI가 관련 가이드를 찾아 영어 Markdown을 읽습니다. 요청은 편한 언어로 작성하고 기술 이름은 몰라도 됩니다.",
+      "원하는 결과와 제약 설명하기",
+      "‘저장한 링크는 중복 없이 하나씩’처럼 원하는 결과를 설명하세요. AI는 요구사항에서 필요한 결정을 도출하고 사이트 밖 선택지도 검토합니다. 카탈로그 글은 요청하거나 도움 될 때 참고하세요. 편한 언어로 작성하고 기술 이름은 몰라도 됩니다.",
     ],
     [
       "비교하고 결정한 뒤 만들기",
@@ -47,11 +47,11 @@ const steps = {
   ja: [
     [
       "プロジェクトの指示に貼り付ける",
-      "下の文章をAIに渡します。作業前にファイルを取得し、規則を要約するよう頼みます。",
+      "下の文章をAIに渡します。必須のサイト文書である開始ガイドラインとAI行動規則の二つを読むよう依頼します。",
     ],
     [
-      "望む結果からガイドを探す",
-      "「保存したリンクは重複なく一つずつ」のように結果を説明します。AIが関連ガイドを探し、英語のMarkdownを読みます。依頼は使いやすい言語で書き、技術名は知らなくても構いません。",
+      "望む結果と制約を説明する",
+      "「保存したリンクは重複なく一つずつ」のように結果を説明します。AIは要件から必要な判断を導き、サイト外の選択肢も検討します。カタログ記事は依頼時や役立つ場合に参照します。使いやすい言語で書き、技術名は知らなくても構いません。",
     ],
     [
       "比較し、決定してから作る",
@@ -67,7 +67,7 @@ const steps = {
 
 <Base lang={lang} title={t.ai} description={t.aiIntro}>
   <section class="page-heading">
-    <p class="eyebrow">A READING LIST, NOT A MAGIC SPELL</p>
+    <p class="eyebrow">START WITH YOUR PROJECT</p>
     <h1>{t.ai}</h1>
     <p>{t.aiIntro}</p>
   </section>
@@ -84,12 +84,18 @@ const steps = {
         </section>
       ))}
     </div>
+    <h2>
+      {
+        {
+          en: "Optional references",
+          ko: "선택 참고자료",
+          ja: "任意の参考資料",
+        }[lang]
+      }
+    </h2>
     <div class="resource-links">
       <a class="button" href="/llms.txt">
         llms.txt ↗
-      </a>
-      <a class="button" href="/ai/instructions.md">
-        {t.guide} ↗
       </a>
       <a class="button" href="/ai/catalog.json">
         catalog.json ↗

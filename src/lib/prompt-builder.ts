@@ -26,7 +26,7 @@ export const builderText = {
     undecided: "Undecided",
     clarify: "Needs clarification",
     instruction:
-      "Reuse the information already provided above. Ask about unresolved choices; do not interpret blank considerations as no constraints. Compare relevant catalog options, then prepare a concrete project plan. Confirm the plan with me and wait for an explicit development request before building.",
+      "Reuse the information already provided above. Ask about unresolved choices; do not interpret blank considerations as no constraints. Derive necessary decisions from requirements and constraints, including options outside this site, then prepare a concrete project plan. Confirm the plan with me and begin building after an explicit development request; honor existing approval and authorization without asking again.",
   },
   ko: {
     name: "서비스 이름",
@@ -50,7 +50,7 @@ export const builderText = {
     undecided: "미정",
     clarify: "추가 확인 필요",
     instruction:
-      "위에서 이미 제공한 정보를 재사용하세요. 미결정 사항을 질문하고, 빈 참고사항을 제약이 없다는 뜻으로 해석하지 마세요. 관련 카탈로그 선택지를 비교한 뒤 구체적인 프로젝트 기획을 작성하세요. 저와 기획을 확정하고, 명시적인 개발 요청을 받은 뒤 개발을 시작하세요.",
+      "위에서 이미 제공한 정보를 재사용하세요. 미결정 사항을 질문하고, 빈 참고사항을 제약이 없다는 뜻으로 해석하지 마세요. 요구사항과 제약에서 필요한 결정을 도출하고 사이트 밖 선택지도 검토한 뒤 구체적인 프로젝트 기획을 작성하세요. 저와 기획을 확정하고 명시적인 개발 요청 후 개발하되, 기존 승인과 권한은 다시 묻지 말고 존중하세요.",
   },
   ja: {
     name: "サービス名",
@@ -75,7 +75,7 @@ export const builderText = {
     undecided: "未定",
     clarify: "追加確認が必要",
     instruction:
-      "上で提供した情報を再利用してください。未決定の事項を質問し、空欄の参考事項を制約なしと解釈しないでください。関連するカタログの選択肢を比較し、具体的な企画をまとめてください。私と企画を確定し、明示的な開発依頼を受けてから開発を始めてください。",
+      "上で提供した情報を再利用してください。未決定の事項を質問し、空欄の参考事項を制約なしと解釈しないでください。要件と制約から必要な判断を導き、サイト外の選択肢も検討して具体的な企画をまとめてください。私と企画を確定し、明示的な開発依頼後に開発してください。既存の承認と権限は聞き直さず尊重してください。",
   },
 };
 

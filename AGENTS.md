@@ -29,3 +29,11 @@ tests → browser tests. Do not run builds and tests concurrently; they share
 
 Use `npm run build:demo-preview` only for local first-time thumbnail capture.
 Regular `npm run check` and `npm run build` must pass before handoff.
+
+AI guidance stays in pre-release v1. Record reviewed workflow changes as v1
+revisions; keep v1/latest routes and API schemaVersion 1. Required site reading
+is startup guidance plus assistant rules only; the catalog is optional learning
+material. Derive decisions from service requirements and constraints, including
+options outside this site. Keep the two built English documents within 3,000
+o200k_base tokens. Follow [contribution rules](CONTRIBUTING.md) for translation,
+scenario review, and version history.

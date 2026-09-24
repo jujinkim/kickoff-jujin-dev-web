@@ -5,9 +5,9 @@ export async function GET() {
   const all = await listed();
   const text = `# Kickoff by jujin
 
-> Create a first prompt from your service idea and considerations. Plan with AI, compare catalog options, then request development after approving the plan.
+> Optional reference index for Kickoff by jujin. Create a first prompt from your service idea and constraints, agree on a plan with AI, then request development.
 
-Read project context first. Do not re-ask confirmed decisions. Ask about unresolved product and project-level choices unless their scope is delegated. Choose internal implementation and document formats within agreed requirements yourself. Ask when behavior, cost or operating constraints are missing or change. Cite evidence; report access failures.
+Only the startup guidelines and behavior rules below are required site reading to begin planning. This index and the catalog are optional learning resources, not a required selection list. Derive decisions from requirements and constraints, including options outside this site. Follow individual links only when requested or useful; an inaccessible optional resource alone does not stop planning.
 
 ## Create a prompt and start planning
 - [Latest development startup guidelines](https://kickoff.jujin.dev/ai/startup/latest.md)
@@ -15,6 +15,8 @@ Read project context first. Do not re-ask confirmed decisions. Ask about unresol
 - [How to use](https://kickoff.jujin.dev/en/help/)
 - [Guideline versions](https://kickoff.jujin.dev/en/start/v1/)
 - [Behavior rules](https://kickoff.jujin.dev/ai/instructions.md)
+
+## Optional learning and lookup
 - [Versioned multilingual catalog and aliases](https://kickoff.jujin.dev/ai/catalog.json)
 - [Concept catalog](https://kickoff.jujin.dev/en/catalog/)
 - [Project planning](https://kickoff.jujin.dev/en/guides/)
@@ -36,7 +38,7 @@ ${taxonomy
   )
   .join("\n\n")}
 
-Publishing these resources does not guarantee external AI compliance. Explicitly request reading and application.
+Publishing these resources does not guarantee external AI compliance. Request application of the two guidelines, and read any specific reference before citing it.
 `;
   return new Response(text, {
     headers: { "Content-Type": "text/plain; charset=utf-8" },

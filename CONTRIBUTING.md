@@ -4,39 +4,56 @@ Help improve the development startup guidelines through [an issue](https://githu
 
 ## Propose a change
 
-Include the guideline version/revision, the problem, a realistic anonymized scenario, proposed wording, expected assistant behavior, tradeoffs, and primary sources. Separate evidence from opinion. Never submit private project data, credentials, or unlicensed copied material. Keep contributions focused; maintainers review evidence, behavior, and translation consistency before merging.
+Include the guideline version/revision, the problem, a realistic anonymized scenario, proposed wording, expected assistant behavior, tradeoffs, and relevant primary sources. Separate evidence from opinion. Never submit private project data, credentials, or unlicensed copied material. Maintainers review behavior and translation consistency before merging.
 
-For example: a user says “I do not know which architecture to pick.” The assistant should explain a recommended bundle and request acceptance or scoped delegation, rather than silently recording an accepted decision.
+## Source and responsibility
 
-## Source and review
+- `src/startup/v1/en.md` owns service intake and the planning procedure. Korean and Japanese translations live beside it. HTML uses each localized source; public Markdown uses the English source. Edit English first, then review equivalent obligations in both translations.
+- `src/lib/ai.ts` owns shared judgment, authority, and evidence rules. Keep examples and review scenarios here in contributor documentation instead of duplicating them in required AI input.
+- `src/lib/startup.ts` owns entry labels, latest/pinned prompts, and revision history. Also review the prompt builder, AI connection page, help, and llms.txt when changing behavior.
+- The only required site input is the startup document plus assistant rules. Keep their built English Markdown total at **3,000 tokens or fewer with o200k_base**. Optional reference documents are outside that initial input budget.
+- The catalog remains learning material for people and optional reference for assistants. Derive project decisions from requirements and constraints, including choices absent from this site. Do not reintroduce mandatory taxonomy coverage, catalog fetches, or article inventories.
 
-The source is `src/startup/v1/en.md`. Korean and Japanese translations live beside it. HTML uses each localized source; public Markdown always uses the English source. Do not maintain separate export copies. Update English first, then review translations for equivalent obligations and examples. `src/lib/startup.ts` supplies localized entry labels, latest and pinned prompts, and the release history. Startup guidelines are long-form instructions, separate from the one-minute catalog articles.
+These are workflow instructions, not catalog articles. Article work still follows [the authoring guide](docs/content-authoring.md).
 
-Review these scenarios with expected responses in the PR:
+## Examples and scenario review
 
-- Only the startup prompt: read sources, report version, ask for the three missing service inputs; do not start development.
-- Description already supplied: reuse it; ask only for missing name/context and necessary follow-ups.
-- Unsure or tired user: explain a recommendation; uncertainty is not delegation.
-- Scoped delegation: choose inside scope, record reasons, ask about choices outside scope.
-- Active catalog: cover the five project-level areas; discuss only relevant user-owned choices. Use guides to express constraints. Never reintroduce reference-only topics as required choices.
-- Internal implementation: choose collections, classes and document formats within approved requirements; ask only when product behavior or material constraints are missing.
-- Operations: derive release steps from agreed downtime, recovery and budget; planning does not authorize deployment or spending.
-- Parent service or sensitive constraint: preserve inherited constraints in architecture and design.
-- Inaccessible catalog or stale translation: disclose missing evidence or use the available original.
-- Approved plan and development request: execute authorized scope without repeating permission questions.
+Review expected behavior in all three startup sources and the shared rules. Record outcomes and gaps in the PR; do not claim to have tested external assistant compliance.
 
-Automated checks verify publication and UI wiring; they do not prove that external assistants obey the document. Include manual scenario review when changing behavior.
+| Scenario                                   | Expected behavior                                                                                                                                                                                                                          |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Only the startup prompt; “Build me an app” | Read the two required documents, report version/revision, reuse existing context, and ask for missing service inputs. Do not start development or choose a stack.                                                                          |
+| Description supplied; name/notes blank     | Reuse the description. Keep the name undecided and ask about missing constraints. Blank notes do not mean no constraints.                                                                                                                  |
+| Uncatalogued option                        | An offline field notebook needs local work and later synchronization. Compare suitable architectures, tools, visual designs, and operations even if absent from the catalog. Do not force a catalog match or inspect every category first. |
+| Specific article requested                 | “Use the static-hosting article in this comparison.” Read that article before citing its claims; other articles remain optional. Verify volatile product support or pricing with relevant official sources.                                |
+| Optional source unavailable                | Name the failed URL and evidence gap. Continue planning from known requirements; use another official source if needed. Defer only a decision dependent on missing evidence. Never claim the fetch succeeded.                              |
+| Required guideline unavailable             | Request its text or retry and continue collecting context. Do not claim unread rules were applied.                                                                                                                                         |
+| Confirmed choice                           | “Hosting is already decided.” Preserve it; ask only genuinely unresolved product/project choices.                                                                                                                                          |
+| Strong recommendation; unsure user         | A public read-only site may fit static hosting. Explain freshness/rebuild tradeoffs and alternatives, then request acceptance or scoped delegation. “I don't know” is not delegation.                                                      |
+| Limited delegation                         | “Choose typography within the approved light theme.” Choose and explain within that scope; keep unresolved payments/hosting choices with the user.                                                                                         |
+| Internal implementation                    | “Keep each saved link once, in insertion order.” Choose a representation yourself. Ask only if identity or duplicate behavior is unclear; write requirements and documents yourself.                                                       |
+| Operations or inherited constraints        | Derive release steps from agreed downtime, recovery, budget, and ownership; preserve parent-product boundaries. A planning request does not authorize deployment or spending.                                                              |
+| Approved development                       | With a plan already approved and an explicit development request, execute its authorized scope without asking for the same permission again.                                                                                               |
+| General explanation versus uncertain fact  | Explain stable concepts using model knowledge. Verify changing or uncertain facts with relevant official sources; separate evidence from inference.                                                                                        |
+
+A useful decision record includes the question and owner, confirmed constraints, options/tradeoffs, recommendation, status, authorization or exact delegation, rationale, assumptions, consequences, and revisit trigger. Link requirements, acceptance criteria, tasks, and verification. This is a contributor example, not a mandatory document format for users.
+
+For software review, consider cohesive responsibilities, low coupling, substitution, explicit contracts, and replaceable infrastructure where appropriate. Do not require OOAD or a user-selected collection. Background references: [Robert C. Martin on SOLID](https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html) and Craig Larman, _Applying UML and Patterns_, third edition. Verify relevant passages before attributing detailed rules. For web accessibility checks, consult the [WCAG 2.2 reference](https://www.w3.org/WAI/WCAG22/quickref/); a target is not a verified conformance claim.
+
+Automated checks verify documents, links, generated output, and copy controls. They do not prove that external assistants obey the documents. See [revision 3 review and token measurement](docs/ai-guidance-review.md).
 
 ## Version policy
 
-Maintainer-approved scope correction, 2026-09-23: guideline v1 revision 2 clarifies user-owned project choices and AI-owned internal implementation, integrates documentation and release planning, and keeps existing v1 URLs. Keep this explicit revision in Git and the release history; it is not a general exception for future unreviewed workflow changes.
+User-approved pre-release policy, 2026-09-24: **remain in guideline v1**. This is an improvement before formal release, not a new major version. Record the lighter workflow as **v1 revision 3**, including its changed reading obligations. Keep v1/latest URLs, API `schemaVersion: 1`, and the catalog JSON structure unchanged; API reduction or splitting is outside this change.
 
-Guideline major versions (`v1`, `v2`, …) are independent of API `schemaVersion: 1` and article revisions. Keep old major HTML and Markdown URLs available. Versioned prompts remain pinned to their chosen major version. Localized startup prompts all use `/ai/startup/latest.md`; pinned prompts use `/ai/startup/v1.md`. Public Markdown is English-only. Existing `/{lang}/start/*.md` URLs serve the same English source for compatibility. Tell users to write their own requests and project descriptions in their preferred language. These endpoints return Markdown directly, generated at build time, with the actual version in the document. There is no separate latest body to edit.
+Earlier approved correction, 2026-09-23: v1 revision 2 clarified user-owned project choices, AI-owned implementation/documentation, and operating constraints. Preserve that history alongside revision 1.
 
-For wording corrections that preserve behavior, increment the revision and date in all three sources; append a dated history entry in `src/lib/startup.ts`. Keep previous history entries. For changed obligations, authority, required inputs, or workflow, create a new version directory and routes, retain older versions, and add a version-history entry. Maintainers review the complete English source, translation parity, migration impact, and scenario outcomes before promoting the new prompt. Promote a reviewed release by changing `startupVersion` in `src/lib/startup.ts`, then build and deploy. Only this explicit pointer selects latest; adding a draft version directory does not promote it. Supply all three HTML translations, English Markdown, and compatible versioned routes before promotion; a missing selected source fails the build. Old version pages keep their pinned prompts. A latest URL follows future releases when fetched again; existing project plans keep their recorded version until explicitly upgraded.
+While the project remains in this approved pre-release v1 phase, increment the revision and date in all three sources for reviewed changes; append history in `src/lib/startup.ts`. Do not introduce a new major version solely because workflow obligations change. A future major-version policy requires an explicit maintainer decision.
 
-The live catalog can grow independently. Plans must record retrieval date and the IDs/revisions consulted; preserve a snapshot when exact reproduction matters. Git history records the exact text of each guideline revision.
+Guideline versions are independent of API schema and article revisions. Versioned prompts stay pinned to their chosen major version. Localized latest prompts use `/ai/startup/latest.md`; pinned prompts use `/ai/startup/v1.md`. Existing `/{lang}/start/*.md` aliases serve the same English source. `startupVersion` explicitly selects the latest reviewed release; adding a directory does not promote it. Keep compatible routes and all translations; a missing selected source fails the build.
+
+Plans record their guideline version/revision and references actually used. There is no required catalog retrieval date, article-ID ledger, or snapshot. Git history records each guideline revision.
 
 ## Local verification
 
-Follow `AGENTS.md`. Run checks sequentially: `npm run check`, `npm run build`, then `npm test` and `npm run test:e2e`. For design demo changes, capture thumbnails and rebuild between the initial build and tests as documented in `docs/design-demos.md`. Never run builds and tests concurrently. Preserve IDs, URLs, comment keys, and API schema v1.
+Follow `AGENTS.md`. Run sequentially: `npm run check` → `npm run build` → `npm test` → `npm run test:e2e`. For design demo changes, capture thumbnails and rebuild between the initial build and tests. No thumbnail regeneration is needed for instruction-only changes. Never run builds and tests concurrently. Preserve IDs, URLs, comment keys, and API schema v1.
