@@ -8,9 +8,9 @@
       "ja": "企画・設計"
     },
     "descriptions": {
-      "en": "Explore Planning & architecture.",
-      "ko": "기획·설계 항목을 탐색합니다.",
-      "ja": "企画・設計の項目を探します。"
+      "en": "Compare module boundaries and service splitting to decide how responsibilities and changes fit together.",
+      "ko": "모듈 경계와 서비스 분할을 비교해 책임과 변경 범위를 정합니다.",
+      "ja": "モジュールの境界とサービス分割を比較し、責任と変更範囲を決めます。"
     },
     "order": 0
   },
@@ -38,9 +38,9 @@
       "ja": "開発プラットフォーム"
     },
     "descriptions": {
-      "en": "Explore Development platforms.",
-      "ko": "개발 플랫폼 항목을 탐색합니다.",
-      "ja": "開発プラットフォームの項目を探します。"
+      "en": "Compare tools for content sites, interactive web screens, and games to choose a development foundation.",
+      "ko": "콘텐츠 사이트·상호작용하는 웹 화면·게임을 만드는 도구를 비교해 개발 기반을 정합니다.",
+      "ja": "コンテンツサイト・対話的なWeb画面・ゲームの道具を比較し、開発の土台を決めます。"
     },
     "order": 2
   },
@@ -53,9 +53,9 @@
       "ja": "配布プラットフォーム"
     },
     "descriptions": {
-      "en": "Explore Deployment platforms.",
-      "ko": "배포 플랫폼 항목을 탐색합니다.",
-      "ja": "配布プラットフォームの項目を探します。"
+      "en": "Compare where and how your service runs to decide which operating work and costs you can take on.",
+      "ko": "서비스를 어디서 어떻게 실행할지 비교해 감당할 운영 작업과 비용을 정합니다.",
+      "ja": "サービスをどこでどう動かすか比較し、引き受ける運用作業と費用を決めます。"
     },
     "order": 3
   },
@@ -68,9 +68,9 @@
       "ja": "デザイン"
     },
     "descriptions": {
-      "en": "Explore Design.",
-      "ko": "디자인 항목을 탐색합니다.",
-      "ja": "デザインの項目を探します。"
+      "en": "Compare screen layout, visual expression, and text treatment to decide how people read and interact.",
+      "ko": "화면 배치·시각 표현·글자 구성을 비교해 사용자가 읽고 조작하는 방식을 정합니다.",
+      "ja": "画面配置・視覚表現・文字の扱いを比較し、読み方と操作のしやすさを決めます。"
     },
     "order": 4
   },
@@ -83,9 +83,9 @@
       "ja": "収益化"
     },
     "descriptions": {
-      "en": "Explore Monetization.",
-      "ko": "수익화 항목을 탐색합니다.",
-      "ja": "収益化の項目を探します。"
+      "en": "Compare who pays, what they receive, and how charges work to decide a revenue approach and user experience.",
+      "ko": "누가 지불하고 무엇을 얻는지, 어떻게 청구할지 비교해 수익 방식과 이용 경험을 정합니다.",
+      "ja": "誰が支払い、何を得て、どう請求するか比較し、収益の仕組みと利用体験を決めます。"
     },
     "order": 5
   },
@@ -98,9 +98,9 @@
       "ja": "レイアウト"
     },
     "descriptions": {
-      "en": "Explore Layout.",
-      "ko": "레이아웃 항목을 탐색합니다.",
-      "ja": "レイアウトの項目を探します。"
+      "en": "Compare column structure and item arrangement to decide how a screen guides reading and comparison.",
+      "ko": "열 구성과 항목 나열을 비교해 화면에서 읽고 비교하는 흐름을 정합니다.",
+      "ja": "列構成と項目の配置を比較し、画面で読む流れと比較の仕方を決めます。"
     },
     "order": 0
   },
@@ -113,9 +113,9 @@
       "ja": "タイポグラフィ"
     },
     "descriptions": {
-      "en": "Explore Typography.",
-      "ko": "타이포그래피 항목을 탐색합니다.",
-      "ja": "タイポグラフィの項目を探します。"
+      "en": "Compare typeface shapes and character widths to balance reading, alignment, and expression.",
+      "ko": "서체 형태와 문자 폭을 비교해 읽기·정렬·표현의 균형을 정합니다.",
+      "ja": "書体の形と文字幅を比較し、読みやすさ・整列・表現のバランスを決めます。"
     },
     "order": 2
   },
@@ -143,9 +143,9 @@
       "ja": "境界と依存構造"
     },
     "descriptions": {
-      "en": "Explore Architecture boundaries & dependencies.",
-      "ko": "아키텍처의 경계·의존 구조 항목을 탐색합니다.",
-      "ja": "境界と依存構造の項目を探します。"
+      "en": "Compare layers and inward-facing boundaries to decide where business rules live and which dependencies may change.",
+      "ko": "계층과 안쪽을 향하는 경계를 비교해 업무 규칙의 위치와 변경 가능한 의존 관계를 정합니다.",
+      "ja": "層や内向きの境界を比較し、業務規則の置き場所と変更可能な依存関係を決めます。"
     },
     "order": 1
   },
@@ -158,9 +158,9 @@
       "ja": "サービス分割"
     },
     "descriptions": {
-      "en": "Explore Service decomposition.",
-      "ko": "서비스 분할 항목을 탐색합니다.",
-      "ja": "サービス分割の項目を探します。"
+      "en": "Compare one deployable unit, internal modules, and separate services to balance independent releases with operating complexity.",
+      "ko": "하나의 배포 단위·내부 모듈·별도 서비스를 비교해 독립 배포와 운영 복잡성의 균형을 정합니다.",
+      "ja": "単一の配布単位・内部モジュール・別サービスを比較し、独立したリリースと運用の複雑さを調整します。"
     },
     "order": 2
   },
@@ -218,9 +218,9 @@
       "ja": "静的サイトジェネレーター"
     },
     "descriptions": {
-      "en": "Explore Static site generators.",
-      "ko": "정적 사이트 생성기 항목을 탐색합니다.",
-      "ja": "静的サイトジェネレーターの項目を探します。"
+      "en": "Compare ways to turn content and templates into pages to choose an authoring and build workflow.",
+      "ko": "콘텐츠와 템플릿을 페이지로 만드는 방식을 비교해 글 작성과 빌드 흐름을 정합니다.",
+      "ja": "コンテンツとテンプレートからページを作る方法を比較し、執筆とビルドの流れを決めます。"
     },
     "order": 6
   },
@@ -233,9 +233,9 @@
       "ja": "Web UI開発ツール"
     },
     "descriptions": {
-      "en": "Explore Web UI development tools.",
-      "ko": "웹 UI 개발 도구 항목을 탐색합니다.",
-      "ja": "Web UI開発ツールの項目を探します。"
+      "en": "Compare component and state-update models to choose how interactive web screens are built and maintained.",
+      "ko": "컴포넌트와 상태 갱신 방식을 비교해 상호작용하는 웹 화면의 구현·유지 방식을 정합니다.",
+      "ja": "コンポーネントと状態更新の方式を比較し、対話的なWeb画面の実装・保守方法を決めます。"
     },
     "order": 7
   },
@@ -248,9 +248,9 @@
       "ja": "ゲームエンジン"
     },
     "descriptions": {
-      "en": "Explore Game engines.",
-      "ko": "게임 엔진 항목을 탐색합니다.",
-      "ja": "ゲームエンジンの項目を探します。"
+      "en": "Compare scene building, behavior editing, and project workflows to choose a foundation for your game.",
+      "ko": "장면 구성·동작 편집·프로젝트 작업 흐름을 비교해 게임 제작 기반을 정합니다.",
+      "ja": "シーン構成・動作編集・制作の流れを比較し、ゲーム開発の土台を決めます。"
     },
     "order": 8
   },
@@ -263,9 +263,9 @@
       "ja": "ホスティング実行モデル"
     },
     "descriptions": {
-      "en": "Explore Hosting execution models.",
-      "ko": "호스팅 실행 모델 항목을 탐색합니다.",
-      "ja": "ホスティング実行モデルの項目を探します。"
+      "en": "Compare serving files, running functions on demand, and keeping a server running to decide execution and operating responsibilities.",
+      "ko": "파일 제공·요청 시 함수 실행·서버 상시 실행을 비교해 실행 방식과 운영 책임을 정합니다.",
+      "ja": "ファイル配信・要求時の関数実行・サーバー常時稼働を比較し、実行方式と運用責任を決めます。"
     },
     "order": 9
   },
@@ -293,9 +293,9 @@
       "ja": "列構成"
     },
     "descriptions": {
-      "en": "Explore Column composition.",
-      "ko": "열 구성 항목을 탐색합니다.",
-      "ja": "列構成の項目を探します。"
+      "en": "Compare one, two, or several columns to balance focused reading with information shown side by side.",
+      "ko": "한 열·두 열·여러 열을 비교해 집중해서 읽기와 나란히 정보 보기의 균형을 정합니다.",
+      "ja": "一列・二列・複数列を比較し、集中して読むことと情報の並列表示を調整します。"
     },
     "order": 11
   },
@@ -308,9 +308,9 @@
       "ja": "コンテンツ配置"
     },
     "descriptions": {
-      "en": "Explore Content arrangement.",
-      "ko": "콘텐츠 나열 항목을 탐색합니다.",
-      "ja": "コンテンツ配置の項目を探します。"
+      "en": "Compare lists, uniform grids, and masonry to decide how people scan and compare items of different sizes.",
+      "ko": "리스트·균일한 격자·메이슨리를 비교해 크기가 다른 항목을 훑고 비교하는 방식을 정합니다.",
+      "ja": "リスト・均一なグリッド・メイソンリーを比較し、大きさの違う項目の一覧性と比較方法を決めます。"
     },
     "order": 12
   },
@@ -323,9 +323,9 @@
       "ja": "スタイル"
     },
     "descriptions": {
-      "en": "Explore Styles.",
-      "ko": "스타일 항목을 탐색합니다.",
-      "ja": "スタイルの項目を探します。"
+      "en": "Compare visual density, depth, texture, and emphasis to choose a look that supports your content and interactions.",
+      "ko": "시각적 밀도·깊이·질감·강조를 비교해 콘텐츠와 조작에 맞는 인상을 정합니다.",
+      "ja": "視覚的な密度・奥行き・質感・強調を比較し、内容と操作に合う見た目を決めます。"
     },
     "order": 1
   },
@@ -338,9 +338,9 @@
       "ja": "書体の形"
     },
     "descriptions": {
-      "en": "Explore Typeface shapes.",
-      "ko": "서체 형태 항목을 탐색합니다.",
-      "ja": "書体の形の項目を探します。"
+      "en": "Compare serif, sans-serif, and script shapes to choose a reading tone and where expressive text belongs.",
+      "ko": "세리프·산세리프·손글씨 형태를 비교해 읽는 인상과 장식적인 글자의 사용 위치를 정합니다.",
+      "ja": "セリフ・サンセリフ・手書き風の形を比較し、読む印象と装飾的な文字の使い所を決めます。"
     },
     "order": 14
   },
@@ -353,9 +353,9 @@
       "ja": "文字幅"
     },
     "descriptions": {
-      "en": "Explore Character width.",
-      "ko": "문자 폭 항목을 탐색합니다.",
-      "ja": "文字幅の項目を探します。"
+      "en": "Compare fixed and proportional character widths to balance aligned symbols with compact prose.",
+      "ko": "고정 폭과 가변 폭을 비교해 문자 정렬과 자연스러운 문장 배치의 균형을 정합니다.",
+      "ja": "等幅と可変幅を比較し、記号の整列と自然な文章配置のバランスを決めます。"
     },
     "order": 15
   },
@@ -368,9 +368,9 @@
       "ja": "収益源"
     },
     "descriptions": {
-      "en": "Explore Revenue sources.",
-      "ko": "수익원 항목을 탐색합니다.",
-      "ja": "収益源の項目を探します。"
+      "en": "Compare user payments, transaction fees, advertising, sponsorship, and referrals to decide who funds the service and why.",
+      "ko": "사용자 결제·거래 수수료·광고·후원·제휴를 비교해 누가 어떤 대가로 서비스 비용을 부담할지 정합니다.",
+      "ja": "利用者の支払い・取引手数料・広告・協賛・紹介を比較し、誰が何の対価でサービスを支えるか決めます。"
     },
     "order": 16
   },
@@ -383,9 +383,9 @@
       "ja": "課金方式"
     },
     "descriptions": {
-      "en": "Explore Billing methods.",
-      "ko": "과금 방식 항목을 탐색합니다.",
-      "ja": "課金方式の項目を探します。"
+      "en": "Compare one-time payments, subscriptions, and usage charges to decide when and for what customers pay.",
+      "ko": "일회성 결제·구독·사용량 과금을 비교해 고객이 언제 무엇에 지불할지 정합니다.",
+      "ja": "一回払い・サブスクリプション・従量課金を比較し、いつ何に対して支払うか決めます。"
     },
     "order": 17
   },
@@ -398,9 +398,9 @@
       "ja": "販売責任モデル"
     },
     "descriptions": {
-      "en": "Explore Seller responsibility models.",
-      "ko": "판매 책임 모델 항목을 탐색합니다.",
-      "ja": "販売責任モデルの項目を探します。"
+      "en": "Compare selling directly with using a merchant of record to decide who takes on the sale and related administration.",
+      "ko": "직접 판매와 판매 대행 주체를 비교해 판매와 관련 관리 업무를 누가 맡을지 정합니다.",
+      "ja": "直接販売とマーチャント・オブ・レコードを比較し、販売と関連管理を誰が担うか決めます。"
     },
     "order": 18
   },
@@ -413,9 +413,9 @@
       "ja": "料金設計"
     },
     "descriptions": {
-      "en": "How the amount is calculated.",
-      "ko": "청구 금액을 계산하는 방식입니다.",
-      "ja": "請求額の計算方法です。"
+      "en": "Compare flat fees, seats, feature tiers, usage tiers, and credits to decide how a bill is calculated and explained.",
+      "ko": "정액·사용자 수·기능 등급·사용량 구간·크레딧을 비교해 청구 금액의 계산과 안내 방식을 정합니다.",
+      "ja": "定額・席数・機能別・利用量の段階・クレジットを比較し、請求額の計算と説明方法を決めます。"
     },
     "order": 19
   },
@@ -428,9 +428,9 @@
       "ja": "無料アクセス戦略"
     },
     "descriptions": {
-      "en": "What stays free and for how long.",
-      "ko": "무료 범위와 기간을 구분합니다.",
-      "ja": "無料の範囲と期間を分けます。"
+      "en": "Compare a lasting free tier with a time-limited trial to decide what people can try before paying.",
+      "ko": "계속 쓰는 무료 범위와 기간 제한 체험을 비교해 결제 전에 무엇을 경험할 수 있는지 정합니다.",
+      "ja": "継続的な無料枠と期限付きの試用を比較し、支払い前に何を体験できるか決めます。"
     },
     "order": 20
   },
@@ -443,9 +443,9 @@
       "ja": "アプリ内購入の種類"
     },
     "descriptions": {
-      "en": "What a purchase grants.",
-      "ko": "구매로 얻는 권리를 구분합니다.",
-      "ja": "購入で得る権利を分けます。"
+      "en": "Compare consumable and lasting purchases to decide whether a bought benefit is used up or retained.",
+      "ko": "소모성 구매와 지속되는 구매를 비교해 구매한 혜택이 소진되는지 유지되는지 정합니다.",
+      "ja": "消耗型と継続して使える購入を比較し、買った特典が消費されるか保持されるか決めます。"
     },
     "order": 21
   },
@@ -458,9 +458,9 @@
       "ja": "広告形式"
     },
     "descriptions": {
-      "en": "Where ads appear and how participation works.",
-      "ko": "광고 위치와 참여 방식을 구분합니다.",
-      "ja": "広告の位置と参加方法を分けます。"
+      "en": "Compare banners, full-screen interruptions, and opt-in rewarded ads to decide placement and user participation.",
+      "ko": "배너·전체 화면 광고·선택형 보상 광고를 비교해 광고 위치와 사용자 참여 방식을 정합니다.",
+      "ja": "バナー・全画面広告・任意のリワード広告を比較し、表示場所と利用者の参加方法を決めます。"
     },
     "order": 22
   }

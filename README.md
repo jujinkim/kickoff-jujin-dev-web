@@ -46,10 +46,12 @@ Every article supplies kind, title, summary, category, multilingual aliases, rel
 | Resource                      | Path                                                      |
 | ----------------------------- | --------------------------------------------------------- |
 | Home                          | `/en/`, `/ko/`, `/ja/` (root goes to English)             |
+| Prompt builder                | `/{lang}/start/`                                          |
+| How to use                    | `/{lang}/help/`                                           |
 | Catalog                       | `/{lang}/catalog/`                                        |
 | Concept                       | `/{lang}/catalog/{articleId}/`                            |
 | Category                      | `/{lang}/catalog/categories/{categoryId}/`                |
-| Guides                        | `/{lang}/guides/`, `/{lang}/guides/{articleId}/`          |
+| Project planning              | `/{lang}/guides/`, `/{lang}/guides/{articleId}/`          |
 | English Markdown              | `/en/catalog/{articleId}.md`, `/en/guides/{articleId}.md` |
 | Assistant entrypoint          | `/llms.txt`                                               |
 | Behavior rules                | `/ai/instructions.md`                                     |
@@ -83,6 +85,10 @@ Design examples: [implementation and extension guide](docs/design-demos.md), [pl
 
 ## Project planning startup
 
-Start at `/{lang}/start/` and copy the one-line prompt pointing to `/{lang}/start/latest.md`. `/ai/startup/latest.md` is the English alias. Both serve the explicitly selected latest release at build time; no duplicate body is maintained. Guideline v1 is available at `/{lang}/start/v1/` and `/{lang}/start/v1.md`; `/ai/startup/v1.md` serves the same English source. It collects the service name, description, and other constraints, offers relevant project choices with recommendations and scoped delegation, lets AI select internal implementation and write supporting documents, and produces an approved plan before development.
+Start at `/{lang}/start/` and enter a service description, with an optional name and considerations. The page builds a localized first prompt using `composeStartupPrompt` in `src/lib/prompt-builder.ts`, which reuses the common `startupPrompt` and links `/ai/startup/latest.md`. A blank name means undecided; blank considerations need clarification. Only a nonblank description enables copying. Input stays in page memory: no submission, URL state, or persistent storage. The preview is plain text, with manual-copy and JavaScript-disabled fallbacks.
+
+`/{lang}/help/` explains the prompt-to-plan flow in Why → How → What order and renders every active taxonomy category with its shared localized decision description. “Project planning” retains the existing `/guides/` URLs, article IDs, and `kind: guide`. Navigation and labels come from `src/lib/i18n.ts`; help copy lives in `src/lib/help.ts`.
+
+`/{lang}/start/latest.md` and `/ai/startup/latest.md` both serve the explicitly selected latest English release at build time; no duplicate body is maintained. Guideline v1 is available at `/{lang}/start/v1/` and `/{lang}/start/v1.md`; `/ai/startup/v1.md` serves the same English source. It collects the service name, description, and other constraints, offers relevant project choices with recommendations and scoped delegation, lets AI select internal implementation and write supporting documents, and produces an approved plan before development.
 
 English, Korean, and Japanese source documents live in `src/startup/v1/`. Set `startupVersion` in `src/lib/startup.ts` to promote a reviewed version, then rebuild and deploy. Versioned URLs and their page prompts remain pinned. Guideline versions are independent of API schema v1. See [contribution and version rules](CONTRIBUTING.md) for collaborative improvements, scenario review, revisions, and future major versions.

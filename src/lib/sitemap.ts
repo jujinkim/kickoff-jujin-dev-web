@@ -7,6 +7,7 @@ export async function sitemap(lang: Lang) {
   const entries = [
     "",
     "start/",
+    "help/",
     "start/v1/",
     "catalog/",
     "guides/",

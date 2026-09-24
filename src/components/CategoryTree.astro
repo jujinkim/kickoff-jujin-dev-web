@@ -4,8 +4,9 @@ import type { Lang } from "../lib/i18n";
 interface Props {
   parent?: string | null;
   lang: Lang;
+  descriptions?: boolean;
 }
-const { parent = null, lang } = Astro.props;
+const { parent = null, lang, descriptions = false } = Astro.props;
 const children = childrenOf(parent);
 ---
 
@@ -13,7 +14,8 @@ const children = childrenOf(parent);
   {children.map((c) => (
     <li>
       <a href={`/${lang}/catalog/categories/${c.id}/`}>{c.names[lang]}</a>
-      <Astro.self parent={c.id} lang={lang} />
+      {descriptions && <p>{c.descriptions[lang]}</p>}
+      <Astro.self parent={c.id} lang={lang} descriptions={descriptions} />
     </li>
   ))}
 </ul>

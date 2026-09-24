@@ -9,14 +9,14 @@ const { lang } = Astro.props;
 const t = strings[lang];
 ---
 
-<Base lang={lang} title={t.guides} description={t.intro}>
+<Base lang={lang} title={t.guides} description={t.guidesIntro}>
   <section class="page-heading">
     <p class="eyebrow">THE FIELD GUIDES</p>
     <h1>
       {t.guides}
       <span class="accent-dot">.</span>
     </h1>
-    <p>{t.intro}</p>
+    <p>{t.guidesIntro}</p>
   </section>
   <ArticleListing lang={lang} kind="guide" />
 </Base>

@@ -66,6 +66,7 @@ test("project choices remain discoverable without internal implementation choice
       "catalog/index.html",
       "guides/index.html",
       "start/index.html",
+      "help/index.html",
       "ai/index.html",
       "about/index.html",
     ]) {

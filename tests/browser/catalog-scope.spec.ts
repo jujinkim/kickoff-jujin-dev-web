@@ -46,7 +46,7 @@ for (const lang of ["en", "ko", "ja"]) {
     }
     await page.goto(`/${lang}/start/`);
     await expect(
-      page.locator(`.steps a[href="/${lang}/guides/architecture/"]`),
+      page.locator(`main a[href="/${lang}/help/#make-prompt"]`),
     ).toBeVisible();
     await expect(page.locator(`a[href="/${lang}/guides/adr/"]`)).toHaveCount(0);
     expect(errors).toEqual([]);

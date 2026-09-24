@@ -17,18 +17,23 @@ export const categoryNames: Record<
 ) as Record<Lang, Record<string, string>>;
 export const strings = {
   en: {
-    start: "Start here",
+    start: "Create a prompt",
+    help: "How to use",
+    navigation: "Main navigation",
+    createPrompt: "Create a prompt for AI",
+    guidesIntro:
+      "Work through your project’s behavior, structure, and constraints with practical examples.",
     catalog: "Catalog",
-    guides: "Guides",
+    guides: "Project planning",
     pending: "Coming soon",
     ai: "Connect your AI",
     about: "About",
     theme: "Dark mode",
     skip: "Skip to content",
-    eyebrow: "A FIELD GUIDE FOR BUILDING THINGS",
-    hero: "Know what you want.\nThen tell the machine.",
+    eyebrow: "YOUR FIRST PROMPT, YOUR NEXT PROJECT",
+    hero: "Organize your idea.\nStart with AI.",
     intro:
-      "Describe what you want to build. Explore examples, choose the direction of your project, and let AI work out the implementation.",
+      "Describe the service you want to build and your considerations, then create a first prompt to start planning with AI.",
     browse: "Explore the catalog",
     learn: "A good place to start",
     recent: "Freshly revised",
@@ -69,8 +74,9 @@ export const strings = {
     aiWarning:
       "Publishing files does not make an AI obey them. Tell it to read, apply, and report what it could not access.",
     aboutIntro:
-      "You do not need to memorize the stack. You need to recognize your choices.",
-    startIntro: "Start with the result. The framework can wait.",
+      "Turn your service idea into a first prompt, then shape the plan with AI.",
+    startIntro:
+      "Add what you know about your service. Copy the prompt into your AI conversation to start planning.",
     next: "Next step",
     notFound: "This shelf is empty.",
     home: "Go home",
@@ -79,18 +85,23 @@ export const strings = {
     source: "Source & edits",
   },
   ko: {
-    start: "시작하기",
+    start: "프롬프트 만들기",
+    help: "이용 가이드",
+    navigation: "주 메뉴",
+    createPrompt: "AI에게 던질 프롬프트 만들기",
+    guidesIntro:
+      "실용적인 예시를 따라 프로젝트의 동작·구조·제약을 구체화하세요.",
     catalog: "카탈로그",
-    guides: "가이드",
+    guides: "프로젝트 기획",
     pending: "준비 중",
     ai: "AI 연결",
     about: "소개",
     theme: "다크 모드",
     skip: "본문으로 이동",
-    eyebrow: "만들고 싶은 사람을 위한 개발 도감",
-    hero: "원하는 걸 알고.\n기계에게 시키세요.",
+    eyebrow: "첫 프롬프트로 시작하는 프로젝트",
+    hero: "아이디어를 정리하고.\nAI와 시작하세요.",
     intro:
-      "만들고 싶은 결과에서 시작하세요. 예시를 보고 프로젝트의 구조와 방향을 정하면, AI가 구현을 구체화합니다.",
+      "만들고 싶은 서비스와 참고사항을 정리해, AI와 기획을 시작할 첫 프롬프트를 만들어보세요.",
     browse: "카탈로그 둘러보기",
     learn: "여기서 시작하세요",
     recent: "최근 손본 글",
@@ -130,8 +141,9 @@ export const strings = {
     aiWarning:
       "파일을 공개한다고 AI가 따르지는 않습니다. 읽고 적용할 절차와 접근 실패 보고를 직접 지시하세요.",
     aboutIntro:
-      "기술 스택을 외울 필요는 없습니다. 무엇을 선택하는지는 알아야 합니다.",
-    startIntro: "결과부터 정하세요. 프레임워크는 기다려도 됩니다.",
+      "서비스 아이디어를 첫 프롬프트로 정리하고, AI와 기획을 구체화하세요.",
+    startIntro:
+      "서비스에 관해 정한 내용을 입력하세요. 완성된 프롬프트를 AI 대화에 붙여넣어 기획을 시작합니다.",
     next: "다음 단계",
     notFound: "이 칸은 비어 있습니다.",
     home: "홈으로",
@@ -140,18 +152,23 @@ export const strings = {
     source: "원본·수정 제안",
   },
   ja: {
-    start: "はじめに",
+    start: "プロンプトを作る",
+    help: "使い方ガイド",
+    navigation: "メインメニュー",
+    createPrompt: "AIに渡すプロンプトを作る",
+    guidesIntro:
+      "実用的な例に沿って、プロジェクトの動作・構成・制約を具体化しましょう。",
     catalog: "カタログ",
-    guides: "ガイド",
+    guides: "プロジェクト企画",
     pending: "準備中",
     ai: "AIとつなぐ",
     about: "このサイト",
     theme: "ダークモード",
     skip: "本文へ移動",
-    eyebrow: "作りたい人のための開発図鑑",
-    hero: "欲しいものを知る。\nそれから機械に頼む。",
+    eyebrow: "最初のプロンプトから始めるプロジェクト",
+    hero: "アイデアを整理して。\nAIと始めましょう。",
     intro:
-      "作りたい結果から始めましょう。実例を見て構成と方向を決め、実装の具体化はAIに任せます。",
+      "作りたいサービスと参考事項を整理して、AIと企画を始める最初のプロンプトを作りましょう。",
     browse: "カタログを見る",
     learn: "まずはここから",
     recent: "最近の改訂",
@@ -189,8 +206,10 @@ export const strings = {
     aiIntro: "AIに参考資料と行動規則を渡しましょう。",
     aiWarning:
       "ファイルの公開だけではAIの遵守を保証できません。読む手順、適用、アクセス失敗の報告を指示してください。",
-    aboutIntro: "技術スタックの暗記は不要。自分の選択肢を知ることが大切です。",
-    startIntro: "まず結果を決める。フレームワークは後でいい。",
+    aboutIntro:
+      "サービスのアイデアを最初のプロンプトにまとめ、AIと企画を具体化しましょう。",
+    startIntro:
+      "サービスについて決めた内容を入力してください。できたプロンプトをAIとの会話に貼り付けて企画を始めます。",
     next: "次の一歩",
     notFound: "この棚は空です。",
     home: "ホームへ",

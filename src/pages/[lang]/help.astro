@@ -1,0 +1,68 @@
+---
+import Base from "../../layouts/Base.astro";
+import CategoryTree from "../../components/CategoryTree.astro";
+import { languages, strings } from "../../lib/i18n";
+import { helpText } from "../../lib/help";
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+const { lang } = Astro.props;
+const t = strings[lang];
+const h = helpText[lang];
+---
+
+<Base lang={lang} title={t.help} description={h.intro}>
+  <section class="page-heading">
+    <p class="eyebrow">IDEA → PROMPT → PLAN</p>
+    <h1>{t.help}</h1>
+    <p>{h.intro}</p>
+  </section>
+  <div class="guide-content prose help-content">
+    <nav aria-label={t.toc}>
+      <ul>
+        {h.cards.map((card) => (
+          <li>
+            <a href={`#${card.id}`}>{card.title}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <section>
+      <h2>{h.why}</h2>
+      <p>{h.scenario}</p>
+      <p>{h.goal}</p>
+    </section>
+    <section>
+      <h2>{h.how}</h2>
+      <h3 id="make-prompt">{h.cards[0].title}</h3>
+      <ol>
+        {h.steps.map((step) => (
+          <li>{step}</li>
+        ))}
+      </ol>
+      <p>
+        <a href={`/${lang}/start/`}>{t.createPrompt} →</a>
+      </p>
+      <h3 id="agree-plan">{h.cards[2].title}</h3>
+      {h.agree.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+      <p>
+        <a href={`/${lang}/guides/`}>{t.guides} →</a>
+      </p>
+    </section>
+    <section>
+      <h2>{h.what}</h2>
+      <p>{h.roles}</p>
+      <h3 id="catalog">{h.cards[1].title}</h3>
+      <p>{h.categoryIntro}</p>
+      <p>
+        <a href={`/${lang}/catalog/`}>{t.browse} →</a>
+      </p>
+    </section>
+  </div>
+  <section class="help-taxonomy" aria-labelledby="help-categories">
+    <h2 id="help-categories">{h.categories}</h2>
+    <CategoryTree lang={lang} descriptions />
+  </section>
+</Base>

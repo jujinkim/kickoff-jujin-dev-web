@@ -24,9 +24,11 @@ test("startup versions publish localized HTML and English-only Markdown with lat
         body.includes(`https://kickoff.jujin.dev/ai/startup/${version}.md`),
       );
       assert.ok(
-        body.includes(
-          `data-copy="${page === "ai/index.html" ? "project-prompt" : "startup-prompt"}"`,
-        ),
+        page === "start/index.html"
+          ? body.includes("data-copy-prompt") && body.includes("<noscript>")
+          : body.includes(
+              `data-copy="${page === "ai/index.html" ? "project-prompt" : "startup-prompt"}"`,
+            ),
       );
     }
     assert.ok(

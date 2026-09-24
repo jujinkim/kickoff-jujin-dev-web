@@ -1,0 +1,147 @@
+---
+import { strings, type Lang } from "../lib/i18n";
+import { builderText } from "../lib/prompt-builder";
+import { startupPrompt } from "../lib/startup";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = builderText[lang];
+---
+
+<section
+  class="prompt-section prompt-builder"
+  data-builder
+  data-lang={lang}
+  data-success={strings[lang].copied}
+>
+  <div data-editor hidden>
+    <div class="prompt-fields">
+      <div>
+        <label for="service-name">
+          {t.name} <small>({t.optional})</small>
+        </label>
+        <p id="name-hint">{t.nameHint}</p>
+        <input
+          id="service-name"
+          type="text"
+          autocomplete="off"
+          aria-describedby="name-hint"
+        />
+      </div>
+      <div>
+        <label for="service-description">
+          {t.description} <small>({t.required})</small>
+        </label>
+        <p id="description-hint">{t.descriptionHint}</p>
+        <textarea
+          id="service-description"
+          rows="4"
+          required
+          autocomplete="off"
+          aria-describedby="description-hint prompt-validation"
+        ></textarea>
+      </div>
+      <div>
+        <label for="service-notes">
+          {t.notes} <small>({t.optional})</small>
+        </label>
+        <p id="notes-hint">{t.notesHint}</p>
+        <textarea
+          id="service-notes"
+          rows="3"
+          autocomplete="off"
+          aria-describedby="notes-hint"
+        ></textarea>
+      </div>
+    </div>
+    <p class="notice">{t.privacy}</p>
+    <p>{strings[lang].promptLanguage}</p>
+    <label for="prompt-preview">{t.preview}</label>
+    <textarea
+      id="prompt-preview"
+      class="prompt-box"
+      rows="14"
+      readonly
+      aria-describedby="prompt-validation"
+    ></textarea>
+    <p id="prompt-validation">{t.missing}</p>
+    <div class="resource-links">
+      <button
+        type="button"
+        class="button primary"
+        data-copy-prompt
+        disabled
+        aria-describedby="prompt-validation"
+      >
+        {t.copy} ⧉
+      </button>
+      <button type="button" class="button" data-reset-prompt>
+        {t.reset}
+      </button>
+    </div>
+    <p role="status" aria-live="polite" aria-atomic="true"></p>
+  </div>
+  <noscript>
+    <p class="notice">{t.noScript}</p>
+    <pre class="prompt-box" tabindex="0">{startupPrompt(lang)}</pre>
+  </noscript>
+</section>
+
+<script>
+  import { builderText, composeStartupPrompt } from "../lib/prompt-builder";
+  import type { Lang } from "../lib/i18n";
+  document.querySelectorAll<HTMLElement>("[data-builder]").forEach((root) => {
+    const lang = root.dataset.lang as Lang;
+    const name = root.querySelector<HTMLInputElement>("#service-name")!;
+    const description = root.querySelector<HTMLTextAreaElement>(
+      "#service-description",
+    )!;
+    const notes = root.querySelector<HTMLTextAreaElement>("#service-notes")!;
+    const preview = root.querySelector<HTMLTextAreaElement>("#prompt-preview")!;
+    const copy = root.querySelector<HTMLButtonElement>("[data-copy-prompt]")!;
+    const validation = root.querySelector<HTMLElement>("#prompt-validation")!;
+    const status = root.querySelector<HTMLElement>("[role=status]")!;
+    let revision = 0;
+    function update() {
+      revision++;
+      preview.value = composeStartupPrompt(lang, {
+        name: name.value,
+        description: description.value,
+        notes: notes.value,
+      });
+      copy.disabled = !preview.value;
+      validation.hidden = !!preview.value;
+      status.textContent = "";
+    }
+    [name, description, notes].forEach((field) =>
+      field.addEventListener("input", update),
+    );
+    root.querySelector("[data-reset-prompt]")!.addEventListener("click", () => {
+      name.value = description.value = notes.value = "";
+      update();
+      name.focus();
+    });
+    copy.addEventListener("click", async () => {
+      if (!preview.value) return;
+      const copiedRevision = revision;
+      copy.disabled = true;
+      status.textContent = "";
+      try {
+        await navigator.clipboard.writeText(preview.value);
+        if (revision === copiedRevision)
+          status.textContent = root.dataset.success!;
+      } catch {
+        if (revision === copiedRevision) {
+          status.textContent = builderText[lang].failure;
+          preview.focus();
+          preview.select();
+        }
+      } finally {
+        if (revision === copiedRevision) copy.disabled = !preview.value;
+      }
+    });
+    update();
+    root.querySelector<HTMLElement>("[data-editor]")!.hidden = false;
+  });
+</script>
