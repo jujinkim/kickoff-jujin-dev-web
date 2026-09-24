@@ -1,6 +1,8 @@
 # Kickoff by jujin
 
-A multilingual guide to starting AI-assisted projects with concrete requirements, architecture, design and operating choices. Built with **Astro, TypeScript, and Markdown**. No React, CMS, translation API, or built-in AI chat. Public origin: **https://kickoff.jujin.dev/**.
+A multilingual information site for learning project planning, design, and technology choices through examples. The catalog supports learning and comparison; Project planning offers practical walkthroughs. The main action is **Create a prompt for AI**: prepare a request here, then paste it into your external AI tool to discuss detailed requirements and compare architecture choices. Kickoff provides learning resources and prompts; AI conversations and development happen in the external tool.
+
+Built with **Astro, TypeScript, and Markdown**. No React, CMS, translation API, or built-in AI chat. Public origin: **https://kickoff.jujin.dev/**.
 
 This repository owns Kickoff only. The personal development hub on `jujin.dev` is a separate project. Article paths, guideline versions, comment identities, and API schema v1 stay stable within Kickoff; old pre-release URLs on `jujin.dev` have no compatibility layer. See [domain and publishing notes](docs/domain-split.md).
 
@@ -48,6 +50,7 @@ Every article supplies kind, title, summary, category, multilingual aliases, rel
 | Home                          | `/en/`, `/ko/`, `/ja/` (root goes to English)             |
 | Prompt builder                | `/{lang}/start/`                                          |
 | How to use                    | `/{lang}/help/`                                           |
+| Instructions for AI           | `/{lang}/ai/`                                             |
 | Catalog                       | `/{lang}/catalog/`                                        |
 | Concept                       | `/{lang}/catalog/{articleId}/`                            |
 | Category                      | `/{lang}/catalog/categories/{categoryId}/`                |
@@ -85,7 +88,7 @@ Design examples: [implementation and extension guide](docs/design-demos.md), [pl
 
 ## Project planning startup
 
-Start at `/{lang}/start/` and enter a service description, with an optional name and considerations. The page builds a localized first prompt using `composeStartupPrompt` in `src/lib/prompt-builder.ts`, which reuses the common `startupPrompt` and links `/ai/startup/latest.md`. A blank name means undecided; blank considerations need clarification. Only a nonblank description enables copying. Input stays in page memory: no submission, URL state, or persistent storage. The preview is plain text, with manual-copy and JavaScript-disabled fallbacks.
+Start at `/{lang}/start/` and enter a service description, with an optional name and considerations. The page builds a localized first prompt using `composeStartupPrompt` in `src/lib/prompt-builder.ts`, which reuses the common `startupPrompt` and links `/ai/startup/latest.md`. A blank name means undecided; blank considerations need clarification. Only a nonblank description enables copying. Input stays in page memory: no submission, URL state, or persistent storage. The plain-text preview is a request for an external AI tool. Copy success, manual-copy failure guidance, and JavaScript-disabled instructions all explain where to paste it next.
 
 `/{lang}/help/` explains the prompt-to-plan flow in Why → How → What order and renders every active taxonomy category with its shared localized decision description. “Project planning” retains the existing `/guides/` URLs, article IDs, and `kind: guide`. Navigation and labels come from `src/lib/i18n.ts`; help copy lives in `src/lib/help.ts`.
 

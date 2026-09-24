@@ -10,7 +10,7 @@ Include the guideline version/revision, the problem, a realistic anonymized scen
 
 - `src/startup/v1/en.md` owns service intake and the planning procedure. Korean and Japanese translations live beside it. HTML uses each localized source; public Markdown uses the English source. Edit English first, then review equivalent obligations in both translations.
 - `src/lib/ai.ts` owns shared judgment, authority, and evidence rules. Keep examples and review scenarios here in contributor documentation instead of duplicating them in required AI input.
-- `src/lib/startup.ts` owns entry labels, latest/pinned prompts, and revision history. Also review the prompt builder, AI connection page, help, and llms.txt when changing behavior.
+- `src/lib/startup.ts` owns entry labels, latest/pinned prompts, and revision history. Also review the prompt builder, Instructions for AI page, help, and llms.txt when changing behavior.
 - The only required site input is the startup document plus assistant rules. Keep their built English Markdown total at **3,000 tokens or fewer with o200k_base**. Optional reference documents are outside that initial input budget.
 - The catalog remains learning material for people and optional reference for assistants. Derive project decisions from requirements and constraints, including choices absent from this site. Do not reintroduce mandatory taxonomy coverage, catalog fetches, or article inventories.
 

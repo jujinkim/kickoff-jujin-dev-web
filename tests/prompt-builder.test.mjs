@@ -131,6 +131,36 @@ for (const [lang, name, notes] of [
       assert.ok(home.includes(`/${lang}/help/#${id}`));
       assert.ok(help.includes(`id="${id}"`));
     }
+    const catalog = read(`dist/${lang}/catalog/index.html`);
+    const description = (html) =>
+      html.match(/name="description" content="([^"]+)"/)[1];
+    const learning = { en: /[Ll]earn/, ko: /배우|학습/, ja: /学/ }[lang];
+    const external = { en: /external AI/, ko: /외부 AI/, ja: /外部AI/ }[lang];
+    assert.match(description(home), learning);
+    assert.match(description(catalog), learning);
+    assert.notEqual(description(home), description(catalog));
+    for (const html of [home, catalog, read(`dist/${lang}/about/index.html`)]) {
+      assert.ok(
+        html.includes(
+          `property="og:description" content="${description(html)}"`,
+        ),
+      );
+      assert.match(html.match(/<footer[\s\S]*?<\/footer>/)[0], external);
+    }
+    const label = {
+      en: "Instructions for AI",
+      ko: "AI용 지침",
+      ja: "AI向け指示",
+    }[lang];
+    assert.ok(nav.includes(label));
+    assert.match(
+      help,
+      {
+        en: /loan status be shared across devices/,
+        ko: /여러 기기에서 대여 상태를 공유/,
+        ja: /複数の端末で貸出状況を共有/,
+      }[lang],
+    );
   });
 }
 test("llms entry points describe prompt creation, help, and project planning", () => {
@@ -139,6 +169,9 @@ test("llms entry points describe prompt creation, help, and project planning", (
     "Create a prompt",
     "/en/help/",
     "Project planning",
+    "learning project planning",
+    "external AI tool",
+    "Instructions for AI",
     "/ai/startup/latest.md",
   ])
     assert.ok(llms.includes(text));

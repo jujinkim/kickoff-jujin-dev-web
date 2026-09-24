@@ -2,6 +2,13 @@
 
 Read `/home/jujin/.codex/RTK.md` for shell command conventions.
 
+Present Kickoff as an information site for learning project planning, design,
+and technology choices. Keep prompt creation as the main action. Distinguish
+the site's learning resources and prompt preparation from conversations and
+development in the user's external AI tool, including copy/fallback guidance
+and metadata. Write English first, then preserve meaning in Korean/Japanese.
+See [site identity and handoff copy](docs/content-authoring.md#site-identity-and-handoff-copy).
+
 All article work follows [the shared authoring guide](docs/content-authoring.md).
 Guides are practical walkthroughs taking about 2–3 minutes to read; catalog
 concepts stay concise. Every article, in every language, follows Why → How →

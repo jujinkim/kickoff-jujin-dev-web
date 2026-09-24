@@ -248,7 +248,11 @@ main:focus {
 }
 .hero h1 {
   white-space: pre-line;
+  text-wrap: balance;
   margin-bottom: 26px;
+}
+html[lang="ko"] .hero-copy {
+  word-break: keep-all;
 }
 .hero-description {
   color: var(--muted);
@@ -1469,7 +1473,7 @@ main:focus {
     font-size: 0.95rem;
   }
   .hero h1 {
-    font-size: 2.55rem;
+    font-size: 2rem;
   }
   .floating-note {
     padding: 18px 22px;
@@ -1587,6 +1591,21 @@ main:focus {
 }
 .prompt-art {
   padding: 28px;
+  margin: 0;
+  min-height: 0;
+}
+.hero-handoff,
+.section-intro {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.hero-handoff {
+  max-width: 490px;
+}
+.prompt-art figcaption {
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 .prompt-flow {
   list-style: none;
@@ -1595,30 +1614,33 @@ main:focus {
   display: grid;
   gap: 15px;
 }
-.prompt-flow li {
-  display: flex;
-  align-items: center;
-  gap: 18px;
+.prompt-flow > li {
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--surface);
 }
-.prompt-flow li:nth-child(2) {
-  background: var(--soft);
-}
-.prompt-flow li:last-child {
+.prompt-flow > li:last-child {
   background: var(--green);
   color: var(--bg);
 }
-.prompt-flow strong {
-  flex: 1;
+.flow-place {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
 }
-.prompt-flow li > span {
-  font: 0.75rem monospace;
+.flow-steps {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-.prompt-flow li:last-child > span:last-child {
-  visibility: hidden;
+.flow-steps li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  line-break: strict;
 }
 .help-cards {
   display: grid;
@@ -1722,7 +1744,7 @@ main:focus {
   .prompt-art {
     padding: 20px;
   }
-  .prompt-flow li {
+  .prompt-flow > li {
     padding: 18px;
   }
 }

@@ -14,15 +14,19 @@ export const builderText = {
     notesHint:
       "Budget, schedule, preferred examples, or constraints. A blank means more clarification is needed.",
     preview: "Prompt preview",
+    previewHint:
+      "This is a request to send to AI. Review it, then copy and paste it into your external AI tool to discuss requirements and architecture choices.",
+    success:
+      "Copied. Paste the prompt into your external AI tool to discuss the design.",
     copy: "Copy prompt",
     reset: "Reset",
     missing: "Enter a service description to copy the prompt.",
     privacy:
       "Your input stays on this page. It is not sent to a server, added to the URL, or saved for later. Copy it before leaving or reloading.",
     failure:
-      "Copy failed. Select the prompt in the preview and copy it manually.",
+      "Copy failed. Select the prompt in the preview, copy it manually, and paste it into your external AI tool to discuss the design.",
     noScript:
-      "JavaScript is off. Copy the base prompt below and append your service name, description, and considerations. Mark an undecided name as “Undecided” and blank considerations as “Needs clarification”.",
+      "JavaScript is off. Copy the base prompt below and append your service name, description, and considerations. Mark an undecided name as “Undecided” and blank considerations as “Needs clarification”. Paste the completed request into your external AI tool to discuss the design.",
     undecided: "Undecided",
     clarify: "Needs clarification",
     instruction:
@@ -39,14 +43,18 @@ export const builderText = {
     notesHint:
       "예산, 일정, 마음에 드는 예시, 제약 등을 적으세요. 비워두면 추가 확인이 필요한 것으로 처리합니다.",
     preview: "프롬프트 미리보기",
+    previewHint:
+      "AI에 전달할 요청문입니다. 내용을 확인하고 복사한 뒤 사용하는 외부 AI 도구에 붙여넣어 요구사항과 아키텍처 선택을 논의하세요.",
+    success: "복사 완료. 외부 AI 도구에 프롬프트를 붙여넣어 설계를 논의하세요.",
     copy: "프롬프트 복사",
     reset: "초기화",
     missing: "서비스 설명을 입력하면 프롬프트를 복사할 수 있습니다.",
     privacy:
       "입력은 현재 페이지에만 유지됩니다. 서버 전송·URL 기록·영구 저장하지 않습니다. 페이지를 떠나거나 새로고침하기 전에 복사하세요.",
-    failure: "복사 실패. 미리보기의 프롬프트를 직접 선택해 복사하세요.",
+    failure:
+      "복사 실패. 미리보기의 프롬프트를 직접 선택해 복사한 뒤 외부 AI 도구에 붙여넣어 설계를 논의하세요.",
     noScript:
-      "JavaScript가 꺼져 있습니다. 아래 기본 프롬프트를 복사하고 서비스 이름·서비스 설명·참고사항을 직접 덧붙이세요. 정하지 않은 이름은 ‘미정’, 빈 참고사항은 ‘추가 확인 필요’로 적으세요.",
+      "JavaScript가 꺼져 있습니다. 아래 기본 프롬프트를 복사하고 서비스 이름·서비스 설명·참고사항을 직접 덧붙이세요. 정하지 않은 이름은 ‘미정’, 빈 참고사항은 ‘추가 확인 필요’로 적으세요. 완성한 요청문을 외부 AI 도구에 붙여넣어 설계를 논의하세요.",
     undecided: "미정",
     clarify: "추가 확인 필요",
     instruction:
@@ -63,15 +71,19 @@ export const builderText = {
     notesHint:
       "予算、日程、好みの例、制約など。空欄は追加確認が必要なものとして扱います。",
     preview: "プロンプトのプレビュー",
+    previewHint:
+      "AIに渡す依頼文です。内容を確認してコピーし、お使いの外部AIツールに貼り付けて要件とアーキテクチャの選択肢を話し合いましょう。",
+    success:
+      "コピーしました。外部AIツールにプロンプトを貼り付けて設計を話し合いましょう。",
     copy: "プロンプトをコピー",
     reset: "リセット",
     missing: "サービスの説明を入力するとプロンプトをコピーできます。",
     privacy:
       "入力内容は現在のページだけに保持されます。サーバーへの送信、URLへの記録、永続保存はしません。ページを離れたり再読み込みしたりする前にコピーしてください。",
     failure:
-      "コピー失敗。プレビューのプロンプトを選択して手動でコピーしてください。",
+      "コピー失敗。プレビューのプロンプトを選択して手動でコピーし、外部AIツールに貼り付けて設計を話し合いましょう。",
     noScript:
-      "JavaScriptが無効です。下の基本プロンプトをコピーし、サービス名・説明・参考事項を追記してください。未定の名前は「未定」、空欄の参考事項は「追加確認が必要」と記入してください。",
+      "JavaScriptが無効です。下の基本プロンプトをコピーし、サービス名・説明・参考事項を追記してください。未定の名前は「未定」、空欄の参考事項は「追加確認が必要」と記入してください。完成した依頼文を外部AIツールに貼り付けて設計を話し合いましょう。",
     undecided: "未定",
     clarify: "追加確認が必要",
     instruction:

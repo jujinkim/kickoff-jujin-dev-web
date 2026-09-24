@@ -2,6 +2,31 @@
 
 This guide describes the authoring workflow. Design implementation follows [Design demos](design-demos.md). 64 concepts and 9 guides are active in three languages; no candidates remain pending. See [catalog scope](catalog-scope.md). Current counts and release reviews live in the [writing index](catalog-writing/README.md). The earlier [styles review](catalog-writing/styles-review.md) is historical.
 
+## Site identity and handoff copy
+
+Kickoff is an information site for learning project planning, design, and
+technology choices. Explain the catalog as material for learning and comparing
+concepts and choices; explain Project planning as practical walkthroughs that
+readers follow through examples. Keep category-first browsing.
+
+Prompt creation remains the main action. A prompt is a request for the user's
+external AI tool to ask about detailed requirements and compare architecture
+choices. Kickoff provides resources and prepares that request in the browser;
+AI conversations, design discussion, and development happen in the external
+tool. Make the location explicit in home diagrams, preview descriptions, copy
+success/failure guidance, manual-copy and JavaScript-disabled instructions,
+about/footer text, and search/share metadata. Expose diagram labels to assistive
+technology; color alone cannot identify where an action happens. Never imply
+that this site generates AI answers or builds a project.
+
+Write and review English copy first, then preserve its meaning in Korean and
+Japanese. Continue the book-lending example in site help: a question about
+sharing loan status across devices should connect user behavior to storage,
+synchronization, and architecture tradeoffs. Do not prescribe one stack.
+Presentation edits alone do not change prompt bodies, guideline obligations,
+or revision history. Keep required reading limited to the two guideline
+documents; the catalog remains optional learning material.
+
 ## Shared data and routes
 
 - `src/data/categories.json` is the single taxonomy: stable language-independent ID, nullable parent, localized names/descriptions, sibling order. Roots are navigation shelves; concepts belong to one leaf comparison group.

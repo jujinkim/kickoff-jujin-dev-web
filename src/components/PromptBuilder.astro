@@ -13,7 +13,7 @@ const t = builderText[lang];
   class="prompt-section prompt-builder"
   data-builder
   data-lang={lang}
-  data-success={strings[lang].copied}
+  data-success={t.success}
 >
   <div data-editor hidden>
     <div class="prompt-fields">
@@ -58,12 +58,13 @@ const t = builderText[lang];
     <p class="notice">{t.privacy}</p>
     <p>{strings[lang].promptLanguage}</p>
     <label for="prompt-preview">{t.preview}</label>
+    <p id="prompt-preview-hint">{t.previewHint}</p>
     <textarea
       id="prompt-preview"
       class="prompt-box"
       rows="14"
       readonly
-      aria-describedby="prompt-validation"
+      aria-describedby="prompt-preview-hint prompt-validation"
     ></textarea>
     <p id="prompt-validation">{t.missing}</p>
     <div class="resource-links">

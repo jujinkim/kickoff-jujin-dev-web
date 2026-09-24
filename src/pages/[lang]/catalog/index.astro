@@ -10,16 +10,10 @@ const t = strings[lang];
 const categories = childrenOf(null);
 ---
 
-<Base lang={lang} title={t.catalog} description={t.intro}>
+<Base lang={lang} title={t.catalog} description={t.catalogIntro}>
   <section class="page-heading">
     <h1>{t.catalog}</h1>
-    <p>
-      {lang === "ko"
-        ? "카테고리를 선택해 개념과 도구를 탐색하고 비교하세요."
-        : lang === "ja"
-          ? "カテゴリーを選んで、概念とツールを探し、比較します。"
-          : "Choose a category to explore and compare concepts and tools."}
-    </p>
+    <p>{t.catalogIntro}</p>
   </section>
   <nav aria-label={t.catalog}>
     <ul class="catalog-categories">

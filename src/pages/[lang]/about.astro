@@ -8,20 +8,20 @@ const { lang } = Astro.props;
 const t = strings[lang];
 const paragraphs = {
   en: [
-    "Kickoff helps you create a first prompt from your service idea and considerations. Copy it into your AI conversation, answer the open questions, and agree on a plan before asking for development.",
-    "The catalog covers planning and architecture, development tools, delivery and hosting, design, and monetization. You decide behavior and constraints; AI chooses internal implementation and writes the supporting documents within the agreed scope.",
+    "Kickoff is an information site for learning project planning, design, and technology choices through examples. The catalog helps you understand and compare concepts and choices; Project planning offers practical walkthroughs you can follow.",
+    "You can also prepare a first prompt from your service idea and considerations. Paste it into your external AI tool to ask about detailed requirements and compare architecture choices. AI conversations and development take place in that tool. You decide behavior and constraints, agree on a plan, then request development within that scope.",
     "English is the source language. Korean and Japanese translations share stable article IDs and revision tracking. Missing translations link to English; outdated translations carry a notice. Articles and machine-readable material are generated from the same Markdown.",
     "Corrections belong in the repository. Cite the article ID, the disputed claim, and an official reference. Service conditions carry a review date and need checking before a real launch. No automated translation API or built-in AI chat runs here.",
   ],
   ko: [
-    "Kickoff는 서비스 아이디어와 참고사항을 첫 프롬프트로 정리하도록 돕습니다. AI 대화에 복사해 전달하고, 미결정 사항에 답하며 기획을 확정한 뒤 개발을 요청합니다.",
-    "기획·아키텍처, 개발 도구, 배포·호스팅, 디자인, 수익화를 다룹니다. 사용자는 원하는 동작과 제약을 결정하고, AI는 합의된 범위에서 내부 구현과 필요한 문서 작성을 맡습니다.",
+    "Kickoff는 프로젝트 기획·설계와 기술 선택을 예시로 배우는 정보 사이트입니다. 카탈로그에서는 개념과 선택지를 이해하고 비교하며, ‘프로젝트 기획’에서는 예시를 따라 실전 절차를 배웁니다.",
+    "서비스 아이디어와 참고사항을 첫 프롬프트로 정리할 수도 있습니다. 사용하는 외부 AI 도구에 붙여넣어 세부 요구사항을 질문하고 아키텍처 선택지를 비교하도록 요청하세요. AI 대화와 개발은 해당 도구에서 진행합니다. 원하는 동작과 제약을 결정하고 기획을 확정한 뒤, 합의한 범위의 개발을 요청합니다.",
     "영어가 원문입니다. 한국어·일본어 번역은 고정 글 ID와 리비전으로 연결합니다. 번역이 없으면 영어로, 뒤처지면 안내 표시로 연결합니다. 사람용 글과 기계용 자료는 같은 Markdown에서 생성됩니다.",
     "수정 제안은 저장소로 보내주세요. 글 ID, 문제인 주장, 공식 근거를 적으면 좋습니다. 서비스 조건은 확인 날짜를 남기고 실제 출시 전에 재검토해야 합니다. 자동 번역 API나 사이트 내 AI 채팅은 운영하지 않습니다.",
   ],
   ja: [
-    "Kickoffはサービスのアイデアと参考事項を最初のプロンプトにまとめるためのサイトです。AIとの会話にコピーして渡し、未決定の事項に答えて企画を確定した後、開発を依頼します。",
-    "企画・アーキテクチャ、開発道具、配布・ホスティング、デザイン、収益化を扱います。ユーザーが動作と制約を決め、AIが合意した範囲で内部実装と必要な文書作成を担当します。",
+    "Kickoffはプロジェクトの企画・設計と技術の選択を例から学ぶ情報サイトです。カタログでは概念と選択肢を理解して比較し、「プロジェクト企画」では例に沿って実践の手順を学べます。",
+    "サービスのアイデアと参考事項を最初のプロンプトにまとめることもできます。お使いの外部AIツールに貼り付け、詳しい要件を質問し、アーキテクチャの選択肢を比較するよう依頼しましょう。AIとの会話や開発はそのツールで進めます。望む動作と制約を決め、企画を確定してから、合意した範囲の開発を依頼します。",
     "原文は英語。韓国語と日本語は固定IDと改訂番号で結びます。未翻訳は英語へ案内し、古い翻訳には表示を付けます。人向けの記事と機械向け資料は同じMarkdownから生成します。",
     "修正提案はリポジトリへ。記事ID、問題の主張、公式根拠を添えてください。サービス条件には確認日を記し、実際の公開前に再確認します。自動翻訳APIやサイト内AIチャットは提供していません。",
   ],

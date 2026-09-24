@@ -47,23 +47,26 @@ const recent = [...articles]
           {t.help} →
         </a>
       </div>
-      <p class="hero-note">
-        {articles.length} {t.count} <span> / </span> EN · KO · JA{" "}
-        <span> / </span> Human + AI
-      </p>
+      <p class="hero-handoff">{t.siteNotice}</p>
     </div>
-    <div class="hero-art prompt-art" aria-hidden="true">
-      <p class="art-caption">IDEA → PROMPT → PLAN</p>
-      <ol class="prompt-flow">
-        {h.flow.map((label, i) => (
+    <figure class="hero-art prompt-art" aria-labelledby="prompt-flow-title">
+      <figcaption id="prompt-flow-title">{h.flowTitle}</figcaption>
+      <ol class="prompt-flow" role="list">
+        {h.flow.map((group) => (
           <li>
-            <span>0{i + 1}</span>
-            <strong>{label}</strong>
-            <span>↓</span>
+            <strong class="flow-place">{group.place}</strong>
+            <ol class="flow-steps" role="list">
+              {group.steps.map((step, i) => (
+                <li>
+                  <span aria-hidden="true">{i === 0 ? "→" : "↓"}</span>
+                  {step}
+                </li>
+              ))}
+            </ol>
           </li>
         ))}
       </ol>
-    </div>
+    </figure>
   </section>
   <section class="section" data-home-section="help">
     <div class="section-heading">
@@ -90,6 +93,7 @@ const recent = [...articles]
         THE INDEX / 01—{categories.length.toString().padStart(2, "0")}
       </span>
     </div>
+    <p class="section-intro">{t.catalogIntro}</p>
     <div class="category-grid">
       {categories.map((category, i) => (
         <a href={`/${lang}/catalog/categories/${category}/`}>
@@ -111,13 +115,13 @@ const recent = [...articles]
   <section class="section" data-home-section="planning">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">LESS GUESSING, MORE BUILDING</p>
         <h2>{t.guides}</h2>
       </div>
       <a class="text-link" href={`/${lang}/guides/`}>
         {t.guides} →
       </a>
     </div>
+    <p class="section-intro">{t.guidesIntro}</p>
     <div class="catalog-grid home-grid">
       {recommended.map((article, index) => (
         <Card article={article} index={index} />
@@ -127,8 +131,8 @@ const recent = [...articles]
   <section class="ai-banner" data-home-section="ai">
     <span class="ai-mark">[ ai ]</span>
     <div>
-      <h2>{t.aiIntro}</h2>
-      <p>{t.aiWarning}</p>
+      <h2>{t.ai}</h2>
+      <p>{t.aiIntro}</p>
     </div>
     <a class="button" href={`/${lang}/ai/`}>
       {t.ai} ↗

@@ -5,7 +5,7 @@ export async function GET() {
   const all = await listed();
   const text = `# Kickoff by jujin
 
-> Optional reference index for Kickoff by jujin. Create a first prompt from your service idea and constraints, agree on a plan with AI, then request development.
+> Optional reference index for Kickoff by jujin, an information site for learning project planning, design, and technology choices through examples. The site provides learning resources and prompts. Paste a prepared prompt into your external AI tool to discuss detailed requirements and compare architecture choices; AI conversations and development happen in that tool.
 
 Only the startup guidelines and behavior rules below are required site reading to begin planning. This index and the catalog are optional learning resources, not a required selection list. Derive decisions from requirements and constraints, including options outside this site. Follow individual links only when requested or useful; an inaccessible optional resource alone does not stop planning.
 
@@ -20,7 +20,7 @@ Only the startup guidelines and behavior rules below are required site reading t
 - [Versioned multilingual catalog and aliases](https://kickoff.jujin.dev/ai/catalog.json)
 - [Concept catalog](https://kickoff.jujin.dev/en/catalog/)
 - [Project planning](https://kickoff.jujin.dev/en/guides/)
-- [Connect your AI](https://kickoff.jujin.dev/en/ai/)
+- [Instructions for AI](https://kickoff.jujin.dev/en/ai/)
 
 English originals with Korean and Japanese translations. The catalog links current project choices and guides with their available translations and stale-revision markers. HTML pages remain localized. All Markdown links point to English originals; legacy localized Markdown URLs serve the same English content. Users can write requests in their preferred language; reply in the user's language.
 

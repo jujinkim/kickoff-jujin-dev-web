@@ -1,6 +1,29 @@
 import { test, expect } from "@playwright/test";
 
-for (const lang of ["en", "ko", "ja"]) {
+const handoff = {
+  en: /external AI tool/,
+  ko: /외부 AI 도구/,
+  ja: /外部AIツール/,
+};
+const identity = {
+  en: {
+    learning: "Learning resources for project planning and design",
+    ai: "Instructions for AI",
+    places: ["This site", "External AI"],
+  },
+  ko: {
+    learning: "프로젝트 기획·설계를 위한 학습 자료",
+    ai: "AI용 지침",
+    places: ["이 사이트", "외부 AI"],
+  },
+  ja: {
+    learning: "プロジェクトの企画・設計を学ぶ資料",
+    ai: "AI向け指示",
+    places: ["このサイト", "外部AI"],
+  },
+};
+
+for (const lang of ["en", "ko", "ja"] as const) {
   test(`startup prompt and versioned document: ${lang}`, async ({
     page,
     context,
@@ -53,6 +76,9 @@ for (const lang of ["en", "ko", "ja"]) {
     );
     expect(await latest.text()).toBe(await md.text());
     await page.goto(`/${lang}/ai/`);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+      identity[lang].ai,
+    );
     const aiPrompt = page.locator("#project-prompt");
     await expect(aiPrompt).toContainText("/ai/instructions.md");
     await expect(aiPrompt).not.toContainText(/llms\.txt|catalog\.json/);
@@ -63,7 +89,7 @@ for (const lang of ["en", "ko", "ja"]) {
   });
 }
 
-for (const lang of ["en", "ko", "ja"]) {
+for (const lang of ["en", "ko", "ja"] as const) {
   test(`${lang}: home to prompt, optional fields, edits, reset, and help`, async ({
     page,
     context,
@@ -78,6 +104,7 @@ for (const lang of ["en", "ko", "ja"]) {
     const preview = page.locator("#prompt-preview");
     const copy = page.locator("[data-copy-prompt]");
     const status = page.locator(".prompt-builder [role=status]");
+    await expect(preview).toHaveAccessibleDescription(handoff[lang]);
     await expect(copy).toBeDisabled();
     await description.fill(" \n\t　");
     await expect(copy).toBeDisabled();
@@ -88,7 +115,7 @@ for (const lang of ["en", "ko", "ja"]) {
       /Needs clarification|추가 확인 필요|追加確認が必要/,
     );
     await copy.click();
-    await expect(status).not.toBeEmpty();
+    await expect(status).toContainText(handoff[lang]);
     await expect
       .poll(() => page.evaluate(() => navigator.clipboard.readText()))
       .toBe(await preview.inputValue());
@@ -146,6 +173,9 @@ for (const lang of ["en", "ko", "ja"]) {
     await expect(page.locator(".prompt-builder [role=status]")).toContainText(
       /Copy failed|복사 실패|コピー失敗/,
     );
+    await expect(page.locator(".prompt-builder [role=status]")).toContainText(
+      handoff[lang],
+    );
     await expect(page.locator("#prompt-preview")).toBeFocused();
     expect(
       await page
@@ -172,6 +202,7 @@ for (const lang of ["en", "ko", "ja"]) {
     await page.locator(".hero-actions .primary").click();
     await expect(page.locator("[data-editor]")).toBeHidden();
     await expect(page.locator("noscript .notice")).toContainText("JavaScript");
+    await expect(page.locator("noscript .notice")).toContainText(handoff[lang]);
     await expect(page.locator("noscript pre")).toContainText(
       "/ai/startup/latest.md",
     );
@@ -239,38 +270,40 @@ test("late clipboard completion cannot restore stale success after edit or reset
   }
 });
 
-test("keyboard can enter, preview, copy, and reset", async ({
-  page,
-  context,
-}) => {
-  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
-  await page.goto("/en/");
-  await page.keyboard.press("Tab");
-  await page.keyboard.press("Enter");
-  await page.keyboard.press("Tab");
-  await expect(page.locator(".hero-actions .primary")).toBeFocused();
-  await page.keyboard.press("Enter");
-  await page.locator("#service-name").focus();
-  await page.keyboard.type("Book swap");
-  await page.keyboard.press("Tab");
-  await expect(page.locator("#service-description")).toBeFocused();
-  await page.keyboard.type("Neighbors lend books");
-  await page.keyboard.press("Tab");
-  await expect(page.locator("#service-notes")).toBeFocused();
-  await page.keyboard.press("Tab");
-  await expect(page.locator("#prompt-preview")).toBeFocused();
-  await page.keyboard.press("Tab");
-  await page.keyboard.press("Enter");
-  await expect(page.locator(".prompt-builder [role=status]")).toHaveText(
-    "Copied",
-  );
-  await page.keyboard.press("Tab");
-  await page.keyboard.press("Enter");
-  await expect(page.locator("#service-name")).toBeFocused();
-  await expect(page.locator("#prompt-preview")).toHaveValue("");
-});
+for (const lang of ["en", "ko", "ja"] as const) {
+  test(`${lang}: keyboard can enter, preview, copy, and reset`, async ({
+    page,
+    context,
+  }) => {
+    await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+    await page.goto(`/${lang}/`);
+    await page.keyboard.press("Tab");
+    await page.keyboard.press("Enter");
+    await page.keyboard.press("Tab");
+    await expect(page.locator(".hero-actions .primary")).toBeFocused();
+    await page.keyboard.press("Enter");
+    await page.locator("#service-name").focus();
+    await page.keyboard.type("Book swap");
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#service-description")).toBeFocused();
+    await page.keyboard.type("Neighbors lend books");
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#service-notes")).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#prompt-preview")).toBeFocused();
+    await page.keyboard.press("Tab");
+    await page.keyboard.press("Enter");
+    await expect(page.locator(".prompt-builder [role=status]")).toContainText(
+      handoff[lang],
+    );
+    await page.keyboard.press("Tab");
+    await page.keyboard.press("Enter");
+    await expect(page.locator("#service-name")).toBeFocused();
+    await expect(page.locator("#prompt-preview")).toHaveValue("");
+  });
+}
 
-for (const lang of ["en", "ko", "ja"]) {
+for (const lang of ["en", "ko", "ja"] as const) {
   test(`${lang}: home, builder and help fit all screen sizes and themes`, async ({
     page,
   }, testInfo) => {
@@ -278,7 +311,7 @@ for (const lang of ["en", "ko", "ja"]) {
     for (const width of [320, 768, 1440]) {
       await page.setViewportSize({ width, height: 900 });
       for (const theme of ["light", "dark"]) {
-        for (const path of ["", "start/", "help/"]) {
+        for (const path of ["", "start/", "help/", "ai/"]) {
           await page.goto(`/${lang}/${path}`);
           await page.evaluate((value) => {
             document.documentElement.dataset.theme = value;
@@ -290,19 +323,41 @@ for (const lang of ["en", "ko", "ja"]) {
           await expect(page.locator(".site-header nav a")).toHaveCount(6);
           for (const link of await page.locator(".site-header nav a").all())
             await expect(link).toBeVisible();
+          await expect(
+            page.locator(`.site-header nav a[href="/${lang}/ai/"]`),
+          ).toHaveText(identity[lang].ai);
+          if (path === "") {
+            await expect(page.locator(".hero .eyebrow")).toHaveText(
+              identity[lang].learning,
+            );
+            await expect(page.locator(".hero-handoff")).toContainText(
+              handoff[lang],
+            );
+            const flow = page.getByRole("figure");
+            await expect(flow).toBeVisible();
+            await expect(flow).toHaveAccessibleName(/.+/);
+            const accessibleFlow = await flow.ariaSnapshot();
+            for (const place of identity[lang].places) {
+              await expect(
+                flow.getByText(place, { exact: true }),
+              ).toBeVisible();
+              expect(accessibleFlow).toContain(place);
+            }
+            for (const step of await flow.locator(".flow-steps li").all())
+              await expect(step).toBeVisible();
+          }
           expect(
             await page.evaluate(
               () => document.documentElement.scrollWidth <= innerWidth,
             ),
             `${path} ${width} ${theme}`,
           ).toBe(true);
-          if (lang === "ko")
-            await page.screenshot({
-              path: testInfo.outputPath(
-                `${path.replace("/", "") || "home"}-${width}-${theme}.png`,
-              ),
-              fullPage: true,
-            });
+          await page.screenshot({
+            path: testInfo.outputPath(
+              `${path.replace("/", "") || "home"}-${width}-${theme}.png`,
+            ),
+            fullPage: true,
+          });
         }
       }
     }
