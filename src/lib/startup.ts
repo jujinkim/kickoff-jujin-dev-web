@@ -6,7 +6,7 @@ export const startupText = {
   en: {
     title: "Development startup guidelines",
     intro:
-      "Start with your service idea and constraints. Work through the decisions, agree on a plan, then develop.",
+      "Reference guidelines from kickoff.md for your external AI tool. Copy the request into that tool to work through your service idea and constraints, agree on a plan, then request development.",
     read: "Read guidelines {version}",
     versions: "Guideline versions",
     contribute: "Contribute on GitHub",
@@ -16,7 +16,7 @@ export const startupText = {
   ko: {
     title: "개발 시작 지침 문서",
     intro:
-      "서비스 아이디어와 제약에서 시작해 필요한 결정을 검토하고, 기획을 확정한 뒤 개발합니다.",
+      "kickoff.md가 제공하는 외부 AI용 참고 지침입니다. 요청문을 복사해 사용하는 외부 AI 도구에서 서비스 아이디어와 제약을 검토하고, 기획을 확정한 뒤 개발을 요청하세요.",
     read: "지침 {version} 읽기",
     versions: "지침 버전",
     contribute: "GitHub에서 함께 기여하기",
@@ -26,7 +26,7 @@ export const startupText = {
   ja: {
     title: "開発開始ガイドライン",
     intro:
-      "サービスの案と制約から必要な判断を検討し、計画を確定してから開発します。",
+      "kickoff.mdが提供する外部AI向けの参考ガイドラインです。依頼文をコピーしてお使いの外部AIツールでサービスの案と制約を検討し、計画を確定してから開発を依頼してください。",
     read: "ガイドライン{version}を読む",
     versions: "ガイドラインの版",
     contribute: "GitHubで共同改善する",

@@ -139,18 +139,48 @@ for (const [lang, name, notes] of [
     assert.match(description(home), learning);
     assert.match(description(catalog), learning);
     assert.notEqual(description(home), description(catalog));
-    for (const html of [home, catalog, read(`dist/${lang}/about/index.html`)]) {
+    const corePages = [
+      home,
+      help,
+      ...["start", "start/v1", "about", "ai"].map((path) =>
+        read(`dist/${lang}/${path}/index.html`),
+      ),
+    ];
+    const noAI = {
+      en: /kickoff\.md does not provide an AI service/,
+      ko: /kickoff\.md는 AI 서비스를 제공하지 않습니다/,
+      ja: /kickoff\.mdはAIサービスを提供していません/,
+    }[lang];
+    for (const html of corePages) assert.match(description(html), external);
+    for (const html of [...corePages, catalog]) {
       assert.ok(
         html.includes(
           `property="og:description" content="${description(html)}"`,
         ),
       );
       assert.match(html.match(/<footer[\s\S]*?<\/footer>/)[0], external);
+      assert.match(html.match(/<footer[\s\S]*?<\/footer>/)[0], noAI);
     }
+    const builder = read(`dist/${lang}/start/index.html`);
+    assert.match(builder.split("data-editor")[0], noAI);
+    for (const path of ["ai", "start/v1", "guides/srs"]) {
+      const html = read(`dist/${lang}/${path}/index.html`);
+      assert.match(
+        html.match(/class="prompt-handoff"[^>]*>([^<]+)/)[1],
+        external,
+      );
+      for (const result of html.matchAll(/data-(?:success|error)="([^"]+)"/g))
+        assert.match(result[1], external);
+      assert.match(html.match(/<noscript>[\s\S]*?<\/noscript>/)[0], external);
+    }
+    if (lang === "ko")
+      assert.ok(
+        home.includes("AI에게 맡길 첫 작업, 내 프로젝트에 맞는 프롬프트로."),
+      );
     const label = {
-      en: "Instructions for AI",
-      ko: "AI용 지침",
-      ja: "AI向け指示",
+      en: "Instructions for external AI",
+      ko: "외부 AI용 지침",
+      ja: "外部AI向け指示",
     }[lang];
     assert.ok(nav.includes(label));
     assert.match(
@@ -164,6 +194,16 @@ for (const [lang, name, notes] of [
   });
 }
 test("llms entry points describe prompt creation, help, and project planning", () => {
+  const root = read("dist/index.html");
+  const home = read("dist/en/index.html");
+  for (const pattern of [
+    /<title>([^<]+)<\/title>/,
+    /name="description" content="([^"]+)"/,
+    /property="og:title" content="([^"]+)"/,
+    /property="og:description" content="([^"]+)"/,
+  ])
+    assert.equal(root.match(pattern)[1], home.match(pattern)[1]);
+  assert.match(root, /kickoff\.md does not provide an AI service/);
   const llms = read("dist/llms.txt");
   for (const text of [
     "Create a prompt",
@@ -171,7 +211,9 @@ test("llms entry points describe prompt creation, help, and project planning", (
     "Project planning",
     "learning project planning",
     "external AI tool",
-    "Instructions for AI",
+    "kickoff.md does not provide an AI service",
+    "Create a custom prompt",
+    "Instructions for external AI",
     "/ai/startup/latest.md",
   ])
     assert.ok(llms.includes(text));

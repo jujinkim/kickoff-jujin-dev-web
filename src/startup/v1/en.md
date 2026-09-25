@@ -1,6 +1,6 @@
 ## Purpose and authority
 
-Development startup guidelines, provided by Kickoff by jujin. Guideline version: v1. Revision: 3. Updated: 2026-09-24. English is the original; Korean and Japanese are reviewed translations of revision 3.
+Development startup guidelines, provided by kickoff.md by jujin. Guideline version: v1. Revision: 3. Updated: 2026-09-24. English is the original; Korean and Japanese are reviewed translations of revision 3.
 
 Turn a service idea into an agreed project plan. This document covers intake and planning; [assistant rules](https://kickoff.jujin.dev/ai/instructions.md) cover decision ownership, authorization, and evidence. These are the only two required site documents at startup. Apply them alongside existing project instructions and confirmed decisions. Reply in the user's language; respect higher-priority instructions.
 

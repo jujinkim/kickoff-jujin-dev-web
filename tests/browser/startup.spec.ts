@@ -5,21 +5,26 @@ const handoff = {
   ko: /외부 AI 도구/,
   ja: /外部AIツール/,
 };
+const noAI = {
+  en: /kickoff\.md does not provide an AI service/,
+  ko: /kickoff\.md는 AI 서비스를 제공하지 않습니다/,
+  ja: /kickoff\.mdはAIサービスを提供していません/,
+};
 const identity = {
   en: {
-    learning: "Learning resources for project planning and design",
-    ai: "Instructions for AI",
-    places: ["This site", "External AI"],
+    learning: "Custom prompts and project planning resources",
+    ai: "Instructions for external AI",
+    places: ["kickoff.md", "External AI tool"],
   },
   ko: {
-    learning: "프로젝트 기획·설계를 위한 학습 자료",
-    ai: "AI용 지침",
-    places: ["이 사이트", "외부 AI"],
+    learning: "맞춤 프롬프트와 프로젝트 기획 학습 자료",
+    ai: "외부 AI용 지침",
+    places: ["kickoff.md", "외부 AI 도구"],
   },
   ja: {
-    learning: "プロジェクトの企画・設計を学ぶ資料",
-    ai: "AI向け指示",
-    places: ["このサイト", "外部AI"],
+    learning: "自分に合うプロンプトとプロジェクト企画の学習資料",
+    ai: "外部AI向け指示",
+    places: ["kickoff.md", "外部AIツール"],
   },
 };
 
@@ -53,6 +58,9 @@ for (const lang of ["en", "ko", "ja"] as const) {
       `/ai/startup/v1.md`,
     );
     await page.locator('[data-copy="startup-prompt"]').click();
+    await expect(page.locator(".prompt-section [role=status]")).toContainText(
+      handoff[lang],
+    );
     await expect
       .poll(() => page.evaluate(() => navigator.clipboard.readText()))
       .toContain("/ai/startup/v1.md");
@@ -83,9 +91,22 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await expect(aiPrompt).toContainText("/ai/instructions.md");
     await expect(aiPrompt).not.toContainText(/llms\.txt|catalog\.json/);
     await page.locator('[data-copy="project-prompt"]').click();
+    await expect(page.locator(".prompt-section [role=status]")).toContainText(
+      handoff[lang],
+    );
     await expect
       .poll(() => page.evaluate(() => navigator.clipboard.readText()))
       .toBe(await aiPrompt.textContent());
+    await page.goto(`/${lang}/guides/srs/`);
+    await page.locator(".prompt-section summary").click();
+    await expect(page.locator(".prompt-handoff")).toContainText(handoff[lang]);
+    await page.locator('[data-copy="article-prompt"]').click();
+    await expect(page.locator(".prompt-section [role=status]")).toContainText(
+      handoff[lang],
+    );
+    await expect
+      .poll(() => page.evaluate(() => navigator.clipboard.readText()))
+      .toBe((await page.locator("#article-prompt").textContent())!.trim());
   });
 }
 
@@ -188,6 +209,20 @@ for (const lang of ["en", "ko", "ja"] as const) {
     ).toBe(true);
     await page.locator("#service-notes").fill("Ask about budget");
     await expect(page.locator(".prompt-builder [role=status]")).toBeEmpty();
+    for (const path of ["ai", "start/v1", "guides/srs"]) {
+      await page.goto(`/${lang}/${path}/`);
+      if (path === "guides/srs")
+        await page.locator(".prompt-section summary").click();
+      await page.locator("[data-copy]").click();
+      await expect(page.locator(".prompt-section [role=status]")).toContainText(
+        /Copy failed|복사 실패|コピー失敗/,
+      );
+      await expect(page.locator(".prompt-section [role=status]")).toContainText(
+        handoff[lang],
+      );
+      await page.locator(".prompt-box").focus();
+      await expect(page.locator(".prompt-box")).toBeFocused();
+    }
   });
 
   test(`${lang}: without JavaScript, base prompt and help remain usable`, async ({
@@ -200,6 +235,9 @@ for (const lang of ["en", "ko", "ja"] as const) {
     const page = await context.newPage();
     await page.goto(`/${lang}/`);
     await page.locator(".hero-actions .primary").click();
+    await expect(page.locator(".prompt-builder > .site-notice")).toContainText(
+      noAI[lang],
+    );
     await expect(page.locator("[data-editor]")).toBeHidden();
     await expect(page.locator("noscript .notice")).toContainText("JavaScript");
     await expect(page.locator("noscript .notice")).toContainText(handoff[lang]);
@@ -215,6 +253,16 @@ for (const lang of ["en", "ko", "ja"] as const) {
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBe(true);
+    for (const path of ["ai", "start/v1", "guides/srs"]) {
+      await page.goto(`/${lang}/${path}/`);
+      if (path === "guides/srs")
+        await page.locator(".prompt-section summary").click();
+      await expect(
+        page.locator(".prompt-section noscript .notice"),
+      ).toContainText(handoff[lang]);
+      await page.locator(".prompt-box").focus();
+      await expect(page.locator(".prompt-box")).toBeFocused();
+    }
     await context.close();
   });
 }
@@ -304,14 +352,21 @@ for (const lang of ["en", "ko", "ja"] as const) {
 }
 
 for (const lang of ["en", "ko", "ja"] as const) {
-  test(`${lang}: home, builder and help fit all screen sizes and themes`, async ({
+  test(`${lang}: core pages and handoff fit all screen sizes and themes`, async ({
     page,
   }, testInfo) => {
     test.setTimeout(120_000);
     for (const width of [320, 768, 1440]) {
       await page.setViewportSize({ width, height: 900 });
       for (const theme of ["light", "dark"]) {
-        for (const path of ["", "start/", "help/", "ai/"]) {
+        for (const path of [
+          "",
+          "start/",
+          "help/",
+          "about/",
+          "ai/",
+          "start/v1/",
+        ]) {
           await page.goto(`/${lang}/${path}`);
           await page.evaluate((value) => {
             document.documentElement.dataset.theme = value;
@@ -321,11 +376,28 @@ for (const lang of ["en", "ko", "ja"] as const) {
               .locator("#service-description")
               .fill("Long input: " + "Book".repeat(80));
           await expect(page.locator(".site-header nav a")).toHaveCount(6);
+          await expect(
+            page.locator(".site-header .brand"),
+          ).toHaveAccessibleName("kickoff.md by jujin");
+          await expect(page.locator(".site-header .brand-name")).toContainText(
+            "kickoff.md",
+          );
           for (const link of await page.locator(".site-header nav a").all())
             await expect(link).toBeVisible();
           await expect(
             page.locator(`.site-header nav a[href="/${lang}/ai/"]`),
           ).toHaveText(identity[lang].ai);
+          await expect(page.locator(".site-footer")).toContainText(noAI[lang]);
+          await expect(page.locator(".site-footer")).toContainText(
+            handoff[lang],
+          );
+          if (path === "start/") {
+            const notice = page.locator(".prompt-builder > .site-notice");
+            await expect(notice).toContainText(noAI[lang]);
+            expect((await notice.boundingBox())!.y).toBeLessThan(
+              (await page.locator("#service-name").boundingBox())!.y,
+            );
+          }
           if (path === "") {
             await expect(page.locator(".hero .eyebrow")).toHaveText(
               identity[lang].learning,
@@ -333,6 +405,17 @@ for (const lang of ["en", "ko", "ja"] as const) {
             await expect(page.locator(".hero-handoff")).toContainText(
               handoff[lang],
             );
+            await expect(page.locator(".hero-handoff")).toContainText(
+              noAI[lang],
+            );
+            if (lang === "ko") {
+              await expect(page.locator(".hero h1")).toHaveText(
+                "AI에게 맡길 첫 작업, 내 프로젝트에 맞는 프롬프트로.",
+              );
+              await expect(
+                page.locator(".hero-actions .primary"),
+              ).toContainText("맞춤 프롬프트 만들기");
+            }
             const flow = page.getByRole("figure");
             await expect(flow).toBeVisible();
             await expect(flow).toHaveAccessibleName(/.+/);

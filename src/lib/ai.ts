@@ -1,4 +1,4 @@
-export const instructions = `# Kickoff by jujin — instructions for project assistants
+export const instructions = `# kickoff.md by jujin — instructions for project assistants
 
 These shared rules cover judgment, authority, and evidence. For new-project intake and planning, use https://kickoff.jujin.dev/ai/startup/latest.md. That startup document and this document are the only required site reading. Existing project instructions and higher-priority instructions still apply. Reference Markdown is English-only; reply in the user's language.
 

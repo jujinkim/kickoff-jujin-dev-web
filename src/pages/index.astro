@@ -1,4 +1,6 @@
 ---
+import { strings, siteName, siteTitle } from "../lib/i18n";
+const t = strings.en;
 ---
 
 <!doctype html>
@@ -7,7 +9,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href="https://kickoff.jujin.dev/en/" />
-    <title>Kickoff by jujin</title>
+    <title>{t.hero} · {siteTitle}</title>
+    <meta name="description" content={t.siteDescription} />
+    <meta property="og:title" content={t.hero} />
+    <meta property="og:description" content={t.siteDescription} />
+    <meta property="og:url" content="https://kickoff.jujin.dev/en/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteTitle} />
     <noscript>
       <meta http-equiv="refresh" content="0;url=/en/" />
     </noscript>
@@ -15,8 +23,9 @@
   <body>
     <main>
       <h1>
-        Kickoff <small>by jujin</small>
+        {siteName} <small>by jujin</small>
       </h1>
+      <p>{t.intro}</p>
       <p>Choose your language</p>
       <nav aria-label="Language">
         <a href="/en/" lang="en">
@@ -30,6 +39,9 @@
         </a>
       </nav>
     </main>
+    <footer class="site-footer">
+      <p>{t.siteNotice}</p>
+    </footer>
     <script>
       const controller = new AbortController();
       const timeout = window.setTimeout(() => controller.abort(), 1500);
@@ -81,13 +93,19 @@
     font-family: system-ui, sans-serif;
   }
   :global(body) {
-    margin: 0;
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-  }
-  main {
+    box-sizing: border-box;
+    max-width: 720px;
+    margin: 0 auto;
     padding: 24px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.6;
+  }
+  footer {
+    margin-top: 24px;
+    font-size: 0.9rem;
   }
   h1 {
     font-size: 28px;

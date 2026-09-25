@@ -1,5 +1,5 @@
 ---
-import { strings, type Lang } from "../lib/i18n";
+import { strings, siteTitle, type Lang } from "../lib/i18n";
 import { startupPrompt, startupText, startupVersion } from "../lib/startup";
 interface Props {
   lang: Lang;
@@ -14,13 +14,18 @@ const s = startupText[lang];
 
 <section class="prompt-section" aria-labelledby="startup-title">
   <p class="eyebrow">
-    provided by Kickoff by jujin ·{" "}
+    provided by {siteTitle} ·{" "}
     {version === "latest" ? `latest (${resolvedVersion})` : version}
   </p>
   <h2 id="startup-title">{s.title}</h2>
   <p>{s.intro}</p>
+  <p class="prompt-handoff">{t.promptHandoff}</p>
   <p>{t.promptLanguage}</p>
-  <pre class="prompt-box" id={promptId}>{startupPrompt(lang, version)}</pre>
+  <pre
+    class="prompt-box"
+    id={promptId}
+    tabindex="0"
+  >{startupPrompt(lang, version)}</pre>
   <button
     class="button primary"
     data-copy={promptId}
@@ -30,6 +35,9 @@ const s = startupText[lang];
     {t.copy} ⧉
   </button>
   <p role="status" aria-live="polite"></p>
+  <noscript>
+    <p class="notice">{t.copyNoScript}</p>
+  </noscript>
   <div class="resource-links">
     <a class="button" href={`/${lang}/start/${resolvedVersion}/`}>
       {s.read.replace("{version}", resolvedVersion)}

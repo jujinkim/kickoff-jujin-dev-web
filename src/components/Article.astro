@@ -136,8 +136,13 @@ const alternates = all
         {d.aiPrompt && !replacement && (
           <details class="prompt-section article-extra" data-pagefind-ignore>
             <summary>{t.copy}</summary>
+            <p class="prompt-handoff">{t.promptHandoff}</p>
             <p>{t.promptLanguage}</p>
-            <pre class="prompt-box" id="article-prompt">{d.aiPrompt}</pre>
+            <pre
+              class="prompt-box"
+              id="article-prompt"
+              tabindex="0"
+            >{d.aiPrompt}</pre>
             <button
               class="button primary"
               data-copy="article-prompt"
@@ -147,6 +152,9 @@ const alternates = all
               {t.copy} ⧉
             </button>
             <p role="status" aria-live="polite"></p>
+            <noscript>
+              <p class="notice">{t.copyNoScript}</p>
+            </noscript>
           </details>
         )}
         <details

@@ -1,7 +1,7 @@
 ---
 import Base from "../../../layouts/Base.astro";
 import StartupPrompt from "../../../components/StartupPrompt.astro";
-import { languages } from "../../../lib/i18n";
+import { languages, strings, siteTitle } from "../../../lib/i18n";
 import { startupText } from "../../../lib/startup";
 import { Content as English } from "../../../startup/v1/en.md";
 import { Content as Korean } from "../../../startup/v1/ko.md";
@@ -15,9 +15,10 @@ const Content = { en: English, ko: Korean, ja: Japanese }[lang];
 
 <Base lang={lang} title={`${t.title} · v1`} description={t.intro}>
   <section class="page-heading">
-    <p class="eyebrow">provided by Kickoff by jujin · v1</p>
+    <p class="eyebrow">provided by {siteTitle} · v1</p>
     <h1>{t.title}</h1>
     <p>{t.intro}</p>
+    <p class="site-notice">{strings[lang].siteNotice}</p>
   </section>
   <div class="guide-content">
     <StartupPrompt lang={lang} version="v1" />

@@ -15,7 +15,7 @@ export const builderText = {
       "Budget, schedule, preferred examples, or constraints. A blank means more clarification is needed.",
     preview: "Prompt preview",
     previewHint:
-      "This is a request to send to AI. Review it, then copy and paste it into your external AI tool to discuss requirements and architecture choices.",
+      "This is a request for your external AI tool. Review it, then copy and paste it into that tool to discuss requirements and architecture choices.",
     success:
       "Copied. Paste the prompt into your external AI tool to discuss the design.",
     copy: "Copy prompt",
@@ -44,7 +44,7 @@ export const builderText = {
       "예산, 일정, 마음에 드는 예시, 제약 등을 적으세요. 비워두면 추가 확인이 필요한 것으로 처리합니다.",
     preview: "프롬프트 미리보기",
     previewHint:
-      "AI에 전달할 요청문입니다. 내용을 확인하고 복사한 뒤 사용하는 외부 AI 도구에 붙여넣어 요구사항과 아키텍처 선택을 논의하세요.",
+      "외부 AI에 전달할 요청문입니다. 내용을 확인하고 복사한 뒤 사용하는 외부 AI 도구에 붙여넣어 요구사항과 아키텍처 선택을 논의하세요.",
     success: "복사 완료. 외부 AI 도구에 프롬프트를 붙여넣어 설계를 논의하세요.",
     copy: "프롬프트 복사",
     reset: "초기화",
@@ -72,7 +72,7 @@ export const builderText = {
       "予算、日程、好みの例、制約など。空欄は追加確認が必要なものとして扱います。",
     preview: "プロンプトのプレビュー",
     previewHint:
-      "AIに渡す依頼文です。内容を確認してコピーし、お使いの外部AIツールに貼り付けて要件とアーキテクチャの選択肢を話し合いましょう。",
+      "外部AIに渡す依頼文です。内容を確認してコピーし、お使いの外部AIツールに貼り付けて要件とアーキテクチャの選択肢を話し合いましょう。",
     success:
       "コピーしました。外部AIツールにプロンプトを貼り付けて設計を話し合いましょう。",
     copy: "プロンプトをコピー",

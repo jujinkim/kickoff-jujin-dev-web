@@ -1,14 +1,21 @@
 export const helpText = {
   en: {
     intro:
-      "Learn from examples here, prepare a first prompt, then discuss requirements and design with your external AI tool.",
-    flowTitle: "From this site to your AI tool",
+      "kickoff.md is an information site for preparing custom prompts and learning project planning. Use this guide to copy a prompt into your external AI tool and discuss your project there.",
+    flowTitle: "From kickoff.md to your external AI tool",
     flow: [
       {
-        place: "This site",
-        steps: ["Describe your service", "Review and copy the prompt"],
+        place: "kickoff.md",
+        steps: [
+          "Describe your service",
+          "Prepare your prompt",
+          "Review and copy",
+        ],
       },
-      { place: "External AI", steps: ["Paste it and discuss the design"] },
+      {
+        place: "External AI tool",
+        steps: ["Paste your prompt", "Discuss the plan", "Request work"],
+      },
     ],
     cards: [
       {
@@ -33,9 +40,9 @@ export const helpText = {
     goal: "Start by writing the actions you already know: listing a book, requesting a loan, and agreeing on a pickup. You can leave the name undecided and ask about unresolved rules, such as how long a loan lasts. The aim is a shared plan that you can review before development starts.",
     how: "How: move from an idea to an agreed plan",
     steps: [
-      "Open Create a prompt. Enter a service description: “Neighbors list books, request loans, and arrange a pickup.” This is the only required field. The name is optional; a blank becomes “Undecided”.",
+      "Have an external AI tool ready separately; kickoff.md does not provide one. Open Create a prompt on kickoff.md. Enter a service description: “Neighbors list books, request loans, and arrange a pickup.” This is the only required field. The name is optional; a blank becomes “Undecided”.",
       "Add considerations such as budget, schedule, or a preferred example. Leave unknowns blank: they become “Needs clarification”, not “no constraints”. The input stays on this page and is lost when you leave or reload.",
-      "Read the preview: it is a request to send to AI. Copy it and paste it into your external AI tool. The prompt requests the startup guidelines and AI behavior rules, the only two required site documents, and reuse of your inputs. If copying fails, select the preview and copy manually. With JavaScript off, append the three fields to the base prompt yourself, then paste the request into your external AI tool.",
+      "Read the preview: it is a request for your external AI tool. Copy it and paste it into that tool yourself. The prompt requests the startup guidelines and AI behavior rules, the only two required site documents, and reuse of your inputs. If copying fails, select the preview and copy manually. With JavaScript off, append the three fields to the base prompt yourself, then paste the request into your external AI tool.",
       "Ask AI to confirm it has read both documents. If a URL cannot be opened, use the Markdown or AI behavior rules link on the prompt page and paste the missing text into the conversation. Continue with service details; do not assume unread rules were applied. Optional catalog access failure alone does not stop planning.",
     ],
     agree: [
@@ -45,18 +52,24 @@ export const helpText = {
     ],
     what: "What: a prompt starts the conversation; a catalog supports decisions",
     roles:
-      "Kickoff provides learning resources and prompts. The first prompt carries your context and asks your external AI to explore detailed requirements and compare architecture choices; it is not a finished specification. AI conversations and development happen in that external tool. The catalog is optional material for learning and comparing concepts; Project planning provides practical walkthroughs to follow through examples. Your decision list comes from the service, not the category tree. Compatible choices can coexist.",
+      "kickoff.md provides learning resources and prompts. The first prompt carries your context and asks your external AI to explore detailed requirements and compare architecture choices; it is not a finished specification. AI conversations and development happen in that external tool. The catalog is optional material for learning and comparing concepts; Project planning provides practical walkthroughs to follow through examples. Your decision list comes from the service, not the category tree. Compatible choices can coexist.",
     categories: "Compare choices by category",
     categoryIntro:
       "Browse this optional index when an example helps. Each link opens a comparison group or subcategories, with examples, limits, and related reading. Neither you nor AI needs to review every category to plan a project.",
   },
   ko: {
     intro:
-      "이곳의 예시로 배우고 첫 프롬프트를 준비한 뒤, 사용하는 외부 AI 도구에서 요구사항과 설계를 논의하세요.",
-    flowTitle: "이 사이트에서 외부 AI로",
+      "kickoff.md는 맞춤 프롬프트 준비와 프로젝트 기획 학습을 돕는 정보 사이트입니다. 이 안내를 따라 프롬프트를 복사하고 외부 AI 도구에서 프로젝트를 논의하세요.",
+    flowTitle: "kickoff.md에서 외부 AI 도구로",
     flow: [
-      { place: "이 사이트", steps: ["서비스 설명 입력", "프롬프트 확인·복사"] },
-      { place: "외부 AI", steps: ["붙여넣고 설계 논의"] },
+      {
+        place: "kickoff.md",
+        steps: ["서비스 설명 입력", "프롬프트 준비", "확인·복사"],
+      },
+      {
+        place: "외부 AI 도구",
+        steps: ["프롬프트 붙여넣기", "기획 논의", "작업 요청"],
+      },
     ],
     cards: [
       {
@@ -81,9 +94,9 @@ export const helpText = {
     goal: "이미 알고 있는 동작부터 적으세요. 책 등록, 대여 요청, 수령 약속처럼 구체적이면 됩니다. 이름은 미정으로 두고, 대여 기간처럼 정하지 않은 규칙은 질문받을 수 있습니다. 개발 전에 함께 검토할 수 있는 기획을 만드는 것이 목표입니다.",
     how: "어떻게 해결하는가: 아이디어에서 합의된 기획까지",
     steps: [
-      "‘프롬프트 만들기’를 열고 서비스 설명을 입력하세요. 예: ‘이웃이 책을 등록하고 대여를 요청한 뒤 수령 약속을 잡습니다.’ 필수 입력은 서비스 설명뿐입니다. 이름은 선택이며, 비워두면 ‘미정’으로 표시됩니다.",
+      "사용할 외부 AI 도구를 별도로 준비하세요. kickoff.md는 AI 도구를 제공하지 않습니다. kickoff.md에서 ‘프롬프트 만들기’를 열고 서비스 설명을 입력하세요. 예: ‘이웃이 책을 등록하고 대여를 요청한 뒤 수령 약속을 잡습니다.’ 필수 입력은 서비스 설명뿐입니다. 이름은 선택이며, 비워두면 ‘미정’으로 표시됩니다.",
       "예산, 일정, 마음에 드는 예시를 참고사항에 적으세요. 모르는 내용은 비워둬도 됩니다. 빈 참고사항은 ‘제약 없음’이 아닌 ‘추가 확인 필요’가 됩니다. 입력은 현재 페이지에만 남으며 이동하거나 새로고침하면 사라집니다.",
-      "미리보기는 AI에 전달할 요청문입니다. 읽고 복사한 뒤 사용하는 외부 AI 도구에 붙여넣으세요. 필수 사이트 문서인 시작 지침·AI 행동 지침 두 개를 읽고 입력을 재사용하라는 요청이 포함됩니다. 복사가 실패하면 미리보기를 직접 선택해 복사하세요. JavaScript가 꺼져 있으면 기본 프롬프트에 세 항목을 직접 덧붙인 뒤 외부 AI 도구에 붙여넣으세요.",
+      "미리보기는 외부 AI에 전달할 요청문입니다. 읽고 복사한 뒤 사용하는 외부 AI 도구에 직접 붙여넣으세요. 필수 사이트 문서인 시작 지침·AI 행동 지침 두 개를 읽고 입력을 재사용하라는 요청이 포함됩니다. 복사가 실패하면 미리보기를 직접 선택해 복사하세요. JavaScript가 꺼져 있으면 기본 프롬프트에 세 항목을 직접 덧붙인 뒤 외부 AI 도구에 붙여넣으세요.",
       "AI가 두 문서를 읽었는지 확인하세요. URL을 열지 못하면 작성기 페이지의 Markdown 또는 AI 행동 지침 링크에서 빠진 본문을 대화에 붙여넣으세요. 서비스 정보를 이어서 전달하되, 읽지 못한 규칙이 적용됐다고 가정하지 마세요. 선택 자료인 카탈로그 접근 실패만으로 기획을 중단하지는 않습니다.",
     ],
     agree: [
@@ -93,21 +106,24 @@ export const helpText = {
     ],
     what: "무엇이라 부르는가: 대화를 여는 프롬프트와 선택을 돕는 카탈로그",
     roles:
-      "Kickoff는 학습 자료와 프롬프트를 제공합니다. 첫 프롬프트는 서비스의 맥락을 전달하고 외부 AI에게 세부 요구사항을 질문하고 아키텍처 선택지를 비교하도록 요청합니다. 완성된 명세서는 아니며, AI 대화와 개발은 해당 외부 도구에서 진행합니다. 카탈로그는 개념과 선택지를 배우고 비교하는 선택 참고자료이고, ‘프로젝트 기획’은 예시를 따라 배우는 실전 안내입니다. 결정 목록은 분류표가 아닌 서비스에서 도출합니다. 양립 가능한 선택은 함께 쓸 수 있습니다.",
+      "kickoff.md는 학습 자료와 프롬프트를 제공합니다. 첫 프롬프트는 서비스의 맥락을 전달하고 외부 AI에게 세부 요구사항을 질문하고 아키텍처 선택지를 비교하도록 요청합니다. 완성된 명세서는 아니며, AI 대화와 개발은 해당 외부 도구에서 진행합니다. 카탈로그는 개념과 선택지를 배우고 비교하는 선택 참고자료이고, ‘프로젝트 기획’은 예시를 따라 배우는 실전 안내입니다. 결정 목록은 분류표가 아닌 서비스에서 도출합니다. 양립 가능한 선택은 함께 쓸 수 있습니다.",
     categories: "분류별로 선택지 비교하기",
     categoryIntro:
       "예시가 도움 될 때 이 선택 참고 목차를 살펴보세요. 각 링크에서 비교 항목이나 하위 분류, 예시·한계·관련 글을 확인할 수 있습니다. 기획을 위해 사용자나 AI가 모든 분류를 검토할 필요는 없습니다.",
   },
   ja: {
     intro:
-      "このサイトの例で学び、最初のプロンプトを準備してから、お使いの外部AIツールで要件と設計を話し合いましょう。",
-    flowTitle: "このサイトから外部AIへ",
+      "kickoff.mdは自分に合うプロンプトの準備とプロジェクト企画の学習を助ける情報サイトです。このガイドに沿ってプロンプトをコピーし、外部AIツールでプロジェクトを話し合いましょう。",
+    flowTitle: "kickoff.mdから外部AIツールへ",
     flow: [
       {
-        place: "このサイト",
-        steps: ["サービスの説明を入力", "プロンプトを確認・コピー"],
+        place: "kickoff.md",
+        steps: ["サービスの説明を入力", "プロンプトを準備", "確認・コピー"],
       },
-      { place: "外部AI", steps: ["貼り付けて設計を相談"] },
+      {
+        place: "外部AIツール",
+        steps: ["プロンプトを貼り付け", "企画を相談", "作業を依頼"],
+      },
     ],
     cards: [
       {
@@ -132,9 +148,9 @@ export const helpText = {
     goal: "本の登録、貸し出しの依頼、受け取りの約束など、わかっている動作から書きましょう。名前は未定でもよく、貸出期間など決まっていない規則は質問してもらえます。開発前に一緒に確認できる企画を作ることが目標です。",
     how: "どう解決するのか：アイデアから合意した企画へ",
     steps: [
-      "「プロンプトを作る」を開き、サービスの説明を入力します。例：「近所の人が本を登録し、貸し出しを依頼して受け取りを約束します」。必須なのは説明だけです。名前は任意で、空欄なら「未定」になります。",
+      "使用する外部AIツールは別途ご自身で用意してください。kickoff.mdはAIツールを提供しません。kickoff.mdで「プロンプトを作る」を開き、サービスの説明を入力します。例：「近所の人が本を登録し、貸し出しを依頼して受け取りを約束します」。必須なのは説明だけです。名前は任意で、空欄なら「未定」になります。",
       "予算、日程、好みの例を参考事項に書きます。不明なことは空欄でも構いません。空欄は「制約なし」ではなく「追加確認が必要」になります。入力は現在のページだけに残り、移動や再読み込みで消えます。",
-      "プレビューはAIに渡す依頼文です。読んでコピーし、お使いの外部AIツールに貼り付けます。必須のサイト文書である開始ガイドラインとAI行動規則の二つを読み、入力を再利用する依頼も含まれます。コピーに失敗したらプレビューを選択して手動でコピーします。JavaScriptが無効なら基本プロンプトに三つの項目を追記し、外部AIツールに貼り付けます。",
+      "プレビューは外部AIに渡す依頼文です。読んでコピーし、お使いの外部AIツールに自分で貼り付けます。必須のサイト文書である開始ガイドラインとAI行動規則の二つを読み、入力を再利用する依頼も含まれます。コピーに失敗したらプレビューを選択して手動でコピーします。JavaScriptが無効なら基本プロンプトに三つの項目を追記し、外部AIツールに貼り付けます。",
       "AIが二つの文書を読んだか確認します。URLを開けなければ、作成ページのMarkdownかAI行動規則のリンクから不足する本文を会話に貼り付けます。サービス情報を続けて伝え、未読の規則が適用済みだと思い込まないでください。任意のカタログにアクセスできないことだけでは企画を止めません。",
     ],
     agree: [
@@ -144,7 +160,7 @@ export const helpText = {
     ],
     what: "どんな考え方なのか：会話を始めるプロンプトと選択を助けるカタログ",
     roles:
-      "Kickoffは学習資料とプロンプトを提供します。最初のプロンプトは背景を伝え、外部AIに詳しい要件を質問し、アーキテクチャの選択肢を比較するよう依頼します。完成した仕様書ではなく、AIとの会話や開発はその外部ツールで進めます。カタログは概念と選択肢を学んで比較する任意の参考資料で、「プロジェクト企画」は例に沿って学ぶ実践ガイドです。判断の一覧は分類表ではなくサービスから導きます。両立する選択は組み合わせられます。",
+      "kickoff.mdは学習資料とプロンプトを提供します。最初のプロンプトは背景を伝え、外部AIに詳しい要件を質問し、アーキテクチャの選択肢を比較するよう依頼します。完成した仕様書ではなく、AIとの会話や開発はその外部ツールで進めます。カタログは概念と選択肢を学んで比較する任意の参考資料で、「プロジェクト企画」は例に沿って学ぶ実践ガイドです。判断の一覧は分類表ではなくサービスから導きます。両立する選択は組み合わせられます。",
     categories: "分類ごとに選択肢を比較する",
     categoryIntro:
       "例が役立つときに、この任意の索引を参照してください。各リンクで比較項目や下位分類、例・限界・関連記事を確認できます。企画のためにユーザーやAIが全分類を検討する必要はありません。",

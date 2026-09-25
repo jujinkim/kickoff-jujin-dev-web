@@ -1,10 +1,16 @@
-# Kickoff by jujin
+# kickoff.md by jujin
 
-A multilingual information site for learning project planning, design, and technology choices through examples. The catalog supports learning and comparison; Project planning offers practical walkthroughs. The main action is **Create a prompt for AI**: prepare a request here, then paste it into your external AI tool to discuss detailed requirements and compare architecture choices. Kickoff provides learning resources and prompts; AI conversations and development happen in the external tool.
+**Your first task for AI, with a prompt that fits your project.**
+
+kickoff.md is a multilingual information site for preparing custom prompts and learning project planning, design, and technology choices through examples. The main action is **Create a custom prompt**. The catalog supports learning and comparison; Project planning offers practical walkthroughs.
+
+**kickoff.md does not provide an AI service.** Prepare your prompt here, then copy and paste it into an external AI tool you arrange separately to continue the conversation and work. The homepage, prompt builder, help, about page, instructions, copy guidance, footer, and search/share metadata make this handoff explicit.
 
 Built with **Astro, TypeScript, and Markdown**. No React, CMS, translation API, or built-in AI chat. Public origin: **https://kickoff.jujin.dev/**.
 
-This repository owns Kickoff only. The personal development hub on `jujin.dev` is a separate project. Article paths, guideline versions, comment identities, and API schema v1 stay stable within Kickoff; old pre-release URLs on `jujin.dev` have no compatibility layer. See [domain and publishing notes](docs/domain-split.md).
+`kickoff.md` is the display name, not a new domain. The repository, public origin, and existing URLs are unchanged.
+
+This repository owns kickoff.md only. The personal development hub on `jujin.dev` is a separate project. Article paths, guideline versions, comment identities, and API schema v1 stay stable within kickoff.md; old pre-release URLs on `jujin.dev` have no compatibility layer. See [domain and publishing notes](docs/domain-split.md).
 
 ## Local development
 
@@ -50,7 +56,7 @@ Every article supplies kind, title, summary, category, multilingual aliases, rel
 | Home                          | `/en/`, `/ko/`, `/ja/` (root goes to English)             |
 | Prompt builder                | `/{lang}/start/`                                          |
 | How to use                    | `/{lang}/help/`                                           |
-| Instructions for AI           | `/{lang}/ai/`                                             |
+| Instructions for external AI  | `/{lang}/ai/`                                             |
 | Catalog                       | `/{lang}/catalog/`                                        |
 | Concept                       | `/{lang}/catalog/{articleId}/`                            |
 | Category                      | `/{lang}/catalog/categories/{categoryId}/`                |

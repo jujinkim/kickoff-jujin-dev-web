@@ -84,14 +84,16 @@ test("keyboard navigation, copy and AI lookup complete the reader flow", async (
   await page.locator(".prompt-section summary").click();
   await page.locator("[data-copy]").click();
   await expect(page.locator(".prompt-section [role=status]")).toHaveText(
-    "Copied",
+    "Copied. Paste the text into your external AI tool to continue.",
   );
   expect(await page.evaluate(() => navigator.clipboard.readText())).toContain(
     "Ask only about unresolved product behavior",
   );
   await page.goto("/en/ai/");
   await page.locator("[data-copy]").click();
-  await expect(page.locator("[role=status]")).toHaveText("Copied");
+  await expect(page.locator("[role=status]")).toHaveText(
+    "Copied. Paste the text into your external AI tool to continue.",
+  );
   const catalog = await (await request.get("/ai/catalog.json")).json();
   const article = catalog.articles.find((a: any) =>
     a.translations.ko.aliases.includes("요구사항"),

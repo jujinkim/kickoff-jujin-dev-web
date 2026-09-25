@@ -1,6 +1,13 @@
 ---
 import "../styles/global.css";
-import { languages, languageNames, strings, type Lang } from "../lib/i18n";
+import {
+  languages,
+  languageNames,
+  strings,
+  siteName,
+  siteTitle,
+  type Lang,
+} from "../lib/i18n";
 interface Props {
   lang: Lang;
   title: string;
@@ -27,7 +34,7 @@ const absolute = (url: string) =>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} · Kickoff by jujin</title>
+    <title>{title} · {siteTitle}</title>
     <meta name="description" content={description} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href={absolute(path)} />
@@ -43,7 +50,7 @@ const absolute = (url: string) =>
     <meta property="og:description" content={description} />
     <meta property="og:url" content={absolute(path)} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Kickoff by jujin" />
+    <meta property="og:site_name" content={siteTitle} />
     <meta name="color-scheme" content="light dark" />
     <script is:inline>
       try {
@@ -66,12 +73,13 @@ const absolute = (url: string) =>
     </a>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href={`/${lang}/`} aria-label="Kickoff by jujin">
+        <a class="brand" href={`/${lang}/`} aria-label={siteTitle}>
           <span class="brand-mark" aria-hidden="true">
             k.
           </span>
           <span class="brand-name">
-            Kickoff<small>by jujin</small>
+            {siteName}
+            <small>by jujin</small>
           </span>
         </a>
         <nav aria-label={t.navigation}>
@@ -141,9 +149,10 @@ const absolute = (url: string) =>
     <footer class="site-footer">
       <div>
         <a class="brand" href={`/${lang}/`}>
-          Kickoff<span class="accent-dot">●</span>
+          {siteName}
+          <span class="accent-dot">●</span>
         </a>
-        <p>{t.footer}</p>
+        <p>{t.siteNotice}</p>
       </div>
       <div class="footer-links">
         <a href="https://jujin.dev">jujin.dev ↗</a>

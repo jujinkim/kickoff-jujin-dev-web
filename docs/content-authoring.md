@@ -4,18 +4,36 @@ This guide describes the authoring workflow. Design implementation follows [Desi
 
 ## Site identity and handoff copy
 
-Kickoff is an information site for learning project planning, design, and
-technology choices. Explain the catalog as material for learning and comparing
-concepts and choices; explain Project planning as practical walkthroughs that
+Use the display name **kickoff.md**, with **by jujin** where credited. The public
+origin remains `https://kickoff.jujin.dev`; do not treat the display name as a new
+domain or change repository names, routes, IDs, or comment keys. Shared brand
+labels live in `src/lib/i18n.ts`.
+
+kickoff.md is an information site for preparing custom prompts and learning project
+planning, design, and technology choices. Lead with custom prompt preparation,
+then introduce learning resources. Explain the catalog as material for learning
+and comparing concepts and choices; explain Project planning as practical walkthroughs that
 readers follow through examples. Keep category-first browsing.
 
-Prompt creation remains the main action. A prompt is a request for the user's
+The approved Korean slogan is **“AI에게 맡길 첫 작업, 내 프로젝트에 맞는 프롬프트로.”**
+Keep it unchanged; preserve its meaning in English and Japanese. The primary
+Korean action is **“맞춤 프롬프트 만들기”** and the AI menu is **“외부 AI용 지침”**.
+Keep shared interface copy in the existing localized string modules.
+
+Prompt creation remains the main action. Explicitly state on core screens and
+in the shared footer that **kickoff.md does not provide an AI service**. Do not add
+a global top banner. Users need to prepare an external AI tool separately and
+paste copied prompts there themselves. A prompt is a request for the user's
 external AI tool to ask about detailed requirements and compare architecture
-choices. Kickoff provides resources and prepares that request in the browser;
+choices. kickoff.md provides resources and prepares that request in the browser;
 AI conversations, design discussion, and development happen in the external
-tool. Make the location explicit in home diagrams, preview descriptions, copy
-success/failure guidance, manual-copy and JavaScript-disabled instructions,
-about/footer text, and search/share metadata. Expose diagram labels to assistive
+tool. Show the handoff as **kickoff.md: input, prompt preparation, copy → external
+AI tool: paste, planning discussion, work**. Make the location explicit in home
+diagrams, preview descriptions, copy success/failure guidance, manual-copy and
+JavaScript-disabled instructions,
+versioned guidelines, article copy areas, about/footer text, and search/share
+metadata (including the root language entry). Keep individual article metadata
+focused on its subject. Expose diagram labels to assistive
 technology; color alone cannot identify where an action happens. Never imply
 that this site generates AI answers or builds a project.
 
