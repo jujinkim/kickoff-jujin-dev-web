@@ -9,10 +9,10 @@ aliases: ["Astro", "Hugo", "Jekyll", "SSG", "정적 사이트", "静的サイト
 related: ["tools", "shipping", "adr"]
 example: "generators"
 status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-aiPrompt: "確定した執筆手順に対してAstro・Hugo・Jekyllを比較して。多言語、実例、検索、配信の方法と保守費用、公式資料を示して。構成変更前に推薦の採用・却下・別候補を質問して。"
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
+aiPrompt: "合意した執筆手順と制約を基に適切な静的サイト生成器を比較し、関連する場合はAstro・Hugo・Jekyllを含めて。執筆・プレビュー・ホスティング・保守の必要性を比較し、言語・検索・対話機能は要件の範囲内だけ検討して。公式資料を使い、不確実な事実や変動する事実を示して。確定済みの構成を保ち、未決定の選択は推薦と代案を説明して変更前に判断を求めて。"
 checked: "2026-09-23"
 ---
 

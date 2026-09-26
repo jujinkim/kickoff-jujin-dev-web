@@ -3,7 +3,7 @@ kind: concept
 articleId: tactile-collage
 lang: ja
 title: 触感的コラージュ
-summary: 同じプロジェクト作業室でスタイルを比較.
+summary: "紙片・テープ・注釈で、旅の思い出ボードを手で集めて貼ったように表現します。"
 category: styles
 aliases:
   - 触感的コラージュ
@@ -12,9 +12,9 @@ related:
   - skeuomorphism
   - neobrutalism
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
 comparison:
   features: 紙片・テープ・不揃いな縁・注釈を重ねます。
   advantages: 素材の手掛かりで気軽なボードに個性を加えます。

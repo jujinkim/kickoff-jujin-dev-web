@@ -3,7 +3,7 @@ kind: concept
 articleId: serif
 lang: ja
 title: セリフ
-summary: 同じ文字・文章・数字で書体を比較。
+summary: "文字の端の飾りで歴史雑誌に印刷物らしい印象を与え、言語ごとの実際の字形も確認します。"
 category: type-shapes
 aliases:
   - セリフ
@@ -12,9 +12,9 @@ related:
   - sans-serif
   - script
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: セリフは線の端に仕上げの飾りを持ちます。
   advantages: 端の装飾が同じ見本に異なる質感を与えます。

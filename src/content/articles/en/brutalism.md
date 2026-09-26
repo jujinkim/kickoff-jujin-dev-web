@@ -3,7 +3,7 @@ kind: concept
 articleId: brutalism
 lang: en
 title: Brutalism
-summary: Explore the same project workspace.
+summary: "Expose rules and links for a repair-day board with a deliberately rough, utilitarian voice."
 category: styles
 aliases:
   - Brutalism
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-23"
+revision: 10
+sourceRevision: 10
+updated: "2026-09-26"
 comparison:
   features: >-
     Exposed rules and raw typography make structure visible. Raw rules and

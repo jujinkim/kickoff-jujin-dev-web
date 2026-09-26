@@ -3,6 +3,11 @@ import { startupPrompt } from "./startup";
 
 export const builderText = {
   en: {
+    optionalFields: "Name and considerations (optional)",
+    descriptionExample:
+      "Example: Neighbors list books they can lend, request a loan, and check when each book is due back.",
+    references: "Guidelines and versions",
+
     name: "Service name",
     description: "Service description",
     notes: "Considerations",
@@ -33,6 +38,11 @@ export const builderText = {
       "Reuse the information already provided above. Ask about unresolved choices; do not interpret blank considerations as no constraints. Derive necessary decisions from requirements and constraints, including options outside this site, then prepare a concrete project plan. Confirm the plan with me and begin building after an explicit development request; honor existing approval and authorization without asking again.",
   },
   ko: {
+    optionalFields: "이름·참고사항 (선택)",
+    descriptionExample:
+      "예: 이웃이 빌려줄 책을 등록하고, 대여를 요청하며, 책마다 반납일을 확인하는 서비스입니다.",
+    references: "지침·버전 자료",
+
     name: "서비스 이름",
     description: "서비스 설명",
     notes: "참고사항",
@@ -61,6 +71,11 @@ export const builderText = {
       "위에서 이미 제공한 정보를 재사용하세요. 미결정 사항을 질문하고, 빈 참고사항을 제약이 없다는 뜻으로 해석하지 마세요. 요구사항과 제약에서 필요한 결정을 도출하고 사이트 밖 선택지도 검토한 뒤 구체적인 프로젝트 기획을 작성하세요. 저와 기획을 확정하고 명시적인 개발 요청 후 개발하되, 기존 승인과 권한은 다시 묻지 말고 존중하세요.",
   },
   ja: {
+    optionalFields: "名前・参考事項（任意）",
+    descriptionExample:
+      "例：近所の人が貸せる本を登録し、貸出を申し込み、本ごとの返却日を確認するサービスです。",
+    references: "ガイドライン・バージョン資料",
+
     name: "サービス名",
     description: "サービスの説明",
     notes: "参考事項",

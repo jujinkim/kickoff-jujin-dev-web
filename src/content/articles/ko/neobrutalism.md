@@ -3,7 +3,7 @@ kind: concept
 articleId: neobrutalism
 lang: ko
 title: 네오브루탈리즘
-summary: 같은 프로젝트 작업실로 스타일 비교.
+summary: "학교 축제의 할 일을 선명한 색면·굵은 테두리·단단한 그림자로 묶어 강하게 강조합니다."
 category: styles
 aliases:
   - 네오브루탈리즘
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: "선명한 색면, 굵은 테두리, 단단한 오프셋 그림자로 강조합니다. 두꺼운 테두리와 단단한 그림자로 패널을 강조합니다."
   advantages: 강한 색면이 작업과 동작을 강조합니다.

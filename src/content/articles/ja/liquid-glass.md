@@ -3,7 +3,7 @@ kind: concept
 articleId: liquid-glass
 lang: ja
 title: Liquid Glass
-summary: 同じプロジェクト作業室でスタイルを比較.
+summary: "写真日記の画像の場所を保ち、その上に小さく浮かび展開できるナビ層を置きます。"
 category: styles
 aliases:
   - Liquid Glass
@@ -12,9 +12,9 @@ related:
   - glassmorphism
   - flat-design
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: 浮遊カプセル・反射する縁・広がるツールで操作層をコンテンツと分けます。
   advantages: 軽い操作層で背景の文脈を保ちます。

@@ -3,7 +3,7 @@ kind: concept
 articleId: sans-serif
 lang: en
 title: Sans serif
-summary: Compare the same text specimen.
+summary: "Use plain transit labels; check weight and ambiguous glyphs."
 category: type-shapes
 aliases:
   - Sans serif
@@ -12,9 +12,9 @@ related:
   - serif
   - script
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-23"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-26"
 comparison:
   features: >-
     Sans-serif letters omit serifs, but their terminals and proportions still

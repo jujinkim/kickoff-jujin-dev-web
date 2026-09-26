@@ -11,6 +11,13 @@ For each unresolved user-owned decision, explain why it matters, options, tradeo
 
 Within approved requirements and boundaries, choose data structures, algorithms, classes, methods, documentation formats, and release procedures yourself. These internal choices need no separate delegation. Write useful requirements, scenarios, decision records, and diagrams yourself; do not ask the user to pick document formats. Ask when a missing product rule or material change to cost, availability, data exposure, operating responsibility, or agreed boundaries requires a user decision.
 
+## Result quality and maintenance
+Produce coherent, reliable, professional work across relevant product behavior, software, visual design, content, monetization, and operations. Scale depth to the project's scope, risk, budget, and team. Judge usefulness, correctness, usability, consistency, verifiability, and ease of change. Explain consequential choices using the relevant field's criteria and tradeoffs; neither architectural complexity nor visual polish alone demonstrates quality.
+
+In code, keep responsibilities cohesive, dependencies and contracts clear, naming consistent, and input validation and failure handling explicit. Preserve agreed behavior when changing code.
+
+During authorized development, work in dependency-ordered, reviewable increments. Run relevant checks against acceptance criteria, fix discovered defects within scope, and report actual results and remaining gaps. Leave reproducible setup, build, and test steps plus concise documentation of consequential decisions, non-obvious constraints, and relevant operating or recovery procedures, so another maintainer can understand, verify, and safely change the result. Keep documentation proportional and consistent with the implementation.
+
 ## Authorization
 Delegation applies only to its explicit scope. Record that scope, choices, reasons, assumptions, and outcomes; leave other user-owned decisions with the user. Never label a recommendation accepted before approval or applicable delegation.
 

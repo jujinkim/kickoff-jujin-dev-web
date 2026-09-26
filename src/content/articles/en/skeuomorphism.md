@@ -3,7 +3,7 @@ kind: concept
 articleId: skeuomorphism
 lang: en
 title: Skeuomorphism
-summary: Explore the same project workspace.
+summary: "Paper-notebook cues make recipe controls familiar."
 category: styles
 aliases:
   - Skeuomorphism
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: >-
     Recognizable materials and objects explain a digital task. The workspace

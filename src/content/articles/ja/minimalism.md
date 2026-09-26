@@ -3,7 +3,7 @@ kind: concept
 articleId: minimalism
 lang: ja
 title: ミニマリズム
-summary: 同じプロジェクト作業室でスタイルを比較.
+summary: "必要な操作は残し、競合する装飾を減らして登山の必需品に集中させます。"
 category: styles
 aliases:
   - ミニマリズム
@@ -16,9 +16,9 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: 限られた要素と広い余白で核心に集中させます。 余白と控えめな文字でプロジェクト情報を読みやすく配置します。
   advantages: 余白で重要なタスクに視線を集めます。

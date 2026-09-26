@@ -3,7 +3,7 @@ kind: concept
 articleId: glassmorphism
 lang: ja
 title: グラスモーフィズム
-summary: 同じプロジェクト作業室でスタイルを比較.
+summary: "写真散歩の景色をすりガラス状のカード越しに残し、読みにくい場合は不透明表示に替えます。"
 category: styles
 aliases:
   - グラスモーフィズム
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-23"
+revision: 10
+sourceRevision: 10
+updated: "2026-09-26"
 comparison:
   features: 半透明のパネル越しにぼかした背景が見えます。 不透明パネルを選ぶと半透明の面を単色に替えます。
   advantages: 半透明パネルが背景の文脈を保ちます。

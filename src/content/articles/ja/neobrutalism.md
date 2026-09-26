@@ -3,7 +3,7 @@ kind: concept
 articleId: neobrutalism
 lang: ja
 title: ネオブルータリズム
-summary: 同じプロジェクト作業室でスタイルを比較.
+summary: "学園祭の作業を鮮やかな色面・太い枠・硬い影でまとめ、強く目立たせます。"
 category: styles
 aliases:
   - ネオブルータリズム
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: 鮮やかな色面、太い枠、硬いオフセット影で強調します。 太い枠と硬い影でパネルを強調します。
   advantages: 強い色面でタスクと操作を強調します。

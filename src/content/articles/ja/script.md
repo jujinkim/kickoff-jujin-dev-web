@@ -3,7 +3,7 @@ kind: concept
 articleId: script
 lang: ja
 title: スクリプト
-summary: 同じ文字・文章・数字で書体を比較。
+summary: "短い招待状の見出しに手書きの挨拶を添え、長い文章には簡潔な書体を使います。"
 category: type-shapes
 aliases:
   - スクリプト
@@ -12,9 +12,9 @@ related:
   - serif
   - sans-serif
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: スクリプト書体は手書きの線やつながりを借ります。
   advantages: 手書きの線が短い文章に表情を加えます。

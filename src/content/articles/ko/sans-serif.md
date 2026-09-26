@@ -3,7 +3,7 @@ kind: concept
 articleId: sans-serif
 lang: ko
 title: 산세리프
-summary: 같은 글자·문장·숫자로 서체 비교.
+summary: "교통 안내에 간결한 글자 형태를 쓰고 굵기와 혼동하기 쉬운 글자를 확인합니다."
 category: type-shapes
 aliases:
   - 산세리프
@@ -12,9 +12,9 @@ related:
   - serif
   - script
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-23"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-26"
 comparison:
   features: 산세리프는 세리프 장식이 없지만 획 끝과 비율은 다양합니다.
   advantages: 크기와 굵기로 같은 표본에 위계를 만듭니다.

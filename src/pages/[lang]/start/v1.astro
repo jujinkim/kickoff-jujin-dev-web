@@ -25,10 +25,16 @@ const Content = { en: English, ko: Korean, ja: Japanese }[lang];
     <div class="prose">
       <Content />
     </div>
-    <section>
+    <section class="version-history">
       <h2>{t.versions}</h2>
       <p>{t.history}</p>
       <a href={`/${lang}/start/`}>{t.versions} →</a>
     </section>
   </div>
 </Base>
+
+<style>
+  .version-history {
+    overflow-wrap: anywhere;
+  }
+</style>

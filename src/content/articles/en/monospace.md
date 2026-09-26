@@ -3,7 +3,7 @@ kind: concept
 articleId: monospace
 lang: en
 title: Monospace
-summary: Compare the same text specimen.
+summary: "Align a weather log’s Latin text columns with equal character advances, checking fallback glyphs."
 category: character-width
 aliases:
   - Monospace
@@ -11,9 +11,9 @@ related:
   - theme
   - proportional
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: >-
     Monospaced Latin glyphs share an advance width even when their ink shapes

@@ -3,7 +3,7 @@ kind: concept
 articleId: monospace
 lang: ja
 title: 等幅
-summary: 同じ文字・文章・数字で書体を比較。
+summary: "同じ送り幅で天気記録のラテン文字の列を揃え、代替文字の幅も確認します。"
 category: character-width
 aliases:
   - 等幅
@@ -11,9 +11,9 @@ related:
   - theme
   - proportional
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: 等幅ラテン文字は輪郭が違っても送り幅を共有します。
   advantages: 同じラテン送り幅がコードと資料の列を揃えます。

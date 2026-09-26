@@ -12,9 +12,9 @@ related:
   - static-hosting
   - serverless-functions
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 checked: "2026-09-22"
 comparison:
   features: 장기 실행 요청 대기 프로세스
@@ -26,7 +26,7 @@ comparison:
 
 ## 왜 필요한가
 
-독자가 운영 시간 내내 목록을 저장하는 도서관 앱을 만든다고 가정해 봅시다. 방문 사이에도 요청과 저장 기록을 다뤄야 하므로, 운영팀은 계속 요청을 받는 프로세스를 관리하기로 합니다.
+독자가 글을 읽고 읽기 목록을 저장하는 도서관 앱을 만든다고 가정해 봅시다. 운영팀은 계속 요청을 받는 프로세스와 재시작을 직접 제어해야 합니다. 개별 호출 단위의 관리로는 그 요구를 충족하지 못합니다. 기록 저장만으로 이 방식을 택할 이유가 되지는 않습니다.
 
 ## 어떻게 해결하는가
 

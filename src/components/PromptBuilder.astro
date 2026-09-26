@@ -15,50 +15,65 @@ const t = builderText[lang];
   data-lang={lang}
   data-success={t.success}
 >
-  <p class="notice site-notice">{strings[lang].siteNotice}</p>
+  <p class="notice site-notice">{strings[lang].builderNotice}</p>
   <div data-editor hidden>
     <div class="prompt-fields">
-      <div>
-        <label for="service-name">
-          {t.name} <small>({t.optional})</small>
-        </label>
-        <p id="name-hint">{t.nameHint}</p>
-        <input
-          id="service-name"
-          type="text"
-          autocomplete="off"
-          aria-describedby="name-hint"
-        />
-      </div>
       <div>
         <label for="service-description">
           {t.description} <small>({t.required})</small>
         </label>
         <p id="description-hint">{t.descriptionHint}</p>
+        <p id="description-example">{t.descriptionExample}</p>
         <textarea
           id="service-description"
           rows="4"
           required
           autocomplete="off"
-          aria-describedby="description-hint prompt-validation"
+          aria-describedby="description-hint description-example prompt-validation"
         ></textarea>
       </div>
-      <div>
-        <label for="service-notes">
-          {t.notes} <small>({t.optional})</small>
-        </label>
-        <p id="notes-hint">{t.notesHint}</p>
-        <textarea
-          id="service-notes"
-          rows="3"
-          autocomplete="off"
-          aria-describedby="notes-hint"
-        ></textarea>
-      </div>
+      <details class="optional-fields">
+        <summary>{t.optionalFields}</summary>
+        <div>
+          <label for="service-name">
+            {t.name} <small>({t.optional})</small>
+          </label>
+          <p id="name-hint">{t.nameHint}</p>
+          <input
+            id="service-name"
+            type="text"
+            autocomplete="off"
+            aria-describedby="name-hint"
+          />
+        </div>
+        <div>
+          <label for="service-notes">
+            {t.notes} <small>({t.optional})</small>
+          </label>
+          <p id="notes-hint">{t.notesHint}</p>
+          <textarea
+            id="service-notes"
+            rows="3"
+            autocomplete="off"
+            aria-describedby="notes-hint"
+          ></textarea>
+        </div>
+      </details>
     </div>
     <p class="notice">{t.privacy}</p>
-    <p>{strings[lang].promptLanguage}</p>
-    <label for="prompt-preview">{t.preview}</label>
+    <div class="preview-heading">
+      <label for="prompt-preview">{t.preview}</label>
+      <button
+        type="button"
+        class="button primary"
+        data-copy-prompt
+        disabled
+        aria-describedby="prompt-validation"
+      >
+        {t.copy} ⧉
+      </button>
+    </div>
+    <p role="status" aria-live="polite" aria-atomic="true"></p>
     <p id="prompt-preview-hint">{t.previewHint}</p>
     <textarea
       id="prompt-preview"
@@ -69,20 +84,10 @@ const t = builderText[lang];
     ></textarea>
     <p id="prompt-validation">{t.missing}</p>
     <div class="resource-links">
-      <button
-        type="button"
-        class="button primary"
-        data-copy-prompt
-        disabled
-        aria-describedby="prompt-validation"
-      >
-        {t.copy} ⧉
-      </button>
       <button type="button" class="button" data-reset-prompt>
         {t.reset}
       </button>
     </div>
-    <p role="status" aria-live="polite" aria-atomic="true"></p>
   </div>
   <noscript>
     <p class="notice">{t.noScript}</p>
@@ -122,7 +127,7 @@ const t = builderText[lang];
     root.querySelector("[data-reset-prompt]")!.addEventListener("click", () => {
       name.value = description.value = notes.value = "";
       update();
-      name.focus();
+      description.focus();
     });
     copy.addEventListener("click", async () => {
       if (!preview.value) return;

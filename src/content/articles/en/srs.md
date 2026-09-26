@@ -18,10 +18,10 @@ aliases:
 related: ["architecture", "shipping"]
 example: "spec"
 status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-aiPrompt: "Read our agreed requirements. Ask only about unresolved product behavior and constraints, including duplicate handling, order, stock, guest checkout and recovery. Turn the answers into numbered requirements, acceptance criteria and tasks. Write useful user stories, use cases or job stories yourself, without asking me to choose a document format. Record significant decisions, alternatives, status and revisit conditions. Choose internal data structures yourself; do not infer missing product rules."
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
+aiPrompt: "Read our agreed project context and requirements. Ask only about unresolved product behavior and constraints relevant to this project. Walk through an ordinary action, success, failure, and repetition where applicable; do not assume a shop or checkout. Turn the answers into numbered requirements, acceptance criteria, and tasks. Choose useful scenario and document formats yourself. Record significant decisions, alternatives, status, and revisit conditions. Choose internal data structures yourself; do not infer missing product rules."
 ---
 
 ## Why: the goal or problem

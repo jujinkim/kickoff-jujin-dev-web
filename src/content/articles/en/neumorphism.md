@@ -3,7 +3,7 @@ kind: concept
 articleId: neumorphism
 lang: en
 title: Neumorphism
-summary: Explore the same project workspace.
+summary: "Soft pressed surfaces suit small trackers."
 category: styles
 aliases:
   - Neumorphism
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: >-
     Same-tone surfaces use upper-left highlights and lower-right shadows,

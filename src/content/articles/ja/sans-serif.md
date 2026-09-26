@@ -3,7 +3,7 @@ kind: concept
 articleId: sans-serif
 lang: ja
 title: サンセリフ
-summary: 同じ文字・文章・数字で書体を比較。
+summary: "交通案内に簡潔な字形を使い、太さや見分けにくい文字を確認します。"
 category: type-shapes
 aliases:
   - サンセリフ
@@ -12,9 +12,9 @@ related:
   - serif
   - script
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-23"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-26"
 comparison:
   features: サンセリフはセリフの飾りを省きますが、端の形や比率はさまざまです。
   advantages: サイズと太さで同じ見本に階層を作ります。

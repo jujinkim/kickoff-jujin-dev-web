@@ -3,7 +3,7 @@ kind: concept
 articleId: brutalism
 lang: ja
 title: ブルータリズム
-summary: 同じプロジェクト作業室でスタイルを比較.
+summary: "修理イベントの案内板で区切り線とリンクを露出し、粗く実用的な印象を伝えます。"
 category: styles
 aliases:
   - ブルータリズム
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-23"
+revision: 10
+sourceRevision: 10
+updated: "2026-09-26"
 comparison:
   features: 露出した罫線と無骨な文字が構造を示します。 太い区切りと下線付きメニューで構造を示します。
   advantages: むき出しの区切り線でタスクの境界を示します。

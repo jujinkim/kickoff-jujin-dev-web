@@ -3,7 +3,7 @@ kind: concept
 articleId: liquid-glass
 lang: ko
 title: Liquid Glass
-summary: 같은 프로젝트 작업실로 스타일 비교.
+summary: "사진 일기의 이미지 공간을 남기면서 작게 떠 있고 펼칠 수 있는 탐색층을 둡니다."
 category: styles
 aliases:
   - Liquid Glass
@@ -12,9 +12,9 @@ related:
   - glassmorphism
   - flat-design
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: 부유 캡슐·반사 가장자리·확장 도구로 탐색층을 콘텐츠와 구분합니다.
   advantages: 가벼운 탐색층이 배경 맥락을 유지합니다.

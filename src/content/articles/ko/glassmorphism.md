@@ -3,7 +3,7 @@ kind: concept
 articleId: glassmorphism
 lang: ko
 title: 글래스모피즘
-summary: 같은 프로젝트 작업실로 스타일 비교.
+summary: "사진 산책의 풍경을 반투명 카드 뒤로 남기고 읽기 어려울 때 불투명 표시를 제공합니다."
 category: styles
 aliases:
   - 글래스모피즘
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-23"
+revision: 10
+sourceRevision: 10
+updated: "2026-09-26"
 comparison:
   features: 반투명 패널 뒤로 흐려진 배경이 보입니다. 불투명 패널을 켜면 반투명 표면을 단색으로 바꿉니다.
   advantages: 반투명 패널이 배경 맥락을 유지합니다.

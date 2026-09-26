@@ -12,9 +12,9 @@ related:
   - astro
   - jekyll
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 checked: "2026-09-22"
 comparison:
   features: コンテンツとGoテンプレート
@@ -26,7 +26,7 @@ comparison:
 
 ## なぜ必要なのか
 
-訪問者が散策路や名所の記事を読む町の案内サイトを作るとします。制作側は主にMarkdownと共通テンプレートを管理します。記事ごとのクライアント部品を作らず、ファイルとして配信したいと考えます。
+訪問者が散策路や名所の記事を読む町の案内サイトを作るとします。編集者はページごとに配置の修正を繰り返しています。Goテンプレートに慣れたチームは、記事ごとの対話部品よりMarkdownと共通テンプレートでの公開を優先します。
 
 ## どう解決するのか
 

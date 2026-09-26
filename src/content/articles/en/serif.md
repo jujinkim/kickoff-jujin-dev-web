@@ -3,7 +3,7 @@ kind: concept
 articleId: serif
 lang: en
 title: Serif
-summary: Compare the same text specimen.
+summary: "Give a history magazine a printed editorial tone through letter terminals, checking each language’s glyphs."
 category: type-shapes
 aliases:
   - Serif
@@ -12,9 +12,9 @@ related:
   - sans-serif
   - script
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: Serifs add finishing strokes at letter terminals.
   advantages: Terminal details give the same specimen a distinct texture.

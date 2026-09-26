@@ -20,10 +20,10 @@ aliases:
 related: ["revenue", "shipping"]
 example: "payments"
 status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-aiPrompt: "For our product and seller location, compare Toss Payments PG, Lemon Squeezy MoR, and any required store billing. Ask for missing jurisdiction, customer, and channel details. Use dated official sources for eligibility, fees, tax scope, refunds, and settlement. Report unknowns; ask before selecting a provider. Include server verification and idempotent entitlement handling in the requirements."
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
+aiPrompt: "Read our agreed business model first. If payments are outside scope, keep them outside scope. If payments are needed, use our product, seller location, customers, and distribution channels to compare suitable payment arrangements and providers, including store billing only where relevant. Ask for missing details and preserve confirmed choices. Verify eligibility, fees, tax scope, refunds, and settlement with dated official sources; report unknowns and ask before selecting a provider. Include trusted payment verification, repeat-safe entitlement handling, and recovery checks in the requirements."
 checked: "2026-09-23"
 ---
 

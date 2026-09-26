@@ -12,9 +12,9 @@ related:
   - astro
   - jekyll
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 checked: "2026-09-22"
 comparison:
   features: 콘텐츠와 Go 템플릿 결합
@@ -26,7 +26,7 @@ comparison:
 
 ## 왜 필요한가
 
-방문자가 산책길과 명소 글을 읽는 마을 안내 사이트를 만든다고 가정해 봅시다. 제작팀은 Go 템플릿과 Markdown에 익숙합니다. 글마다 별도 클라이언트 컴포넌트를 만들지 않고 파일로 배포하려 합니다.
+방문자가 산책길과 명소 글을 읽는 마을 안내 사이트를 만든다고 가정해 봅시다. 편집자는 페이지마다 배치 수정을 반복합니다. Go 템플릿에 익숙한 팀은 글별 상호작용 컴포넌트보다 Markdown과 공통 템플릿으로 발행하는 흐름을 우선합니다.
 
 ## 어떻게 해결하는가
 

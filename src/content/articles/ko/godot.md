@@ -12,9 +12,9 @@ related:
   - unity
   - unreal-engine
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 checked: "2026-09-22"
 comparison:
   features: 노드로 만든 재사용 씬
@@ -26,7 +26,7 @@ comparison:
 
 ## 왜 필요한가
 
-플레이어가 사과를 모아 점수를 얻는 과수원 게임을 만든다고 가정해 봅시다. 제작팀은 각 사과를 노드로 구성한 장면의 인스턴스로 재사용해, 접촉 동작을 사과마다 고치지 않으려 합니다.
+플레이어가 사과로 이동해 점수를 얻는 과수원 게임을 만든다고 가정해 봅시다. 사과마다 모습과 접촉 로직을 복사하면 수정 내용이 달라집니다. 제작팀은 시각 요소와 접촉 요소를 트리로 묶어 재사용하려 하며, 시각적 행동 그래프보다 씬 중심 작업 흐름을 우선합니다.
 
 ## 어떻게 해결하는가
 

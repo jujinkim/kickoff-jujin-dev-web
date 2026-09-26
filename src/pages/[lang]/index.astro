@@ -21,13 +21,6 @@ const articles = all.filter(
 const recommended = ["srs", "architecture", "layout"].map((id) =>
   articles.find((a) => a.data.articleId === id)!,
 );
-const recent = [...articles]
-  .sort(
-    (a, b) =>
-      b.data.updated.localeCompare(a.data.updated) ||
-      a.data.articleId.localeCompare(b.data.articleId),
-  )
-  .slice(0, 3);
 ---
 
 <Base lang={lang} title={t.hero} description={t.siteDescription}>
@@ -68,24 +61,6 @@ const recent = [...articles]
       </ol>
     </figure>
   </section>
-  <section class="section" data-home-section="help">
-    <div class="section-heading">
-      <h2>{t.help}</h2>
-      <a class="text-link" href={`/${lang}/help/`}>
-        {t.help} →
-      </a>
-    </div>
-    <div class="help-cards">
-      {h.cards.map((card, index) => (
-        <a href={`/${lang}/help/#${card.id}`}>
-          <span class="eyebrow">0{index + 1}</span>
-          <h3>{card.title}</h3>
-          <p>{card.body}</p>
-          <span aria-hidden="true">→</span>
-        </a>
-      ))}
-    </div>
-  </section>
   <section class="category-section" data-home-section="catalog">
     <div class="section-heading">
       <h2>{t.catalog}</h2>
@@ -125,34 +100,6 @@ const recent = [...articles]
     <div class="catalog-grid home-grid">
       {recommended.map((article, index) => (
         <Card article={article} index={index} />
-      ))}
-    </div>
-  </section>
-  <section class="ai-banner" data-home-section="ai">
-    <span class="ai-mark">[ ai ]</span>
-    <div>
-      <h2>{t.ai}</h2>
-      <p>{t.aiIntro}</p>
-    </div>
-    <a class="button" href={`/${lang}/ai/`}>
-      {t.ai} ↗
-    </a>
-  </section>
-  <section class="section" data-home-section="recent">
-    <div class="section-heading">
-      <h2>{t.recent}</h2>
-      <a class="text-link" href={`/${lang}/guides/`}>
-        {t.guides} →
-      </a>
-    </div>
-    <div class="recent-list">
-      {recent.map((a) => (
-        <a href={`/${lang}/guides/${a.data.articleId}/`}>
-          <span class="tiny-label">{categoryNames[lang][a.data.category]}</span>
-          <strong>{a.data.title}</strong>
-          <time>{a.data.updated}</time>
-          <span>↗</span>
-        </a>
       ))}
     </div>
   </section>

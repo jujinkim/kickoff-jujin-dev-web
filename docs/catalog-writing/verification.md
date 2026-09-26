@@ -1,8 +1,8 @@
-> [Current monetization implementation and verification](../monetization-review.md). Earlier evidence below remains historical.
+> Historical writing-design evidence. Use the [verification index](../verification.md) and [product alignment review](../product-alignment-review.md) for newer scope and local results.
 
 # Local writing-design verification
 
-Current platform release: [implementation and verification](../platform-demos-review.md). Earlier counts below are historical.
+Historical platform release: [implementation and verification](../platform-demos-review.md). Earlier counts below are historical.
 
 Historical design-pack snapshot. For the subsequent seven-style publication, see [styles release review](styles-review.md) and [current verification](../verification.md).
 

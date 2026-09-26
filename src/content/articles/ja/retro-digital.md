@@ -3,7 +3,7 @@ kind: concept
 articleId: retro-digital
 lang: ja
 title: レトロデジタル
-summary: 同じプロジェクト作業室でスタイルを比較.
+summary: "タイトル付きの窓とピクセル装飾で、ゲームセンターの招待状に昔のデスクトップの雰囲気を出します。"
 category: styles
 aliases:
   - レトロデジタル
@@ -12,9 +12,9 @@ related:
   - brutalism
   - skeuomorphism
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
 comparison:
   features: タイトルバー・立体的な窓枠・ピクセル装飾・等幅文字を使います。
   advantages: 窓のまとまりで小さなデスクトップのように構成します。

@@ -20,10 +20,10 @@ aliases:
 related: ["layout", "architecture"]
 example: "theme"
 status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-aiPrompt: "Audit our colors, typography, and spacing. Propose semantic tokens and font fallbacks for English, Korean, and Japanese. Show light/dark examples and contrast measurements. Ask me to choose unresolved visual directions before applying them. Preserve keyboard focus and saved theme preference."
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
+aiPrompt: "Audit colors, typography, and spacing for our agreed project. Propose semantic tokens and font fallbacks for its supported languages and chosen themes. Show representative screens and contrast measurements. Ask only about unresolved visual directions before applying them. Preserve keyboard focus and any agreed theme preference behavior. Do not add languages or light/dark modes unless the project requires them."
 ---
 
 ## Why: the goal or problem

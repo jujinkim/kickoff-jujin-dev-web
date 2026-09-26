@@ -9,10 +9,10 @@ aliases: ["Astro", "Hugo", "Jekyll", "SSG", "정적 사이트", "静的サイト
 related: ["tools", "shipping", "adr"]
 example: "generators"
 status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-aiPrompt: "Compare Astro, Hugo, and Jekyll for our agreed content workflow. Show how each handles multilingual pages, previews, search, and deployment. Include maintenance costs and official references. Ask me to accept your recommendation, reject it, or choose another candidate before changing the stack."
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
+aiPrompt: "Using our agreed content workflow and constraints, compare suitable static site generators, including Astro, Hugo, and Jekyll where relevant. Compare authoring, preview, hosting, and maintenance needs; assess languages, search, and interactive features only within our required scope. Use official references and flag uncertain or changing facts. Preserve confirmed stack choices; for unresolved choices, explain the recommendation and alternatives and ask for a decision before changing the stack."
 checked: "2026-09-23"
 ---
 

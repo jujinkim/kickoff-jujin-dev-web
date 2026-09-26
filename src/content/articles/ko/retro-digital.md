@@ -3,7 +3,7 @@ kind: concept
 articleId: retro-digital
 lang: ko
 title: 레트로 디지털
-summary: 같은 프로젝트 작업실로 스타일 비교.
+summary: "제목 있는 창과 픽셀 장식으로 오락실 모임 초대장에 옛 데스크톱 분위기를 담습니다."
 category: styles
 aliases:
   - 레트로 디지털
@@ -12,9 +12,9 @@ related:
   - brutalism
   - skeuomorphism
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
 comparison:
   features: 제목 표시줄·입체 창 테두리·픽셀 장식·고정폭 글자를 사용합니다.
   advantages: 창 묶음으로 작은 데스크톱 같은 프로젝트를 구성합니다.

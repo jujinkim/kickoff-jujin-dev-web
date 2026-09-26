@@ -3,7 +3,7 @@ kind: concept
 articleId: flat-design
 lang: ko
 title: 플랫 디자인
-summary: 같은 프로젝트 작업실로 스타일 비교.
+summary: "진료 준비의 세부 정보는 유지하고 단색과 라벨로 역할을 나눠 입체 장식 없이 구분합니다."
 category: styles
 aliases:
   - 플랫 디자인
@@ -16,9 +16,9 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-23"
+revision: 10
+sourceRevision: 10
+updated: "2026-09-26"
 comparison:
   features: 단색 면과 명확한 라벨로 깊이 묘사 없이 위계를 만듭니다. 깊이 장식 없이 단색 영역으로 역할을 나눕니다.
   advantages: 라벨과 단색 면이 작업·동작을 명확히 나눕니다.

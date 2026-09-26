@@ -136,7 +136,7 @@ const alternates = all
         {d.aiPrompt && !replacement && (
           <details class="prompt-section article-extra" data-pagefind-ignore>
             <summary>{t.copy}</summary>
-            <p class="prompt-handoff">{t.promptHandoff}</p>
+            <p class="prompt-handoff">{t.followupHandoff}</p>
             <p>{t.promptLanguage}</p>
             <pre
               class="prompt-box"
@@ -194,6 +194,23 @@ const alternates = all
             {t.source} ↗
           </a>
         </details>
+        {!replacement && (
+          <section
+            class="apply-project"
+            data-pagefind-ignore
+            aria-labelledby="apply-project-title"
+          >
+            <h2 id="apply-project-title">{t.applyTitle}</h2>
+            <p>{t.applyNew}</p>
+            <a class="button primary" href={`/${d.lang}/start/`}>
+              {t.createPrompt} →
+            </a>
+            <p>{t.applyExisting}</p>
+            <a href={articleUrl(article)}>
+              {t.articleLink}: {d.title}
+            </a>
+          </section>
+        )}
         <Comments articleId={d.articleId} lang={d.lang} />
       </div>
       <aside class="toc" data-pagefind-ignore>
@@ -214,6 +231,14 @@ const alternates = all
 </Base>
 
 <style>
+  .apply-project {
+    margin: 28px 0;
+    padding: 24px 0;
+    border-block: 1px solid var(--line);
+  }
+  .apply-project h2 {
+    font-size: 1.35rem;
+  }
   .article-extra {
     margin: 1.2rem 0;
     border-top: 1px solid var(--line);

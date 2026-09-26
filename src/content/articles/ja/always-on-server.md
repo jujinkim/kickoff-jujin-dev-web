@@ -12,9 +12,9 @@ related:
   - static-hosting
   - serverless-functions
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 checked: "2026-09-22"
 comparison:
   features: 長時間稼働するリクエスト待機プロセス
@@ -26,7 +26,7 @@ comparison:
 
 ## なぜ必要なのか
 
-開館中に読者がリストを保存する図書館アプリを作るとします。訪問の間も要求と保存記録を扱うため、運営側は常時待ち受けるプロセスの管理を引き受けます。
+読者が記事を読み、読書リストを保存する図書館アプリを作るとします。運営側は継続して待ち受けるプロセスと再起動を直接制御する必要があり、個別の呼び出し単位の管理では要件に合いません。記録の保存だけが選ぶ理由ではありません。
 
 ## どう解決するのか
 

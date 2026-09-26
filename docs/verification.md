@@ -1,6 +1,13 @@
-# Verification — 2026-09-21
+# kickoff.md verification index
 
-Current platform release: [implementation and verification](platform-demos-review.md). Earlier counts below are historical.
+- [Product alignment, 2026-09-26](product-alignment-review.md): current reader-flow changes and local checks, separate from production.
+- [AI guidance review](ai-guidance-review.md): local v1 revision 4, token budget, and prior verification limitations.
+- [Catalog scope](catalog-scope.md): active versus reference-only inventory.
+- [Deployment](deployment.md): publishing procedure and dated production evidence.
+
+## Historical verification — 2026-09-21
+
+Everything below is retained historical evidence. Its counts, domains, article structure, and test results do not certify the current checkout. The [platform release review](platform-demos-review.md) also describes its own dated snapshot.
 
 ## One-minute introductions
 

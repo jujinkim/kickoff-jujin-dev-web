@@ -1,5 +1,6 @@
 ---
 import { startupText, startupVersion } from "../../lib/startup";
+import { builderText } from "../../lib/prompt-builder";
 import PromptBuilder from "../../components/PromptBuilder.astro";
 import Base from "../../layouts/Base.astro";
 import { languages, strings } from "../../lib/i18n";
@@ -11,7 +12,7 @@ const t = strings[lang];
 ---
 
 <Base lang={lang} title={t.start} description={t.startIntro}>
-  <section class="page-heading">
+  <section class="page-heading start-heading">
     <p class="eyebrow">IDEA → PROMPT → PLAN</p>
     <h1>{t.start}</h1>
     <p>{t.startIntro}</p>
@@ -22,21 +23,44 @@ const t = strings[lang];
       <a class="button" href={`/${lang}/help/#make-prompt`}>
         {t.help} →
       </a>
-      <a class="button" href={`/${lang}/start/${startupVersion}/`}>
-        {startupText[lang].read.replace("{version}", startupVersion)}
-      </a>
-      <a class="button" href="/ai/startup/latest.md">
-        {t.markdown} ↗
-      </a>
-      <a class="button" href="/ai/instructions.md">
-        {t.aiRules} ↗
-      </a>
     </div>
-    <section>
-      <h2>{startupText[lang].versions}</h2>
-      <p>
-        <a href={`/${lang}/start/v1/`}>{startupText[lang].history}</a>
-      </p>
-    </section>
+    <details class="startup-references">
+      <summary>{builderText[lang].references}</summary>
+      <p>{t.promptLanguage}</p>
+      <div class="resource-links">
+        <a class="button" href={`/${lang}/start/${startupVersion}/`}>
+          {startupText[lang].read.replace("{version}", startupVersion)}
+        </a>
+        <a class="button" href="/ai/startup/latest.md">
+          {t.markdown} ↗
+        </a>
+        <a class="button" href="/ai/instructions.md">
+          {t.aiRules} ↗
+        </a>
+      </div>
+      <section>
+        <h2>{startupText[lang].versions}</h2>
+        <p>
+          <a href={`/${lang}/start/v1/`}>{startupText[lang].history}</a>
+        </p>
+      </section>
+    </details>
   </div>
 </Base>
+
+<style>
+  .start-heading {
+    padding: 28px 0 16px;
+  }
+  .start-heading h1 {
+    margin-bottom: 12px;
+  }
+  .startup-references {
+    margin-top: 24px;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 12px 0;
+  }
+</style>

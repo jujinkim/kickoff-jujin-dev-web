@@ -3,7 +3,7 @@ kind: concept
 articleId: neumorphism
 lang: ja
 title: ニューモーフィズム
-summary: 同じプロジェクト作業室でスタイルを比較.
+summary: "小さな記録画面に柔らかく押し込んだ面を表現します。"
 category: styles
 aliases:
   - ニューモーフィズム
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: 同系色の面に左上の明るい影と右下の暗い影を使い、通常時の枠は設けません。 完了行は内側に沈み、影を消してもチェックと取り消し線が残ります。
   advantages: 柔らかな奥行きが物理的な操作盤の比喩を助けます。

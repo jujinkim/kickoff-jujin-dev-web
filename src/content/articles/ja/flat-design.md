@@ -3,7 +3,7 @@ kind: concept
 articleId: flat-design
 lang: ja
 title: フラットデザイン
-summary: 同じプロジェクト作業室でスタイルを比較.
+summary: "診療準備の詳しい情報を保ち、単色とラベルで役割を分け、立体的な装飾を省きます。"
 category: styles
 aliases:
   - フラットデザイン
@@ -16,9 +16,9 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-23"
+revision: 10
+sourceRevision: 10
+updated: "2026-09-26"
 comparison:
   features: 単色面と明確なラベルで、奥行き表現なしに階層を作ります。 奥行きの装飾を使わず、単色の領域で役割を分けます。
   advantages: ラベルと単色面がタスクと操作を明確に分けます。

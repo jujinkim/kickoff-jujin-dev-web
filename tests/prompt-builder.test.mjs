@@ -118,19 +118,18 @@ for (const [lang, name, notes] of [
       );
     }
     const home = read(`dist/${lang}/index.html`);
-    assert.deepEqual(
-      [...home.matchAll(/data-home-section="([^"]+)"/g)].map((m) => m[1]),
-      ["help", "catalog", "planning", "ai", "recent"],
-    );
     const nav = home.match(/<nav[^>]*>([\s\S]*?)<\/nav>/)[1];
-    assert.deepEqual(
-      [...nav.matchAll(/href="[^"]+\/([^/]+)\/"/g)].map((m) => m[1]),
-      ["start", "help", "catalog", "guides", "ai", "about"],
-    );
-    for (const id of ["make-prompt", "catalog", "agree-plan"]) {
-      assert.ok(home.includes(`/${lang}/help/#${id}`));
+    for (const route of ["start", "catalog", "guides", "help"])
+      assert.ok(nav.includes(`href="/${lang}/${route}/"`));
+    const footer = home.match(/<footer[\s\S]*?<\/footer>/)[0];
+    for (const route of ["ai", "about"])
+      assert.ok(footer.includes(`href="/${lang}/${route}/"`));
+    assert.ok(home.includes(`href="/${lang}/start/"`));
+    assert.ok(home.includes(`href="/${lang}/help/"`));
+    for (const id of ["srs", "architecture", "layout"])
+      assert.ok(home.includes(`href="/${lang}/guides/${id}/"`));
+    for (const id of ["make-prompt", "catalog", "agree-plan"])
       assert.ok(help.includes(`id="${id}"`));
-    }
     const catalog = read(`dist/${lang}/catalog/index.html`);
     const description = (html) =>
       html.match(/name="description" content="([^"]+)"/)[1];
@@ -182,7 +181,7 @@ for (const [lang, name, notes] of [
       ko: "외부 AI용 지침",
       ja: "外部AI向け指示",
     }[lang];
-    assert.ok(nav.includes(label));
+    assert.ok(footer.includes(label));
     assert.match(
       help,
       {

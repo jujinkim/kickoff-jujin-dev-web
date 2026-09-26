@@ -1,6 +1,6 @@
 # Design demos: implementation and extension
 
-All designs belong **inside the article body**. Site header, navigation, title,
+In kickoff.md, all designs belong **inside the article body**. Site header, navigation, title,
 description, comments, URLs, and API v1 remain the surrounding catalog. A demo
 may choose its own background, typography, material, layout, and controls.
 Give each article a distinct, familiar situation. Keep only the controls needed
@@ -23,11 +23,13 @@ scopes basic controls for layout/type demos to `[data-comparison]`. Style demos
 keep their control baseline inside each component; they share only data and
 behavior. Do not add a global visual theme.
 
-The current release contains 22 design concepts, 15 platform concepts, 24
-monetization concepts, 3 requirements concepts, 3 architecture-boundary concepts and 3 service-decomposition concepts: **49 interactive demos and 21 static diagrams**, 210 localized
-concept articles and 36 guide articles (246 published documents). The eight
-unwritten data-structure candidates are outside the current writing queue.
-Counts describe this release, not runtime allowlists.
+The preserved inventory contains 70 concept demos: **49 interactive demos and
+21 static diagrams**, plus 12 guide articles. Active discovery includes 64
+concepts and 9 guides (219 localized documents); 6 concepts and 3 guides remain
+reference-only (27 localized documents). Total: 246 published source documents.
+These counts describe retained material, not runtime allowlists. The eight
+unwritten data-structure candidates are outside the writing queue. See
+[catalog scope](catalog-scope.md) and [product alignment](product-alignment-review.md).
 
 Current monetization evidence: [monetization review](monetization-review.md).
 

@@ -4,6 +4,8 @@ const category = document.querySelector("#category");
 const grid = document.querySelector("#catalog-grid");
 const resultList = document.querySelector("#search-results");
 const resultStatus = document.querySelector("#result-status");
+const recovery = document.querySelector("[data-search-recovery]");
+const scope = document.querySelector("[data-search-scope]");
 const buttons = document.querySelectorAll("button[data-view]");
 function setView(view) {
   view = view === "list" ? "list" : "card";
@@ -30,6 +32,13 @@ async function update() {
   const request = ++serial;
   const query = input.value.trim();
   const cat = category.value;
+  const selectedScope = category.selectedOptions[0]?.textContent.trim();
+  scope.textContent = cat
+    ? root.dataset.kind === "guide"
+      ? `${root.dataset.scope} / ${selectedScope}`
+      : selectedScope
+    : root.dataset.scope;
+  recovery.hidden = true;
   const url = new URL(location.href);
   query ? url.searchParams.set("q", query) : url.searchParams.delete("q");
   cat
@@ -56,6 +65,7 @@ async function update() {
     grid.hidden = false;
     resultList.hidden = true;
     resultList.replaceChildren();
+    recovery.hidden = eligibleCards.size > 0;
     resultStatus.textContent = `${cards.filter((c) => !c.hidden).length} ${root.dataset.results}`;
     return;
   }
@@ -110,6 +120,7 @@ async function update() {
       article.append(categoryLabel, link, p);
       resultList.append(article);
     }
+    recovery.hidden = hits.length > 0;
     grid.hidden = true;
     resultList.hidden = false;
     resultStatus.textContent = hits.length
@@ -132,6 +143,13 @@ input.addEventListener("input", () => {
 category.addEventListener("change", () => {
   clearTimeout(timer);
   void update();
+});
+document.querySelector("[data-search-reset]").addEventListener("click", () => {
+  clearTimeout(timer);
+  input.value = "";
+  category.value = "";
+  void update();
+  input.focus();
 });
 void update();
 

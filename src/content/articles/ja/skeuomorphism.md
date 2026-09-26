@@ -3,7 +3,7 @@ kind: concept
 articleId: skeuomorphism
 lang: ja
 title: スキューモーフィズム
-summary: 同じプロジェクト作業室でスタイルを比較.
+summary: "読者になじみのある紙のノートの形で、料理アプリの内容と操作を伝えます。"
 category: styles
 aliases:
   - スキューモーフィズム
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: 見慣れた素材や物でデジタルの作業を説明します。 木の面に開いた紙の手帳として料理ノートを表します。
   advantages: 紙と表紙の比喩で親しみやすいチェックリストを作ります。

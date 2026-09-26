@@ -3,7 +3,7 @@ kind: concept
 articleId: retro-digital
 lang: en
 title: Retro digital
-summary: Explore the same project workspace.
+summary: "Give an arcade invitation an early-desktop mood through titled windows and pixel details."
 category: styles
 aliases:
   - Retro digital
@@ -12,9 +12,9 @@ related:
   - brutalism
   - skeuomorphism
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
 comparison:
   features: "Title bars, beveled windows, pixel ornaments, and fixed-width type."
   advantages: Window groups make the project feel like a compact desktop.

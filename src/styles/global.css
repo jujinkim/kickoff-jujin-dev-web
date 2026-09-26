@@ -1748,3 +1748,74 @@ html[lang="ko"] .hero-copy {
     padding: 18px;
   }
 }
+
+/* Primary task and touch targets in the shared shell. */
+.header-inner nav {
+  gap: 8px 16px;
+}
+.header-inner nav a,
+.languages a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px;
+}
+.header-inner nav .nav-primary {
+  background: var(--green);
+  color: var(--bg);
+  border-radius: 7px;
+  padding-inline: 12px;
+}
+.header-inner nav .nav-primary[aria-current="page"] {
+  color: var(--bg);
+}
+.languages {
+  gap: 4px;
+}
+.languages a {
+  min-width: 44px;
+}
+.theme-button {
+  min-width: 44px;
+  min-height: 44px;
+}
+.footer-links {
+  flex-wrap: wrap;
+}
+.prompt-builder > .site-notice {
+  margin: 0 0 20px;
+}
+.optional-fields {
+  border-block: 1px solid var(--line);
+}
+.optional-fields summary {
+  cursor: pointer;
+  padding: 12px 0;
+  font-weight: 600;
+}
+.optional-fields > div {
+  margin: 16px 0;
+}
+.preview-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.preview-heading .button {
+  min-height: 44px;
+}
+@media (max-width: 760px) {
+  .header-inner {
+    gap: 12px;
+  }
+  .header-tools {
+    gap: 4px;
+  }
+  .header-inner nav {
+    padding-top: 8px;
+    gap: 4px;
+  }
+}

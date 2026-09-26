@@ -12,9 +12,9 @@ related:
   - astro
   - jekyll
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 checked: "2026-09-22"
 comparison:
   features: Content plus Go templates
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a town guide for walks and landmarks. Its team uses Go templates and Markdown to build files, without page-specific client components.
+Imagine a town guide where visitors read walks and landmark articles. Editors repeat layout fixes across pages. They know Go templates and want shared Markdown publishing; page-specific interactive components are a lower priority.
 
 ## How: work toward a solution
 
-Start a town visitor guide with three Markdown articles and one layout. Next resolves templates, creates an index and three article pages, then sends files through hosting to the browser. Missing layout stops this example before output. A separate browser widget can call a Save API; the build tool never handles reader requests. Previous, Reset, or reload restores earlier states.
+Start the town guide with three Markdown articles and one layout. Next builds an index and three article pages, then delivers them through hosting. Missing layout stops output. A browser widget can call a separate Save API; Hugo never handles reader requests. Previous, Reset, or reload restores earlier states.
 
 ## What: the concept
 

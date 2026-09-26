@@ -3,7 +3,7 @@ kind: concept
 articleId: monospace
 lang: ko
 title: 고정폭
-summary: 같은 글자·문장·숫자로 서체 비교.
+summary: "같은 글자 폭으로 날씨 기록의 라틴 문자 열을 맞추고 대체 글자의 폭도 확인합니다."
 category: character-width
 aliases:
   - 고정폭
@@ -11,9 +11,9 @@ related:
   - theme
   - proportional
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: 고정폭 라틴 글자는 윤곽이 달라도 전진 폭이 같습니다.
   advantages: 같은 라틴 전진 폭이 코드·자료의 열을 맞춥니다.

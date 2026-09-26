@@ -1,6 +1,6 @@
 # Catalog writing designs / 카탈로그 집필 설계 / カタログ執筆設計
 
-Current scope: **64 active concepts, 9 active guides, 219 indexed localized documents, no pending candidates**. The 2026-09-23 [scope review](../catalog-scope.md) supersedes the writing queue below. Data-structure briefs and the earlier document-format/release briefs are historical research, not new writing tasks.
+kickoff.md current scope: **64 active concepts, 9 active guides, 219 indexed localized documents, no pending candidates**. Six concepts and three guides remain reference-only (27 localized documents). See [product alignment](../product-alignment-review.md) for the current purpose, reader-flow work, and local evidence. The 2026-09-23 [scope review](../catalog-scope.md) supersedes the writing queue below. Data-structure briefs and the earlier document-format/release briefs are historical research, not new writing tasks.
 
 > Current publishing rule (2026-09-23): follow [the shared authoring guide](../content-authoring.md). All articles follow Why → How → What: introduce the imagined app or page and its reader tasks before the problem, work through that same situation, then name the concept and its limits. In a catalog concept, Why also conveys the scenario's deciding priority among leaf-category peers, without pretending combinable choices are exclusive. Catalog concepts stay within one minute; guides are practical 2–3 minute walkthroughs. Historical plans below are research references.
 
@@ -10,12 +10,12 @@ The original research pack contained **58 candidates in 19 comparison groups**. 
 
 1. Read the group’s comparison axes and matrix, then its linked article designs. Treat old shared fixtures as historical research and choose a different familiar situation for each published article. In Why, show why that situation favors this item over relevant siblings; keep conditional combinations possible. Historical designs include six research sections; published articles use three short sections. Each design records, all five comparison fields, evidence locators, multilingual terms, concrete outcomes and a required visualization specification.
 2. Reopen the [verified sources](sources.md) at their recorded passages. Definitions/mechanisms are source-backed; suitability and proposed examples are explicitly editorial. Recheck any product, pricing, version, license, service or jurisdiction claim when writing; this pack deliberately excludes unsupported commercial details.
-3. Write and cross-review the complete group in English first. The design groups are implemented; continue by existing candidate order below. Only after English approval, translate into Korean and Japanese with the [glossary](glossary.md).
+3. Write and cross-review the complete group in English first. All active candidates below are implemented; consult `content:new -- --list` and register a new candidate before starting separately approved writing. Only after English approval, translate into Korean and Japanese with the [glossary](glossary.md).
 4. Use the existing single-candidate scaffold command from [authoring instructions](../content-authoring.md) when drafting is separately requested. Do not run it merely to consume these designs. Drafts remain unpublished until editorial review.
 
 Every visualization must preserve the declared inputs, mobile reading order, keyboard operation where interactive, non-color distinctions, visible long description and complete Markdown text equivalent. The figures are authored explanatory examples, not performance measurements, financial forecasts or service screenshots. Current implementations and complete visualization briefs are linked from each released group.
 
-## Writing queue and coverage
+## Historical writing queue and coverage
 
 Stable candidate order, title, ID, category, comparison peers and related guides are preserved. Only generic candidate scopes are made specific. A missing article source continues to mean `planned` / coming soon / 준비 중 / 準備中. API and content schema remain v1.
 
@@ -45,7 +45,7 @@ Stable candidate order, title, ID, category, comparison peers and related guides
 
 The [source ledger](sources.md) records successful original-page inspection on 2026-09-21 and rejected retrievals. Style accounts are cross-read rather than treated as official definitions; no sole-founder attribution is used. Product documentation is evidence for the specific mechanism, not a comparative benchmark. The styles pilot review is recorded in its [group design](groups/styles.md).
 
-There are no unresolved editorial choices blocking drafting within these scopes. Later source refresh, English editorial review, translation review and visualization implementation remain intentional future work. Local checks and coverage results are recorded in [verification](verification.md). No commit, push or deployment belongs to this task.
+At the planning snapshot, source refresh, English review, translation and visualization implementation were still future work. Those plans are preserved here as research, not as current pending tasks or current test evidence. Historical local checks are recorded in [verification](verification.md); use the [current verification index](../verification.md) for later results.
 
 ## Monetization extension index
 

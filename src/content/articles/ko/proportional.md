@@ -3,7 +3,7 @@ kind: concept
 articleId: proportional
 lang: ko
 title: 비례폭
-summary: 같은 글자·문장·숫자로 서체 비교.
+summary: "소식지 본문의 글자 형태에 맞춰 폭을 달리하고, 숫자는 등폭으로 정렬할 수 있습니다."
 category: character-width
 aliases:
   - 비례폭
@@ -11,9 +11,9 @@ related:
   - theme
   - monospace
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: 비례폭 글자는 서로 다른 전진 폭을 씁니다.
   advantages: 서로 다른 전진 폭이 글자별 비율을 반영합니다.

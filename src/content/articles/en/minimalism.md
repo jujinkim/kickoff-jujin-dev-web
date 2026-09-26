@@ -3,7 +3,7 @@ kind: concept
 articleId: minimalism
 lang: en
 title: Minimalism
-summary: Explore the same project workspace.
+summary: "Give hiking essentials room by removing competing decoration while keeping useful controls."
 category: styles
 aliases:
   - Minimalism
@@ -16,9 +16,9 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: >-
     Limited elements and generous space focus attention on essential content.

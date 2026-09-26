@@ -3,7 +3,7 @@ kind: concept
 articleId: skeuomorphism
 lang: ko
 title: 스큐어모피즘
-summary: 같은 프로젝트 작업실로 스타일 비교.
+summary: "독자에게 익숙한 종이 수첩의 형태로 요리 앱의 내용과 조작을 설명합니다."
 category: styles
 aliases:
   - 스큐어모피즘
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: 익숙한 재질과 사물로 디지털 과업을 설명합니다. 나무 바탕 위 펼친 종이 수첩으로 요리 수첩 화면을 구성합니다.
   advantages: 종이와 표지 은유로 익숙한 체크리스트를 만듭니다.

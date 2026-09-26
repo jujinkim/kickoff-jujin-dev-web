@@ -3,7 +3,7 @@ kind: concept
 articleId: tactile-collage
 lang: ko
 title: 촉각적 콜라주
-summary: 같은 프로젝트 작업실로 스타일 비교.
+summary: "종이 조각·테이프·주석으로 여행 추억 보드를 손으로 모아 붙인 듯 표현합니다."
 category: styles
 aliases:
   - 촉각적 콜라주
@@ -12,9 +12,9 @@ related:
   - skeuomorphism
   - neobrutalism
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
 comparison:
   features: 종이 조각·테이프·불규칙한 가장자리·주석을 겹칩니다.
   advantages: 재질 단서로 편안한 보드에 개성을 부여합니다.

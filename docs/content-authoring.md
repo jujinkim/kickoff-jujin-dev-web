@@ -2,6 +2,8 @@
 
 This guide describes the authoring workflow. Design implementation follows [Design demos](design-demos.md). 64 concepts and 9 guides are active in three languages; no candidates remain pending. See [catalog scope](catalog-scope.md). Current counts and release reviews live in the [writing index](catalog-writing/README.md). The earlier [styles review](catalog-writing/styles-review.md) is historical.
 
+See [product alignment](product-alignment-review.md) for the purpose, screen roles, change criteria, and verification of the current reader flow.
+
 ## Site identity and handoff copy
 
 Use the display name **kickoff.md**, with **by jujin** where credited. The public
@@ -57,9 +59,11 @@ documents; the catalog remains optional learning material.
 ## Generate draft scaffolds
 
 ```sh
-npm run content:new -- --id brutalism
 npm run content:new -- --list
+npm run content:new -- --id <new-candidate-id>
 ```
+
+All active candidates are already published. Inspect the list first; register a new stable ID, leaf category, localized titles, scope, peers, and guide relationships in `candidates.json` before substituting its ID above. Review the comparison group before drafting. Never use an existing article such as `brutalism` as a new-candidate example.
 
 Creates English source and Korean/Japanese draft scaffolds, all `status: draft`. Refuses the entire operation if any target already exists. No LLM call, body generation or automatic publishing. Template implementation: `scripts/content-new.mjs` and localized sections in `scripts/catalog-data.mjs`.
 
@@ -131,3 +135,20 @@ Use `related` IDs to link published concepts and guides. Rendering adds incoming
 ## Gates
 
 Run `npm run check`, `npm run build`, `npm test`, `npm run test:e2e`. Tests exercise taxonomy failures, scaffold overwrite protection, guide aliases, and isolated concept publication/draft exclusion. Publication fixtures live in a temporary copy and are removed after verification. Browser tests target built `dist`, not development output.
+
+## Card summaries and reusable requests
+
+A card summary states the priority and situation that make this choice useful.
+Do not repeat “compare the same screen before and after” across siblings. Keep
+the summary aligned with Why, How, the demo, and comparison metadata. Shape and
+character width remain independent typography axes; styles can also coexist.
+
+Guide copy blocks are follow-up requests for an external AI conversation that
+already has the project context. Ask the AI to reuse agreed behavior and clarify
+only missing decisions. The article's worked example teaches the method; it does
+not prescribe a shop, paid model, provider, language set, or dark mode. Make
+conditional needs explicit and retain the guide's useful steps and acceptance
+checks. Review each request against a free, single-language project as well as
+the article example. The article application step links new projects to the
+builder and asks existing conversations to share the article link and selection
+reason, without saving or passing a choice automatically.

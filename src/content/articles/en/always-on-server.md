@@ -12,9 +12,9 @@ related:
   - static-hosting
   - serverless-functions
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 checked: "2026-09-22"
 comparison:
   features: Long-running request listener
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a library app where readers save lists daily. Records must survive visits, so its team accepts managing a listening process.
+Imagine a library app where readers save articles. The team needs process and restart control, beyond individual invocations, while preserving records. Storage alone would not justify this choice.
 
 ## How: work toward a solution
 
-Read article and Save Library Reading List enter the listening process. Save writes an external store. Repeat Save keeps one record under the example’s reader/article key. Fail next save returns failure without changing storage. Restart handler replaces the process while retaining the stored record. Reset or reload clears this page-memory simulation, including its illustrated store.
+Read article and Save Library Reading List enter the listening process. Save writes an external store; repeated saves keep one reader/article record. Fail next save leaves storage unchanged. Restart handler replaces the process, retaining records. Reset or reload clears this page-memory simulation and its illustrated store.
 
 ## What: the concept
 

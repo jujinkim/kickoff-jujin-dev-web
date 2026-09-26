@@ -3,7 +3,7 @@ kind: concept
 articleId: tactile-collage
 lang: en
 title: Tactile collage
-summary: Explore the same project workspace.
+summary: "Make a travel memory board feel assembled by hand with paper fragments, tape, and annotations."
 category: styles
 aliases:
   - Tactile collage
@@ -12,9 +12,9 @@ related:
   - skeuomorphism
   - neobrutalism
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
 comparison:
   features: "Layered paper fragments, tape, irregular edges, and annotations."
   advantages: Material cues give an informal board a personal character.

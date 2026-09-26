@@ -3,7 +3,7 @@ kind: concept
 articleId: glassmorphism
 lang: en
 title: Glassmorphism
-summary: Explore the same project workspace.
+summary: "Keep photo-walk scenery visible behind frosted task cards, with an opaque readability fallback."
 category: styles
 aliases:
   - Glassmorphism
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-23"
+revision: 10
+sourceRevision: 10
+updated: "2026-09-26"
 comparison:
   features: >-
     Translucent panels reveal a blurred background. Opaque panels replace the

@@ -11,7 +11,7 @@ export const startupText = {
     versions: "Guideline versions",
     contribute: "Contribute on GitHub",
     history:
-      "v1 · revision 3 · 2026-09-24 — Two required documents, decisions from requirements, and optional catalog reading. History: v1 · revision 2 · 2026-09-23 — Project choices, AI-owned implementation and documentation, and operating constraints. v1 · revision 1 · 2026-09-22 — Initial release: context, catalog choices, software and design baselines, plan approval, and contributions.",
+      "v1 · revision 4 · 2026-09-26 — Proportionate architecture, SOLID/GRASP as judgment criteria, quality across software/design/monetization/operations, and maintenance handoff. History: v1 · revision 3 · 2026-09-24 — Two required documents, decisions from requirements, and optional catalog reading. v1 · revision 2 · 2026-09-23 — Project choices, AI-owned implementation and documentation, and operating constraints. v1 · revision 1 · 2026-09-22 — Initial release: context, catalog choices, software and design baselines, plan approval, and contributions.",
   },
   ko: {
     title: "개발 시작 지침 문서",
@@ -21,7 +21,7 @@ export const startupText = {
     versions: "지침 버전",
     contribute: "GitHub에서 함께 기여하기",
     history:
-      "v1 · 리비전 3 · 2026-09-24 — 필수 문서 두 개, 요구 기반 결정, 카탈로그 선택 참고. 이전: v1 · 리비전 2 · 2026-09-23 — 프로젝트 선택, AI의 내부 구현·문서 작성, 운영 제약. v1 · 리비전 1 · 2026-09-22 — 첫 버전: 서비스 정보, 카탈로그 선택, SW·디자인 기본 지침, 기획 확정, 공동 기여.",
+      "v1 · 리비전 4 · 2026-09-26 — 규모에 맞는 아키텍처, 판단 기준으로서의 SOLID/GRASP, 소프트웨어·디자인·수익화·운영 품질, 유지보수 인계. 이전: v1 · 리비전 3 · 2026-09-24 — 필수 문서 두 개, 요구 기반 결정, 카탈로그 선택 참고. v1 · 리비전 2 · 2026-09-23 — 프로젝트 선택, AI의 내부 구현·문서 작성, 운영 제약. v1 · 리비전 1 · 2026-09-22 — 첫 버전: 서비스 정보, 카탈로그 선택, SW·디자인 기본 지침, 기획 확정, 공동 기여.",
   },
   ja: {
     title: "開発開始ガイドライン",
@@ -31,7 +31,7 @@ export const startupText = {
     versions: "ガイドラインの版",
     contribute: "GitHubで共同改善する",
     history:
-      "v1 · リビジョン3 · 2026-09-24 — 必須文書は二つ、要件から判断を導き、カタログ参照は任意に。履歴：v1 · リビジョン2 · 2026-09-23 — 全体の選択、AIによる内部実装・文書作成、運用制約。v1 · リビジョン1 · 2026-09-22 — 初版：背景、カタログ選択、ソフトウェア・デザイン指針、計画承認、共同改善。",
+      "v1 · リビジョン4 · 2026-09-26 — 規模に合う構成、判断基準としてのSOLID/GRASP、ソフトウェア・デザイン・収益化・運用の品質、保守の引き継ぎ。履歴：v1 · リビジョン3 · 2026-09-24 — 必須文書は二つ、要件から判断を導き、カタログ参照は任意に。v1 · リビジョン2 · 2026-09-23 — 全体の選択、AIによる内部実装・文書作成、運用制約。v1 · リビジョン1 · 2026-09-22 — 初版：背景、カタログ選択、ソフトウェア・デザイン指針、計画承認、共同改善。",
   },
 };
 export function startupPrompt(lang: Lang, version = "latest") {

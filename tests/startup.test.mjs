@@ -10,9 +10,9 @@ test("startup versions publish localized HTML and English-only Markdown with lat
     const html = read(`${lang}/start/v1/index.html`);
     assert.match(
       source,
-      { en: /Revision: 3\./, ko: /리비전: 3\./, ja: /リビジョン: 3。/ }[lang],
+      { en: /Revision: 4\./, ko: /리비전: 4\./, ja: /リビジョン: 4。/ }[lang],
     );
-    assert.ok(source.includes("2026-09-24"));
+    assert.ok(source.includes("2026-09-26"));
     for (const oldRequirement of [
       "Offer the entire catalog",
       "모든 카탈로그를 제안",

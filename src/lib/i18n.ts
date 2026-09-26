@@ -19,6 +19,7 @@ export const categoryNames: Record<
 ) as Record<Lang, Record<string, string>>;
 export const strings = {
   en: {
+    builderNotice: "kickoff.md does not provide an AI service.",
     start: "Create a prompt",
     help: "How to use",
     navigation: "Main navigation",
@@ -66,6 +67,8 @@ export const strings = {
       "Copy failed. Select and copy the text above manually, then paste it into your external AI tool to continue.",
     promptHandoff:
       "This is a request for your external AI tool. Review the text, then copy and paste it into that tool to continue.",
+    followupHandoff:
+      "Use this follow-up request in your external AI tool, in a conversation where you have already shared your project context. Review it against your agreed choices before pasting.",
     copyNoScript:
       "JavaScript is off. Select and copy the text above manually, then paste it into your external AI tool to continue.",
     markdown: "Read Markdown (English)",
@@ -84,21 +87,37 @@ export const strings = {
     count: "field notes",
     back: "Back to catalog",
     aiIntro:
-      "kickoff.md provides reference instructions for your external AI tool. Copy them into that tool to discuss planning, architecture, and design; kickoff.md does not provide an AI service.",
+      "For an existing project in your external AI tool, add these instructions to guide planning and work. kickoff.md does not provide an AI service.",
     aiWarning:
       "Publishing files does not make an AI obey them. Tell it to read, apply, and report what it could not access.",
     aboutIntro:
       "kickoff.md is an information site for preparing custom prompts for your external AI tool and learning project planning, design, and technology choices through examples.",
     startIntro:
-      "Prepare a custom prompt on kickoff.md. Add what you know about your service, review the request, then copy and paste it into your external AI tool to discuss requirements and design choices.",
+      "Describe your service, review the prompt, and copy it into your external AI tool.",
     next: "Next step",
     notFound: "This shelf is empty.",
     home: "Go home",
     prompt: "Project instructions",
     guide: "Read the rules",
     source: "Source & edits",
+    applyTitle: "Apply this to your project",
+    applyNew: "Starting a project? Describe it to prepare your first prompt.",
+    applyExisting:
+      "Already talking with external AI? Share this article link and explain why the choice fits your project and which tradeoff matters. Ask how it applies to your agreed requirements.",
+    articleLink: "Article link",
+    contribute: "Corrections and contribution guidelines",
+    aboutParagraphs: [
+      "For people with a project idea and developers comparing choices: describe who will use your service and what they need to do. No technical vocabulary is required to start.",
+      "Prepare a custom first prompt in your browser, then paste it into an external AI tool you arrange separately. Discuss missing requirements, compare choices, agree on a plan, and request work within that scope.",
+      "Use the catalog to understand a choice through a short example. Follow Project planning guides for a practical method. Bring a useful article link and your reasons back to the external conversation.",
+    ],
+    searchScope: "Search within",
+    searchReset: "Clear search and filters",
+    searchBroader: "Browse the parent category",
+    searchOther: "Try another resource type",
   },
   ko: {
+    builderNotice: "kickoff.md는 AI 서비스를 제공하지 않습니다.",
     start: "프롬프트 만들기",
     help: "이용 가이드",
     navigation: "주 메뉴",
@@ -147,6 +166,8 @@ export const strings = {
       "복사 실패. 위 글을 직접 선택해 복사한 뒤 외부 AI 도구에 붙여넣어 진행하세요.",
     promptHandoff:
       "외부 AI에 전달할 요청문입니다. 내용을 확인하고 복사한 뒤 사용하는 외부 AI 도구에 붙여넣어 진행하세요.",
+    followupHandoff:
+      "프로젝트 맥락을 이미 공유한 외부 AI 도구의 대화에서 사용하는 후속 요청입니다. 합의한 선택에 맞는지 확인한 뒤 붙여넣으세요.",
     copyNoScript:
       "JavaScript가 꺼져 있습니다. 위 글을 직접 선택해 복사한 뒤 외부 AI 도구에 붙여넣어 진행하세요.",
     markdown: "Markdown 읽기 (영어)",
@@ -163,21 +184,38 @@ export const strings = {
     count: "편의 글",
     back: "카탈로그로",
     aiIntro:
-      "kickoff.md가 제공하는 외부 AI용 참고 지침입니다. 사용하는 외부 AI 도구에 복사해 기획·아키텍처·설계를 논의하세요. kickoff.md는 AI 서비스를 제공하지 않습니다.",
+      "이미 외부 AI 도구에서 진행 중인 프로젝트에 기획·작업 지침을 추가하는 경로입니다. kickoff.md는 AI 서비스를 제공하지 않습니다.",
     aiWarning:
       "파일을 공개한다고 AI가 따르지는 않습니다. 읽고 적용할 절차와 접근 실패 보고를 직접 지시하세요.",
     aboutIntro:
       "kickoff.md는 외부 AI에 전달할 맞춤 프롬프트를 준비하고 프로젝트 기획·설계·기술 선택을 예시로 배우는 정보 사이트입니다.",
     startIntro:
-      "kickoff.md에서 맞춤 프롬프트를 준비하세요. 서비스에 관해 정한 내용을 입력하고 요청문을 확인한 뒤, 복사해 사용하는 외부 AI 도구에 붙여넣어 요구사항과 설계 선택을 논의합니다.",
+      "서비스를 설명하고 프롬프트를 확인한 뒤 외부 AI 도구에 복사해 전달하세요.",
     next: "다음 단계",
     notFound: "이 칸은 비어 있습니다.",
     home: "홈으로",
     prompt: "프로젝트 지침",
     guide: "행동 규칙 읽기",
     source: "원본·수정 제안",
+    applyTitle: "내 프로젝트에 적용하기",
+    applyNew:
+      "프로젝트를 처음 시작하나요? 설명을 입력해 첫 프롬프트를 준비하세요.",
+    applyExisting:
+      "이미 외부 AI와 대화 중이라면 이 글의 링크와 내 프로젝트에 맞는 이유, 중요하게 보는 장단점을 전달하세요. 합의한 요구사항에 어떻게 적용할지 요청하세요.",
+    articleLink: "이 글 링크",
+    contribute: "수정 제안·기여 안내",
+    aboutParagraphs: [
+      "프로젝트 아이디어가 있는 비전문가와 선택지를 비교하는 개발자를 위한 사이트입니다. 누가 서비스를 사용하고 무엇을 해야 하는지 설명해 보세요. 기술 용어를 몰라도 시작할 수 있습니다.",
+      "브라우저에서 첫 맞춤 프롬프트를 준비한 뒤, 별도로 준비한 외부 AI 도구에 붙여넣으세요. 빠진 요구사항을 논의하고 선택지를 비교해 기획을 확정한 다음, 합의한 범위의 작업을 요청합니다.",
+      "카탈로그에서는 짧은 예시로 선택지를 이해하고, 프로젝트 기획 가이드에서는 실전 절차를 따라 배웁니다. 도움이 된 글의 링크와 선택 이유를 외부 AI 대화에 전달하세요.",
+    ],
+    searchScope: "검색 범위",
+    searchReset: "검색어·필터 해제",
+    searchBroader: "상위 분류 둘러보기",
+    searchOther: "다른 자료 유형 살펴보기",
   },
   ja: {
+    builderNotice: "kickoff.mdはAIサービスを提供していません。",
     start: "プロンプトを作る",
     help: "使い方ガイド",
     navigation: "メインメニュー",
@@ -226,6 +264,8 @@ export const strings = {
       "コピー失敗。上の文章を選択して手動でコピーし、外部AIツールに貼り付けて進めてください。",
     promptHandoff:
       "外部AIに渡す依頼文です。内容を確認してコピーし、お使いの外部AIツールに貼り付けて進めてください。",
+    followupHandoff:
+      "プロジェクトの背景をすでに共有した外部AIツールとの会話で使う、追加の依頼です。合意済みの選択に合うか確認してから貼り付けてください。",
     copyNoScript:
       "JavaScriptが無効です。上の文章を選択して手動でコピーし、外部AIツールに貼り付けて進めてください。",
     markdown: "Markdownを読む（英語）",
@@ -241,18 +281,34 @@ export const strings = {
     count: "記事",
     back: "カタログへ",
     aiIntro:
-      "kickoff.mdが提供する外部AI向けの参考指示です。お使いの外部AIツールにコピーして、企画・アーキテクチャ・設計を話し合いましょう。kickoff.mdはAIサービスを提供していません。",
+      "すでに外部AIツールで進めているプロジェクトに、企画・作業の指示を追加するためのページです。kickoff.mdはAIサービスを提供していません。",
     aiWarning:
       "ファイルの公開だけではAIの遵守を保証できません。読む手順、適用、アクセス失敗の報告を指示してください。",
     aboutIntro:
       "kickoff.mdは外部AIに渡す自分に合ったプロンプトを準備し、プロジェクトの企画・設計・技術の選択を例から学ぶ情報サイトです。",
     startIntro:
-      "kickoff.mdで自分に合うプロンプトを準備しましょう。サービスについて決めた内容を入力し、依頼文を確認してからコピーし、お使いの外部AIツールに貼り付けて要件と設計の選択肢を話し合います。",
+      "サービスを説明し、プロンプトを確認してから外部AIツールへコピーして渡しましょう。",
     next: "次の一歩",
     notFound: "この棚は空です。",
     home: "ホームへ",
     prompt: "プロジェクトの指示",
     guide: "行動規則を読む",
     source: "原稿・修正提案",
+    applyTitle: "自分のプロジェクトに活かす",
+    applyNew:
+      "これからプロジェクトを始めますか？説明を入力して最初のプロンプトを準備しましょう。",
+    applyExisting:
+      "すでに外部AIと会話中なら、この記事のリンクと自分のプロジェクトに合う理由、重視する利点や制約を伝えましょう。合意した要件にどう適用するか依頼してください。",
+    articleLink: "この記事のリンク",
+    contribute: "修正提案・貢献ガイド",
+    aboutParagraphs: [
+      "プロジェクトのアイデアを持つ非専門家と、選択肢を比較する開発者のためのサイトです。誰がサービスを使い、何をするのか説明してみましょう。技術用語を知らなくても始められます。",
+      "ブラウザーで自分に合う最初のプロンプトを準備し、別途用意した外部AIツールに貼り付けます。不足する要件を話し合い、選択肢を比較して企画を確定し、合意した範囲の作業を依頼します。",
+      "カタログでは短い例から選択肢を理解し、プロジェクト企画ガイドでは実践の手順を学べます。役立つ記事のリンクと選ぶ理由を外部AIとの会話に持ち帰りましょう。",
+    ],
+    searchScope: "検索範囲",
+    searchReset: "検索語・絞り込みを解除",
+    searchBroader: "上位の分類を見る",
+    searchOther: "別の資料の種類を見る",
   },
 };

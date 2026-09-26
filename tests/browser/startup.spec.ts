@@ -35,7 +35,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
   }) => {
     await context.grantPermissions(["clipboard-read", "clipboard-write"]);
     await page.goto(`/${lang}/start/`);
-    await expect(page.locator(".prompt-section")).toContainText(
+    await expect(page.locator(".startup-references")).toContainText(
       { en: "preferred language", ko: "편한 언어", ja: "使いやすい言語" }[
         lang
       ]!,
@@ -51,6 +51,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await expect
       .poll(() => page.evaluate(() => navigator.clipboard.readText()))
       .toBe(await prompt.inputValue());
+    await page.locator(".startup-references summary").click();
     await page
       .locator(`main .resource-links a[href="/${lang}/start/v1/"]`)
       .click();
@@ -67,7 +68,15 @@ for (const lang of ["en", "ko", "ja"] as const) {
     const latest = await page.request.get(`/ai/startup/latest.md`);
     expect(latest.status()).toBe(200);
     expect(latest.headers()["content-type"]).toContain("text/markdown");
-    await expect(page.locator(".prose h2")).toHaveCount(7);
+    await expect(
+      page.getByRole("heading", {
+        name: {
+          en: "6. Present the plan, then develop",
+          ko: "6. 기획 제시 후 개발하기",
+          ja: "6. 計画を提示してから開発する",
+        }[lang],
+      }),
+    ).toBeVisible();
     await expect(page.locator(".prose")).toContainText("SOLID");
     await page.setViewportSize({ width: 320, height: 800 });
     expect(
@@ -142,6 +151,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
       .toBe(await preview.inputValue());
     const special =
       "<script>window.promptInjected=true</script> & <b>books</b>\nSecond line";
+    await page.locator(".optional-fields summary").click();
     await page.locator("#service-name").fill('Books & "Friends"');
     await expect(status).toBeEmpty();
     await description.fill(special);
@@ -163,12 +173,13 @@ for (const lang of ["en", "ko", "ja"] as const) {
       await expect(page.locator(field)).toHaveValue("");
     await expect(copy).toBeDisabled();
     await expect(status).toBeEmpty();
-    await expect(page.locator("#service-name")).toBeFocused();
+    await expect(page.locator("#service-description")).toBeFocused();
     await page.locator(`main a[href="/${lang}/help/#make-prompt"]`).click();
     await expect(page.locator("#make-prompt")).toBeVisible();
-    await expect(
-      page.locator(".help-taxonomy .category-tree[data-root=true] > li"),
-    ).toHaveCount(5);
+    await expect(page.locator(".help-taxonomy details")).toHaveCount(5);
+    await page
+      .locator('.help-category[data-category="design"] summary')
+      .click();
     await page
       .locator(`.help-taxonomy a[href="/${lang}/catalog/categories/styles/"]`)
       .click();
@@ -207,6 +218,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
             node.selectionEnd === node.value.length,
         ),
     ).toBe(true);
+    await page.locator(".optional-fields summary").click();
     await page.locator("#service-notes").fill("Ask about budget");
     await expect(page.locator(".prompt-builder [role=status]")).toBeEmpty();
     for (const path of ["ai", "start/v1", "guides/srs"]) {
@@ -278,6 +290,7 @@ test("input has no network, URL, or persistent storage side effects", async ({
   page.on("request", (request) =>
     requests.push(`${request.url()} ${request.postData() ?? ""}`),
   );
+  await page.locator(".optional-fields summary").click();
   await page.locator("#service-name").fill("private-name-482");
   await page.locator("#service-description").fill("private-description-482");
   await page.locator("#service-notes").fill("private-notes-482");
@@ -309,7 +322,8 @@ test("late clipboard completion cannot restore stale success after edit or reset
   for (const change of ["edit", "reset"]) {
     await page.locator("#service-description").fill("Neighbors lend books");
     await page.locator("[data-copy-prompt]").click();
-    if (change === "edit") await page.locator("#service-name").fill("New name");
+    if (change === "edit")
+      await page.locator("#service-description").fill("Updated service");
     else await page.locator("[data-reset-prompt]").click();
     await page.evaluate(() => (window as any).finishCopy());
     await expect(page.locator(".prompt-builder [role=status]")).toBeEmpty();
@@ -330,23 +344,28 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await page.keyboard.press("Tab");
     await expect(page.locator(".hero-actions .primary")).toBeFocused();
     await page.keyboard.press("Enter");
-    await page.locator("#service-name").focus();
-    await page.keyboard.type("Book swap");
-    await page.keyboard.press("Tab");
-    await expect(page.locator("#service-description")).toBeFocused();
+    await page.locator("#service-description").focus();
     await page.keyboard.type("Neighbors lend books");
+    await page.keyboard.press("Tab");
+    await expect(page.locator(".optional-fields summary")).toBeFocused();
+    await page.keyboard.press("Enter");
+    await page.keyboard.press("Tab");
+    await expect(page.locator("#service-name")).toBeFocused();
+    await page.keyboard.type("Book swap");
     await page.keyboard.press("Tab");
     await expect(page.locator("#service-notes")).toBeFocused();
     await page.keyboard.press("Tab");
-    await expect(page.locator("#prompt-preview")).toBeFocused();
-    await page.keyboard.press("Tab");
+    await expect(page.locator("[data-copy-prompt]")).toBeFocused();
     await page.keyboard.press("Enter");
     await expect(page.locator(".prompt-builder [role=status]")).toContainText(
       handoff[lang],
     );
     await page.keyboard.press("Tab");
+    await expect(page.locator("#prompt-preview")).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(page.locator("[data-reset-prompt]")).toBeFocused();
     await page.keyboard.press("Enter");
-    await expect(page.locator("#service-name")).toBeFocused();
+    await expect(page.locator("#service-description")).toBeFocused();
     await expect(page.locator("#prompt-preview")).toHaveValue("");
   });
 }
@@ -375,7 +394,10 @@ for (const lang of ["en", "ko", "ja"] as const) {
             await page
               .locator("#service-description")
               .fill("Long input: " + "Book".repeat(80));
-          await expect(page.locator(".site-header nav a")).toHaveCount(6);
+          for (const route of ["start", "catalog", "guides", "help"])
+            await expect(
+              page.locator(`.site-header nav a[href="/${lang}/${route}/"]`),
+            ).toBeVisible();
           await expect(
             page.locator(".site-header .brand"),
           ).toHaveAccessibleName("kickoff.md by jujin");
@@ -385,7 +407,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
           for (const link of await page.locator(".site-header nav a").all())
             await expect(link).toBeVisible();
           await expect(
-            page.locator(`.site-header nav a[href="/${lang}/ai/"]`),
+            page.locator(`.site-footer a[href="/${lang}/ai/"]`),
           ).toHaveText(identity[lang].ai);
           await expect(page.locator(".site-footer")).toContainText(noAI[lang]);
           await expect(page.locator(".site-footer")).toContainText(
@@ -395,7 +417,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
             const notice = page.locator(".prompt-builder > .site-notice");
             await expect(notice).toContainText(noAI[lang]);
             expect((await notice.boundingBox())!.y).toBeLessThan(
-              (await page.locator("#service-name").boundingBox())!.y,
+              (await page.locator("#service-description").boundingBox())!.y,
             );
           }
           if (path === "") {

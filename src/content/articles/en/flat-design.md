@@ -3,7 +3,7 @@ kind: concept
 articleId: flat-design
 lang: en
 title: Flat design
-summary: Explore the same project workspace.
+summary: "Separate clinic tasks with solid colors and labels while keeping detail without simulated depth."
 category: styles
 aliases:
   - Flat design
@@ -16,9 +16,9 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-23"
+revision: 10
+sourceRevision: 10
+updated: "2026-09-26"
 comparison:
   features: >-
     Solid surfaces and clear labels establish hierarchy without simulated depth.

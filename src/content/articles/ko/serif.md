@@ -3,7 +3,7 @@ kind: concept
 articleId: serif
 lang: ko
 title: 세리프
-summary: 같은 글자·문장·숫자로 서체 비교.
+summary: "글자 끝의 획으로 역사 잡지에 인쇄물 같은 인상을 주고 언어별 실제 글자도 확인합니다."
 category: type-shapes
 aliases:
   - 세리프
@@ -12,9 +12,9 @@ related:
   - sans-serif
   - script
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: 세리프는 획 끝에 마무리 장식이 있습니다.
   advantages: 획 끝 장식이 같은 표본에 다른 질감을 줍니다.

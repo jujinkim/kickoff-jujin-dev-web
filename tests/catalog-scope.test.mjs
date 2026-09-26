@@ -142,7 +142,7 @@ test("integrated guides and startup sources preserve ownership across languages"
       );
     }
     const startup = readFileSync(`src/startup/v1/${lang}.md`, "utf8");
-    assert.ok(startup.includes("2026-09-24"));
+    assert.ok(startup.includes("2026-09-26"));
   }
   const instructions = read("ai/instructions.md");
   assert.ok(
@@ -153,7 +153,7 @@ test("integrated guides and startup sources preserve ownership across languages"
   );
   assert.ok(!instructions.includes("EVERY unresolved choice"));
   const startup = read("ai/startup/latest.md");
-  assert.ok(startup.includes("Revision: 3."));
+  assert.ok(startup.includes("Revision: 4."));
   assert.ok(
     instructions.includes("A local feature still needs a user decision"),
   );

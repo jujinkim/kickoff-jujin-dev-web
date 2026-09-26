@@ -12,9 +12,9 @@ related:
   - unity
   - unreal-engine
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 checked: "2026-09-22"
 comparison:
   features: Reusable scenes made of nodes
@@ -26,11 +26,11 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine an orchard game where collecting apples scores points. The team reuses each apple as a node-built scene instance, so contact changes need one edit.
+Imagine an orchard game where players collect apples for points. Copying each apple’s appearance and contact logic makes fixes drift. The team prioritizes reusable trees of visual and contact parts over visual behavior graphs.
 
 ## How: work toward a solution
 
-The schematic contains a player, floor, camera, and one apple instance. Move to item triggers authored contact logic: score changes from zero to one and the item disappears. Repeat contact cannot score again. Disable contact before moving to demonstrate a missed collection: score stays zero. Reset or reload restores the player and item. This is a concept simulation.
+The diagram has a player, floor, camera, and apple instance. Move to item runs contact logic: score becomes one and the apple disappears. Repeated contact cannot score again. Disable contact before moving: score stays zero. Reset or reload restores the scene. This simulates the concept, not the engine.
 
 ## What: the concept
 

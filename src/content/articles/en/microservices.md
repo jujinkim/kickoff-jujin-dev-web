@@ -8,9 +8,9 @@ category: "service-split"
 aliases: ["Microservices"]
 related: ["architecture", "monolith", "modular-monolith"]
 status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
 checked: "2026-09-22"
 comparison:
   {
@@ -24,13 +24,13 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a school-events app for families, volunteers, and staff. Volunteer tags need a quick release, but the billing team has another schedule.
+Imagine a school app where families save notices and pay fees. Urgent volunteer tags cannot wait for billing releases. One team accepts network coordination for independence; internal modules still release together.
 
 ## How: work toward a solution
 
-1. Fictional school events app: one team; Catalog, Library and Billing each v1. School Events has no tag.
-2. Deploy only Library v2 with a compatible tag feature; Catalog and Billing stay v1.
-3. Library queries Catalog over the network, then writes `volunteer` to its own store. A lookup timeout before writing leaves no tag; report failure and retry after recovery.
+1. One team runs Catalog, Library and Billing at v1; saved School Events has no tag.
+2. Deploy Library v2 with compatible tags; Catalog and Billing stay v1.
+3. Library queries Catalog over the network, then writes `volunteer` to its store. Timeout leaves no tag; report failure and retry after recovery.
 
 ## What: the concept
 

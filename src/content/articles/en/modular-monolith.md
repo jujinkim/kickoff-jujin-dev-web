@@ -8,9 +8,9 @@ category: "service-split"
 aliases: ["Modular monolith"]
 related: ["architecture", "monolith", "microservices"]
 status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
 checked: "2026-09-22"
 comparison:
   {
@@ -24,13 +24,13 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a hiking guide with saved articles. Library changes spread, but its small team cannot operate many services.
+Imagine a hiking app where walkers save guides and buy extras. Weekend tags risk changing billing code. The team wants clear ownership within one release, without separate services.
 
 ## How: work toward a solution
 
-1. Fictional app v1: one team deploys Catalog, Library and Billing together; Hiking Guide has no tag.
-2. Library adds tag storage in its owned tables. Deploy app v2; Billing behavior stays unchanged. One database holds module-owned tables; direct cross-module access is forbidden.
-3. Library calls Catalog's API in-process, then writes `weekend`. A lookup error leaves no tag; retry after recovery.
+1. One team ships Catalog, Library and Billing together; saved Hiking Guide has no tag.
+2. Add tags to Library-owned tables; deploy app v2 with unchanged Billing. One database; cross-module table access is forbidden.
+3. Library calls Catalog's API in-process, then writes `weekend`. Failed lookup leaves no tag; retry after recovery.
 
 ## What: the concept
 

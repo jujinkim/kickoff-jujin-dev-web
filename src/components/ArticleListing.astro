@@ -25,6 +25,17 @@ const categories = allCategories.filter(
     (kind === "concept" || !c.parent) &&
     (!categoryId || ancestors(c.id).some((node) => node.id === categoryId)),
 );
+const scope = categoryId
+  ? categoryNames[lang][categoryId]
+  : kind === "guide"
+    ? t.guides
+    : t.catalog;
+const parent = categoryId ? ancestors(categoryId).at(-2) : undefined;
+const broaderUrl = parent
+  ? `/${lang}/catalog/categories/${parent.id}/`
+  : `/${lang}/catalog/`;
+const otherUrl = `/${lang}/${kind === "guide" ? "catalog" : "guides"}/`;
+const otherLabel = kind === "guide" ? t.catalog : t.guides;
 const groupId = (category: string) => {
   const path = ancestors(category);
   return (path[1] ?? path[0]).id;
@@ -44,6 +55,7 @@ const groups =
   data-empty={t.empty}
   data-error={t.searchError}
   data-results={t.results}
+  data-scope={scope}
 >
   <div class="catalog-toolbar">
     <div class="search-field">
@@ -53,6 +65,7 @@ const groups =
         type="search"
         placeholder={t.searchHint}
         autocomplete="off"
+        aria-describedby="search-scope"
       />
     </div>
     <div class="view-switch" role="group" aria-label={t.views}>
@@ -63,6 +76,9 @@ const groups =
       ))}
     </div>
   </div>
+  <p id="search-scope">
+    {t.searchScope}: <strong data-search-scope>{scope}</strong>
+  </p>
   <div class="filter-row">
     <label class="sr-only" for="category">
       {t.all}
@@ -80,6 +96,21 @@ const groups =
     <p id="result-status" role="status" aria-live="polite">
       {articles.length} {t.count}
     </p>
+  </div>
+  <div data-search-recovery hidden>
+    <div class="resource-links">
+      <button type="button" class="button" data-search-reset>
+        {t.searchReset}
+      </button>
+      {categoryId && (
+        <a class="button" href={broaderUrl}>
+          {t.searchBroader} →
+        </a>
+      )}
+      <a class="button" href={otherUrl}>
+        {t.searchOther}: {otherLabel} →
+      </a>
+    </div>
   </div>
   <div id="search-results" class="search-results" hidden></div>
   <div id="catalog-grid" class:list={{ "catalog-grid": kind === "guide" }}>

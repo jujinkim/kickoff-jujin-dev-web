@@ -3,7 +3,7 @@ kind: concept
 articleId: neobrutalism
 lang: en
 title: Neobrutalism
-summary: Explore the same project workspace.
+summary: "Group school-fair tasks with bright blocks, thick outlines, and hard shadows for bold emphasis."
 category: styles
 aliases:
   - Neobrutalism
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: >-
     Bright blocks, thick outlines, and hard offset shadows create graphic

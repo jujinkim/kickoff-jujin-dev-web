@@ -3,7 +3,7 @@ kind: concept
 articleId: material-3-expressive
 lang: ja
 title: Material 3 Expressive
-summary: 同じプロジェクト作業室でスタイルを比較.
+summary: "ピクニック準備の次の操作を、大きな操作部・色・形・短い動きで強調します。"
 category: styles
 aliases:
   - Material 3 Expressive
@@ -12,9 +12,9 @@ related:
   - flat-design
   - neobrutalism
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: 色面・多様な曲率・大きな操作部・短い形の反応を使います。
   advantages: 大きさと領域の区切りで主要操作を強調します。

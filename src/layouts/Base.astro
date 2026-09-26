@@ -85,13 +85,12 @@ const absolute = (url: string) =>
         <nav aria-label={t.navigation}>
           {[
             ["start", t.start],
-            ["help", t.help],
             ["catalog", t.catalog],
             ["guides", t.guides],
-            ["ai", t.ai],
-            ["about", t.about],
+            ["help", t.help],
           ].map(([slug, label]) => (
             <a
+              class:list={{ "nav-primary": slug === "start" }}
               href={`/${lang}/${slug}/`}
               aria-current={path.includes(`/${slug}/`) ? "page" : undefined}
             >
@@ -100,11 +99,6 @@ const absolute = (url: string) =>
           ))}
         </nav>
         <div class="header-tools">
-          <div class="external-links">
-            <a href="https://jujin.dev">jujin.dev ↗</a>
-            <a href="https://jujin.kim">jujin.kim ↗</a>
-            <a href="https://blog.jujin.kim">blog.jujin.kim ↗</a>
-          </div>
           <div class="languages" aria-label="Language">
             {languages.map((l) => {
               const target = alternates.find((a) => a.lang === l);
@@ -155,6 +149,8 @@ const absolute = (url: string) =>
         <p>{t.siteNotice}</p>
       </div>
       <div class="footer-links">
+        <a href={`/${lang}/ai/`}>{t.ai}</a>
+        <a href={`/${lang}/about/`}>{t.about}</a>
         <a href="https://jujin.dev">jujin.dev ↗</a>
         <a href="https://jujin.kim">jujin.kim ↗</a>
         <a href="https://blog.jujin.kim">blog.jujin.kim ↗</a>

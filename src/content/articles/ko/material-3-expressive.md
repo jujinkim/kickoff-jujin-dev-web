@@ -3,7 +3,7 @@ kind: concept
 articleId: material-3-expressive
 lang: ko
 title: Material 3 Expressive
-summary: 같은 프로젝트 작업실로 스타일 비교.
+summary: "소풍 준비의 다음 행동을 큰 조작부·색·형태·짧은 움직임으로 강조합니다."
 category: styles
 aliases:
   - Material 3 Expressive
@@ -12,9 +12,9 @@ related:
   - flat-design
   - neobrutalism
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: 색면·다양한 곡률·큰 조작부·짧은 형태 반응을 사용합니다.
   advantages: 크기와 영역 구분으로 주요 동작을 강조합니다.

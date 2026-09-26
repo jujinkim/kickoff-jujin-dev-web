@@ -9,10 +9,10 @@ aliases: ["Astro", "Hugo", "Jekyll", "SSG", "정적 사이트", "静的サイト
 related: ["tools", "shipping", "adr"]
 example: "generators"
 status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-aiPrompt: "확정된 집필 흐름을 기준으로 Astro·Hugo·Jekyll을 비교해줘. 다국어, 예시 미리보기, 검색, 배포를 각각 어떻게 처리하는지 보여줘. 유지 비용과 공식 근거를 포함하고 스택 변경 전에 추천 채택·거절·다른 후보를 물어봐."
+revision: 5
+sourceRevision: 5
+updated: "2026-09-26"
+aiPrompt: "합의한 집필 흐름과 제약을 기준으로 적합한 정적 사이트 생성기를 비교하고, 관련 있으면 Astro·Hugo·Jekyll을 포함해줘. 집필·미리보기·호스팅·유지관리 필요를 비교하고 언어·검색·상호작용 기능은 요구된 범위 안에서만 검토해줘. 공식 근거를 사용하고 불확실하거나 변하는 사실은 표시해줘. 확정한 스택은 유지하고, 미결정 선택은 추천과 대안을 설명한 뒤 변경 전에 결정을 물어봐."
 checked: "2026-09-23"
 ---
 

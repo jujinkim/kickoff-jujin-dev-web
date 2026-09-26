@@ -3,7 +3,7 @@ kind: concept
 articleId: minimalism
 lang: ko
 title: 미니멀리즘
-summary: 같은 프로젝트 작업실로 스타일 비교.
+summary: "필요한 조작은 남기고 시선을 빼앗는 장식을 덜어 등산 준비물에 집중합니다."
 category: styles
 aliases:
   - 미니멀리즘
@@ -16,9 +16,9 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: 제한된 요소와 넉넉한 여백으로 핵심에 집중합니다. 여백과 절제한 글자로 프로젝트 정보를 읽기 쉽게 배치합니다.
   advantages: 여백이 핵심 작업에 시선을 모읍니다.

@@ -72,6 +72,9 @@ const steps = {
     <p>{t.aiIntro}</p>
   </section>
   <div class="guide-content">
+    <p>
+      <a href={`/${lang}/start/`}>{t.createPrompt} →</a>
+    </p>
     <StartupPrompt lang={lang} promptId="project-prompt" />
     <p class="notice">{t.aiWarning}</p>
     <div class="steps">

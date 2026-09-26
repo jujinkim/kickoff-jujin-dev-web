@@ -3,7 +3,7 @@ kind: concept
 articleId: neumorphism
 lang: ko
 title: 뉴모피즘
-summary: 같은 프로젝트 작업실로 스타일 비교.
+summary: "작은 기록 화면에 부드럽게 눌린 표면을 표현합니다."
 category: styles
 aliases:
   - 뉴모피즘
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 8
-sourceRevision: 8
-updated: "2026-09-23"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-26"
 comparison:
   features: >-
     같은 계열 표면에 좌상단 밝은 음영·우하단 어두운 음영을 쓰며 평상시 테두리는 없습니다. 체크한 행은 안으로 눌리며 그림자가 없어도

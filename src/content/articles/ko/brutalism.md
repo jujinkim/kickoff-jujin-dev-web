@@ -3,7 +3,7 @@ kind: concept
 articleId: brutalism
 lang: ko
 title: 브루탈리즘
-summary: 같은 프로젝트 작업실로 스타일 비교.
+summary: "수리 행사 안내판의 구획선과 링크를 드러내 거칠고 실용적인 인상을 줍니다."
 category: styles
 aliases:
   - 브루탈리즘
@@ -16,9 +16,9 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-23"
+revision: 10
+sourceRevision: 10
+updated: "2026-09-26"
 comparison:
   features: 노출된 구분선과 투박한 타이포가 구조를 드러냅니다. 굵은 구분선과 밑줄 메뉴로 구조를 드러냅니다.
   advantages: 노출된 구분선으로 작업의 경계를 드러냅니다.

@@ -3,7 +3,7 @@ kind: concept
 articleId: script
 lang: ko
 title: 스크립트
-summary: 같은 글자·문장·숫자로 서체 비교.
+summary: "짧은 초대장 제목에 손글씨 인사를 담고 긴 글에는 단정한 서체를 씁니다."
 category: type-shapes
 aliases:
   - 스크립트
@@ -12,9 +12,9 @@ related:
   - serif
   - sans-serif
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
 comparison:
   features: 스크립트 서체는 손글씨의 획과 연결을 빌립니다.
   advantages: 손글씨 획이 짧은 글에 표정을 더합니다.

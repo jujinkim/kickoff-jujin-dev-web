@@ -21,10 +21,10 @@ aliases:
 related: ["theme", "srs"]
 example: "layout"
 status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-aiPrompt: "Describe this catalog using named regions and components. Propose mobile and desktop layouts, reading order, keyboard behavior, and empty/loading/error states. Ask about unresolved information priorities before choosing a layout. Return a text wireframe and testable acceptance criteria."
+revision: 6
+sourceRevision: 6
+updated: "2026-09-26"
+aiPrompt: "Using our agreed project and supported screens, describe named regions and components. Clarify unresolved information priorities, then propose layouts, reading order, keyboard behavior, and relevant empty, loading, and error states. Return a text wireframe and testable acceptance criteria. Preserve agreed device and language scope; do not adopt the article’s catalog as a requirement."
 ---
 
 ## Why: the goal or problem
