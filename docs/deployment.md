@@ -1,4 +1,4 @@
-# kickoff.md deployment
+# kickoff deployment
 
 Current local evidence: [product alignment review](product-alignment-review.md) and [verification index](verification.md). Local build success does not prove deployment. The alignment task includes no commit, push, or deployment; prior production observations must retain their dates.
 

@@ -1,7 +1,7 @@
 export const languages = ["en", "ko", "ja"] as const;
 export type Lang = (typeof languages)[number];
 export const languageNames = { en: "English", ko: "한국어", ja: "日本語" };
-export const siteName = "kickoff.md";
+export const siteName = "kickoff";
 export const siteTitle = `${siteName} by jujin`;
 import taxonomy from "../data/categories.json";
 import { activeTaxonomy } from "./catalog";
@@ -24,7 +24,7 @@ export const strings = {
     fieldGuide: "A field guide for your next project",
     featuredCaption: "Example: a photo walk over frosted glass",
     examplesIntro: "Explore examples, compare choices, make a plan.",
-    builderNotice: "kickoff.md does not provide an AI service.",
+    builderNotice: "kickoff does not provide an AI service.",
     start: "Create a prompt",
     help: "How to use",
     navigation: "Main navigation",
@@ -44,11 +44,11 @@ export const strings = {
     eyebrow: "Custom prompts and project planning resources",
     hero: "Your first task for AI, with a prompt that fits your project.",
     intro:
-      "Prepare a custom prompt for your project's first task with AI. kickoff.md is an information site where you can also learn and compare planning, design, and technology choices through examples.",
+      "Prepare a custom prompt for your project's first task with AI. kickoff is an information site where you can also learn and compare planning, design, and technology choices through examples.",
     siteDescription:
-      "Prepare custom prompts and learn project planning with kickoff.md. kickoff.md provides no AI service; copy your prompt into your external AI tool to discuss and work on your project.",
+      "Prepare custom prompts and learn project planning with kickoff. kickoff provides no AI service; copy your prompt into your external AI tool to discuss and work on your project.",
     siteNotice:
-      "kickoff.md does not provide an AI service. Prepare your prompt here, then copy and paste it into the external AI tool you use to continue the conversation and work.",
+      "kickoff does not provide an AI service. Prepare your prompt here, then copy and paste it into the external AI tool you use to continue the conversation and work.",
     browse: "Explore the catalog",
     learn: "A good place to start",
     recent: "Freshly revised",
@@ -92,11 +92,11 @@ export const strings = {
     count: "field notes",
     back: "Back to catalog",
     aiIntro:
-      "For an existing project in your external AI tool, add these instructions to guide planning and work. kickoff.md does not provide an AI service.",
+      "For an existing project in your external AI tool, add these instructions to guide planning and work. kickoff does not provide an AI service.",
     aiWarning:
       "Publishing files does not make an AI obey them. Tell it to read, apply, and report what it could not access.",
     aboutIntro:
-      "kickoff.md is an information site for preparing custom prompts for your external AI tool and learning project planning, design, and technology choices through examples.",
+      "kickoff is an information site for preparing custom prompts for your external AI tool and learning project planning, design, and technology choices through examples.",
     startIntro:
       "Describe your service, review the prompt, and copy it into your external AI tool.",
     next: "Next step",
@@ -127,7 +127,7 @@ export const strings = {
     fieldGuide: "다음 프로젝트를 위한 도감",
     featuredCaption: "예제: 반투명 패널로 보는 사진 산책",
     examplesIntro: "예제를 보고, 선택지를 비교하고, 계획을 세워보세요.",
-    builderNotice: "kickoff.md는 AI 서비스를 제공하지 않습니다.",
+    builderNotice: "kickoff는 AI 서비스를 제공하지 않습니다.",
     start: "프롬프트 만들기",
     help: "이용 가이드",
     navigation: "주 메뉴",
@@ -147,11 +147,11 @@ export const strings = {
     eyebrow: "맞춤 프롬프트와 프로젝트 기획 학습 자료",
     hero: "AI에게 맡길 첫 작업, 내 프로젝트에 맞는 프롬프트로.",
     intro:
-      "내 프로젝트에서 AI에게 맡길 첫 작업을 맞춤 프롬프트로 준비하세요. kickoff.md는 기획·설계·기술 선택도 예시로 배우고 비교할 수 있는 정보 사이트입니다.",
+      "내 프로젝트에서 AI에게 맡길 첫 작업을 맞춤 프롬프트로 준비하세요. kickoff는 기획·설계·기술 선택도 예시로 배우고 비교할 수 있는 정보 사이트입니다.",
     siteDescription:
-      "kickoff.md에서 맞춤 프롬프트를 준비하고 프로젝트 기획을 배우세요. kickoff.md는 AI 서비스를 제공하지 않습니다. 프롬프트를 복사해 외부 AI 도구에서 대화와 작업을 진행하세요.",
+      "kickoff에서 맞춤 프롬프트를 준비하고 프로젝트 기획을 배우세요. kickoff는 AI 서비스를 제공하지 않습니다. 프롬프트를 복사해 외부 AI 도구에서 대화와 작업을 진행하세요.",
     siteNotice:
-      "kickoff.md는 AI 서비스를 제공하지 않습니다. 이곳에서 프롬프트를 준비하고, 복사한 내용을 사용하는 외부 AI 도구에 붙여넣어 대화와 작업을 진행하세요.",
+      "kickoff는 AI 서비스를 제공하지 않습니다. 이곳에서 프롬프트를 준비하고, 복사한 내용을 사용하는 외부 AI 도구에 붙여넣어 대화와 작업을 진행하세요.",
     browse: "카탈로그 둘러보기",
     learn: "여기서 시작하세요",
     recent: "최근 손본 글",
@@ -194,11 +194,11 @@ export const strings = {
     count: "편의 글",
     back: "카탈로그로",
     aiIntro:
-      "이미 외부 AI 도구에서 진행 중인 프로젝트에 기획·작업 지침을 추가하는 경로입니다. kickoff.md는 AI 서비스를 제공하지 않습니다.",
+      "이미 외부 AI 도구에서 진행 중인 프로젝트에 기획·작업 지침을 추가하는 경로입니다. kickoff는 AI 서비스를 제공하지 않습니다.",
     aiWarning:
       "파일을 공개한다고 AI가 따르지는 않습니다. 읽고 적용할 절차와 접근 실패 보고를 직접 지시하세요.",
     aboutIntro:
-      "kickoff.md는 외부 AI에 전달할 맞춤 프롬프트를 준비하고 프로젝트 기획·설계·기술 선택을 예시로 배우는 정보 사이트입니다.",
+      "kickoff는 외부 AI에 전달할 맞춤 프롬프트를 준비하고 프로젝트 기획·설계·기술 선택을 예시로 배우는 정보 사이트입니다.",
     startIntro:
       "서비스를 설명하고 프롬프트를 확인한 뒤 외부 AI 도구에 복사해 전달하세요.",
     next: "다음 단계",
@@ -230,7 +230,7 @@ export const strings = {
     fieldGuide: "次のプロジェクトのための図鑑",
     featuredCaption: "作例：すりガラス越しの写真散歩",
     examplesIntro: "作例を見て、選択肢を比べ、計画を立てましょう。",
-    builderNotice: "kickoff.mdはAIサービスを提供していません。",
+    builderNotice: "kickoffはAIサービスを提供していません。",
     start: "プロンプトを作る",
     help: "使い方ガイド",
     navigation: "メインメニュー",
@@ -250,11 +250,11 @@ export const strings = {
     eyebrow: "自分に合うプロンプトとプロジェクト企画の学習資料",
     hero: "AIに任せる最初の作業を、自分のプロジェクトに合うプロンプトで。",
     intro:
-      "自分のプロジェクトでAIに任せる最初の作業を、目的に合うプロンプトにまとめましょう。kickoff.mdは、企画・設計・技術の選択も例から学び、比較できる情報サイトです。",
+      "自分のプロジェクトでAIに任せる最初の作業を、目的に合うプロンプトにまとめましょう。kickoffは、企画・設計・技術の選択も例から学び、比較できる情報サイトです。",
     siteDescription:
-      "kickoff.mdで自分に合うプロンプトを準備し、プロジェクト企画を学びましょう。kickoff.mdはAIサービスを提供しません。プロンプトをコピーし、外部AIツールで会話や作業を進めてください。",
+      "kickoffで自分に合うプロンプトを準備し、プロジェクト企画を学びましょう。kickoffはAIサービスを提供しません。プロンプトをコピーし、外部AIツールで会話や作業を進めてください。",
     siteNotice:
-      "kickoff.mdはAIサービスを提供していません。ここでプロンプトを準備し、コピーした内容をお使いの外部AIツールに貼り付けて、会話や作業を進めてください。",
+      "kickoffはAIサービスを提供していません。ここでプロンプトを準備し、コピーした内容をお使いの外部AIツールに貼り付けて、会話や作業を進めてください。",
     browse: "カタログを見る",
     learn: "まずはここから",
     recent: "最近の改訂",
@@ -296,11 +296,11 @@ export const strings = {
     count: "記事",
     back: "カタログへ",
     aiIntro:
-      "すでに外部AIツールで進めているプロジェクトに、企画・作業の指示を追加するためのページです。kickoff.mdはAIサービスを提供していません。",
+      "すでに外部AIツールで進めているプロジェクトに、企画・作業の指示を追加するためのページです。kickoffはAIサービスを提供していません。",
     aiWarning:
       "ファイルの公開だけではAIの遵守を保証できません。読む手順、適用、アクセス失敗の報告を指示してください。",
     aboutIntro:
-      "kickoff.mdは外部AIに渡す自分に合ったプロンプトを準備し、プロジェクトの企画・設計・技術の選択を例から学ぶ情報サイトです。",
+      "kickoffは外部AIに渡す自分に合ったプロンプトを準備し、プロジェクトの企画・設計・技術の選択を例から学ぶ情報サイトです。",
     startIntro:
       "サービスを説明し、プロンプトを確認してから外部AIツールへコピーして渡しましょう。",
     next: "次の一歩",

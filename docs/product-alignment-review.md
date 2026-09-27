@@ -1,14 +1,14 @@
-# kickoff.md product alignment review
+# kickoff product alignment review
 
 Reviewed scope: 2026-09-26. This document owns the approved purpose, screen roles,
 editorial scope, and evidence for this local revision.
 
 ## Purpose and audience
 
-kickoff.md helps non-specialists and developers turn a project description into a
+kickoff helps non-specialists and developers turn a project description into a
 custom prompt, learn relevant planning, design, and technology choices, and take
 that context to an external AI tool for discussion and work. Prompt preparation
-is the primary action. kickoff.md does not provide an AI service.
+is the primary action. kickoff does not provide an AI service.
 
 Core flow: describe a service → review and copy a browser-prepared prompt → paste
 into an external AI tool → resolve requirements and choices → agree on a plan →

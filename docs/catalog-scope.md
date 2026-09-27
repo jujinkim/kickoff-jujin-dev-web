@@ -1,6 +1,6 @@
 # Catalog scope, 2026-09-23
 
-kickoff.md helps people prepare custom prompts and learn project planning, design, and technology choices before discussing or working in an external AI tool. Users do not need to know every implementation term. This review covers all current groups and guides, following the maintainer's approved scope.
+kickoff helps people prepare custom prompts and learn project planning, design, and technology choices before discussing or working in an external AI tool. Users do not need to know every implementation term. This review covers all current groups and guides, following the maintainer's approved scope.
 
 Current purpose and reader-flow evidence: [product alignment review](product-alignment-review.md). This scope review records the 2026-09-23 decision; later local guidance revisions do not change the inventory below.
 

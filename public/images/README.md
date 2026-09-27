@@ -1,6 +1,6 @@
 # Demo image provenance
 
-Created 2026-09-26 with the built-in imagegen tool for kickoff.md. No input image or
+Created 2026-09-26 with the built-in imagegen tool for kickoff. No input image or
 third-party photograph was used. These are fictional illustrative assets, not
 photographic evidence of a real place or a tested recipe. No stock-photo license
 or third-party attribution is attached. Keep this provenance with reuse; repository

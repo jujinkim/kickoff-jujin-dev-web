@@ -1,6 +1,6 @@
 # Design demos: implementation and extension
 
-In kickoff.md, all designs belong **inside the article body**. Site header, navigation, title,
+In kickoff, all designs belong **inside the article body**. Site header, navigation, title,
 description, comments, URLs, and API v1 remain the surrounding catalog. A demo
 may choose its own background, typography, material, layout, and controls.
 Give each article a distinct, familiar situation. Keep only the controls needed

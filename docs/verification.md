@@ -1,4 +1,4 @@
-# kickoff.md verification index
+# kickoff verification index
 
 - [Product alignment, 2026-09-26](product-alignment-review.md): current reader-flow changes and local checks, separate from production.
 - [AI guidance review](ai-guidance-review.md): local v1 revision 4, token budget, and prior verification limitations.

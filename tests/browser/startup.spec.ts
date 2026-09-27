@@ -6,25 +6,25 @@ const handoff = {
   ja: /外部AIツール/,
 };
 const noAI = {
-  en: /kickoff\.md does not provide an AI service/,
-  ko: /kickoff\.md는 AI 서비스를 제공하지 않습니다/,
-  ja: /kickoff\.mdはAIサービスを提供していません/,
+  en: /kickoff does not provide an AI service/,
+  ko: /kickoff는 AI 서비스를 제공하지 않습니다/,
+  ja: /kickoffはAIサービスを提供していません/,
 };
 const identity = {
   en: {
     learning: "Custom prompts and project planning resources",
     ai: "Instructions for external AI",
-    places: ["kickoff.md", "External AI tool"],
+    places: ["kickoff", "External AI tool"],
   },
   ko: {
     learning: "맞춤 프롬프트와 프로젝트 기획 학습 자료",
     ai: "외부 AI용 지침",
-    places: ["kickoff.md", "외부 AI 도구"],
+    places: ["kickoff", "외부 AI 도구"],
   },
   ja: {
     learning: "自分に合うプロンプトとプロジェクト企画の学習資料",
     ai: "外部AI向け指示",
-    places: ["kickoff.md", "外部AIツール"],
+    places: ["kickoff", "外部AIツール"],
   },
 };
 
@@ -400,9 +400,9 @@ for (const lang of ["en", "ko", "ja"] as const) {
             ).toBeVisible();
           await expect(
             page.locator(".site-header .brand"),
-          ).toHaveAccessibleName("kickoff.md by jujin");
+          ).toHaveAccessibleName("kickoff by jujin");
           await expect(page.locator(".site-header .brand-name")).toContainText(
-            "kickoff.md",
+            "kickoff",
           );
           for (const link of await page.locator(".site-header nav a").all())
             await expect(link).toBeVisible();

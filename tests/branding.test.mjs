@@ -5,7 +5,7 @@ import { readFileSync, readdirSync } from "node:fs";
 const read = (path) => readFileSync(path, "utf8");
 const origin = "https://kickoff.jujin.dev";
 
-test("kickoff.md display branding keeps the existing domain, repository, URLs, and comments", () => {
+test("kickoff display branding keeps the existing domain, repository, URLs, and comments", () => {
   const config = JSON.parse(read("src/lib/giscus.json"));
   assert.equal(config.repo, "jujinkim/kickoff-jujin-dev-web");
   assert.equal(config.repoId, "R_kgDOUitRaQ");
@@ -16,7 +16,7 @@ test("kickoff.md display branding keeps the existing domain, repository, URLs, a
       continue;
     const body = read(`dist/${file}`);
     assert.ok(!body.includes("Kickoff"), file);
-    assert.doesNotMatch(body, /https?:\/\/kickoff\.md(?:[\/"?#]|$)/, file);
+    assert.ok(!body.includes("kickoff.md"), file);
     assert.doesNotMatch(
       body,
       /https:\/\/jujin\.dev\/(?:en|ko|ja|ai|llms\.txt|sitemap)/,
@@ -26,9 +26,7 @@ test("kickoff.md display branding keeps the existing domain, repository, URLs, a
     if (file.endsWith(".html")) {
       if (body.includes('property="og:site_name"'))
         assert.ok(
-          body.includes(
-            'property="og:site_name" content="kickoff.md by jujin"',
-          ),
+          body.includes('property="og:site_name" content="kickoff by jujin"'),
           file,
         );
       for (const canonical of body.matchAll(
@@ -42,7 +40,7 @@ test("kickoff.md display branding keeps the existing domain, repository, URLs, a
     const html = read(`dist/${lang}/catalog/brutalism/index.html`);
     assert.ok(html.includes('data-comment-term="brutalism"'));
     assert.ok(html.includes('data-repo="jujinkim/kickoff-jujin-dev-web"'));
-    assert.ok(html.includes('aria-label="kickoff.md by jujin"'));
+    assert.ok(html.includes('aria-label="kickoff by jujin"'));
     assert.ok(html.includes('href="https://jujin.dev"'));
   }
 });

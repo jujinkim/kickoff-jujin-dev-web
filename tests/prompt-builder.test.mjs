@@ -146,9 +146,9 @@ for (const [lang, name, notes] of [
       ),
     ];
     const noAI = {
-      en: /kickoff\.md does not provide an AI service/,
-      ko: /kickoff\.md는 AI 서비스를 제공하지 않습니다/,
-      ja: /kickoff\.mdはAIサービスを提供していません/,
+      en: /kickoff does not provide an AI service/,
+      ko: /kickoff는 AI 서비스를 제공하지 않습니다/,
+      ja: /kickoffはAIサービスを提供していません/,
     }[lang];
     for (const html of corePages) assert.match(description(html), external);
     for (const html of [...corePages, catalog]) {
@@ -207,7 +207,7 @@ test("llms entry points describe prompt creation, help, and project planning", (
     /property="og:description" content="([^"]+)"/,
   ])
     assert.equal(root.match(pattern)[1], home.match(pattern)[1]);
-  assert.match(root, /kickoff\.md does not provide an AI service/);
+  assert.match(root, /kickoff does not provide an AI service/);
   const llms = read("dist/llms.txt");
   for (const text of [
     "Create a prompt",
@@ -215,7 +215,7 @@ test("llms entry points describe prompt creation, help, and project planning", (
     "Project planning",
     "learning project planning",
     "external AI tool",
-    "kickoff.md does not provide an AI service",
+    "kickoff does not provide an AI service",
     "Create a custom prompt",
     "Instructions for external AI",
     "/ai/startup/latest.md",

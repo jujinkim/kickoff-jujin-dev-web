@@ -5,7 +5,7 @@ export async function GET() {
   const all = await listed();
   const text = `# ${siteTitle}
 
-> Optional reference index for kickoff.md by jujin, an information site for preparing custom prompts and learning project planning, design, and technology choices through examples. kickoff.md does not provide an AI service. Users prepare an external AI tool separately, then copy and paste their prompt into that tool for conversations and work.
+> Optional reference index for kickoff by jujin, an information site for preparing custom prompts and learning project planning, design, and technology choices through examples. kickoff does not provide an AI service. Users prepare an external AI tool separately, then copy and paste their prompt into that tool for conversations and work.
 
 Only the startup guidelines and behavior rules below are required site reading to begin planning. This index and the catalog are optional learning resources, not a required selection list. Derive decisions from requirements and constraints, including options outside this site. Follow individual links only when requested or useful; an inaccessible optional resource alone does not stop planning.
 

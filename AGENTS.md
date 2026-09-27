@@ -2,14 +2,14 @@
 
 Read `/home/jujin/.codex/RTK.md` for shell command conventions.
 
-The display name is `kickoff.md` (credit: `by jujin`). Keep the public origin
+The display name is `kickoff` (credit: `by jujin`). Keep the public origin
 `https://kickoff.jujin.dev`, repository name, routes, and stable identities unchanged.
 
-Present kickoff.md as an information site for preparing custom prompts and learning
+Present kickoff as an information site for preparing custom prompts and learning
 project planning, design, and technology choices. Lead with prompt preparation
 and keep it as the main action. Use the approved Korean slogan unchanged:
 “AI에게 맡길 첫 작업, 내 프로젝트에 맞는 프롬프트로.” Explicitly state that
-kickoff.md does not provide an AI service on core screens and in the shared footer;
+kickoff does not provide an AI service on core screens and in the shared footer;
 do not add a global top banner. Users prepare their external AI tool separately
 and paste copied prompts there for conversations and work. Keep shared copy in
 the existing localized strings, including copy/fallback guidance and metadata.
