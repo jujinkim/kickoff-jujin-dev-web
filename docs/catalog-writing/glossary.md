@@ -210,3 +210,20 @@ Keep **List** (collection) separate from **List layout** (visual arrangement), *
 | Rewarded ads             | 보상형 광고         | リワード広告             |
 
 Feature tiers group capabilities. Volume pricing applies one selected rate to every unit; graduated pricing prices each slice. Subscription is a billing period, not necessarily a flat amount. Customer direct payment identifies funding; direct seller identifies responsibility. These translations are editorial labels, not claims of standardized legal terms.
+
+## Version control extension — 2026-09-27
+
+| English                      | Korean             | Japanese               |
+| ---------------------------- | ------------------ | ---------------------- |
+| Version control systems      | 버전 관리 시스템   | バージョン管理システム |
+| Repository hosting           | 저장소 호스팅      | リポジトリホスティング |
+| Local history                | 로컬 이력          | ローカル履歴           |
+| Working copy                 | 작업 사본          | 作業コピー             |
+| Commit                       | 커밋               | コミット               |
+| Pull request / merge request | PR / MR, 변경 제안 | PR / MR、変更の提案    |
+| Exclusive-open               | 배타적 열기        | 排他的オープン         |
+| Branch policy                | 브랜치 정책        | ブランチポリシー       |
+| Service operator             | 서비스 운영자      | サービス運営者         |
+| Project maintainer           | 프로젝트 관리자    | プロジェクト保守担当者 |
+
+Keep command names (`push`, `fetch`, `update`, `submit`, `sync`) and product names literal. Explain the action in the surrounding language. Git commit records locally; SVN commit records in the central repository. Mercurial `draft` and `public` are phase labels, not access permissions. PR and MR propose changes; approval, merge permission and deployment are separate. Keep P4 `+l` distinct from `p4 lock`, and Codeberg's service distinct from Forgejo or Gitea software.

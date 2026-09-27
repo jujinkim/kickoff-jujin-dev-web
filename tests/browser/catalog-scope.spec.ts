@@ -7,8 +7,8 @@ for (const lang of ["en", "ko", "ja"]) {
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
     await page.goto(`/${lang}/catalog/`);
-    await expect(page.locator(".catalog-card")).toHaveCount(64);
-    await expect(page.locator(".category-card")).toHaveCount(5);
+    await expect(page.locator(".catalog-card")).toHaveCount(74);
+    await expect(page.locator(".category-card")).toHaveCount(6);
     await page
       .locator(
         `.category-card[href="/${lang}/catalog/categories/development/"]`,

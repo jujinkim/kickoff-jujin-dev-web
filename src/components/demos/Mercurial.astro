@@ -1,0 +1,206 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="mercurial" lang={lang}>
+  <header>
+    <p>
+      {t(
+        "Translation tool · sharing phases",
+        "번역 도구 · 공유 단계",
+        "翻訳ツール · 共有段階",
+      )}
+    </p>
+    <h2>
+      {t(
+        "The same change. A new sharing phase.",
+        "같은 변경, 달라진 공유 단계",
+        "同じ変更、新しい共有段階",
+      )}
+    </h2>
+  </header>
+  <div class="phase" data-draft>
+    <span class="stamp">draft</span>
+    <div>
+      <h3>
+        {t(
+          "01 / Local wording fix",
+          "01 / 로컬 문구 수정",
+          "01 / ローカルの文言修正",
+        )}
+      </h3>
+      <p>
+        <code>hg commit</code> ·{" "}
+        {t(
+          "Default new-commit phase",
+          "기본 새 커밋 단계",
+          "新コミットの既定の段階",
+        )}
+      </p>
+      <p class="sample">
+        {t(
+          "Translation: clarify the Save label",
+          "번역: 저장 문구 명확히 하기",
+          "翻訳：保存の文言を明確にする",
+        )}
+      </p>
+    </div>
+  </div>
+  <div class="crossing" data-publishing>
+    <b>
+      02 / <code>hg push</code> ↓
+    </b>
+    <p>
+      {t(
+        "Remote configured as publishing",
+        "publishing으로 설정된 원격",
+        "publishingに設定されたリモート",
+      )}
+    </p>
+  </div>
+  <div class="phase public" data-public>
+    <span class="stamp">public</span>
+    <div>
+      <h3>
+        {t("03 / Shared history", "03 / 공유된 이력", "03 / 共有済みの履歴")}
+      </h3>
+      <p>
+        {t(
+          "Public on the local and remote repositories",
+          "로컬과 원격 저장소 모두 public",
+          "ローカルとリモートの両方でpublic",
+        )}
+      </p>
+      <p class="sample">
+        {t(
+          "Same wording fix · check before rewriting",
+          "같은 문구 수정 · 이력 수정 전 확인",
+          "同じ文言修正 · 履歴編集の前に確認",
+        )}
+      </p>
+    </div>
+  </div>
+  <aside data-alternative>
+    <b>{t("Another configuration", "다른 설정", "別の設定")}</b>
+    <p>
+      <code>publish = False</code> →{" "}
+      {t(
+        "draft can stay draft when exchanged",
+        "교환해도 draft 유지 가능",
+        "交換してもdraftを保持可能",
+      )}
+    </p>
+  </aside>
+  <p class="boundary" data-boundary>
+    {t(
+      "Public phase ≠ public access. These phases describe sharing history, not repository permissions.",
+      "public 단계 ≠ 공개 접근. 공유 이력을 나타내는 단계이며 저장소 권한이 아닙니다.",
+      "public段階 ≠ 一般公開。共有の履歴を表す段階であり、リポジトリの権限ではありません。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 3vw, 32px);
+    background: #f3eff6;
+    color: #48345b;
+    border: 1px solid #9d8da9;
+    line-height: 1.5;
+    font-family: system-ui, sans-serif;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  header > p {
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+  h2 {
+    margin: 0.5rem 0 1.5rem;
+    line-height: 1.25;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+  }
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  .phase {
+    display: grid;
+    grid-template-columns: 130px minmax(0, 1fr);
+    gap: 24px;
+    align-items: center;
+    padding: 20px;
+    border: 2px dashed #776287;
+    background: #fff;
+  }
+  .stamp {
+    font-family: ui-monospace, monospace;
+    font-weight: 750;
+    font-size: 1.8rem;
+    text-align: center;
+    border: 2px dashed;
+    padding: 12px 4px;
+  }
+  .public {
+    border: 3px solid #48345b;
+  }
+  .public .stamp {
+    border-style: solid;
+    background: #48345b;
+    color: #fff;
+  }
+  .sample {
+    font-size: 0.9rem;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #cfc3d9;
+  }
+  .crossing {
+    margin: 0 0 0 85px;
+    border-left: 4px solid #776287;
+    padding: 16px 20px;
+  }
+  .crossing p {
+    font-size: 0.85rem;
+  }
+  aside {
+    border-left: 4px solid #776287;
+    padding: 12px 16px;
+    margin-top: 20px;
+    background: #e6dfee;
+    font-size: 0.9rem;
+  }
+  .boundary {
+    border-top: 1px solid #9d8da9;
+    padding-top: 16px;
+    margin-top: 24px;
+    font-size: 0.85rem;
+  }
+  code {
+    font-family: ui-monospace, monospace;
+  }
+  @container (max-width:480px) {
+    .phase {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .stamp {
+      justify-self: start;
+      padding: 8px 16px;
+      font-size: 1.4rem;
+    }
+    .crossing {
+      margin-left: 24px;
+    }
+  }
+</style>

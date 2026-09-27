@@ -1,0 +1,203 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="codeberg" lang={lang}>
+  <header>
+    <p>
+      {t(
+        "Public cycling-route tool · free-software project",
+        "공개 자전거 경로 도구 · 자유 소프트웨어 프로젝트",
+        "公開の自転車ルートツール · 自由ソフトウェア",
+      )}
+    </p>
+    <h2>
+      {t(
+        "A project community inside a shared service.",
+        "공동체 서비스 안의 프로젝트 협업",
+        "共同体サービスの中でプロジェクトを育てる",
+      )}
+    </h2>
+  </header>
+  <div class="service" data-service>
+    <div class="operator">
+      <h3>Codeberg e.V.</h3>
+      <p>
+        {t(
+          "Nonprofit community operates the service",
+          "비영리 공동체가 서비스 운영",
+          "非営利の共同体がサービスを運営",
+        )}
+      </p>
+      <span>{t("Powered by Forgejo", "Forgejo 기반", "Forgejoを使用")}</span>
+    </div>
+    <div class="project" data-project>
+      <h3>
+        {t(
+          "Cycling-route code repository",
+          "자전거 경로 코드 저장소",
+          "自転車ルートのコードリポジトリ",
+        )}
+      </h3>
+      <div class="people">
+        <div data-contributor>
+          <span>01</span>
+          <h4>
+            {t(
+              "Volunteer contributor",
+              "자원봉사 기여자",
+              "ボランティアの貢献者",
+            )}
+          </h4>
+          <p>
+            {t(
+              "Fork → fix route display → PR",
+              "fork → 경로 표시 수정 → PR",
+              "fork → ルート表示を修正 → PR",
+            )}
+          </p>
+        </div>
+        <div data-maintainer>
+          <span>02</span>
+          <h4>
+            {t(
+              "Project maintainer",
+              "프로젝트 관리자",
+              "プロジェクト保守担当者",
+            )}
+          </h4>
+          <p>
+            {t(
+              "Review → decide → merge",
+              "검토 → 판단 → 병합",
+              "レビュー → 判断 → マージ",
+            )}
+          </p>
+        </div>
+      </div>
+    </div>
+    <p class="eligibility" data-eligibility>
+      {t(
+        "Project purpose and resource use must fit service policies.",
+        "프로젝트 목적과 자원 사용이 서비스 정책에 맞아야 합니다.",
+        "目的と資源の使用がサービスの方針に合う必要があります。",
+      )}
+    </p>
+  </div>
+  <p class="boundary" data-boundary>
+    {t(
+      "Codeberg is the operated service; Forgejo is its software. Project maintainers own merge decisions. Community hosting is not unlimited capacity.",
+      "Codeberg는 운영되는 서비스이며 Forgejo는 그 소프트웨어입니다. 병합 판단은 프로젝트 관리자의 몫입니다. 공동체 호스팅은 무제한 용량이 아닙니다.",
+      "Codebergは運営されるサービス、Forgejoはそのソフトウェアです。マージはプロジェクト側が判断します。共同体運営は無制限の容量ではありません。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 3vw, 32px);
+    background: #edf4f4;
+    color: #244b50;
+    border: 1px solid #8ca5a7;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+  }
+  header > p {
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.25;
+    margin: 0.5rem 0 1.5rem;
+  }
+  .service {
+    border: 3px solid #39727a;
+    border-radius: 28px;
+    padding: 24px;
+    background: #fff;
+  }
+  .operator {
+    padding: 0 0 20px;
+    border-bottom: 1px solid #8ca5a7;
+  }
+  .operator h3 {
+    font-size: 1.4rem;
+  }
+  .operator span {
+    display: inline-block;
+    margin-top: 10px;
+    border: 1px solid;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+  .project {
+    margin-top: 20px;
+    border: 2px dashed #39727a;
+    padding: 20px;
+    background: #edf4f4;
+  }
+  .project > h3 {
+    font-size: 1.1rem;
+  }
+  .people {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 18px;
+  }
+  .people > div {
+    padding-top: 14px;
+    border-top: 3px solid #39727a;
+  }
+  .people span {
+    font-family: ui-monospace, monospace;
+    font-size: 1.4rem;
+    font-weight: 750;
+  }
+  h4 {
+    font-size: 1rem;
+    margin: 8px 0;
+  }
+  .people p {
+    font-size: 0.9rem;
+  }
+  .eligibility {
+    font-size: 0.85rem;
+    margin-top: 20px;
+    font-weight: 650;
+  }
+  .boundary {
+    border-top: 1px solid #8ca5a7;
+    margin-top: 24px;
+    padding-top: 16px;
+    font-size: 0.85rem;
+  }
+  @container (max-width:500px) {
+    .service {
+      padding: 16px;
+      border-radius: 18px;
+    }
+    .project {
+      padding: 14px;
+    }
+    .people {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+</style>

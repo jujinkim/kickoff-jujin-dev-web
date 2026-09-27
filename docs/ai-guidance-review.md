@@ -1,5 +1,26 @@
 # AI guidance reviews
 
+## v1 revision 5 guidance review
+
+Reviewed 2026-09-27 following the user's request to include the new version-control category when creating prompts. Latest and pinned startup prompts, the custom prompt builder (including its no-JavaScript fallback), and the project-assistant prompt now explicitly include version control systems and repository hosting while preserving existing choices. Startup §2 covers history needs, the system/hosting distinction, offline work, review, file types, integrations, access/privacy, costs, operation and backups. Shared ownership rules explicitly include both choices.
+
+English was edited and reviewed first; Korean and Japanese preserve the same obligations and limits. All three sources advance to revision 5, with prior revisions retained in history. Required reading remains two English documents; catalog references remain optional. Existing v1/latest routes and API schemaVersion 1 remain intact.
+
+Manual review of the prescribed workflow:
+
+| Scenario                                                  | Expected behavior and review result                                                                                                                                                      |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Private Git repository and hosting already selected       | Preserve the combination, ownership and access; ask only unresolved questions. No migration or public repository is implied.                                                             |
+| New project needs collaboration but no tools are selected | Distinguish the history system from hosting; compare requirements and responsibilities, then offer the existing choose/recommend/delegate/defer options. Git and a Git host can coexist. |
+| Local-only project                                        | Include history needs in planning; repository hosting may be inapplicable or deferred with a reason. No account is required by default.                                                  |
+| Prompt copied with or without JavaScript                  | Include both version-control choices, existing-decision preservation, and only the two required document URLs in all three languages.                                                    |
+
+These are document and translation reviews, not tests of external model compliance.
+
+Measured built English Markdown with tiktoken 0.12.0 and `o200k_base`: startup 1,495 tokens + assistant rules 983 = **2,478 / 3,000 tokens**. The same two-document limit passes. Existing catalog diagrams and thumbnails were unchanged by this prompt follow-up.
+
+Sequential local verification passed: `npm run check` (214 files, zero errors/warnings/hints; 276 articles; formatting), `npm run build` (249 indexed documents), `npm test` (**51/51**) and `npm run test:e2e -- tests/browser/startup.spec.ts tests/browser/version-control.spec.ts` (**30/30**, 36.9 seconds). An existing test still expected revision 4's date and revision; both assertions were updated before the passing unit run. Browser coverage includes copied latest/pinned/project prompts in three languages, no-JavaScript fallback, keyboard and clipboard failures, responsive light/dark layouts, and the new catalog diagrams. The earlier full **178/178** catalog-extension run remains recorded separately in [the extension review](version-control-review.md).
+
 ## v1 revision 4 guidance review
 
 Reviewed 2026-09-26. Scope: software, design, monetization, and operating plans; shared result quality and maintenance rules; reviewed translations; contributor scenarios; and revision history. The quality target is coherent, reliable, professional work proportional to scope, risk, budget, and team, with enough structure and documentation for later maintenance.

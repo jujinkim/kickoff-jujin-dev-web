@@ -771,5 +771,105 @@
       "ja": "架空の有料人数・使用量・費用を変え残額を確認"
     },
     "capture": "[data-demo=\"revenue\"]"
+  },
+  "git": {
+    "component": "Git",
+    "mode": "static",
+    "caption": {
+      "en": "A travel stop moves from local history to a shared branch",
+      "ko": "여행 방문지가 로컬 이력에서 공유 브랜치로 이동",
+      "ja": "旅行の訪問先がローカル履歴から共有ブランチへ移動"
+    },
+    "capture": "[data-demo=\"git\"]"
+  },
+  "subversion": {
+    "component": "Subversion",
+    "mode": "static",
+    "caption": {
+      "en": "Manual edits become a central revision before other copies update",
+      "ko": "매뉴얼 수정은 중앙 리비전이 된 뒤 다른 작업 사본에 반영",
+      "ja": "マニュアルの変更は中央のリビジョンになってから他の作業コピーへ反映"
+    },
+    "capture": "[data-demo=\"subversion\"]"
+  },
+  "mercurial": {
+    "component": "Mercurial",
+    "mode": "static",
+    "caption": {
+      "en": "A wording fix crosses a publishing boundary from draft to public",
+      "ko": "문구 수정이 publishing 경계를 넘어 draft에서 public으로 이동",
+      "ja": "文言の修正がpublishing境界を越え、draftからpublicへ"
+    },
+    "capture": "[data-demo=\"mercurial\"]"
+  },
+  "perforce-p4": {
+    "component": "PerforceP4",
+    "mode": "static",
+    "caption": {
+      "en": "One vehicle model has one editor until successful submission",
+      "ko": "차량 모델 한 개는 제출 성공 전까지 한 제작자만 편집",
+      "ja": "一つの車両モデルは提出成功まで一人だけが編集"
+    },
+    "capture": "[data-demo=\"perforce-p4\"]"
+  },
+  "github": {
+    "component": "GitHub",
+    "mode": "static",
+    "caption": {
+      "en": "A volunteer proposes; a maintainer reviews and merges the weather fix",
+      "ko": "기여자는 날씨 수정을 제안하고 관리자는 검토·병합",
+      "ja": "貢献者が天気表示の修正を提案し、保守担当者が確認・マージ"
+    },
+    "capture": "[data-demo=\"github\"]"
+  },
+  "gitlab": {
+    "component": "GitLab",
+    "mode": "static",
+    "caption": {
+      "en": "A leave-balance change reaches review with a failed test, fix and rerun",
+      "ko": "휴가 일수 변경의 검사 실패·수정·재실행을 MR과 연결",
+      "ja": "休暇残日数の変更を、検査失敗・修正・再実行とともにレビュー"
+    },
+    "capture": "[data-demo=\"gitlab\"]"
+  },
+  "bitbucket": {
+    "component": "Bitbucket",
+    "mode": "static",
+    "caption": {
+      "en": "The address request, code branch and review carry the same Jira key",
+      "ko": "주소 요청·코드 브랜치·검토에 같은 Jira 키 사용",
+      "ja": "住所の依頼・コードブランチ・レビューで同じJiraキーを使用"
+    },
+    "capture": "[data-demo=\"bitbucket\"]"
+  },
+  "azure-repos": {
+    "component": "AzureRepos",
+    "mode": "static",
+    "caption": {
+      "en": "A room-booking fix passes the configured gate before reaching main",
+      "ko": "회의실 예약 수정이 설정한 관문을 통과한 뒤 main에 반영",
+      "ja": "会議室予約の修正が設定した関門を通ってmainへ"
+    },
+    "capture": "[data-demo=\"azure-repos\"]"
+  },
+  "gitea": {
+    "component": "Gitea",
+    "mode": "static",
+    "caption": {
+      "en": "Members review code; the club operator owns the server and recovery",
+      "ko": "회원은 코드를 검토하고 동아리 운영자는 서버·복구를 담당",
+      "ja": "メンバーがコードを確認し、サークルの担当者がサーバーと復旧を管理"
+    },
+    "capture": "[data-demo=\"gitea\"]"
+  },
+  "codeberg": {
+    "component": "Codeberg",
+    "mode": "static",
+    "caption": {
+      "en": "Route-tool contributors and maintainers share a community-operated service",
+      "ko": "경로 도구 기여자와 관리자가 공동체 운영 서비스를 공유",
+      "ja": "ルートツールの貢献者と保守担当者が共同体運営のサービスを共有"
+    },
+    "capture": "[data-demo=\"codeberg\"]"
   }
 }

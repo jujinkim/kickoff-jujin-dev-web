@@ -10,6 +10,11 @@ const noAI = {
   ko: /kickoff는 AI 서비스를 제공하지 않습니다/,
   ja: /kickoffはAIサービスを提供していません/,
 };
+const versionControl = {
+  en: /version control systems and repository hosting/,
+  ko: /버전 관리 시스템과 저장소 호스팅/,
+  ja: /バージョン管理システムとリポジトリホスティング/,
+};
 const identity = {
   en: {
     learning: "Custom prompts and project planning resources",
@@ -44,6 +49,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
     const prompt = page.locator("#prompt-preview");
     await expect(prompt).toHaveValue(/\/ai\/startup\/latest.md/);
     await expect(prompt).toHaveValue(/\/ai\/instructions.md/);
+    await expect(prompt).toHaveValue(versionControl[lang]);
     await expect(prompt).not.toHaveValue(
       /llms\.txt|catalog\.json|\/categories\//,
     );
@@ -57,6 +63,9 @@ for (const lang of ["en", "ko", "ja"] as const) {
       .click();
     await expect(page.locator("#startup-prompt")).toContainText(
       `/ai/startup/v1.md`,
+    );
+    await expect(page.locator("#startup-prompt")).toContainText(
+      versionControl[lang],
     );
     await page.locator('[data-copy="startup-prompt"]').click();
     await expect(page.locator(".prompt-section [role=status]")).toContainText(
@@ -98,6 +107,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
     );
     const aiPrompt = page.locator("#project-prompt");
     await expect(aiPrompt).toContainText("/ai/instructions.md");
+    await expect(aiPrompt).toContainText(versionControl[lang]);
     await expect(aiPrompt).not.toContainText(/llms\.txt|catalog\.json/);
     await page.locator('[data-copy="project-prompt"]').click();
     await expect(page.locator(".prompt-section [role=status]")).toContainText(
@@ -176,7 +186,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await expect(page.locator("#service-description")).toBeFocused();
     await page.locator(`main a[href="/${lang}/help/#make-prompt"]`).click();
     await expect(page.locator("#make-prompt")).toBeVisible();
-    await expect(page.locator(".help-taxonomy details")).toHaveCount(5);
+    await expect(page.locator(".help-taxonomy details")).toHaveCount(6);
     await page
       .locator('.help-category[data-category="design"] summary')
       .click();
@@ -253,6 +263,9 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await expect(page.locator("[data-editor]")).toBeHidden();
     await expect(page.locator("noscript .notice")).toContainText("JavaScript");
     await expect(page.locator("noscript .notice")).toContainText(handoff[lang]);
+    await expect(page.locator("noscript pre")).toContainText(
+      versionControl[lang],
+    );
     await expect(page.locator("noscript pre")).toContainText(
       "/ai/startup/latest.md",
     );

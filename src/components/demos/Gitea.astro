@@ -1,0 +1,201 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="gitea" lang={lang}>
+  <header>
+    <p>
+      {t(
+        "Club equipment-loan app · self-operated instance",
+        "동아리 장비 대여 앱 · 직접 운영 인스턴스",
+        "サークルの機材貸出アプリ · 自主運用の例",
+      )}
+    </p>
+    <h2>
+      {t(
+        "Your server includes the upkeep.",
+        "내 서버에는 운영 책임도 포함",
+        "自前サーバーには保守も含まれる",
+      )}
+    </h2>
+  </header>
+  <p class="members" data-members>
+    <b>{t("Members’ computers", "회원 컴퓨터", "メンバーの端末")}</b>
+    <span>
+      <code>Git push</code> →{" "}
+      {t("Review in Gitea", "Gitea에서 검토", "Giteaでレビュー")}
+    </span>
+  </p>
+  <div class="operations" data-operator>
+    <div class="owner">
+      <h3>
+        {t(
+          "Club operator’s responsibility",
+          "동아리 운영자 책임",
+          "サークル運用担当者の責任",
+        )}
+      </h3>
+      <p>
+        {t(
+          "Access · updates · recovery",
+          "권한 · 업데이트 · 복구",
+          "権限 · 更新 · 復旧",
+        )}
+      </p>
+    </div>
+    <div class="server" data-server>
+      <strong>
+        {t(
+          "Club server / Gitea",
+          "동아리 서버 / Gitea",
+          "サークルのサーバー / Gitea",
+        )}
+      </strong>
+      <ul>
+        <li>{t("Git repositories", "Git 저장소", "Gitリポジトリ")}</li>
+        <li>
+          {t(
+            "Database: reviews and records",
+            "데이터베이스: 검토·기록",
+            "データベース：レビューと記録",
+          )}
+        </li>
+        <li>{t("Configuration", "설정", "設定")}</li>
+      </ul>
+    </div>
+    <div class="backup" data-backup>
+      <b>↓ {t("Consistent backup", "일관된 백업", "整合したバックアップ")}</b>
+      <div>
+        <h4>
+          {t("Separate backup copy", "별도 백업 사본", "別のバックアップ")}
+        </h4>
+        <p>
+          {t(
+            "Restore all three in a rehearsal",
+            "복구 연습에서 세 가지 모두 복원",
+            "復元練習で三つをまとめて復元",
+          )}
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="boundary" data-boundary>
+    {t(
+      "A repository clone alone misses service records and settings. Software does not remove hosting costs or the need for an operator.",
+      "저장소 복제만으로 서비스 기록과 설정은 보존되지 않습니다. 소프트웨어가 호스팅 비용이나 운영 담당자의 필요를 없애지는 않습니다.",
+      "クローンだけではサービスの記録と設定が不足します。ソフトウェアが費用や運用担当者の必要性をなくすわけではありません。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    background: #edf3e9;
+    color: #304b2b;
+    border: 1px solid #8a9d80;
+    padding: clamp(16px, 3vw, 32px);
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+  }
+  header p {
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.25;
+    margin: 0.5rem 0 1.5rem;
+  }
+  .members {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #8a9d80;
+    background: #fff;
+    margin-bottom: 18px;
+  }
+  .operations {
+    border: 5px solid #476a3e;
+    padding: 22px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    gap: 20px;
+  }
+  .owner {
+    grid-row: span 2;
+    border-right: 2px dashed #8a9d80;
+    padding-right: 20px;
+  }
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+  .owner p {
+    font-size: 0.9rem;
+  }
+  .server {
+    border: 2px solid #476a3e;
+    padding: 18px;
+    background: #edf3e9;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+  }
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #8a9d80;
+  }
+  .backup > b {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+  .backup > div {
+    padding: 16px;
+    border: 2px dashed #476a3e;
+    border-radius: 24px / 10px;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  .backup p {
+    font-size: 0.85rem;
+    margin-top: 6px;
+  }
+  .boundary {
+    border-top: 1px solid #8a9d80;
+    padding-top: 16px;
+    margin-top: 24px;
+    font-size: 0.85rem;
+  }
+  @container (max-width:540px) {
+    .operations {
+      grid-template-columns: 1fr;
+      padding: 16px;
+    }
+    .owner {
+      grid-row: auto;
+      border-right: 0;
+      border-bottom: 2px dashed #8a9d80;
+      padding: 0 0 16px;
+    }
+  }
+</style>

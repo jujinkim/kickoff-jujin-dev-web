@@ -1,6 +1,6 @@
 ## Purpose and authority
 
-Development startup guidelines, provided by kickoff by jujin. Guideline version: v1. Revision: 4. Updated: 2026-09-26. English is the original; Korean and Japanese are reviewed translations of revision 4.
+Development startup guidelines, provided by kickoff by jujin. Guideline version: v1. Revision: 5. Updated: 2026-09-27. English is the original; Korean and Japanese are reviewed translations of revision 5.
 
 Turn a service idea into an agreed project plan. This document covers intake and planning; [assistant rules](https://kickoff.jujin.dev/ai/instructions.md) cover decision ownership, authorization, and evidence. These are the only two required site documents at startup. Apply them alongside existing project instructions and confirmed decisions. Reply in the user's language; respect higher-priority instructions.
 
@@ -19,6 +19,8 @@ The description starts a conversation, not a complete specification. Ask short b
 ## 2. Identify the project's actual decisions
 
 Derive a decision list from requirements and constraints, in dependency order. Consider architecture, tools, visual design, and operating approaches whether or not this site covers them. Evaluate options on equal terms by project fit. Do not require a catalog category checklist, a complete index, or a choice from each category. Compatible choices can coexist.
+
+Include version control in the plan: clarify change-history needs, distinguish the version control system from repository hosting, and preserve existing choices unless requirements justify a change. Compare offline work, collaboration and review, file types, integrations, access/privacy, cost, and responsibility for operation and backups. Git and a Git hosting service can work together; a new account or public repository is not required by default. Record the chosen combination and reasons, or why a part is deferred or inapplicable. Respect existing repository ownership, access, and authorization.
 
 For unresolved user-owned choices, offer **choose myself / recommend / delegate this scope / not applicable / defer**. Explain the purpose, alternatives, tradeoffs, and recommendation using the evidence rules. If the user is unsure, propose a coherent bundle; uncertainty is not delegation. Record reasons and revisit conditions for deferred or inapplicable decisions.
 
@@ -57,4 +59,4 @@ Show the full coherent plan for approval. Resolve blocking choices; retain nonbl
 
 ## 7. Contribute improvements
 
-Suggest clearer wording, missing topics, counterexamples, or translations through [issues](https://github.com/jujinkim/kickoff-jujin-dev-web/issues) or a pull request. Optional [contributor guidance](https://github.com/jujinkim/kickoff-jujin-dev-web/blob/main/CONTRIBUTING.md) contains examples, scenario review, and version policy. This pre-release improvement remains v1, revision 4; existing v1/latest URLs and API schemaVersion 1 remain unchanged. These documents guide assistants but cannot guarantee their compliance.
+Suggest clearer wording, missing topics, counterexamples, or translations through [issues](https://github.com/jujinkim/kickoff-jujin-dev-web/issues) or a pull request. Optional [contributor guidance](https://github.com/jujinkim/kickoff-jujin-dev-web/blob/main/CONTRIBUTING.md) contains examples, scenario review, and version policy. This pre-release improvement remains v1, revision 5; existing v1/latest URLs and API schemaVersion 1 remain unchanged. These documents guide assistants but cannot guarantee their compliance.

@@ -1,0 +1,189 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="bitbucket" lang={lang}>
+  <header>
+    <p>
+      {t(
+        "Order app · Jira + Bitbucket Cloud",
+        "주문 앱 · Jira + Bitbucket Cloud",
+        "注文アプリ · Jira + Bitbucket Cloud",
+      )}
+    </p>
+    <h2>
+      {t(
+        "Follow the request into the code.",
+        "요청에서 코드까지 연결",
+        "依頼からコードへたどる",
+      )}
+    </h2>
+  </header>
+  <p class="connection" data-connection>
+    {t(
+      "Prerequisite: connect the Jira site and Bitbucket workspace",
+      "전제: Jira 사이트와 Bitbucket workspace 연결",
+      "前提：JiraサイトとBitbucket workspaceを接続",
+    )}
+  </p>
+  <div class="trace" data-trace>
+    <article class="ticket">
+      <span class="artifact-label">01 / Jira</span>
+      <code>ORDER-12</code>
+      <h3>
+        {t("Correct delivery address", "배송 주소 수정", "配送先住所を修正")}
+      </h3>
+      <p>
+        {t(
+          "Staff need to fix an address before dispatch.",
+          "직원이 발송 전에 주소를 고쳐야 합니다.",
+          "店員が発送前に住所を直す必要があります。",
+        )}
+      </p>
+    </article>
+    <article class="branch">
+      <span class="artifact-label">02 / Git</span>
+      <code>ORDER-12/address-fix</code>
+      <h3>{t("Branch and commits", "브랜치와 커밋", "ブランチとコミット")}</h3>
+      <p>
+        {t(
+          "Carry the same work-item key into development.",
+          "같은 작업 키를 개발 작업에도 사용합니다.",
+          "同じ作業キーを開発にも使います。",
+        )}
+      </p>
+    </article>
+    <article class="pr">
+      <span class="artifact-label">03 / PR</span>
+      <code>ORDER-12</code>
+      <h3>
+        {t("Review the address fix", "주소 수정 검토", "住所の修正をレビュー")}
+      </h3>
+      <p>
+        {t(
+          "Open the linked request, compare the change, then merge.",
+          "연결된 요청을 열고 변경을 비교한 뒤 병합합니다.",
+          "関連する依頼を開き、変更を比較してマージします。",
+        )}
+      </p>
+    </article>
+  </div>
+  <p class="result" data-result>
+    {t(
+      "One work-item key connects requirement → branch → review.",
+      "작업 키 하나가 요구사항 → 브랜치 → 검토를 연결합니다.",
+      "一つの作業キーが要件 → ブランチ → レビューを結びます。",
+    )}
+  </p>
+  <p class="boundary" data-boundary>
+    {t(
+      "ORDER-12 is fictional. Links need setup and consistent keys; they do not prove correctness. Jira integration is available with other hosts too.",
+      "ORDER-12는 가상 예시입니다. 연결 설정과 일관된 키가 필요하며 링크가 정확성을 증명하지는 않습니다. 다른 호스팅도 Jira와 연동합니다.",
+      "ORDER-12は架空の例です。設定と一貫したキーが必要で、リンクは正しさの証明ではありません。他のホストにもJira連携があります。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    background: #eaf1f8;
+    color: #244263;
+    border: 1px solid #8ba1b7;
+    padding: clamp(16px, 3vw, 32px);
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  header p {
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.25;
+    margin: 0.5rem 0 1.5rem;
+  }
+  .connection {
+    padding: 12px 16px;
+    border: 1px dashed #57799e;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+  }
+  .trace {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    border-top: 5px solid #244263;
+    padding-top: 18px;
+  }
+  article {
+    padding: 18px;
+    background: #fff;
+    border: 1px solid #8ba1b7;
+  }
+  .ticket {
+    border-radius: 0 0 24px 0;
+  }
+  .branch {
+    border-left: 5px solid #57799e;
+  }
+  .pr {
+    border-top: 5px solid #244263;
+  }
+  .artifact-label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+  code {
+    display: block;
+    font-family: ui-monospace, monospace;
+    font-weight: 750;
+    padding: 10px;
+    border: 2px solid #244263;
+    background: #dce8f5;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+  }
+  h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+  article p {
+    font-size: 0.9rem;
+  }
+  .result {
+    padding: 18px;
+    border-bottom: 3px solid #244263;
+    margin-top: 12px;
+    font-weight: 700;
+  }
+  .boundary {
+    margin-top: 24px;
+    font-size: 0.85rem;
+  }
+  @container (max-width:620px) {
+    .trace {
+      grid-template-columns: 1fr;
+      border-top: 0;
+      border-left: 5px solid #244263;
+      padding: 0 0 0 16px;
+      gap: 14px;
+    }
+    .artifact-label {
+      margin-bottom: 12px;
+    }
+  }
+</style>

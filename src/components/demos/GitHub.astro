@@ -1,0 +1,231 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="github" lang={lang}>
+  <header>
+    <p>
+      {t(
+        "Public weather widget · contribution example",
+        "공개 날씨 위젯 · 기여 예시",
+        "公開の天気ウィジェット · 貢献の例",
+      )}
+    </p>
+    <h2>
+      {t(
+        "A proposal crosses the boundary.",
+        "경계를 넘는 것은 수정 제안",
+        "境界を越えるのは変更の提案",
+      )}
+    </h2>
+  </header>
+  <div class="review-map">
+    <aside class="contributor" data-contributor>
+      <span class="role">{t("Contributor", "기여자", "貢献者")}</span>
+      <h3>{t("Their fork", "자신의 fork", "自分のfork")}</h3>
+      <p class="patch">
+        <code>rain-label</code>
+        <br />
+        {t("Fix rain label", "비 예보 문구 수정", "雨予報の文言を修正")}
+      </p>
+      <p>
+        {t("Push a branch here", "여기에 브랜치 push", "ここへブランチをpush")}
+      </p>
+      <b class="proposal">
+        {t("01 / Open PR →", "01 / PR 열기 →", "01 / PRを開く →")}
+      </b>
+      <p class="no-write">
+        {t(
+          "No upstream write permission",
+          "원본 쓰기 권한 없음",
+          "元のリポジトリへの書き込み権限なし",
+        )}
+      </p>
+    </aside>
+    <div class="maintainer" data-maintainer>
+      <span class="role">
+        {t(
+          "Maintainer’s repository",
+          "관리자의 저장소",
+          "保守担当者のリポジトリ",
+        )}
+      </span>
+      <div class="request" data-review>
+        <h3>
+          {t(
+            "Pull request · proposed change",
+            "PR · 제안된 변경",
+            "PR · 提案された変更",
+          )}
+        </h3>
+        <ol>
+          <li>
+            <b>02</b>
+            <span>{t("Review the diff", "차이 검토", "差分をレビュー")}</span>
+          </li>
+          <li>
+            <b>03</b>
+            <span>
+              {t(
+                "Request correction → contributor updates",
+                "수정 요청 → 기여자 수정",
+                "修正を依頼 → 貢献者が更新",
+              )}
+            </span>
+          </li>
+          <li>
+            <b>04</b>
+            <span>
+              {t(
+                "Authorized maintainer merges",
+                "권한 있는 관리자가 병합",
+                "権限のある担当者がマージ",
+              )}
+            </span>
+          </li>
+        </ol>
+      </div>
+      <div class="main" data-result>
+        <code>main</code>
+        <span>
+          ←{" "}
+          {t(
+            "Accepted rain-label fix",
+            "수락된 비 예보 수정",
+            "受理した雨予報の修正",
+          )}
+        </span>
+      </div>
+    </div>
+  </div>
+  <p class="note" data-boundary>
+    {t(
+      "A pull request is a proposal, not write access or deployment. Git history and GitHub review are different layers.",
+      "PR은 제안이며 쓰기 권한이나 배포가 아닙니다. Git 이력과 GitHub 검토는 역할이 다릅니다.",
+      "PRは提案であり、書き込み権限や配布ではありません。Gitの履歴とGitHubのレビューは別の役割です。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    background: #edf0f7;
+    color: #26364e;
+    border: 1px solid #8593ab;
+    padding: clamp(16px, 3vw, 32px);
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  header > p {
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.25;
+    margin: 0.5rem 0 1.5rem;
+  }
+  .review-map {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    gap: 24px;
+  }
+  .contributor {
+    padding: 18px;
+    align-self: start;
+    border: 2px dashed #536783;
+    background: #fff;
+  }
+  .role {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.75rem;
+    font-weight: 750;
+    margin-bottom: 12px;
+  }
+  h3 {
+    font-size: 1.05rem;
+  }
+  .patch {
+    margin: 16px 0;
+    padding: 14px;
+    border-left: 5px solid #536783;
+    background: #edf0f7;
+  }
+  .contributor > p {
+    font-size: 0.85rem;
+  }
+  .proposal {
+    display: block;
+    border-bottom: 3px solid;
+    padding: 20px 0 8px;
+    margin-bottom: 12px;
+  }
+  .no-write {
+    font-weight: 650;
+  }
+  .maintainer {
+    border-left: 8px solid #26364e;
+    padding: 18px;
+    background: #fff;
+  }
+  .request {
+    border: 1px solid #8593ab;
+    padding: 16px;
+  }
+  ol {
+    padding: 0;
+    list-style: none;
+    margin: 18px 0 0;
+  }
+  li {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    padding: 12px 0;
+    border-top: 1px solid #c1c9d6;
+  }
+  li b {
+    font-family: ui-monospace, monospace;
+    font-size: 0.85rem;
+  }
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 16px;
+    background: #26364e;
+    color: #fff;
+  }
+  .main code {
+    font-weight: 750;
+  }
+  .note {
+    margin-top: 24px;
+    border-top: 1px solid #8593ab;
+    padding-top: 16px;
+    font-size: 0.85rem;
+  }
+  @container (max-width:550px) {
+    .review-map {
+      grid-template-columns: 1fr;
+    }
+    .maintainer {
+      padding: 14px;
+    }
+  }
+</style>

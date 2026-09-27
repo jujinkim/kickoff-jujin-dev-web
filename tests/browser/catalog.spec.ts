@@ -175,7 +175,7 @@ for (const lang of ["en", "ko", "ja"]) {
     page,
   }) => {
     await page.goto(`/${lang}/catalog/`);
-    await expect(page.locator(".catalog-card")).toHaveCount(64);
+    await expect(page.locator(".catalog-card")).toHaveCount(74);
     await page
       .locator(`.category-card[href="/${lang}/catalog/categories/design/"]`)
       .click();

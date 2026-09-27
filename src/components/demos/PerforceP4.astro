@@ -1,0 +1,235 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="perforce-p4" lang={lang}>
+  <header>
+    <p>
+      {t(
+        "Racing game · binary vehicle asset",
+        "레이싱 게임 · 바이너리 차량 자산",
+        "レースゲーム · バイナリの車両素材",
+      )}
+    </p>
+    <h2>
+      {t(
+        "One file. One open editor.",
+        "파일 하나, 편집자 한 명",
+        "一つのファイル、一人の編集者",
+      )}
+    </h2>
+  </header>
+  <div class="asset" data-lock-condition>
+    <svg viewBox="0 0 220 100" aria-hidden="true">
+      <path
+        d="M20 64 48 42 90 25 150 25 178 48 204 60 198 78 24 78Z M48 42 78 52 178 48 M90 25 78 52 65 78 M150 25 155 50 168 78 M20 64 78 52 204 60"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      />
+      <circle
+        cx="55"
+        cy="78"
+        r="13"
+        fill="#f5ede7"
+        stroke="currentColor"
+        stroke-width="3"
+      />
+      <circle
+        cx="174"
+        cy="78"
+        r="13"
+        fill="#f5ede7"
+        stroke="currentColor"
+        stroke-width="3"
+      />
+    </svg>
+    <div>
+      <h3>
+        {t(
+          "Vehicle model in the depot",
+          "depot의 차량 모델",
+          "depot内の車両モデル",
+        )}
+      </h3>
+      <code>car.fbx · binary+l</code>
+      <p>
+        {t(
+          "Configured exclusive-open file type",
+          "배타적 열기 파일 형식 설정",
+          "排他的オープンのファイル型を設定",
+        )}
+      </p>
+    </div>
+  </div>
+  <div class="editors">
+    <div class="owner" data-owner>
+      <b>
+        {t(
+          "01 / Artist opens for edit",
+          "01 / 제작자가 편집용으로 열기",
+          "01 / 制作者が編集用に開く",
+        )}
+      </b>
+      <p>{t("OPEN · can edit", "열림 · 편집 가능", "OPEN · 編集可能")}</p>
+    </div>
+    <div class="blocked" data-blocked>
+      <b>
+        {t(
+          "02 / Second artist tries to open",
+          "02 / 다른 제작자가 열기 시도",
+          "02 / 別の制作者が開こうとする",
+        )}
+      </b>
+      <p>{t("REFUSED · wait", "거절 · 대기", "拒否 · 待機")}</p>
+    </div>
+  </div>
+  <ol class="handoff" data-submit>
+    <li>
+      <b>03 / submit</b>
+      <span>
+        {t(
+          "First artist submits the changelist",
+          "첫 제작자가 변경 목록 제출",
+          "最初の制作者が変更リストを提出",
+        )}
+      </span>
+    </li>
+    <li>
+      <b>04 / sync → edit</b>
+      <span>
+        {t(
+          "After success, next artist gets the new model",
+          "성공 후 다음 제작자가 새 모델 받기",
+          "成功後、次の制作者が新モデルを取得",
+        )}
+      </span>
+    </li>
+  </ol>
+  <p class="boundary" data-boundary>
+    {t(
+      "+l must be configured. p4 lock restricts submission, not opening. Failed submission needs recovery; locking can delay teammates.",
+      "+l 설정이 필요합니다. p4 lock은 열기가 아닌 제출을 제한합니다. 제출 실패는 복구가 필요하며 잠금은 동료를 기다리게 할 수 있습니다.",
+      "+lの設定が必要です。p4 lockはオープンではなく提出を制限します。提出失敗には回復が必要で、ロックは同僚を待たせる場合があります。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 3vw, 32px);
+    background: #f5ede7;
+    color: #583820;
+    border: 1px solid #a38a78;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  header p {
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.25;
+    margin: 0.5rem 0 1.5rem;
+  }
+  h3 {
+    font-size: 1.05rem;
+  }
+  .asset {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px;
+    border: 4px solid #583820;
+    background: #fffaf6;
+  }
+  svg {
+    width: 200px;
+    flex-shrink: 0;
+  }
+  .asset code {
+    display: inline-block;
+    font-size: 1.05rem;
+    margin: 8px 0;
+    font-weight: 700;
+  }
+  .asset p {
+    font-size: 0.85rem;
+  }
+  .editors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .editors > div {
+    padding: 20px;
+    border: 2px solid;
+  }
+  .owner {
+    background: #fffaf6;
+  }
+  .blocked {
+    border-style: dashed !important;
+    background: repeating-linear-gradient(
+      135deg,
+      #f5ede7,
+      #f5ede7 10px,
+      #eaddd2 10px,
+      #eaddd2 12px
+    );
+  }
+  .editors p {
+    font-weight: 750;
+    font-size: 1.2rem;
+    margin-top: 14px;
+  }
+  .handoff {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 6px solid #583820;
+  }
+  .handoff li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    padding: 14px 18px;
+    border-bottom: 1px solid #a38a78;
+  }
+  .handoff b {
+    font-family: ui-monospace, monospace;
+  }
+  .boundary {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #a38a78;
+    font-size: 0.85rem;
+  }
+  @container (max-width:550px) {
+    .asset {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    svg {
+      width: min(200px, 100%);
+    }
+    .editors {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

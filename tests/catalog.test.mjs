@@ -16,9 +16,9 @@ import {
 } from "../scripts/validate-content.mjs";
 const articles = readArticles();
 const guides = articles.filter((a) => a.data.kind === "guide");
-test("candidates have unique IDs, six roots, styles first; valid relationships", () => {
+test("candidates have unique IDs, seven retained roots, styles first; valid relationships", () => {
   assert.equal(new Set(candidates.map((c) => c.id)).size, candidates.length);
-  assert.equal(taxonomy.filter((c) => !c.parent).length, 6);
+  assert.equal(taxonomy.filter((c) => !c.parent).length, 7);
   assert.deepEqual(validateCatalog(taxonomy, candidates, articles), []);
   assert.ok(
     candidates

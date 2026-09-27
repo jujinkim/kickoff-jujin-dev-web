@@ -1,0 +1,199 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="azure-repos" lang={lang}>
+  <header>
+    <p>
+      {t(
+        "Facility booking · Azure DevOps Git example",
+        "시설 예약 · Azure DevOps Git 예시",
+        "施設予約 · Azure DevOps Gitの例",
+      )}
+    </p>
+    <h2>
+      {t(
+        "Set the gate before the merge.",
+        "병합 전에 관문 설정",
+        "マージの前に関門を設定",
+      )}
+    </h2>
+  </header>
+  <div class="approach" data-pr>
+    <b>
+      PR / <code>booking-conflict</code>
+    </b>
+    <p>
+      {t(
+        "Proposed fix: prevent overlapping room bookings",
+        "수정 제안: 회의실 중복 예약 방지",
+        "変更案：会議室の重複予約を防ぐ",
+      )}
+    </p>
+  </div>
+  <div class="gate" data-policies>
+    <h3>
+      {t(
+        "Required policies on main · example settings",
+        "main의 필수 정책 · 예시 설정",
+        "mainの必須ポリシー · 例の設定",
+      )}
+    </h3>
+    <div class="requirements">
+      <div>
+        <b>01</b>
+        <span>{t("Reviewer approval", "검토자 승인", "レビュアーの承認")}</span>
+      </div>
+      <div>
+        <b>02</b>
+        <span>{t("Build validation", "빌드 검증", "ビルド検証")}</span>
+      </div>
+    </div>
+    <div class="blocked" data-blocked>
+      <strong>
+        {t(
+          "WAIT · booking test failed",
+          "대기 · 예약 검사 실패",
+          "待機 · 予約テスト失敗",
+        )}
+      </strong>
+      <p>
+        {t(
+          "Fix branch → new validation → review",
+          "브랜치 수정 → 새 검증 → 검토",
+          "ブランチを修正 → 再検証 → レビュー",
+        )}
+      </p>
+    </div>
+  </div>
+  <div class="main" data-result>
+    <span>
+      ↓{" "}
+      {t("After requirements are met", "요구사항 충족 후", "要件を満たした後")}
+    </span>
+    <b>
+      <code>main</code> · {t("Complete PR", "PR 완료", "PRを完了")}
+    </b>
+  </div>
+  <p class="boundary" data-boundary>
+    {t(
+      "Policies must be configured; bypass permissions can override the gate. This diagram is Git, not TFVC, and does not choose the app’s runtime host.",
+      "정책 설정이 필요하며 우회 권한으로 관문을 건너뛸 수 있습니다. TFVC가 아닌 Git 도식이며 앱 실행 호스팅을 정하지 않습니다.",
+      "設定が必要で、回避権限があると関門を迂回できます。TFVCではなくGitの図で、アプリの実行ホストは指定しません。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    background: #ebf3f6;
+    color: #173f52;
+    border: 1px solid #829eaa;
+    padding: clamp(16px, 3vw, 32px);
+    line-height: 1.5;
+    font-family: system-ui, sans-serif;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  header p {
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.25;
+    margin: 0.5rem 0 1.5rem;
+  }
+  .approach {
+    padding: 18px;
+    border: 1px solid #829eaa;
+    background: #fff;
+    margin-bottom: 18px;
+  }
+  .approach p {
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+  .gate {
+    border: 8px solid #285e77;
+    border-bottom: 0;
+    padding: 22px;
+    background: #fff;
+  }
+  h3 {
+    font-size: 1.05rem;
+  }
+  .requirements {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .requirements > div {
+    border-bottom: 3px solid #285e77;
+    padding: 10px 0;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .requirements b {
+    font-size: 1.6rem;
+    font-family: ui-monospace, monospace;
+  }
+  .blocked {
+    border: 2px dashed #8b4634;
+    color: #733a2b;
+    background: #f9eee8;
+    padding: 14px;
+  }
+  .blocked p {
+    font-size: 0.85rem;
+    margin-top: 6px;
+  }
+  .main {
+    padding: 18px 22px;
+    border-left: 8px solid #285e77;
+    border-right: 8px solid #285e77;
+    border-bottom: 8px solid #285e77;
+  }
+  .main span {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+  .main > b {
+    display: block;
+    background: #173f52;
+    color: #fff;
+    padding: 16px;
+    font-size: 1.25rem;
+  }
+  .boundary {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #829eaa;
+    font-size: 0.85rem;
+  }
+  @container (max-width:460px) {
+    .requirements {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .gate {
+      padding: 14px;
+    }
+    .main {
+      padding: 14px;
+    }
+  }
+</style>

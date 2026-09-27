@@ -10,9 +10,9 @@ test("startup versions publish localized HTML and English-only Markdown with lat
     const html = read(`${lang}/start/v1/index.html`);
     assert.match(
       source,
-      { en: /Revision: 4\./, ko: /리비전: 4\./, ja: /リビジョン: 4。/ }[lang],
+      { en: /Revision: 5\./, ko: /리비전: 5\./, ja: /リビジョン: 5。/ }[lang],
     );
-    assert.ok(source.includes("2026-09-26"));
+    assert.ok(source.includes("2026-09-27"));
     for (const oldRequirement of [
       "Offer the entire catalog",
       "모든 카탈로그를 제안",
@@ -67,6 +67,20 @@ test("startup versions publish localized HTML and English-only Markdown with lat
     ),
   );
   assert.ok(startup.includes("whether or not this site covers them"));
+  for (const requirement of [
+    "Include version control in the plan",
+    "distinguish the version control system from repository hosting",
+    "preserve existing choices unless requirements justify a change",
+    "responsibility for operation and backups",
+    "a new account or public repository is not required by default",
+    "deferred or inapplicable",
+  ])
+    assert.ok(startup.includes(requirement), requirement);
+  assert.ok(
+    read("ai/instructions.md").includes(
+      "version control systems, repository hosting, application hosting",
+    ),
+  );
   assert.ok(
     startup.includes(
       "No catalog retrieval date, article-ID inventory, or catalog snapshot is required",

@@ -1,0 +1,237 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="gitlab" lang={lang}>
+  <header>
+    <p>
+      {t(
+        "Staff leave app · configured test example",
+        "직원 휴가 앱 · 설정된 검사 예시",
+        "社員の休暇アプリ · 設定した検査の例",
+      )}
+    </p>
+    <h2>
+      {t(
+        "The review carries its test results.",
+        "검사 결과와 함께 검토",
+        "検査結果と一緒にレビュー",
+      )}
+    </h2>
+  </header>
+  <div class="mr" data-mr>
+    <span>MR</span>
+    <div>
+      <h3>
+        {t(
+          "Change the leave-balance rule",
+          "휴가 잔여 일수 규칙 변경",
+          "休暇残日数のルールを変更",
+        )}
+      </h3>
+      <p>
+        {t(
+          "Source branch: leave-balance",
+          "소스 브랜치: leave-balance",
+          "ソースブランチ：leave-balance",
+        )}
+      </p>
+    </div>
+  </div>
+  <div class="wire" data-ci-config>
+    <code>.gitlab-ci.yml</code>
+    <b>
+      ↓{" "}
+      {t(
+        "MR event rules + runner",
+        "MR 이벤트 규칙 + runner",
+        "MRイベントのルール + runner",
+      )}
+    </b>
+  </div>
+  <ol class="runs" data-runs>
+    <li>
+      <span class="status fail">{t("FAIL", "실패", "失敗")}</span>
+      <h3>
+        {t("01 / Balance test", "01 / 잔여 일수 검사", "01 / 残日数の検査")}
+      </h3>
+      <p>
+        {t(
+          "Over-balance request wrongly accepted",
+          "잔여 일수 초과 신청을 잘못 허용",
+          "残日数を超える申請を誤って許可",
+        )}
+      </p>
+    </li>
+    <li>
+      <span class="status change">{t("FIX", "수정", "修正")}</span>
+      <h3>
+        {t("02 / Update branch", "02 / 브랜치 수정", "02 / ブランチを更新")}
+      </h3>
+      <p>
+        {t(
+          "Correct the rule, then rerun",
+          "규칙을 고친 뒤 재실행",
+          "ルールを直して再実行",
+        )}
+      </p>
+    </li>
+    <li>
+      <span class="status pass">{t("PASS", "통과", "成功")}</span>
+      <h3>
+        {t("03 / New test result", "03 / 새 검사 결과", "03 / 新しい検査結果")}
+      </h3>
+      <p>
+        {t(
+          "Reviewer considers the result and change",
+          "검토자가 결과와 변경을 판단",
+          "レビュアーが結果と変更を判断",
+        )}
+      </p>
+    </li>
+  </ol>
+  <p class="review">
+    {t(
+      "Passing check → evidence for review → merge decision",
+      "검사 통과 → 검토 근거 → 병합 판단",
+      "検査成功 → レビューの根拠 → マージの判断",
+    )}
+  </p>
+  <p class="boundary" data-boundary>
+    {t(
+      "Setup required. This MR pipeline tests the source branch, not automatically the merged result. Passing is not deployment approval.",
+      "설정 필요. 이 MR 파이프라인은 소스 브랜치를 검사하며 병합 결과를 자동 검사하지 않습니다. 통과가 배포 승인은 아닙니다.",
+      "設定が必要です。このMRパイプラインはソースブランチを検査し、マージ結果を自動検査しません。成功は配布の承認ではありません。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    background: #f7f0e9;
+    color: #4e342c;
+    border: 1px solid #ac9388;
+    padding: clamp(16px, 3vw, 32px);
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  header p {
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.25;
+    margin: 0.5rem 0 1.5rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  .mr {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #fff;
+    border: 2px solid #78574a;
+    padding: 20px;
+  }
+  .mr > span {
+    font-family: ui-monospace, monospace;
+    font-weight: 750;
+    font-size: 2rem;
+    border-right: 3px solid #78574a;
+    padding-right: 18px;
+  }
+  .mr p {
+    font-size: 0.85rem;
+    margin-top: 6px;
+  }
+  .wire {
+    margin-left: 40px;
+    border-left: 4px solid #78574a;
+    padding: 16px 20px;
+  }
+  .wire b {
+    display: block;
+    font-size: 0.85rem;
+  }
+  .runs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 14px;
+  }
+  .runs li {
+    background: #fff;
+    padding: 18px;
+    border: 1px solid #ac9388;
+  }
+  .status {
+    display: inline-block;
+    font-family: ui-monospace, monospace;
+    font-weight: 750;
+    padding: 4px 10px;
+    margin-bottom: 14px;
+    border: 2px solid;
+  }
+  .fail {
+    color: #842d30;
+    background: #f9e4e4;
+  }
+  .pass {
+    color: #244f38;
+    background: #e2efe6;
+  }
+  .change {
+    color: #4e342c;
+    background: #f7f0e9;
+  }
+  .runs p {
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+  .review {
+    margin-top: 20px;
+    font-weight: 700;
+    border-left: 6px solid #78574a;
+    padding: 14px 18px;
+    background: #fff;
+  }
+  .boundary {
+    margin-top: 24px;
+    border-top: 1px solid #ac9388;
+    padding-top: 16px;
+    font-size: 0.85rem;
+  }
+  @container (max-width:570px) {
+    .runs {
+      grid-template-columns: 1fr;
+    }
+    .mr {
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px;
+    }
+    .mr > span {
+      font-size: 1.3rem;
+      padding-right: 12px;
+    }
+    .wire {
+      margin-left: 24px;
+    }
+  }
+</style>

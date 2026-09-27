@@ -37,9 +37,9 @@ const removedCategories = [
 test("project choices remain discoverable without internal implementation choices", () => {
   const catalog = JSON.parse(read("ai/catalog.json"));
   assert.equal(catalog.schemaVersion, 1);
-  assert.equal(catalog.articles.filter((a) => a.kind === "concept").length, 64);
+  assert.equal(catalog.articles.filter((a) => a.kind === "concept").length, 74);
   assert.equal(catalog.articles.filter((a) => a.kind === "guide").length, 9);
-  assert.equal(catalog.categories.filter((c) => !c.parent).length, 5);
+  assert.equal(catalog.categories.filter((c) => !c.parent).length, 6);
   for (const id of [...removedConcepts, ...removedGuides, ...planned]) {
     assert.ok(!catalog.articles.some((a) => a.id === id));
     assert.ok(catalog.articles.every((a) => !a.related.includes(id)));
@@ -142,7 +142,7 @@ test("integrated guides and startup sources preserve ownership across languages"
       );
     }
     const startup = readFileSync(`src/startup/v1/${lang}.md`, "utf8");
-    assert.ok(startup.includes("2026-09-26"));
+    assert.ok(startup.includes("2026-09-27"));
   }
   const instructions = read("ai/instructions.md");
   assert.ok(
@@ -153,7 +153,7 @@ test("integrated guides and startup sources preserve ownership across languages"
   );
   assert.ok(!instructions.includes("EVERY unresolved choice"));
   const startup = read("ai/startup/latest.md");
-  assert.ok(startup.includes("Revision: 4."));
+  assert.ok(startup.includes("Revision: 5."));
   assert.ok(
     instructions.includes("A local feature still needs a user decision"),
   );

@@ -1,0 +1,270 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="git" lang={lang}>
+  <header>
+    <p class="eyebrow">
+      {t(
+        "Travel website · illustrated workflow",
+        "여행 일정 사이트 · 흐름 예시",
+        "旅行サイト · 手順の例",
+      )}
+    </p>
+    <h2>
+      {t(
+        "Save here. Share when ready.",
+        "여기에 기록, 준비되면 공유",
+        "手元で記録、準備ができたら共有",
+      )}
+    </h2>
+  </header>
+  <div class="territories">
+    <div class="computer" data-local>
+      <h3>
+        {t(
+          "01 / Developer’s computer",
+          "01 / 개발자 컴퓨터",
+          "01 / 開発者の端末",
+        )}
+      </h3>
+      <div class="file">
+        {t(
+          "Edit: add a museum stop",
+          "편집: 박물관 방문 추가",
+          "編集：博物館への訪問を追加",
+        )}
+      </div>
+      <p class="command">
+        <code>git commit</code>{" "}
+        <span>↓ {t("records locally", "로컬 기록", "ローカルに記録")}</span>
+      </p>
+      <div class="history">
+        <p>
+          <span class="dot"></span>
+          <code>main</code> · {t("Original itinerary", "기존 일정", "元の日程")}
+        </p>
+        <p class="branch">
+          <span class="dot new"></span>
+          <code>museum-stop</code>
+          <br />
+          {t(
+            "New commit: museum stop",
+            "새 커밋: 박물관 방문",
+            "新コミット：博物館への訪問",
+          )}
+        </p>
+      </div>
+      <strong class="offline">
+        {t(
+          "Local commit works offline",
+          "로컬 커밋은 오프라인에서도 가능",
+          "ローカルコミットはオフラインでも可能",
+        )}
+      </strong>
+    </div>
+    <div class="transfer" data-transfer>
+      <b>
+        02 / <code>git push</code> →
+      </b>
+      <span>{t("Connection + permission", "연결 + 권한", "接続 + 権限")}</span>
+    </div>
+    <div class="remote" data-remote>
+      <h3>{t("Shared repository", "공유 저장소", "共有リポジトリ")}</h3>
+      <p class="before">
+        {t(
+          "Before push: new stop absent",
+          "push 전: 새 방문지 없음",
+          "push前：新しい訪問先なし",
+        )}
+      </p>
+      <p class="after">
+        <span class="dot new"></span>
+        {t("After successful push", "push 성공 후", "push成功後")}
+        <br />
+        <code>museum-stop</code>
+      </p>
+      <p class="fetch">
+        <b>
+          03 / <code>git fetch</code> ↓
+        </b>
+        <br />
+        {t(
+          "Teammate receives the branch",
+          "동료가 브랜치를 받음",
+          "同僚がブランチを取得",
+        )}
+      </p>
+    </div>
+  </div>
+  <p class="limit" data-boundary>
+    {t(
+      "Commit ≠ push. If push is rejected, reconcile history. Hosting and review are separate choices.",
+      "commit ≠ push. push가 거절되면 이력을 조정합니다. 호스팅과 검토는 별도 선택입니다.",
+      "commit ≠ push。拒否されたら履歴を調整します。ホスティングとレビューは別の選択です。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(16px, 3vw, 32px);
+    background: #f3f4ed;
+    color: #213e33;
+    border: 1px solid #7c9086;
+    font-family: system-ui, sans-serif;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+  }
+  p,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  .eyebrow {
+    color: inherit;
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.25;
+    margin: 0.5rem 0 1.5rem;
+  }
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .territories {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(90px, 0.5fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+  }
+  .computer {
+    padding: 20px;
+    border: 6px double #365d4b;
+    background: #fff;
+    border-radius: 12px;
+  }
+  .file {
+    border: 1px solid #879b90;
+    padding: 12px;
+    background: #f3f4ed;
+  }
+  .command {
+    margin: 18px 0;
+  }
+  .command span {
+    display: block;
+    font-size: 0.85rem;
+  }
+  code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.9em;
+  }
+  .history {
+    border-left: 3px solid #365d4b;
+    padding: 0 0 0 16px;
+    margin: 20px 0;
+  }
+  .history p {
+    position: relative;
+  }
+  .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #365d4b;
+    border-radius: 50%;
+    background: #fff;
+    margin-right: 6px;
+  }
+  .history .dot {
+    position: absolute;
+    left: -24px;
+    top: 6px;
+  }
+  .branch {
+    margin: 14px 0 0 16px;
+    padding: 12px;
+    border-left: 3px solid #365d4b;
+    background: #e4eee5;
+  }
+  .history .branch .dot {
+    left: -8px;
+    top: 18px;
+  }
+  .new {
+    background: #365d4b;
+  }
+  .offline {
+    display: block;
+    font-size: 0.85rem;
+    border-top: 1px solid #879b90;
+    padding-top: 12px;
+  }
+  .transfer {
+    text-align: center;
+  }
+  .transfer b {
+    display: block;
+    padding: 12px 0;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+  }
+  .transfer span {
+    display: block;
+    font-size: 0.8rem;
+    margin-top: 8px;
+  }
+  .remote {
+    border: 2px dashed #365d4b;
+    padding: 20px;
+  }
+  .before {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+  .after {
+    background: #e4eee5;
+    padding: 14px;
+    border: 1px solid #879b90;
+  }
+  .fetch {
+    margin-top: 24px;
+  }
+  .limit {
+    border-top: 1px solid #879b90;
+    margin-top: 24px;
+    padding-top: 16px;
+    font-size: 0.85rem;
+  }
+  @container (max-width:650px) {
+    .territories {
+      grid-template-columns: 1fr;
+    }
+    .transfer {
+      text-align: left;
+    }
+    .transfer b {
+      padding: 8px;
+      border: 0;
+      border-left: 4px solid;
+    }
+    .transfer span {
+      padding-left: 12px;
+    }
+  }
+  @media (forced-colors: active) {
+    .dot {
+      border-color: CanvasText;
+    }
+  }
+</style>

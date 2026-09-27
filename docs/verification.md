@@ -1,7 +1,7 @@
 # kickoff verification index
 
 - [Product alignment, 2026-09-26](product-alignment-review.md): current reader-flow changes and local checks, separate from production.
-- [AI guidance review](ai-guidance-review.md): local v1 revision 4, token budget, and prior verification limitations.
+- [AI guidance review](ai-guidance-review.md): local v1 revision 5, token budget, and prior verification limitations.
 - [Catalog scope](catalog-scope.md): active versus reference-only inventory.
 - [Deployment](deployment.md): publishing procedure and dated production evidence.
 

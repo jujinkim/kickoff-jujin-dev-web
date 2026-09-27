@@ -64,6 +64,29 @@ for (const [lang, name, notes] of [
     const expected = siteUrls(startupPrompt(lang));
     assert.deepEqual(siteUrls(minimal), expected);
     assert.deepEqual(siteUrls(projectPrompt[lang]), expected);
+    const versionControl = {
+      en: [
+        "version control systems",
+        "repository hosting",
+        "preserve existing choices",
+      ],
+      ko: ["버전 관리 시스템", "저장소 호스팅", "기존 선택을 유지"],
+      ja: [
+        "バージョン管理システム",
+        "リポジトリホスティング",
+        "既存の選択を維持",
+      ],
+    }[lang];
+    const noScript = read(`dist/${lang}/start/index.html`).match(
+      /<noscript>[\s\S]*?<\/noscript>/,
+    )[0];
+    for (const prompt of [
+      minimal,
+      startupPrompt(lang, "v1"),
+      projectPrompt[lang],
+      noScript,
+    ])
+      for (const term of versionControl) assert.ok(prompt.includes(term), term);
     for (const prompt of [minimal, projectPrompt[lang]])
       assert.doesNotMatch(prompt, /llms\.txt|catalog\.json|\/categories\//);
     const literal = '<script>alert("x")</script> & <b>books</b>\nSecond line';

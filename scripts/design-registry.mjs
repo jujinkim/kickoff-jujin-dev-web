@@ -28,11 +28,16 @@ export const monetizationCategories = [
   "purchase-types",
   "ad-formats",
 ];
+export const versionControlCategories = [
+  "version-control-systems",
+  "repository-hosting",
+];
 export const requiresDemo = (id) =>
   isDesignCategory(id) ||
   ["requirements", "boundaries", "service-split"].includes(id) ||
   platformCategories.includes(id) ||
-  monetizationCategories.includes(id);
+  monetizationCategories.includes(id) ||
+  versionControlCategories.includes(id);
 export function validateDesigns(
   articles,
   registry = designRegistry,

@@ -1018,5 +1018,170 @@
     "compareWith": ["banner-ads", "interstitial-ads"],
     "relatedGuides": ["revenue"],
     "order": 2302
+  },
+  {
+    "id": "git",
+    "category": "version-control-systems",
+    "titles": {
+      "en": "Git",
+      "ko": "Git",
+      "ja": "Git"
+    },
+    "scope": "Distributed local history and branches, commit versus push, and a separate hosting choice. Compare existing hg/SVN workflows and binary locking needs without prescribing migration.",
+    "compareWith": ["subversion", "mercurial", "perforce-p4"],
+    "relatedGuides": ["tools"],
+    "aliases": ["Git", "git", "깃", "ギット"],
+    "order": 2100
+  },
+  {
+    "id": "subversion",
+    "category": "version-control-systems",
+    "titles": {
+      "en": "Apache Subversion",
+      "ko": "Apache Subversion",
+      "ja": "Apache Subversion"
+    },
+    "scope": "Existing centralized SVN repository, working copy, update and central commit. Avoid implying no local editing or universal locking.",
+    "compareWith": ["git", "mercurial", "perforce-p4"],
+    "relatedGuides": ["tools"],
+    "aliases": [
+      "Apache Subversion",
+      "Subversion",
+      "SVN",
+      "svn",
+      "서브버전",
+      "サブバージョン"
+    ],
+    "order": 2101
+  },
+  {
+    "id": "mercurial",
+    "category": "version-control-systems",
+    "titles": {
+      "en": "Mercurial",
+      "ko": "Mercurial",
+      "ja": "Mercurial"
+    },
+    "scope": "Retain established hg tooling; distributed commits and draft/public phases with a publishing remote. Public phase is not repository visibility; non-publishing remotes may retain draft.",
+    "compareWith": ["git", "subversion", "perforce-p4"],
+    "relatedGuides": ["tools"],
+    "aliases": ["Mercurial", "hg", "머큐리얼", "マーキュリアル"],
+    "order": 2102
+  },
+  {
+    "id": "perforce-p4",
+    "category": "version-control-systems",
+    "titles": {
+      "en": "Perforce P4",
+      "ko": "Perforce P4",
+      "ja": "Perforce P4"
+    },
+    "scope": "P4 server/depot and changelist submission for a non-mergeable vehicle model; configured binary+l exclusive-open versus p4 lock. No blanket binary auto-lock claim.",
+    "compareWith": ["git", "subversion", "mercurial"],
+    "relatedGuides": ["tools"],
+    "aliases": [
+      "Perforce P4",
+      "P4",
+      "Helix Core",
+      "Perforce",
+      "퍼포스",
+      "ヘリックスコア"
+    ],
+    "order": 2103
+  },
+  {
+    "id": "github",
+    "category": "repository-hosting",
+    "titles": {
+      "en": "GitHub",
+      "ko": "GitHub",
+      "ja": "GitHub"
+    },
+    "scope": "Public weather-widget contribution through fork, branch, pull request, review and authorized merge. Git versus hosting; review is not exclusive or guaranteed security.",
+    "compareWith": ["gitlab", "bitbucket", "azure-repos", "gitea", "codeberg"],
+    "relatedGuides": ["tools"],
+    "aliases": ["GitHub", "깃허브", "깃헙", "ギットハブ"],
+    "order": 2104
+  },
+  {
+    "id": "gitlab",
+    "category": "repository-hosting",
+    "titles": {
+      "en": "GitLab",
+      "ko": "GitLab",
+      "ja": "GitLab"
+    },
+    "scope": "Leave-request app merge request connected to explicitly configured CI; source-branch versus merged-result testing; GitLab.com versus Self-Managed responsibility.",
+    "compareWith": ["github", "bitbucket", "azure-repos", "gitea", "codeberg"],
+    "relatedGuides": ["tools"],
+    "aliases": ["GitLab", "깃랩", "ギットラボ"],
+    "order": 2105
+  },
+  {
+    "id": "bitbucket",
+    "category": "repository-hosting",
+    "titles": {
+      "en": "Bitbucket",
+      "ko": "Bitbucket",
+      "ja": "Bitbucket"
+    },
+    "scope": "Bitbucket Cloud Git workflow with configured Jira connection and work-item key across branch, commits and pull request. Do not generalize to Data Center or unique Jira support.",
+    "compareWith": ["github", "gitlab", "azure-repos", "gitea", "codeberg"],
+    "relatedGuides": ["tools"],
+    "aliases": ["Bitbucket", "Bitbucket Cloud", "빗버킷", "ビットバケット"],
+    "order": 2106
+  },
+  {
+    "id": "azure-repos",
+    "category": "repository-hosting",
+    "titles": {
+      "en": "Azure Repos",
+      "ko": "Azure Repos",
+      "ja": "Azure Repos"
+    },
+    "scope": "Azure DevOps Git repository PR and configured branch policies, distinct from TFVC support. No implied Azure runtime requirement or universal policy defaults.",
+    "compareWith": ["github", "gitlab", "bitbucket", "gitea", "codeberg"],
+    "relatedGuides": ["tools"],
+    "aliases": [
+      "Azure Repos",
+      "Azure DevOps",
+      "애저 리포스",
+      "アジュールリポジトリ"
+    ],
+    "order": 2107
+  },
+  {
+    "id": "gitea",
+    "category": "repository-hosting",
+    "titles": {
+      "en": "Gitea",
+      "ko": "Gitea",
+      "ja": "Gitea"
+    },
+    "scope": "Self-operated club Git service: repositories, database/configuration, permissions, updates and tested backups. Do not imply software license removes operating costs.",
+    "compareWith": ["github", "gitlab", "bitbucket", "azure-repos", "codeberg"],
+    "relatedGuides": ["tools"],
+    "aliases": ["Gitea", "기티아", "ギティア", "self-hosted Git"],
+    "order": 2108
+  },
+  {
+    "id": "codeberg",
+    "category": "repository-hosting",
+    "titles": {
+      "en": "Codeberg",
+      "ko": "Codeberg",
+      "ja": "Codeberg"
+    },
+    "scope": "Public free-software bicycle-route project on nonprofit community-operated Codeberg, powered by Forgejo. Eligibility and quotas require current policy; no unlimited private hosting claim.",
+    "compareWith": ["github", "gitlab", "bitbucket", "azure-repos", "gitea"],
+    "relatedGuides": ["tools"],
+    "aliases": [
+      "Codeberg",
+      "코드버그",
+      "코드베르크",
+      "コードバーグ",
+      "Forgejo"
+    ],
+    "order": 2109
   }
 ]

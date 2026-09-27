@@ -1,0 +1,14 @@
+# Version control systems
+
+Four first-revision concepts, reviewed 2026-09-27. Shared comparison axes: history location; offline work; collaboration and merging; file characteristics; compatibility with existing tools. Scenarios and recommendations are editorial. [Official evidence](../version-control-sources.md).
+
+| Concept                                   | History location                               | Offline work                                             | Collaboration / merge                                    | File fit in the example                         | Existing-tool priority                               |
+| ----------------------------------------- | ---------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | ----------------------------------------------- | ---------------------------------------------------- |
+| [Git](../articles/git.md)                 | Local repositories plus optional remotes       | Local commits and branches                               | Push/fetch exchange history; conflicts require judgment  | Text changes to a travel site                   | Git-compatible tools and a separate host choice      |
+| [Subversion](../articles/subversion.md)   | Central repository; working copies             | Edit locally; repository access for commits              | Update/commit; resolve competing changes                 | An internal manual; optional locks are possible | Retain existing SVN scripts and permissions          |
+| [Mercurial](../articles/mercurial.md)     | Distributed repositories                       | Local commits                                            | hg exchange and phases; publishing configuration matters | Translation strings and their conflicts         | Preserve established hg automation and extensions    |
+| [Perforce P4](../articles/perforce-p4.md) | Central depot in this example, with workspaces | This example requires server coordination to open/submit | Configured +l serializes edits; changelist submission    | Hard-to-merge binary vehicle model              | Existing asset tools, typemap and operator expertise |
+
+Git and Mercurial both support distributed work. SVN can also lock files; locks are not exclusive to P4. The P4 example distinguishes +l exclusive opening from p4 lock submission restriction. Mercurial public is a phase, not internet visibility. Do not imply that all six Git hosts in the other group support SVN, hg or P4 repositories interchangeably.
+
+Compare tool choice separately from review-service operation. Git plus GitHub, GitLab, Bitbucket Cloud, Azure Repos Git, Gitea or Codeberg is a combination, not a competing category choice. Migration needs a history and tool compatibility rehearsal.

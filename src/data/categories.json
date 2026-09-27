@@ -57,7 +57,7 @@
       "ko": "서비스를 어디서 어떻게 실행할지 비교해 감당할 운영 작업과 비용을 정합니다.",
       "ja": "サービスをどこでどう動かすか比較し、引き受ける運用作業と費用を決めます。"
     },
-    "order": 3
+    "order": 4
   },
   {
     "id": "design",
@@ -72,7 +72,7 @@
       "ko": "화면 배치·시각 표현·글자 구성을 비교해 사용자가 읽고 조작하는 방식을 정합니다.",
       "ja": "画面配置・視覚表現・文字の扱いを比較し、読み方と操作のしやすさを決めます。"
     },
-    "order": 4
+    "order": 5
   },
   {
     "id": "business",
@@ -87,7 +87,7 @@
       "ko": "누가 지불하고 무엇을 얻는지, 어떻게 청구할지 비교해 수익 방식과 이용 경험을 정합니다.",
       "ja": "誰が支払い、何を得て、どう請求するか比較し、収益の仕組みと利用体験を決めます。"
     },
-    "order": 5
+    "order": 6
   },
   {
     "id": "layout",
@@ -463,5 +463,50 @@
       "ja": "バナー・全画面広告・任意のリワード広告を比較し、表示場所と利用者の参加方法を決めます。"
     },
     "order": 22
+  },
+  {
+    "id": "version-control",
+    "parent": null,
+    "names": {
+      "en": "Version control",
+      "ko": "버전 관리",
+      "ja": "バージョン管理"
+    },
+    "descriptions": {
+      "en": "Compare history tools and repository hosts to decide how changes are recorded, reviewed and shared.",
+      "ko": "변경 이력 도구와 저장소 호스팅을 비교해 기록·검토·공유 방식을 정합니다.",
+      "ja": "履歴管理とリポジトリホストを比較し、変更の記録・レビュー・共有方法を決めます。"
+    },
+    "order": 3
+  },
+  {
+    "id": "version-control-systems",
+    "parent": "version-control",
+    "names": {
+      "en": "Version control systems",
+      "ko": "버전 관리 시스템",
+      "ja": "バージョン管理システム"
+    },
+    "descriptions": {
+      "en": "Compare local and central history, collaboration, file types and existing tools.",
+      "ko": "로컬·중앙 이력, 협업 방식, 파일 특성과 기존 도구를 비교합니다.",
+      "ja": "ローカル・中央の履歴、協業、ファイルの性質、既存ツールを比較します。"
+    },
+    "order": 0
+  },
+  {
+    "id": "repository-hosting",
+    "parent": "version-control",
+    "names": {
+      "en": "Repository hosting",
+      "ko": "저장소 호스팅",
+      "ja": "リポジトリホスティング"
+    },
+    "descriptions": {
+      "en": "Compare who operates Git collaboration, review workflows, integrations and migration needs.",
+      "ko": "Git 협업 운영 주체, 검토 흐름, 연동과 이전 필요를 비교합니다.",
+      "ja": "Git協業の運営者、レビュー、連携、移行の要件を比較します。"
+    },
+    "order": 1
   }
 ]

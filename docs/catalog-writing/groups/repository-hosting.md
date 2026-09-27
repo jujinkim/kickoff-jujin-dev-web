@@ -1,0 +1,16 @@
+# Repository hosting
+
+Six first-revision concepts, reviewed 2026-09-27. Shared axes: operator; review workflow; existing work-tool integration; cost and constraints; migration. [Official evidence](../version-control-sources.md). Capabilities are not exclusive unless documentation says so. These entries teach Git collaboration; Azure Repos additionally supports TFVC.
+
+| Concept                                   | Operator in example                 | Review workflow                        | Existing-work priority                            | Cost / constraints to check                              | Migration work                                                |
+| ----------------------------------------- | ----------------------------------- | -------------------------------------- | ------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------- |
+| [GitHub](../articles/github.md)           | Hosted service                      | Fork, PR, maintainer review and merge  | Existing contributor network for a weather widget | Plan, permissions, storage, automation                   | Git plus issues, review discussions, access and automation    |
+| [GitLab](../articles/gitlab.md)           | GitLab.com or team for Self-Managed | MR beside explicitly configured CI     | Existing leave-app review and CI                  | Runner capacity, plan, or instance operations            | Git plus issues, CI and access configuration                  |
+| [Bitbucket](../articles/bitbucket.md)     | Bitbucket Cloud                     | PR linked to Jira work                 | Request-to-code traceability for an order app     | Connected workspace/site, plan and pipeline limits       | Git plus Jira links, reviews and automation                   |
+| [Azure Repos](../articles/azure-repos.md) | Azure DevOps service in example     | Git PR with configured branch policies | Existing project permissions for facility booking | Access, required policies, bypass rights, service limits | Git plus review records and policy configuration              |
+| [Gitea](../articles/gitea.md)             | Club's own operator                 | Review on the club instance            | Control of its equipment-app code service         | Hosting, operator time, updates and tested recovery      | Repositories plus database, configuration and import coverage |
+| [Codeberg](../articles/codeberg.md)       | Nonprofit community                 | Fork, PR and project-maintainer merge  | Public free-software cycling tool                 | Eligibility, resource and automation policies            | Git plus issue records and destination import coverage        |
+
+GitLab and Gitea both support self-operation; pull requests and Jira integration are available in multiple products. The example's priorities decide suitability, not a claim of exclusive features. Codeberg is an operated service using Forgejo; it is not another name for Gitea. Source hosting does not require the application's runtime to use the same vendor.
+
+No fixed price table. Check current terms against the real team, visibility, storage and automation needs. A Git history export does not establish complete migration of reviews, issues, permissions or CI.

@@ -11,7 +11,7 @@ export const startupText = {
     versions: "Guideline versions",
     contribute: "Contribute on GitHub",
     history:
-      "v1 · revision 4 · 2026-09-26 — Proportionate architecture, SOLID/GRASP as judgment criteria, quality across software/design/monetization/operations, and maintenance handoff. History: v1 · revision 3 · 2026-09-24 — Two required documents, decisions from requirements, and optional catalog reading. v1 · revision 2 · 2026-09-23 — Project choices, AI-owned implementation and documentation, and operating constraints. v1 · revision 1 · 2026-09-22 — Initial release: context, catalog choices, software and design baselines, plan approval, and contributions.",
+      "v1 · revision 5 · 2026-09-27 — Version control systems and repository hosting in planning and prompts. History: v1 · revision 4 · 2026-09-26 — Proportionate architecture, SOLID/GRASP as judgment criteria, quality across software/design/monetization/operations, and maintenance handoff. v1 · revision 3 · 2026-09-24 — Two required documents, decisions from requirements, and optional catalog reading. v1 · revision 2 · 2026-09-23 — Project choices, AI-owned implementation and documentation, and operating constraints. v1 · revision 1 · 2026-09-22 — Initial release: context, catalog choices, software and design baselines, plan approval, and contributions.",
   },
   ko: {
     title: "개발 시작 지침 문서",
@@ -21,7 +21,7 @@ export const startupText = {
     versions: "지침 버전",
     contribute: "GitHub에서 함께 기여하기",
     history:
-      "v1 · 리비전 4 · 2026-09-26 — 규모에 맞는 아키텍처, 판단 기준으로서의 SOLID/GRASP, 소프트웨어·디자인·수익화·운영 품질, 유지보수 인계. 이전: v1 · 리비전 3 · 2026-09-24 — 필수 문서 두 개, 요구 기반 결정, 카탈로그 선택 참고. v1 · 리비전 2 · 2026-09-23 — 프로젝트 선택, AI의 내부 구현·문서 작성, 운영 제약. v1 · 리비전 1 · 2026-09-22 — 첫 버전: 서비스 정보, 카탈로그 선택, SW·디자인 기본 지침, 기획 확정, 공동 기여.",
+      "v1 · 리비전 5 · 2026-09-27 — 기획·프롬프트에 버전 관리 시스템과 저장소 호스팅 포함. 이전: v1 · 리비전 4 · 2026-09-26 — 규모에 맞는 아키텍처, 판단 기준으로서의 SOLID/GRASP, 소프트웨어·디자인·수익화·운영 품질, 유지보수 인계. v1 · 리비전 3 · 2026-09-24 — 필수 문서 두 개, 요구 기반 결정, 카탈로그 선택 참고. v1 · 리비전 2 · 2026-09-23 — 프로젝트 선택, AI의 내부 구현·문서 작성, 운영 제약. v1 · 리비전 1 · 2026-09-22 — 첫 버전: 서비스 정보, 카탈로그 선택, SW·디자인 기본 지침, 기획 확정, 공동 기여.",
   },
   ja: {
     title: "開発開始ガイドライン",
@@ -31,15 +31,15 @@ export const startupText = {
     versions: "ガイドラインの版",
     contribute: "GitHubで共同改善する",
     history:
-      "v1 · リビジョン4 · 2026-09-26 — 規模に合う構成、判断基準としてのSOLID/GRASP、ソフトウェア・デザイン・収益化・運用の品質、保守の引き継ぎ。履歴：v1 · リビジョン3 · 2026-09-24 — 必須文書は二つ、要件から判断を導き、カタログ参照は任意に。v1 · リビジョン2 · 2026-09-23 — 全体の選択、AIによる内部実装・文書作成、運用制約。v1 · リビジョン1 · 2026-09-22 — 初版：背景、カタログ選択、ソフトウェア・デザイン指針、計画承認、共同改善。",
+      "v1 · リビジョン5 · 2026-09-27 — 計画・プロンプトにバージョン管理システムとリポジトリホスティングを追加。履歴：v1 · リビジョン4 · 2026-09-26 — 規模に合う構成、判断基準としてのSOLID/GRASP、ソフトウェア・デザイン・収益化・運用の品質、保守の引き継ぎ。v1 · リビジョン3 · 2026-09-24 — 必須文書は二つ、要件から判断を導き、カタログ参照は任意に。v1 · リビジョン2 · 2026-09-23 — 全体の選択、AIによる内部実装・文書作成、運用制約。v1 · リビジョン1 · 2026-09-22 — 初版：背景、カタログ選択、ソフトウェア・デザイン指針、計画承認、共同改善。",
   },
 };
 export function startupPrompt(lang: Lang, version = "latest") {
   const url = `https://kickoff.jujin.dev/ai/startup/${version}.md`;
   const rules = "https://kickoff.jujin.dev/ai/instructions.md";
   return {
-    en: `Read ${url} and ${rules}, then begin project planning from my service requirements and constraints. Preserve confirmed decisions and existing authorization. Use catalog articles only when I request them or they help explain a decision.`,
-    ko: `${url} 와 ${rules} 를 읽고, 서비스 요구와 제약에서 프로젝트 기획을 시작해줘. 확정된 결정과 기존 권한은 보존해줘. 카탈로그 글은 내가 요청하거나 결정의 이해에 도움이 될 때만 참고해줘.`,
-    ja: `${url} と ${rules} を読み、サービスの要件と制約から企画を始めてください。確定済みの判断と既存の権限を維持してください。カタログ記事は私が依頼した場合や判断の理解に役立つ場合だけ参照してください。`,
+    en: `Read ${url} and ${rules}, then begin project planning from my service requirements and constraints. Preserve confirmed decisions and existing authorization. Include version control systems and repository hosting in planning; preserve existing choices and resolve only what is still undecided. Use catalog articles only when I request them or they help explain a decision.`,
+    ko: `${url} 와 ${rules} 를 읽고, 서비스 요구와 제약에서 프로젝트 기획을 시작해줘. 확정된 결정과 기존 권한은 보존해줘. 버전 관리 시스템과 저장소 호스팅도 기획에 포함하고, 기존 선택을 유지하며 미결정 사항만 다뤄줘. 카탈로그 글은 내가 요청하거나 결정의 이해에 도움이 될 때만 참고해줘.`,
+    ja: `${url} と ${rules} を読み、サービスの要件と制約から企画を始めてください。確定済みの判断と既存の権限を維持してください。バージョン管理システムとリポジトリホスティングも計画に含め、既存の選択を維持して未決定事項だけを検討してください。カタログ記事は私が依頼した場合や判断の理解に役立つ場合だけ参照してください。`,
   }[lang];
 }
