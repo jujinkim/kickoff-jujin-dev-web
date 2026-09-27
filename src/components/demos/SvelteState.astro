@@ -109,6 +109,24 @@ const t = local(lang),
       {p.reset}
     </button>
   </div>
+  <dl class="runtime-facts" data-runtime-facts>
+    <dt>{t("Execution boundary", "실행 경계", "実行境界")}</dt>
+    <dd>
+      {t(
+        "Model: components compile before use; later browser events still update state at runtime.",
+        "모형: 컴포넌트는 미리 컴파일하지만 이후 브라우저 이벤트도 실행 중 상태를 바꿉니다.",
+        "模型：コンポーネントを先にコンパイルしても、後のイベントは実行時に状態を変えます。",
+      )}
+    </dd>
+    <dt>{t("State and responsibility", "상태와 책임", "状態と責任")}</dt>
+    <dd>
+      {t(
+        "Shared records own the total until reload. This explanation does not load the Svelte runtime.",
+        "공유 기록이 새로고침 전까지 합계를 소유합니다. 설명 모형은 Svelte 런타임을 로드하지 않습니다.",
+        "共通記録が再読み込みまで合計を持ちます。この説明はSvelteランタイムを読み込みません。",
+      )}
+    </dd>
+  </dl>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -180,5 +198,52 @@ const t = local(lang),
     padding: 16px;
     border: 2px solid #985437;
     border-radius: 12px;
+  }
+  .runtime-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 2fr);
+    gap: 10px 16px;
+    border-block: 1px solid currentColor;
+    padding: 18px 0;
+    margin: 18px 0;
+    font-size: 0.85rem;
+  }
+  .runtime-facts dt {
+    font-weight: 700;
+  }
+  .runtime-facts dd {
+    margin: 0;
+    min-width: 0;
+  }
+  @container (width<480px) {
+    .runtime-facts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .compile {
+    border: 5px solid #88503c;
+    padding: 26px;
+    margin-bottom: 42px;
+    position: relative;
+  }
+  .compile::after {
+    content: "↓";
+    position: absolute;
+    bottom: -44px;
+    left: 48%;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+  .runtime {
+    border: 5px dashed #88503c;
+    padding: 26px;
+  }
+  .runtime > h3,
+  .compile > h3 {
+    font-size: 1.4rem;
+  }
+  .total strong {
+    font-size: 3rem;
   }
 </style>

@@ -17,7 +17,7 @@ const t = strings[lang];
     <h1>{t.start}</h1>
     <p>{t.startIntro}</p>
   </section>
-  <div class="guide-content">
+  <div class="start-content">
     <PromptBuilder lang={lang} />
     <div class="resource-links">
       <a class="button" href={`/${lang}/help/#make-prompt`}>
@@ -49,6 +49,9 @@ const t = strings[lang];
 </Base>
 
 <style>
+  .start-content {
+    padding-bottom: 64px;
+  }
   .start-heading {
     padding: 28px 0 16px;
   }

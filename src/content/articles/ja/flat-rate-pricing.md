@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "flat-rate-pricing"
-lang: "ja"
-title: "定額料金"
-summary: "定めたパッケージに固定額を課します。"
-category: "pricing-models"
-aliases: ["定額料金", "Flat-rate pricing"]
+kind: concept
+articleId: flat-rate-pricing
+lang: ja
+title: 定額料金
+summary: 予測可能な一式が重要なとき、パッケージ価格を一つにします。
+category: pricing-models
+aliases:
+  - 定額料金
+  - Flat-rate pricing
 related:
-  [
-    "revenue",
-    "per-seat-pricing",
-    "feature-tiered-pricing",
-    "volume-pricing",
-    "graduated-pricing",
-    "base-plus-overage",
-    "subscription",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - per-seat-pricing
+  - feature-tiered-pricing
+  - volume-pricing
+  - graduated-pricing
+  - base-plus-overage
+  - subscription
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "固定のパッケージ料金",
-    "advantages": "上限内で予測しやすい",
-    "limitations": "対象範囲が重要",
-    "suitable": "安定したサービスの組み合わせ",
-    "combinations": "継続課金",
-  }
+  features: 固定のパッケージ料金
+  advantages: 上限内で予測しやすい
+  limitations: 対象範囲が重要
+  suitable: 安定したサービスの組み合わせ
+  combinations: 継続課金
 ---
 
 ## なぜ必要なのか

@@ -1,24 +1,36 @@
-# Affiliate commissions visualization brief
+# Affiliate commissions / アフィリエイト手数料 / 제휴 수수료
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `affiliate-marketing`; `revenue-sources`; Affiliate commissions / 제휴 수수료 / アフィリエイト手数料.
-- Definition (one sentence): Affiliate revenue rewards qualifying referrals to another seller. A click alone does not necessarily qualify, and eligibility follows the particular program agreement.
-- Closest concept and concrete difference: same-category peers direct-payment, advertising, sponsorship, transaction-fees; Commission on qualifying referrals. Cross-category combinations are related reading, not comparison peers.
-- Distinguishing visual features (structure, material, typography): Numbered referral, external purchase and conditional commission path. Solid surfaces and text/number labels; color is not the only encoding.
-- Shared comparison category: [revenue-sources](../catalog-writing/groups/revenue-sources.md).
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional hiking book guide labels a referral link to a bookshop.
-- Visual variable changed; concept-specific extra controls and their justification: Numbered referral, external purchase and conditional commission path. Static mode has no controls, scripts, artificial focus stops or mount dependency.
-- Fictional scenario and why it demonstrates the definition: A hiking book guide helps readers choose a book, but sending them to a shop brings the guide no direct sale. A fictional hiking book guide labels a referral link to a bookshop.
-- Representative action and observable result: A fictional hiking book guide labels a referral link to a bookshop. A reader buys there; the shop pays the publisher a commission if its conditions are met.
-- Initial state: Numbered referral, external purchase and conditional commission path.
-- Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
-- Reset and reload behavior: No mutable state or reset control.
-- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
-- Keyboard order, focus, accessible names, live feedback: No artificial tab stops. Semantic lists, tables and visible descriptions work without JavaScript.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
-- JavaScript-disabled initial screen and explanation: Full static diagram; no interaction instruction or noscript warning.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
-- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
-- Capture selector and initial content: `[data-demo="affiliate-marketing"]`; mode `static`; 1440px light surroundings in en/ko/ja; initial state above.
-- Source URLs, inspected date, claims each source supports: https://affiliate-program.amazon.com/help/operating/agreement; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
-- Comparison summaries: features: Commission on qualifying referrals; advantages: No need to sell referred item; limitations: Program eligibility dependency; suitable: Relevant disclosed recommendations; combinations: Customer direct payment.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/affiliate-marketing-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `affiliate-marketing`; `revenue-sources`. Existing URLs and comment identity retained.
+- Definition and selection: Earn a referral commission when an external purchase qualifies.
+- Closest options and concrete difference: A hiking book guide fits affiliate links when readers leave to buy relevant books. Advertising pays under placement contracts; a transaction fee fits a marketplace involved in its own sellers’ transactions. A referral site need not become the retailer.
+- Distinct situation and Why opening: Imagine a hiking-book guide with reviews and shop links. Readers can buy elsewhere, but those referrals do not automatically fund the guide.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/affiliate-marketing.md), [KO](../../src/content/articles/ko/affiliate-marketing.md), [JA](../../src/content/articles/ja/affiliate-marketing.md); matching revision 5. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: The reader pays the external shop; a qualifying purchase may produce commission for the guide. Clicks alone do not create payment or an access entitlement. The shop handles the book sale under its own terms.
+- Visual structure: `AffiliateMarketing.astro` owns its markup, spacing and state. Caption: Qualifying referrals can earn a commission.
+- Initial and changed states: A fictional hiking book guide labels a referral link to a bookshop. A reader buys there; the shop pays the publisher a commission if its conditions are met. Amazon Associates provides one contractual example, not universal rates or rules. The diagram excludes settlement timing, fees and refunds.
+- Repetition, empty/failure and constraints: No interactive state. Failure branches explain outcomes without pretending to execute requests.
+- Controls and state selectors: None; static explanatory diagram.
+- Reset and reload: Not applicable: no script, reset or mount wait.
+- Mobile order and widths: Responsive wrapping within the available article width. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Readable text and ordered structure; no imitation controls.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Static diagram needs neither motion nor JavaScript.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `static`; `[data-demo="affiliate-marketing"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/affiliate-marketing.md`, sourceRevision 5; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Commission on qualifying referrals; advantages: No need to sell referred item; limitations: Program eligibility dependency; suitable: Relevant disclosed recommendations; combinations: Customer direct payment
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/affiliate-marketing-320.png`, `artifacts/design-demos/affiliate-marketing-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Amazon Associates: operating agreement](https://affiliate-program.amazon.com/help/operating/agreement) (checked 2026-09-27): Commissions depend on qualifying activity and program terms, including disclosure obligations.
+
+## Strong teaching case — 2026-09-27
+
+Referral, external purchase and conditional commission form three steps.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

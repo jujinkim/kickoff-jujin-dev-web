@@ -118,6 +118,24 @@ const t = local(lang),
       </div>
     </div>
   </div>
+  <dl class="runtime-facts" data-runtime-facts>
+    <dt>{t("Execution boundary", "실행 경계", "実行境界")}</dt>
+    <dd>
+      {t(
+        "Model: GameObject components provide appearance, collision and pickup behavior.",
+        "모형: GameObject 컴포넌트가 외형·충돌·수집 동작을 제공합니다.",
+        "模型：GameObjectのコンポーネントが表示・衝突・取得を担います。",
+      )}
+    </dd>
+    <dt>{t("State and responsibility", "상태와 책임", "状態と責任")}</dt>
+    <dd>
+      {t(
+        "Score and key state last only in this page. Real lifecycle, physics and exports require Unity testing.",
+        "점수·열쇠 상태는 이 페이지에서만 유지합니다. 실제 생명주기·물리·내보내기는 Unity 검사가 필요합니다.",
+        "得点と鍵の状態はこのページ内だけです。実際のライフサイクル・物理・出力はUnityで検査します。",
+      )}
+    </dd>
+  </dl>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -195,5 +213,42 @@ const t = local(lang),
     .components {
       grid-template-columns: 1fr;
     }
+  }
+  .runtime-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 2fr);
+    gap: 10px 16px;
+    border-block: 1px solid currentColor;
+    padding: 18px 0;
+    margin: 18px 0;
+    font-size: 0.85rem;
+  }
+  .runtime-facts dt {
+    font-weight: 700;
+  }
+  .runtime-facts dd {
+    margin: 0;
+    min-width: 0;
+  }
+  @container (width<480px) {
+    .runtime-facts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .composition {
+    border: 5px solid #425248;
+    padding: 24px;
+  }
+  .components {
+    gap: 20px;
+  }
+  .components > div {
+    border: 3px solid #425248;
+    border-left: 12px solid #425248;
+    padding: 18px;
+  }
+  .composition > h3 {
+    font-size: 1.4rem;
   }
 </style>

@@ -3,7 +3,7 @@ kind: concept
 articleId: astro
 lang: ja
 title: Astro
-summary: 静的ページに必要なアイランドを追加します。
+summary: 記事中心のHTMLに必要な対話型アイランドを加えます。
 category: static-generators
 aliases:
   - Astro
@@ -12,10 +12,10 @@ related:
   - hugo
   - jekyll
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 選択的クライアントアイランド
   advantages: 本文を静的HTMLで維持

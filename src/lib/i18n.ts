@@ -19,6 +19,11 @@ export const categoryNames: Record<
 ) as Record<Lang, Record<string, string>>;
 export const strings = {
   en: {
+    browseSubjects: "Browse by subject",
+    examplesTitle: "See the idea in action",
+    fieldGuide: "A field guide for your next project",
+    featuredCaption: "Example: a photo walk over frosted glass",
+    examplesIntro: "Explore examples, compare choices, make a plan.",
     builderNotice: "kickoff.md does not provide an AI service.",
     start: "Create a prompt",
     help: "How to use",
@@ -117,6 +122,11 @@ export const strings = {
     searchOther: "Try another resource type",
   },
   ko: {
+    browseSubjects: "분야별로 찾아보기",
+    examplesTitle: "화면으로 이해하는 개념",
+    fieldGuide: "다음 프로젝트를 위한 도감",
+    featuredCaption: "예제: 반투명 패널로 보는 사진 산책",
+    examplesIntro: "예제를 보고, 선택지를 비교하고, 계획을 세워보세요.",
     builderNotice: "kickoff.md는 AI 서비스를 제공하지 않습니다.",
     start: "프롬프트 만들기",
     help: "이용 가이드",
@@ -215,6 +225,11 @@ export const strings = {
     searchOther: "다른 자료 유형 살펴보기",
   },
   ja: {
+    browseSubjects: "分野から探す",
+    examplesTitle: "画面で理解するアイデア",
+    fieldGuide: "次のプロジェクトのための図鑑",
+    featuredCaption: "作例：すりガラス越しの写真散歩",
+    examplesIntro: "作例を見て、選択肢を比べ、計画を立てましょう。",
     builderNotice: "kickoff.mdはAIサービスを提供していません。",
     start: "プロンプトを作る",
     help: "使い方ガイド",

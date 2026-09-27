@@ -1,30 +1,31 @@
 ---
 kind: guide
-articleId: "layout"
-lang: "en"
-title: "Name the layout you are pointing at"
-summary: "Header, sidebar, grid, dialog: give your feedback coordinates."
-category: "design"
+articleId: layout
+lang: en
+title: Name the layout you are pointing at
+summary: Arrange regions and reading order around the user’s main task.
+category: design
 aliases:
-  [
-    "layout",
-    "sidebar",
-    "breadcrumb",
-    "modal",
-    "레이아웃",
-    "사이드바",
-    "모달",
-    "レイアウト",
-    "サイドバー",
-    "モーダル",
-  ]
-related: ["theme", "srs"]
-example: "layout"
-status: "published"
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+  - layout
+  - sidebar
+  - breadcrumb
+  - modal
+  - 레이아웃
+  - 사이드바
+  - 모달
+  - レイアウト
+  - サイドバー
+  - モーダル
+related:
+  - theme
+  - srs
+example: layout
+status: published
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 aiPrompt: "Using our agreed project and supported screens, describe named regions and components. Clarify unresolved information priorities, then propose layouts, reading order, keyboard behavior, and relevant empty, loading, and error states. Return a text wireframe and testable acceptance criteria. Preserve agreed device and language scope; do not adopt the article’s catalog as a requirement."
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem

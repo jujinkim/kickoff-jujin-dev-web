@@ -1,32 +1,30 @@
 ---
-kind: "concept"
-articleId: "affiliate-marketing"
-lang: "ja"
-title: "アフィリエイト手数料"
-summary: "条件を満たす紹介から手数料を得ます。"
-category: "revenue-sources"
-aliases: ["アフィリエイト手数料", "Affiliate commissions"]
+kind: concept
+articleId: affiliate-marketing
+lang: ja
+title: アフィリエイト手数料
+summary: 外部購入が条件を満たすと紹介料を受け取ります。
+category: revenue-sources
+aliases:
+  - アフィリエイト手数料
+  - Affiliate commissions
 related:
-  [
-    "revenue",
-    "direct-payment",
-    "advertising",
-    "sponsorship",
-    "transaction-fees",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - direct-payment
+  - advertising
+  - sponsorship
+  - transaction-fees
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "条件を満たす紹介への手数料",
-    "advantages": "紹介商品を売る必要がない",
-    "limitations": "プログラムの条件に依存",
-    "suitable": "関係を明示した関連商品の推薦",
-    "combinations": "顧客の直接支払い",
-  }
+  features: 条件を満たす紹介への手数料
+  advantages: 紹介商品を売る必要がない
+  limitations: プログラムの条件に依存
+  suitable: 関係を明示した関連商品の推薦
+  combinations: 顧客の直接支払い
 ---
 
 ## なぜ必要なのか

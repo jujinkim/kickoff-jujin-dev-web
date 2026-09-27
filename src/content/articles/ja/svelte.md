@@ -3,7 +3,7 @@ kind: concept
 articleId: svelte
 lang: ja
 title: Svelte
-summary: コンパイルで準備し、実行中に更新します。
+summary: 簡潔な反応的記述を重視し、宣言的部品をコンパイルします。
 category: web-ui
 aliases:
   - Svelte
@@ -12,10 +12,10 @@ related:
   - react
   - vue
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 宣言的コンポーネントをコンパイル
   advantages: UIと動作を一緒に記述

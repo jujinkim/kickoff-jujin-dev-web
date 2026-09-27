@@ -1,228 +1,276 @@
 ---
 import type { Lang } from "../../lib/i18n";
 import { local } from "./shared";
-import { resources, resourceScene } from "./resources";
-import "./comparison-base.css";
+import { photo } from "./photos";
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = local(lang);
-const items = resources(lang);
-const scene = resourceScene(lang, "masonry");
+const photos = [
+  {
+    file: "beach-diary.png",
+    w: 1536,
+    h: 1024,
+    title: t("Morning shore", "아침 물가", "朝の岸辺"),
+    note: t(
+      "Low waves arrive beside the dune path. The broad horizon stays visible without cropping.",
+      "모래언덕 길 옆으로 낮은 파도가 밀려옵니다. 넓은 수평선을 자르지 않고 보여줍니다.",
+      "砂丘の道に低い波が届きます。広い水平線を切り取らずに見せます。",
+    ),
+  },
+  {
+    file: "harbor-diary.png",
+    w: 1024,
+    h: 1536,
+    title: t("Harbor at dusk", "해 질 무렵 항구", "夕暮れの港"),
+    note: t(
+      "The portrait frame follows the boats from the foreground to the last light on the water.",
+      "세로 구도는 앞쪽 배에서 물 위 마지막 빛까지 이어집니다.",
+      "縦の構図が手前の船から水面の最後の光へ続きます。",
+    ),
+  },
+  {
+    file: "lake-walk.png",
+    w: 1536,
+    h: 1024,
+    title: t("A lake detour", "호수로 돌아가기", "湖への寄り道"),
+    note: t(
+      "Pines frame the path. We paused here before continuing home, keeping the entire shoreline in the frame.",
+      "소나무가 길을 감쌉니다. 물가 전체를 담고 잠깐 쉰 뒤 집으로 향했습니다.",
+      "松が道を囲みます。岸辺全体を写し、少し休んでから帰りました。",
+    ),
+  },
+  {
+    file: "beach-diary.png",
+    w: 1536,
+    h: 1024,
+    title: t("One last look", "마지막 눈길", "最後のひと眺め"),
+    note: t(
+      "The same beach photograph appears again with a longer memory. Different caption lengths also affect card height; opening this note must move later cards without overlap.",
+      "같은 해변 사진에 더 긴 기억을 붙였습니다. 캡션 길이도 카드 높이에 영향을 줍니다. 이 메모를 열면 뒤의 카드가 겹치지 않게 움직여야 합니다.",
+      "同じ浜辺の写真に長い思い出を添えました。説明の長さもカードの高さに影響します。メモを開くと後のカードが重ならずに移動する必要があります。",
+    ),
+  },
+];
 ---
 
 <section
   class="demo"
   data-demo="masonry"
-  data-comparison="resources"
   lang={lang}
-  data-reset-message={t(
-    "Initial state restored",
-    "초기 상태로 복원했습니다",
-    "初期状態に戻しました",
-  )}
+  data-reset-message={t("Reset", "초기화", "リセット")}
 >
   <header>
-    <small>{t("COLLECTED / 06", "수집 자료 / 06", "収集資料 / 06")}</small>
-    <h2>{scene.title}</h2>
-    <p>{scene.goal}</p>
+    <small>{t("TRAVEL JOURNAL", "여행 기록", "旅の記録")}</small>
+    <h2>{t("Places we paused", "잠시 머문 곳", "足を止めた場所")}</h2>
+    <p>
+      {t(
+        "Wide shores, tall harbors, room for each memory.",
+        "가로로 넓은 물가와 세로로 긴 항구, 각 기억의 자리.",
+        "横に広い岸辺と縦に長い港、それぞれの記憶の場所。",
+      )}
+    </p>
   </header>
-  <div class="controls">
-    <label>
-      {t("Preview width", "미리보기 폭", "表示幅")}
-      <select data-width data-interactive disabled>
-        <option value="wide">{t("Wide", "넓게", "広い")}</option>
-        <option value="narrow">{t("Narrow", "좁게", "狭い")}</option>
-      </select>
-    </label>
+  <div class="board">
+    {photos.map((p, i) => (
+      <article data-tile>
+        <img
+          {...photo(p.file, "(max-width: 640px) 100vw, 400px")}
+          width={p.w}
+          height={p.h}
+          alt={p.title}
+        />
+        <div class="description">
+          <small>0{i + 1}</small>
+          <h3>{p.title}</h3>
+          <details>
+            <summary>{t("Read memory", "기억 읽기", "思い出を読む")}</summary>
+            <p>{p.note}</p>
+          </details>
+        </div>
+      </article>
+    ))}
   </div>
-  <div class="frame" data-width="wide">
-    <div class="workspace">
-      <nav aria-label={t("Resource filters", "자료 필터", "資料の絞り込み")}>
-        <label>
-          {t("Topic", "주제", "テーマ")}
-          <select data-filter data-interactive disabled>
-            <option value="all">{t("All", "전체", "すべて")}</option>
-            <option value="color">{t("Color", "색", "色")}</option>
-            <option value="form">{t("Form", "형태", "形")}</option>
-            <option value="type">{t("Type", "글자", "文字")}</option>
-          </select>
-        </label>
-        <label>
-          {t("Order", "순서", "順序")}
-          <select data-sort data-interactive disabled>
-            <option value="original">
-              {t("Collection order", "수집 순서", "収集順")}
-            </option>
-            <option value="reverse">
-              {t("Reverse order", "역순", "逆順")}
-            </option>
-          </select>
-        </label>
-        <strong data-count>6 / 6</strong>
-      </nav>
-      <div class="board">
-        {items.map((item) => (
-          <article data-tile data-id={item.id} data-topic={item.topic}>
-            <div class={`art art-${item.id}`} aria-hidden="true">
-              {item.symbol}
-            </div>
-            <div class="description">
-              <small>0{item.id + 1}</small>
-              <h3 data-resource-title>{item.title}</h3>
-              <p>{item.description}</p>
-              <details>
-                <summary>{t("Study notes", "연구 메모", "研究メモ")}</summary>
-                <p>
-                  {t(
-                    "Compare shape, spacing, and contrast. Keep this resource beside the next draft and revisit the details.",
-                    "형태, 간격, 대비를 비교합니다. 다음 초안 곁에 자료를 두고 세부를 다시 살펴보세요.",
-                    "形、間隔、コントラストを比べます。次の案の横に資料を置き、細部を見直してください。",
-                  )}
-                </p>
-              </details>
-            </div>
-          </article>
-        ))}
-      </div>
-      <aside>
-        <h3>{t("Study guide", "연구 안내", "研究ガイド")}</h3>
-        <p>
-          {t(
-            "Collect → compare → revise",
-            "수집 → 비교 → 수정",
-            "収集 → 比較 → 修正",
-          )}
-        </p>
-        <p>
-          {t(
-            "Six resources, one collection.",
-            "자료 6개, 하나의 모음.",
-            "6件の資料、ひとつのコレクション。",
-          )}
-        </p>
-      </aside>
-    </div>
-  </div>
-  <button class="reset" type="button" data-reset data-interactive disabled>
-    {t("Reset", "초기화", "リセット")}
-  </button>
-  <p role="status" aria-live="polite" aria-atomic="true"></p>
+  <footer>
+    <button type="button" data-reset data-interactive disabled>
+      {t("Reset", "초기화", "リセット")}
+    </button>
+    <p role="status" aria-live="polite" aria-atomic="true"></p>
+  </footer>
 </section>
 <script>
-  import { mountResources } from "./resource-behavior";
-  mountResources("masonry", true);
+  import { mount } from "./shared";
+  mount("masonry", (root, say) => {
+    const board = root.querySelector<HTMLElement>(".board")!;
+    const tiles = [...root.querySelectorAll<HTMLElement>("[data-tile]")];
+    let pending = false;
+    const layout = () => {
+      pending = false;
+      const cols =
+        board.clientWidth < 450 ? 1 : board.clientWidth < 650 ? 2 : 3;
+      const gap = 18;
+      const width = (board.clientWidth - gap * (cols - 1)) / cols;
+      const heights = Array<number>(cols).fill(0);
+      board.dataset.positioned = "true";
+      tiles.forEach((tile) => {
+        tile.style.width = `${width}px`;
+        const col = heights.indexOf(Math.min(...heights));
+        tile.style.transform = `translate(${col * (width + gap)}px,${heights[col]}px)`;
+        heights[col] += tile.offsetHeight + gap;
+      });
+      board.style.height = `${Math.max(...heights) - gap}px`;
+    };
+    const queue = () => {
+      if (!pending) {
+        pending = true;
+        requestAnimationFrame(layout);
+      }
+    };
+    const observer = new ResizeObserver(queue);
+    observer.observe(board);
+    tiles.forEach((tile) => observer.observe(tile));
+    root.querySelectorAll("details").forEach((d) =>
+      d.addEventListener("toggle", () => {
+        queue();
+        if (d.open)
+          say(d.closest("article")!.querySelector("h3")!.textContent!);
+      }),
+    );
+    root
+      .querySelectorAll("img")
+      .forEach((img) => img.addEventListener("load", queue));
+    document.fonts.ready.then(queue);
+    queue();
+    window.addEventListener("pagehide", () => observer.disconnect(), {
+      once: true,
+    });
+    return () => {
+      root.querySelectorAll("details").forEach((d) => (d.open = false));
+      queue();
+    };
+  });
 </script>
 <style>
   .demo {
-    background: #f3ece5;
-    color: #443730;
-  }
-  .frame {
-    container-type: inline-size;
-    margin: auto;
-  }
-  .frame[data-width="narrow"] {
-    max-width: 300px;
-  }
-  .workspace {
-    display: grid;
-    gap: 20px;
-    align-items: start;
-  }
-  .workspace > * {
     min-width: 0;
+    overflow-wrap: anywhere;
+    padding: clamp(16px, 4vw, 36px);
+    color-scheme: light;
+    container-type: inline-size;
   }
-  nav {
+  * {
+    box-sizing: border-box;
+  }
+  h2,
+  h3,
+  p {
+    margin: 0 0 16px;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 5cqi, 3rem);
+    line-height: 1.15;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+  p {
+    line-height: 1.65;
+  }
+  button,
+  select,
+  input {
+    font: inherit;
+    max-width: 100%;
+    color: inherit;
+  }
+  button,
+  select,
+  input:not([type="checkbox"]) {
+    min-height: 44px;
+    padding: 10px 14px;
+  }
+  button,
+  summary {
+    cursor: pointer;
+  }
+  button {
+    background: transparent;
+    border: 1px solid currentColor;
+  }
+  select,
+  input {
+    background: #fff;
+    color: #18252b;
+    border: 1px solid #59656a;
+  }
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    flex: none;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  :focus-visible {
+    outline: 3px dashed currentColor;
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  footer {
+    margin-top: 28px;
+  }
+  [role="status"] {
+    min-height: 1.5em;
+    margin-top: 16px;
+    font-size: 0.9rem;
+  }
+  .controls {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    padding: 16px;
-    background: #e5ddd3;
-    border: 1px solid #bead9e;
-    align-items: center;
+    margin: 20px 0;
   }
-  nav select {
-    width: 100%;
-    min-width: 0;
-  }
-  nav label {
-    min-width: 0;
-    display: grid;
-    gap: 8px;
-  }
-  .board {
-    display: grid;
-    gap: 16px;
-    align-items: start;
-    min-width: 0;
-    position: relative;
-  }
-  article {
-    min-width: 0;
-    padding: 14px;
-    background: #fffaf4;
-    border: 1px solid #bead9e;
-  }
-  .art {
-    display: grid;
-    place-items: center;
-    height: 120px;
-    font-size: 3rem;
-    background: #bdc9ad;
-    color: #3f5034;
-    margin-bottom: 16px;
-  }
-  .art-1 {
-    background: #dfb29c;
-    color: #6c3924;
-  }
-  .art-2 {
-    background: #c7cadc;
-    color: #454b70;
-  }
-  .art-3 {
-    background: #decf99;
-    color: #665824;
-  }
-  .art-4 {
-    background: #d1b7c5;
-    color: #664252;
-  }
-  .art-5 {
-    background: #a8c5c2;
-    color: #315a56;
-  }
-  article p,
-  aside p {
+  small {
     font-size: 0.85rem;
-    line-height: 1.65;
   }
-  details p {
-    margin-top: 12px;
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
   }
-  aside {
-    border-block: 1px solid #bead9e;
-    padding: 16px 0;
+  @media (forced-colors: active) {
+    button,
+    input,
+    select {
+      border: 1px solid ButtonText;
+    }
+    button[aria-pressed="true"] {
+      outline: 2px solid Highlight;
+    }
+  }
+  .demo {
+    background: #f0ebe2;
+    color: #403b35;
+  }
+  h2 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    margin-top: 16px;
   }
   .board {
+    position: relative;
+    display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .art-1 {
-    height: 200px;
-  }
-  .art-2 {
-    height: 90px;
-  }
-  .art-3 {
-    height: 175px;
-  }
-  .art-4 {
-    height: 110px;
-  }
-  .art-5 {
-    height: 155px;
+    gap: 18px;
+    margin-top: 28px;
+    align-items: start;
   }
   .board[data-positioned="true"] {
     display: block;
@@ -232,32 +280,60 @@ const scene = resourceScene(lang, "masonry");
     top: 0;
     left: 0;
   }
-  @container (max-width:450px) {
-    .board[data-positioned="true"] {
-      display: grid;
-      height: auto !important;
-    }
-    .board[data-positioned="true"] article {
-      position: static;
-      width: auto !important;
-      transform: none !important;
-    }
+  article {
+    background: #fffdf7;
+    border: 1px solid #c5bbae;
+    min-width: 0;
   }
-  @container (max-width:450px) {
-    .workspace {
-      grid-template-columns: 1fr;
-    }
-    .workspace > * {
-      grid-column: auto;
-    }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .description {
+    padding: 18px;
+  }
+  h3 {
+    margin-top: 8px;
+    font-size: 1.15rem;
+  }
+  summary {
+    min-height: 44px;
+  }
+  details p {
+    font-size: 0.9rem;
+    margin-top: 16px;
+  }
+  button {
+    background: #fffdf7;
+  }
+  @container (width<450px) {
     .board {
       grid-template-columns: 1fr;
     }
-    article {
-      display: block;
-    }
-    .art {
-      max-width: 100%;
-    }
+  }
+
+  .board {
+    gap: 24px;
+  }
+  article {
+    border: 0;
+    box-shadow: 0 3px 8px #403b351a;
+  }
+  article:nth-child(1) img {
+    aspect-ratio: 2.7;
+    object-fit: cover;
+  }
+  article:nth-child(2) img {
+    aspect-ratio: 0.55;
+    object-fit: cover;
+  }
+  article:nth-child(3) img {
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+  article:nth-child(4) img {
+    aspect-ratio: 1.8;
+    object-fit: cover;
   }
 </style>

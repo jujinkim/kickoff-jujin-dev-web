@@ -24,7 +24,7 @@ const t = local(lang),
 >
   <header>
     <p class="eyebrow">{p.simulation}</p>
-    <h2>React</h2>
+    <h2>{t("Home planner", "집안 계획", "家庭の計画")}</h2>
   </header>
   <p>
     {t(
@@ -37,15 +37,17 @@ const t = local(lang),
     <h3>{t("Shared save state", "공유 저장 상태", "共通の保存状態")}</h3>
     <p>
       {t(
-        "Title props ↓ · save status belongs to each card",
-        "제목 프로퍼티 ↓ · 저장 상태는 카드별로 관리",
-        "タイトルのプロップス ↓ · 保存状態はカードごと",
+        "Title props ↓ · parent state supplies each card’s saved status",
+        "제목 프로퍼티 ↓ · 부모 상태에서 카드별 저장 여부 전달",
+        "タイトルのプロップス ↓ · 親の状態から各カードに保存状況を渡す",
       )}
     </p>
     <div class="cards">
       <article>
         <p>{t("Shopping List", "장보기 목록", "買い物リスト")}</p>
-        <h3>{t("Home planner", "집안 계획", "家庭の計画")}</h3>
+        <h3>
+          {t("For the week ahead", "다음 한 주를 위해", "これからの一週間に")}
+        </h3>
         <button
           type="button"
           data-save="Shopping List"
@@ -59,7 +61,7 @@ const t = local(lang),
       </article>
       <article>
         <p>{t("Weekly Menu", "주간 식단", "週間メニュー")}</p>
-        <h3>{t("Home planner", "집안 계획", "家庭の計画")}</h3>
+        <h3>{t("Dinner, decided", "저녁 메뉴 정하기", "夕食を決めておく")}</h3>
         <button
           type="button"
           data-save="Weekly Menu"
@@ -113,7 +115,7 @@ const t = local(lang),
     color: #172640;
     padding: clamp(16px, 3vw, 30px);
     border: 1px solid #8696ad;
-    border-radius: 12px;
+    border-radius: 6px;
   }
   .eyebrow {
     color: inherit;
@@ -132,11 +134,30 @@ const t = local(lang),
     gap: 16px;
     margin: 20px 0;
   }
+  .cards article:first-child {
+    background: #f5ecd7;
+  }
+  .cards article:last-child {
+    background: #e5efe4;
+  }
   .cards article {
-    padding: 20px;
+    padding: 28px;
     border: 1px solid #74869e;
     background: white;
     border-radius: 8px;
+  }
+  header h2 {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    margin-bottom: 24px;
+  }
+  .cards article h3 {
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    min-height: 2.4em;
+  }
+  .cards article button {
+    width: 100%;
   }
   .total {
     font-size: 1.3rem;
@@ -174,5 +195,29 @@ const t = local(lang),
     .flow {
       grid-template-columns: 1fr;
     }
+  }
+
+  .owner {
+    border: 6px solid #375d84;
+    padding: 24px;
+  }
+  .owner > h3 {
+    font-size: 1.6rem;
+  }
+  .cards {
+    gap: 24px;
+  }
+  .cards article {
+    border-top: 7px solid #375d84;
+  }
+  .flow {
+    gap: 22px;
+  }
+  .flow li {
+    border: 3px solid #375d84;
+    font-weight: 700;
+  }
+  .total strong {
+    font-size: 3rem;
   }
 </style>

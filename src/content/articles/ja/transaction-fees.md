@@ -1,33 +1,31 @@
 ---
-kind: "concept"
-articleId: "transaction-fees"
-lang: "ja"
-title: "取引仲介手数料"
-summary: "プラットフォームが仲介した売上の一部を受け取ります。"
-category: "revenue-sources"
-aliases: ["取引仲介手数料", "Transaction fees"]
+kind: concept
+articleId: transaction-fees
+lang: ja
+title: 取引仲介手数料
+summary: 市場で成立した取引額の一部を受け取ります。
+category: revenue-sources
+aliases:
+  - 取引仲介手数料
+  - Transaction fees
 related:
-  [
-    "revenue",
-    "direct-payment",
-    "advertising",
-    "sponsorship",
-    "affiliate-marketing",
-    "merchant-of-record",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - direct-payment
+  - advertising
+  - sponsorship
+  - affiliate-marketing
+  - merchant-of-record
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "仲介取引への手数料",
-    "advantages": "取引に応じた収益",
-    "limitations": "紛争と運営費用",
-    "suitable": "有用な両面市場",
-    "combinations": "継続課金と販売責任の契約",
-  }
+  features: 仲介取引への手数料
+  advantages: 取引に応じた収益
+  limitations: 紛争と運営費用
+  suitable: 有用な両面市場
+  combinations: 継続課金と販売責任の契約
 ---
 
 ## なぜ必要なのか

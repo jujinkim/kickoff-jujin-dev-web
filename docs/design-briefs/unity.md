@@ -1,24 +1,36 @@
-# Unity demo brief
+# Unity / Unity / Unity
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `unity`; `game-engines`; Unity / Unity / Unity.
-- Definition (one sentence): Unity GameObjects contain components. Transform, rendering, collision, and authored scripts provide distinct responsibilities; an object name alone does not implement gameplay.
-- Closest concept and concrete difference: compare godot, unreal-engine; A four-object scene and a component responsibility grid for Transform, renderer, collider and script.
-- Distinguishing visual features (structure, material, typography): A four-object scene and a component responsibility grid for Transform, renderer, collider and script. Restrained solid surfaces, system text and tabular counts keep mechanism labels legible; colors are editorial, not product definitions.
-- Shared comparison category: [game-engines](../catalog-writing/groups/game-engines.md).
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: The schematic contains a player, floor, camera, and one key.
-- Visual variable changed; concept-specific extra controls and their justification: A four-object scene and a component responsibility grid for Transform, renderer, collider and script. Failure and boundary controls expose the documented application assumptions.
-- Fictional scenario and why it demonstrates the definition: A museum maze game reuses keys in several rooms; one huge script per key repeats the same pickup behavior. The schematic contains a player, floor, camera, and one key.
-- Representative action and observable result: The schematic contains a player, floor, camera, and one key. Move to item triggers authored contact logic: score changes from zero to one and the item disappears.
-- Initial state: Player at origin, floor, camera, one present collectible, score zero; contact enabled.
-- Changed state, repeated action, empty input/no results: Move triggers one authored contact event, score one and item removal. Repeating cannot award again. Contact disabled before moving leaves score zero and item present. No free-form input is accepted; no samples is an explicit canary fixture. All values are authored examples, not measurements.
-- Reset and reload behavior: Restore the entire initial page-memory model, including the illustrative store. Hosting restart preserves its store; blue-green Previous and switch-back preserve writes. Only Reset/reload clears those records.
-- Mobile order and width thresholds: Controls, scene schematic and textual legend, score/item state, composition tree or graph. Diagram grids stack below 560px of demo content width. At 320px viewport, labels wrap rather than shrink. The scene SVG uses a viewBox and a full-size textual legend.
-- Keyboard order, focus, accessible names, live feedback: Move to item → Reset → Disable contact. The move button stays mounted after collection. Native buttons/checkboxes, dashed visible focus, mounted controls, polite atomic status, no timer or drag-only control. Reset retains focus. Disabled step buttons mark boundaries.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Solid authored light surfaces in both site themes; no transparent/shadow-dependent content or animation. Numbers, version names, outlines and text survive forced colors.
-- JavaScript-disabled initial screen and explanation: Server-rendered initial diagram, legend, captions and Markdown remain readable. All interactive buttons and checkboxes start disabled. Wrapper explains the JavaScript requirement.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback; monospace only for file/key tokens. No font-metric claims or extra downloaded fonts.
-- Localized visible strings, input constraints, original/translation review: English group argument reviewed before Korean/Japanese translation on 2026-09-22. All interface labels, responses and states are localized; identifiers and engine API type names remain literal. No native-speaker review is claimed.
-- Capture selector and initial content: `[data-demo="unity"]`; reset at 1440px, light theme, all three languages, initial state above.
-- Source URLs, inspected date, claims each source supports: https://docs.unity3d.com/Manual/GameObjects.html. Inspected 2026-09-22; definition/mechanism only. See [source refresh](../catalog-writing/platform-sources.md) for exact passages. Choice advice is editorial; fixture numbers and failure rules are authored.
-- Comparison summaries: features: GameObjects contain components; advantages: Behavior responsibilities are visible; limitations: References and lifecycle need testing; suitable: Component-oriented game teams; combinations: Separate score logic and presentation.
-- Verification commands and evidence paths: Follow [design gates](../design-demos.md), `tests/platforms.test.mjs`, `tests/browser/platforms.spec.ts` and registry-wide browser checks. Captures: `public/thumbnails/unity-{en,ko,ja}.png`, `artifacts/platform-demos/unity-*.png`. Actual results belong to [platform review](../platform-demos-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `unity`; `game-engines`. Existing URLs and comment identity retained.
+- Definition and selection: Compose cross-platform games from reusable GameObjects and components.
+- Closest options and concrete difference: Choose Unity when GameObject/component composition and the team’s authoring tools fit the game. Godot organizes reusable node scenes; Unreal includes Actor and Blueprint composition. Validate required platforms, lifecycle and asset workflow in the real tool.
+- Distinct situation and Why opening: Players collect keys in a museum maze. Each pickup should score once; the team wants reusable behavior attached to game objects rather than copying key logic.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/unity.md), [KO](../../src/content/articles/ko/unity.md), [JA](../../src/content/articles/ja/unity.md); matching revision 6. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: The museum maze uses a key with visual, collision and authored behavior responsibilities. Contact increases the score once and removes the key. The schematic’s missed-contact state demonstrates a rule to test, not a physical simulation.
+- Visual structure: `UnityScene.astro` owns its markup, spacing and state. Caption: Explore a museum maze scene
+- Initial and changed states: The schematic contains a player, floor, camera, and one key. Move to item triggers authored contact logic: score changes from zero to one and the item disappears. Repeat contact cannot score again. Disable contact before moving to demonstrate a missed collection: score stays zero. Reset or reload restores the player and item. This is a concept simulation.
+- Repetition, empty/failure and constraints: Keep score in one owner and guard each pickup from duplicate processing. Check component references and lifecycle behavior in the engine. The page model resets on reload and does not establish game-save durability or export compatibility.
+- Controls and state selectors: `data-platform`, `data-runtime-facts`, `data-touch`, `data-reset`, `data-contact-off`, `data-player`, `data-item`, `data-score`, `data-item-state`
+- Reset and reload: Reset returns the rendered initial model, announces restoration and keeps reset focus. Reload restores initial state; no input persistence or remote mutation.
+- Mobile order and widths: max-width:560px; width<480px. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Native controls with localized accessible names, visible focus and a polite status region. Representative keyboard actions and reset covered in browser tests.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Motion is optional. Server-rendered initial information remains readable; script-dependent controls are disabled and the wrapper explains the limitation.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `interactive`; `[data-demo="unity"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/unity.md`, sourceRevision 6; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: GameObjects contain components; advantages: Behavior responsibilities are visible; limitations: References and lifecycle need testing; suitable: Component-oriented game teams; combinations: Separate score logic and presentation
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/unity-320.png`, `artifacts/design-demos/unity-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Unity: GameObjects](https://docs.unity3d.com/Manual/GameObjects.html) (checked 2026-09-27): Defines GameObjects and component-provided capabilities; the maze model does not run Unity.
+
+## Strong teaching case — 2026-09-27
+
+Component attachments sit inside an object boundary, distinct from a scene tree.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

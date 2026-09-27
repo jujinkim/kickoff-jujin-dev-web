@@ -3,7 +3,7 @@ kind: concept
 articleId: svelte
 lang: ko
 title: Svelte
-summary: 컴파일로 준비하고 실행 중 갱신합니다.
+summary: 간결한 반응형 작성이 중요할 때 선언형 컴포넌트를 컴파일합니다.
 category: web-ui
 aliases:
   - Svelte
@@ -12,10 +12,10 @@ related:
   - react
   - vue
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 선언적 컴포넌트 컴파일
   advantages: UI와 동작을 함께 작성

@@ -1,26 +1,29 @@
-# Glassmorphism / 글래스모피즘 / グラスモーフィズム
+# Glassmorphism — representative review
 
-Based on [the planning template](../templates/design-demo-brief.md). Implementation brief, reviewed 2026-09-22.
+- Stable ID: `glassmorphism`; leaf category: `styles`.
+- Titles (EN / KO / JA): Glassmorphism / 글래스모피즘 / グラスモーフィズム.
+- Definition and selection criterion: Use translucent, blurred panels to preserve background context while keeping foreground content readable.
+- Neighbor comparison: see the matching Selection & comparison supplement; choices may coexist.
+- Why / situation: Photo-walk route planner. Walkers compare a lake route and a pine route while keeping the landscape in view.
+- How / representative action: Select a route; distance, duration and description change without replacing the photograph. Select opaque mode to remove translucency.
+- Initial, changed, repeat, empty, reset and reload: Lake route 2.4 km / 45 minutes → pine route 4.1 km / 80 minutes. Repeated selection is idempotent; reset and reload restore lake and translucent mode. No free-text input or empty result.
+- Visual structure, incidental choices and mobile order: Photo remains visible through frosted panels: 58% white fill, 10px backdrop blur, 1.35 saturation, translucent edges and inset highlights. These values are example choices, not the style definition. Panel radius, particular landscape and light direction are authored choices. Opaque fallback, reduced-transparency and forced-colors override preserve controls.
+- Keyboard: native controls in DOM order, visible focus, polite localized status where interactive; reset retains focus.
+- No JavaScript: static explanation and initial screen remain; script-dependent controls stay disabled. Native disclosures work.
+- Themes and motion: authored demo colors within neutral shell; no required animation. Check dark surrounding theme, forced colors, focus and 200% text.
+- Assets and conditions: public/images/lake-walk.png; provenance in public/images/README.md or font manifest and bundled OFL files.
+- Localized visible labels: authored in English, then Korean/Japanese with the same actions and outcomes.
+- Revision: 12; each supplement sourceRevision matches.
+- Capture: `[data-demo="glassmorphism"]`; screenshots use initial state and loaded fonts/images.
+- Evidence inspected 2026-09-26:
+  - [Filter Effects Level 2](https://drafts.csswg.org/filter-effects-2/#BackdropFilterProperty): Defines backdrop-filter rendering; a draft mechanism specification, not a definition of the style.
+  - [NN/g: Glassmorphism](https://www.nngroup.com/articles/glassmorphism/): Describes the visual treatment and readability risks; this demo’s scenic route is an authored example.
+  - [MDN: backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter): Browser compatibility reference; test target browsers and preserve a fallback.
+  - [WCAG 2.2: Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html): Text contrast criteria apply to the final visible background.
+- Verification: check → build → thumbnails → rebuild → unit/output → browser; actual results in [review record](../quality-review.md).
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `glassmorphism`; `styles`; Glassmorphism / 글래스모피즘 / グラスモーフィズム.
-- Definition (one sentence): Translucent panels reveal a blurred background.
-- Closest concept and concrete difference: Liquid Glass reserves material for a floating navigation layer; glassmorphism uses frosted panels across the workspace.
-- Distinguishing visual features (structure, material, typography): Translucent panels reveal a blurred background. Opaque panels replace the frosted surfaces when selected. Header and menu precede a two-column workspace: overview/tasks left, progress/resources right. Footer follows both columns.
-- Shared comparison category (styles / layout / typography): styles.
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: For the photo walk, track three tasks and two notes.
-- Visual variable changed; concept-specific extra controls and their justification: Opaque panels replace the frosted surfaces when selected. Opaque panels is a labeled readability aid; reset turns it off while the OS transparency preference remains effective.
-- Fictional scenario and why it demonstrates the definition: A photo-walk map needs controls over images without hiding the route. For the photo walk, track three tasks and two notes.
-- Representative action and observable result: For the photo walk, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%.
-- Initial state: All, three unchecked tasks, 0 / 3, 0%, two closed notes, ready status.
-- Changed state, repeated action, empty input/no results: Toggling a task twice restores it; Done before completion yields an empty message. Open with all tasks complete also yields empty. Notes can independently open and close. No free-text input.
-- Reset and reload behavior: Reset all controls, progress, details and material extras. Keep focus on Reset and announce restoration. Reload uses server-rendered initial state; no storage.
-- Mobile order and width thresholds: At demo content width below 600px, use one column in DOM order: header, menu, overview, tasks, progress, resources, footer. No CSS visual reordering.
-- Keyboard order, focus, accessible names, live feedback: Native anchors, checkbox labels, select, details/summary, reset. Anchors target root-local unique IDs and focus sections after JS mount. 3px focus outline; polite atomic completion/progress status.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored palette stays legible within either site theme. Checked glyphs, strike-through and numbers survive shadow removal. Motion is disabled for prefers-reduced-motion. Glass has manual, unsupported-filter, and prefers-reduced-transparency fallbacks.
-- JavaScript-disabled initial screen and explanation: All text and native menu/details remain usable; JS-dependent controls are disabled. Wrapper explains the static state.
-- Font families, supported characters, fallback and measurement method: System fonts with platform CJK fallbacks; Georgia serif or monospace where styled. No remote fonts or measurements; all strings remain real text.
-- Localized visible strings, input constraints, original/translation review: English first, then Korean and Japanese; project labels, empty/reset feedback, notes and article explanations preserve the same meaning. Three matching revisions.
-- Capture selector and initial content: `[data-demo="glassmorphism"]`; full root in all languages, light theme, reset state, cleared live message. PNG remains complete; catalog card uses top-aligned cover with 360px maximum.
-- Source URLs, inspected date, claims each source supports: [NN/g](https://www.nngroup.com/articles/glassmorphism/); existing source ledger retained. Supports the material definition, not universal suitability or performance claims.
-- Comparison summaries: features: Translucent panels reveal a blurred background. Opaque panels replace the frosted surfaces when selected. Advantages: Translucent panels retain the background context. Limitations: Contrast depends on the backdrop; offer an opaque mode and test each scene. Suitable: Choose it when background context matters. Combinations: Pair with a simple grid and an opaque readability fallback.
-- Verification commands and evidence paths: Follow [release sequence](../design-demos.md#commands-and-capture); output and browser tests in `tests/`; screenshots in `artifacts/design-demos/`; final results in [workspace review](../design-workspaces-review.md).
+## Strong teaching case — 2026-09-27
+
+Broad, strongly frosted content panels over the landscape; opaque fallback.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

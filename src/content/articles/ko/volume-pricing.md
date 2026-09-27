@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "volume-pricing"
-lang: "ko"
-title: "전체 수량 구간 단가"
-summary: "최종 수량 구간의 단가를 전체에 적용합니다."
-category: "pricing-models"
-aliases: ["전체 수량 구간 단가", "Volume pricing"]
+kind: concept
+articleId: volume-pricing
+lang: ko
+title: 전체 수량 구간 단가
+summary: 도달한 수량 구간의 단가를 전체 수량에 적용합니다.
+category: pricing-models
+aliases:
+  - 전체 수량 구간 단가
+  - Volume pricing
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "per-seat-pricing",
-    "feature-tiered-pricing",
-    "graduated-pricing",
-    "base-plus-overage",
-    "usage-based",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - per-seat-pricing
+  - feature-tiered-pricing
+  - graduated-pricing
+  - base-plus-overage
+  - usage-based
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "전체 수량에 단일 단가",
-    "advantages": "전체 수량 할인",
-    "limitations": "경계에서 합계가 감소할 수 있음",
-    "suitable": "의도한 수량 할인",
-    "combinations": "사용량 측정과 구독",
-  }
+  features: 전체 수량에 단일 단가
+  advantages: 전체 수량 할인
+  limitations: 경계에서 합계가 감소할 수 있음
+  suitable: 의도한 수량 할인
+  combinations: 사용량 측정과 구독
 ---
 
 ## 왜 필요한가

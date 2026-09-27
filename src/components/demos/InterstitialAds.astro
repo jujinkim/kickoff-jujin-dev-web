@@ -36,6 +36,13 @@ const t = local(lang),
       "順序の図です。閉じるは説明文で操作ボタンではありません。実際の広告・報酬はなく、表示時期と収益は省略しています。",
     )}
   </p>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The sequence shows stage completion, a labeled full-screen ad, then the next stage. An advertiser would pay under separate delivery terms; the player receives no reward. The close label is explanatory, not a live ad control.",
+      "완료→표시된 전면 광고→다음 단계 순서입니다. 광고주는 별도의 송출 조건으로 지불하고 플레이어 보상은 없습니다. 닫기 표시는 설명용이며 실제 광고 조작이 아닙니다.",
+      "完了→明示された全画面広告→次のステージという順序です。広告主は別の配信条件で払い、プレイヤーへの報酬はありません。閉じる表示は説明用で、実広告の操作ではありません。",
+    )}
+  </p>
 </section>
 <style>
   .screens {
@@ -62,6 +69,26 @@ const t = local(lang),
     }
     .screens li {
       min-height: 80px;
+    }
+  }
+
+  .screens {
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.6fr) minmax(0, 0.7fr);
+    gap: 24px;
+    align-items: center;
+  }
+  .screens .ad {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 7px solid #715337;
+    padding: 24px;
+    font-size: 1.4rem;
+  }
+  @container (width < 600px) {
+    .screens {
+      grid-template-columns: 1fr;
     }
   }
 </style>

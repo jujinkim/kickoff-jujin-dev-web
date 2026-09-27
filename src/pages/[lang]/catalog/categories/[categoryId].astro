@@ -3,7 +3,12 @@ import Base from "../../../../layouts/Base.astro";
 import CategoryTree from "../../../../components/CategoryTree.astro";
 import Comparison from "../../../../components/Comparison.astro";
 import ArticleListing from "../../../../components/ArticleListing.astro";
-import { taxonomy, candidates, ancestors } from "../../../../lib/catalog";
+import {
+  taxonomy,
+  candidates,
+  ancestors,
+  childrenOf,
+} from "../../../../lib/catalog";
 import { listed } from "../../../../lib/content";
 import { languages, strings } from "../../../../lib/i18n";
 import { categoryReplacement } from "../../../../lib/catalog-scope";
@@ -77,7 +82,12 @@ const pending = candidates.filter(
       <p>{category.descriptions[lang]}</p>
     </section>
     <section class="section">
-      <CategoryTree parent={category.id} lang={lang} />
+      {childrenOf(category.id).length > 0 && (
+        <details class="subject-navigation">
+          <summary>{t.browseSubjects}</summary>
+          <CategoryTree parent={category.id} lang={lang} />
+        </details>
+      )}
       <ArticleListing lang={lang} kind="concept" categoryId={category.id} />
       <ul class="concept-list">
         {pending.map((c) => (
@@ -91,3 +101,18 @@ const pending = candidates.filter(
     </section>
   </Base>
 )}
+
+<style>
+  .section {
+    padding-top: 0;
+  }
+  .subject-navigation {
+    margin: 0 0 24px;
+    border-block: 1px solid var(--line);
+  }
+  .subject-navigation summary {
+    padding: 16px 0;
+    cursor: pointer;
+    font-weight: 600;
+  }
+</style>

@@ -1,25 +1,36 @@
-# Modular monolith visualization brief
+# Modular monolith / モジュラーモノリス / 모듈러 모놀리스
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `modular-monolith`; `service-split`; Modular monolith / 모듈러 모놀리스 / モジュラーモノリス.
-- Definition (one sentence): One deployment contains modules with explicit APIs and owned internals.
-- Closest concept and concrete difference: Microservices have independent release units and remote calls; these module calls remain in-process.
-- Distinguishing visual features (structure, material, typography): Three module rows each show an API gate and owned tables inside one deployment enclosure; a shared database note separates ownership from physical storage. Solid surfaces, readable system type, numbered steps and explicit labels; color is supplementary.
-- Shared comparison category: [Service decomposition](../catalog-writing/groups/service-split.md).
-- Article-specific scenario, dataset, labels, actions, and initial state: reading application with Catalog, Library and Billing, initially one team and v1; Hiking Guide has no tag. Library adds a compatible tag feature; Billing behavior remains unchanged. Set the literal tag `weekend` after Catalog lookup succeeds.
-- Visual variable changed; concept-specific extra controls and their justification: Three module rows each show an API gate and owned tables inside one deployment enclosure; a shared database note separates ownership from physical storage. Static mode keeps release units, ownership and failure paths visible together. No pretend deployment or database controls.
-- Fictional scenario and why it demonstrates the definition: A hiking guide's Library tag change should stay within Library code, yet a tiny team cannot maintain several services. Fictional app v1: one team deploys Catalog, Library and Billing together; Hiking Guide has no tag.
-- Representative action and observable result: Fictional app v1: one team deploys Catalog, Library and Billing together; Hiking Guide has no tag. Library calls Catalog's API in-process, then writes `weekend`. A lookup error leaves no tag; retry after recovery.
-- Initial state: server-rendered full diagram; fictional app/services v1 and no tag.
-- Changed state, repeated action, empty input/no results: no mutable UI or text input. The trace uses valid Hiking Guide and literal `weekend`; assigning that same tag again retains it under the illustrative assignment policy. A failed Catalog read occurs before any write, leaves no tag, reports failure and permits retry after recovery. For microservices this branch is an explicit lookup timeout; it says nothing about uncertain write timeouts or automatic retries.
-- Reset and reload behavior: no reset control; static content is identical after reload.
-- Mobile order and width thresholds: stack cards below 520px component width; module rows stack below 430px. Preserve release → capabilities/modules/services → ownership → runtime outcome reading order at 320px; wrap text without scaling it down.
-- Keyboard order, focus, accessible names, live feedback: semantic headings, lists and visible descriptions. No artificial tab stops or live regions. Native page/source links remain keyboard accessible.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: solid authored light surfaces with explicit dark text in either surrounding theme. No animation/transparency/shadow dependency. Borders and labeled version changes remain meaningful in forced colors.
-- JavaScript-disabled initial screen and explanation: all topology, versions, data ownership and success/failure descriptions remain readable.
-- Font families, supported characters, fallback and measurement method: system sans-serif with CJK fallback; monospace for literal identifiers. No new fonts or metrics claims.
-- Localized visible strings, input constraints, original/translation review: English group reviewed first on 2026-09-22; Korean/Japanese preserve the compatible-contract condition, article-specific situation and failure timing. `Hiking Guide`, `v1`, `v2` and `weekend` are literal sample values. No native-speaker review claimed.
-- Mode: `static`; no script, reset or mount wait.
-- Capture selector and initial content: `[data-demo="modular-monolith"]`; complete static diagram in three languages, 1440px light thumbnails.
-- Source URLs, inspected date, claims each source supports: https://martinfowler.com/bliki/MonolithFirst.html; inspected 2026-09-22. [Source refresh](../catalog-writing/service-split-sources.md) records mechanisms and limitations. Fixture, table ownership policy and suitability are editorial choices, not measurements.
-- Comparison summaries: all five fields follow the reviewed English frontmatter and group matrix: deployment/module mechanism, conditional benefit, coordination cost, suitability and permitted combination. No automatic scaling, isolation or effortless extraction claim.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); publication mutation tests, output tests and `tests/browser/service-split.spec.ts`. `public/thumbnails/modular-monolith-{en,ko,ja}.png`, ignored `artifacts/service-split-demos/`, [release record](../service-split-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `modular-monolith`; `service-split`. Existing URLs and comment identity retained.
+- Definition and selection: Enforce module ownership while retaining one deployment unit.
+- Closest options and concrete difference: Choose explicit modules when ownership matters but shared releases remain acceptable. It is a disciplined form of monolith, not a third deployment topology. Microservices add independent deployment and network contracts; modules can prepare boundaries without promising an eventual split.
+- Distinct situation and Why opening: Imagine a hiking app where walkers save guides and buy extras. Weekend tags risk changing billing code. The team wants clear ownership within one release, without separate services.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/modular-monolith.md), [KO](../../src/content/articles/ko/modular-monolith.md), [JA](../../src/content/articles/ja/modular-monolith.md); matching revision 6. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: The hiking app lets Library own weekend tags and call Catalog through an internal API. Billing remains unchanged. The shared database contains separately owned tables; the drawing is about permitted access, not the number of database machines.
+- Visual structure: `ModularMonolith.astro` owns its markup, spacing and state. Caption: Internal contracts, shared release
+- Initial and changed states: 1. One team ships Catalog, Library and Billing together; saved Hiking Guide has no tag. 2. Add tags to Library-owned tables; deploy app v2 with unchanged Billing. One database; cross-module table access is forbidden. 3. Library calls Catalog's API in-process, then writes `weekend`. Failed lookup leaves no tag; retry after recovery.
+- Repetition, empty/failure and constraints: No interactive state. Failure branches explain outcomes without pretending to execute requests.
+- Controls and state selectors: None; static explanatory diagram.
+- Reset and reload: Not applicable: no script, reset or mount wait.
+- Mobile order and widths: max-width: 430px. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Readable text and ordered structure; no imitation controls.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Static diagram needs neither motion nor JavaScript.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `static`; `[data-demo="modular-monolith"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/modular-monolith.md`, sourceRevision 6; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Explicit module APIs within one deployment; advantages: Library changes stay behind its API; limitations: Boundaries need enforcement; releases stay shared; suitable: Clear ownership without remote calls; combinations: Can use clean or hexagonal module internals
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/modular-monolith-320.png`, `artifacts/design-demos/modular-monolith-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Martin Fowler: Monolith First](https://martinfowler.com/bliki/MonolithFirst.html) (checked 2026-09-27): Discusses learning service boundaries within a monolith; this example’s table-access rules are authored enforcement choices.
+
+## Strong teaching case — 2026-09-27
+
+One release enclosure contains separate API gates and owned internals; failure scope stays shared.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

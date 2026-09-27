@@ -1,35 +1,33 @@
 ---
-kind: "concept"
-articleId: "base-plus-overage"
-lang: "ja"
-title: "基本料＋超過利用量"
-summary: "基本料に含まれる量を超えた分だけ加算します。"
-category: "pricing-models"
-aliases: ["基本料＋超過利用量", "Base fee plus overage"]
+kind: concept
+articleId: base-plus-overage
+lang: ja
+title: 基本料＋超過利用量
+summary: 基本の含有量を設け、超過した利用分に追加料金を取ります。
+category: pricing-models
+aliases:
+  - 基本料＋超過利用量
+  - Base fee plus overage
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "per-seat-pricing",
-    "feature-tiered-pricing",
-    "volume-pricing",
-    "graduated-pricing",
-    "subscription",
-    "usage-based",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - per-seat-pricing
+  - feature-tiered-pricing
+  - volume-pricing
+  - graduated-pricing
+  - subscription
+  - usage-based
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "基本料と超過分",
-    "advantages": "基本サービスを支える",
-    "limitations": "利用0でも基本料を請求",
-    "suitable": "固定費と変動費",
-    "combinations": "継続課金と利用量の計測",
-  }
+  features: 基本料と超過分
+  advantages: 基本サービスを支える
+  limitations: 利用0でも基本料を請求
+  suitable: 固定費と変動費
+  combinations: 継続課金と利用量の計測
 ---
 
 ## なぜ必要なのか

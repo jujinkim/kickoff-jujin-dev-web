@@ -1,25 +1,29 @@
 ---
-kind: "concept"
-articleId: "freemium"
-lang: "ja"
-title: "フリーミアム"
-summary: "無料機能を維持し、有料機能を選べます。"
-category: "access-strategies"
-aliases: ["フリーミアム", "Freemium"]
-related: ["revenue", "free-trial", "subscription", "non-consumable-purchase"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: freemium
+lang: ja
+title: フリーミアム
+summary: 有用な無料プランを維持し、追加機能を販売します。
+category: access-strategies
+aliases:
+  - フリーミアム
+  - Freemium
+related:
+  - revenue
+  - free-trial
+  - subscription
+  - non-consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "継続する無料機能",
-    "advantages": "無料で使い続けられる",
-    "limitations": "無料範囲の費用負担",
-    "suitable": "有用な任意の拡張",
-    "combinations": "継続課金や非消耗型購入",
-  }
+  features: 継続する無料機能
+  advantages: 無料で使い続けられる
+  limitations: 無料範囲の費用負担
+  suitable: 有用な任意の拡張
+  combinations: 継続課金や非消耗型購入
 ---
 
 ## なぜ必要なのか

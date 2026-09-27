@@ -3,7 +3,7 @@ kind: concept
 articleId: jekyll
 lang: ja
 title: Jekyll
-summary: Rubyで生成し、ファイルを配信します。
+summary: Rubyのレイアウト処理でMarkdownを公開します。
 category: static-generators
 aliases:
   - Jekyll
@@ -12,10 +12,10 @@ related:
   - astro
   - hugo
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: Rubyビルドと再利用レイアウト
   advantages: 複数記事でレイアウトを共有

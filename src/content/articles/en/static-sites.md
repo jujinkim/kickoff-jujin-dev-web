@@ -1,19 +1,28 @@
 ---
 kind: guide
-articleId: "static-sites"
-lang: "en"
+articleId: static-sites
+lang: en
 title: "Astro, Hugo, Jekyll: three ways to ship HTML"
-summary: "Pick for authoring and maintenance, not a benchmark trophy."
-category: "development"
-aliases: ["Astro", "Hugo", "Jekyll", "SSG", "정적 사이트", "静的サイト"]
-related: ["tools", "shipping", "adr"]
-example: "generators"
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
+summary: Generate public files ahead of requests when publishing can follow a build.
+category: development
+aliases:
+  - Astro
+  - Hugo
+  - Jekyll
+  - SSG
+  - 정적 사이트
+  - 静的サイト
+related:
+  - tools
+  - shipping
+  - adr
+example: generators
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
 aiPrompt: "Using our agreed content workflow and constraints, compare suitable static site generators, including Astro, Hugo, and Jekyll where relevant. Compare authoring, preview, hosting, and maintenance needs; assess languages, search, and interactive features only within our required scope. Use official references and flag uncertain or changing facts. Preserve confirmed stack choices; for unresolved choices, explain the recommendation and alternatives and ask for a decision before changing the stack."
-checked: "2026-09-23"
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem

@@ -1,30 +1,30 @@
 ---
 kind: guide
-articleId: "revenue"
-lang: "ja"
-title: "サブスク・買い切り・広告：価値に合わせる"
-summary: "料金表だけでは製品を救えません。"
-category: "business"
+articleId: revenue
+lang: ja
+title: サブスク・買い切り・広告：価値に合わせる
+summary: 支払者・請求・利用権を明示した売上・費用の仮定に結び付けます。
+category: business
 aliases:
-  [
-    "subscription",
-    "one-time",
-    "advertising",
-    "구독",
-    "일회 결제",
-    "광고",
-    "サブスクリプション",
-    "買い切り",
-    "広告",
-  ]
-related: ["payments", "srs"]
-example: "revenue"
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-aiPrompt: "対象者と継続費用に基づき定期課金・買い切り・広告を比較して。仮定を明記し売上と費用を分けて。利用期間、解約、プライバシーの未決定事項を質問して。委任なしにモデルを決めず、判断記録と完了条件を残して。"
-checked: "2026-09-23"
+  - subscription
+  - one-time
+  - advertising
+  - 구독
+  - 일회 결제
+  - 광고
+  - サブスクリプション
+  - 買い切り
+  - 広告
+related:
+  - payments
+  - srs
+example: revenue
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+aiPrompt: 対象者と継続費用に基づき定期課金・買い切り・広告を比較して。仮定を明記し売上と費用を分けて。利用期間、解約、プライバシーの未決定事項を質問して。委任なしにモデルを決めず、判断記録と完了条件を残して。
+checked: "2026-09-27"
 ---
 
 ## なぜ必要なのか

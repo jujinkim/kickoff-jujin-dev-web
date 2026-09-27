@@ -1,29 +1,30 @@
 ---
 kind: guide
-articleId: "theme"
-lang: "ja"
-title: "テーマ・フォント・共通スタイル"
-summary: "似た色五十個より、一つの決定を共有します。"
-category: "design"
+articleId: theme
+lang: ja
+title: テーマ・フォント・共通スタイル
+summary: 視覚的役割に名前を付け、色・書体・間隔の一貫性を保ちます。
+category: design
 aliases:
-  [
-    "theme",
-    "font",
-    "design tokens",
-    "테마",
-    "폰트",
-    "공통 스타일",
-    "テーマ",
-    "フォント",
-    "デザイントークン",
-  ]
-related: ["layout", "architecture"]
-example: "theme"
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
-aiPrompt: "合意したプロジェクトの色・文字・間隔を点検して。対応言語と選んだテーマに合う意味的トークンと代替書体を提案して。代表画面とコントラスト測定を示して。適用前に未決定の視覚的方向だけ質問して。キーボードのフォーカスと合意したテーマ設定の動作を保って。プロジェクトが必要としない言語やライト・ダークモードを追加しないで。"
+  - theme
+  - font
+  - design tokens
+  - 테마
+  - 폰트
+  - 공통 스타일
+  - テーマ
+  - フォント
+  - デザイントークン
+related:
+  - layout
+  - architecture
+example: theme
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+aiPrompt: 合意したプロジェクトの色・文字・間隔を点検して。対応言語と選んだテーマに合う意味的トークンと代替書体を提案して。代表画面とコントラスト測定を示して。適用前に未決定の視覚的方向だけ質問して。キーボードのフォーカスと合意したテーマ設定の動作を保って。プロジェクトが必要としない言語やライト・ダークモードを追加しないで。
+checked: "2026-09-27"
 ---
 
 ## なぜ必要なのか

@@ -1,32 +1,30 @@
 ---
-kind: "concept"
-articleId: "prepaid-credits"
-lang: "ja"
-title: "前払いクレジット"
-summary: "先に残高を用意し、利用量に応じて減らします。"
-category: "billing"
-aliases: ["前払いクレジット", "Prepaid credits"]
+kind: concept
+articleId: prepaid-credits
+lang: ja
+title: 前払いクレジット
+summary: 利用前に徴収し、定めたクレジット残高から差し引きます。
+category: billing
+aliases:
+  - 前払いクレジット
+  - Prepaid credits
 related:
-  [
-    "revenue",
-    "one-time-payment",
-    "subscription",
-    "usage-based",
-    "consumable-purchase",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - one-time-payment
+  - subscription
+  - usage-based
+  - consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "事前に用意した利用残高",
-    "advantages": "支出の境界が見える",
-    "limitations": "追加購入と期限の規則が必要",
-    "suitable": "予算を決めた消費",
-    "combinations": "利用量の計測",
-  }
+  features: 事前に用意した利用残高
+  advantages: 支出の境界が見える
+  limitations: 追加購入と期限の規則が必要
+  suitable: 予算を決めた消費
+  combinations: 利用量の計測
 ---
 
 ## なぜ必要なのか

@@ -39,9 +39,8 @@ for (const lang of ["en", "ko", "ja"]) {
         id === "microservices" ? 3 : 1,
       );
       for (const unit of await root.locator("[data-deployment]").all()) {
-        expect(
-          await unit.evaluate((node) => getComputedStyle(node).borderTopStyle),
-        ).toBe("dotted");
+        await expect(unit).toBeVisible();
+        await expect(unit.locator("[data-version]")).toHaveCount(1);
       }
       if (id === "microservices") {
         await expect(

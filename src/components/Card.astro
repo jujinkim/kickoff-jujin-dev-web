@@ -17,6 +17,7 @@ const categoryPath = ancestors(d.category);
 <article
   class="catalog-card"
   data-category={d.category}
+  data-aliases={JSON.stringify(d.aliases)}
   data-category-path={categoryPath.map((c) => c.id).join(" ")}
 >
   <a class="card-link" href={articleUrl(article)}>
@@ -25,11 +26,12 @@ const categoryPath = ancestors(d.category);
         <div class="card-preview">
           <img
             class="style-preview-image"
-            src={`/thumbnails/${d.articleId}-${d.lang}.png`}
+            src={`/thumbnails/${d.articleId}-${d.lang}.webp`}
             alt={designDemos[d.articleId].caption[d.lang]}
             width="360"
             height="280"
             loading="lazy"
+            decoding="async"
           />
         </div>
       </>

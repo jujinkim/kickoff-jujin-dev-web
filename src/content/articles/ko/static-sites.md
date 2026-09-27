@@ -1,19 +1,28 @@
 ---
 kind: guide
-articleId: "static-sites"
-lang: "ko"
+articleId: static-sites
+lang: ko
 title: "Astro·Hugo·Jekyll: HTML을 보내는 세 방법"
-summary: "벤치마크 트로피보다 집필과 유지보수 기준으로 고릅니다."
-category: "development"
-aliases: ["Astro", "Hugo", "Jekyll", "SSG", "정적 사이트", "静的サイト"]
-related: ["tools", "shipping", "adr"]
-example: "generators"
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
+summary: 게시 전에 빌드할 수 있을 때 공개 파일을 요청 전에 생성합니다.
+category: development
+aliases:
+  - Astro
+  - Hugo
+  - Jekyll
+  - SSG
+  - 정적 사이트
+  - 静的サイト
+related:
+  - tools
+  - shipping
+  - adr
+example: generators
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
 aiPrompt: "합의한 집필 흐름과 제약을 기준으로 적합한 정적 사이트 생성기를 비교하고, 관련 있으면 Astro·Hugo·Jekyll을 포함해줘. 집필·미리보기·호스팅·유지관리 필요를 비교하고 언어·검색·상호작용 기능은 요구된 범위 안에서만 검토해줘. 공식 근거를 사용하고 불확실하거나 변하는 사실은 표시해줘. 확정한 스택은 유지하고, 미결정 선택은 추천과 대안을 설명한 뒤 변경 전에 결정을 물어봐."
-checked: "2026-09-23"
+checked: "2026-09-27"
 ---
 
 ## 왜 필요한가

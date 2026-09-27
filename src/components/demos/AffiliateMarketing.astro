@@ -53,6 +53,13 @@ const t = local(lang),
       "クリックだけでは対象にならない場合があります。条件は契約に従います。精算・費用・返金は省略しています。",
     )}
   </p>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The reader pays the external shop; a qualifying purchase may produce commission for the guide. Clicks alone do not create payment or an access entitlement. The shop handles the book sale under its own terms.",
+      "독자는 외부 상점에 지불하고 적격 구매가 안내 사이트의 수수료를 만들 수 있습니다. 클릭만으로 지급이나 이용 권한이 생기지 않습니다. 책 판매는 상점 자체 조건에 따릅니다.",
+      "読者は外部店へ払い、適格購入によりガイドへ紹介料が発生する場合があります。クリックだけで支払いや利用権は生じません。本の販売は店自身の条件に従います。",
+    )}
+  </p>
 </section>
 <style>
   .exchange {
@@ -89,5 +96,18 @@ const t = local(lang),
     margin: 0.6rem 0;
     border-bottom: 2px dashed #567a73;
     background: #fff;
+  }
+
+  .referral {
+    gap: 28px;
+  }
+  .referral li {
+    padding: 24px;
+    border: 3px solid #75503f;
+  }
+  .referral li:last-child {
+    border: 5px dashed #75503f;
+    font-size: 1.25rem;
+    font-weight: 700;
   }
 </style>

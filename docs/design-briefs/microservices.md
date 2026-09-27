@@ -1,25 +1,36 @@
-# Microservices visualization brief
+# Microservices / マイクロサービス / 마이크로서비스
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `microservices`; `service-split`; Microservices / 마이크로서비스 / マイクロサービス.
-- Definition (one sentence): Business-capability services have explicit contracts and can be deployed independently.
-- Closest concept and concrete difference: Separate processes without compatible contracts do not create independent releases; a modular monolith keeps one release unit.
-- Distinguishing visual features (structure, material, typography): Three separate dotted deployment enclosures each show a service version and its owned store. Only Library changes v1 → v2; a dashed network path branches to success and Catalog-read timeout. Solid surfaces, readable system type, numbered steps and explicit labels; color is supplementary.
-- Shared comparison category: [Service decomposition](../catalog-writing/groups/service-split.md).
-- Article-specific scenario, dataset, labels, actions, and initial state: reading application with Catalog, Library and Billing, initially one team and v1; School Events has no tag. Library adds a compatible tag feature; Billing behavior remains unchanged. Set the literal tag `volunteer` after Catalog lookup succeeds.
-- Visual variable changed; concept-specific extra controls and their justification: Three separate dotted deployment enclosures each show a service version and its owned store. Only Library changes v1 → v2; a dashed network path branches to success and Catalog-read timeout. Static mode keeps release units, ownership and failure paths visible together. No pretend deployment or database controls.
-- Fictional scenario and why it demonstrates the definition: A school events app needs a volunteer tag this week, while its billing team has a different release calendar. Fictional school events app: one team; Catalog, Library and Billing each v1.
-- Representative action and observable result: Fictional school events app: one team; Catalog, Library and Billing each v1. School Events has no tag. Library queries Catalog over the network, then writes `volunteer` to its own store. A lookup timeout before writing leaves no tag; report failure and retry after recovery.
-- Initial state: server-rendered full diagram; fictional app/services v1 and no tag.
-- Changed state, repeated action, empty input/no results: no mutable UI or text input. The trace uses valid School Events and literal `volunteer`; assigning that same tag again retains it under the illustrative assignment policy. A failed Catalog read occurs before any write, leaves no tag, reports failure and permits retry after recovery. For microservices this branch is an explicit lookup timeout; it says nothing about uncertain write timeouts or automatic retries.
-- Reset and reload behavior: no reset control; static content is identical after reload.
-- Mobile order and width thresholds: stack cards below 520px component width; module rows stack below 430px. Preserve release → capabilities/modules/services → ownership → runtime outcome reading order at 320px; wrap text without scaling it down.
-- Keyboard order, focus, accessible names, live feedback: semantic headings, lists and visible descriptions. No artificial tab stops or live regions. Native page/source links remain keyboard accessible.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: solid authored light surfaces with explicit dark text in either surrounding theme. No animation/transparency/shadow dependency. Borders and labeled version changes remain meaningful in forced colors.
-- JavaScript-disabled initial screen and explanation: all topology, versions, data ownership and success/failure descriptions remain readable.
-- Font families, supported characters, fallback and measurement method: system sans-serif with CJK fallback; monospace for literal identifiers. No new fonts or metrics claims.
-- Localized visible strings, input constraints, original/translation review: English group reviewed first on 2026-09-22; Korean/Japanese preserve the compatible-contract condition, article-specific situation and failure timing. `School Events`, `v1`, `v2` and `volunteer` are literal sample values. No native-speaker review claimed.
-- Mode: `static`; no script, reset or mount wait.
-- Capture selector and initial content: `[data-demo="microservices"]`; complete static diagram in three languages, 1440px light thumbnails.
-- Source URLs, inspected date, claims each source supports: https://martinfowler.com/articles/microservices.html; inspected 2026-09-22. [Source refresh](../catalog-writing/service-split-sources.md) records mechanisms and limitations. Fixture, table ownership policy and suitability are editorial choices, not measurements.
-- Comparison summaries: all five fields follow the reviewed English frontmatter and group matrix: deployment/module mechanism, conditional benefit, coordination cost, suitability and permitted combination. No automatic scaling, isolation or effortless extraction claim.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); publication mutation tests, output tests and `tests/browser/service-split.spec.ts`. `public/thumbnails/microservices-{en,ko,ja}.png`, ignored `artifacts/service-split-demos/`, [release record](../service-split-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `microservices`; `service-split`. Existing URLs and comment identity retained.
+- Definition and selection: Deploy capabilities independently when operational independence justifies coordination.
+- Closest options and concrete difference: Choose services when independent releases, scaling or ownership provide enough value to pay for network failure and data coordination. A modular monolith retains boundaries with simpler local calls. A system may keep some capabilities together while separating others.
+- Distinct situation and Why opening: Families save notices and pay fees in a school app. Urgent volunteer tags cannot wait for billing releases. The team accepts network coordination; internal modules still release together.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/microservices.md), [KO](../../src/content/articles/ko/microservices.md), [JA](../../src/content/articles/ja/microservices.md); matching revision 6. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: The school app releases volunteer tags in Library v2 while Catalog and Billing remain v1. Library queries Catalog before writing its own store. The timeout branch leaves the tag absent in this example; it does not claim that every distributed write fails atomically.
+- Visual structure: `Microservices.astro` owns its markup, spacing and state. Caption: Independent releases introduce remote failure cases
+- Initial and changed states: 1. One team runs Catalog, Library and Billing at v1; saved School Events has no tag. 2. Deploy Library v2 with compatible tags; Catalog and Billing stay v1. 3. Library queries Catalog over the network, then writes `volunteer` to its store. Timeout leaves no tag; report failure and retry after recovery.
+- Repetition, empty/failure and constraints: No interactive state. Failure branches explain outcomes without pretending to execute requests.
+- Controls and state selectors: None; static explanatory diagram.
+- Reset and reload: Not applicable: no script, reset or mount wait.
+- Mobile order and widths: max-width: 520px. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Readable text and ordered structure; no imitation controls.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Static diagram needs neither motion nor JavaScript.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `static`; `[data-demo="microservices"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/microservices.md`, sourceRevision 6; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Independently deployable capability services; advantages: Library can release without rebuilding Billing; limitations: Network failures and data coordination; suitable: Stable boundaries and independent release needs; combinations: Can coexist with a modular monolith
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/microservices-320.png`, `artifacts/design-demos/microservices-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [James Lewis and Martin Fowler: Microservices](https://martinfowler.com/articles/microservices.html) (checked 2026-09-27): Describes independently deployable services organized around capabilities and decentralized data ownership; isolation is not automatic.
+
+## Strong teaching case — 2026-09-27
+
+Separate release enclosures and stores expose versions and a network-timeout boundary.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

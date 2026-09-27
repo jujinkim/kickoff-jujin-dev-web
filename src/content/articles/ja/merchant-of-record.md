@@ -1,25 +1,28 @@
 ---
-kind: "concept"
-articleId: "merchant-of-record"
-lang: "ja"
-title: "MoRモデル"
-summary: "契約した販売者が対象取引を担当します。"
-category: "seller-responsibility"
-aliases: ["MoRモデル", "Merchant of record model"]
-related: ["payments", "direct-seller", "subscription"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: merchant-of-record
+lang: ja
+title: MoRモデル
+summary: MoR契約で対象の販売者義務を委任します。
+category: seller-responsibility
+aliases:
+  - MoRモデル
+  - Merchant of record model
+related:
+  - payments
+  - direct-seller
+  - subscription
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "契約した取引販売者",
-    "advantages": "対象の販売業務を委託",
-    "limitations": "契約と対象範囲の制約",
-    "suitable": "対象製品と市場",
-    "combinations": "継続課金と製品サポート",
-  }
+  features: 契約した取引販売者
+  advantages: 対象の販売業務を委託
+  limitations: 契約と対象範囲の制約
+  suitable: 対象製品と市場
+  combinations: 継続課金と製品サポート
 ---
 
 ## なぜ必要なのか

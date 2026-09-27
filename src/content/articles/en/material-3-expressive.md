@@ -3,7 +3,7 @@ kind: concept
 articleId: material-3-expressive
 lang: en
 title: Material 3 Expressive
-summary: "Emphasize a picnic planner’s next action through large controls, color, shape, and brief motion."
+summary: "Color, shape, size and motion emphasize key actions within the Material design system."
 category: styles
 aliases:
   - Material 3 Expressive
@@ -12,30 +12,28 @@ related:
   - flat-design
   - neobrutalism
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 comparison:
-  features: "Color blocks, varied curves, large controls, and brief shape reactions."
-  advantages: Size and containment give primary actions emphasis.
-  limitations: Expressive shapes must preserve familiar labels and reading order.
-  suitable: Choose it when key actions need clear visual emphasis.
-  combinations: Pair solid surfaces with a clear grid and reduced-motion support.
-checked: "2026-09-22"
+  features: "Expressive shape, scale and motion"
+  advantages: Strong emphasis on a primary action
+  limitations: Emphasis can compete with dense content
+  suitable: "A welcoming, prominent participation action"
+  combinations: Clear states and reduced-motion support
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
 
-Imagine a picnic planner where volunteers check supplies and their next task. The next action needs color, shape, and motion for emphasis without hiding labels; subdued flat surfaces would not guide attention enough.
+A picnic page lets residents reserve places. A quiet row of equal buttons makes joining easy to miss. The team wants a strong primary action and lively feedback; understated flat grouping alone is not the priority.
 
 ## How: work toward a solution
 
-For the community picnic, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Completion briefly pulses the progress shape; reduced motion removes animation.
+Choose three people and join. The large curved action changes to cancellation, the state confirms participation and reserved places becomes three. Change the group size or cancel. Brief shape feedback disappears with reduced motion.
 
 ## What: the concept
 
-Material 3 Expressive directs attention with color, shape, size, and motion. This authored study uses large task controls and varied curves.
+Material 3 Expressive uses color, shape, size and motion to guide attention. This web study is not a native Material library. Labels and reading order still matter.
 
-Expressive shapes must preserve familiar labels and reading order.
-
-[Google Design](https://design.google/library/expressive-material-design-google-research)
+[Google Design: Expressive Material research](https://design.google/library/expressive-material-design-google-research)

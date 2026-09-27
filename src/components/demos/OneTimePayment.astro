@@ -45,6 +45,13 @@ const t = local(lang),
     )}
   </p>
   <p class="assumptions">{m.omitted}</p>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The customer pays 30 in month one and zero in months two and three despite 100, 300 and 600 exports. Access follows the example’s license; the product seller still owes whatever support the offer promises.",
+      "고객은 출력 100·300·600회와 무관하게 첫 달 30, 둘째·셋째 달 0을 냅니다. 접근은 예제 이용권에 따르며 판매자는 제안한 지원을 제공할 책임이 있습니다.",
+      "出力が100・300・600回でも顧客は初月に30、2・3か月目に0を払います。利用は例のライセンスに従い、販売者には提示した支援の責任が残ります。",
+    )}
+  </p>
 </section>
 <style>
   .months {
@@ -75,5 +82,26 @@ const t = local(lang),
     .months {
       grid-template-columns: 1fr;
     }
+  }
+
+  .months {
+    gap: 0;
+    border: 3px solid #4b6848;
+  }
+  .months li {
+    border: 0;
+    border-right: 2px solid #4b6848;
+    padding: 28px;
+  }
+  .months strong {
+    font-size: 3rem;
+  }
+  .months li:first-child {
+    border-top: 9px solid #4b6848;
+  }
+  .sum {
+    border-block: 3px solid #4b6848;
+    padding: 24px;
+    font-size: 1.3rem;
   }
 </style>

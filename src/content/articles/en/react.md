@@ -3,7 +3,9 @@ kind: concept
 articleId: react
 lang: en
 title: React
-summary: State changes drive rendered labels.
+summary: >-
+  Build interfaces from components and state, suited to teams that want
+  JavaScript-driven rendering and explicit state ownership.
 category: web-ui
 aliases:
   - React
@@ -12,10 +14,10 @@ related:
   - vue
   - svelte
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-26"
 comparison:
   features: "Props, events and state-driven rendering"
   advantages: Reusable card behavior
@@ -30,7 +32,7 @@ Imagine a home planner where families save shopping and menu items. Cards and to
 
 ## How: work toward a solution
 
-Two cards in a home planner start unsaved. Save on Shopping List changes only its label to Saved; Weekly Menu stays unsaved. Saving Weekly Menu changes the shared count from one to two. Repeating Save leaves two records: each card counts once. The diagram traces event, state update, and rendering. Reset or reload clears both cards. There is no persistent storage here.
+Two cards in a home planner start unsaved. Save on Shopping List changes only its label to Saved; Weekly Menu stays unsaved. Save Weekly Menu: the shared count becomes two. Repeated saves keep two records. The diagram traces event → state → render. Reset or reload clears both cards. Storage is not persistent.
 
 ## What: the concept
 

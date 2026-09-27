@@ -86,7 +86,11 @@ async function update() {
       .filter(
         (card) =>
           !card.hidden &&
-          normalize(card.querySelector("h3").textContent) === normalize(query),
+          (normalize(card.querySelector("h3").textContent) ===
+            normalize(query) ||
+            JSON.parse(card.dataset.aliases ?? "[]").some(
+              (alias) => normalize(alias) === normalize(query),
+            )),
       )
       .map((card) => ({
         url: card.querySelector(".card-link").getAttribute("href"),

@@ -1,32 +1,30 @@
 ---
-kind: "concept"
-articleId: "one-time-payment"
-lang: "ja"
-title: "買い切り"
-summary: "定めた利用権に一度だけ請求します。"
-category: "billing"
-aliases: ["買い切り", "One-time payment"]
+kind: concept
+articleId: one-time-payment
+lang: ja
+title: 買い切り
+summary: 範囲を定めた商品の約束を賄えるとき、一度だけ徴収します。
+category: billing
+aliases:
+  - 買い切り
+  - One-time payment
 related:
-  [
-    "revenue",
-    "subscription",
-    "usage-based",
-    "prepaid-credits",
-    "non-consumable-purchase",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - subscription
+  - usage-based
+  - prepaid-credits
+  - non-consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "一度だけ請求",
-    "advantages": "購入額が明確",
-    "limitations": "将来のサービス条件が必要",
-    "suitable": "範囲の決まった成果物",
-    "combinations": "非消耗型の利用権",
-  }
+  features: 一度だけ請求
+  advantages: 購入額が明確
+  limitations: 将来のサービス条件が必要
+  suitable: 範囲の決まった成果物
+  combinations: 非消耗型の利用権
 ---
 
 ## なぜ必要なのか

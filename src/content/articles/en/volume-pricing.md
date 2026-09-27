@@ -1,34 +1,31 @@
 ---
-kind: "concept"
-articleId: "volume-pricing"
-lang: "en"
-title: "Volume pricing"
-summary: "The final quantity selects one rate for all units."
-category: "pricing-models"
-aliases: ["Volume pricing"]
+kind: concept
+articleId: volume-pricing
+lang: en
+title: Volume pricing
+summary: Apply the reached quantity tier’s rate to every unit.
+category: pricing-models
+aliases:
+  - Volume pricing
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "per-seat-pricing",
-    "feature-tiered-pricing",
-    "graduated-pricing",
-    "base-plus-overage",
-    "usage-based",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - per-seat-pricing
+  - feature-tiered-pricing
+  - graduated-pricing
+  - base-plus-overage
+  - usage-based
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "One rate applies to all units",
-    "advantages": "Whole-quantity discount",
-    "limitations": "Total can drop at threshold",
-    "suitable": "Intentional volume discounts",
-    "combinations": "Usage metering and subscriptions",
-  }
+  features: One rate applies to all units
+  advantages: Whole-quantity discount
+  limitations: Total can drop at threshold
+  suitable: Intentional volume discounts
+  combinations: Usage metering and subscriptions
 ---
 
 ## Why: the goal or problem

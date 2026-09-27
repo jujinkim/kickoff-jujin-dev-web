@@ -1,25 +1,29 @@
 ---
-kind: "concept"
-articleId: "banner-ads"
-lang: "ko"
-title: "배너 광고"
-summary: "주 콘텐츠 옆의 구분된 영역에 광고를 둡니다."
-category: "ad-formats"
-aliases: ["배너 광고", "Banner ads"]
-related: ["revenue", "interstitial-ads", "rewarded-ads", "advertising"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: banner-ads
+lang: ko
+title: 배너 광고
+summary: 작업 화면을 유지해야 할 때 지속적인 광고 자리를 확보합니다.
+category: ad-formats
+aliases:
+  - 배너 광고
+  - Banner ads
+related:
+  - revenue
+  - interstitial-ads
+  - rewarded-ads
+  - advertising
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "화면 일부에 배치",
-    "advantages": "본문이 계속 보임",
-    "limitations": "좁은 화면 공간 사용",
-    "suitable": "광고 공간이 확보된 화면",
-    "combinations": "광고 수익원",
-  }
+  features: 화면 일부에 배치
+  advantages: 본문이 계속 보임
+  limitations: 좁은 화면 공간 사용
+  suitable: 광고 공간이 확보된 화면
+  combinations: 광고 수익원
 ---
 
 ## 왜 필요한가

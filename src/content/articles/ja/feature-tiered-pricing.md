@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "feature-tiered-pricing"
-lang: "ja"
-title: "機能別料金プラン"
-summary: "含まれる機能が異なるパッケージです。"
-category: "pricing-models"
-aliases: ["機能別料金プラン", "Feature-tiered pricing"]
+kind: concept
+articleId: feature-tiered-pricing
+lang: ja
+title: 機能別料金プラン
+summary: 顧客の必要な機能群が異なるとき、機能別プランを設けます。
+category: pricing-models
+aliases:
+  - 機能別料金プラン
+  - Feature-tiered pricing
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "per-seat-pricing",
-    "volume-pricing",
-    "graduated-pricing",
-    "base-plus-overage",
-    "freemium",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - per-seat-pricing
+  - volume-pricing
+  - graduated-pricing
+  - base-plus-overage
+  - freemium
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "異なる機能パッケージ",
-    "advantages": "異なる需要に対応",
-    "limitations": "プランの境界が複雑になる",
-    "suitable": "選択機能のある製品",
-    "combinations": "継続課金や席数課金",
-  }
+  features: 異なる機能パッケージ
+  advantages: 異なる需要に対応
+  limitations: プランの境界が複雑になる
+  suitable: 選択機能のある製品
+  combinations: 継続課金や席数課金
 ---
 
 ## なぜ必要なのか

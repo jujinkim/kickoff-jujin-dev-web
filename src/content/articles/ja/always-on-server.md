@@ -3,7 +3,7 @@ kind: concept
 articleId: always-on-server
 lang: ja
 title: 常時稼働サーバー
-summary: プロセスとデータの寿命は異なります。
+summary: プロセスを待機させ続けて要求を受けます。実行環境を制御し、容量・監視・復旧を担います。
 category: hosting-models
 aliases:
   - 常時稼働サーバー
@@ -12,10 +12,10 @@ related:
   - static-hosting
   - serverless-functions
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-checked: "2026-09-22"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+checked: "2026-09-26"
 comparison:
   features: 長時間稼働するリクエスト待機プロセス
   advantages: 実行環境を直接制御

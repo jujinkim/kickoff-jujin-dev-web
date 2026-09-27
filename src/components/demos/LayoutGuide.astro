@@ -68,8 +68,21 @@ const t = local(lang);
       "狭い画面では絞り込みを結果の前に積み、読む順序を保ちます。必要な内容は消しません。",
     )}
   </p>
+  <p class="scope-note">
+    {t(
+      "Empty results: keep the filters visible and explain how to broaden the search. Named page regions are not CSS multi-column text flow. This schematic has no active filters or dialog.",
+      "빈 결과에서는 필터를 유지하고 검색을 넓힐 방법을 안내합니다. 이름을 붙인 페이지 영역은 CSS 다단 텍스트 흐름과 다릅니다. 이 도식에는 실제 필터나 대화창이 없습니다.",
+      "結果が空でも絞り込みを残し、検索を広げる方法を示します。名前を付けた領域はCSSの段組文章とは異なります。この図に動く絞り込みやダイアログはありません。",
+    )}
+  </p>
 </section>
 <style>
+  .scope-note {
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid currentColor;
+    font-size: 0.85rem;
+  }
   section {
     container-type: inline-size;
     padding: clamp(16px, 3vw, 28px);
@@ -86,6 +99,7 @@ const t = local(lang);
     margin: 0;
   }
   .eyebrow {
+    color: inherit;
     font-size: 0.82rem;
     font-weight: 700;
   }
@@ -137,6 +151,31 @@ const t = local(lang);
     .screen {
       grid-template-columns: 1fr;
       grid-template-areas: "nav" "filters" "results" "details";
+    }
+  }
+
+  .screen {
+    border: 5px solid #536951;
+    gap: 12px;
+    padding: 18px;
+  }
+  .screen .navigation {
+    border-bottom: 5px solid #536951;
+  }
+  .screen .filters {
+    border-right: 5px solid #536951;
+  }
+  .screen .details {
+    border-left: 5px solid #536951;
+  }
+  .screen .results {
+    border: 3px solid #536951;
+  }
+  @container (width < 600px) {
+    .screen .filters,
+    .screen .details {
+      border-inline: 0;
+      border-top: 5px solid #536951;
     }
   }
 </style>

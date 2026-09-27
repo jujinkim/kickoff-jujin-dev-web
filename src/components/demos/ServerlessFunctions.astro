@@ -113,6 +113,24 @@ const reader = t("Mina", "민아", "美奈");
       "ストアもページメモリ上の模型です。再起動では残り、リセット・再読み込みで消えます。重複防止は独自のアプリ処理です。",
     )}
   </p>
+  <dl class="runtime-facts" data-runtime-facts>
+    <dt>{t("Execution boundary", "실행 경계", "実行境界")}</dt>
+    <dd>
+      {t(
+        "Request → managed invocation → external store. Instance memory may disappear between invocations.",
+        "요청 → 관리형 호출 → 외부 저장소. 호출 사이에 인스턴스 메모리가 사라질 수 있습니다.",
+        "要求→管理された呼び出し→外部ストア。呼び出し間にインスタンスメモリが消えることがあります。",
+      )}
+    </dd>
+    <dt>{t("State and responsibility", "상태와 책임", "状態と責任")}</dt>
+    <dd>
+      {t(
+        "Platform manages servers; application owner manages retries, access, monitoring and durable records.",
+        "플랫폼은 서버를 관리하고 앱 담당자는 재시도·접근·관찰·영속 기록을 관리합니다.",
+        "基盤はサーバーを管理し、アプリ担当は再試行・アクセス・監視・永続記録を管理します。",
+      )}
+    </dd>
+  </dl>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -176,5 +194,48 @@ const reader = t("Mina", "민아", "美奈");
   .lanes section {
     border-radius: 22px;
     border-style: dashed;
+  }
+  .runtime-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 2fr);
+    gap: 10px 16px;
+    border-block: 1px solid currentColor;
+    padding: 18px 0;
+    margin: 18px 0;
+    font-size: 0.85rem;
+  }
+  .runtime-facts dt {
+    font-weight: 700;
+  }
+  .runtime-facts dd {
+    margin: 0;
+    min-width: 0;
+  }
+  @container (width<480px) {
+    .runtime-facts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .runtime {
+    border: 4px dashed #486086;
+    padding: 24px;
+  }
+  .lanes {
+    gap: 32px;
+  }
+  .lanes > section {
+    border: 4px solid #486086;
+    border-radius: 40px;
+  }
+  .store {
+    margin-top: 38px;
+    border-width: 7px;
+    border-radius: 50% / 12%;
+  }
+  [data-generation],
+  [data-calls] {
+    font-size: 1.7rem;
+    font-weight: 800;
   }
 </style>

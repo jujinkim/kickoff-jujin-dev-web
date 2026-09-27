@@ -3,7 +3,7 @@ kind: concept
 articleId: proportional
 lang: en
 title: Proportional
-summary: "Fit letter spacing to flowing newsletter text; tabular digits can still align numbers."
+summary: Varying character advances suit flowing text; letter spacing is a separate adjustment.
 category: character-width
 aliases:
   - Proportional
@@ -11,17 +11,16 @@ related:
   - theme
   - monospace
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 comparison:
-  features: Proportional letters use varying advance widths.
+  features: Varying character advances suit flowing text; letter spacing is a separate adjustment.
   advantages: Different advances fit letters to their individual proportions.
-  limitations: >-
-    Font coverage and number features vary; measure the loaded face rather than
-    infer widths from its name.
+  limitations: Font coverage and number features vary; measure the loaded face rather than infer widths from its name.
   suitable: Choose it for flowing text.
   combinations: Both serif and sans-serif can be proportional; tabular digits can coexist.
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
@@ -30,7 +29,7 @@ Imagine a garden newsletter with long paragraphs. Giving narrow and wide letters
 
 ## How: work toward a solution
 
-For a garden newsletter, compare a phrase with iiiWWW 0123 and aligned numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. The measured i and W advances differ; tabular digits can still align.
+Read the garden letter, then use the separate width lab. The loaded Noto Sans gives i and W different advances. Tabular digits can still align numbers. Changing letter spacing is not what makes the face proportional.
 
 ## What: the concept
 

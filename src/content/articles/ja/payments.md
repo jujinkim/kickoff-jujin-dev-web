@@ -1,30 +1,30 @@
 ---
 kind: guide
-articleId: "payments"
-lang: "ja"
-title: "決済経路とPG・MoR：TossとLemon Squeezy"
-summary: "決済ボタンは事務作業の始まりです。"
-category: "business"
+articleId: payments
+lang: ja
+title: 決済経路とPG・MoR：TossとLemon Squeezy
+summary: 信頼できる決済根拠を重複に安全な権限付与と販売責任につなぎます。
+category: business
 aliases:
-  [
-    "PG",
-    "MoR",
-    "Toss Payments",
-    "Lemon Squeezy",
-    "결제",
-    "토스",
-    "전자결제대행",
-    "決済",
-    "販売責任者",
-  ]
-related: ["revenue", "shipping"]
-example: "payments"
-status: "published"
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-aiPrompt: "まず合意した事業モデルを読んで。決済が対象外なら対象外のままにして。必要なら商品・販売者所在地・顧客・配信経路に合う決済方式と提供者を比較し、ストア課金は該当する場合だけ含めて。不足情報だけ質問し、確定済みの選択を保って。日付付きの公式根拠で資格・料金・税の範囲・返金・精算を確認し、不明点を示して選定前に質問して。信頼できる決済確認、繰り返しても重複付与しない権限処理、復旧の検証を要件に含めて。"
-checked: "2026-09-23"
+  - PG
+  - MoR
+  - Toss Payments
+  - Lemon Squeezy
+  - 결제
+  - 토스
+  - 전자결제대행
+  - 決済
+  - 販売責任者
+related:
+  - revenue
+  - shipping
+example: payments
+status: published
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+aiPrompt: まず合意した事業モデルを読んで。決済が対象外なら対象外のままにして。必要なら商品・販売者所在地・顧客・配信経路に合う決済方式と提供者を比較し、ストア課金は該当する場合だけ含めて。不足情報だけ質問し、確定済みの選択を保って。日付付きの公式根拠で資格・料金・税の範囲・返金・精算を確認し、不明点を示して選定前に質問して。信頼できる決済確認、繰り返しても重複付与しない権限処理、復旧の検証を要件に含めて。
+checked: "2026-09-27"
 ---
 
 ## なぜ必要なのか

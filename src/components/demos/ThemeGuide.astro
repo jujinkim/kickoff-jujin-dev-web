@@ -1,0 +1,367 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section
+  data-demo="theme"
+  data-theme-choice="light"
+  lang={lang}
+  data-reset-message={t(
+    "Light example restored.",
+    "밝은 예제로 돌아왔습니다.",
+    "明るい例に戻りました。",
+  )}
+  data-switched={t(
+    "Card and form now use the selected theme.",
+    "카드와 폼에 선택한 테마를 적용했습니다.",
+    "カードとフォームに選んだテーマを適用しました。",
+  )}
+  data-confirmed={t(
+    "Interest noted in this example only.",
+    "이 예제 안에서만 관심을 표시했습니다.",
+    "この例の中だけで関心を記録しました。",
+  )}
+  data-missing={t(
+    "Choose a session first.",
+    "회차를 먼저 고르세요.",
+    "先に回を選んでください。",
+  )}
+>
+  <header>
+    <p>
+      {t(
+        "COMMUNITY WORKSHOP / SEMANTIC TOKENS",
+        "동네 워크숍 / 의미별 토큰",
+        "地域の講座 / 意味別トークン",
+      )}
+    </p>
+    <h2>
+      {t(
+        "The same card. The same form.",
+        "같은 카드, 같은 폼",
+        "同じカード、同じフォーム",
+      )}
+    </h2>
+  </header>
+  <div
+    class="themes"
+    role="group"
+    aria-label={t("Example theme", "예제 테마", "例のテーマ")}
+  >
+    <button
+      type="button"
+      data-choice="light"
+      data-interactive
+      disabled
+      aria-pressed="true"
+    >
+      {t("Light", "밝게", "ライト")}
+    </button>
+    <button
+      type="button"
+      data-choice="dark"
+      data-interactive
+      disabled
+      aria-pressed="false"
+    >
+      {t("Dark", "어둡게", "ダーク")}
+    </button>
+  </div>
+  <div class="samples">
+    <article class="card">
+      <span class="tag">{t("Garden workshop", "정원 워크숍", "庭の講座")}</span>
+      <h3>
+        {t("Grow herbs together", "함께 허브 키우기", "一緒にハーブを育てる")}
+      </h3>
+      <p>
+        {t(
+          "Bring a small pot. Soil and seeds are provided.",
+          "작은 화분을 가져오세요. 흙과 씨앗은 준비되어 있습니다.",
+          "小さな鉢を持参してください。土と種を用意します。",
+        )}
+      </p>
+      <p class="secondary">
+        {t(
+          "Saturday · 10:00 · Garden room",
+          "토요일 · 10:00 · 정원방",
+          "土曜 · 10:00 · 庭の部屋",
+        )}
+      </p>
+    </article>
+    <form novalidate>
+      <h3>{t("Choose a session", "회차 고르기", "回を選ぶ")}</h3>
+      <label>
+        {t("Session", "회차", "回")}
+        <select
+          data-session
+          data-interactive
+          disabled
+          aria-describedby="theme-error"
+        >
+          <option value="">{t("Select…", "선택…", "選択…")}</option>
+          <option value="morning">
+            {t("Morning · 10:00", "오전 · 10:00", "午前 · 10:00")}
+          </option>
+          <option value="afternoon">
+            {t("Afternoon · 14:00", "오후 · 14:00", "午後 · 14:00")}
+          </option>
+        </select>
+      </label>
+      <p id="theme-error" class="error" data-error hidden>
+        {t(
+          "Choose a session first.",
+          "회차를 먼저 고르세요.",
+          "先に回を選んでください。",
+        )}
+      </p>
+      <button class="action" type="submit" data-interactive disabled>
+        {t("Show interest", "관심 표시", "関心を示す")}
+      </button>
+    </form>
+  </div>
+  <dl class="tokens">
+    <div>
+      <dt>surface / text</dt>
+      <dd>{t("Card and form", "카드와 폼", "カードとフォーム")}</dd>
+    </div>
+    <div>
+      <dt>action / on-action</dt>
+      <dd>{t("Button and label", "버튼과 글자", "ボタンと文字")}</dd>
+    </div>
+    <div>
+      <dt>focus / error</dt>
+      <dd>{t("Keyboard and feedback", "키보드와 안내", "キーボードと案内")}</dd>
+    </div>
+  </dl>
+  <p class="secondary">
+    {t(
+      "Only this example changes. A text error and focus outline remain visible in both themes; reload restores light.",
+      "이 예제만 바뀝니다. 두 테마 모두 오류 문구와 포커스 윤곽을 유지하며 새로고침하면 밝게 돌아갑니다.",
+      "変わるのはこの例だけです。両テーマでエラー文とフォーカス輪郭を保ち、再読込でライトに戻ります。",
+    )}
+  </p>
+  <button type="button" data-reset data-interactive disabled>
+    {t("Reset", "초기화", "リセット")}
+  </button>
+  <p role="status" aria-live="polite"></p>
+</section>
+<script>
+  import { mount } from "./shared";
+  mount("theme", (root, say) => {
+    const select = root.querySelector<HTMLSelectElement>("[data-session]")!;
+    const error = root.querySelector<HTMLElement>("[data-error]")!;
+    const choose = (choice: string) => {
+      root.dataset.themeChoice = choice;
+      root
+        .querySelectorAll<HTMLButtonElement>("[data-choice]")
+        .forEach((b) =>
+          b.setAttribute("aria-pressed", String(b.dataset.choice === choice)),
+        );
+    };
+    root.querySelectorAll<HTMLButtonElement>("[data-choice]").forEach((b) =>
+      b.addEventListener("click", () => {
+        choose(b.dataset.choice!);
+        say(root.dataset.switched!);
+      }),
+    );
+    root.querySelector("form")!.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const invalid = !select.value;
+      error.hidden = !invalid;
+      select.setAttribute("aria-invalid", String(invalid));
+      say(invalid ? root.dataset.missing! : root.dataset.confirmed!);
+      if (invalid) select.focus();
+    });
+    select.addEventListener("change", () => {
+      error.hidden = true;
+      select.removeAttribute("aria-invalid");
+      say("");
+    });
+    return () => {
+      choose("light");
+      select.value = "";
+      error.hidden = true;
+      select.removeAttribute("aria-invalid");
+    };
+  });
+</script>
+<style>
+  section {
+    --surface: #fff;
+    --text: #233a35;
+    --secondary: #4a605b;
+    --page: #edf4ee;
+    --border: #788e84;
+    --action: #245c43;
+    --on-action: #fff;
+    --focus: #76551a;
+    --error: #a12124;
+    container-type: inline-size;
+    color-scheme: light;
+    background: var(--page);
+    color: var(--text);
+    padding: clamp(18px, 4vw, 34px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  section[data-theme-choice="dark"] {
+    color-scheme: dark;
+    --surface: #223930;
+    --text: #f0f7ed;
+    --secondary: #c2d4c7;
+    --page: #15271f;
+    --border: #92a799;
+    --action: #b6e5c5;
+    --on-action: #173121;
+    --focus: #ffd779;
+    --error: #ffb6b0;
+  }
+  header p {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin: 12px 0 20px;
+  }
+  h3 {
+    font-size: 1.3rem;
+    margin: 12px 0;
+  }
+  .themes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+  .samples {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .card,
+  form {
+    background: var(--surface);
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .tag {
+    font-size: 0.76rem;
+    border-bottom: 2px solid var(--action);
+    padding-bottom: 4px;
+  }
+  .secondary {
+    color: var(--secondary);
+    font-size: 0.86rem;
+  }
+  label {
+    display: grid;
+    gap: 10px;
+  }
+  .error {
+    color: var(--error);
+    font-weight: 700;
+  }
+  .tokens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 24px 0;
+  }
+  .tokens > div {
+    flex: 1;
+    min-width: 130px;
+  }
+  dt {
+    font: 0.8rem monospace;
+    font-weight: 700;
+  }
+  dd {
+    margin: 4px 0;
+    font-size: 0.8rem;
+  }
+  button,
+  select {
+    font: inherit;
+    max-width: 100%;
+    min-height: 44px;
+    padding: 10px 16px;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    opacity: 0.65;
+    cursor: default;
+  }
+  button[aria-pressed="true"] {
+    outline: 2px solid var(--action);
+    outline-offset: 2px;
+  }
+  .action {
+    background: var(--action);
+    color: var(--on-action);
+    margin-top: 20px;
+  }
+  select[aria-invalid="true"] {
+    border: 2px solid var(--error);
+  }
+  :focus-visible {
+    outline: 3px dashed var(--focus);
+    outline-offset: 4px;
+  }
+  [role="status"] {
+    min-height: 1.6em;
+    font-size: 0.86rem;
+    margin-bottom: 0;
+  }
+  @container (width < 560px) {
+    .samples {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (forced-colors: active) {
+    section {
+      --surface: Canvas;
+      --text: CanvasText;
+      --secondary: CanvasText;
+      --page: Canvas;
+      --border: CanvasText;
+      --action: ButtonFace;
+      --on-action: ButtonText;
+      --focus: Highlight;
+      --error: CanvasText;
+    }
+  }
+
+  .samples {
+    gap: 28px;
+  }
+  .card,
+  form {
+    border: 3px solid var(--border);
+    padding: 28px;
+  }
+  .tokens dt {
+    font-size: 1rem;
+    font-weight: 800;
+  }
+  .action {
+    min-height: 58px;
+    border-radius: 28px;
+  }
+</style>

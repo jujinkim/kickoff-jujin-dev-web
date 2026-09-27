@@ -1,433 +1,353 @@
 ---
 import type { Lang } from "../../lib/i18n";
-import { workshop } from "./workshop";
+import { local } from "./shared";
+import { photo } from "./photos";
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
-const w = workshop(lang, "glassmorphism");
-const prefix = "glassmorphism-" + lang;
+const t = local(lang);
+const routes = [
+  {
+    title: t("Along the lake", "호숫가 산책", "湖畔の散歩"),
+    distance: "2.4 km",
+    time: t("45 min", "45분", "45分"),
+    description: t(
+      "A gentle shoreline path, with a quiet spot for morning reflections.",
+      "아침 햇살이 비치는 잔잔한 호수를 따라 걷는 완만한 길입니다.",
+      "朝の光が映る静かな湖に沿って歩く、緩やかな道です。",
+    ),
+  },
+  {
+    title: t("Into the pines", "소나무 숲길", "松林の小道"),
+    distance: "4.1 km",
+    time: t("80 min", "80분", "80分"),
+    description: t(
+      "A longer climb through the trees, ending at a view across the water.",
+      "나무 사이로 조금 더 길게 올라가 호수 전망을 만나는 길입니다.",
+      "木々の間を少し長く登り、水面を見渡す道です。",
+    ),
+  },
+];
 ---
 
 <section
-  class="demo"
-  data-comparison="tasks"
   data-demo="glassmorphism"
   lang={lang}
-  data-reset-message={w.resetMessage}
-  data-completed-label={w.completed}
-  data-progress-label={w.progress}
+  data-reset-message={t(
+    "Lake route restored",
+    "호숫가 경로로 복원했습니다",
+    "湖畔のルートに戻しました",
+  )}
 >
-  <header>
-    <div>
-      <small>{w.identity} · 01</small>
-      <h2>{w.project}</h2>
-    </div>
-    <span class="mark" aria-hidden="true">
-      ✳
-    </span>
-  </header>
-  <nav aria-label={w.menu}>
-    {[
-      ["overview", w.overview],
-      ["tasks", w.tasksTitle],
-      ["resources", w.resourcesTitle],
-    ].map(([target, label]) => (
-      <a href={`#${prefix}-${target}`} data-section-link>
-        {label}
-      </a>
-    ))}
-  </nav>
-  <div class="workspace">
-    <div class="work-main">
-      <section
-        class="intro"
-        id={`${prefix}-overview`}
-        tabindex="-1"
-        aria-label={w.overview}
+  <img
+    class="landscape"
+    {...photo("lake-walk.png")}
+    alt={t(
+      "A mountain lake with a shoreline path and pine trees",
+      "산과 소나무 사이 호숫가 산책로",
+      "山と松林に囲まれた湖畔の小道",
+    )}
+    width="1536"
+    height="1024"
+  />
+  <div class="scene-content">
+    <header class="glass">
+      <span class="identity">
+        {t("WANDER / PHOTO WALKS", "WANDER / 사진 산책", "WANDER / 写真散歩")}
+      </span>
+      <span aria-hidden="true">↗</span>
+    </header>
+    <div class="scene-space" aria-hidden="true"></div>
+    <div class="glass route-card">
+      <p class="edition">
+        {t("FIELD NOTES · 01", "산책 기록 · 01", "散歩の記録 · 01")}
+      </p>
+      <h2>
+        {t(
+          "A little closer to nature.",
+          "자연에 조금 더 가까이.",
+          "自然に、もう少し近く。",
+        )}
+      </h2>
+      <div
+        class="route-options"
+        role="group"
+        aria-label={t("Walking route", "산책 경로", "散歩ルート")}
       >
-        <h3>{w.goal}</h3>
-        <p data-description>{w.description}</p>
-      </section>
-      <section id={`${prefix}-tasks`} tabindex="-1" aria-label={w.tasksTitle}>
-        <h3>{w.tasksTitle}</h3>
-        <div class="controls">
-          <label>
-            {w.status}
-            <select data-filter data-interactive disabled>
-              <option value="all">{w.all}</option>
-              <option value="open">{w.open}</option>
-              <option value="done">{w.done}</option>
-            </select>
-          </label>
-        </div>
-        <ul>
-          {w.tasks.map((text, i) => (
-            <li data-task>
-              <label>
-                <input type="checkbox" data-check data-interactive disabled />
-                <span class="task-label">{text}</span>
-              </label>
-              <small aria-hidden="true">0{i + 1}</small>
-            </li>
-          ))}
-        </ul>
-        <p data-empty hidden>
-          {w.empty}
-        </p>
-      </section>
-    </div>
-    <aside>
-      <section class="progress-panel" aria-label={w.progress}>
-        <h3>{w.progress}</h3>
-        <div class="progress-values">
-          <span>
-            {w.completed} <strong data-count>0 / 3</strong>
-          </span>
-          <strong data-percent>0%</strong>
-        </div>
-        <progress data-progress value="0" max="3" aria-label={w.progress}>
-          0 / 3
-        </progress>
-      </section>
-      <section
-        class="resources"
-        id={`${prefix}-resources`}
-        tabindex="-1"
-        aria-label={w.resourcesTitle}
-      >
-        <h3>{w.resourcesTitle}</h3>
-        {w.resources.map((resource) => (
-          <details data-resource>
-            <summary>
-              {resource.title}
-              <span>{w.note}</span>
-            </summary>
-            <p>{resource.note}</p>
-          </details>
+        {routes.map((route, i) => (
+          <button
+            type="button"
+            data-route={i}
+            aria-pressed={i === 0 ? "true" : "false"}
+            data-interactive
+            disabled
+          >
+            {route.title}
+          </button>
         ))}
-      </section>
-    </aside>
-  </div>
-  <footer>
-    <div class="footer-line">
-      <small data-footer-summary>{w.summary}</small>
+      </div>
+      {routes.map((route, i) => (
+        <div data-route-panel={i} hidden={i !== 0}>
+          <h3>{route.title}</h3>
+          <p>{route.description}</p>
+          <div class="route-meta">
+            <strong>{route.distance}</strong>
+            <span>{route.time}</span>
+            <span>{t("Fictional route", "가상의 경로", "架空のルート")}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+    <footer class="glass">
       <label>
         <input type="checkbox" data-opaque data-interactive disabled />
-        {w.opaque}
+        {t("Opaque panels", "불투명 패널", "不透明パネル")}
       </label>
-      <button class="reset" type="button" data-reset data-interactive disabled>
-        {w.reset}
+      <button type="button" data-reset data-interactive disabled>
+        {t("Reset", "초기화", "リセット")}
       </button>
-    </div>
-    <p role="status" aria-live="polite" aria-atomic="true">
-      {w.initialMessage}
-    </p>
-  </footer>
+      <p role="status" aria-live="polite" aria-atomic="true"></p>
+    </footer>
+  </div>
 </section>
 <script>
-  import { mountTasks } from "./tasks";
-  mountTasks("glassmorphism");
+  import { mount } from "./shared";
+  mount("glassmorphism", (root, say) => {
+    const buttons = root.querySelectorAll<HTMLButtonElement>("[data-route]");
+    const opaque = root.querySelector<HTMLInputElement>("input[data-opaque]")!;
+    const select = (index: string) => {
+      buttons.forEach((button) =>
+        button.setAttribute(
+          "aria-pressed",
+          String(button.dataset.route === index),
+        ),
+      );
+      root
+        .querySelectorAll<HTMLElement>("[data-route-panel]")
+        .forEach(
+          (panel) => (panel.hidden = panel.dataset.routePanel !== index),
+        );
+    };
+    buttons.forEach((button) =>
+      button.addEventListener("click", () => {
+        select(button.dataset.route!);
+        say(button.textContent!.trim());
+      }),
+    );
+    opaque.addEventListener(
+      "change",
+      () => (root.dataset.opaque = String(opaque.checked)),
+    );
+    return () => {
+      select("0");
+      opaque.checked = false;
+      root.dataset.opaque = "false";
+    };
+  });
 </script>
 <style>
-  /* Local control baseline. Astro scopes every selector to this component. */
-  .demo {
-    min-width: 0;
-    overflow-wrap: anywhere;
-    padding: clamp(16px, 3vw, 32px);
+  section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: #152c30;
     color-scheme: light;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  :is(h2, h3, p) {
-    margin: 0 0 1rem;
-  }
-  h2 {
-    font-size: 2rem;
-    line-height: 1.15;
-  }
-  h3 {
-    font-size: 1.15rem;
-  }
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    margin: 18px 0;
-  }
-  label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    max-width: 100%;
-  }
-  :is(button, select, input, textarea) {
-    font: inherit;
-    max-width: 100%;
-    color: inherit;
-  }
-
-  :is(button, select, input:not([type="checkbox"]):not([type="range"])) {
-    min-height: 44px;
-    padding: 8px 12px;
-  }
-  :is(button, select) {
-    cursor: pointer;
-  }
-  button {
-    border: 1px solid currentColor;
-    background: transparent;
-  }
-  :is(input, textarea, select) {
-    background: #fff;
-    color: #172329;
-    border: 1px solid #67747c;
-  }
-  input[type="range"] {
-    width: 150px;
-  }
-  input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
-  }
-  :focus-visible {
-    outline: 3px dashed currentColor;
-    outline-offset: 4px;
-  }
-  [hidden] {
-    display: none !important;
-  }
-  [role="status"] {
-    min-height: 1.5em;
-    font-size: 0.85rem;
-    margin-top: 16px;
-  }
-  small {
-    font-size: 0.8rem;
-  }
-  .reset {
-    margin-top: 20px;
-    font-size: 0.85rem;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
-
-  [data-task] label {
-    flex-wrap: nowrap;
-    min-width: 0;
-  }
-  [data-task] input {
-    flex: none;
-  }
-  [data-task] small {
-    flex: none;
-    white-space: nowrap;
-  }
-
-  .demo {
+    background: #9bc2d0;
+    border-radius: 8px;
     container-type: inline-size;
   }
+  .landscape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+    z-index: -1;
+  }
+  .scene-content {
+    padding: clamp(16px, 4vw, 36px);
+  }
+  .glass {
+    background: rgb(255 255 255 / 58%);
+    border: 1px solid #ffffffa6;
+    border-radius: 14px;
+    backdrop-filter: blur(10px) saturate(1.35);
+    box-shadow:
+      inset 0 1px 0 #ffffffe6,
+      inset 0 -1px 0 #ffffff33,
+      0 12px 32px #0929323d;
+  }
   header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    padding: 24px 0;
+    align-items: center;
+    padding: 18px 22px;
   }
-  header .mark {
-    font-size: 2.8rem;
-    flex: none;
+  .identity {
+    font-size: 0.8rem;
+    letter-spacing: 0.09em;
+    font-weight: 700;
   }
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+  .scene-space {
+    height: 130px;
+  }
+  .route-card {
+    max-width: 490px;
+    padding: clamp(20px, 3vw, 32px);
+  }
+  .edition {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    margin: 0 0 12px;
+  }
+  h2 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.12;
     margin: 0 0 24px;
+    letter-spacing: -0.035em;
   }
-  nav a {
+  h3 {
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px;
     color: inherit;
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 8px 12px;
-    text-decoration: none;
   }
-  .workspace {
-    display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-    gap: 24px;
+  p {
+    line-height: 1.65;
+    font-size: 0.9rem;
   }
-  .work-main,
-  aside {
-    min-width: 0;
-  }
-  .intro {
-    margin-bottom: 24px;
-  }
-  h2,
-  h3 {
-    font-family: inherit;
-  }
-  h3 {
-    line-height: 1.3;
-  }
-  .controls {
-    margin: 18px 0;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 20px 12px;
-  }
-  li label {
-    flex: 1;
-    min-height: 44px;
-    cursor: pointer;
-  }
-  li:has(:checked) .task-label {
-    text-decoration: line-through;
-  }
-  .progress-panel {
-    padding: 20px;
-    margin-bottom: 24px;
-  }
-  .progress-values {
+  .route-options {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
   }
-  progress {
-    width: 100%;
-    height: 12px;
-    display: block;
-  }
-  details {
-    margin-top: 12px;
-    padding: 16px;
-  }
-  summary {
-    cursor: pointer;
+  button {
+    padding: 10px 14px;
     min-height: 44px;
+    border: 1px solid #63777b;
+    border-radius: 8px;
+    background: #f8ffff;
+    color: #152c30;
+    font-size: 0.85rem;
   }
-  summary span {
-    display: block;
-    margin-top: 6px;
+  button[aria-pressed="true"] {
+    color: white;
+    background: #244c4f;
+    border-color: #244c4f;
+  }
+  .route-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 12px 22px;
+    padding-top: 14px;
+    border-top: 1px solid #829a9e;
     font-size: 0.8rem;
   }
-  details p {
-    margin: 16px 0 0;
-    line-height: 1.6;
+  .route-meta strong {
+    font-size: 1.5rem;
+    font-weight: 500;
   }
   footer {
-    margin-top: 28px;
-    padding-top: 20px;
-  }
-  footer .footer-line {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
     align-items: center;
-    justify-content: space-between;
+    gap: 8px 20px;
+    padding: 12px 18px;
+    margin-top: 18px;
   }
-  footer .reset {
+  footer label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    min-height: 44px;
+  }
+  input {
+    width: 20px;
+    height: 20px;
+    accent-color: #244c4f;
+  }
+  footer button {
+    margin-left: auto;
+  }
+  [role="status"] {
+    flex: 1 1 100%;
+    font-size: 0.8rem;
     margin: 0;
   }
-  [data-empty] {
-    padding: 20px 0;
+  [role="status"]:empty {
+    display: none;
   }
-  @container (width < 600px) {
-    .workspace {
-      grid-template-columns: minmax(0, 1fr);
-    }
+  :focus-visible {
+    outline: 3px solid #152c30;
+    outline-offset: 3px;
   }
-  .demo {
-    background:
-      radial-gradient(ellipse at 8% 20%, #77d7f1, transparent 48%),
-      radial-gradient(ellipse at 92% 70%, #dc95e9, transparent 50%), #5265a6;
-    color: #152b4b;
-  }
-  header,
-  nav,
-  .work-main,
-  .progress-panel,
-  .resources {
-    background: #ffffffb8;
-    border: 1px solid #fff;
-    border-radius: 22px;
-    backdrop-filter: blur(18px);
-    box-shadow: 0 12px 28px #18264522;
-  }
-  header {
-    padding: 24px;
-    margin-bottom: 16px;
-  }
-  nav {
-    padding: 8px;
-  }
-  .work-main,
-  .resources {
-    padding: 20px;
-  }
-  li {
-    border-bottom: 1px solid #8599b0;
-    padding-inline: 0;
-  }
-  details {
-    background: #ffffff70;
-    border: 1px solid #fff;
-    border-radius: 12px;
-  }
-  button,
-  select {
-    border: 1px solid #fff;
-    background: #eef5ff;
-    color: #152b4b;
-    border-radius: 10px;
-  }
-  footer {
-    color: white;
-  }
-  input,
-  progress {
-    accent-color: #284878;
-  }
-  .demo[data-opaque="true"]
-    :is(header, nav, .work-main, .progress-panel, .resources) {
-    background: #f1f6ff;
+  section[data-opaque="true"] .glass {
+    background: #f1f7f6;
     backdrop-filter: none;
   }
+  @media (prefers-reduced-transparency: reduce) {
+    .glass {
+      background: #f1f7f6;
+      backdrop-filter: none;
+    }
+  }
+  @media (forced-colors: active) {
+    .glass {
+      background: Canvas;
+      border: 1px solid CanvasText;
+      color: CanvasText;
+      backdrop-filter: none;
+    }
+    button[aria-pressed="true"] {
+      outline: 2px solid Highlight;
+    }
+  }
+  @container (width < 400px) {
+    .scene-space {
+      height: 70px;
+    }
+    .route-card {
+      padding: 20px;
+    }
+    .route-options button {
+      width: 100%;
+    }
+  }
+
+  .glass {
+    backdrop-filter: blur(24px) saturate(1.35);
+    background: rgb(255 255 255 / 62%);
+    border-radius: 8px;
+    border: 1px solid #ffffffd9;
+  }
+  .route-card {
+    border-left: 8px solid #ffffffb8;
+  }
+  section[data-opaque="true"] .glass {
+    backdrop-filter: none;
+    background: #f4f8f7;
+  }
   @supports not (backdrop-filter: blur(1px)) {
-    header,
-    nav,
-    .work-main,
-    .progress-panel,
-    .resources {
-      background: #f1f6ff;
+    .glass {
+      background: #f4f8f7;
     }
   }
   @media (prefers-reduced-transparency: reduce) {
-    header,
-    nav,
-    .work-main,
-    .progress-panel,
-    .resources {
-      background: #f1f6ff;
+    .glass {
+      backdrop-filter: none;
+      background: #f4f8f7;
+    }
+  }
+  @media (forced-colors: active) {
+    .glass {
+      background: Canvas;
+      border-color: CanvasText;
       backdrop-filter: none;
     }
   }

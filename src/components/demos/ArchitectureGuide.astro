@@ -95,8 +95,21 @@ const owners = [
       )}
     </p>
   </div>
+  <p class="scope-note">
+    {t(
+      "Call sequence is not an import graph. This sketch leaves deployment units open; modules in one process share that process’s failure scope.",
+      "호출 순서는 소스 의존 그래프와 다릅니다. 배포 단위는 미정이며 한 프로세스의 모듈은 해당 프로세스의 장애 범위를 공유합니다.",
+      "呼出順はソース依存の図と異なります。配布単位は未定で、同一プロセスのモジュールはその障害範囲を共有します。",
+    )}
+  </p>
 </section>
 <style>
+  .scope-note {
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid currentColor;
+    font-size: 0.85rem;
+  }
   section {
     container-type: inline-size;
     padding: clamp(16px, 3vw, 28px);
@@ -114,6 +127,7 @@ const owners = [
     margin: 0;
   }
   .eyebrow {
+    color: inherit;
     font-size: 0.82rem;
     font-weight: 700;
   }
@@ -175,5 +189,28 @@ const owners = [
     .owners {
       grid-template-columns: 1fr;
     }
+  }
+
+  .coordinator {
+    max-width: 540px;
+    margin-inline: auto;
+    border: 5px solid #354f67;
+    padding: 26px;
+  }
+  .coordinator strong {
+    font-size: 1.5rem;
+  }
+  .owners {
+    gap: 22px;
+    border-top: 5px solid #354f67;
+    padding-top: 28px;
+  }
+  .owners li {
+    border: 3px solid #354f67;
+    padding: 24px;
+  }
+  .outcomes {
+    border-top: 4px dashed #354f67;
+    padding-top: 26px;
   }
 </style>

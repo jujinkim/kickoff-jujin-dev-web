@@ -28,7 +28,7 @@ export function mountUi(id: string) {
         update();
         field(root, "[data-path-state]").textContent = root.dataset.updatePath!;
         say(
-          `${b.dataset.save}: ${p.saved}. ${p.count}: ${saved.size}. ${root.dataset.updatePath}`,
+          `${b.dataset.label ?? b.dataset.save}: ${p.saved}. ${p.count}: ${saved.size}. ${root.dataset.updatePath}`,
         );
       }),
     );

@@ -97,6 +97,8 @@ export function validateDesigns(
         errors.push(`${id}/${lang}: missing localized caption`);
       if (thumbnails && !exists(`public/thumbnails/${id}-${lang}.png`))
         errors.push(`${id}/${lang}: missing thumbnail`);
+      if (thumbnails && !exists(`public/thumbnails/${id}-${lang}.webp`))
+        errors.push(`${id}/${lang}: missing optimized thumbnail`);
     }
   }
   return errors;

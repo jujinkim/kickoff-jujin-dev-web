@@ -1,233 +1,293 @@
 ---
 import type { Lang } from "../../lib/i18n";
 import { local } from "./shared";
-import { resources, resourceScene } from "./resources";
-import "./comparison-base.css";
+import { photo } from "./photos";
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = local(lang);
-const items = resources(lang);
-const scene = resourceScene(lang, "single-column");
+const stops = [
+  {
+    name: t("Lakeside entrance", "호숫가 입구", "湖畔の入口"),
+    distance: "0 km",
+    text: t(
+      "Start beside the low wooden gate. Follow the shoreline to the first bend.",
+      "낮은 나무문 옆에서 시작해 물가를 따라 첫 굽이까지 걷습니다.",
+      "低い木の門から、湖沿いの最初の曲がり角まで歩きます。",
+    ),
+    extra: t(
+      "The broad gravel path leads toward the pine trees. Keep the lake on your left.",
+      "넓은 자갈길이 소나무 쪽으로 이어집니다. 호수를 왼쪽에 두세요.",
+      "広い砂利道が松の木へ続きます。湖を左に見ながら進みます。",
+    ),
+  },
+  {
+    name: t("Pine shade", "소나무 그늘", "松の木陰"),
+    distance: "0.6 km",
+    text: t(
+      "The path narrows through the trees. Pause at the bench before continuing.",
+      "나무 사이로 길이 좁아집니다. 벤치에서 쉬었다가 이어 걸으세요.",
+      "木々の間で道が狭くなります。ベンチで休んでから進みます。",
+    ),
+    extra: t(
+      "There are shallow roots across this section. The bench marks the halfway rest point.",
+      "이 구간에는 얕은 뿌리가 길을 가로지릅니다. 벤치는 중간 휴식 지점입니다.",
+      "浅い根が道を横切ります。ベンチが途中の休憩地点です。",
+    ),
+  },
+  {
+    name: t("Water viewpoint", "물가 전망대", "水辺の展望所"),
+    distance: "1.2 km",
+    text: t(
+      "The trees open to a view across the lake. Return along the same path.",
+      "나무가 걷히며 호수가 펼쳐집니다. 같은 길로 돌아오세요.",
+      "木々が途切れ、湖の眺めが広がります。同じ道を戻ります。",
+    ),
+    extra: t(
+      "Allow time for the return walk. This fictional route illustrates reading order rather than live trail conditions.",
+      "돌아갈 시간도 남겨 두세요. 실제 탐방로 상황이 아닌 읽기 순서를 보여주는 가상 경로입니다.",
+      "帰りの時間も確保しましょう。実際の道の状況ではなく、読む順序を示す架空のルートです。",
+    ),
+  },
+];
 ---
 
 <section
   class="demo"
   data-demo="single-column"
-  data-comparison="resources"
   lang={lang}
-  data-reset-message={t(
-    "Initial state restored",
-    "초기 상태로 복원했습니다",
-    "初期状態に戻しました",
-  )}
+  data-reset-message={t("Reset", "초기화", "リセット")}
 >
   <header>
-    <small>{t("COLLECTED / 06", "수집 자료 / 06", "収集資料 / 06")}</small>
-    <h2>{scene.title}</h2>
-    <p>{scene.goal}</p>
+    <small>{t("WALK SLOWLY", "천천히 걷기", "ゆっくり歩く")}</small>
+    <h2>{t("Along the lake", "호수를 따라", "湖に沿って")}</h2>
+    <p>
+      {t(
+        "Three stops, one clear route.",
+        "세 지점을 하나의 경로로.",
+        "3か所を一つの道で。",
+      )}
+    </p>
+    <img
+      {...photo("lake-walk.png")}
+      width="1536"
+      height="1024"
+      alt={t(
+        "Lake and pine-lined walking path",
+        "호수와 소나무 산책길",
+        "湖と松並木の散歩道",
+      )}
+    />
   </header>
-  <div class="controls">
-    <label>
-      {t("Preview width", "미리보기 폭", "表示幅")}
-      <select data-width data-interactive disabled>
-        <option value="wide">{t("Wide", "넓게", "広い")}</option>
-        <option value="narrow">{t("Narrow", "좁게", "狭い")}</option>
-      </select>
-    </label>
-  </div>
-  <div class="frame" data-width="wide">
-    <div class="workspace">
-      <nav aria-label={t("Resource filters", "자료 필터", "資料の絞り込み")}>
-        <label>
-          {t("Topic", "주제", "テーマ")}
-          <select data-filter data-interactive disabled>
-            <option value="all">{t("All", "전체", "すべて")}</option>
-            <option value="color">{t("Color", "색", "色")}</option>
-            <option value="form">{t("Form", "형태", "形")}</option>
-            <option value="type">{t("Type", "글자", "文字")}</option>
-          </select>
-        </label>
-        <label>
-          {t("Order", "순서", "順序")}
-          <select data-sort data-interactive disabled>
-            <option value="original">
-              {t("Collection order", "수집 순서", "収集順")}
-            </option>
-            <option value="reverse">
-              {t("Reverse order", "역순", "逆順")}
-            </option>
-          </select>
-        </label>
-        <strong data-count>6 / 6</strong>
-      </nav>
-      <div class="board">
-        {items.map((item) => (
-          <article data-tile data-id={item.id} data-topic={item.topic}>
-            <div class={`art art-${item.id}`} aria-hidden="true">
-              {item.symbol}
-            </div>
-            <div class="description">
-              <small>0{item.id + 1}</small>
-              <h3 data-resource-title>{item.title}</h3>
-              <p>{item.description}</p>
-              <details>
-                <summary>{t("Study notes", "연구 메모", "研究メモ")}</summary>
-                <p>
-                  {t(
-                    "Compare shape, spacing, and contrast. Keep this resource beside the next draft and revisit the details.",
-                    "형태, 간격, 대비를 비교합니다. 다음 초안 곁에 자료를 두고 세부를 다시 살펴보세요.",
-                    "形、間隔、コントラストを比べます。次の案の横に資料を置き、細部を見直してください。",
-                  )}
-                </p>
-              </details>
-            </div>
-          </article>
-        ))}
-      </div>
-      <aside>
-        <h3>{t("Study guide", "연구 안내", "研究ガイド")}</h3>
-        <p>
-          {t(
-            "Collect → compare → revise",
-            "수집 → 비교 → 수정",
-            "収集 → 比較 → 修正",
-          )}
-        </p>
-        <p>
-          {t(
-            "Six resources, one collection.",
-            "자료 6개, 하나의 모음.",
-            "6件の資料、ひとつのコレクション。",
-          )}
-        </p>
-      </aside>
-    </div>
-  </div>
-  <button class="reset" type="button" data-reset data-interactive disabled>
-    {t("Reset", "초기화", "リセット")}
-  </button>
-  <p role="status" aria-live="polite" aria-atomic="true"></p>
+  <ol>
+    {stops.map((s, i) => (
+      <li>
+        <small>
+          0{i + 1} · {s.distance}
+        </small>
+        <h3>{s.name}</h3>
+        <p>{s.text}</p>
+        <details>
+          <summary>{t("Section details", "구간 설명", "区間の説明")}</summary>
+          <p>{s.extra}</p>
+        </details>
+      </li>
+    ))}
+  </ol>
+  <footer>
+    <button type="button" data-reset data-interactive disabled>
+      {t("Reset", "초기화", "リセット")}
+    </button>
+    <p role="status" aria-live="polite" aria-atomic="true"></p>
+  </footer>
 </section>
 <script>
-  import { mountResources } from "./resource-behavior";
-  mountResources("single-column", false);
+  import { mount } from "./shared";
+  mount("single-column", (root, say) => {
+    root.querySelectorAll("details").forEach((d) =>
+      d.addEventListener("toggle", () => {
+        if (d.open) say(d.closest("li")!.querySelector("h3")!.textContent!);
+      }),
+    );
+    return () =>
+      root.querySelectorAll("details").forEach((d) => (d.open = false));
+  });
 </script>
 <style>
   .demo {
-    background: #f3ece5;
-    color: #443730;
-  }
-  .frame {
-    container-type: inline-size;
-    margin: auto;
-  }
-  .frame[data-width="narrow"] {
-    max-width: 300px;
-  }
-  .workspace {
-    display: grid;
-    gap: 20px;
-    align-items: start;
-  }
-  .workspace > * {
     min-width: 0;
+    overflow-wrap: anywhere;
+    padding: clamp(16px, 4vw, 36px);
+    color-scheme: light;
+    container-type: inline-size;
   }
-  nav {
+  * {
+    box-sizing: border-box;
+  }
+  h2,
+  h3,
+  p {
+    margin: 0 0 16px;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 5cqi, 3rem);
+    line-height: 1.15;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+  p {
+    line-height: 1.65;
+  }
+  button,
+  select,
+  input {
+    font: inherit;
+    max-width: 100%;
+    color: inherit;
+  }
+  button,
+  select,
+  input:not([type="checkbox"]) {
+    min-height: 44px;
+    padding: 10px 14px;
+  }
+  button,
+  summary {
+    cursor: pointer;
+  }
+  button {
+    background: transparent;
+    border: 1px solid currentColor;
+  }
+  select,
+  input {
+    background: #fff;
+    color: #18252b;
+    border: 1px solid #59656a;
+  }
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    flex: none;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  :focus-visible {
+    outline: 3px dashed currentColor;
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  footer {
+    margin-top: 28px;
+  }
+  [role="status"] {
+    min-height: 1.5em;
+    margin-top: 16px;
+    font-size: 0.9rem;
+  }
+  .controls {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    padding: 16px;
-    background: #e5ddd3;
-    border: 1px solid #bead9e;
-    align-items: center;
+    margin: 20px 0;
   }
-  nav select {
-    width: 100%;
-    min-width: 0;
-  }
-  nav label {
-    min-width: 0;
-    display: grid;
-    gap: 8px;
-  }
-  .board {
-    display: grid;
-    gap: 16px;
-    align-items: start;
-    min-width: 0;
-    position: relative;
-  }
-  article {
-    min-width: 0;
-    padding: 14px;
-    background: #fffaf4;
-    border: 1px solid #bead9e;
-  }
-  .art {
-    display: grid;
-    place-items: center;
-    height: 120px;
-    font-size: 3rem;
-    background: #bdc9ad;
-    color: #3f5034;
-    margin-bottom: 16px;
-  }
-  .art-1 {
-    background: #dfb29c;
-    color: #6c3924;
-  }
-  .art-2 {
-    background: #c7cadc;
-    color: #454b70;
-  }
-  .art-3 {
-    background: #decf99;
-    color: #665824;
-  }
-  .art-4 {
-    background: #d1b7c5;
-    color: #664252;
-  }
-  .art-5 {
-    background: #a8c5c2;
-    color: #315a56;
-  }
-  article p,
-  aside p {
+  small {
     font-size: 0.85rem;
-    line-height: 1.65;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  @media (forced-colors: active) {
+    button,
+    input,
+    select {
+      border: 1px solid ButtonText;
+    }
+    button[aria-pressed="true"] {
+      outline: 2px solid Highlight;
+    }
+  }
+  .demo {
+    background: #f2f5ed;
+    color: #273d32;
+  }
+  header,
+  ol,
+  footer {
+    max-width: 620px;
+    margin-inline: auto;
+  }
+  h2 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    margin-top: 14px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    margin: 14px 0 24px;
+    border-radius: 4px;
+  }
+  ol {
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    padding: 28px 0;
+    border-bottom: 1px solid #98a592;
+  }
+  li small {
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 14px;
+  }
+  summary {
+    min-height: 44px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
   details p {
-    margin-top: 12px;
+    padding: 18px;
+    background: #e0e9db;
   }
-  aside {
-    border-block: 1px solid #bead9e;
-    padding: 16px 0;
+
+  header,
+  ol,
+  footer {
+    max-width: 520px;
   }
-  .frame {
-    max-width: 620px;
+  ol {
+    border-left: 3px solid #81947a;
+    padding-left: 26px;
   }
-  .workspace,
-  .board {
-    grid-template-columns: 1fr;
+  li {
+    position: relative;
+    padding-block: 36px;
   }
-  @container (max-width:450px) {
-    .workspace {
-      grid-template-columns: 1fr;
-    }
-    .workspace > * {
-      grid-column: auto;
-    }
-    .board {
-      grid-template-columns: 1fr;
-    }
-    article {
-      display: block;
-    }
-    .art {
-      max-width: 100%;
-    }
+  li::before {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #273d32;
+    left: -34px;
+    top: 40px;
+  }
+  header h2 {
+    font-size: clamp(2rem, 6cqi, 3.5rem);
   }
 </style>

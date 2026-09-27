@@ -3,7 +3,7 @@ kind: concept
 articleId: unreal-engine
 lang: ja
 title: Unreal Engine
-summary: アクターの構成とイベントを結び付けます。
+summary: ワールド中心の開発にActor・Blueprint・C++を組み合わせます。
 category: game-engines
 aliases:
   - Unreal Engine
@@ -12,10 +12,10 @@ related:
   - godot
   - unity
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: アクター・コンポーネント・Blueprintイベント
   advantages: ゲーム処理の経路を確認

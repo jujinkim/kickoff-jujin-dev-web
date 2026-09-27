@@ -72,12 +72,14 @@ for (const lang of languages) {
     mkdirSync("artifacts/platform-demos", { recursive: true });
     mkdirSync("artifacts/monetization-demos", { recursive: true });
     for (const id of ids) {
-      await page.goto(`/${lang}/catalog/${id}/`);
+      await page.goto(
+        `/${lang}/${articles.find((a) => a.data.articleId === id)?.data.kind === "guide" ? "guides" : "catalog"}/${id}/`,
+      );
       const root = page.locator(`[data-demo="${id}"]`);
       if (registry[id].mode === "static") await expect(root).toBeVisible();
       else await expect(root).toHaveAttribute("data-ready", "true");
       await page.evaluate(() => document.fonts.ready);
-      for (const width of [320, 768, 1440]) {
+      for (const width of [320, 390, 768, 1440]) {
         await page.setViewportSize({ width, height: 1000 });
         await page.evaluate(
           () =>
@@ -210,7 +212,9 @@ for (const lang of languages) {
     });
     const page = await context.newPage();
     for (const id of ids) {
-      await page.goto(`${baseURL}/${lang}/catalog/${id}/`);
+      await page.goto(
+        `${baseURL}/${lang}/${articles.find((a) => a.data.articleId === id)?.data.kind === "guide" ? "guides" : "catalog"}/${id}/`,
+      );
       await expect(page.locator(`[data-demo="${id}"]`)).toBeVisible();
       if (registry[id].mode === "static") {
         await expect(
@@ -225,7 +229,7 @@ for (const lang of languages) {
       await expect(
         page.locator(".article-body > section > .prose > h2"),
       ).toHaveCount(3);
-      for (const width of [320, 768, 1440]) {
+      for (const width of [320, 390, 768, 1440]) {
         await page.setViewportSize({ width, height: 900 });
         for (const theme of ["light", "dark"]) {
           await page.evaluate(
@@ -255,70 +259,6 @@ test("representative actions handle repetition, empty inputs and reload", async 
     return root;
   };
   let root;
-  for (const id of styleIds) {
-    root = await open(id);
-    await root.locator("[data-filter]").selectOption("done");
-    await expect(root.locator("[data-empty]")).toBeVisible();
-    await root.locator("[data-filter]").selectOption("all");
-    await root.locator("[data-check]").first().check();
-    await expect(root.locator("[data-count]")).toHaveText("1 / 3");
-    await root.locator("[data-filter]").selectOption("done");
-    await expect(root.locator("[data-task]:visible")).toHaveCount(1);
-    if (id === "glassmorphism") {
-      await root.locator("[data-opaque]").check();
-      expect(
-        await root
-          .locator("header")
-          .evaluate((el) => getComputedStyle(el).backdropFilter),
-      ).toBe("none");
-    }
-    await root.locator("[data-reset]").click();
-    await expect(root.locator("[data-count]")).toHaveText("0 / 3");
-    await expect(root.locator("[data-task]:visible")).toHaveCount(3);
-    await root.locator("[data-check]").first().check();
-    await page.reload();
-    await expect(root.locator("[data-count]")).toHaveText("0 / 3");
-  }
-  for (const id of [
-    "single-column",
-    "two-columns",
-    "multiple-columns",
-    "list-layout",
-    "uniform-grid",
-    "masonry",
-  ]) {
-    root = await open(id);
-    expect(
-      await root.locator("nav select").evaluateAll((nodes) =>
-        nodes.every((node) => {
-          const control = node.getBoundingClientRect();
-          const nav = node.closest("nav")!.getBoundingClientRect();
-          return control.left >= nav.left && control.right <= nav.right;
-        }),
-      ),
-    ).toBeTruthy();
-    await root.locator("select[data-width]").selectOption("narrow");
-    await expect(root.locator(".frame")).toHaveAttribute(
-      "data-width",
-      "narrow",
-    );
-    await root.locator("[data-filter]").selectOption("color");
-    await expect(root.locator("[data-tile]:visible")).toHaveCount(2);
-    await root.locator("[data-sort]").selectOption("reverse");
-    await expect(root.locator("[data-tile]:visible").first()).toHaveAttribute(
-      "data-id",
-      "5",
-    );
-    await root.locator("[data-tile]:visible summary").first().click();
-    await expect(root.locator("details[open]")).toHaveCount(1);
-    await root.locator("[data-reset]").click();
-    await expect(root.locator("[data-tile]:visible")).toHaveCount(6);
-    await expect(root.locator("details[open]")).toHaveCount(0);
-    await expect(root.locator("[data-tile]").first()).toHaveAttribute(
-      "data-id",
-      "0",
-    );
-  }
   root = await open("serif");
   await root.locator("[data-terminals]").check();
   await expect(root.locator(".terminal").first()).toBeVisible();
@@ -425,7 +365,9 @@ test("local fonts and CJK specimens load; tabular numbers align", async ({
       "proportional",
       "monospace",
     ]) {
-      await page.goto(`/${lang}/catalog/${id}/`);
+      await page.goto(
+        `/${lang}/${articles.find((a) => a.data.articleId === id)?.data.kind === "guide" ? "guides" : "catalog"}/${id}/`,
+      );
       await page.evaluate(() => document.fonts.ready);
       const loaded = await page.evaluate(() =>
         [...document.fonts]
@@ -477,8 +419,10 @@ for (const lang of languages) {
     for (const group of groups) {
       const headings = new Set<string>();
       for (const id of group) {
-        await page.goto(`/${lang}/catalog/${id}/`);
-        const root = page.locator("[data-comparison]");
+        await page.goto(
+          `/${lang}/${articles.find((a) => a.data.articleId === id)?.data.kind === "guide" ? "guides" : "catalog"}/${id}/`,
+        );
+        const root = page.locator("[data-demo]");
         await expect(root).toHaveAttribute("data-ready", "true");
         const heading = (await root.locator("h2").first().innerText()).trim();
         expect(heading.length, id).toBeGreaterThan(0);

@@ -1,24 +1,36 @@
-# Base fee plus overage visualization brief
+# Base fee plus overage / 基本料＋超過利用量 / 기본료+초과 사용량
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `base-plus-overage`; `pricing-models`; Base fee plus overage / 기본료+초과 사용량 / 基本料＋超過利用量.
-- Definition (one sentence): Base fee plus overage combines a fixed charge with included usage and a rate for excess units. The base remains payable even with no usage.
-- Closest concept and concrete difference: same-category peers flat-rate-pricing, per-seat-pricing, feature-tiered-pricing, volume-pricing, graduated-pricing; Base plus excess units. Cross-category combinations are related reading, not comparison peers.
-- Distinguishing visual features (structure, material, typography): Included-usage band and explicit fixed-plus-excess formula. Solid surfaces and text/number labels; color is not the only encoding.
-- Shared comparison category: [pricing-models](../catalog-writing/groups/pricing-models.md).
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional podcast transcript tool has three seats and 120 monthly exports.
-- Visual variable changed; concept-specific extra controls and their justification: Included-usage band and explicit fixed-plus-excess formula. Controls expose the mechanism described below; no background timer or real checkout.
-- Fictional scenario and why it demonstrates the definition: A podcast transcript service pays for baseline capacity even in quiet months, then processes extra exports in busy months. A fictional podcast transcript tool has three seats and 120 monthly exports.
-- Representative action and observable result: A fictional podcast transcript tool has three seats and 120 monthly exports. The monthly base is 20, including 100 exports; each extra export costs 0.10.
-- Initial state: 120 exports; 20 + 20 × 0.10 = 22.
-- Changed state, repeated action, empty input/no results: Where present, integer inputs accept 0–10,000 only; empty, negative and fractional values report an error without a charge. Insufficient balances never become negative. Access, purchase and ad actions are guarded; repeated non-consumable purchase and duplicate ad completion cannot grant extra rights or rewards. See item-specific state tests.
-- Reset and reload behavior: Reset and reload restore the initial page-memory state above. No account, storage, payment or advertising connection.
-- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
-- Keyboard order, focus, accessible names, live feedback: Native controls follow DOM order, labels name inputs, dashed 3px focus remains visible, reset retains focus, polite atomic status announces outcomes. Guarded buttons use aria-disabled while remaining mounted so repeated attempts can be explained.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
-- JavaScript-disabled initial screen and explanation: Complete server-rendered initial result and Markdown remain readable; JS-dependent controls start disabled and wrapper explains why.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
-- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
-- Capture selector and initial content: `[data-demo="base-plus-overage"]`; mode `interactive`; 1440px light surroundings in en/ko/ja; initial state above.
-- Source URLs, inspected date, claims each source supports: https://docs.stripe.com/products-prices/pricing-models; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
-- Comparison summaries: features: Base plus excess units; advantages: Covers baseline service; limitations: Base charged at zero usage; suitable: Fixed and variable costs; combinations: Subscription and usage metering.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/base-plus-overage-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `base-plus-overage`; `pricing-models`. Existing URLs and comment identity retained.
+- Definition and selection: Combine an included allowance with a charge for excess usage.
+- Closest options and concrete difference: A podcast tool fits this model when a recurring allowance funds availability but heavy users create extra processing cost. Flat pricing keeps one bundle price; pure usage pricing can start at zero. The base and overage must both be visible before use.
+- Distinct situation and Why opening: Imagine a podcast service that transcribes and exports episodes. Quiet months still cost money; busy months add processing.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/base-plus-overage.md), [KO](../../src/content/articles/ko/base-plus-overage.md), [JA](../../src/content/articles/ja/base-plus-overage.md); matching revision 5. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: The customer pays 20 monthly including 100 transcript exports, plus 0.10 per excess export. At 120 the total is 22; at zero or 100 it remains 20. Three seats are context, not a multiplier.
+- Visual structure: `BasePlusOverage.astro` owns its markup, spacing and state. Caption: Pay a base, then only for excess usage.
+- Initial and changed states: A fictional podcast transcript tool has three seats and 120 monthly exports. The monthly base is 20, including 100 exports; each extra export costs 0.10. Total: 20 + 20 × 0.10 = 22. Change usage: zero and 100 both cost 20; 101 costs 20.10. Taxes, fees and refunds are omitted.
+- Repetition, empty/failure and constraints: Show remaining allowance, overage rate and spending controls. Define whether unused allowance expires or rolls over; this demo uses a single month without rollover. Validate metering and billing separately from access and seller responsibilities.
+- Controls and state selectors: `data-money`, `data-contract-context`, `data-quantity`, `data-less`, `data-more`, `data-total`, `data-formula`, `data-reset`
+- Reset and reload: Reset returns the rendered initial model, announces restoration and keeps reset focus. Reload restores initial state; no input persistence or remote mutation.
+- Mobile order and widths: Responsive wrapping within the available article width. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Native controls with localized accessible names, visible focus and a polite status region. Representative keyboard actions and reset covered in browser tests.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Motion is optional. Server-rendered initial information remains readable; script-dependent controls are disabled and the wrapper explains the limitation.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `interactive`; `[data-demo="base-plus-overage"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/base-plus-overage.md`, sourceRevision 5; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Base plus excess units; advantages: Covers baseline service; limitations: Base charged at zero usage; suitable: Fixed and variable costs; combinations: Subscription and usage metering
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/base-plus-overage-320.png`, `artifacts/design-demos/base-plus-overage-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Stripe: usage-based billing](https://docs.stripe.com/billing/usage-based) (checked 2026-09-27): Usage billing can combine fixed and variable charges; the included allowance is this example’s offer.
+
+## Strong teaching case — 2026-09-27
+
+Zero and 100 cost base 20; 101 adds only 0.10.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

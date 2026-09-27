@@ -315,9 +315,9 @@
     "id": "single-column",
     "category": "columns",
     "titles": {
-      "en": "Single column",
-      "ko": "단일 열",
-      "ja": "単一カラム"
+      "en": "Single-column layout",
+      "ko": "단일 열 레이아웃",
+      "ja": "単一カラムレイアウト"
     },
     "scope": "Explain vertically stacked page regions and constrained text width. Exclude claims that single column requires edge-to-edge text or forbids nested grids. Distinguish: Page-region layout and item-list arrangement are separate axes.",
     "compareWith": ["two-columns", "multiple-columns"],
@@ -328,9 +328,9 @@
     "id": "two-columns",
     "category": "columns",
     "titles": {
-      "en": "Two columns",
-      "ko": "2열",
-      "ja": "2カラム"
+      "en": "Sidebar layout",
+      "ko": "사이드바 레이아웃",
+      "ja": "サイドバーレイアウト"
     },
     "scope": "Explain a sidebar and main region with a documented narrow-screen collapse. Exclude universal sidebar widths and CSS newspaper text flow. Distinguish: Two page regions are not two streams of fragmented paragraph text.",
     "compareWith": ["single-column", "multiple-columns"],
@@ -341,9 +341,9 @@
     "id": "multiple-columns",
     "category": "columns",
     "titles": {
-      "en": "Multiple columns",
-      "ko": "다열",
-      "ja": "マルチカラム"
+      "en": "Multi-region layout",
+      "ko": "다중 영역 레이아웃",
+      "ja": "複数領域レイアウト"
     },
     "scope": "Explain three or more independent regions with a responsive stacking plan. Exclude cSS multicol text fragmentation and dense dashboard implementation. Distinguish: Independent regions differ from one paragraph flowing across columns [multicol].",
     "compareWith": ["single-column", "two-columns"],

@@ -53,6 +53,13 @@ const t = local(lang),
     )}
   </p>
   <p class="assumptions">{m.omitted}</p>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The team pays 20 for Basic exports or 35 for Pro with approvals each month. Both include up to five seats and 200 exports. Three seats and 120 exports therefore isolate the price difference caused by features.",
+      "팀은 기본 출력에 월 20, 승인이 있는 Pro에 35를 냅니다. 둘 다 최대 5좌석·200회 출력입니다. 기준 3좌석·120회는 기능에 따른 가격 차이만 보여줍니다.",
+      "チームは基本出力に月20、承認付きProに35を払います。どちらも最大5席・200回です。基準の3席・120回により機能による価格差だけを示します。",
+    )}
+  </p>
 </section>
 <style>
   table {
@@ -61,5 +68,30 @@ const t = local(lang),
   }
   thead {
     background: #e1ece8;
+  }
+
+  table {
+    border: 3px solid #53693f;
+  }
+  th,
+  td {
+    padding: 24px 12px;
+    border: 2px solid #83906d;
+  }
+  thead th {
+    font-size: 1.2rem;
+  }
+  tbody tr:last-child {
+    border: 5px solid #53693f;
+    font-weight: 800;
+  }
+  @container (width < 450px) {
+    th,
+    td {
+      padding: 14px 6px;
+    }
+    thead th {
+      font-size: 1rem;
+    }
   }
 </style>

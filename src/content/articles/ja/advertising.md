@@ -1,33 +1,31 @@
 ---
-kind: "concept"
-articleId: "advertising"
-lang: "ja"
-title: "広告"
-summary: "広告主がコンテンツ周辺の広告枠に対価を払います。"
-category: "revenue-sources"
-aliases: ["広告", "Advertising"]
+kind: concept
+articleId: advertising
+lang: ja
+title: 広告
+summary: 利用者の注目に商業的価値があるとき、広告主が費用を負担します。
+category: revenue-sources
+aliases:
+  - 広告
+  - Advertising
 related:
-  [
-    "revenue",
-    "direct-payment",
-    "sponsorship",
-    "affiliate-marketing",
-    "transaction-fees",
-    "banner-ads",
-  ]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - direct-payment
+  - sponsorship
+  - affiliate-marketing
+  - transaction-fees
+  - banner-ads
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "広告主が広告枠に支払う",
-    "advantages": "無料アクセスを支えられる",
-    "limitations": "注意と信頼への負担",
-    "suitable": "広告枠が適したコンテンツ",
-    "combinations": "有料アクセスや支援",
-  }
+  features: 広告主が広告枠に支払う
+  advantages: 無料アクセスを支えられる
+  limitations: 注意と信頼への負担
+  suitable: 広告枠が適したコンテンツ
+  combinations: 有料アクセスや支援
 ---
 
 ## なぜ必要なのか

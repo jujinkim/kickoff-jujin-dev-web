@@ -1,19 +1,28 @@
 ---
 kind: guide
-articleId: "static-sites"
-lang: "ja"
-title: "Astro・Hugo・Jekyll：HTMLを届ける三つの方法"
-summary: "速度のトロフィーより執筆と保守で選びます。"
-category: "development"
-aliases: ["Astro", "Hugo", "Jekyll", "SSG", "정적 사이트", "静的サイト"]
-related: ["tools", "shipping", "adr"]
-example: "generators"
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
-aiPrompt: "合意した執筆手順と制約を基に適切な静的サイト生成器を比較し、関連する場合はAstro・Hugo・Jekyllを含めて。執筆・プレビュー・ホスティング・保守の必要性を比較し、言語・検索・対話機能は要件の範囲内だけ検討して。公式資料を使い、不確実な事実や変動する事実を示して。確定済みの構成を保ち、未決定の選択は推薦と代案を説明して変更前に判断を求めて。"
-checked: "2026-09-23"
+articleId: static-sites
+lang: ja
+title: Astro・Hugo・Jekyll：HTMLを届ける三つの方法
+summary: 公開前にビルドできるとき、要求前に公開ファイルを生成します。
+category: development
+aliases:
+  - Astro
+  - Hugo
+  - Jekyll
+  - SSG
+  - 정적 사이트
+  - 静的サイト
+related:
+  - tools
+  - shipping
+  - adr
+example: generators
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+aiPrompt: 合意した執筆手順と制約を基に適切な静的サイト生成器を比較し、関連する場合はAstro・Hugo・Jekyllを含めて。執筆・プレビュー・ホスティング・保守の必要性を比較し、言語・検索・対話機能は要件の範囲内だけ検討して。公式資料を使い、不確実な事実や変動する事実を示して。確定済みの構成を保ち、未決定の選択は推薦と代案を説明して変更前に判断を求めて。
+checked: "2026-09-27"
 ---
 
 ## なぜ必要なのか

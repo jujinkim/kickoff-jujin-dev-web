@@ -1,27 +1,29 @@
 ---
 kind: guide
-articleId: "srs"
-lang: "ja"
-title: "要件と完了条件：望む動作を合意する"
-summary: "ユーザーが動作を説明し、AIが要件と判断記録を作成します。"
-category: "planning"
+articleId: srs
+lang: ja
+title: 要件と完了条件：望む動作を合意する
+summary: 期待する動作と制約を観察できる完了条件に変え、その後で実装方法を決めます。
+category: planning
 aliases:
-  [
-    "SRS",
-    "requirements",
-    "acceptance criteria",
-    "요구사항",
-    "완료 조건",
-    "要件",
-    "受け入れ条件",
-  ]
-related: ["architecture", "shipping"]
-example: "spec"
-status: "published"
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-aiPrompt: "合意したプロジェクトの背景と要件を読んで。このプロジェクトに関係する未決定の製品動作と制約だけ質問して。普段の操作、成功、失敗、該当する場合は繰り返しも確認し、店舗や決済を前提にしないで。回答を番号付き要件・完了条件・タスクに整理して。役立つシナリオと文書形式は自分で選んで作成して。重要な判断の代案・状態・再検討条件を記録して。内部のデータ構造は自分で選び、不明な製品規則は推測しないで。"
+  - SRS
+  - requirements
+  - acceptance criteria
+  - 요구사항
+  - 완료 조건
+  - 要件
+  - 受け入れ条件
+related:
+  - architecture
+  - shipping
+example: spec
+status: published
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+aiPrompt: >-
+  合意したプロジェクトの背景と要件を読んで。このプロジェクトに関係する未決定の製品動作と制約だけ質問して。普段の操作、成功、失敗、該当する場合は繰り返しも確認し、店舗や決済を前提にしないで。回答を番号付き要件・完了条件・タスクに整理して。役立つシナリオと文書形式は自分で選んで作成して。重要な判断の代案・状態・再検討条件を記録して。内部のデータ構造は自分で選び、不明な製品規則は推測しないで。
+checked: "2026-09-26"
 ---
 
 ## なぜ必要なのか

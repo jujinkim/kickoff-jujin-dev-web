@@ -3,7 +3,7 @@ kind: concept
 articleId: serverless-functions
 lang: ko
 title: 서버리스 함수
-summary: 호출 실행과 영속 저장을 나눕니다.
+summary: 장기 실행 프로세스를 직접 운영하지 않고 이벤트 작업을 실행합니다.
 category: hosting-models
 aliases:
   - 서버리스 함수
@@ -12,10 +12,10 @@ related:
   - static-hosting
   - always-on-server
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 이벤트 기반 관리형 처리기
   advantages: 플랫폼이 서버 준비 담당

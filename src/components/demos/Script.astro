@@ -21,80 +21,99 @@ const t = local(lang);
     "初期状態に戻しました",
   )}
 >
-  <small>DANCING SCRIPT / {t("TYPE LAB", "조판 실험실", "組版実験室")}</small>
-  <h2>{t("Dinner invitation", "저녁 초대장", "夕食への招待状")}</h2>
-  <div class="specimen">
-    <span class="letter" lang="en">
-      H<span class="terminal top" aria-hidden="true"></span>
-      <span class="terminal bottom" aria-hidden="true"></span>
+  <small>{t("A DINNER INVITATION", "저녁 모임 초대", "夕食会への招待")}</small>
+  <h2>{t("An evening together", "함께하는 저녁", "一緒に過ごす夕べ")}</h2>
+  <div class="invitation specimen">
+    <span aria-hidden="true" class="ornament">
+      ❧
     </span>
-    <div>
-      <h3 lang="en">Join us for dinner</h3>
-      <p lang="en">Saturday evening at the neighborhood hall.</p>
-      <p class="localized">
-        {t("Join us for dinner", "저녁에 함께해요", "夕食をご一緒に")}
-      </p>
-    </div>
+    <h3 lang="en">You are invited</h3>
+    <p class="localized">
+      {t(
+        "Join us around the table.",
+        "같은 식탁에서 만나요.",
+        "同じ食卓で会いましょう。",
+      )}
+    </p>
+    <p>
+      {t(
+        "Saturday, 18:30 · Garden room",
+        "토요일 18:30 · 정원방",
+        "土曜日18:30 · 庭の部屋",
+      )}
+    </p>
+    <p>
+      {t(
+        "Bring a story and something to share.",
+        "이야기와 나눌 음식을 가져오세요.",
+        "話と分け合う一品を持ってきてください。",
+      )}
+    </p>
   </div>
-  <label>
-    {t("Specimen", "표본", "見本")}
-    <input
-      data-text
-      type="text"
-      maxlength="60"
-      value="iiiWWW 0123"
-      data-interactive
-      disabled
-    />
-  </label>
-  <div class="sample-wrap">
-    <div class="sample" data-sample lang="en">
-      iiiWWW 0123
-    </div>
-    <div class="guides-layer" aria-hidden="true"></div>
-  </div>
-  <p class="measurement" data-measure>
-    {t(
-      "Measured advances appear after fonts load.",
-      "글꼴 로드 후 전진 폭을 표시합니다.",
-      "書体の読み込み後に送り幅を表示します。",
-    )}
-  </p>
-  <div class="numbers">
-    <span>111.11</span>
-    <span>888.88</span>
-    <span>123.45</span>
-  </div>
-  <div class="controls">
+  <section class="measurement-lab">
+    <h3>
+      {t("Optional type measurement", "선택형 글자 측정", "任意の文字測定")}
+    </h3>
     <label>
-      {t("Size", "크기", "サイズ")}
+      {t("Specimen", "표본", "見本")}
       <input
-        data-size
-        type="range"
-        min="24"
-        max="72"
-        value="48"
+        data-text
+        type="text"
+        maxlength="60"
+        value="iiiWWW 0123"
         data-interactive
         disabled
       />
-      <output data-size-value>48px</output>
     </label>
-    <label>
-      <input type="checkbox" data-guides data-interactive disabled />
-      {t("Advance guides", "전진 폭 가이드", "送り幅ガイド")}
-    </label>
-    <label>
-      <input type="checkbox" data-tabular data-interactive disabled />
-      {t("Tabular digits", "숫자 열 정렬", "等幅数字")}
-    </label>
-  </div>
-  <p class="font-note">
-    {t(
-      "The editable width sample starts at 48px. The named face renders supported Latin; Korean and Japanese use Noto CJK. Other characters may fall back. Guides measure text in context, so shaping and ligatures can affect the ranges.",
-      "폭 측정용 입력은 처음에 48px입니다. 라틴 지원 문자는 표시된 서체, 한·일 문자는 Noto CJK로 표시합니다. 나머지는 대체 글꼴을 쓸 수 있습니다. 가이드는 문맥 안에서 측정하므로 연결 형태와 합자가 범위에 영향을 줄 수 있습니다.",
-      "5例は同じ文章とサイズを使います。対応するラテン文字は表示の書体、韓国語と日本語はNoto CJKで表示します。ほかは代替書体になる場合があります。ガイドは文脈内で測定するため、接続や合字が範囲に影響する場合があります。",
-    )}
-  </p>
+    <div class="sample-wrap">
+      <div class="sample" data-sample lang="en">
+        iiiWWW 0123
+      </div>
+      <div class="guides-layer" aria-hidden="true"></div>
+    </div>
+    <p class="measurement" data-measure>
+      {t(
+        "Measured advances appear after fonts load.",
+        "글꼴 로드 후 전진 폭을 표시합니다.",
+        "書体の読み込み後に送り幅を表示します。",
+      )}
+    </p>
+    <div class="numbers">
+      <span>111.11</span>
+      <span>888.88</span>
+      <span>123.45</span>
+    </div>
+    <div class="controls">
+      <label>
+        {t("Size", "크기", "サイズ")}
+        <input
+          data-size
+          type="range"
+          min="24"
+          max="72"
+          value="48"
+          data-interactive
+          disabled
+        />
+        <output data-size-value>48px</output>
+      </label>
+      <label>
+        <input type="checkbox" data-guides data-interactive disabled />
+        {t("Advance guides", "전진 폭 가이드", "送り幅ガイド")}
+      </label>
+      <label>
+        <input type="checkbox" data-tabular data-interactive disabled />
+        {t("Tabular digits", "숫자 열 정렬", "等幅数字")}
+      </label>
+    </div>
+    <p class="font-note">
+      {t(
+        "The editable width sample starts at 48px. The named face renders supported Latin; Korean and Japanese use Noto CJK. Other characters may fall back. Guides measure text in context, so shaping and ligatures can affect the ranges.",
+        "폭 측정용 입력은 처음에 48px입니다. 라틴 지원 문자는 표시된 서체, 한·일 문자는 Noto CJK로 표시합니다. 나머지는 대체 글꼴을 쓸 수 있습니다. 가이드는 문맥 안에서 측정하므로 연결 형태와 합자가 범위에 영향을 줄 수 있습니다.",
+        "幅測定の入力は48pxから始まります。対応するラテン文字は表示の書体、韓国語と日本語はNoto CJKで表示します。ほかは代替書体になる場合があります。ガイドは文脈内で測定するため、接続や合字が範囲に影響する場合があります。",
+      )}
+    </p>
+  </section>
   <button class="reset" type="button" data-reset data-interactive disabled>
     {t("Reset", "초기화", "リセット")}
   </button>
@@ -199,5 +218,131 @@ const t = local(lang);
       flex-direction: column;
       align-items: start;
     }
+  }
+
+  .measurement-lab {
+    margin: 32px 0 24px;
+    padding-top: 24px;
+    border-top: 2px solid #9a9b90;
+  }
+  .weather {
+    display: block;
+    background: #edf1ec;
+    padding: 24px;
+    border: 1px solid #a4b09e;
+  }
+  .weather pre {
+    font-family: "Demo Mono", monospace;
+    font-size: clamp(0.65rem, 3.4cqi, 1.05rem);
+    line-height: 2;
+    white-space: pre;
+    letter-spacing: 0;
+    margin: 20px 0;
+  }
+  .weather p {
+    font-size: 0.9rem;
+  }
+  .newsletter {
+    display: grid;
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    align-items: start;
+    padding: 24px 0;
+  }
+  .newsletter img {
+    width: 100%;
+    height: auto;
+  }
+  .newsletter h3 {
+    font-size: 1.65rem;
+  }
+  .newsletter p {
+    font-size: 1rem;
+  }
+  .newsletter .localized {
+    margin-top: 24px;
+    border-top: 1px solid #b8ae9b;
+    padding-top: 18px;
+  }
+  .transit {
+    display: block;
+    background: #163b3d;
+    color: #f5fff5;
+    padding: 26px;
+  }
+  .transit p {
+    margin-bottom: 26px;
+  }
+  .departure {
+    display: flex;
+    gap: 24px;
+    padding: 20px 0;
+    border-top: 1px solid #9ab1aa;
+  }
+  .departure > strong {
+    font-size: 1.75rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .departure h3 {
+    font-size: 1.4rem;
+  }
+  .departure span {
+    font-size: 0.9rem;
+  }
+  .invitation {
+    display: block;
+    text-align: center;
+    padding: 32px 18px;
+    background: #fffdf4;
+    border: double 5px #ac9572;
+  }
+  .invitation h3 {
+    font-family: "Demo Script", cursive;
+    font-size: clamp(2rem, 8cqi, 4rem);
+    line-height: 1.6;
+  }
+  .invitation p {
+    font-family: "Demo Sans", var(--demo-sans-cjk, sans-serif);
+    font-size: 0.95rem;
+  }
+  .ornament {
+    font-size: 3rem;
+    color: #5e6944;
+  }
+  .demo {
+    container-type: inline-size;
+  }
+  .specimen {
+    min-width: 0;
+  }
+  .specimen > * {
+    min-width: 0;
+  }
+  @container (width<490px) {
+    .newsletter {
+      grid-template-columns: 1fr;
+    }
+    .newsletter img {
+      max-width: 220px;
+    }
+    .departure {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+
+  .invitation {
+    padding-block: 54px;
+    border: double 7px #ac9572;
+  }
+  .invitation h3 {
+    font-size: clamp(3rem, 12cqi, 7rem);
+    line-height: 1.25;
+    font-weight: 400;
+  }
+  .invitation p {
+    margin-top: 28px;
+  }
+  .ornament {
+    font-size: 4rem;
   }
 </style>

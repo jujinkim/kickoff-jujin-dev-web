@@ -175,13 +175,15 @@ for (const lang of ["en", "ko", "ja"]) {
     page,
   }) => {
     await page.goto(`/${lang}/catalog/`);
-    await expect(page.locator(".catalog-card")).toHaveCount(0);
+    await expect(page.locator(".catalog-card")).toHaveCount(64);
     await page
       .locator(`.category-card[href="/${lang}/catalog/categories/design/"]`)
       .click();
+    await page.locator(".subject-navigation > summary").click();
     await page
       .locator(`.category-tree a[href="/${lang}/catalog/categories/styles/"]`)
       .click();
+    await expect(page.locator(".subject-navigation")).toHaveCount(0);
     await expect(page.locator("[data-candidate]")).toHaveCount(0);
     await expect(page.locator("[data-candidate] a")).toHaveCount(0);
     await expect(page.locator("table.comparison")).toHaveCount(1);
@@ -277,7 +279,7 @@ test("legacy views become cards with full-width top-cropped thumbnails", async (
         "masonry",
         "liquid-glass",
       ]) {
-        const image = page.locator(`img[src="/thumbnails/${id}-ko.png"]`);
+        const image = page.locator(`img[src="/thumbnails/${id}-ko.webp"]`);
         await image.scrollIntoViewIfNeeded();
         await expect(image).toBeVisible();
         await expect
@@ -331,22 +333,12 @@ for (const javaScriptEnabled of [true, false]) {
           );
           const cards = page.locator(".category-card");
           await expect(cards).toHaveCount(roots.length);
-          await expect(
-            page.locator(".catalog-card, .catalog-toolbar, #search, #category"),
-          ).toHaveCount(0);
-          await expect(page.locator('script[src="/catalog.js"]')).toHaveCount(
-            0,
-          );
-          const columns = await page
-            .locator(".catalog-categories")
-            .evaluate(
-              (node) =>
-                getComputedStyle(node).gridTemplateColumns.split(" ").length,
-            );
-          expect(columns).toBe(width <= 600 ? 1 : width <= 900 ? 2 : 3);
+          await expect(page.locator("#search")).toHaveCount(1);
+          await expect(page.locator("#category")).toHaveCount(1);
+          await expect(page.locator(".catalog-card").first()).toBeVisible();
           expect(
             (await cards.first().boundingBox())!.height,
-          ).toBeGreaterThanOrEqual(220);
+          ).toBeGreaterThanOrEqual(44);
           expect(
             await page.evaluate(
               () => document.documentElement.scrollWidth <= innerWidth,

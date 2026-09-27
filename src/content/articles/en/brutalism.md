@@ -3,7 +3,7 @@ kind: concept
 articleId: brutalism
 lang: en
 title: Brutalism
-summary: "Expose rules and links for a repair-day board with a deliberately rough, utilitarian voice."
+summary: Raw typography and exposed structure suit an intentionally utilitarian visual voice.
 category: styles
 aliases:
   - Brutalism
@@ -16,34 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 10
-sourceRevision: 10
-updated: "2026-09-26"
+revision: 12
+sourceRevision: 12
+updated: "2026-09-27"
 comparison:
-  features: >-
-    Exposed rules and raw typography make structure visible. Raw rules and
-    underlined navigation expose the structure.
-  advantages: Exposed rules make task boundaries explicit.
-  limitations: >-
-    The rough tone can distract; keep links underlined and controls
-    recognizable.
-  suitable: Choose it for a utilitarian task list.
-  combinations: A list or single column supports sequential task scanning.
-checked: "2026-09-21"
+  features: Exposed structure and raw typography
+  advantages: Direct hierarchy for utilitarian notices
+  limitations: A rough tone can reduce comfort
+  suitable: Information priority over polished decoration
+  combinations: Lists and strong typographic hierarchy
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
 
-Imagine a repair-day planner where visitors find stations and volunteer tasks. Decorative polish hides the urgent station list; the team prefers exposed rules and underlined links over a quieter, stripped-down surface.
+A neighborhood repair notice helps visitors find a booth and its opening time. The organizers want a direct, improvised noticeboard, rather than the quiet polish of minimalism; decorative panels hide the schedule.
 
 ## How: work toward a solution
 
-For the repair day, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Raw rules and underlined navigation expose the structure.
+Use large plain headings and exposed rules. Choose Bicycles to show two booths and their times. Electrical appliances shows an explicit empty result. Reset restores all booths.
 
 ## What: the concept
 
-**Brutalism** — Exposed rules and raw typography make structure visible.
+Brutalism deliberately exposes a raw, utilitarian structure. It is a visual direction, not permission to make navigation confusing. Strong borders are this example’s choice, not a universal rule.
 
-The rough tone can distract; keep links underlined and controls recognizable.
-
-[NN/g](https://www.nngroup.com/articles/brutalism-antidesign/)
+[NN/g: Brutalism and Antidesign](https://www.nngroup.com/articles/brutalism-antidesign/)

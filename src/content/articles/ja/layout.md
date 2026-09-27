@@ -1,30 +1,31 @@
 ---
 kind: guide
-articleId: "layout"
-lang: "ja"
-title: "レイアウトとUI要素に名前を付ける"
-summary: "ヘッダー、サイドバー、グリッド、モーダル。指摘にも座標が必要です。"
-category: "design"
+articleId: layout
+lang: ja
+title: レイアウトとUI要素に名前を付ける
+summary: 利用者の主な作業を中心に領域と読む順序を組み立てます。
+category: design
 aliases:
-  [
-    "layout",
-    "sidebar",
-    "breadcrumb",
-    "modal",
-    "레이아웃",
-    "사이드바",
-    "모달",
-    "レイアウト",
-    "サイドバー",
-    "モーダル",
-  ]
-related: ["theme", "srs"]
-example: "layout"
-status: "published"
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-aiPrompt: "合意したプロジェクトと対応画面を基に、名前のある領域と部品を説明して。未決定の情報優先度を確認し、配置、読み順、キーボード動作、該当する空・読み込み・エラー状態を提案して。テキストのワイヤーフレームと検証可能な完了条件を作成して。合意した端末・言語の範囲を保ち、記事のカタログ例を要件に加えないで。"
+  - layout
+  - sidebar
+  - breadcrumb
+  - modal
+  - 레이아웃
+  - 사이드바
+  - 모달
+  - レイアウト
+  - サイドバー
+  - モーダル
+related:
+  - theme
+  - srs
+example: layout
+status: published
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+aiPrompt: 合意したプロジェクトと対応画面を基に、名前のある領域と部品を説明して。未決定の情報優先度を確認し、配置、読み順、キーボード動作、該当する空・読み込み・エラー状態を提案して。テキストのワイヤーフレームと検証可能な完了条件を作成して。合意した端末・言語の範囲を保ち、記事のカタログ例を要件に加えないで。
+checked: "2026-09-27"
 ---
 
 ## なぜ必要なのか

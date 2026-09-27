@@ -1,0 +1,375 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section
+  data-demo="revenue"
+  lang={lang}
+  data-reset-message={t(
+    "Initial assumptions restored.",
+    "처음 가정으로 돌아왔습니다.",
+    "初期の仮定に戻りました。",
+  )}
+  data-valid={t(
+    "Estimate updated from the current assumptions.",
+    "현재 가정으로 추정치를 갱신했습니다.",
+    "現在の仮定で見積を更新しました。",
+  )}
+  data-invalid={t(
+    "Enter whole numbers from 0 to 10,000 in every field. The last valid estimate is shown.",
+    "모든 항목에 0~10,000 정수를 입력하세요. 마지막 유효 추정치를 표시합니다.",
+    "全欄に0〜10,000の整数を入力してください。最後の有効な見積を表示しています。",
+  )}
+>
+  <header>
+    <p>
+      {t(
+        "MAP EXPORTER / FICTIONAL MONTH",
+        "지도 출력 도구 / 가상 한 달",
+        "地図出力ツール / 架空の1か月",
+      )}
+    </p>
+    <h2>
+      {t(
+        "Will this month cover its costs?",
+        "이번 달 비용을 충당할까요?",
+        "今月の費用を賄える？",
+      )}
+    </h2>
+  </header>
+  <div
+    class="scenarios"
+    role="group"
+    aria-label={t("Compare assumptions", "가정 비교", "仮定を比較")}
+  >
+    <button type="button" data-scenario="0,20,100" data-interactive disabled>
+      {t("No paying users", "유료 사용자 0명", "有料利用者0人")}
+    </button>
+    <button type="button" data-scenario="100,20,100" data-interactive disabled>
+      {t("Moderate use", "보통 사용량", "通常の利用量")}
+    </button>
+    <button
+      type="button"
+      data-scenario="100,1000,100"
+      data-interactive
+      disabled
+    >
+      {t("Heavy use, same price", "같은 가격, 과다 사용", "同じ料金、大量利用")}
+    </button>
+  </div>
+  <div class="assumptions">
+    <label>
+      {t("Paying users", "유료 사용자", "有料利用者")}
+      <input
+        data-users
+        data-interactive
+        disabled
+        type="number"
+        value="100"
+        min="0"
+        max="10000"
+        step="1"
+      />
+    </label>
+    <label>
+      {t(
+        "Exports per paying user",
+        "유료 사용자당 출력 수",
+        "有料利用者ごとの出力数",
+      )}
+      <input
+        data-usage
+        data-interactive
+        disabled
+        type="number"
+        value="20"
+        min="0"
+        max="10000"
+        step="1"
+      />
+    </label>
+    <label>
+      {t("Fixed operating cost", "고정 운영비", "固定運用費")}
+      <input
+        data-fixed
+        data-interactive
+        disabled
+        type="number"
+        value="100"
+        min="0"
+        max="10000"
+        step="1"
+      />
+    </label>
+  </div>
+  <p class="rates">
+    {t(
+      "Fictional currency units: 5 per paying user/month · 0.02 processing cost per export",
+      "가상 화폐 단위: 사용자당 월 5 · 출력당 처리 비용 0.02",
+      "架空の通貨単位：利用者ごとに月5 · 出力ごとの処理費0.02",
+    )}
+  </p>
+  <dl class="ledger">
+    <div>
+      <dt>{t("Gross revenue", "총매출", "総売上")}</dt>
+      <dd>
+        <output data-gross>500.00</output>
+        <small data-gross-formula>100 × 5</small>
+      </dd>
+    </div>
+    <div>
+      <dt>{t("Modeled costs", "계산한 비용", "模型内の費用")}</dt>
+      <dd>
+        <output data-cost>140.00</output>
+        <small data-cost-formula>100 + 100 × 20 × 0.02</small>
+      </dd>
+    </div>
+    <div class="remaining">
+      <dt>{t("Amount remaining", "남는 금액", "残る金額")}</dt>
+      <dd>
+        <output data-remaining>360.00</output>
+        <small>
+          {t(
+            "Revenue − modeled costs",
+            "매출 − 계산한 비용",
+            "売上 − 模型内の費用",
+          )}
+        </small>
+      </dd>
+    </div>
+  </dl>
+  <p>
+    {t(
+      "A negative amount means these assumptions do not cover the modeled costs. This is not net profit: tax, payment fees, refunds, free-user usage and unlisted work are omitted. No sales are predicted or charged.",
+      "음수이면 이 가정으로 계산한 비용을 충당하지 못합니다. 세금·결제 수수료·환불·무료 사용자 사용량·누락 작업을 제외했으므로 순이익이 아닙니다. 판매를 예측하거나 청구하지 않습니다.",
+      "負の金額なら、この仮定では計算した費用を賄えません。税・決済手数料・返金・無料利用者の使用量・未記載の作業を除くため純利益ではありません。販売の予測や請求は行いません。",
+    )}
+  </p>
+  <button type="button" data-reset data-interactive disabled>
+    {t("Reset", "초기화", "リセット")}
+  </button>
+  <p role="status" aria-live="polite"></p>
+</section>
+<script>
+  import { mount } from "./shared";
+  mount("revenue", (root, say) => {
+    const inputs = ["users", "usage", "fixed"].map((key) =>
+      root.querySelector<HTMLInputElement>(`[data-${key}]`)!,
+    );
+    const put = (key: string, value: string) => {
+      root.querySelector<HTMLElement>(`[data-${key}]`)!.textContent = value;
+    };
+    const update = () => {
+      const values = inputs.map((input) => {
+        const n = input.valueAsNumber;
+        const valid = Number.isInteger(n) && n >= 0 && n <= 10000;
+        input.setAttribute("aria-invalid", String(!valid));
+        return valid ? n : null;
+      });
+      if (values.some((v) => v === null)) {
+        root.dataset.invalidState = "true";
+        say(root.dataset.invalid!);
+        return;
+      }
+      const [users, usage, fixed] = values as number[];
+      const grossCents = users * 500,
+        costCents = fixed * 100 + users * usage * 2;
+      put("gross", (grossCents / 100).toFixed(2));
+      put("cost", (costCents / 100).toFixed(2));
+      put("remaining", ((grossCents - costCents) / 100).toFixed(2));
+      root.dataset.loss = String(grossCents < costCents);
+      put("gross-formula", `${users} × 5`);
+      put("cost-formula", `${fixed} + ${users} × ${usage} × 0.02`);
+      root.dataset.invalidState = "false";
+      say(root.dataset.valid!);
+    };
+    inputs.forEach((input) => input.addEventListener("input", update));
+    root
+      .querySelectorAll<HTMLButtonElement>("[data-scenario]")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          button.dataset.scenario!.split(",").forEach((value, i) => {
+            inputs[i].value = value;
+          });
+          update();
+        });
+      });
+    return () => {
+      [100, 20, 100].forEach((value, i) => {
+        inputs[i].value = String(value);
+      });
+      update();
+    };
+  });
+</script>
+<style>
+  section {
+    container-type: inline-size;
+    background: #f8f3e9;
+    color: #35352d;
+    padding: clamp(18px, 4vw, 36px);
+    border: 1px solid #bbb19e;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    font-variant-numeric: tabular-nums;
+  }
+  header p {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin: 14px 0 28px;
+  }
+  .assumptions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  input,
+  button {
+    min-width: 0;
+    max-width: 100%;
+    font: inherit;
+    min-height: 44px;
+    padding: 10px;
+    background: #fffef9;
+    color: #35352d;
+    border: 1px solid #7e7869;
+    border-radius: 3px;
+  }
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+  }
+  button {
+    cursor: pointer;
+  }
+  input:disabled,
+  button:disabled {
+    opacity: 0.65;
+    cursor: default;
+  }
+  :focus-visible {
+    outline: 3px dashed #6b4b92;
+    outline-offset: 3px;
+  }
+  input[aria-invalid="true"] {
+    border: 2px solid #ac3023;
+  }
+  .rates {
+    font-size: 0.82rem;
+    padding: 16px 0;
+    border-bottom: 1px solid #bbb19e;
+  }
+  .ledger {
+    margin: 25px 0;
+  }
+  .ledger > div {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    padding: 18px 0;
+    border-bottom: 1px solid #bbb19e;
+    gap: 16px;
+  }
+  .ledger dd {
+    margin: 0;
+    text-align: right;
+  }
+  .ledger output {
+    display: block;
+    font: 700 clamp(1.5rem, 3vw, 2.4rem) monospace;
+    overflow-wrap: anywhere;
+  }
+  .ledger small {
+    display: block;
+    font-size: 0.75rem;
+  }
+  .remaining {
+    border-bottom: 3px double #4f5749 !important;
+  }
+  .remaining output {
+    color: #315339;
+  }
+  section > p {
+    font-size: 0.86rem;
+  }
+  [role="status"] {
+    min-height: 1.6em;
+    margin-bottom: 0;
+  }
+  section[data-invalid-state="true"] .ledger {
+    border-left: 4px solid #ac3023;
+    padding-left: 12px;
+  }
+  @container (width < 540px) {
+    .assumptions {
+      grid-template-columns: 1fr;
+    }
+    .ledger > div {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+    .ledger dd {
+      text-align: left;
+    }
+  }
+  @media (forced-colors: active) {
+    section {
+      background: Canvas;
+      color: CanvasText;
+    }
+    input,
+    button {
+      background: Canvas;
+      color: CanvasText;
+      border-color: CanvasText;
+    }
+    :focus-visible {
+      outline-color: Highlight;
+    }
+    .remaining output {
+      color: CanvasText;
+    }
+  }
+
+  .scenarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .scenarios button {
+    flex: 1 1 140px;
+    border-width: 2px;
+    padding: 18px;
+  }
+  .ledger .remaining {
+    border: 5px solid #35513a;
+    padding: 20px;
+  }
+  .remaining output {
+    font-size: clamp(2.4rem, 7cqi, 4rem);
+  }
+  section[data-loss="true"] .remaining {
+    color: #792a2a;
+    background: #fff4f0;
+    border-color: #792a2a;
+  }
+</style>

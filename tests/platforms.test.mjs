@@ -17,7 +17,16 @@ test("platform release contains 15 complete trilingual concepts within reading b
   assert.equal(platforms.length, 45);
   for (const a of platforms) {
     assert.equal(a.data.status, "published");
-    assert.equal(a.data.checked, "2026-09-22");
+    assert.match(a.data.checked, /^\d{4}-\d{2}-\d{2}$/);
+    assert.ok(a.data.checked >= "2026-09-22");
+    assert.equal(
+      a.data.checked,
+      articles.find(
+        (original) =>
+          original.data.lang === "en" &&
+          original.data.articleId === a.data.articleId,
+      ).data.checked,
+    );
     assert.equal(a.data.sourceRevision, a.data.revision);
     assert.ok(articleOverviewSeconds(a) <= 60, a.file);
     assert.equal(Object.keys(a.data.comparison).length, 5);

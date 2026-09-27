@@ -1,25 +1,29 @@
 ---
-kind: "concept"
-articleId: "consumable-purchase"
-lang: "ja"
-title: "消耗型購入"
-summary: "購入した数量が使用で減ります。"
-category: "purchase-types"
-aliases: ["消耗型購入", "Consumable purchase"]
-related: ["revenue", "non-consumable-purchase", "prepaid-credits", "freemium"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: consumable-purchase
+lang: ja
+title: 消耗型購入
+summary: 使用すると消費され、再購入できる単位を販売します。
+category: purchase-types
+aliases:
+  - 消耗型購入
+  - Consumable purchase
+related:
+  - revenue
+  - non-consumable-purchase
+  - prepaid-credits
+  - freemium
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "使用で数量を消費",
-    "advantages": "繰り返し購入できる",
-    "limitations": "残高と支出の説明が必要",
-    "suitable": "任意の消耗アイテム",
-    "combinations": "フリーミアムのアクセス",
-  }
+  features: 使用で数量を消費
+  advantages: 繰り返し購入できる
+  limitations: 残高と支出の説明が必要
+  suitable: 任意の消耗アイテム
+  combinations: フリーミアムのアクセス
 ---
 
 ## なぜ必要なのか

@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "direct-payment"
-lang: "ko"
-title: "고객 직접 결제"
-summary: "고객이 제품 접근 비용을 지불합니다."
-category: "revenue-sources"
-aliases: ["고객 직접 결제", "Customer direct payment"]
+kind: concept
+articleId: direct-payment
+lang: ko
+title: 고객 직접 결제
+summary: 사용자가 접근 가치에 비용을 내어 운영을 지원합니다.
+category: revenue-sources
+aliases:
+  - 고객 직접 결제
+  - Customer direct payment
 related:
-  [
-    "revenue",
-    "advertising",
-    "sponsorship",
-    "affiliate-marketing",
-    "transaction-fees",
-    "subscription",
-    "direct-seller",
-  ]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - advertising
+  - sponsorship
+  - affiliate-marketing
+  - transaction-fees
+  - subscription
+  - direct-seller
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "고객이 접근 비용 부담",
-    "advantages": "가치와 지불 주체 연결",
-    "limitations": "결제가 접근 장벽이 될 수 있음",
-    "suitable": "유료 가치가 있는 제품",
-    "combinations": "구독 또는 일회성 결제",
-  }
+  features: 고객이 접근 비용 부담
+  advantages: 가치와 지불 주체 연결
+  limitations: 결제가 접근 장벽이 될 수 있음
+  suitable: 유료 가치가 있는 제품
+  combinations: 구독 또는 일회성 결제
 ---
 
 ## 왜 필요한가

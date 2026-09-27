@@ -99,6 +99,13 @@ const t = local(lang),
     )}
   </p>
   <p class="footnote">{s.storeNote}</p>
+  <p class="boundary-note" data-failure-boundary>
+    {t(
+      "Separate deployment is not automatic outage isolation: a synchronous Catalog dependency can still block Library. Bound timeouts and retries.",
+      "독립 배포가 자동 장애 격리는 아닙니다. 동기 카탈로그 의존성은 보관함을 막을 수 있습니다. 시간 제한·재시도를 정하세요.",
+      "独立配布で自動的に障害が隔離されるわけではありません。同期のカタログ依存はライブラリを止める場合があります。時間制限と再試行を定めます。",
+    )}
+  </p>
 </section>
 <style>
   section {
@@ -245,5 +252,39 @@ const t = local(lang),
     .boundary {
       border-color: CanvasText;
     }
+  }
+  .boundary-note {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid currentColor;
+    font-size: 0.85rem;
+  }
+
+  .services {
+    gap: 28px;
+  }
+  .services > li {
+    border: 4px solid #674774;
+    padding: 20px;
+  }
+  .services > li:nth-child(2) {
+    border: 7px double #674774;
+  }
+  .version {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+  .network {
+    border-block: 3px dashed #674774;
+    padding-block: 24px;
+  }
+  .store {
+    border-radius: 50% / 14%;
+    border-width: 3px;
+    padding: 20px;
+  }
+  [data-timeout] {
+    border-left: 8px solid #8c4135;
+    padding: 16px;
   }
 </style>

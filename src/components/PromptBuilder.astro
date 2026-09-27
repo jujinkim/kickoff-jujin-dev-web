@@ -17,76 +17,80 @@ const t = builderText[lang];
 >
   <p class="notice site-notice">{strings[lang].builderNotice}</p>
   <div data-editor hidden>
-    <div class="prompt-fields">
-      <div>
-        <label for="service-description">
-          {t.description} <small>({t.required})</small>
-        </label>
-        <p id="description-hint">{t.descriptionHint}</p>
-        <p id="description-example">{t.descriptionExample}</p>
-        <textarea
-          id="service-description"
-          rows="4"
-          required
-          autocomplete="off"
-          aria-describedby="description-hint description-example prompt-validation"
-        ></textarea>
-      </div>
-      <details class="optional-fields">
-        <summary>{t.optionalFields}</summary>
+    <div class="builder-input">
+      <div class="prompt-fields">
         <div>
-          <label for="service-name">
-            {t.name} <small>({t.optional})</small>
+          <label for="service-description">
+            {t.description} <small>({t.required})</small>
           </label>
-          <p id="name-hint">{t.nameHint}</p>
-          <input
-            id="service-name"
-            type="text"
-            autocomplete="off"
-            aria-describedby="name-hint"
-          />
-        </div>
-        <div>
-          <label for="service-notes">
-            {t.notes} <small>({t.optional})</small>
-          </label>
-          <p id="notes-hint">{t.notesHint}</p>
+          <p id="description-hint">{t.descriptionHint}</p>
+          <p id="description-example">{t.descriptionExample}</p>
           <textarea
-            id="service-notes"
-            rows="3"
+            id="service-description"
+            rows="4"
+            required
             autocomplete="off"
-            aria-describedby="notes-hint"
+            aria-describedby="description-hint description-example prompt-validation"
           ></textarea>
         </div>
-      </details>
+        <details class="optional-fields">
+          <summary>{t.optionalFields}</summary>
+          <div>
+            <label for="service-name">
+              {t.name} <small>({t.optional})</small>
+            </label>
+            <p id="name-hint">{t.nameHint}</p>
+            <input
+              id="service-name"
+              type="text"
+              autocomplete="off"
+              aria-describedby="name-hint"
+            />
+          </div>
+          <div>
+            <label for="service-notes">
+              {t.notes} <small>({t.optional})</small>
+            </label>
+            <p id="notes-hint">{t.notesHint}</p>
+            <textarea
+              id="service-notes"
+              rows="3"
+              autocomplete="off"
+              aria-describedby="notes-hint"
+            ></textarea>
+          </div>
+        </details>
+      </div>
+      <p class="notice">{t.privacy}</p>
     </div>
-    <p class="notice">{t.privacy}</p>
-    <div class="preview-heading">
-      <label for="prompt-preview">{t.preview}</label>
-      <button
-        type="button"
-        class="button primary"
-        data-copy-prompt
-        disabled
-        aria-describedby="prompt-validation"
-      >
-        {t.copy} ⧉
-      </button>
-    </div>
-    <p role="status" aria-live="polite" aria-atomic="true"></p>
-    <p id="prompt-preview-hint">{t.previewHint}</p>
-    <textarea
-      id="prompt-preview"
-      class="prompt-box"
-      rows="14"
-      readonly
-      aria-describedby="prompt-preview-hint prompt-validation"
-    ></textarea>
-    <p id="prompt-validation">{t.missing}</p>
-    <div class="resource-links">
-      <button type="button" class="button" data-reset-prompt>
-        {t.reset}
-      </button>
+    <div class="builder-preview">
+      <div class="preview-heading">
+        <label for="prompt-preview">{t.preview}</label>
+        <button
+          type="button"
+          class="button primary"
+          data-copy-prompt
+          disabled
+          aria-describedby="prompt-validation"
+        >
+          {t.copy} ⧉
+        </button>
+      </div>
+      <p role="status" aria-live="polite" aria-atomic="true"></p>
+      <p id="prompt-preview-hint">{t.previewHint}</p>
+      <textarea
+        id="prompt-preview"
+        class="prompt-box"
+        rows="14"
+        readonly
+        aria-describedby="prompt-preview-hint prompt-validation"
+      ></textarea>
+      <p id="prompt-validation">{t.missing}</p>
+      <div class="resource-links">
+        <button type="button" class="button" data-reset-prompt>
+          {t.reset}
+        </button>
+      </div>
     </div>
   </div>
   <noscript>
@@ -152,3 +156,36 @@ const t = builderText[lang];
     root.querySelector<HTMLElement>("[data-editor]")!.hidden = false;
   });
 </script>
+
+<style>
+  [data-editor] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: clamp(24px, 4vw, 56px);
+  }
+  .builder-input,
+  .builder-preview {
+    min-width: 0;
+  }
+  .builder-preview {
+    padding-left: 32px;
+    border-left: 1px solid var(--line);
+  }
+  .prompt-box {
+    min-height: 330px;
+  }
+  @media (max-width: 760px) {
+    [data-editor] {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .builder-preview {
+      border-left: 0;
+      border-top: 1px solid var(--line);
+      padding: 24px 0 0;
+    }
+    .prompt-box {
+      min-height: 250px;
+    }
+  }
+</style>

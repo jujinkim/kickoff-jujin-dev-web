@@ -3,7 +3,7 @@ kind: concept
 articleId: react
 lang: ko
 title: React
-summary: 상태 변경이 표시 문구를 바꿉니다.
+summary: 컴포넌트와 상태로 UI를 만듭니다. JavaScript 기반 표현과 명시적인 상태 소유권을 원하는 팀에 어울립니다.
 category: web-ui
 aliases:
   - React
@@ -12,10 +12,10 @@ related:
   - vue
   - svelte
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-26"
 comparison:
   features: 프로퍼티·이벤트·상태 기반 렌더링
   advantages: 카드 동작 재사용

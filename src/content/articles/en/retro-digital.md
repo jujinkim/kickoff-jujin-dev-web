@@ -3,7 +3,7 @@ kind: concept
 articleId: retro-digital
 lang: en
 title: Retro digital
-summary: "Give an arcade invitation an early-desktop mood through titled windows and pixel details."
+summary: "Early-computer windows, pixel details and type evoke a deliberate digital nostalgia."
 category: styles
 aliases:
   - Retro digital
@@ -12,30 +12,28 @@ related:
   - brutalism
   - skeuomorphism
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
 comparison:
-  features: "Title bars, beveled windows, pixel ornaments, and fixed-width type."
-  advantages: Window groups make the project feel like a compact desktop.
-  limitations: Nostalgic decoration must not shrink text or imply unavailable actions.
-  suitable: "Choose it for a playful, compact workspace."
-  combinations: Combine window framing with modern reflow and native controls.
-checked: "2026-09-22"
+  features: Early digital window and pixel motifs
+  advantages: A recognizable arcade-era identity
+  limitations: Nostalgia must not obscure current controls
+  suitable: A nostalgic interface over natural materials
+  combinations: Legible type and accessible window behavior
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
 
-Imagine an arcade-night invitation showing place and time. Generic panels fail to convey the event's playful early-computer mood.
+An arcade meetup page helps guests pick a game and find its session time. Generic modern panels miss the event’s early-computer mood. Nostalgic window framing matters more here than minimalism’s quiet restraint.
 
 ## How: work toward a solution
 
-For the arcade night, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Menus lead to task windows; resource notes unfold inside titled windows.
+Choose Pixel rally and open session info. A titled window shows 19:00–19:30 and the round rules. Close it with the labeled button or Escape; focus returns to the opening control.
 
 ## What: the concept
 
-Retro digital borrows early desktop windows and pixel ornaments. This editorial category relates to Canva’s 2026 early-computing trend, not a claim of invention in 2026.
+Retro digital borrows early desktop and pixel-era cues. It is an editorial style category, not one historical platform. Keep readable type and modern keyboard behavior; decoration must not imply unavailable controls.
 
-Nostalgic decoration must not shrink text or imply unavailable actions.
-
-[Canva 2026](https://www.canva.com/newsroom/news/design-trends-2026/)
+[Canva: Design trends 2026](https://www.canva.com/newsroom/news/design-trends-2026/)

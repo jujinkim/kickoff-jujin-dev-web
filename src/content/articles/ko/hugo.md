@@ -3,7 +3,7 @@ kind: concept
 articleId: hugo
 lang: ko
 title: Hugo
-summary: 콘텐츠와 템플릿을 파일로 만듭니다.
+summary: 파일 중심 게시를 위해 Go 템플릿으로 콘텐츠를 생성합니다.
 category: static-generators
 aliases:
   - Hugo
@@ -12,10 +12,10 @@ related:
   - astro
   - jekyll
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-checked: "2026-09-22"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 콘텐츠와 Go 템플릿 결합
   advantages: 요청 시 글 렌더러 불필요

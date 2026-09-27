@@ -1,39 +1,37 @@
 ---
-kind: "concept"
-articleId: "subscription"
-lang: "ja"
-title: "サブスクリプション"
-summary: "継続課金とアクセス方針を定めます。"
-category: "billing"
-aliases: ["サブスクリプション", "Subscription"]
+kind: concept
+articleId: subscription
+lang: ja
+title: サブスクリプション
+summary: 継続する価値に対して期間ごとに請求します。更新・決済失敗・利用権の方針を定めます。
+category: billing
+aliases:
+  - サブスクリプション
+  - Subscription
 related:
-  [
-    "revenue",
-    "one-time-payment",
-    "usage-based",
-    "prepaid-credits",
-    "flat-rate-pricing",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - one-time-payment
+  - usage-based
+  - prepaid-credits
+  - flat-rate-pricing
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-26"
 comparison:
-  {
-    "features": "期間ごとの継続課金",
-    "advantages": "継続サービスを支える",
-    "limitations": "更新と失敗への対応が必要",
-    "suitable": "継続する顧客価値",
-    "combinations": "従量料金または定額",
-  }
+  features: 期間ごとの継続課金
+  advantages: 継続サービスを支える
+  limitations: 更新と失敗への対応が必要
+  suitable: 継続する顧客価値
+  combinations: 従量料金または定額
 ---
 
 ## なぜ必要なのか
 
 家族写真のバックアップアプリを作るとします。家族は写真を送り、何か月後にも探し出し、問題があれば支援を受ける必要があります。
 
-家族写真のバックアップは契約後も毎月ファイルを保管し、容量とサポートの費用が続きます。
+完成したファイル一つより継続した利用が重要です。利用量が価値を左右するなら書き出し回数による課金が向きます。
 
 ## どう解決するのか
 

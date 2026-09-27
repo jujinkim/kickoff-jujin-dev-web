@@ -3,7 +3,7 @@ kind: concept
 articleId: sans-serif
 lang: ja
 title: サンセリフ
-summary: "交通案内に簡潔な字形を使い、太さや見分けにくい文字を確認します。"
+summary: セリフのない字形で簡潔な印象を伝え、読みやすさは実際の書体と文脈で確認します。
 category: type-shapes
 aliases:
   - サンセリフ
@@ -12,15 +12,16 @@ related:
   - serif
   - script
 status: published
-revision: 7
-sourceRevision: 7
-updated: "2026-09-26"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-27"
 comparison:
-  features: サンセリフはセリフの飾りを省きますが、端の形や比率はさまざまです。
+  features: セリフのない字形で簡潔な印象を伝え、読みやすさは実際の書体と文脈で確認します。
   advantages: サイズと太さで同じ見本に階層を作ります。
   limitations: 普遍的な読みやすさを仮定せず、似た文字と韓日のサブセットを確認します。
   suitable: 階層が明確な案内板やUIに向きます。
   combinations: 平面の操作部やセリフの見出しと組み合わせます。
+checked: "2026-09-27"
 ---
 
 ## なぜ必要なのか
@@ -29,7 +30,7 @@ comparison:
 
 ## どう解決するのか
 
-列車案内板に使う言葉とiiiWWW 0123、数字を比べます。文字入力、サイズ、実測幅ガイド、数字の整列を操作します。文字列の接続形を保ちます。リセット・再読み込みで最初の文字と48pxに戻ります。 太さを変えて同じ文字の線の違いを比べます。
+交通案内の時刻・行先・状態を読みます。別の実験で太さや似た字形を比べます。ローカルのNoto SansとCJK書体が対応文字を描画し、リセットで初期見本へ戻ります。
 
 ## どんな考え方なのか
 

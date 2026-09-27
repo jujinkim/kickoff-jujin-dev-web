@@ -3,7 +3,7 @@ kind: concept
 articleId: unreal-engine
 lang: en
 title: Unreal Engine
-summary: Actors combine components and events.
+summary: "Combine actors, Blueprints and C++ for world-centered development."
 category: game-engines
 aliases:
   - Unreal Engine
@@ -12,10 +12,10 @@ related:
   - godot
   - unity
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: "Actors, components and Blueprint events"
   advantages: Gameplay paths can be inspected

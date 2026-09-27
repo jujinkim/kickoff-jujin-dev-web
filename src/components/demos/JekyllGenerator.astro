@@ -88,24 +88,26 @@ const t = local(lang),
           kitchen-notes.html
         </p>
       </li>
-      <li data-stage="3">
-        <b>04</b>{" "}
-        {t(
-          "Static host · publish files",
-          "정적 호스트 · 파일 발행",
-          "静的ホスト · ファイル公開",
-        )}
-      </li>
-      <li data-stage="4">
-        <b>05</b>{" "}
-        {t(
-          "Browser · read three articles",
-          "브라우저 · 글 3개 읽기",
-          "ブラウザー · 記事3件を読む",
-        )}
-      </li>
     </ol>
   </div>
+  <ol class="pipeline delivery" start="4">
+    <li data-stage="3">
+      <b>04</b>{" "}
+      {t(
+        "Static host · publish files",
+        "정적 호스트 · 파일 발행",
+        "静的ホスト · ファイル公開",
+      )}
+    </li>
+    <li data-stage="4">
+      <b>05</b>{" "}
+      {t(
+        "Browser · read three articles",
+        "브라우저 · 글 3개 읽기",
+        "ブラウザー · 記事3件を読む",
+      )}
+    </li>
+  </ol>
   <p class="current" data-current>
     {t(
       "Three Markdown articles + layout",
@@ -129,6 +131,24 @@ const t = local(lang),
       )}
     </p>
   </aside>
+  <dl class="runtime-facts" data-runtime-facts>
+    <dt>{t("Execution boundary", "실행 경계", "実行境界")}</dt>
+    <dd>
+      {t(
+        "Build: Ruby + Markdown + Liquid → HTML. Hosting does not run Ruby per read.",
+        "빌드: Ruby+Markdown+Liquid → HTML. 읽기마다 Ruby를 실행하지 않습니다.",
+        "ビルド：Ruby+Markdown+Liquid→HTML。閲覧ごとにRubyは実行しません。",
+      )}
+    </dd>
+    <dt>{t("State and responsibility", "상태와 책임", "状態と責任")}</dt>
+    <dd>
+      {t(
+        "Publisher maintains build dependencies; private records require another storage path.",
+        "발행자는 빌드 의존성을 관리하며 개인 기록에는 별도 저장 경로가 필요합니다.",
+        "公開担当はビルド依存を管理し、個人記録には別の保存経路が必要です。",
+      )}
+    </dd>
+  </dl>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -186,7 +206,7 @@ const t = local(lang),
   .pipeline {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .pipeline > li:nth-child(-n + 3) {
+  .ruby-boundary .pipeline > li {
     border-left: 5px solid #8b3744;
     background: #fff0f1;
   }
@@ -197,5 +217,49 @@ const t = local(lang),
     .pipeline {
       grid-template-columns: 1fr;
     }
+  }
+  .runtime-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 2fr);
+    gap: 10px 16px;
+    border-block: 1px solid currentColor;
+    padding: 18px 0;
+    margin: 18px 0;
+    font-size: 0.85rem;
+  }
+  .runtime-facts dt {
+    font-weight: 700;
+  }
+  .runtime-facts dd {
+    margin: 0;
+    min-width: 0;
+  }
+  @container (width<480px) {
+    .runtime-facts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ruby-boundary {
+    border: 6px double #694438;
+    padding: 28px;
+  }
+  .pipeline {
+    gap: 26px;
+  }
+  .pipeline > li {
+    border-left: 6px solid #694438;
+    padding: 24px;
+  }
+  .delivery > li {
+    border: 3px solid #426357;
+    background: #edf6f1;
+  }
+  .files {
+    font-size: 1rem;
+    line-height: 2;
+  }
+  [data-output-count] {
+    font-size: 2.5rem;
   }
 </style>

@@ -1,27 +1,31 @@
 ---
 kind: guide
-articleId: "srs"
-lang: "ko"
+articleId: srs
+lang: ko
 title: "요구사항·완료 조건: 원하는 동작 합의하기"
-summary: "사용자는 동작을 설명하고, AI가 요구사항과 결정 기록을 작성합니다."
-category: "planning"
+summary: 예상 동작과 제약을 관찰 가능한 완료 조건으로 바꾼 뒤 구현 방법을 정합니다.
+category: planning
 aliases:
-  [
-    "SRS",
-    "requirements",
-    "acceptance criteria",
-    "요구사항",
-    "완료 조건",
-    "要件",
-    "受け入れ条件",
-  ]
-related: ["architecture", "shipping"]
-example: "spec"
-status: "published"
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-aiPrompt: "합의한 프로젝트 맥락과 요구사항을 읽어줘. 이 프로젝트에 해당하는 미결정 제품 동작과 제약만 질문해줘. 평소 행동과 성공·실패를 살피고 해당하면 반복도 검토하되, 상점이나 결제를 전제하지 마. 답을 번호 있는 요구사항·완료 조건·작업으로 정리해줘. 유용한 시나리오와 문서 형식은 스스로 골라 작성해줘. 주요 결정의 대안·상태·재검토 조건을 기록해줘. 내부 자료구조는 스스로 정하되 빠진 제품 규칙을 추측하지 마."
+  - SRS
+  - requirements
+  - acceptance criteria
+  - 요구사항
+  - 완료 조건
+  - 要件
+  - 受け入れ条件
+related:
+  - architecture
+  - shipping
+example: spec
+status: published
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+aiPrompt: >-
+  합의한 프로젝트 맥락과 요구사항을 읽어줘. 이 프로젝트에 해당하는 미결정 제품 동작과 제약만 질문해줘. 평소 행동과 성공·실패를 살피고
+  해당하면 반복도 검토하되, 상점이나 결제를 전제하지 마. 답을 번호 있는 요구사항·완료 조건·작업으로 정리해줘. 유용한 시나리오와 문서
+  형식은 스스로 골라 작성해줘. 주요 결정의 대안·상태·재검토 조건을 기록해줘. 내부 자료구조는 스스로 정하되 빠진 제품 규칙을 추측하지 마.
+checked: "2026-09-26"
 ---
 
 ## 왜 필요한가

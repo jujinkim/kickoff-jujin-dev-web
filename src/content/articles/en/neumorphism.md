@@ -3,7 +3,7 @@ kind: concept
 articleId: neumorphism
 lang: en
 title: Neumorphism
-summary: "Soft pressed surfaces suit small trackers."
+summary: Similar-tone surfaces and paired shadows suggest soft raised or pressed controls.
 category: styles
 aliases:
   - Neumorphism
@@ -16,37 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-26"
+revision: 11
+sourceRevision: 11
+updated: "2026-09-27"
 comparison:
-  features: >-
-    Same-tone surfaces use upper-left highlights and lower-right shadows,
-    without resting borders. The checked row sinks inward; its tick and
-    strike-through remain without shadows.
-  advantages: Soft depth reinforces the physical control metaphor.
-  limitations: >-
-    Ticks, strike-through, and counts must survive shadow removal; retain focus
-    and forced-color outlines.
-  suitable: Choose it for a small control panel.
-  combinations: A minimal layout leaves space for shadows and explicit labels.
-checked: "2026-09-22"
+  features: Raised and inset surfaces from paired shadows
+  advantages: A tactile focus for a small control set
+  limitations: Low-contrast edges need reinforcement
+  suitable: A calm control panel with clear states
+  combinations: "Text labels, borders and visible focus"
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
 
-Imagine making a daily-stretch tracker. People mark each stretch as done on a calm screen and need to tell which control they have pressed.
-
-A daily-stretch tracker needs a clear pressed state on one quiet surface. Flat color changes alone do not express that desired material impression.
+A stretch timer helps someone choose a movement and take a short break. They want controls that feel gently pressed into one calm surface. A simple flat color change works functionally but does not give this material impression.
 
 ## How: work toward a solution
 
-For the daily stretch routine, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. The checked row sinks inward; its tick and strike-through remain without shadows.
+Choose a movement and start the 30-second timer. The start control appears pressed and the text says Running. Pause keeps the remaining seconds; start resumes. A new movement or reset restores 30 seconds.
 
 ## What: the concept
 
-**Neumorphism** — Same-tone surfaces use upper-left highlights and lower-right shadows, without resting borders.
+Neumorphism uses similar-tone surfaces and contrasting shadows to suggest raised or inset forms. Light direction and border choices vary. State text and visible focus must still work when shadows disappear.
 
-Ticks, strike-through, and counts must survive shadow removal; retain focus and forced-color outlines.
-
-[Hype4](https://hype4.academy/articles/design/ui-design-shapes-objects-basics-shadows-and-blurs)
+[Hype4: Shadows and Blurs](https://hype4.academy/articles/design/ui-design-shapes-objects-basics-shadows-and-blurs)

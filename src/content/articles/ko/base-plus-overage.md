@@ -1,35 +1,33 @@
 ---
-kind: "concept"
-articleId: "base-plus-overage"
-lang: "ko"
-title: "기본료+초과 사용량"
-summary: "기본료를 내고 포함량 초과분만 추가합니다."
-category: "pricing-models"
-aliases: ["기본료+초과 사용량", "Base fee plus overage"]
+kind: concept
+articleId: base-plus-overage
+lang: ko
+title: 기본료+초과 사용량
+summary: 기본 포함량을 제공하고 초과 사용분에 추가 요금을 받습니다.
+category: pricing-models
+aliases:
+  - 기본료+초과 사용량
+  - Base fee plus overage
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "per-seat-pricing",
-    "feature-tiered-pricing",
-    "volume-pricing",
-    "graduated-pricing",
-    "subscription",
-    "usage-based",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - per-seat-pricing
+  - feature-tiered-pricing
+  - volume-pricing
+  - graduated-pricing
+  - subscription
+  - usage-based
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "기본료와 초과분",
-    "advantages": "기본 서비스 비용 확보",
-    "limitations": "사용량 0에도 기본료 청구",
-    "suitable": "고정 비용과 변동 비용",
-    "combinations": "구독과 사용량 측정",
-  }
+  features: 기본료와 초과분
+  advantages: 기본 서비스 비용 확보
+  limitations: 사용량 0에도 기본료 청구
+  suitable: 고정 비용과 변동 비용
+  combinations: 구독과 사용량 측정
 ---
 
 ## 왜 필요한가

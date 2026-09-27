@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "microservices"
-lang: "ko"
-title: "마이크로서비스"
-summary: "업무 기능별 서비스를 독립적으로 배포합니다."
-category: "service-split"
-aliases: ["마이크로서비스"]
-related: ["architecture", "monolith", "modular-monolith"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
-checked: "2026-09-22"
+kind: concept
+articleId: microservices
+lang: ko
+title: 마이크로서비스
+summary: 조율 비용보다 운영 독립성이 중요할 때 기능을 독립 배포합니다.
+category: service-split
+aliases:
+  - 마이크로서비스
+related:
+  - architecture
+  - monolith
+  - modular-monolith
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "업무 기능별 독립 배포 서비스",
-    "advantages": "결제 재빌드 없이 보관함 배포",
-    "limitations": "네트워크 장애·데이터 조율 필요",
-    "suitable": "안정적인 경계·독립 배포 필요",
-    "combinations": "모듈러 모놀리스와 공존 가능",
-  }
+  features: 업무 기능별 독립 배포 서비스
+  advantages: 결제 재빌드 없이 보관함 배포
+  limitations: 네트워크 장애·데이터 조율 필요
+  suitable: 안정적인 경계·독립 배포 필요
+  combinations: 모듈러 모놀리스와 공존 가능
 ---
 
 ## 왜 필요한가

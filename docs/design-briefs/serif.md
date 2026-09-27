@@ -1,27 +1,27 @@
-# Serif visualization brief
+# Serif — representative review
 
-Based on [the planning template](../templates/design-demo-brief.md). Current article and visual reviewed 2026-09-23.
+- Stable ID: `serif`; leaf category: `type-shapes`.
+- Titles (EN / KO / JA): Serif / 세리프 / セリフ.
+- Definition and selection criterion: Finishing strokes at letter terminals create a distinct text texture; choose by editorial tone and tested legibility.
+- Neighbor comparison: see the matching Selection & comparison supplement; choices may coexist.
+- Why / situation: A local history magazine publishing neighborhood interviews.
+- How / representative action: Read the article-like specimen, mark H terminals, edit the width specimen and compare real measured advances.
+- Initial, changed, repeat, empty, reset and reload: Initial iiiWWW 0123 at 48px, no marks or tabular digits. Empty input measures zero. Reset and reload restore initial values.
+- Visual structure, incidental choices and mobile order: Printed editorial hierarchy, local Noto Serif for Latin and CJK. Font shape is independent from advance and spacing. DOM Range measures one shaped text node after fonts load.
+- Keyboard: native controls in DOM order, visible focus, polite localized status where interactive; reset retains focus.
+- No JavaScript: static explanation and initial screen remain; script-dependent controls stay disabled. Native disclosures work.
+- Themes and motion: authored demo colors within neutral shell; no required animation. Check dark surrounding theme, forced colors, focus and 200% text.
+- Assets and conditions: public/fonts/manifest.json; provenance in public/images/README.md or font manifest and bundled OFL files.
+- Localized visible labels: authored in English, then Korean/Japanese with the same actions and outcomes.
+- Revision: 7; each supplement sourceRevision matches.
+- Capture: `[data-demo="serif"]`; screenshots use initial state and loaded fonts/images.
+- Evidence inspected 2026-09-26:
+  - [CSS Fonts Level 3](https://www.w3.org/TR/css-fonts-3/#generic-font-families): Defines generic families, font matching and numeric variants; classification does not prove universal readability.
+  - [CSS Text Level 3: letter-spacing](https://www.w3.org/TR/css-text-3/#letter-spacing-property): Defines spacing between typographic character units separately from font selection.
+- Verification: check → build → thumbnails → rebuild → unit/output → browser; actual results in [review record](../quality-review.md).
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `serif`; `type-shapes`; Serif / 세리프 / セリフ.
-- Definition (one sentence): Serifs add finishing strokes at letter terminals.
-- Closest concept and concrete difference: Sans serif omits terminal strokes; this specimen shows them where the font supports them.
-- Distinguishing visual features (structure, material, typography): A specimen shows Latin finishing strokes and a localized phrase without claiming every script has serifs.
-- Comparison category: `type-shapes`; comparison dimensions are shared, but this article uses its own situation.
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: local history magazine; Localized specimen, 48px size, guides hidden and number alignment at its default.
-- Visual decisions and controls that demonstrate this concept: A specimen shows Latin finishing strokes and a localized phrase without claiming every script has serifs. Specimen input, size, measured width guides, number alignment and Reset.
-- Fictional scenario and why it demonstrates the definition: For a local history magazine, an editorial page needs a deliberate printed tone.
-- Representative action and observable result: Edit the specimen and change size: inspect stroke endings and measured width.
-- Initial state: Localized specimen, 48px size, guides hidden and number alignment at its default.
-- Changed state, repeated action, empty input/no results: Editing the specimen, size, guides or number alignment changes only the local preview. Empty input is handled visibly; no external font-performance claim is made.
-- Reset and reload behavior: Reset returns authored content and controls to initial state; reload starts fresh with no persistence.
-- Mobile order and width thresholds: Specimen and controls wrap at 320px; do not shrink text or sever script joins. Inspect at 768/1440px too.
-- Keyboard order, focus, accessible names, live feedback: Native controls follow source order, keep visible focus and announce changes; Reset remains keyboard reachable.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Explicit local contrast in both site themes; meaning stays in text and geometry when effects or motion are unavailable.
-- JavaScript-disabled initial screen and explanation: Initial labeled comparison and concept description remain readable; dynamic controls are disabled with surrounding explanation.
-- Font families, supported characters, fallback and measurement method: System CJK fallback; authored typography uses actual browser measurements only where width is taught, never simulated font metrics.
-- Localized visible strings, input constraints, original/translation review: English first, then Korean/Japanese; preserve this situation, result and stated limitation. No native-speaker certification claimed.
-- Mode: `interactive`; controls change the local article-body example only.
-- Capture selector and initial content: `[data-demo="serif"]`; three localized PNGs at `public/thumbnails/serif-{en,ko,ja}.png`.
-- Source URLs, inspected date, claims each source supports: https://www.w3.org/TR/css-fonts-3/; checked 2026-09-22. Source supports the named mechanism; the scenario is illustrative.
-- Comparison summaries: features `Serifs add finishing strokes at letter terminals.`; advantages `Terminal details give the same specimen a distinct texture.`; limitations `Korean and Japanese use Noto Serif CJK subsets; unsupported characters fall back, so inspect actual glyphs.`; suitable `Choose it when an editorial tone fits.`; combinations `Pair serif reading text with sans-serif interface labels.`.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/browser/styles.spec.ts`, `tests/browser/visual-audit.spec.ts`, and three localized thumbnails.
+## Strong teaching case — 2026-09-27
+
+Editorial headline and drop cap expose stroke endings beside a measurable specimen.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

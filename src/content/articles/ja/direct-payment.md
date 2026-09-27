@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "direct-payment"
-lang: "ja"
-title: "顧客の直接支払い"
-summary: "顧客が製品へのアクセス費用を払います。"
-category: "revenue-sources"
-aliases: ["顧客の直接支払い", "Customer direct payment"]
+kind: concept
+articleId: direct-payment
+lang: ja
+title: 顧客の直接支払い
+summary: 利用者が閲覧価値に支払い、運営を支えます。
+category: revenue-sources
+aliases:
+  - 顧客の直接支払い
+  - Customer direct payment
 related:
-  [
-    "revenue",
-    "advertising",
-    "sponsorship",
-    "affiliate-marketing",
-    "transaction-fees",
-    "subscription",
-    "direct-seller",
-  ]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - advertising
+  - sponsorship
+  - affiliate-marketing
+  - transaction-fees
+  - subscription
+  - direct-seller
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "顧客がアクセス費用を負担",
-    "advantages": "価値と支払者が対応",
-    "limitations": "支払いが利用の障壁になる",
-    "suitable": "有料の価値がある製品",
-    "combinations": "継続課金または買い切り",
-  }
+  features: 顧客がアクセス費用を負担
+  advantages: 価値と支払者が対応
+  limitations: 支払いが利用の障壁になる
+  suitable: 有料の価値がある製品
+  combinations: 継続課金または買い切り
 ---
 
 ## なぜ必要なのか

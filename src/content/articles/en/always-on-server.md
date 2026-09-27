@@ -3,7 +3,9 @@ kind: concept
 articleId: always-on-server
 lang: en
 title: Always-on server
-summary: Process lifetime differs from data lifetime.
+summary: >-
+  Keep a process listening for requests, with runtime control and responsibility
+  for capacity, supervision and recovery.
 category: hosting-models
 aliases:
   - Always-on server
@@ -12,10 +14,10 @@ related:
   - static-hosting
   - serverless-functions
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-checked: "2026-09-22"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+checked: "2026-09-26"
 comparison:
   features: Long-running request listener
   advantages: Direct runtime control
@@ -30,7 +32,7 @@ Imagine a library app where readers save articles. The team needs process and re
 
 ## How: work toward a solution
 
-Read article and Save Library Reading List enter the listening process. Save writes an external store; repeated saves keep one reader/article record. Fail next save leaves storage unchanged. Restart handler replaces the process, retaining records. Reset or reload clears this page-memory simulation and its illustrated store.
+Read and Save enter the listening process. Save writes an external store; repeated saves keep one reader/article record. Fail next save leaves storage unchanged. Restart handler replaces the process, retaining records. Reset clears this simulation and store.
 
 ## What: the concept
 

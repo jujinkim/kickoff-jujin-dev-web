@@ -1,25 +1,28 @@
 ---
-kind: "concept"
-articleId: "merchant-of-record"
-lang: "ko"
-title: "MoR 모델"
-summary: "계약한 판매자가 적용 대상 거래를 담당합니다."
-category: "seller-responsibility"
-aliases: ["MoR 모델", "Merchant of record model"]
-related: ["payments", "direct-seller", "subscription"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: merchant-of-record
+lang: ko
+title: MoR 모델
+summary: 공식 판매 대행 계약으로 해당 판매 의무를 위임합니다.
+category: seller-responsibility
+aliases:
+  - MoR 모델
+  - Merchant of record model
+related:
+  - payments
+  - direct-seller
+  - subscription
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "계약한 거래 판매자",
-    "advantages": "적용 대상 판매 업무 위탁",
-    "limitations": "계약과 적용 범위의 한계",
-    "suitable": "대상 제품과 시장",
-    "combinations": "구독과 제품 지원",
-  }
+  features: 계약한 거래 판매자
+  advantages: 적용 대상 판매 업무 위탁
+  limitations: 계약과 적용 범위의 한계
+  suitable: 대상 제품과 시장
+  combinations: 구독과 제품 지원
 ---
 
 ## 왜 필요한가

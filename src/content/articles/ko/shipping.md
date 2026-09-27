@@ -1,32 +1,32 @@
 ---
 kind: guide
-articleId: "shipping"
-lang: "ko"
+articleId: shipping
+lang: ko
 title: "배포·운영: 실행 환경과 복구 기준 정하기"
-summary: "대상 기기와 운영 제약을 정하면, AI가 배포 절차를 설계합니다."
-category: "deployment"
+summary: 산출물을 사용자·검증·복구 경로·담당자와 연결합니다.
+category: deployment
 aliases:
-  [
-    "runtime",
-    "hosting",
-    "distribution",
-    "web",
-    "console",
-    "호스팅",
-    "배포",
-    "콘솔",
-    "ホスティング",
-    "配布",
-    "コンソール",
-  ]
-related: ["static-sites", "payments"]
-example: "shipping"
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+  - runtime
+  - hosting
+  - distribution
+  - web
+  - console
+  - 호스팅
+  - 배포
+  - 콘솔
+  - ホスティング
+  - 配布
+  - コンソール
+related:
+  - static-sites
+  - payments
+example: shipping
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
 aiPrompt: "확정된 대상 기기의 실행 환경·유통·호스팅을 구분해줘. 미결정 채널, 허용 중단 시간, 복구 기대, 운영 담당, 예산을 질문해줘. 산출물·접근 권한·최신 플랫폼 규칙을 확인해줘. 합의된 제약에 맞는 배포 절차와 검증 기준을 정하고 추가 자원 비용과 복구 한계를 설명해줘. 비용·노출 범위·중단 시간이 늘어나면 먼저 질문해줘. 롤링·블루그린·카나리 용어를 내가 선택하게 하지 마. 계획 수립을 실제 배포 허가로 해석하지 마."
-checked: "2026-09-23"
+checked: "2026-09-27"
 ---
 
 ## 왜 필요한가

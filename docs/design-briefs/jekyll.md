@@ -1,24 +1,36 @@
-# Jekyll demo brief
+# Jekyll / Jekyll / Jekyll
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `jekyll`; `static-generators`; Jekyll / Jekyll / Jekyll.
-- Definition (one sentence): Jekyll transforms Markdown and layouts into a static site using a Ruby build workflow. Generation and hosting are separate choices.
-- Closest concept and concrete difference: compare astro, hugo; A Ruby build enclosure around source, layout and output, ending before hosting.
-- Distinguishing visual features (structure, material, typography): A Ruby build enclosure around source, layout and output, ending before hosting. Restrained solid surfaces, system text and tabular counts keep mechanism labels legible; colors are editorial, not product definitions.
-- Shared comparison category: [static-generators](../catalog-writing/groups/static-generators.md).
-- Article-specific scenario, dataset, labels, actions, and initial state: Three source articles family-recipes.md/pantry-tips.md/kitchen-notes.md and one layout; zero output files; no missing layout; optional island off.
-- Visual variable changed; concept-specific extra controls and their justification: A Ruby build enclosure around source, layout and output, ending before hosting. Failure and boundary controls expose the documented application assumptions.
-- Fictional scenario and why it demonstrates the definition: A family recipe archive adds new posts often; copying a complete page for each recipe makes shared layout changes tedious. Start a family recipe archive with three Markdown articles and one layout.
-- Representative action and observable result: Start a family recipe archive with three Markdown articles and one layout. Next runs the Ruby build, creates an index and three article pages, then sends files through hosting to the browser.
-- Initial state: Three source articles family-recipes.md/pantry-tips.md/kitchen-notes.md and one layout; zero output files; no missing layout; optional island off.
-- Changed state, repeated action, empty input/no results: Next visits source/build/output/host/browser (0–4); Previous reverses. Missing layout stops before output. Four files means index plus three articles. Optional island never changes article count. No free-form input is accepted; no samples is an explicit canary fixture. All values are authored examples, not measurements.
-- Reset and reload behavior: Restore the entire initial page-memory model, including the illustrative store. Hosting restart preserves its store; blue-green Previous and switch-back preserve writes. Only Reset/reload clears those records.
-- Mobile order and width thresholds: Source, build, output, hosting, browser, then optional client/API path. Diagram grids stack below 560px of demo content width. At 320px viewport, labels wrap rather than shrink. The scene SVG uses a viewBox and a full-size textual legend.
-- Keyboard order, focus, accessible names, live feedback: Previous → Next → Reset → failure checkbox → optional island checkbox. Boundary steps are disabled. Native buttons/checkboxes, dashed visible focus, mounted controls, polite atomic status, no timer or drag-only control. Reset retains focus. Disabled step buttons mark boundaries.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Solid authored light surfaces in both site themes; no transparent/shadow-dependent content or animation. Numbers, version names, outlines and text survive forced colors.
-- JavaScript-disabled initial screen and explanation: Server-rendered initial diagram, legend, captions and Markdown remain readable. All interactive buttons and checkboxes start disabled. Wrapper explains the JavaScript requirement.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback; monospace only for file/key tokens. No font-metric claims or extra downloaded fonts.
-- Localized visible strings, input constraints, original/translation review: English group argument reviewed before Korean/Japanese translation on 2026-09-22. All interface labels, responses and states are localized; identifiers and engine API type names remain literal. No native-speaker review is claimed.
-- Capture selector and initial content: `[data-demo="jekyll"]`; reset at 1440px, light theme, all three languages, initial state above.
-- Source URLs, inspected date, claims each source supports: https://jekyllrb.com/docs/. Inspected 2026-09-22; definition/mechanism only. See [source refresh](../catalog-writing/platform-sources.md) for exact passages. Choice advice is editorial; fixture numbers and failure rules are authored.
-- Comparison summaries: features: Ruby build with reusable layouts; advantages: One layout serves many articles; limitations: Build dependencies need maintenance; suitable: Existing Jekyll publishing workflows; combinations: CI build plus static hosting.
-- Verification commands and evidence paths: Follow [design gates](../design-demos.md), `tests/platforms.test.mjs`, `tests/browser/platforms.spec.ts` and registry-wide browser checks. Captures: `public/thumbnails/jekyll-{en,ko,ja}.png`, `artifacts/platform-demos/jekyll-*.png`. Actual results belong to [platform review](../platform-demos-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `jekyll`; `static-generators`. Existing URLs and comment identity retained.
+- Definition and selection: Publish Markdown through a Ruby-based layout workflow.
+- Closest options and concrete difference: Choose Jekyll when an existing Ruby/Liquid publishing setup and its maintainers are a good fit. Hugo uses a different template ecosystem; Astro adds a component-oriented path to selective client interaction. Compare migration cost and team skills, not just generator labels.
+- Distinct situation and Why opening: Imagine a family recipe site where relatives add Markdown dishes. Its team uses Ruby templates so layout changes reach every page without copying recipes.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/jekyll.md), [KO](../../src/content/articles/ko/jekyll.md), [JA](../../src/content/articles/ja/jekyll.md); matching revision 6. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: The family recipe archive builds dishes, pantry tips and kitchen notes through one layout. Hosting serves the resulting HTML without running Ruby for each reader. A private Save feature remains a separate service decision.
+- Visual structure: `JekyllGenerator.astro` owns its markup, spacing and state. Caption: Build a family recipe archive
+- Initial and changed states: Start a family recipe archive with three Markdown articles and one layout. Next runs the Ruby build, creates an index and three article pages, then sends files through hosting to the browser. Missing layout stops this example before output. Reading these files needs no Ruby request handler. Personal Save records need a separate API. Previous, Reset, or reload restores earlier states.
+- Repetition, empty/failure and constraints: Pin and maintain build dependencies, review plugin support in the chosen host, and deploy only checked output. The example rejects a missing layout deliberately. A file host does not automatically back up editorial sources or personal records.
+- Controls and state selectors: `data-platform`, `data-runtime-facts`, `data-previous`, `data-next`, `data-reset`, `data-missing`, `data-stage`, `data-build-state`, `data-output-count`, `data-current`
+- Reset and reload: Reset returns the rendered initial model, announces restoration and keeps reset focus. Reload restores initial state; no input persistence or remote mutation.
+- Mobile order and widths: max-width:560px; width<480px. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Native controls with localized accessible names, visible focus and a polite status region. Representative keyboard actions and reset covered in browser tests.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Motion is optional. Server-rendered initial information remains readable; script-dependent controls are disabled and the wrapper explains the limitation.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `interactive`; `[data-demo="jekyll"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/jekyll.md`, sourceRevision 6; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Ruby build with reusable layouts; advantages: One layout serves many articles; limitations: Build dependencies need maintenance; suitable: Existing Jekyll publishing workflows; combinations: CI build plus static hosting
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/jekyll-320.png`, `artifacts/design-demos/jekyll-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Jekyll: Documentation](https://jekyllrb.com/docs/) (checked 2026-09-27): Documents the Ruby build workflow; build dependencies are distinct from serving the resulting files.
+
+## Strong teaching case — 2026-09-27
+
+Ruby build boundary contains the source pipeline; generated pages remain a distinct output.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

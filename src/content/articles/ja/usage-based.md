@@ -1,32 +1,30 @@
 ---
-kind: "concept"
-articleId: "usage-based"
-lang: "ja"
-title: "従量課金"
-summary: "利用単位を測り、料金を計算します。"
-category: "billing"
-aliases: ["従量課金", "Usage-based billing"]
+kind: concept
+articleId: usage-based
+lang: ja
+title: 従量課金
+summary: 顧客ごとの処理量が異なるとき、測定した利用量で請求します。
+category: billing
+aliases:
+  - 従量課金
+  - Usage-based billing
 related:
-  [
-    "revenue",
-    "one-time-payment",
-    "subscription",
-    "prepaid-credits",
-    "volume-pricing",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - one-time-payment
+  - subscription
+  - prepaid-credits
+  - volume-pricing
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "測定した利用単位に課金",
-    "advantages": "消費量に応じた料金",
-    "limitations": "利用量で請求額が変わる",
-    "suitable": "測定できる消費",
-    "combinations": "定期回収や前払いクレジット",
-  }
+  features: 測定した利用単位に課金
+  advantages: 消費量に応じた料金
+  limitations: 利用量で請求額が変わる
+  suitable: 測定できる消費
+  combinations: 定期回収や前払いクレジット
 ---
 
 ## なぜ必要なのか

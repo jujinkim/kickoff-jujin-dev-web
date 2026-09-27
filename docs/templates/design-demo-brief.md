@@ -5,6 +5,8 @@ Copy this file for one candidate. Resolve every field before publishing.
 - Stable ID, leaf category, English/Korean/Japanese titles:
 - Definition (one sentence):
 - Closest concept and concrete difference:
+- Strong teaching case: which material, boundary, action or numerical threshold makes that difference unmistakable without the title:
+- What is deliberately amplified, and which factual/accessibility limits remain intact:
 - Distinguishing visual features (structure, material, typography):
 - Comparison category (documented leaf group):
 - Why opening: app/page purpose, user, ordinary actions, then the problem in English/Korean/Japanese:
@@ -24,7 +26,10 @@ Copy this file for one candidate. Resolve every field before publishing.
 - Localized visible strings, input constraints, original/translation review:
 - Mode (`interactive` by default or `static` with no script/reset/mount wait):
 - Capture selector and initial content:
-- Source URLs, inspected date, claims each source supports:
+- Source URLs, inspected date, claims each source supports, specification status and browser support:
+- Image/font asset paths, origin, generation prompt or creator, license/usage conditions:
+- Which choices are incidental to this example rather than concept requirements:
+- Supplementary reading sections and matching sourceRevision:
 - Comparison summaries: features, advantages, limitations, suitable, combinations:
 - Verification commands and evidence paths:
 

@@ -1,24 +1,36 @@
-# Transaction fees visualization brief
+# Transaction fees / 取引仲介手数料 / 거래 중개 수수료
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `transaction-fees`; `revenue-sources`; Transaction fees / 거래 중개 수수료 / 取引仲介手数料.
-- Definition (one sentence): Transaction fee revenue comes from facilitating trades between buyers and sellers. It differs from referring a visitor elsewhere and does not itself determine the contractual seller.
-- Closest concept and concrete difference: same-category peers direct-payment, advertising, sponsorship, affiliate-marketing; Fee on mediated sale. Cross-category combinations are related reading, not comparison peers.
-- Distinguishing visual features (structure, material, typography): 100 input split into labeled author 90 and platform 10 blocks. Solid surfaces and text/number labels; color is not the only encoding.
-- Shared comparison category: [revenue-sources](../catalog-writing/groups/revenue-sources.md).
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional craft marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the maker.
-- Visual variable changed; concept-specific extra controls and their justification: 100 input split into labeled author 90 and platform 10 blocks. Static mode has no controls, scripts, artificial focus stops or mount dependency.
-- Fictional scenario and why it demonstrates the definition: A craft marketplace helps makers find buyers, yet a fixed charge would apply even when nothing sells. A fictional craft marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the maker.
-- Representative action and observable result: A fictional craft marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the maker. Stripe Connect illustrates application-fee flows; this is a simplified allocation, not its transfer sequence.
-- Initial state: 100 input split into labeled author 90 and platform 10 blocks.
-- Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
-- Reset and reload behavior: No mutable state or reset control.
-- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
-- Keyboard order, focus, accessible names, live feedback: No artificial tab stops. Semantic lists, tables and visible descriptions work without JavaScript.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
-- JavaScript-disabled initial screen and explanation: Full static diagram; no interaction instruction or noscript warning.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
-- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
-- Capture selector and initial content: `[data-demo="transaction-fees"]`; mode `static`; 1440px light surroundings in en/ko/ja; initial state above.
-- Source URLs, inspected date, claims each source supports: https://docs.stripe.com/connect/marketplace/tasks/app-fees; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
-- Comparison summaries: features: Fee on mediated sale; advantages: Revenue follows transactions; limitations: Disputes and operating costs; suitable: Useful two-sided marketplaces; combinations: Subscription plus seller contract.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/transaction-fees-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `transaction-fees`; `revenue-sources`. Existing URLs and comment identity retained.
+- Definition and selection: Take a share of completed marketplace transactions.
+- Closest options and concrete difference: A craft marketplace can charge when it helps a seller complete a sale. Sponsorship funds the resource independently of sales; affiliate commission rewards an external referral. A marketplace may also charge subscriptions, but each charge needs a clear service.
+- Distinct situation and Why opening: Imagine a craft market where makers list goods and buyers order. Fixed charges reach makers even on weeks without a sale.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/transaction-fees.md), [KO](../../src/content/articles/ko/transaction-fees.md), [JA](../../src/content/articles/ja/transaction-fees.md); matching revision 5. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: The buyer pays 100; the fictional 10% fee allocates 10 to the platform and 90 to the maker. The buyer receives the craft item. This allocation does not establish which party is the legal seller or who funds refunds.
+- Visual structure: `TransactionFees.astro` owns its markup, spacing and state. Caption: A platform takes a share of a mediated sale.
+- Initial and changed states: A fictional craft marketplace processes a 100 sale, retains a 10 platform fee and allocates 90 to the maker. Stripe Connect illustrates application-fee flows; this is a simplified allocation, not its transfer sequence. Taxes, processing fees and refunds are omitted, so 10 is not profit.
+- Repetition, empty/failure and constraints: No interactive state. Failure branches explain outcomes without pretending to execute requests.
+- Controls and state selectors: None; static explanatory diagram.
+- Reset and reload: Not applicable: no script, reset or mount wait.
+- Mobile order and widths: max-width:400px. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Readable text and ordered structure; no imitation controls.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Static diagram needs neither motion nor JavaScript.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `static`; `[data-demo="transaction-fees"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/transaction-fees.md`, sourceRevision 5; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Fee on mediated sale; advantages: Revenue follows transactions; limitations: Disputes and operating costs; suitable: Useful two-sided marketplaces; combinations: Subscription plus seller contract
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/transaction-fees-320.png`, `artifacts/design-demos/transaction-fees-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Stripe Connect: application fees](https://docs.stripe.com/connect/marketplace/tasks/app-fees) (checked 2026-09-27): Application fees allocate funds to a platform; liability depends on the chosen charge configuration.
+
+## Strong teaching case — 2026-09-27
+
+A 100-unit sale splits into unequal 90 and 10 allocations; fee is not profit.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

@@ -3,7 +3,7 @@ kind: concept
 articleId: unity
 lang: ja
 title: Unity
-summary: コンポーネントが動作を与えます。
+summary: 再利用するGameObjectと部品で複数機種向けゲームを構成します。
 category: game-engines
 aliases:
   - Unity
@@ -12,10 +12,10 @@ related:
   - godot
   - unreal-engine
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: GameObjectにコンポーネントを付与
   advantages: 動作の責任を分担

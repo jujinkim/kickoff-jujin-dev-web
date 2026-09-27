@@ -1,30 +1,30 @@
 ---
 kind: guide
-articleId: "revenue"
-lang: "en"
+articleId: revenue
+lang: en
 title: "Subscription, one-time payment, or ads?"
-summary: "Match the bill to the value. The pricing page cannot rescue the product."
-category: "business"
+summary: "Connect payer, billing and access to explicit revenue and cost assumptions."
+category: business
 aliases:
-  [
-    "subscription",
-    "one-time",
-    "advertising",
-    "구독",
-    "일회 결제",
-    "광고",
-    "サブスクリプション",
-    "買い切り",
-    "広告",
-  ]
-related: ["payments", "srs"]
-example: "revenue"
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+  - subscription
+  - one-time
+  - advertising
+  - 구독
+  - 일회 결제
+  - 광고
+  - サブスクリプション
+  - 買い切り
+  - 広告
+related:
+  - payments
+  - srs
+example: revenue
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
 aiPrompt: "Compare subscription, one-time purchase, and advertising for our audience and ongoing costs. Separate gross revenue from costs with explicit assumptions. Ask about entitlement duration, cancellation, and privacy choices. Do not select a business model without delegation; return a decision record and acceptance criteria."
-checked: "2026-09-23"
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem

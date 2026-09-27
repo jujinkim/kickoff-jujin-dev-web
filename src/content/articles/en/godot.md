@@ -3,7 +3,7 @@ kind: concept
 articleId: godot
 lang: en
 title: Godot
-summary: Nodes compose reusable scenes.
+summary: Build scene-based games with an open-source engine.
 category: game-engines
 aliases:
   - Godot
@@ -12,10 +12,10 @@ related:
   - unity
   - unreal-engine
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-checked: "2026-09-22"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: Reusable scenes made of nodes
   advantages: Collectible composition can be reused

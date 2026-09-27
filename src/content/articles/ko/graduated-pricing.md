@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "graduated-pricing"
-lang: "ko"
-title: "구간별 누진 단가"
-summary: "각 구간의 사용량을 따로 계산해 더합니다."
-category: "pricing-models"
-aliases: ["구간별 누진 단가", "Graduated pricing"]
+kind: concept
+articleId: graduated-pricing
+lang: ko
+title: 구간별 누진 단가
+summary: 수량 구간마다 해당 수량을 계산한 뒤 소계를 더합니다.
+category: pricing-models
+aliases:
+  - 구간별 누진 단가
+  - Graduated pricing
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "per-seat-pricing",
-    "feature-tiered-pricing",
-    "volume-pricing",
-    "base-plus-overage",
-    "usage-based",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - per-seat-pricing
+  - feature-tiered-pricing
+  - volume-pricing
+  - base-plus-overage
+  - usage-based
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "구간별 계산 후 합산",
-    "advantages": "이전 단위의 가격 유지",
-    "limitations": "계산 설명이 더 필요",
-    "suitable": "단계적인 사용량 할인",
-    "combinations": "사용량 측정과 구독",
-  }
+  features: 구간별 계산 후 합산
+  advantages: 이전 단위의 가격 유지
+  limitations: 계산 설명이 더 필요
+  suitable: 단계적인 사용량 할인
+  combinations: 사용량 측정과 구독
 ---
 
 ## 왜 필요한가

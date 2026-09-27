@@ -127,6 +127,24 @@ const t = local(lang),
       </li>
     </ol>
   </div>
+  <dl class="runtime-facts" data-runtime-facts>
+    <dt>{t("Execution boundary", "실행 경계", "実行境界")}</dt>
+    <dd>
+      {t(
+        "Model: coin Actor → overlap event → consumed guard → score update.",
+        "모형: 동전 Actor → 겹침 이벤트 → 소비 검사 → 점수 갱신.",
+        "模型：コインActor→重なりイベント→取得済み確認→得点更新。",
+      )}
+    </dd>
+    <dt>{t("State and responsibility", "상태와 책임", "状態と責任")}</dt>
+    <dd>
+      {t(
+        "Page memory holds the modeled score. No Unreal runtime, network replication or durable game save is running.",
+        "점수는 페이지 메모리 모형입니다. Unreal 실행·네트워크 복제·영속 게임 저장은 동작하지 않습니다.",
+        "得点はページメモリの模型です。Unreal実行・通信複製・永続ゲーム保存は動いていません。",
+      )}
+    </dd>
+  </dl>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -196,5 +214,51 @@ const t = local(lang),
   .flow li {
     border-radius: 10px;
     background: #fff;
+  }
+  .runtime-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 2fr);
+    gap: 10px 16px;
+    border-block: 1px solid currentColor;
+    padding: 18px 0;
+    margin: 18px 0;
+    font-size: 0.85rem;
+  }
+  .runtime-facts dt {
+    font-weight: 700;
+  }
+  .runtime-facts dd {
+    margin: 0;
+    min-width: 0;
+  }
+  @container (width<480px) {
+    .runtime-facts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .composition {
+    border: 4px solid #594675;
+    padding: 24px;
+  }
+  .flow {
+    gap: 28px;
+  }
+  .flow > li {
+    position: relative;
+    border: 3px solid #594675;
+    padding: 24px;
+  }
+  .flow > li + li::before {
+    content: "↓";
+    position: absolute;
+    left: 46%;
+    top: -32px;
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  .flow > li:nth-child(2) {
+    border-radius: 24px;
+    border-style: dashed;
   }
 </style>

@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "merchant-of-record"
-lang: "en"
-title: "Merchant of record model"
-summary: "A contracted seller handles covered transactions."
-category: "seller-responsibility"
-aliases: ["Merchant of record model"]
-related: ["payments", "direct-seller", "subscription"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: merchant-of-record
+lang: en
+title: Merchant of record model
+summary: Delegate covered seller duties through a seller-of-record contract.
+category: seller-responsibility
+aliases:
+  - Merchant of record model
+related:
+  - payments
+  - direct-seller
+  - subscription
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Contracted transaction seller",
-    "advantages": "Delegates covered sales operations",
-    "limitations": "Contract and coverage limits",
-    "suitable": "Eligible products and markets",
-    "combinations": "Subscription plus product support",
-  }
+  features: Contracted transaction seller
+  advantages: Delegates covered sales operations
+  limitations: Contract and coverage limits
+  suitable: Eligible products and markets
+  combinations: Subscription plus product support
 ---
 
 ## Why: the goal or problem

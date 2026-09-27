@@ -1,33 +1,31 @@
 ---
-kind: "concept"
-articleId: "advertising"
-lang: "ko"
-title: "광고"
-summary: "광고주가 콘텐츠 주변의 광고 지면을 지원합니다."
-category: "revenue-sources"
-aliases: ["광고", "Advertising"]
+kind: concept
+articleId: advertising
+lang: ko
+title: 광고
+summary: 이용자의 주목도에 상업적 가치가 있을 때 광고주가 비용을 부담합니다.
+category: revenue-sources
+aliases:
+  - 광고
+  - Advertising
 related:
-  [
-    "revenue",
-    "direct-payment",
-    "sponsorship",
-    "affiliate-marketing",
-    "transaction-fees",
-    "banner-ads",
-  ]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - direct-payment
+  - sponsorship
+  - affiliate-marketing
+  - transaction-fees
+  - banner-ads
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "광고주가 지면 비용 부담",
-    "advantages": "무료 접근을 지원할 수 있음",
-    "limitations": "주의 분산과 신뢰 비용",
-    "suitable": "광고 배치가 적합한 콘텐츠",
-    "combinations": "유료 접근 또는 후원",
-  }
+  features: 광고주가 지면 비용 부담
+  advantages: 무료 접근을 지원할 수 있음
+  limitations: 주의 분산과 신뢰 비용
+  suitable: 광고 배치가 적합한 콘텐츠
+  combinations: 유료 접근 또는 후원
 ---
 
 ## 왜 필요한가

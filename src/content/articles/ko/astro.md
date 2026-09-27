@@ -3,7 +3,7 @@ kind: concept
 articleId: astro
 lang: ko
 title: Astro
-summary: 정적 페이지에 필요한 아일랜드만 추가합니다.
+summary: 콘텐츠 중심 HTML에 필요한 대화형 아일랜드를 더합니다.
 category: static-generators
 aliases:
   - Astro
@@ -12,10 +12,10 @@ related:
   - hugo
   - jekyll
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 선택적 클라이언트 아일랜드
   advantages: 본문은 정적 HTML로 유지

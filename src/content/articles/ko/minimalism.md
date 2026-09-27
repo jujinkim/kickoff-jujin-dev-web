@@ -3,7 +3,7 @@ kind: concept
 articleId: minimalism
 lang: ko
 title: 미니멀리즘
-summary: "필요한 조작은 남기고 시선을 빼앗는 장식을 덜어 등산 준비물에 집중합니다."
+summary: 필수 정보와 조작을 남기고 경쟁하는 요소를 줄여 주의를 집중시킵니다.
 category: styles
 aliases:
   - 미니멀리즘
@@ -16,34 +16,28 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-26"
+revision: 11
+sourceRevision: 11
+updated: "2026-09-27"
 comparison:
-  features: 제한된 요소와 넉넉한 여백으로 핵심에 집중합니다. 여백과 절제한 글자로 프로젝트 정보를 읽기 쉽게 배치합니다.
-  advantages: 여백이 핵심 작업에 시선을 모읍니다.
-  limitations: 탐색이나 고유 정보를 없애면 단순화가 아니라 과업의 손실이 됩니다.
-  suitable: 집중할 작업 흐름에 어울립니다.
-  combinations: 절제된 배치에 세리프·산세리프 모두 조합할 수 있습니다.
-checked: "2026-09-21"
+  features: 의도적인 절제와 여백
+  advantages: 필수 항목을 쉽게 훑음
+  limitations: 필수를 숨기면 작업이 어려워짐
+  suitable: 소수 우선순위와 선택적 상세
+  combinations: 단일 열과 단계적 공개
+checked: "2026-09-27"
 ---
 
 ## 왜 필요한가
 
-당일 등산을 위한 준비 목록을 만든다고 가정해 봅시다. 출발 전 물과 옷, 안전 장비를 빠르게 확인할 수 있어야 합니다.
-
-등산 준비 목록에 장식이 많으면 꼭 필요한 물건을 놓치기 쉽습니다.
-
-부가 장식이 사용자가 끝내려는 작업과 시선을 경쟁합니다. 필요한 조작은 남기면서 핵심 정보에 집중시키고 싶습니다.
+당일 산행 준비 목록에서 등산객은 출발 전 물품을 챙깁니다. 선택 물품이 물·옷·지도를 가립니다. 네오브루탈리즘의 강한 강조나 깊이 표현 변경보다 시선을 경쟁하는 요소를 줄이는 일이 우선입니다.
 
 ## 어떻게 해결하는가
 
-등산 준비 목록에서 작업 3개와 메모 2개 중 하나를 완료하면 진행률이 1 / 3, 33%가 됩니다. 작업 필터와 메모 펼치기를 써보고 초기화로 처음 상태와 비교합니다. 여백과 절제한 글자로 프로젝트 정보를 읽기 쉽게 배치합니다.
+필수 물품 세 개를 넉넉한 여백과 함께 남깁니다. 물병을 체크하면 세 개 중 하나가 준비됩니다. 필요할 때만 선택 준비물을 펼칩니다. 초기화하면 체크와 펼침이 해제됩니다.
 
 ## 무엇이라 부르는가
 
-**미니멀리즘** — 제한된 요소와 넉넉한 여백으로 핵심에 집중합니다.
+미니멀리즘은 핵심 콘텐츠 주변의 시각적 경쟁을 줄입니다. 평면이나 입체 표면 모두 쓸 수 있습니다. 필요한 지침·탐색·안전 정보를 없애는 것은 과업의 손실입니다.
 
-탐색이나 고유 정보를 없애면 단순화가 아니라 과업의 손실이 됩니다.
-
-[NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)
+[NN/g: Characteristics of Minimalism](https://www.nngroup.com/articles/characteristics-minimalism/)

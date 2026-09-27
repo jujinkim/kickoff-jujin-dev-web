@@ -1,32 +1,30 @@
 ---
-kind: "concept"
-articleId: "usage-based"
-lang: "ko"
-title: "사용량 기반 과금"
-summary: "사용 단위를 측정해 요금을 계산합니다."
-category: "billing"
-aliases: ["사용량 기반 과금", "Usage-based billing"]
+kind: concept
+articleId: usage-based
+lang: ko
+title: 사용량 기반 과금
+summary: 고객마다 처리량이 다를 때 측정한 사용량에 따라 청구합니다.
+category: billing
+aliases:
+  - 사용량 기반 과금
+  - Usage-based billing
 related:
-  [
-    "revenue",
-    "one-time-payment",
-    "subscription",
-    "prepaid-credits",
-    "volume-pricing",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - one-time-payment
+  - subscription
+  - prepaid-credits
+  - volume-pricing
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "측정한 사용 단위 과금",
-    "advantages": "소비량에 따라 요금 변화",
-    "limitations": "사용량에 따라 청구액 변동",
-    "suitable": "측정 가능한 소비",
-    "combinations": "정기 수금 또는 선불 크레딧",
-  }
+  features: 측정한 사용 단위 과금
+  advantages: 소비량에 따라 요금 변화
+  limitations: 사용량에 따라 청구액 변동
+  suitable: 측정 가능한 소비
+  combinations: 정기 수금 또는 선불 크레딧
 ---
 
 ## 왜 필요한가

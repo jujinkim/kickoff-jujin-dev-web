@@ -1,25 +1,29 @@
 ---
-kind: "concept"
-articleId: "banner-ads"
-lang: "ja"
-title: "バナー広告"
-summary: "主な内容の隣に区別した広告領域を置きます。"
-category: "ad-formats"
-aliases: ["バナー広告", "Banner ads"]
-related: ["revenue", "interstitial-ads", "rewarded-ads", "advertising"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: banner-ads
+lang: ja
+title: バナー広告
+summary: 作業画面を保ちたいとき、継続表示する広告枠を確保します。
+category: ad-formats
+aliases:
+  - バナー広告
+  - Banner ads
+related:
+  - revenue
+  - interstitial-ads
+  - rewarded-ads
+  - advertising
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "画面の一部に配置",
-    "advantages": "本文が見え続ける",
-    "limitations": "限られた画面領域を使用",
-    "suitable": "広告領域を確保した画面",
-    "combinations": "広告収益",
-  }
+  features: 画面の一部に配置
+  advantages: 本文が見え続ける
+  limitations: 限られた画面領域を使用
+  suitable: 広告領域を確保した画面
+  combinations: 広告収益
 ---
 
 ## なぜ必要なのか

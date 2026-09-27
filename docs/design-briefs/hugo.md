@@ -1,24 +1,36 @@
-# Hugo demo brief
+# Hugo / Hugo / Hugo
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `hugo`; `static-generators`; Hugo / Hugo / Hugo.
-- Definition (one sentence): Hugo combines content with templates to generate static files. Its Go implementation does not require authors to write articles as Go programs.
-- Closest concept and concrete difference: compare astro, jekyll; A source-file column feeding template and output panels; generated files precede the host.
-- Distinguishing visual features (structure, material, typography): A source-file column feeding template and output panels; generated files precede the host. Restrained solid surfaces, system text and tabular counts keep mechanism labels legible; colors are editorial, not product definitions.
-- Shared comparison category: [static-generators](../catalog-writing/groups/static-generators.md).
-- Article-specific scenario, dataset, labels, actions, and initial state: Three source articles local-history.md/town-market.md/walking-trails.md and one layout; zero output files; no missing layout; optional island off.
-- Visual variable changed; concept-specific extra controls and their justification: A source-file column feeding template and output panels; generated files precede the host. Failure and boundary controls expose the documented application assumptions.
-- Fictional scenario and why it demonstrates the definition: A town visitor guide has many pages with the same navigation, and copying that navigation into each file makes updates slow. Start a town visitor guide with three Markdown articles and one layout.
-- Representative action and observable result: Start a town visitor guide with three Markdown articles and one layout. Next resolves templates, creates an index and three article pages, then sends files through hosting to the browser.
-- Initial state: Three source articles local-history.md/town-market.md/walking-trails.md and one layout; zero output files; no missing layout; optional island off.
-- Changed state, repeated action, empty input/no results: Next visits source/build/output/host/browser (0–4); Previous reverses. Missing layout stops before output. Four files means index plus three articles. Optional island never changes article count. No free-form input is accepted; no samples is an explicit canary fixture. All values are authored examples, not measurements.
-- Reset and reload behavior: Restore the entire initial page-memory model, including the illustrative store. Hosting restart preserves its store; blue-green Previous and switch-back preserve writes. Only Reset/reload clears those records.
-- Mobile order and width thresholds: Source, build, output, hosting, browser, then optional client/API path. Diagram grids stack below 560px of demo content width. At 320px viewport, labels wrap rather than shrink. The scene SVG uses a viewBox and a full-size textual legend.
-- Keyboard order, focus, accessible names, live feedback: Previous → Next → Reset → failure checkbox → optional island checkbox. Boundary steps are disabled. Native buttons/checkboxes, dashed visible focus, mounted controls, polite atomic status, no timer or drag-only control. Reset retains focus. Disabled step buttons mark boundaries.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Solid authored light surfaces in both site themes; no transparent/shadow-dependent content or animation. Numbers, version names, outlines and text survive forced colors.
-- JavaScript-disabled initial screen and explanation: Server-rendered initial diagram, legend, captions and Markdown remain readable. All interactive buttons and checkboxes start disabled. Wrapper explains the JavaScript requirement.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback; monospace only for file/key tokens. No font-metric claims or extra downloaded fonts.
-- Localized visible strings, input constraints, original/translation review: English group argument reviewed before Korean/Japanese translation on 2026-09-22. All interface labels, responses and states are localized; identifiers and engine API type names remain literal. No native-speaker review is claimed.
-- Capture selector and initial content: `[data-demo="hugo"]`; reset at 1440px, light theme, all three languages, initial state above.
-- Source URLs, inspected date, claims each source supports: https://gohugo.io/about/introduction/. Inspected 2026-09-22; definition/mechanism only. See [source refresh](../catalog-writing/platform-sources.md) for exact passages. Choice advice is editorial; fixture numbers and failure rules are authored.
-- Comparison summaries: features: Content plus Go templates; advantages: No request-time article renderer; limitations: Templates and widgets need work; suitable: File-centered documentation; combinations: Static hosting plus a Save API.
-- Verification commands and evidence paths: Follow [design gates](../design-demos.md), `tests/platforms.test.mjs`, `tests/browser/platforms.spec.ts` and registry-wide browser checks. Captures: `public/thumbnails/hugo-{en,ko,ja}.png`, `artifacts/platform-demos/hugo-*.png`. Actual results belong to [platform review](../platform-demos-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `hugo`; `static-generators`. Existing URLs and comment identity retained.
+- Definition and selection: Generate content through Go templates for file-centered publishing.
+- Closest options and concrete difference: Choose Hugo when editors favor Markdown, Go templates and file-based publishing. Astro offers component-oriented islands; Jekyll may preserve an established Ruby ecosystem. Familiarity and content structure matter more than an unmeasured claim that one generator is faster.
+- Distinct situation and Why opening: Imagine a town guide where visitors read walks and landmark articles. Editors repeat layout fixes across pages. They know Go templates and want shared Markdown publishing; page-specific interactive components are a lower priority.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/hugo.md), [KO](../../src/content/articles/ko/hugo.md), [JA](../../src/content/articles/ja/hugo.md); matching revision 7. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: The town guide shares a layout across history, market and walking articles. Generation happens before readers request the files. A separate browser widget may call a Save API; the static generator is not the request handler.
+- Visual structure: `HugoGenerator.astro` owns its markup, spacing and state. Caption: Build a town visitor guide
+- Initial and changed states: Start the town guide with three Markdown articles and one layout. Next builds an index and three article pages, then delivers them through hosting. Missing layout stops output. A browser widget can call a separate Save API; Hugo never handles reader requests. Previous, Reset, or reload restores earlier states.
+- Repetition, empty/failure and constraints: Keep source content, templates and built output separate. The missing-layout stop is this example’s validation policy, not a guarantee about every Hugo configuration. The publishing owner maintains build inputs and deployment; personal storage needs its own owner and backup policy.
+- Controls and state selectors: `data-platform`, `data-runtime-facts`, `data-previous`, `data-next`, `data-reset`, `data-missing`, `data-stage`, `data-build-state`, `data-output-count`, `data-current`
+- Reset and reload: Reset returns the rendered initial model, announces restoration and keeps reset focus. Reload restores initial state; no input persistence or remote mutation.
+- Mobile order and widths: max-width:560px; width<480px. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Native controls with localized accessible names, visible focus and a polite status region. Representative keyboard actions and reset covered in browser tests.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Motion is optional. Server-rendered initial information remains readable; script-dependent controls are disabled and the wrapper explains the limitation.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `interactive`; `[data-demo="hugo"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/hugo.md`, sourceRevision 7; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Content plus Go templates; advantages: No request-time article renderer; limitations: Templates and widgets need work; suitable: File-centered documentation; combinations: Static hosting plus a Save API
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/hugo-320.png`, `artifacts/design-demos/hugo-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Hugo: Introduction](https://gohugo.io/about/introduction/) (checked 2026-09-27): Describes Hugo’s static generation and template model; no relative speed benchmark is claimed.
+
+## Strong teaching case — 2026-09-27
+
+Directory/template inputs feed a bounded build and output set.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

@@ -3,7 +3,7 @@ kind: concept
 articleId: serverless-functions
 lang: ja
 title: サーバーレス関数
-summary: 呼び出し実行と永続状態を分けます。
+summary: 長時間のプロセスを自ら運用せず、イベント処理を実行します。
 category: hosting-models
 aliases:
   - サーバーレス関数
@@ -12,10 +12,10 @@ related:
   - static-hosting
   - always-on-server
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: イベントで起動する管理型処理
   advantages: 基盤がサーバーを準備

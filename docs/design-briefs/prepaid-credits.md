@@ -1,24 +1,36 @@
-# Prepaid credits visualization brief
+# Prepaid credits / 前払いクレジット / 선불 크레딧
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `prepaid-credits`; `billing`; Prepaid credits / 선불 크레딧 / 前払いクレジット.
-- Definition (one sentence): Prepaid credits collect payment before usage and reduce a balance as units are consumed. Credit value, expiry and eligible uses depend on the offer.
-- Closest concept and concrete difference: same-category peers one-time-payment, subscription, usage-based; Pre-funded usage balance. Cross-category combinations are related reading, not comparison peers.
-- Distinguishing visual features (structure, material, typography): Credit wallet, native remaining-balance progress, request and monthly-use buttons. Solid surfaces and text/number labels; color is not the only encoding.
-- Shared comparison category: [billing](../catalog-writing/groups/billing.md).
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional classroom poster exporter starts with 1,000 credits, spending one per export.
-- Visual variable changed; concept-specific extra controls and their justification: Credit wallet, native remaining-balance progress, request and monthly-use buttons. Controls expose the mechanism described below; no background timer or real checkout.
-- Fictional scenario and why it demonstrates the definition: A teacher making classroom posters wants to know the spending limit before starting a large batch. A fictional classroom poster exporter starts with 1,000 credits, spending one per export.
-- Representative action and observable result: A fictional classroom poster exporter starts with 1,000 credits, spending one per export. Run the shared months of 100, 300 and 600 exports: balances become 900, 600 and zero.
-- Initial state: Balance 1,000, spent 0, request 100; no expiry.
-- Changed state, repeated action, empty input/no results: Where present, integer inputs accept 0–10,000 only; empty, negative and fractional values report an error without a charge. Insufficient balances never become negative. Access, purchase and ad actions are guarded; repeated non-consumable purchase and duplicate ad completion cannot grant extra rights or rewards. See item-specific state tests.
-- Reset and reload behavior: Reset and reload restore the initial page-memory state above. No account, storage, payment or advertising connection.
-- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
-- Keyboard order, focus, accessible names, live feedback: Native controls follow DOM order, labels name inputs, dashed 3px focus remains visible, reset retains focus, polite atomic status announces outcomes. Guarded buttons use aria-disabled while remaining mounted so repeated attempts can be explained.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
-- JavaScript-disabled initial screen and explanation: Complete server-rendered initial result and Markdown remain readable; JS-dependent controls start disabled and wrapper explains why.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
-- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
-- Capture selector and initial content: `[data-demo="prepaid-credits"]`; mode `interactive`; 1440px light surroundings in en/ko/ja; initial state above.
-- Source URLs, inspected date, claims each source supports: https://docs.stripe.com/billing/subscriptions/usage-based/billing-credits; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
-- Comparison summaries: features: Pre-funded usage balance; advantages: Visible spending boundary; limitations: Top-ups and expiry rules; suitable: Budgeted consumption; combinations: Usage metering.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/prepaid-credits-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `prepaid-credits`; `billing`. Existing URLs and comment identity retained.
+- Definition and selection: Collect before consumption and spend a bounded credit balance.
+- Closest options and concrete difference: A poster exporter fits prepayment when a classroom wants a bounded allowance before consuming resources. Postpaid usage billing charges after measurement; subscription access usually follows a time period. Credits define a balance, not necessarily a currency or a renewal interval.
+- Distinct situation and Why opening: Imagine teachers exporting classroom posters. Before making a large set, one teacher needs a clear spending limit.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/prepaid-credits.md), [KO](../../src/content/articles/ko/prepaid-credits.md), [JA](../../src/content/articles/ja/prepaid-credits.md); matching revision 5. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: A purchased allowance starts at 1,000 credits; each export consumes one. After 100, 300 and 600 exports the balances are 900, 600 and zero. A further export is blocked until top-up; purchase price and expiry are unspecified.
+- Visual structure: `PrepaidCredits.astro` owns its markup, spacing and state. Caption: Buy a balance before consuming units.
+- Initial and changed states: A fictional classroom poster exporter starts with 1,000 credits, spending one per export. Run the shared months of 100, 300 and 600 exports: balances become 900, 600 and zero. Any further export is blocked until a simulated top-up. Credits here do not expire; purchase price, taxes, fees and refunds are omitted.
+- Repetition, empty/failure and constraints: Keep purchase, reservation, consumption and refunds in a durable ledger. Prevent duplicate deduction and negative balances under concurrency. Define expiration and failed-work refunds explicitly. This local example resets on reload and stores no purchased value.
+- Controls and state selectors: `data-money`, `data-contract-context`, `data-balance`, `data-progress`, `data-quantity`, `data-consume`, `data-topup`, `data-spend`, `data-spent`, `data-reset`
+- Reset and reload: Reset returns the rendered initial model, announces restoration and keeps reset focus. Reload restores initial state; no input persistence or remote mutation.
+- Mobile order and widths: Responsive wrapping within the available article width. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Native controls with localized accessible names, visible focus and a polite status region. Representative keyboard actions and reset covered in browser tests.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Motion is optional. Server-rendered initial information remains readable; script-dependent controls are disabled and the wrapper explains the limitation.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `interactive`; `[data-demo="prepaid-credits"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/prepaid-credits.md`, sourceRevision 5; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Pre-funded usage balance; advantages: Visible spending boundary; limitations: Top-ups and expiry rules; suitable: Budgeted consumption; combinations: Usage metering
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/prepaid-credits-320.png`, `artifacts/design-demos/prepaid-credits-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Stripe: billing credits](https://docs.stripe.com/billing/subscriptions/usage-based/billing-credits) (checked 2026-09-27): Credit grants can offset eligible usage invoices; this demo uses application credits rather than claiming identical provider settlement behavior.
+
+## Strong teaching case — 2026-09-27
+
+Large finite wallet balance exposes spending and insufficient-credit outcomes.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

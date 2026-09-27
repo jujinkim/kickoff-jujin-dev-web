@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "clean-architecture"
-lang: "ko"
-title: "클린 아키텍처"
-summary: "소스 코드 의존성이 정책을 향하도록 만듭니다."
-category: "boundaries"
-aliases: ["클린 아키텍처"]
-related: ["architecture", "layered-architecture", "hexagonal-architecture"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: clean-architecture
+lang: ko
+title: 클린 아키텍처
+summary: 애플리케이션 정책을 지키도록 소스 의존성을 안쪽으로 향합니다.
+category: boundaries
+aliases:
+  - 클린 아키텍처
+related:
+  - architecture
+  - layered-architecture
+  - hexagonal-architecture
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "소스 의존성은 안쪽으로",
-    "advantages": "정책이 프레임워크 데이터와 독립",
-    "limitations": "경계 데이터 변환의 관리 비용",
-    "suitable": "UI·데이터베이스보다 오래갈 정책",
-    "combinations": "외부 경계에 헥사고날 포트 적용 가능",
-  }
+  features: 소스 의존성은 안쪽으로
+  advantages: 정책이 프레임워크 데이터와 독립
+  limitations: 경계 데이터 변환의 관리 비용
+  suitable: UI·데이터베이스보다 오래갈 정책
+  combinations: 외부 경계에 헥사고날 포트 적용 가능
 ---
 
 ## 왜 필요한가

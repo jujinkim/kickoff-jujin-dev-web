@@ -1,30 +1,32 @@
 ---
-kind: "concept"
-articleId: "hexagonal-architecture"
-lang: "ko"
-title: "헥사고날 아키텍처"
-summary: "기술과 독립적인 포트로 애플리케이션 동작을 감쌉니다."
-category: "boundaries"
-aliases: ["헥사고날 아키텍처"]
-related: ["architecture", "layered-architecture", "clean-architecture"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: hexagonal-architecture
+lang: ko
+title: 헥사고날 아키텍처
+summary: 포트와 교체 가능한 어댑터로 애플리케이션 규칙을 입력·저장 기술과 분리합니다.
+category: boundaries
+aliases:
+  - 헥사고날 아키텍처
+related:
+  - architecture
+  - layered-architecture
+  - clean-architecture
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-26"
 comparison:
-  {
-    "features": "애플리케이션 포트와 외부 어댑터",
-    "advantages": "메모리 어댑터로 저장 동작 테스트",
-    "limitations": "포트·어댑터로 간접 단계 증가",
-    "suitable": "진입점이나 저장 구현이 여러 개인 경우",
-    "combinations": "내부 정책에 클린 아키텍처 적용 가능",
-  }
+  features: 애플리케이션 포트와 외부 어댑터
+  advantages: 메모리 어댑터로 저장 동작 테스트
+  limitations: 포트·어댑터로 간접 단계 증가
+  suitable: 진입점이나 저장 구현이 여러 개인 경우
+  combinations: 내부 정책에 클린 아키텍처 적용 가능
 ---
 
 ## 왜 필요한가
 
-교사가 수업 일정 글을 저장하는 안내 앱을 만든다고 가정해 봅시다. 저장 규칙을 시험할 때마다 웹 서버와 데이터베이스를 띄워야 하면 확인이 느려집니다.
+교사가 수업 일정 글을 저장하는 안내 앱을 만든다고 가정해 봅시다. 저장 규칙을 시험할 때마다 웹 서버와 데이터베이스를 띄워야 하면 확인이 느려집니다. 책임을 계층으로 나누는 것보다 연결 기술의 교체가 중요합니다.
 
 ## 어떻게 해결하는가
 

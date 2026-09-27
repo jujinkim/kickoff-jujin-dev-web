@@ -1,25 +1,29 @@
 ---
-kind: "concept"
-articleId: "non-consumable-purchase"
-lang: "ko"
-title: "비소모성 구매"
-summary: "반복 사용해도 구매한 권한이 유지됩니다."
-category: "purchase-types"
-aliases: ["비소모성 구매", "Non-consumable purchase"]
-related: ["revenue", "consumable-purchase", "one-time-payment", "freemium"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: non-consumable-purchase
+lang: ko
+title: 비소모성 구매
+summary: 쓸 때마다 소진되지 않는 지속 기능을 구매로 엽니다.
+category: purchase-types
+aliases:
+  - 비소모성 구매
+  - Non-consumable purchase
+related:
+  - revenue
+  - consumable-purchase
+  - one-time-payment
+  - freemium
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "유지되는 구매 권한",
-    "advantages": "소진 없이 반복 사용",
-    "limitations": "구매 복원 구현 필요",
-    "suitable": "지속되는 선택 기능",
-    "combinations": "프리미엄 무료 모델과 일회성 결제",
-  }
+  features: 유지되는 구매 권한
+  advantages: 소진 없이 반복 사용
+  limitations: 구매 복원 구현 필요
+  suitable: 지속되는 선택 기능
+  combinations: 프리미엄 무료 모델과 일회성 결제
 ---
 
 ## 왜 필요한가

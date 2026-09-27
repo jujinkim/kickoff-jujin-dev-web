@@ -1,24 +1,27 @@
-# React demo brief
+# React — representative review
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `react`; `web-ui`; React / React / React.
-- Definition (one sentence): React components receive props and describe UI from state. A state setter requests rendering; changing an ordinary variable does not provide that mechanism.
-- Closest concept and concrete difference: compare vue, svelte; A shared state owner enclosing two independent card IDs, followed by an event/setter/render loop.
-- Distinguishing visual features (structure, material, typography): A shared state owner enclosing two independent card IDs, followed by an event/setter/render loop. Restrained solid surfaces, system text and tabular counts keep mechanism labels legible; colors are editorial, not product definitions.
-- Shared comparison category: [web-ui](../catalog-writing/groups/web-ui.md).
-- Article-specific scenario, dataset, labels, actions, and initial state: Two Home planner cards Shopping List/Weekly Menu, both unsaved; shared total zero.
-- Visual variable changed; concept-specific extra controls and their justification: A shared state owner enclosing two independent card IDs, followed by an event/setter/render loop. Failure and boundary controls expose the documented application assumptions.
-- Fictional scenario and why it demonstrates the definition: A home planner shows Shopping List and Weekly Menu side by side; saving one must update its label and total without changing the other. Two cards in a home planner start unsaved.
-- Representative action and observable result: Two cards in a home planner start unsaved. Save on Shopping List changes only its label to Saved; Weekly Menu stays unsaved.
-- Initial state: Two Home planner cards Shopping List/Weekly Menu, both unsaved; shared total zero.
-- Changed state, repeated action, empty input/no results: Save Shopping List changes only Shopping List, then Weekly Menu changes total to two. Repeated saves do not add records. State ownership is per card with a derived shared total. No free-form input is accepted; no samples is an explicit canary fixture. All values are authored examples, not measurements.
-- Reset and reload behavior: Restore the entire initial page-memory model, including the illustrative store. Hosting restart preserves its store; blue-green Previous and switch-back preserve writes. Only Reset/reload clears those records.
-- Mobile order and width thresholds: Authoring mechanism, cards Shopping List then Weekly Menu, update path and shared total. Diagram grids stack below 560px of demo content width. At 320px viewport, labels wrap rather than shrink. The scene SVG uses a viewBox and a full-size textual legend.
-- Keyboard order, focus, accessible names, live feedback: Shopping List Save → Weekly Menu Save → Reset. Save stays enabled for duplicate testing and retains focus. Native buttons/checkboxes, dashed visible focus, mounted controls, polite atomic status, no timer or drag-only control. Reset retains focus. Disabled step buttons mark boundaries.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Solid authored light surfaces in both site themes; no transparent/shadow-dependent content or animation. Numbers, version names, outlines and text survive forced colors.
-- JavaScript-disabled initial screen and explanation: Server-rendered initial diagram, legend, captions and Markdown remain readable. All interactive buttons and checkboxes start disabled. Wrapper explains the JavaScript requirement.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback; monospace only for file/key tokens. No font-metric claims or extra downloaded fonts.
-- Localized visible strings, input constraints, original/translation review: English group argument reviewed before Korean/Japanese translation on 2026-09-22. All interface labels, responses and states are localized; identifiers and engine API type names remain literal. No native-speaker review is claimed.
-- Capture selector and initial content: `[data-demo="react"]`; reset at 1440px, light theme, all three languages, initial state above.
-- Source URLs, inspected date, claims each source supports: https://react.dev/learn. Inspected 2026-09-22; definition/mechanism only. See [source refresh](../catalog-writing/platform-sources.md) for exact passages. Choice advice is editorial; fixture numbers and failure rules are authored.
-- Comparison summaries: features: Props, events and state-driven rendering; advantages: Reusable card behavior; limitations: Shared ownership needs design; suitable: Component-based interfaces; combinations: Astro island plus external storage.
-- Verification commands and evidence paths: Follow [design gates](../design-demos.md), `tests/platforms.test.mjs`, `tests/browser/platforms.spec.ts` and registry-wide browser checks. Captures: `public/thumbnails/react-{en,ko,ja}.png`, `artifacts/platform-demos/react-*.png`. Actual results belong to [platform review](../platform-demos-review.md).
+- Stable ID: `react`; leaf category: `web-ui`.
+- Titles (EN / KO / JA): React / React / React.
+- Definition and selection criterion: Build interfaces from components and state, suited to teams that want JavaScript-driven rendering and explicit state ownership.
+- Neighbor comparison: see the matching Selection & comparison supplement; choices may coexist.
+- Why / situation: Family home planner with shopping and menu cards sharing saved state.
+- How / representative action: Save either card; only its label changes while the shared total derives from saved IDs.
+- Initial, changed, repeat, empty, reset and reload: Both unsaved → first saved / count 1 → both saved / count 2. Repetition stays 2; reset and reload clear state. No persistence.
+- Visual structure, incidental choices and mobile order: Planner cards and event → setter → render trace. Browser simulation, not a real React runtime. Parent ownership supplies each card status.
+- Keyboard: native controls in DOM order, visible focus, polite localized status where interactive; reset retains focus.
+- No JavaScript: static explanation and initial screen remain; script-dependent controls stay disabled. Native disclosures work.
+- Themes and motion: authored demo colors within neutral shell; no required animation. Check dark surrounding theme, forced colors, focus and 200% text.
+- Assets and conditions: No raster asset; component-owned HTML cards.; provenance in public/images/README.md or font manifest and bundled OFL files.
+- Localized visible labels: authored in English, then Korean/Japanese with the same actions and outcomes.
+- Revision: 6; each supplement sourceRevision matches.
+- Capture: `[data-demo="react"]`; screenshots use initial state and loaded fonts/images.
+- Evidence inspected 2026-09-26:
+  - [React: State as a Snapshot](https://react.dev/learn/state-as-a-snapshot): State setters request rendering; each render sees a snapshot of state.
+  - [React: Sharing State Between Components](https://react.dev/learn/sharing-state-between-components): Move coordinated state to a shared owner and pass data and event handlers to children.
+- Verification: check → build → thumbnails → rebuild → unit/output → browser; actual results in [review record](../quality-review.md).
+
+## Strong teaching case — 2026-09-27
+
+Parent-owned state feeds two independent cards; event, setter and render form a clear path.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

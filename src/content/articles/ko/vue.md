@@ -3,7 +3,7 @@ kind: concept
 articleId: vue
 lang: ko
 title: Vue
-summary: 반응형 상태가 템플릿을 갱신합니다.
+summary: 템플릿 중심 작성에 맞춰 템플릿과 반응형 상태를 연결합니다.
 category: web-ui
 aliases:
   - Vue
@@ -12,10 +12,10 @@ related:
   - react
   - svelte
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 반응형 상태에 연결된 템플릿
   advantages: 로직과 마크업을 함께 작성

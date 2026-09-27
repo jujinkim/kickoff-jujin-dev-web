@@ -105,6 +105,13 @@ const layers = [
     <li>{b.failure}</li>
   </ul>
   <p class="footnote">{b.alternatives}</p>
+  <p class="boundary-note" data-failure-boundary>
+    {t(
+      "These logical layers share one process and release. A process failure can affect all three; the arrows are not network links.",
+      "논리 계층은 하나의 프로세스·배포를 공유합니다. 프로세스 장애는 세 계층에 영향을 줄 수 있으며 화살표는 네트워크 연결이 아닙니다.",
+      "論理層は一つのプロセスと配布を共有します。プロセス障害は全層に及ぶ場合があり、矢印は通信接続ではありません。",
+    )}
+  </p>
 </section>
 <style>
   section {
@@ -151,7 +158,7 @@ const layers = [
   }
   .layer {
     display: grid;
-    grid-template-columns: 2rem minmax(0, 1fr);
+    grid-template-columns: 3.5rem minmax(0, 1fr);
     gap: 0.8rem;
     padding: 0.85rem;
     background: #fff;
@@ -235,5 +242,38 @@ const layers = [
     .rule {
       border-color: CanvasText;
     }
+  }
+  .boundary-note {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid currentColor;
+    font-size: 0.85rem;
+  }
+
+  .deployment {
+    border-width: 4px;
+    padding: clamp(14px, 4cqi, 28px);
+  }
+  .layers {
+    gap: 24px;
+  }
+  .layer {
+    border-width: 3px;
+    padding: 24px;
+  }
+  .layer .number {
+    font-size: 2.2rem;
+    white-space: nowrap;
+  }
+  .arrow {
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding-block: 12px;
+  }
+  .arrow.solid {
+    border-width: 4px;
+  }
+  .arrow.dashed {
+    border-width: 4px;
   }
 </style>

@@ -1,27 +1,29 @@
-# Two columns visualization brief
+# Sidebar layout — representative review
 
-Based on [the planning template](../templates/design-demo-brief.md). Current article and visual reviewed 2026-09-23.
+- Stable ID: `two-columns`; leaf category: `columns`.
+- Titles (EN / KO / JA): Sidebar layout / 사이드바 레이아웃 / サイドバーレイアウト.
+- Definition and selection criterion: Keep navigation, filters or supporting information beside the main content so both remain available.
+- Neighbor comparison: see the matching Selection & comparison supplement; choices may coexist.
+- Why / situation: Recipe browser for cooks choosing dinner by ingredient and time.
+- How / representative action: Filter tomato + 20 minutes → pasta; 10 minutes → no matches; clear filters → four recipes. Native recipe notes expand in place.
+- Initial, changed, repeat, empty, reset and reload: Initial all ingredients / all times / four recipes / closed notes. Repeated filters are stable. Reset and reload restore initial state.
+- Visual structure, incidental choices and mobile order: Narrow filters support the wider recipe list. Below 520px of component content width, filters precede recipes. No fixed sidebar position; DOM order stays unchanged.
+- Keyboard: native controls in DOM order, visible focus, polite localized status where interactive; reset retains focus.
+- No JavaScript: static explanation and initial screen remain; script-dependent controls stay disabled. Native disclosures work.
+- Themes and motion: authored demo colors within neutral shell; no required animation. Check dark surrounding theme, forced colors, focus and 200% text.
+- Assets and conditions: public/images/tomato-pasta.png; provenance in public/images/README.md or font manifest and bundled OFL files.
+- Localized visible labels: authored in English, then Korean/Japanese with the same actions and outcomes.
+- Revision: 6; each supplement sourceRevision matches.
+- Capture: `[data-demo="two-columns"]`; screenshots use initial state and loaded fonts/images.
+- Evidence inspected 2026-09-26:
+  - [W3C Design System: Sidebar](https://design-system.w3.org/layouts/sidebar.html): Pattern example with narrower support panel and stacking based on available width; not a catalog-wide official taxonomy.
+  - [CSS Grid Layout Level 1](https://www.w3.org/TR/css-grid-1/): Defines tracks and placement of separate grid items.
+  - [CSS Multi-column Layout Level 1](https://www.w3.org/TR/css-multicol-1/): Distinguishes fragmented content flow from independent layout regions.
+  - [WCAG 2.2: Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html): Supports checking narrow-width reading without losing information or functionality; does not define sidebar layout.
+- Verification: check → build → thumbnails → rebuild → unit/output → browser; actual results in [review record](../quality-review.md).
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `two-columns`; `columns`; Two columns / 2열 / 2カラム.
-- Definition (one sentence): Two adjacent regions separate filters from resources.
-- Closest concept and concrete difference: Single column stacks everything; two columns keeps filters beside results while width permits.
-- Distinguishing visual features (structure, material, typography): Filters sit beside the recipe results on wide screens, then precede them on narrow screens.
-- Comparison category: `columns`; comparison dimensions are shared, but this article uses its own situation.
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: recipe index; Six labeled visual references, collection order, all topics and notes closed.
-- Visual decisions and controls that demonstrate this concept: Filters sit beside the recipe results on wide screens, then precede them on narrow screens. Topic filter, collection order, study-note disclosure, preview width and Reset.
-- Fictional scenario and why it demonstrates the definition: For a recipe index, a recipe index needs filters beside a long list of dishes.
-- Representative action and observable result: Narrow the preview: the filter moves above results without hiding either.
-- Initial state: Six labeled visual references, collection order, all topics and notes closed.
-- Changed state, repeated action, empty input/no results: Repeated filter or guide changes update the same local preview; empty filters explain that no references match. The visual makes no external data or performance claim.
-- Reset and reload behavior: Reset returns authored content and controls to initial state; reload starts fresh with no persistence.
-- Mobile order and width thresholds: At 320px keep filter, results and notes in source order; at 768/1440px show the authored arrangement. No clipped card or page overflow.
-- Keyboard order, focus, accessible names, live feedback: Native controls follow source order, keep visible focus and announce changes; Reset remains keyboard reachable.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Explicit local contrast in both site themes; meaning stays in text and geometry when effects or motion are unavailable.
-- JavaScript-disabled initial screen and explanation: Initial labeled comparison and concept description remain readable; dynamic controls are disabled with surrounding explanation.
-- Font families, supported characters, fallback and measurement method: System CJK fallback; authored typography uses actual browser measurements only where width is taught, never simulated font metrics.
-- Localized visible strings, input constraints, original/translation review: English first, then Korean/Japanese; preserve this situation, result and stated limitation. No native-speaker certification claimed.
-- Mode: `interactive`; controls change the local article-body example only.
-- Capture selector and initial content: `[data-demo="two-columns"]`; three localized PNGs at `public/thumbnails/two-columns-{en,ko,ja}.png`.
-- Source URLs, inspected date, claims each source supports: https://www.w3.org/WAI/WCAG22/Understanding/reflow.html; checked 2026-09-22. Source supports reflow and accessibility constraints; the specific arrangement is an authored example.
-- Comparison summaries: features `Two adjacent regions separate filters from resources.`; advantages `Filters stay available beside the resource list.`; limitations `Sidebars reduce reading width, so stack regions before they become cramped.`; suitable `Choose it for documentation with persistent navigation.`; combinations `The main column can contain lists or a resource grid.`.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/browser/styles.spec.ts`, `tests/browser/visual-audit.spec.ts`, and three localized thumbnails.
+## Strong teaching case — 2026-09-27
+
+Narrow bounded filters beside dominant recipe results; reading order preserved on mobile.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

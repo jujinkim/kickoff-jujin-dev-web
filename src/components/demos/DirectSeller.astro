@@ -87,6 +87,13 @@ const t = local(lang),
       "対象の義務は契約に従います。国別の税務規則や普遍的な対応範囲は示しません。",
     )}
   </p>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The learner pays for a lesson license from the business. The business is the seller for receipts, refunds and transaction-tax duties in this diagram; a processor handles payment. Price, renewal and entitlement duration are independent choices.",
+      "학습자는 업체의 학습 이용권을 삽니다. 도표에서는 업체가 영수증·환불·거래 세금 의무를 맡는 판매자이고 결제 업체는 결제를 처리합니다. 가격·갱신·권리 기간은 별도 선택입니다.",
+      "学習者は事業者の学習利用権を買います。この図では事業者が領収書・返金・取引税を担う販売者で、決済業者が支払いを処理します。価格・更新・期間は別の選択です。",
+    )}
+  </p>
 </section>
 <style>
   .contract {
@@ -100,5 +107,19 @@ const t = local(lang),
   .money {
     border-bottom: 3px solid #567a73;
     padding-bottom: 1rem;
+  }
+
+  .contract {
+    border: 6px solid #526948;
+    padding: 28px;
+  }
+  .contract p {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  tbody td {
+    border-left: 7px solid #526948;
+    font-weight: 800;
+    padding: 20px;
   }
 </style>

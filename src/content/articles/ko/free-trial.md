@@ -1,25 +1,28 @@
 ---
-kind: "concept"
-articleId: "free-trial"
-lang: "ko"
-title: "무료 체험"
-summary: "제한된 기간 동안 유료 기능을 평가합니다."
-category: "access-strategies"
-aliases: ["무료 체험", "Free trial"]
-related: ["revenue", "freemium", "subscription"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: free-trial
+lang: ko
+title: 무료 체험
+summary: 유료 이용 전에 기간을 정한 평가 기회를 제공합니다.
+category: access-strategies
+aliases:
+  - 무료 체험
+  - Free trial
+related:
+  - revenue
+  - freemium
+  - subscription
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "기간 제한 평가",
-    "advantages": "유료 기능을 시험 가능",
-    "limitations": "만료와 전환 결정 필요",
-    "suitable": "체험 중 가치 확인 가능",
-    "combinations": "명시적 선택 후 구독",
-  }
+  features: 기간 제한 평가
+  advantages: 유료 기능을 시험 가능
+  limitations: 만료와 전환 결정 필요
+  suitable: 체험 중 가치 확인 가능
+  combinations: 명시적 선택 후 구독
 ---
 
 ## 왜 필요한가

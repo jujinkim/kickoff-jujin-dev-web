@@ -1,25 +1,36 @@
-# Layered architecture visualization brief
+# Layered architecture / レイヤードアーキテクチャ / 계층형 아키텍처
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `layered-architecture`; `boundaries`; Layered architecture / 계층형 아키텍처 / レイヤードアーキテクチャ.
-- Definition (one sentence): Logical responsibility layers constrain dependencies.
-- Closest concept and concrete difference: Hexagonal architecture owns ports inside; this closed-layer example depends downward on persistence.
-- Distinguishing visual features (structure, material, typography): Three numbered horizontal responsibility bands; solid import arrows and dashed call arrows descend between bands; a dotted single-process enclosure. Solid surfaces, system type and labels remain meaningful without color.
-- Shared comparison category: [Architecture boundaries](../catalog-writing/groups/boundaries.md).
-- Article-specific scenario, dataset, labels, actions, and initial state: reader Jun, article Borrowing Rules unsaved, one process, HTTP/CLI entry and memory/embedded-database storage. SaveArticle rejects empty IDs, returns Saved after successful persistence, and uses an idempotent fixture policy.
-- Visual variable changed; concept-specific extra controls and their justification: Three numbered horizontal responsibility bands; solid import arrows and dashed call arrows descend between bands; a dotted single-process enclosure. Static mode shows structure and execution together without implying a functioning database. No controls needed.
-- Fictional scenario and why it demonstrates the definition: Jun saves Borrowing Rules on a library page. Fictional single process: reader Jun, Borrowing Rules unsaved; memory or embedded database.
-- Representative action and observable result: Fictional single process: reader Jun, Borrowing Rules unsaved; memory or embedded database. Saved returns upward: 0 → 1 entries; repeat → 1. Empty IDs or failure before writing → 0; retry after correction.
-- Initial state: complete server-rendered diagram; fictional store empty.
-- Changed state, repeated action, empty input/no results: success 0 → 1 → 1; empty IDs or failure before writing keep 0. Retry after correction. These are independent cases from an empty store, not guarantees about every storage failure. Swapping storage means alternative implementations, not data migration.
-- Reset and reload behavior: static; no reset control or mutable state; reload preserves all descriptions.
-- Mobile order and width thresholds: preserve numbered DOM order at 320px. Layered bands stay vertical; adapter columns stack below 520px component width; nested clean boxes reduce inset below 430px. Wrap names without scaling text.
-- Keyboard order, focus, accessible names, live feedback: headings, labeled relations and numbered lists; no artificial tab stops or live regions. Native source links outside the diagram retain keyboard behavior.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: authored solid light palette in either theme, explicit dark labels; no animation, transparent surface or shadow dependency. Dotted enclosure and solid/dashed arrow patterns survive forced colors.
-- JavaScript-disabled initial screen and explanation: complete diagram, fixture and outcomes remain readable.
-- Font families, supported characters, fallback and measurement method: system sans-serif and monospace for identifiers, system CJK fallback; no font assets or metrics claims.
-- Localized visible strings, input constraints, original/translation review: English originals reviewed together before Korean/Japanese translation on 2026-09-22. Preserve Jun/Borrowing Rules, empty-ID validation, source/call distinction and conditional suitability. No native-speaker review claimed.
-- Mode: `static`; no script, reset or mount wait.
-- Capture selector and initial content: `[data-demo="layered-architecture"]`, complete diagram, 1440px light captures in en/ko/ja.
-- Source URLs, inspected date, claims each source supports: https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier; inspected 2026-09-22 for definition/mechanism. [Source refresh](../catalog-writing/boundaries-sources.md). Example policies and suitability are editorial.
-- Comparison summaries: features, advantages, limitations, suitable and combinations follow the reviewed English frontmatter and existing group matrix; no performance or superiority ranking.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); publication mutation tests, browser structure/reflow/no-JavaScript checks and registry-wide output checks. `public/thumbnails/layered-architecture-{en,ko,ja}.png`, ignored `artifacts/boundaries-demos/`, [release record](../boundaries-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `layered-architecture`; `boundaries`. Existing URLs and comment identity retained.
+- Definition and selection: Separate stable responsibilities along a simple dependency path.
+- Closest options and concrete difference: Choose layers when presentation, application coordination and persistence have stable responsibilities. Hexagonal ports help when external adapters must vary independently; clean architecture emphasizes inward policy dependencies. Layers may use either technique rather than excluding them.
+- Distinct situation and Why opening: Imagine a library guide where readers save borrowing rules from web or CLI. Page-owned validation duplicates rules; the team wants a simple presentation–application–storage path.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/layered-architecture.md), [KO](../../src/content/articles/ko/layered-architecture.md), [JA](../../src/content/articles/ja/layered-architecture.md); matching revision 6. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: The library guide sends HTTP and CLI saves through the same application validation. Changing an entry point does not duplicate the saving rule. The static arrows explain dependencies, calls and returned results separately; they do not execute requests.
+- Visual structure: `LayeredArchitecture.astro` owns its markup, spacing and state. Caption: Logical layers can share one deployment
+- Initial and changed states: 1. One process: reader Jun, Borrowing Rules unsaved; memory or embedded database. 2. HTTP or CLI presentation imports and calls application validation, which imports and calls persistence. No layer skipping. 3. Saved returns upward: 0 → 1 entries; repeat → 1. Empty IDs or failure before writing → 0; retry after correction. Switching HTTP to CLI leaves validation in place.
+- Repetition, empty/failure and constraints: No interactive state. Failure branches explain outcomes without pretending to execute requests.
+- Controls and state selectors: None; static explanatory diagram.
+- Reset and reload: Not applicable: no script, reset or mount wait.
+- Mobile order and widths: max-width: 430px. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Readable text and ordered structure; no imitation controls.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Static diagram needs neither motion nor JavaScript.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `static`; `[data-demo="layered-architecture"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/layered-architecture.md`, sourceRevision 6; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Responsibility layers with downward dependencies; advantages: Validation has a clear home; limitations: Pass-through layers add ceremony; suitable: Stable presentation, application and storage roles; combinations: Can add ports and dependency inversion
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/layered-architecture-320.png`, `artifacts/design-demos/layered-architecture-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Microsoft: N-tier architecture](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier) (checked 2026-09-27): Distinguishes logical layers from physical tiers and open from closed layering; this diagram uses one process and closed layers.
+
+## Strong teaching case — 2026-09-27
+
+Responsibility bands stack vertically; imports and calls retain distinct line styles.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

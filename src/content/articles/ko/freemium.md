@@ -1,25 +1,29 @@
 ---
-kind: "concept"
-articleId: "freemium"
-lang: "ko"
-title: "프리미엄 무료 모델"
-summary: "무료 기능을 유지하며 유료 기능을 선택하게 합니다."
-category: "access-strategies"
-aliases: ["프리미엄 무료 모델", "Freemium"]
-related: ["revenue", "free-trial", "subscription", "non-consumable-purchase"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: freemium
+lang: ko
+title: 프리미엄 무료 모델
+summary: 유용한 무료 등급을 유지하면서 추가 기능을 판매합니다.
+category: access-strategies
+aliases:
+  - 프리미엄 무료 모델
+  - Freemium
+related:
+  - revenue
+  - free-trial
+  - subscription
+  - non-consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "계속 제공되는 무료 기능",
-    "advantages": "계속 무료로 이용 가능",
-    "limitations": "무료 범위의 비용 부담",
-    "suitable": "유용한 선택적 확장",
-    "combinations": "구독 또는 비소모성 구매",
-  }
+  features: 계속 제공되는 무료 기능
+  advantages: 계속 무료로 이용 가능
+  limitations: 무료 범위의 비용 부담
+  suitable: 유용한 선택적 확장
+  combinations: 구독 또는 비소모성 구매
 ---
 
 ## 왜 필요한가

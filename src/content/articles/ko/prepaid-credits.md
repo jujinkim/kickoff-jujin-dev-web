@@ -1,32 +1,30 @@
 ---
-kind: "concept"
-articleId: "prepaid-credits"
-lang: "ko"
-title: "선불 크레딧"
-summary: "먼저 잔액을 확보하고 사용량만큼 차감합니다."
-category: "billing"
-aliases: ["선불 크레딧", "Prepaid credits"]
+kind: concept
+articleId: prepaid-credits
+lang: ko
+title: 선불 크레딧
+summary: 사용 전에 결제받고 정해진 크레딧 잔액에서 차감합니다.
+category: billing
+aliases:
+  - 선불 크레딧
+  - Prepaid credits
 related:
-  [
-    "revenue",
-    "one-time-payment",
-    "subscription",
-    "usage-based",
-    "consumable-purchase",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - one-time-payment
+  - subscription
+  - usage-based
+  - consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "미리 확보한 사용 잔액",
-    "advantages": "지출 경계가 보임",
-    "limitations": "충전과 만료 규칙 필요",
-    "suitable": "예산을 정한 소비",
-    "combinations": "사용량 측정",
-  }
+  features: 미리 확보한 사용 잔액
+  advantages: 지출 경계가 보임
+  limitations: 충전과 만료 규칙 필요
+  suitable: 예산을 정한 소비
+  combinations: 사용량 측정
 ---
 
 ## 왜 필요한가

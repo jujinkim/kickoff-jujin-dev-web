@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "volume-pricing"
-lang: "ja"
-title: "全数量段階単価"
-summary: "最終数量の区分で全単位の単価を決めます。"
-category: "pricing-models"
-aliases: ["全数量段階単価", "Volume pricing"]
+kind: concept
+articleId: volume-pricing
+lang: ja
+title: 全数量段階単価
+summary: 到達した数量段階の単価を全数量に適用します。
+category: pricing-models
+aliases:
+  - 全数量段階単価
+  - Volume pricing
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "per-seat-pricing",
-    "feature-tiered-pricing",
-    "graduated-pricing",
-    "base-plus-overage",
-    "usage-based",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - per-seat-pricing
+  - feature-tiered-pricing
+  - graduated-pricing
+  - base-plus-overage
+  - usage-based
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "全単位に一つの単価",
-    "advantages": "全数量への割引",
-    "limitations": "境界で合計が下がり得る",
-    "suitable": "意図した数量割引",
-    "combinations": "利用量の計測と継続課金",
-  }
+  features: 全単位に一つの単価
+  advantages: 全数量への割引
+  limitations: 境界で合計が下がり得る
+  suitable: 意図した数量割引
+  combinations: 利用量の計測と継続課金
 ---
 
 ## なぜ必要なのか

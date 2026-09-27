@@ -3,7 +3,7 @@ kind: concept
 articleId: script
 lang: ja
 title: スクリプト
-summary: "短い招待状の見出しに手書きの挨拶を添え、長い文章には簡潔な書体を使います。"
+summary: 手書きの筆致を短い表現に使い、詳しい案内は通常の文字で伝えます。
 category: type-shapes
 aliases:
   - スクリプト
@@ -12,15 +12,16 @@ related:
   - serif
   - sans-serif
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 comparison:
-  features: スクリプト書体は手書きの線やつながりを借ります。
+  features: 手書きの筆致を短い表現に使い、詳しい案内は通常の文字で伝えます。
   advantages: 手書きの線が短い文章に表情を加えます。
   limitations: 長文や未対応文字には通常の代替書体が必要で、この見本はラテン文字のみを示します。
   suitable: 短く表情のある見出しに向きます。
   combinations: 操作ラベルや長い説明には通常のサンセリフを使います。
+checked: "2026-09-27"
 ---
 
 ## なぜ必要なのか
@@ -29,7 +30,7 @@ comparison:
 
 ## どう解決するのか
 
-夕食への招待状に使う言葉とiiiWWW 0123、数字を比べます。文字入力、サイズ、実測幅ガイド、数字の整列を操作します。文字列の接続形を保ちます。リセット・再読み込みで最初の文字と48pxに戻ります。 Dancing Scriptでラテン文字の筆記体を示し、翻訳文にはNotoの代替書体を使います。
+招待状の“You are invited”はDancing Script、場所と時刻は通常の文字です。別の測定でも文字を箱に分けず、文字列を保ちます。韓国語と日本語にはNotoの代替書体を使います。
 
 ## どんな考え方なのか
 

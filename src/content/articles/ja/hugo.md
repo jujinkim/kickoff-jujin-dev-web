@@ -3,7 +3,7 @@ kind: concept
 articleId: hugo
 lang: ja
 title: Hugo
-summary: コンテンツとテンプレートをファイルにします。
+summary: ファイル中心の公開にGoテンプレートで生成します。
 category: static-generators
 aliases:
   - Hugo
@@ -12,10 +12,10 @@ related:
   - astro
   - jekyll
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-checked: "2026-09-22"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: コンテンツとGoテンプレート
   advantages: 閲覧時の記事描画処理が不要

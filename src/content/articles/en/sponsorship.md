@@ -1,37 +1,34 @@
 ---
-kind: "concept"
-articleId: "sponsorship"
-lang: "en"
-title: "Sponsorship"
-summary: "Supporters fund continued public work."
-category: "revenue-sources"
-aliases: ["Sponsorship"]
+kind: concept
+articleId: sponsorship
+lang: en
+title: Sponsorship
+summary: Fund shared resources through support rather than access sales.
+category: revenue-sources
+aliases:
+  - Sponsorship
 related:
-  [
-    "revenue",
-    "direct-payment",
-    "advertising",
-    "affiliate-marketing",
-    "transaction-fees",
-  ]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - direct-payment
+  - advertising
+  - affiliate-marketing
+  - transaction-fees
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Support funds continued work",
-    "advantages": "Can preserve open access",
-    "limitations": "Support may vary",
-    "suitable": "Public work with supporters",
-    "combinations": "Direct payment or advertising",
-  }
+  features: Support funds continued work
+  advantages: Can preserve open access
+  limitations: Support may vary
+  suitable: Public work with supporters
+  combinations: Direct payment or advertising
 ---
 
 ## Why: the goal or problem
 
-Imagine a free garden guide where volunteers share planting dates and event plans. Ongoing upkeep needs funding; the community prefers acknowledging supporters while keeping articles open, without relying on ad impressions.
+Volunteers share planting dates and events in a free garden guide. Ongoing upkeep needs funding; the community prefers acknowledging supporters while keeping articles open, without relying on ad impressions.
 
 ## How: work toward a solution
 

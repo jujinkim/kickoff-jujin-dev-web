@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "monolith"
-lang: "en"
-title: "Monolith"
-summary: "Release the server application as one unit."
-category: "service-split"
-aliases: ["Monolith"]
-related: ["architecture", "modular-monolith", "microservices"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
-checked: "2026-09-22"
+kind: concept
+articleId: monolith
+lang: en
+title: Monolith
+summary: Deploy together when simple operations outweigh independent releases.
+category: service-split
+aliases:
+  - Monolith
+related:
+  - architecture
+  - modular-monolith
+  - microservices
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "One server-side release unit",
-    "advantages": "One release pipeline for a small team",
-    "limitations": "Shared release and process failure boundaries",
-    "suitable": "Closely related capabilities with one team",
-    "combinations": "Can contain layers and explicit modules",
-  }
+  features: One server-side release unit
+  advantages: One release pipeline for a small team
+  limitations: Shared release and process failure boundaries
+  suitable: Closely related capabilities with one team
+  combinations: Can contain layers and explicit modules
 ---
 
 ## Why: the goal or problem

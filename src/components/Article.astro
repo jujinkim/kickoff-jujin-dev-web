@@ -3,6 +3,7 @@ import { ancestors } from "../lib/catalog";
 import { articleReplacement, isListedArticle } from "../lib/catalog-scope";
 import { render } from "astro:content";
 import Base from "../layouts/Base.astro";
+import ArticleDetails from "./ArticleDetails.astro";
 import Example from "../components/Example.astro";
 import DesignDemo from "../components/DesignDemo.astro";
 import { isDesignId } from "../lib/design-demos";
@@ -121,6 +122,7 @@ const alternates = all
             </section>
           ))}
         </article>
+        <ArticleDetails article={article} />
         {d.comparison && (
           <details class="article-extra" data-pagefind-ignore>
             <summary>

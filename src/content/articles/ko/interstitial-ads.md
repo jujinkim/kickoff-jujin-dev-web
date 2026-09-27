@@ -1,25 +1,29 @@
 ---
-kind: "concept"
-articleId: "interstitial-ads"
-lang: "ko"
-title: "전면 광고"
-summary: "자연스러운 전환 지점에서 화면을 덮습니다."
-category: "ad-formats"
-aliases: ["전면 광고", "Interstitial ads"]
-related: ["revenue", "banner-ads", "rewarded-ads", "advertising"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: interstitial-ads
+lang: ko
+title: 전면 광고
+summary: 작업의 자연스러운 쉬는 지점에 전면 광고를 표시합니다.
+category: ad-formats
+aliases:
+  - 전면 광고
+  - Interstitial ads
+related:
+  - revenue
+  - banner-ads
+  - rewarded-ads
+  - advertising
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "전환 시 전체 화면 배치",
-    "advantages": "자연스러운 구간 활용",
-    "limitations": "앱 흐름을 중단",
-    "suitable": "명확한 레벨·작업 경계",
-    "combinations": "광고 수익원",
-  }
+  features: 전환 시 전체 화면 배치
+  advantages: 자연스러운 구간 활용
+  limitations: 앱 흐름을 중단
+  suitable: 명확한 레벨·작업 경계
+  combinations: 광고 수익원
 ---
 
 ## 왜 필요한가

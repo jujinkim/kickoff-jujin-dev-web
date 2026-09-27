@@ -92,6 +92,13 @@ const t = local(lang),
       {m.reset}
     </button>
   </div>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The player opts in for one non-transferable hint. Completing the simulated viewing grants it once; interruption grants zero. Advertiser payment and platform settlement are separate, and no real ad or cash reward exists here.",
+      "플레이어가 양도 불가 힌트 하나에 동의합니다. 가상 시청 완료는 한 번만 지급하고 중단은 0개입니다. 광고주 결제·플랫폼 정산은 별도이며 실제 광고나 현금 보상은 없습니다.",
+      "プレイヤーは譲渡できないヒント一つに同意します。仮視聴の完了で一度だけ付与し、中断では0です。広告主の支払いと平台精算は別で、実広告や現金報酬はありません。",
+    )}
+  </p>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -203,5 +210,22 @@ const t = local(lang),
   }
   .reward output {
     margin-left: auto;
+  }
+
+  .offer {
+    border: 5px solid #4c6650;
+    padding: 26px;
+  }
+  .ad-stage {
+    border: 5px dashed #4c6650;
+    padding: 26px;
+  }
+  .reward {
+    border: 6px double #4c6650;
+    padding: 24px;
+  }
+  [data-rewards] {
+    font-size: 3rem;
+    font-weight: 800;
   }
 </style>

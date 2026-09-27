@@ -27,6 +27,10 @@ const t = local(lang),
     <strong>
       {t("Buyer pays 100", "구매자 결제 100", "購入者が100を支払う")}
     </strong>
+    <div class="allocation-bar" aria-hidden="true">
+      <span></span>
+      <span></span>
+    </div>
     <div class="split">
       <div>
         <span>{t("Maker allocation", "제작자 배분", "制作者への配分")}</span>
@@ -48,6 +52,13 @@ const t = local(lang),
     )}
   </p>
   <p class="assumptions">{m.omitted}</p>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The buyer pays 100; the fictional 10% fee allocates 10 to the platform and 90 to the maker. The buyer receives the craft item. This allocation does not establish which party is the legal seller or who funds refunds.",
+      "구매자가 100을 내고 가상 10% 수수료로 플랫폼 10, 제작자 90을 배분합니다. 구매자는 수공예품을 받습니다. 이 배분만으로 법적 판매자나 환불 부담자를 정하지는 않습니다.",
+      "購入者が100を払い、架空の10%手数料で平台に10、制作者に90を配分します。購入者は作品を受け取ります。この配分だけで法的販売者や返金負担者は決まりません。",
+    )}
+  </p>
 </section>
 <style>
   .sale {
@@ -74,6 +85,45 @@ const t = local(lang),
   @container (max-width:400px) {
     .split {
       grid-template-columns: 1fr;
+    }
+  }
+
+  .sale > strong {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 28px;
+  }
+  .split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+  .allocation-bar {
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    height: 42px;
+    border: 2px solid #5b536d;
+  }
+  .allocation-bar span:first-child {
+    background: #567a73;
+  }
+  .allocation-bar span:last-child {
+    background: #e9ddc3;
+    border-left: 3px dashed #5b536d;
+  }
+  .split > div {
+    border: 3px solid #5b536d;
+    padding: 24px;
+  }
+  .split b {
+    font-size: 3.5rem;
+    white-space: nowrap;
+  }
+  @container (width < 520px) {
+    .split {
+      grid-template-columns: 1fr;
+    }
+    .split > div:last-child {
+      border-style: dashed;
     }
   }
 </style>

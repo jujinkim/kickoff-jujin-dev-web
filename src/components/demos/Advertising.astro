@@ -48,6 +48,13 @@ const t = local(lang),
       )}
     </aside>
   </div>
+  <p data-contract-context class="contract-context">
+    {t(
+      "Advertiser money reaches the publisher through an ad service. Readers receive recipes without paying in this example. Settlement timing, rate and valid-impression rules depend on the ad agreement; no earnings amount is simulated.",
+      "광고주 돈은 광고 서비스를 거쳐 발행자에게 갑니다. 예제의 독자는 무료로 조리법을 봅니다. 정산 시점·단가·유효 노출 조건은 광고 계약에 따르며 수익 금액은 모사하지 않습니다.",
+      "広告主の資金は広告サービス経由で発行者へ届きます。この例では読者は無料でレシピを見ます。精算時期・単価・有効表示の条件は広告契約に従い、収益額は再現しません。",
+    )}
+  </p>
 </section>
 <style>
   .exchange {
@@ -79,5 +86,25 @@ const t = local(lang),
   aside {
     padding: 1rem;
     border: 1px dashed #567a73;
+  }
+
+  .lanes {
+    gap: 28px;
+    align-items: stretch;
+  }
+  .exchange li:first-child {
+    border: 5px solid #52633b;
+    padding: 26px;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+  .exchange li:last-child {
+    border: 3px dashed #52633b;
+    padding: 26px;
+    font-size: 1.25rem;
+  }
+  .lanes aside {
+    border-left: 8px solid #52633b;
+    padding: 24px;
   }
 </style>

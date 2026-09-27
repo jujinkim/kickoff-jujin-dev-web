@@ -1,25 +1,28 @@
 ---
-kind: "concept"
-articleId: "free-trial"
-lang: "ja"
-title: "無料トライアル"
-summary: "限られた期間で有料機能を評価します。"
-category: "access-strategies"
-aliases: ["無料トライアル", "Free trial"]
-related: ["revenue", "freemium", "subscription"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: free-trial
+lang: ja
+title: 無料トライアル
+summary: 有料利用の前に期間を限った評価機会を設けます。
+category: access-strategies
+aliases:
+  - 無料トライアル
+  - Free trial
+related:
+  - revenue
+  - freemium
+  - subscription
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "期間限定の評価",
-    "advantages": "有料機能を試せる",
-    "limitations": "期限と移行の判断が必要",
-    "suitable": "体験中に価値を確認できる",
-    "combinations": "明示的な選択後の継続課金",
-  }
+  features: 期間限定の評価
+  advantages: 有料機能を試せる
+  limitations: 期限と移行の判断が必要
+  suitable: 体験中に価値を確認できる
+  combinations: 明示的な選択後の継続課金
 ---
 
 ## なぜ必要なのか

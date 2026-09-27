@@ -3,7 +3,7 @@ kind: concept
 articleId: minimalism
 lang: en
 title: Minimalism
-summary: "Give hiking essentials room by removing competing decoration while keeping useful controls."
+summary: Reduce competing elements to focus attention while retaining essential information and controls.
 category: styles
 aliases:
   - Minimalism
@@ -16,36 +16,28 @@ related:
   - skeuomorphism
   - flat-design
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-26"
+revision: 11
+sourceRevision: 11
+updated: "2026-09-27"
 comparison:
-  features: >-
-    Limited elements and generous space focus attention on essential content.
-    Whitespace and restrained type keep all project content legible.
-  advantages: Space concentrates attention on essential tasks.
-  limitations: >-
-    Removing navigation or unique information weakens the task rather than
-    simplifying it.
-  suitable: Choose it for a focused workflow.
-  combinations: Serif or sans-serif can support the same restrained layout.
-checked: "2026-09-21"
+  features: Deliberate reduction and spacing
+  advantages: Essentials stay easy to scan
+  limitations: Hidden essentials make the task harder
+  suitable: Few priorities with optional detail
+  combinations: Single column and progressive disclosure
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
 
-Imagine designing a hiking checklist for a day trip. Walkers must find water, clothing, and safety items quickly before leaving home.
-
-A hiking checklist gets harder to scan when decoration crowds the essentials. You want attention on essential information without removing needed controls.
+A day-hike checklist helps walkers pack before leaving home. Optional comforts crowd out water, clothing and a route map. The priority is fewer competing elements, not the stronger graphic emphasis of neobrutalism or a change in surface depth alone.
 
 ## How: work toward a solution
 
-For the hiking checklist, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Whitespace and restrained type keep all project content legible.
+Keep three essential items visible with ample space. Check Water bottle to show one of three packed. Open Optional comforts only when needed. Reset clears the checks and closes the extra list.
 
 ## What: the concept
 
-**Minimalism** — Limited elements and generous space focus attention on essential content.
+Minimalism reduces visual competition around essential content. It can use flat or dimensional surfaces. Removing necessary instructions, navigation or safety information would weaken the task rather than simplify it.
 
-Removing navigation or unique information weakens the task rather than simplifying it.
-
-[NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)
+[NN/g: Characteristics of Minimalism](https://www.nngroup.com/articles/characteristics-minimalism/)

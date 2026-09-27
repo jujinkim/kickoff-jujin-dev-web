@@ -83,6 +83,13 @@ const t = local(lang),
       {m.reset}
     </button>
   </div>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The player buys the theme once; using it or pressing purchase again does not increase the purchase count beyond one. The theme stays available within this demo session. Price and actual store restoration are not modeled.",
+      "플레이어는 테마를 한 번 사며 사용하거나 구매 버튼을 다시 눌러도 구매 횟수는 1입니다. 데모 세션 동안 테마를 유지합니다. 가격과 실제 스토어 복원은 모사하지 않습니다.",
+      "プレイヤーはテーマを一度購入し、使用や購入ボタンの再押下でも購入回数は1のままです。デモのセッション中はテーマを保ちます。価格と実際のストア復元は再現しません。",
+    )}
+  </p>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -124,5 +131,17 @@ const t = local(lang),
     .purchase-scene {
       grid-template-columns: 1fr;
     }
+  }
+
+  .inventory {
+    border: 7px double #436578;
+    padding: 28px;
+  }
+  [data-inventory] {
+    font-size: clamp(1.6rem, 5cqi, 2.8rem);
+    font-weight: 800;
+  }
+  [data-buy] {
+    border-bottom-width: 6px;
   }
 </style>

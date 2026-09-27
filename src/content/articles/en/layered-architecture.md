@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "layered-architecture"
-lang: "en"
-title: "Layered architecture"
-summary: "Separate responsibilities with explicit dependency rules."
-category: "boundaries"
-aliases: ["Layered architecture"]
-related: ["architecture", "hexagonal-architecture", "clean-architecture"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: layered-architecture
+lang: en
+title: Layered architecture
+summary: Separate stable responsibilities along a simple dependency path.
+category: boundaries
+aliases:
+  - Layered architecture
+related:
+  - architecture
+  - hexagonal-architecture
+  - clean-architecture
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Responsibility layers with downward dependencies",
-    "advantages": "Validation has a clear home",
-    "limitations": "Pass-through layers add ceremony",
-    "suitable": "Stable presentation, application and storage roles",
-    "combinations": "Can add ports and dependency inversion",
-  }
+  features: Responsibility layers with downward dependencies
+  advantages: Validation has a clear home
+  limitations: Pass-through layers add ceremony
+  suitable: "Stable presentation, application and storage roles"
+  combinations: Can add ports and dependency inversion
 ---
 
 ## Why: the goal or problem

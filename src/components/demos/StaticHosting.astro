@@ -109,6 +109,24 @@ const reader = t("Mina", "민아", "美奈");
       "ストアもページメモリ上の模型です。再起動では残り、リセット・再読み込みで消えます。重複防止は独自のアプリ処理です。",
     )}
   </p>
+  <dl class="runtime-facts" data-runtime-facts>
+    <dt>{t("Execution boundary", "실행 경계", "実行境界")}</dt>
+    <dd>
+      {t(
+        "Public reads: prebuilt files. Private writes: separate API execution and external storage.",
+        "공개 읽기: 미리 만든 파일. 개인 쓰기: 별도 API 실행과 외부 저장.",
+        "公開閲覧：事前生成ファイル。個人書き込み：別APIの実行と外部保存。",
+      )}
+    </dd>
+    <dt>{t("State and responsibility", "상태와 책임", "状態と責任")}</dt>
+    <dd>
+      {t(
+        "Publisher owns file freshness; API owner owns authentication and data recovery. Handler restart is not a data restore.",
+        "발행자는 파일 최신성, API 담당자는 인증·데이터 복구를 책임집니다. 처리기 재시작은 데이터 복구가 아닙니다.",
+        "公開担当はファイル鮮度、API担当は認証とデータ復旧を担います。処理器再起動はデータ復元ではありません。",
+      )}
+    </dd>
+  </dl>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -171,5 +189,43 @@ const reader = t("Mina", "민아", "美奈");
   }
   .lanes .api {
     border: 2px dashed #7b5781;
+  }
+  .runtime-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 2fr);
+    gap: 10px 16px;
+    border-block: 1px solid currentColor;
+    padding: 18px 0;
+    margin: 18px 0;
+    font-size: 0.85rem;
+  }
+  .runtime-facts dt {
+    font-weight: 700;
+  }
+  .runtime-facts dd {
+    margin: 0;
+    min-width: 0;
+  }
+  @container (width<480px) {
+    .runtime-facts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .lanes {
+    gap: 32px;
+  }
+  .lanes > section:first-child {
+    border: 6px double #486086;
+    padding: 24px;
+  }
+  .api {
+    border: 4px dashed #486086;
+    padding: 24px;
+  }
+  .store {
+    margin-top: 36px;
+    border-width: 6px;
+    border-radius: 50% / 12%;
   }
 </style>

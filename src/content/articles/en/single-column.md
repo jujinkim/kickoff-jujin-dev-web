@@ -2,41 +2,39 @@
 kind: concept
 articleId: single-column
 lang: en
-title: Single column
-summary: Arrange visual references for a walking route guide.
+title: Single-column layout
+summary: One vertical reading stream suits content whose next step should be unambiguous.
 category: columns
 aliases:
   - Single column
+  - Single-column layout
 related:
   - layout
   - two-columns
   - multiple-columns
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 comparison:
-  features: "Filters, resources, and guidance follow one vertical stream."
+  features: One vertical reading stream suits content whose next step should be unambiguous.
   advantages: One stream makes the next reading step predictable.
-  limitations: >-
-    Long pages require scrolling; a restrained line length helps keep the text
-    manageable.
+  limitations: Long pages require scrolling; a restrained line length helps keep the text manageable.
   suitable: Choose it for sequential reading.
   combinations: Combine with minimal styling and a restrained text line length.
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
 
-Imagine a walking guide with stops in order. Side content can obscure which stop a visitor should read next.
+A walking guide helps visitors follow lakeside stops in order. On a phone, competing side panels make the next stop unclear. Sequential reading matters more than keeping filters or commentary alongside the route.
 
 ## How: work toward a solution
 
-While designing a walking route guide, gather six visual references. Filter a topic, reverse collection order, open study notes, or narrow the preview. Check whether the arrangement helps people find each reference. Reset or reload restores the full collection and original order. Filters, resources, and guidance form one vertical stream.
+Read the entrance, pine shade and viewpoint from top to bottom. Open each section for more detail without leaving its position. The image and route stay in the same stream at every width. Reset closes the sections.
 
 ## What: the concept
 
-**Single column** — Filters, resources, and guidance follow one vertical stream.
+A single-column layout puts the main content in one reading stream. It can contain images and disclosures. Long pages need scrolling and restrained line length; a sidebar becomes useful when persistent secondary controls matter.
 
-Long pages require scrolling; a restrained line length helps keep the text manageable.
-
-[W3C](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
+[Every Layout: The Stack](https://every-layout.dev/layouts/stack/)

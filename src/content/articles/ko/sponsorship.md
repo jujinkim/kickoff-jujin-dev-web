@@ -1,32 +1,30 @@
 ---
-kind: "concept"
-articleId: "sponsorship"
-lang: "ko"
-title: "후원"
-summary: "후원자가 공개 작업의 지속을 지원합니다."
-category: "revenue-sources"
-aliases: ["후원", "Sponsorship"]
+kind: concept
+articleId: sponsorship
+lang: ko
+title: 후원
+summary: 접근 판매 대신 후원으로 공동 자료를 운영합니다.
+category: revenue-sources
+aliases:
+  - 후원
+  - Sponsorship
 related:
-  [
-    "revenue",
-    "direct-payment",
-    "advertising",
-    "affiliate-marketing",
-    "transaction-fees",
-  ]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - direct-payment
+  - advertising
+  - affiliate-marketing
+  - transaction-fees
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "작업 지속에 자금 지원",
-    "advantages": "무료 공개를 유지할 수 있음",
-    "limitations": "후원 규모가 달라질 수 있음",
-    "suitable": "후원자가 있는 공개 작업",
-    "combinations": "직접 결제 또는 광고",
-  }
+  features: 작업 지속에 자금 지원
+  advantages: 무료 공개를 유지할 수 있음
+  limitations: 후원 규모가 달라질 수 있음
+  suitable: 후원자가 있는 공개 작업
+  combinations: 직접 결제 또는 광고
 ---
 
 ## 왜 필요한가

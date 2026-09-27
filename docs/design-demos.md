@@ -10,11 +10,27 @@ Document the chosen situation and why each control teaches the concept in the
 article's brief. The English body, translations, caption, visual, and thumbnail
 must describe the same case.
 
-Styles now use separate three-task projects. Layouts use visual references for
-different design jobs. Typography examples use different publishing contexts;
-`iiiWWW 0123` remains an explicit width-measurement input, not their shared
-story. Noto Sans can still appear in both sans-serif and proportional examples
-because shape and width are different axes.
+Choose a screen whose actual content demonstrates the article: recipe filters
+must filter recipes, and a photo viewer must show images. Shape and character
+width are independent typography axes. `iiiWWW 0123` is a measurement input,
+not the required story for every typeface example.
+
+## Exaggerate the distinguishing mechanism
+
+Every active example, across design, planning, development, operations and
+monetization, must make its defining difference unmistakable. Use a deliberately
+strong teaching case: frosted content panels versus refracting control lenses;
+one enclosure versus separately released services; build-time output versus
+request-time execution; the quantities immediately before and after a price tier.
+Amplify the relevant material, spatial boundary, causal path or numerical result.
+Color changes, a new title, and explanatory copy alone do not satisfy this rule.
+
+Keep each example's own composition. Do not turn every field into the same
+comparison card. A visual style may be bold; a minimalist example should instead
+remove secondary decoration. Never exaggerate claims, invent framework behavior,
+break arithmetic or accessibility, or make compatible options mutually exclusive.
+Name the example-specific assumption and preserve its failure/fallback state.
+Review the strongest cue at desktop and mobile sizes without relying on the title.
 
 Independent Astro components still own semantic markup and scoped visual rules.
 `tasks.ts`, `resource-behavior.ts`, and `type-behavior.ts` share category behavior;
@@ -37,32 +53,22 @@ Current platform evidence: [platform review](platform-demos-review.md).
 Previous screen evidence: [workspace review](design-workspaces-review.md).
 Previous release evidence: [shared-example review](design-comparison-review.md).
 
-## Style project contract
+## Article-specific demonstration contract
 
-All eleven styles use `workshop.ts` for translated, article-specific project
-data and `tasks.ts` for behavior. Each Astro file owns its markup, material,
-typography, spacing, and layout. No shared runtime style template or page-wide
-theme.
+No shared task count, progress meter, resource count or navigation structure is
+required. Each component owns its actual service screen and representative
+interaction. Prefer static diagrams for relationships that do not need controls.
+Shared helpers may provide lifecycle and narrowly reusable behavior; they must
+not dictate visual structure or story.
 
-- Header names the article's project. Menu: Overview, Tasks, Resources.
-- Overview explains that project. Tasks: three project-specific checkboxes,
-  All/Open/Done filter and empty-result message.
-- Supporting content: completed count, native progress and percentage; two
-  native expandable notes.
-- Footer: three-task/two-resource summary, reset and live status.
-- Initial/reset/reload: All; three unchecked tasks; 0 / 3, 0%; closed notes.
-  Material extras reset too. Native links and details work without JavaScript.
-- Standard structure: header and menu, then overview/tasks beside progress/resources.
-  Below **600px of demo content width**, one column in reading order.
-- Exceptions preserve all information and actions: Skeuomorphism uses an open
-  notebook; Liquid Glass uses a floating navigation layer; Tactile collage uses
-  a board; Retro digital uses windows. No overlap over readable text or controls.
-- Neumorphism uses same-tone surfaces, upper-left light and lower-right dark
-  shadows, inset selected states, and **no resting decorative borders**, including
-  browser-default checkbox/select borders. Keep check marks, strike-through,
-  counts, keyboard focus outlines and forced-color identification lines.
-- Glass supports manual opaque mode, reduced transparency and missing-filter
-  fallback. Expressive motion stops under reduced motion.
+- Record initial, changed, repeated, empty, reset and reload behavior where relevant.
+- Preserve meaningful DOM order, visible keyboard focus, readable contrast and
+  equivalent explanation without JavaScript.
+- Distinguish the style's general properties from this example's chosen material,
+  geometry, light direction or content count.
+- Glass examples preserve readable opaque fallbacks. Motion honors reduction.
+- Remaining legacy task examples retain their current checks until each receives
+  its own reviewed replacement. They are not the template for new work.
 
 Component-specific plans live in [design-briefs](design-briefs/), each following
 [the template](templates/design-demo-brief.md). Liquid Glass is a web study, not
@@ -204,7 +210,7 @@ state, and announcement; proper names and explicitly Latin specimens may stay
 Latin. Give every input an accessible name. Never insert user text with HTML.
 
 Reference implementations: [Brutalism](../src/components/demos/Brutalism.astro)
-for task completion/filter/empty states, [Masonry](../src/components/demos/Masonry.astro)
+for legacy task behavior, [Masonry](../src/components/demos/Masonry.astro)
 for DOM-preserving height measurement and native details. The latter uses
 ResizeObserver after fonts load, shortest-column placement, no DOM reordering,
 and a normal CSS grid without JavaScript. Narrow boards become one column.
@@ -254,8 +260,8 @@ content checks remain active. Do not publish a preview build.
 `STYLE_PREVIEW_ORIGIN` overrides the capture server URL (default port 4322).
 The generator rejects unknown `--id`, waits for fonts and interactive mount, restores the
 initial state, selects light site theme, clears the reset announcement, and
-captures the registry selector. It writes `public/thumbnails/<id>-<lang>.png`.
-Cards, previews, and list markup use that same path. Rebuild to copy captures
+captures the registry selector. It writes the review PNG and a 720px WebP at `public/thumbnails/<id>-<lang>.{png,webp}`.
+Cards and previews request WebP; PNG URLs remain for compatibility. Rebuild to copy captures
 into `dist`. Thumbnail dimensions may differ because the actual screens differ.
 
 ## Completion and debugging

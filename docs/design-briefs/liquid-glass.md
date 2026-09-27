@@ -1,26 +1,38 @@
 # Liquid Glass / Liquid Glass / Liquid Glass
 
-Based on [the planning template](../templates/design-demo-brief.md). Implementation brief, reviewed 2026-09-22.
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `liquid-glass`; `styles`; Liquid Glass / Liquid Glass / Liquid Glass.
-- Definition (one sentence): Liquid Glass uses a dynamic, transparent navigation layer above content. This web study illustrates its visual cues, not Apple’s native rendering.
-- Closest concept and concrete difference: Glassmorphism spreads frosted panels through content; this study reserves glass for the floating navigation layer.
-- Distinguishing visual features (structure, material, typography): Floating capsules, reflective edges, and expanding tools separate navigation from content. A floating navigation capsule overlaps only reserved blank space above the content canvas. Expanding tools grows in flow; it never covers text or controls.
-- Shared comparison category (styles / layout / typography): styles.
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: For the coastal photo diary, track three tasks and two notes.
-- Visual variable changed; concept-specific extra controls and their justification: View tools expands the floating capsule; Opaque panels removes transparency. Opaque panels is a labeled readability aid; reset turns it off while the OS transparency preference remains effective.
-- Fictional scenario and why it demonstrates the definition: A coastal photo diary needs navigation above full-size photos. For the coastal photo diary, track three tasks and two notes.
-- Representative action and observable result: For the coastal photo diary, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%.
-- Initial state: All, three unchecked tasks, 0 / 3, 0%, two closed notes, ready status. Tools tray is closed; opaque toggle is off.
-- Changed state, repeated action, empty input/no results: Toggling a task twice restores it; Done before completion yields an empty message. Open with all tasks complete also yields empty. Notes can independently open and close. No free-text input.
-- Reset and reload behavior: Reset all controls, progress, details and material extras. Keep focus on Reset and announce restoration. Reload uses server-rendered initial state; no storage.
-- Mobile order and width thresholds: At demo content width below 600px, use one column in DOM order: header, menu, overview, tasks, progress, resources, footer. No CSS visual reordering.
-- Keyboard order, focus, accessible names, live feedback: Native anchors, checkbox labels, select, details/summary, reset. Anchors target root-local unique IDs and focus sections after JS mount. 3px focus outline; polite atomic completion/progress status.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored palette stays legible within either site theme. Checked glyphs, strike-through and numbers survive shadow removal. Motion is disabled for prefers-reduced-motion. Glass has manual, unsupported-filter, and prefers-reduced-transparency fallbacks.
-- JavaScript-disabled initial screen and explanation: All text and native menu/details remain usable; JS-dependent controls are disabled. Wrapper explains the static state.
-- Font families, supported characters, fallback and measurement method: System fonts with platform CJK fallbacks; Georgia serif or monospace where styled. No remote fonts or measurements; all strings remain real text.
-- Localized visible strings, input constraints, original/translation review: English first, then Korean and Japanese; project labels, empty/reset feedback, notes and article explanations preserve the same meaning. Three matching revisions.
-- Capture selector and initial content: `[data-demo="liquid-glass"]`; full root in all languages, light theme, reset state, cleared live message. PNG remains complete; catalog card uses top-aligned cover with 360px maximum.
-- Source URLs, inspected date, claims each source supports: [Apple WWDC25](https://developer.apple.com/videos/play/wwdc2025/219/); inspected 2026-09-22. Supports the material definition, not universal suitability or performance claims.
-- Comparison summaries: features: Floating capsules, reflective edges, and expanding tools separate navigation from content. Advantages: The light navigation layer preserves visual context. Limitations: Transparency needs contrast checks and an opaque fallback. Suitable: Choose it for a small navigation layer over rich content. Combinations: Keep task surfaces solid; avoid stacking glass layers.
-- Verification commands and evidence paths: Follow [release sequence](../design-demos.md#commands-and-capture); output and browser tests in `tests/`; screenshots in `artifacts/design-demos/`; final results in [workspace review](../design-workspaces-review.md).
+- Stable ID and category: `liquid-glass`; `styles`. Existing URLs and comment identity retained.
+- Definition and selection: An adaptive, floating control material preserves rich content beneath a distinct navigation layer.
+- Closest options and concrete difference: Use this direction for a compact control layer over photographs or other rich content. Glassmorphism can describe stable frosted panels more broadly. Apple’s material includes adaptive optical behavior that this web study does not implement.
+- Distinct situation and Why opening: Imagine a coastal photo diary where readers browse large images and entries. Navigation must stay over the photos and respond as they move; fixed frosted cards would occupy space better left to the images.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/liquid-glass.md), [KO](../../src/content/articles/ko/liquid-glass.md), [JA](../../src/content/articles/ja/liquid-glass.md); matching revision 7. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: Browse three decoded photos with previous/next wraparound; expand tools in normal flow and enable an opaque control surface.
+- Visual structure: `LiquidGlass.astro` owns its markup, spacing and state. Caption: Browse a photo diary and expand its floating tools
+- Initial and changed states: Browse three decoded photos with previous/next wraparound; expand tools in normal flow and enable an opaque control surface.
+- Repetition, empty/failure and constraints: Begin with an opaque readable surface, enhance with backdrop filtering, and test each image. Honor reduced transparency and forced colors. The opaque switch affects this demo only. Do not claim Apple platform behavior or automatic contrast adaptation from CSS styling.
+- Controls and state selectors: `data-photo`, `data-prev`, `data-position`, `data-next`, `data-tools-toggle`, `data-tools`, `data-opaque`, `data-reset`
+- Reset and reload: Reset returns the rendered initial model, announces restoration and keeps reset focus. Reload restores initial state; no input persistence or remote mutation.
+- Mobile order and widths: Responsive wrapping within the available article width. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Native controls with localized accessible names, visible focus and a polite status region. Representative keyboard actions and reset covered in browser tests.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Opaque manual, unsupported-filter and reduced-transparency alternatives are part of the material contract.
+- Reduced motion and JavaScript disabled: Motion is optional. Server-rendered initial information remains readable; script-dependent controls are disabled and the wrapper explains the limitation.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: `public/images/beach-diary.png`, `public/images/harbor-diary.png`, `public/images/lake-walk.png` See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `interactive`; `[data-demo="liquid-glass"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/liquid-glass.md`, sourceRevision 7; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Translucent floating control surfaces; advantages: Content remains visually primary; limitations: Native optical behavior is not reproduced; suitable: Content-focused navigation over photography; combinations: Opaque fallback and stable text surfaces
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/liquid-glass-320.png`, `artifacts/design-demos/liquid-glass-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Apple: Meet Liquid Glass](https://developer.apple.com/videos/play/wwdc2025/219/) (checked 2026-09-27): Describes a dynamic material for a separate control/navigation layer. CSS blur does not reproduce native lensing.
+- [WCAG 2.2](https://www.w3.org/TR/WCAG22/) (checked 2026-09-27): Keyboard, focus, reflow and contrast requirements; a visual style alone does not establish conformance.
+- [CSSWG: Filter Effects Level 2](https://drafts.csswg.org/filter-effects-2/#BackdropFilterProperty) (checked 2026-09-27): Draft specification for backdrop filtering; CSS blur is not Apple’s native optical system and needs fallback testing.
+
+## Strong teaching case — 2026-09-27
+
+Compact lens displaces the selected image and expands with its tools; native Apple optics are not claimed.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

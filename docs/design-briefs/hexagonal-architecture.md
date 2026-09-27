@@ -1,25 +1,26 @@
-# Hexagonal architecture visualization brief
+# Hexagonal architecture — representative review
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `hexagonal-architecture`; `boundaries`; Hexagonal architecture / 헥사고날 아키텍처 / ヘキサゴナルアーキテクチャ.
-- Definition (one sentence): Ports isolate application behavior from technology-specific adapters.
-- Closest concept and concrete difference: Layered architecture emphasizes responsibility levels; this example emphasizes replaceable edges around an application.
-- Distinguishing visual features (structure, material, typography): Two driving adapters beside a central application with two named ports, then two driven adapters; import and call directions are labeled independently. Solid surfaces, system type and labels remain meaningful without color.
-- Shared comparison category: [Architecture boundaries](../catalog-writing/groups/boundaries.md).
-- Article-specific scenario, dataset, labels, actions, and initial state: reader Dani, article Class Schedule unsaved, one process, HTTP/CLI entry and memory/embedded-database storage. SaveArticle rejects empty IDs, returns Saved after successful persistence, and uses an idempotent fixture policy.
-- Visual variable changed; concept-specific extra controls and their justification: Two driving adapters beside a central application with two named ports, then two driven adapters; import and call directions are labeled independently. Static mode shows structure and execution together without implying a functioning database. No controls needed.
-- Fictional scenario and why it demonstrates the definition: A class schedule save rule is hard to test when every test must start a web server and database. Fictional single process: Dani, Class Schedule unsaved.
-- Representative action and observable result: Fictional single process: Dani, Class Schedule unsaved. HTTP or CLI adapters call SaveArticle through its input port. Saved: 0 → 1 entries; repeat → 1. Empty IDs or failure before writing → 0; retry after correction.
-- Initial state: complete server-rendered diagram; fictional store empty.
-- Changed state, repeated action, empty input/no results: success 0 → 1 → 1; empty IDs or failure before writing keep 0. Retry after correction. These are independent cases from an empty store, not guarantees about every storage failure. Swapping storage means alternative implementations, not data migration.
-- Reset and reload behavior: static; no reset control or mutable state; reload preserves all descriptions.
-- Mobile order and width thresholds: preserve numbered DOM order at 320px. Layered bands stay vertical; adapter columns stack below 520px component width; nested clean boxes reduce inset below 430px. Wrap names without scaling text.
-- Keyboard order, focus, accessible names, live feedback: headings, labeled relations and numbered lists; no artificial tab stops or live regions. Native source links outside the diagram retain keyboard behavior.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: authored solid light palette in either theme, explicit dark labels; no animation, transparent surface or shadow dependency. Dotted enclosure and solid/dashed arrow patterns survive forced colors.
-- JavaScript-disabled initial screen and explanation: complete diagram, fixture and outcomes remain readable.
-- Font families, supported characters, fallback and measurement method: system sans-serif and monospace for identifiers, system CJK fallback; no font assets or metrics claims.
-- Localized visible strings, input constraints, original/translation review: English originals reviewed together before Korean/Japanese translation on 2026-09-22. Preserve Dani/Class Schedule, empty-ID validation, source/call distinction and conditional suitability. No native-speaker review claimed.
-- Mode: `static`; no script, reset or mount wait.
-- Capture selector and initial content: `[data-demo="hexagonal-architecture"]`, complete diagram, 1440px light captures in en/ko/ja.
-- Source URLs, inspected date, claims each source supports: https://alistair.cockburn.us/hexagonal-architecture; inspected 2026-09-22 for definition/mechanism. [Source refresh](../catalog-writing/boundaries-sources.md). Example policies and suitability are editorial.
-- Comparison summaries: features, advantages, limitations, suitable and combinations follow the reviewed English frontmatter and existing group matrix; no performance or superiority ranking.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); publication mutation tests, browser structure/reflow/no-JavaScript checks and registry-wide output checks. `public/thumbnails/hexagonal-architecture-{en,ko,ja}.png`, ignored `artifacts/boundaries-demos/`, [release record](../boundaries-review.md).
+- Stable ID: `hexagonal-architecture`; leaf category: `boundaries`.
+- Titles (EN / KO / JA): Hexagonal architecture / 헥사고날 아키텍처 / ヘキサゴナルアーキテクチャ.
+- Definition and selection criterion: Separate application rules from input and storage technologies through ports and replaceable adapters.
+- Neighbor comparison: see the matching Selection & comparison supplement; choices may coexist.
+- Why / situation: Teachers save a class schedule through interchangeable HTTP/CLI and storage edges.
+- How / representative action: Read dependencies into application-owned ports separately from runtime calls toward storage.
+- Initial, changed, repeat, empty, reset and reload: Static diagram: first save 0 → 1; repetition stays 1; invalid input or pre-write failure stays 0. No fake controls or reset.
+- Visual structure, incidental choices and mobile order: Three zones separate driving adapters, application and driven adapters. Narrow layout stacks in semantic order. Solid dependencies, dashed calls and dotted process enclosure have explicit labels.
+- Keyboard: native controls in DOM order, visible focus, polite localized status where interactive; reset retains focus.
+- No JavaScript: static explanation and initial screen remain; script-dependent controls stay disabled. Native disclosures work.
+- Themes and motion: authored demo colors within neutral shell; no required animation. Check dark surrounding theme, forced colors, focus and 200% text.
+- Assets and conditions: No raster asset; component-owned semantic HTML diagram.; provenance in public/images/README.md or font manifest and bundled OFL files.
+- Localized visible labels: authored in English, then Korean/Japanese with the same actions and outcomes.
+- Revision: 5; each supplement sourceRevision matches.
+- Capture: `[data-demo="hexagonal-architecture"]`; screenshots use initial state and loaded fonts/images.
+- Evidence inspected 2026-09-26:
+  - [Alistair Cockburn: Hexagonal architecture](https://alistair.cockburn.us/hexagonal-architecture): Original ports-and-adapters account explains application isolation and substitutable external connections.
+- Verification: check → build → thumbnails → rebuild → unit/output → browser; actual results in [review record](../quality-review.md).
+
+## Strong teaching case — 2026-09-27
+
+Application-owned ports between replaceable adapters; separately labeled runtime path.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

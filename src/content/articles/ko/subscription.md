@@ -1,39 +1,37 @@
 ---
-kind: "concept"
-articleId: "subscription"
-lang: "ko"
-title: "구독"
-summary: "반복 청구와 접근 정책을 함께 정합니다."
-category: "billing"
-aliases: ["구독", "Subscription"]
+kind: concept
+articleId: subscription
+lang: ko
+title: 구독
+summary: 지속되는 가치에 대해 기간마다 청구합니다. 갱신·결제 실패·이용 권한 정책을 함께 정합니다.
+category: billing
+aliases:
+  - 구독
+  - Subscription
 related:
-  [
-    "revenue",
-    "one-time-payment",
-    "usage-based",
-    "prepaid-credits",
-    "flat-rate-pricing",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - one-time-payment
+  - usage-based
+  - prepaid-credits
+  - flat-rate-pricing
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-26"
 comparison:
-  {
-    "features": "기간별 반복 청구",
-    "advantages": "지속 서비스 지원",
-    "limitations": "갱신과 실패 처리 필요",
-    "suitable": "지속되는 고객 가치",
-    "combinations": "사용량 요금 또는 정액",
-  }
+  features: 기간별 반복 청구
+  advantages: 지속 서비스 지원
+  limitations: 갱신과 실패 처리 필요
+  suitable: 지속되는 고객 가치
+  combinations: 사용량 요금 또는 정액
 ---
 
 ## 왜 필요한가
 
 가족 사진 백업 앱을 만든다고 가정해 봅시다. 가족은 사진을 올리고 여러 달 뒤에도 다시 찾아야 하며, 문제가 생기면 도움을 받아야 합니다.
 
-가족 사진 백업은 가입 뒤에도 매달 파일을 보관하며 저장 공간과 지원 비용이 계속 듭니다.
+완성된 파일 한 번보다 지속적인 접근이 중요합니다. 사용량이 가치를 좌우한다면 내보내기 횟수별 과금이 어울립니다.
 
 ## 어떻게 해결하는가
 

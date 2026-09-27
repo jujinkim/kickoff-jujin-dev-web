@@ -1,24 +1,36 @@
-# Consumable purchase visualization brief
+# Consumable purchase / 消耗型購入 / 소모성 구매
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `consumable-purchase`; `purchase-types`; Consumable purchase / 소모성 구매 / 消耗型購入.
-- Definition (one sentence): A consumable purchase supplies units that are depleted through use and can be bought again. It differs from a non-consumable feature entitlement.
-- Closest concept and concrete difference: same-category peers non-consumable-purchase; Units consumed through use. Cross-category combinations are related reading, not comparison peers.
-- Distinguishing visual features (structure, material, typography): Puzzle board beside depleting hint inventory. Solid surfaces and text/number labels; color is not the only encoding.
-- Shared comparison category: [purchase-types](../catalog-writing/groups/purchase-types.md).
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional crossword app starts with zero hints.
-- Visual variable changed; concept-specific extra controls and their justification: Puzzle board beside depleting hint inventory. Controls expose the mechanism described below; no background timer or real checkout.
-- Fictional scenario and why it demonstrates the definition: A crossword player uses one hint now and may need another later; an unlimited unlock would not track that spending. A fictional crossword app starts with zero hints.
-- Representative action and observable result: A fictional crossword app starts with zero hints. Buy three, then use hints repeatedly: the balance falls to zero and further use is blocked.
-- Initial state: Zero hints, purchases and uses.
-- Changed state, repeated action, empty input/no results: Where present, integer inputs accept 0–10,000 only; empty, negative and fractional values report an error without a charge. Insufficient balances never become negative. Access, purchase and ad actions are guarded; repeated non-consumable purchase and duplicate ad completion cannot grant extra rights or rewards. See item-specific state tests.
-- Reset and reload behavior: Reset and reload restore the initial page-memory state above. No account, storage, payment or advertising connection.
-- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
-- Keyboard order, focus, accessible names, live feedback: Native controls follow DOM order, labels name inputs, dashed 3px focus remains visible, reset retains focus, polite atomic status announces outcomes. Guarded buttons use aria-disabled while remaining mounted so repeated attempts can be explained.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
-- JavaScript-disabled initial screen and explanation: Complete server-rendered initial result and Markdown remain readable; JS-dependent controls start disabled and wrapper explains why.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
-- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
-- Capture selector and initial content: `[data-demo="consumable-purchase"]`; mode `interactive`; 1440px light surroundings in en/ko/ja; initial state above.
-- Source URLs, inspected date, claims each source supports: https://developer.apple.com/help/app-store-connect/reference/in-app-purchases-and-subscriptions/in-app-purchase-types; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
-- Comparison summaries: features: Units consumed through use; advantages: Repeatable purchases; limitations: Balance and spending need clarity; suitable: Optional consumable items; combinations: Freemium access.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/consumable-purchase-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `consumable-purchase`; `purchase-types`. Existing URLs and comment identity retained.
+- Definition and selection: Sell units that are spent when used and can be bought again.
+- Closest options and concrete difference: A crossword fits consumables when each hint has a separate use. A non-consumable purchase unlocks a lasting feature, while a subscription grants time-based access. Consumable units can exist beside either without making permanent unlocks consumable.
+- Distinct situation and Why opening: Imagine a crossword app offering hints while players solve clues. Each hint is spent; a permanent unlock misrepresents that choice.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/consumable-purchase.md), [KO](../../src/content/articles/ko/consumable-purchase.md), [JA](../../src/content/articles/ja/consumable-purchase.md); matching revision 5. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: A player buys a pack of three hints and spends one per use. At zero, use is blocked; another purchase adds three. Pack price and storefront seller terms are unspecified; all purchases here are local simulations.
+- Visual structure: `ConsumablePurchase.astro` owns its markup, spacing and state. Caption: Purchased units decrease when used.
+- Initial and changed states: A fictional crossword app starts with zero hints. Buy three, then use hints repeatedly: the balance falls to zero and further use is blocked. Buying another pack adds three again. This is a local simulation; no purchase is processed. Prices, taxes, fees and refunds are omitted. Reset or reload clears the example.
+- Repetition, empty/failure and constraints: Validate receipts and grant each transaction once before allowing spend. Decide cross-device balance, refunds and offline behavior. Local duplicate-click protection is useful but does not replace a server ledger or platform transaction processing.
+- Controls and state selectors: `data-money`, `data-contract-context`, `data-inventory`, `data-purchases`, `data-buy`, `data-use`, `data-uses`, `data-reset`, `data-applied`
+- Reset and reload: Reset returns the rendered initial model, announces restoration and keeps reset focus. Reload restores initial state; no input persistence or remote mutation.
+- Mobile order and widths: max-width:450px. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Native controls with localized accessible names, visible focus and a polite status region. Representative keyboard actions and reset covered in browser tests.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Motion is optional. Server-rendered initial information remains readable; script-dependent controls are disabled and the wrapper explains the limitation.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `interactive`; `[data-demo="consumable-purchase"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/consumable-purchase.md`, sourceRevision 5; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Units consumed through use; advantages: Repeatable purchases; limitations: Balance and spending need clarity; suitable: Optional consumable items; combinations: Freemium access
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/consumable-purchase-320.png`, `artifacts/design-demos/consumable-purchase-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Apple: in-app purchase types](https://developer.apple.com/help/app-store-connect/reference/in-app-purchases-and-subscriptions/in-app-purchase-types) (checked 2026-09-27): Consumables deplete with use; store receipts and fulfillment are outside this browser model.
+
+## Strong teaching case — 2026-09-27
+
+Inventory is spent down; further use requires an available balance.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

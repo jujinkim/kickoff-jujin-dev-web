@@ -100,8 +100,21 @@ const path = [
       "事業者のイベントは遅延・重複し得ます。使う事業者の検証イベントと提供規則を定めます。",
     )}
   </p>
+  <p class="scope-note">
+    {t(
+      "Pending payment: wait for trusted completion. Paid but access not recorded: retry fulfillment without charging again. Refund: apply the agreed access policy; payment and entitlement are separate records.",
+      "결제 대기는 신뢰할 완료 근거를 기다립니다. 결제됐으나 권한 기록에 실패했다면 재청구 없이 지급을 재시도합니다. 환불은 합의한 접근 정책을 적용하며 결제와 권한은 별도 기록입니다.",
+      "決済保留では信頼できる完了根拠を待ちます。支払済みで権限記録に失敗した場合は再請求せず提供を再試行します。返金では合意した利用規則を適用し、決済と権限は別の記録です。",
+    )}
+  </p>
 </section>
 <style>
+  .scope-note {
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid currentColor;
+    font-size: 0.85rem;
+  }
   section {
     container-type: inline-size;
     padding: clamp(16px, 3vw, 28px);
@@ -119,6 +132,7 @@ const path = [
     margin: 0;
   }
   .eyebrow {
+    color: inherit;
     font-size: 0.82rem;
     font-weight: 700;
   }
@@ -177,5 +191,23 @@ const path = [
     .branches {
       grid-template-columns: 1fr;
     }
+  }
+
+  .path {
+    gap: 28px;
+  }
+  .path li {
+    border: 3px solid #58694c;
+    padding: 26px;
+  }
+  .path li:last-child {
+    border: 7px double #58694c;
+  }
+  .branches > p {
+    border: 4px dashed #58694c;
+    padding: 24px;
+  }
+  .number-label {
+    font-size: 2rem;
   }
 </style>

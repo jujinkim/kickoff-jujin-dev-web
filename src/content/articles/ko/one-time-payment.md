@@ -1,32 +1,30 @@
 ---
-kind: "concept"
-articleId: "one-time-payment"
-lang: "ko"
-title: "일회성 결제"
-summary: "정해진 이용 권리에 한 번 청구합니다."
-category: "billing"
-aliases: ["일회성 결제", "One-time payment"]
+kind: concept
+articleId: one-time-payment
+lang: ko
+title: 일회성 결제
+summary: 범위가 정해진 상품의 약속을 충당할 수 있을 때 한 번 결제받습니다.
+category: billing
+aliases:
+  - 일회성 결제
+  - One-time payment
 related:
-  [
-    "revenue",
-    "subscription",
-    "usage-based",
-    "prepaid-credits",
-    "non-consumable-purchase",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - subscription
+  - usage-based
+  - prepaid-credits
+  - non-consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "한 번 청구",
-    "advantages": "명확한 구매 금액",
-    "limitations": "향후 서비스 조건 필요",
-    "suitable": "범위가 정해진 결과물",
-    "combinations": "비소모성 이용 권리",
-  }
+  features: 한 번 청구
+  advantages: 명확한 구매 금액
+  limitations: 향후 서비스 조건 필요
+  suitable: 범위가 정해진 결과물
+  combinations: 비소모성 이용 권리
 ---
 
 ## 왜 필요한가

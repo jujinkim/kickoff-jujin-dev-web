@@ -57,6 +57,28 @@ const t = local(lang),
       )}
     </li>
   </ol>
+  <div
+    class="quantity-cases"
+    role="group"
+    aria-label={t(
+      "Compare boundary quantities",
+      "경계 수량 비교",
+      "境界の数量を比較",
+    )}
+  >
+    <button type="button" data-quantity-preset="100" data-interactive disabled>
+      <span>{t("Quantity", "수량", "数量")} 100</span>
+      <strong>→ 20.00</strong>
+    </button>
+    <button type="button" data-quantity-preset="101" data-interactive disabled>
+      <span>{t("Quantity", "수량", "数量")} 101</span>
+      <strong>→ 20.10</strong>
+    </button>
+    <button type="button" data-quantity-preset="1000" data-interactive disabled>
+      <span>{t("Quantity", "수량", "数量")} 1000</span>
+      <strong>→ 110.00</strong>
+    </button>
+  </div>
   <label>
     {m.exports}
     <input
@@ -104,6 +126,13 @@ const t = local(lang),
       {m.reset}
     </button>
   </div>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The customer pays 0.20 for each of the first 100 monthly exports and 0.10 thereafter. At 120, the bill is 20 + 2 = 22; at 101 it is 20.10. Zero usage costs zero in this offer.",
+      "고객은 월 첫 100회에 각각 0.20, 이후 각각 0.10을 냅니다. 120회는 20+2=22, 101회는 20.10입니다. 이 조건의 0회는 0입니다.",
+      "顧客は月の最初の100回に各0.20、その後に各0.10を払います。120回は20＋2＝22、101回は20.10です。この条件の0回は0です。",
+    )}
+  </p>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -136,5 +165,42 @@ const t = local(lang),
   }
   .result p {
     margin-bottom: 0;
+  }
+
+  .quantity-cases {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 28px 0;
+  }
+  .quantity-cases button {
+    flex: 1 1 130px;
+    display: grid;
+    gap: 8px;
+    padding: 18px;
+    border: 2px solid currentColor;
+    text-align: left;
+  }
+  .quantity-cases strong {
+    font-size: 1.5rem;
+  }
+  .result output {
+    font-size: clamp(2.5rem, 7cqi, 4rem);
+    font-weight: 800;
+  }
+
+  .slices {
+    gap: 0;
+    border: 4px solid #4c6751;
+    padding: 0;
+    list-style-position: inside;
+  }
+  .slices li {
+    padding: 24px;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .slices li + li {
+    border-top: 4px dashed #4c6751;
   }
 </style>

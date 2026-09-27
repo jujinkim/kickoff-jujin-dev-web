@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "flat-rate-pricing"
-lang: "ko"
-title: "정액 요금"
-summary: "정해진 상품 범위에 고정 금액을 부과합니다."
-category: "pricing-models"
-aliases: ["정액 요금", "Flat-rate pricing"]
+kind: concept
+articleId: flat-rate-pricing
+lang: ko
+title: 정액 요금
+summary: 예측 가능한 묶음이 중요할 때 패키지 가격 하나를 청구합니다.
+category: pricing-models
+aliases:
+  - 정액 요금
+  - Flat-rate pricing
 related:
-  [
-    "revenue",
-    "per-seat-pricing",
-    "feature-tiered-pricing",
-    "volume-pricing",
-    "graduated-pricing",
-    "base-plus-overage",
-    "subscription",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - per-seat-pricing
+  - feature-tiered-pricing
+  - volume-pricing
+  - graduated-pricing
+  - base-plus-overage
+  - subscription
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "고정된 상품 금액",
-    "advantages": "한도 내에서 예측 가능",
-    "limitations": "포함 범위가 중요",
-    "suitable": "안정적인 서비스 묶음",
-    "combinations": "구독 청구",
-  }
+  features: 고정된 상품 금액
+  advantages: 한도 내에서 예측 가능
+  limitations: 포함 범위가 중요
+  suitable: 안정적인 서비스 묶음
+  combinations: 구독 청구
 ---
 
 ## 왜 필요한가

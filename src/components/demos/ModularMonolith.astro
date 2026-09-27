@@ -110,6 +110,13 @@ const modules = [
     )}
   </p>
   <p class="footnote">{s.storeNote}</p>
+  <p class="boundary-note" data-failure-boundary>
+    {t(
+      "Module APIs protect source and data ownership. They still share this release and process failure boundary.",
+      "모듈 API는 소스·데이터 소유권을 지킵니다. 배포와 프로세스 장애 경계는 여전히 공유합니다.",
+      "モジュールAPIはソースとデータ所有を守ります。配布とプロセス障害の境界は共有したままです。",
+    )}
+  </p>
 </section>
 <style>
   section {
@@ -273,6 +280,41 @@ const modules = [
     .database,
     .boundary {
       border-color: CanvasText;
+    }
+  }
+  .boundary-note {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid currentColor;
+    font-size: 0.85rem;
+  }
+
+  .deployment {
+    border: 7px solid #284632;
+    padding: 18px;
+  }
+  .modules {
+    gap: 24px;
+  }
+  .modules li {
+    border: 3px solid #547452;
+  }
+  .gate {
+    border: 5px double #284632;
+  }
+  .private {
+    border-left: 5px solid #547452;
+  }
+  .guard {
+    padding: 18px;
+    border: 3px dashed #547452;
+    font-size: 1rem;
+  }
+  @container (width < 430px) {
+    .private {
+      border-left: 0;
+      border-top: 5px solid #547452;
+      padding-top: 12px;
     }
   }
 </style>

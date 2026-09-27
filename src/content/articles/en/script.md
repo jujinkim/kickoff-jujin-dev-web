@@ -3,7 +3,7 @@ kind: concept
 articleId: script
 lang: en
 title: Script
-summary: "Add a handwritten greeting to a short invitation heading; keep longer text in a plain face."
+summary: Handwritten strokes suit short expressive lettering while ordinary text carries detailed instructions.
 category: type-shapes
 aliases:
   - Script
@@ -12,17 +12,16 @@ related:
   - serif
   - sans-serif
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 comparison:
-  features: Script type borrows handwritten strokes and possible joins.
+  features: Handwritten strokes suit short expressive lettering while ordinary text carries detailed instructions.
   advantages: Handwritten strokes give short text expression.
-  limitations: >-
-    Long passages and unsupported characters need a plain fallback; this
-    specimen demonstrates Latin lettering only.
+  limitations: Long passages and unsupported characters need a plain fallback; this specimen demonstrates Latin lettering only.
   suitable: Choose it for short expressive headings.
   combinations: Use ordinary sans-serif for interface labels and longer explanations.
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
@@ -31,7 +30,7 @@ Imagine a dinner invitation with place and time. Its short heading needs a handw
 
 ## How: work toward a solution
 
-For a dinner invitation, compare a phrase with iiiWWW 0123 and aligned numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Dancing Script demonstrates Latin handwriting; localized text uses a Noto fallback.
+The dinner invitation uses “You are invited” in Dancing Script, with place and time in plain text. Explore the separate measurement lab without breaking the string into character boxes. Localized Korean and Japanese use a Noto fallback.
 
 ## What: the concept
 

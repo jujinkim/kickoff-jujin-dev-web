@@ -1,197 +1,183 @@
 ---
 import type { Lang } from "../../lib/i18n";
-import { workshop } from "./workshop";
+import { local } from "./shared";
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
-const w = workshop(lang, "material-3-expressive");
-const prefix = "material-3-expressive-" + lang;
+const t = local(lang);
 ---
 
 <section
   class="demo"
-  data-comparison="tasks"
   data-demo="material-3-expressive"
   lang={lang}
-  data-reset-message={w.resetMessage}
-  data-completed-label={w.completed}
-  data-progress-label={w.progress}
+  data-reset-message={t("Reset", "초기화", "リセット")}
 >
   <header>
-    <div>
-      <small>{w.identity} · 01</small>
-      <h2>{w.project}</h2>
-    </div>
-    <span class="mark" aria-hidden="true">
-      ✳
-    </span>
+    <small>{t("NEIGHBORS TOGETHER", "이웃과 함께", "ご近所と一緒に")}</small>
+    <h2>{t("A picnic for everyone", "함께하는 소풍", "みんなのピクニック")}</h2>
+    <p>
+      {t(
+        "Saturday · Riverside lawn · 12:00",
+        "토요일 · 강변 잔디밭 · 12:00",
+        "土曜日 · 川辺の芝生 · 12:00",
+      )}
+    </p>
   </header>
-  <nav aria-label={w.menu}>
-    {[
-      ["overview", w.overview],
-      ["tasks", w.tasksTitle],
-      ["resources", w.resourcesTitle],
-    ].map(([target, label]) => (
-      <a href={`#${prefix}-${target}`} data-section-link>
-        {label}
-      </a>
-    ))}
-  </nav>
-  <div class="workspace">
-    <div class="work-main">
-      <section
-        class="intro"
-        id={`${prefix}-overview`}
-        tabindex="-1"
-        aria-label={w.overview}
-      >
-        <h3>{w.goal}</h3>
-        <p data-description>{w.description}</p>
-      </section>
-      <section id={`${prefix}-tasks`} tabindex="-1" aria-label={w.tasksTitle}>
-        <h3>{w.tasksTitle}</h3>
-        <div class="controls">
-          <label>
-            {w.status}
-            <select data-filter data-interactive disabled>
-              <option value="all">{w.all}</option>
-              <option value="open">{w.open}</option>
-              <option value="done">{w.done}</option>
-            </select>
-          </label>
-        </div>
-        <ul>
-          {w.tasks.map((text, i) => (
-            <li data-task>
-              <label>
-                <input type="checkbox" data-check data-interactive disabled />
-                <span class="task-label">{text}</span>
-              </label>
-              <small aria-hidden="true">0{i + 1}</small>
-            </li>
-          ))}
-        </ul>
-        <p data-empty hidden>
-          {w.empty}
-        </p>
-      </section>
+  <div class="invitation">
+    <div class="flower" data-reactive-shape aria-hidden="true">
+      ✳
     </div>
-    <aside>
-      <section
-        class="progress-panel"
-        data-reactive-shape
-        aria-label={w.progress}
+    <div class="rsvp">
+      <label>
+        {t("People in your group", "참가 인원", "参加人数")}
+        <select data-people data-interactive disabled>
+          {[1, 2, 3, 4, 5, 6].map((n) => (
+            <option value={n}>{n}</option>
+          ))}
+        </select>
+      </label>
+      <button
+        class="join"
+        type="button"
+        data-join
+        aria-pressed="false"
+        data-interactive
+        disabled
+        data-off={t("Join picnic", "참가하기", "参加する")}
+        data-on={t("Cancel participation", "참가 취소", "参加を取り消す")}
       >
-        <h3>{w.progress}</h3>
-        <div class="progress-values">
-          <span>
-            {w.completed} <strong data-count>0 / 3</strong>
-          </span>
-          <strong data-percent>0%</strong>
-        </div>
-        <progress data-progress value="0" max="3" aria-label={w.progress}>
-          0 / 3
-        </progress>
-      </section>
-      <section
-        class="resources"
-        id={`${prefix}-resources`}
-        tabindex="-1"
-        aria-label={w.resourcesTitle}
+        {t("Join picnic", "참가하기", "参加する")}
+      </button>
+      <p
+        class="state"
+        data-state
+        data-off={t("No participation yet", "참가 전", "まだ参加していません")}
+        data-on={t(
+          "Participation confirmed",
+          "참가 완료",
+          "参加を受け付けました",
+        )}
       >
-        <h3>{w.resourcesTitle}</h3>
-        {w.resources.map((resource) => (
-          <details data-resource>
-            <summary>
-              {resource.title}
-              <span>{w.note}</span>
-            </summary>
-            <p>{resource.note}</p>
-          </details>
-        ))}
-      </section>
-    </aside>
+        {t("No participation yet", "참가 전", "まだ参加していません")}
+      </p>
+      <p>
+        {t("Reserved places", "확보한 자리", "確保した席")}:{" "}
+        <strong data-places>0</strong>
+      </p>
+    </div>
   </div>
   <footer>
-    <div class="footer-line">
-      <small data-footer-summary>{w.summary}</small>
-      <button class="reset" type="button" data-reset data-interactive disabled>
-        {w.reset}
-      </button>
-    </div>
-    <p role="status" aria-live="polite" aria-atomic="true">
-      {w.initialMessage}
-    </p>
+    <button type="button" data-reset data-interactive disabled>
+      {t("Reset", "초기화", "リセット")}
+    </button>
+    <p role="status" aria-live="polite" aria-atomic="true"></p>
   </footer>
 </section>
 <script>
-  import { mountTasks } from "./tasks";
-  mountTasks("material-3-expressive");
+  import { mount } from "./shared";
+  mount("material-3-expressive", (root, say) => {
+    const people = root.querySelector<HTMLSelectElement>("[data-people]")!;
+    const join = root.querySelector<HTMLButtonElement>("[data-join]")!;
+    const state = root.querySelector<HTMLElement>("[data-state]")!;
+    let joined = false;
+    const update = () => {
+      join.setAttribute("aria-pressed", String(joined));
+      join.textContent = joined ? join.dataset.on! : join.dataset.off!;
+      state.textContent = joined ? state.dataset.on! : state.dataset.off!;
+      root.querySelector("[data-places]")!.textContent = joined
+        ? people.value
+        : "0";
+      root.dataset.joined = String(joined);
+      say(`${state.textContent} · ${joined ? people.value : 0}`);
+    };
+    join.addEventListener("click", () => {
+      joined = !joined;
+      update();
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
+        root
+          .querySelector("[data-reactive-shape]")!
+          .animate(
+            [
+              { transform: "rotate(0) scale(1)" },
+              { transform: "rotate(25deg) scale(.9)" },
+              { transform: "rotate(0) scale(1)" },
+            ],
+            { duration: 400 },
+          );
+    });
+    people.addEventListener("change", update);
+    return () => {
+      joined = false;
+      people.value = "1";
+      update();
+    };
+  });
 </script>
 <style>
-  /* Local control baseline. Astro scopes every selector to this component. */
   .demo {
     min-width: 0;
     overflow-wrap: anywhere;
-    padding: clamp(16px, 3vw, 32px);
+    padding: clamp(16px, 4vw, 36px);
     color-scheme: light;
+    container-type: inline-size;
   }
   * {
     box-sizing: border-box;
   }
-  :is(h2, h3, p) {
-    margin: 0 0 1rem;
+  h2,
+  h3,
+  p {
+    margin: 0 0 16px;
   }
   h2 {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 5cqi, 3rem);
     line-height: 1.15;
   }
   h3 {
     font-size: 1.15rem;
   }
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    margin: 18px 0;
+  p {
+    line-height: 1.65;
   }
-  label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    max-width: 100%;
-  }
-  :is(button, select, input, textarea) {
+  button,
+  select,
+  input {
     font: inherit;
     max-width: 100%;
     color: inherit;
   }
-
-  :is(button, select, input:not([type="checkbox"]):not([type="range"])) {
+  button,
+  select,
+  input:not([type="checkbox"]) {
     min-height: 44px;
-    padding: 8px 12px;
+    padding: 10px 14px;
   }
-  :is(button, select) {
+  button,
+  summary {
     cursor: pointer;
   }
   button {
-    border: 1px solid currentColor;
     background: transparent;
+    border: 1px solid currentColor;
   }
-  :is(input, textarea, select) {
+  select,
+  input {
     background: #fff;
-    color: #172329;
-    border: 1px solid #67747c;
-  }
-  input[type="range"] {
-    width: 150px;
+    color: #18252b;
+    border: 1px solid #59656a;
   }
   input[type="checkbox"] {
     width: 22px;
     height: 22px;
+    flex: none;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   :focus-visible {
     outline: 3px dashed currentColor;
@@ -200,249 +186,132 @@ const prefix = "material-3-expressive-" + lang;
   [hidden] {
     display: none !important;
   }
+  footer {
+    margin-top: 28px;
+  }
   [role="status"] {
     min-height: 1.5em;
-    font-size: 0.85rem;
     margin-top: 16px;
+    font-size: 0.9rem;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
   }
   small {
-    font-size: 0.8rem;
-  }
-  .reset {
-    margin-top: 20px;
     font-size: 0.85rem;
   }
   @media (prefers-reduced-motion: reduce) {
     * {
-      transition: none !important;
       animation: none !important;
+      transition: none !important;
     }
   }
-
-  [data-task] label {
-    flex-wrap: nowrap;
-    min-width: 0;
-  }
-  [data-task] input {
-    flex: none;
-  }
-  [data-task] small {
-    flex: none;
-    white-space: nowrap;
-  }
-
-  .demo {
-    container-type: inline-size;
-  }
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 24px 0;
-  }
-  header .mark {
-    font-size: 2.8rem;
-    flex: none;
-  }
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0 0 24px;
-  }
-  nav a {
-    color: inherit;
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 8px 12px;
-    text-decoration: none;
-  }
-  .workspace {
-    display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-    gap: 24px;
-  }
-  .work-main,
-  aside {
-    min-width: 0;
-  }
-  .intro {
-    margin-bottom: 24px;
-  }
-  h2,
-  h3 {
-    font-family: inherit;
-  }
-  h3 {
-    line-height: 1.3;
-  }
-  .controls {
-    margin: 18px 0;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 20px 12px;
-  }
-  li label {
-    flex: 1;
-    min-height: 44px;
-    cursor: pointer;
-  }
-  li:has(:checked) .task-label {
-    text-decoration: line-through;
-  }
-  .progress-panel {
-    padding: 20px;
-    margin-bottom: 24px;
-  }
-  .progress-values {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  progress {
-    width: 100%;
-    height: 12px;
-    display: block;
-  }
-  details {
-    margin-top: 12px;
-    padding: 16px;
-  }
-  summary {
-    cursor: pointer;
-    min-height: 44px;
-  }
-  summary span {
-    display: block;
-    margin-top: 6px;
-    font-size: 0.8rem;
-  }
-  details p {
-    margin: 16px 0 0;
-    line-height: 1.6;
-  }
-  footer {
-    margin-top: 28px;
-    padding-top: 20px;
-  }
-  footer .footer-line {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    align-items: center;
-    justify-content: space-between;
-  }
-  footer .reset {
-    margin: 0;
-  }
-  [data-empty] {
-    padding: 20px 0;
-  }
-  @container (width < 600px) {
-    .workspace {
-      grid-template-columns: minmax(0, 1fr);
+  @media (forced-colors: active) {
+    button,
+    input,
+    select {
+      border: 1px solid ButtonText;
+    }
+    button[aria-pressed="true"] {
+      outline: 2px solid Highlight;
     }
   }
   .demo {
-    background: #f5edff;
-    color: #281840;
-    border-radius: 30px;
-    font-family: system-ui, sans-serif;
+    background: #f1e9ff;
+    color: #302147;
+    border-radius: 28px;
   }
   header {
-    padding: 24px;
-    background: #e7d5ff;
-    border-radius: 32px 32px 8px 32px;
-    margin-bottom: 16px;
+    max-width: 620px;
   }
   h2 {
-    font-size: clamp(2rem, 5cqi, 3.3rem);
-    letter-spacing: -0.04em;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    margin-top: 16px;
   }
-  header .mark {
+  .invitation {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 24px;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .flower {
+    background: #cdebb2;
+    color: #314d16;
+    border-radius: 45% 20% 45% 20%;
     display: grid;
     place-items: center;
-    background: #c9ef91;
-    width: 72px;
-    height: 72px;
-    border-radius: 24px 44px 26px 12px;
+    font-size: clamp(6rem, 22cqi, 11rem);
+    aspect-ratio: 1;
   }
-  nav {
-    gap: 8px;
+  .rsvp {
+    background: #e2d3fa;
+    padding: 26px;
+    border-radius: 38px 38px 12px 38px;
   }
-  nav a {
-    background: #e2d5ef;
-    border-radius: 22px;
-    font-weight: 750;
-    padding-inline: 20px;
-  }
-  .work-main {
-    padding: 24px;
-    background: #fff9ff;
-    border-radius: 12px 32px 32px 32px;
-  }
-  ul {
+  .rsvp label {
     display: grid;
-    gap: 8px;
+    gap: 12px;
   }
-  li {
-    background: #e8dcf3;
-    border-radius: 8px;
-    padding: 18px;
-    min-height: 84px;
-  }
-  li:first-child {
-    border-radius: 24px 24px 8px 8px;
-  }
-  li:last-child {
-    border-radius: 8px 8px 24px 24px;
-  }
-  li:has(:checked) {
-    background: #d4efb2;
-  }
-  .demo input[type="checkbox"] {
-    width: 30px;
-    height: 30px;
-    accent-color: #4f326f;
-  }
-  .progress-panel {
-    background: #d9efb6;
-    border-radius: 40px 14px 40px 22px;
-    transition: border-radius 0.3s ease;
-  }
-  .demo[data-complete="true"] .progress-panel {
-    border-radius: 18px 40px 18px 40px;
-  }
-  [data-percent] {
-    font-size: 1.8rem;
-    font-weight: 800;
-  }
-  progress {
-    accent-color: #48651e;
-    height: 16px;
-  }
-  details {
-    background: #edddff;
-    border-radius: 18px;
-  }
-  button,
   select {
+    background: #fff;
     border: 0;
-    background: #624088;
+    border-radius: 16px;
+  }
+  .join {
+    width: 100%;
+    background: #5b2e91;
     color: white;
+    border: 0;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 22px 0;
+  }
+  .state {
+    font-weight: 700;
+  }
+  footer button {
+    background: #e2d3fa;
+    border: 0;
     border-radius: 24px;
+  }
+  @container (width<540px) {
+    .invitation {
+      grid-template-columns: 1fr;
+    }
+    .flower {
+      max-width: 210px;
+      width: 100%;
+      justify-self: center;
+    }
+  }
+
+  .demo {
+    border-radius: 48px 12px 48px 12px;
+  }
+  h2 {
+    font-size: clamp(2.5rem, 9cqi, 5.4rem);
+    line-height: 1.02;
+  }
+  .flower {
+    border-radius: 50% 12% 50% 12%;
+    background: #c5ee93;
+  }
+  .rsvp {
+    border-radius: 64px 20px 64px 20px;
+    padding: clamp(20px, 4cqi, 38px);
+  }
+  .join {
+    min-height: 72px;
+    border-radius: 38px 14px 38px 14px;
+    font-size: 1.25rem;
+  }
+  .join[aria-pressed="true"] {
+    border-radius: 12px 38px 12px 38px;
   }
 </style>

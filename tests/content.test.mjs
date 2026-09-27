@@ -53,10 +53,10 @@ test("broken related IDs and unknown examples are rejected", () => {
     /unknown example/,
   );
 });
-test("stale translations are allowed, shared metadata drift is not", () => {
+test("unregistered guides allow stale translations; shared metadata drift is rejected", () => {
   assert.deepEqual(
     changed((a) => {
-      const d = a.find((x) => x.file === "en/srs.md").data;
+      const d = a.find((x) => x.file === "en/ooad.md").data;
       d.revision += 1;
       d.sourceRevision = d.revision;
     }),

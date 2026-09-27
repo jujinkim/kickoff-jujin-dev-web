@@ -118,6 +118,24 @@ const t = local(lang),
       )}
     </p>
   </aside>
+  <dl class="runtime-facts" data-runtime-facts>
+    <dt>{t("Execution boundary", "실행 경계", "実行境界")}</dt>
+    <dd>
+      {t(
+        "Build: content + Go templates → files. The host serves files without running Hugo per read.",
+        "빌드: 콘텐츠+Go 템플릿 → 파일. 호스트는 읽기마다 Hugo를 실행하지 않습니다.",
+        "ビルド：内容+Goテンプレート→ファイル。配信時にHugoは実行しません。",
+      )}
+    </dd>
+    <dt>{t("State and responsibility", "상태와 책임", "状態と責任")}</dt>
+    <dd>
+      {t(
+        "Publisher owns templates and deployment; a separate service owns private records.",
+        "발행자는 템플릿·배포, 별도 서비스는 개인 기록을 담당합니다.",
+        "公開担当はテンプレートと配布、別サービスは個人記録を担当します。",
+      )}
+    </dd>
+  </dl>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -187,5 +205,46 @@ const t = local(lang),
     .pipeline > li:first-child {
       grid-row: auto;
     }
+  }
+  .runtime-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 2fr);
+    gap: 10px 16px;
+    border-block: 1px solid currentColor;
+    padding: 18px 0;
+    margin: 18px 0;
+    font-size: 0.85rem;
+  }
+  .runtime-facts dt {
+    font-weight: 700;
+  }
+  .runtime-facts dd {
+    margin: 0;
+    min-width: 0;
+  }
+  @container (width<480px) {
+    .runtime-facts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .directory {
+    border-left: 6px solid #294965;
+    padding-left: 22px;
+  }
+  .files {
+    border-left: 3px solid currentColor;
+    padding-left: 24px;
+    line-height: 2;
+  }
+  .pipeline > li {
+    border-top-width: 5px;
+    padding: 24px;
+  }
+  .pipeline > li:nth-child(2) {
+    border: 5px solid #294965;
+  }
+  [data-output-count] {
+    font-size: 2.5rem;
   }
 </style>

@@ -41,6 +41,13 @@ const t = local(lang),
     )}
   </p>
   <p class="assumptions">{m.omitted}</p>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The customer pays 20 per month for up to five seats and 200 exports. The baseline of three seats and 120 exports stays inside that bundle. The seller must explain what happens beyond either cap.",
+      "고객은 최대 5좌석·200회 출력에 월 20을 냅니다. 기준 3좌석·120회는 묶음 안입니다. 판매자는 각 한도 초과 시 처리를 설명해야 합니다.",
+      "顧客は最大5席・200回の出力に月20を払います。基準の3席・120回は一式の範囲内です。販売者は各上限を超えたときの扱いを説明します。",
+    )}
+  </p>
 </section>
 <style>
   .package {
@@ -60,5 +67,17 @@ const t = local(lang),
     .package {
       grid-template-columns: 1fr;
     }
+  }
+
+  .package {
+    border: 6px solid #475f45;
+    padding: 32px;
+  }
+  .package strong {
+    font-size: clamp(4rem, 14cqi, 7rem);
+  }
+  .package li {
+    padding-block: 16px;
+    border-bottom: 2px solid #879a7f;
   }
 </style>

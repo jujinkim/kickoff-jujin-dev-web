@@ -2,198 +2,198 @@
   "brutalism": {
     "component": "Brutalism",
     "caption": {
-      "en": "Explore the repair day project",
-      "ko": "수리 행사 프로젝트 살펴보기",
-      "ja": "修理会の企画を見る"
+      "en": "Filter repair booths and their opening times",
+      "ko": "수리 부스와 운영 시간 필터링",
+      "ja": "修理ブースと開催時間を絞り込む"
     },
     "capture": "[data-demo=\"brutalism\"]"
   },
   "neobrutalism": {
     "component": "Neobrutalism",
     "caption": {
-      "en": "Explore the school fair project",
-      "ko": "학교 축제 프로젝트 살펴보기",
-      "ja": "学校祭の企画を見る"
+      "en": "Filter fair activities and choose an interest list",
+      "ko": "축제 활동 필터링과 관심 일정 선택",
+      "ja": "学校祭の活動を絞り込み、気になる予定を選ぶ"
     },
     "capture": "[data-demo=\"neobrutalism\"]"
   },
   "glassmorphism": {
     "component": "Glassmorphism",
     "caption": {
-      "en": "Explore the photo walk project",
-      "ko": "사진 산책 프로젝트 살펴보기",
-      "ja": "写真散歩の企画を見る"
+      "en": "Choose a photo-walk route over frosted glass",
+      "ko": "반투명 패널에서 사진 산책 경로 고르기",
+      "ja": "すりガラスのパネルで写真散歩を選ぶ"
     },
     "capture": "[data-demo=\"glassmorphism\"]"
   },
   "neumorphism": {
     "component": "Neumorphism",
     "caption": {
-      "en": "Explore the daily stretch routine project",
-      "ko": "매일 스트레칭 프로젝트 살펴보기",
-      "ja": "毎日のストレッチの企画を見る"
+      "en": "Start, pause and reset a stretch countdown",
+      "ko": "스트레칭 타이머 시작·일시정지·초기화",
+      "ja": "ストレッチの計測を開始・一時停止・リセット"
     },
     "capture": "[data-demo=\"neumorphism\"]"
   },
   "skeuomorphism": {
     "component": "Skeuomorphism",
     "caption": {
-      "en": "Explore the recipe notebook project",
-      "ko": "요리 수첩 프로젝트 살펴보기",
-      "ja": "料理ノートの企画を見る"
+      "en": "Choose a recipe and recalculate its ingredients by servings",
+      "ko": "요리 선택과 인분별 재료량 계산",
+      "ja": "料理を選び、人数に応じて材料を計算"
     },
     "capture": "[data-demo=\"skeuomorphism\"]"
   },
   "flat-design": {
     "component": "FlatDesign",
     "caption": {
-      "en": "Explore the clinic visit project",
-      "ko": "진료 예약 프로젝트 살펴보기",
-      "ja": "診察予約の企画を見る"
+      "en": "Choose a service and time, then review a fictional booking",
+      "ko": "진료 항목·시간 선택 후 가상 예약 확인",
+      "ja": "診療内容・時間を選び、架空の予約を確認"
     },
     "capture": "[data-demo=\"flat-design\"]"
   },
   "minimalism": {
     "component": "Minimalism",
     "caption": {
-      "en": "Explore the hiking checklist project",
-      "ko": "등산 준비 목록 프로젝트 살펴보기",
-      "ja": "登山の持ち物の企画を見る"
+      "en": "Pack essentials and reveal optional hiking items",
+      "ko": "필수 준비물 체크와 선택 물품 펼치기",
+      "ja": "必需品をチェックし、任意の品を開く"
     },
     "capture": "[data-demo=\"minimalism\"]"
   },
   "single-column": {
     "component": "SingleColumn",
     "caption": {
-      "en": "Explore visual references for a walking route guide",
-      "ko": "산책로 안내 참고 자료 살펴보기",
-      "ja": "散歩道ガイドの参考資料を見る"
+      "en": "Read a lakeside route and expand each section",
+      "ko": "호숫가 경로 읽기와 구간 설명 펼치기",
+      "ja": "湖畔のルートを読み、区間の説明を開く"
     },
     "capture": "[data-demo=\"single-column\"]"
   },
   "two-columns": {
     "component": "TwoColumns",
     "caption": {
-      "en": "Explore visual references for a recipe index",
-      "ko": "요리법 목록 참고 자료 살펴보기",
-      "ja": "レシピ一覧の参考資料を見る"
+      "en": "Find dinner by ingredient and cooking time",
+      "ko": "재료와 조리 시간으로 요리법 찾기",
+      "ja": "材料と調理時間からレシピを探す"
     },
     "capture": "[data-demo=\"two-columns\"]"
   },
   "multiple-columns": {
     "component": "MultipleColumns",
     "caption": {
-      "en": "Explore visual references for a museum guide",
-      "ko": "박물관 안내 참고 자료 살펴보기",
-      "ja": "博物館ガイドの参考資料を見る"
+      "en": "Select a museum exhibit and update its image and commentary",
+      "ko": "박물관 전시물 선택과 사진·해설 갱신",
+      "ja": "展示を選び、写真と解説を更新する"
     },
     "capture": "[data-demo=\"multiple-columns\"]"
   },
   "list-layout": {
     "component": "ListLayout",
     "caption": {
-      "en": "Explore visual references for a library search page",
-      "ko": "도서관 검색 화면 참고 자료 살펴보기",
-      "ja": "図書館の検索画面の参考資料を見る"
+      "en": "Search real book titles and compare fictional lending status",
+      "ko": "실제 책 검색과 가상 대출 상태 비교",
+      "ja": "実在の書名を検索し、架空の貸出状況を比較"
     },
     "capture": "[data-demo=\"list-layout\"]"
   },
   "uniform-grid": {
     "component": "UniformGrid",
     "caption": {
-      "en": "Explore visual references for a plant catalog",
-      "ko": "식물 목록 참고 자료 살펴보기",
-      "ja": "植物カタログの参考資料を見る"
+      "en": "Compare plant images and the same care fields",
+      "ko": "식물 사진과 동일한 관리 항목 비교",
+      "ja": "植物の写真と同じ管理項目を比べる"
     },
     "capture": "[data-demo=\"uniform-grid\"]"
   },
   "masonry": {
     "component": "Masonry",
     "caption": {
-      "en": "Explore visual references for a travel album",
-      "ko": "여행 앨범 참고 자료 살펴보기",
-      "ja": "旅のアルバムの参考資料を見る"
+      "en": "Browse uncropped travel photographs and expand memories",
+      "ko": "자르지 않은 여행 사진과 기억 펼치기",
+      "ja": "切り取らない旅行写真と、開ける思い出"
     },
     "capture": "[data-demo=\"masonry\"]"
   },
   "serif": {
     "component": "Serif",
     "caption": {
-      "en": "Inspect type for a local history magazine",
-      "ko": "지역 역사 잡지의 글자 살펴보기",
-      "ja": "地域史の雑誌の文字を見る"
+      "en": "Read an editorial specimen, then inspect the letterforms",
+      "ko": "잡지 예제를 읽고 글자 형태 살펴보기",
+      "ja": "雑誌の作例を読み、文字の形を調べる"
     },
     "capture": "[data-demo=\"serif\"]"
   },
   "sans-serif": {
     "component": "SansSerif",
     "caption": {
-      "en": "Inspect type for a train information board",
-      "ko": "열차 안내판의 글자 살펴보기",
-      "ja": "列車案内板の文字を見る"
+      "en": "Read a transit board, then inspect glyphs and weight",
+      "ko": "교통 안내 읽기와 글자·굵기 확인",
+      "ja": "交通案内を読み、字形と太さを確かめる"
     },
     "capture": "[data-demo=\"sans-serif\"]"
   },
   "script": {
     "component": "Script",
     "caption": {
-      "en": "Inspect type for a dinner invitation",
-      "ko": "저녁 초대장의 글자 살펴보기",
-      "ja": "夕食への招待状の文字を見る"
+      "en": "Read an invitation, then explore its Latin script lettering",
+      "ko": "초대장 읽기와 라틴 스크립트 글자 살펴보기",
+      "ja": "招待状を読み、ラテン文字のスクリプトを調べる"
     },
     "capture": "[data-demo=\"script\"]"
   },
   "proportional": {
     "component": "Proportional",
     "caption": {
-      "en": "Inspect type for a garden newsletter",
-      "ko": "정원 소식지의 글자 살펴보기",
-      "ja": "庭の便りの文字を見る"
+      "en": "Read a garden newsletter, then compare character advances",
+      "ko": "정원 소식지 읽기와 문자별 전진 폭 비교",
+      "ja": "庭の便りを読み、文字の送り幅を比べる"
     },
     "capture": "[data-demo=\"proportional\"]"
   },
   "monospace": {
     "component": "Monospace",
     "caption": {
-      "en": "Inspect type for a weather log",
-      "ko": "날씨 기록표의 글자 살펴보기",
-      "ja": "天気の記録の文字を見る"
+      "en": "Read a weather log, then measure fixed advances",
+      "ko": "날씨 기록 읽기와 고정 전진 폭 측정",
+      "ja": "天気の記録を読み、一定の送り幅を測る"
     },
     "capture": "[data-demo=\"monospace\"]"
   },
   "liquid-glass": {
     "component": "LiquidGlass",
     "caption": {
-      "en": "Explore the coastal photo diary project",
-      "ko": "해변 사진 일기 프로젝트 살펴보기",
-      "ja": "海辺の写真日記の企画を見る"
+      "en": "Browse photographs through a floating lens; expand its tools and compare the opaque fallback.",
+      "ko": "떠 있는 렌즈로 사진을 넘기고 도구를 펼쳐 불투명 표시와 비교하세요.",
+      "ja": "浮いたレンズで写真をめくり、ツールを広げて不透明表示と比較します。"
     },
     "capture": "[data-demo=\"liquid-glass\"]"
   },
   "material-3-expressive": {
     "component": "Material3Expressive",
     "caption": {
-      "en": "Explore the community picnic project",
-      "ko": "동네 소풍 프로젝트 살펴보기",
-      "ja": "地域のピクニックの企画を見る"
+      "en": "Choose a group size and change picnic participation",
+      "ko": "인원 선택과 소풍 참가 상태 변경",
+      "ja": "人数を選び、ピクニックの参加状態を変える"
     },
     "capture": "[data-demo=\"material-3-expressive\"]"
   },
   "tactile-collage": {
     "component": "TactileCollage",
     "caption": {
-      "en": "Explore the memory board project",
-      "ko": "추억 보드 프로젝트 살펴보기",
-      "ja": "思い出ボードの企画を見る"
+      "en": "Select and reorder photographs, tickets and memories",
+      "ko": "사진·표·메모 선택과 순서 변경",
+      "ja": "写真・切符・メモを選び、順序を変える"
     },
     "capture": "[data-demo=\"tactile-collage\"]"
   },
   "retro-digital": {
     "component": "RetroDigital",
     "caption": {
-      "en": "Explore the arcade night project",
-      "ko": "오락실 모임 프로젝트 살펴보기",
-      "ja": "ゲームセンターの夜の企画を見る"
+      "en": "Choose an arcade game and open its session window",
+      "ko": "게임 선택과 회차 정보 창 열기",
+      "ja": "ゲームを選び、回の情報窓を開く"
     },
     "capture": "[data-demo=\"retro-digital\"]"
   },
@@ -711,5 +711,65 @@
       "ja": "静的カタログの決定と負担"
     },
     "capture": "[data-demo=\"adr\"]"
+  },
+  "srs": {
+    "component": "RequirementsGuide",
+    "mode": "static",
+    "caption": {
+      "en": "Three second-click outcomes, three acceptance checks",
+      "ko": "두 번째 요청의 세 결과와 완료 조건",
+      "ja": "2回目の操作で生じる3つの結果と完了条件"
+    },
+    "capture": "[data-demo=\"srs\"]"
+  },
+  "tools": {
+    "component": "ToolsGuide",
+    "mode": "static",
+    "caption": {
+      "en": "Tool roles that coexist, with a separate game output",
+      "ko": "공존하는 도구 역할과 별도의 게임 출력",
+      "ja": "共存する道具の役割と別のゲーム出力"
+    },
+    "capture": "[data-demo=\"tools\"]"
+  },
+  "static-sites": {
+    "component": "StaticSitesGuide",
+    "mode": "static",
+    "caption": {
+      "en": "Edit, build, publish; a failed build keeps the old release",
+      "ko": "편집·빌드·게시와 실패 시 이전 배포 유지",
+      "ja": "編集・ビルド・公開と失敗時の旧配布維持"
+    },
+    "capture": "[data-demo=\"static-sites\"]"
+  },
+  "shipping": {
+    "component": "ShippingGuide",
+    "mode": "static",
+    "caption": {
+      "en": "An artifact, release owner and separate data recovery path",
+      "ko": "산출물·배포 담당자·별도의 데이터 복구 경로",
+      "ja": "成果物・配布担当と別のデータ復旧経路"
+    },
+    "capture": "[data-demo=\"shipping\"]"
+  },
+  "theme": {
+    "component": "ThemeGuide",
+    "mode": "interactive",
+    "caption": {
+      "en": "Switch semantic tokens on the same workshop card and form",
+      "ko": "같은 워크숍 카드와 폼의 의미별 토큰 전환",
+      "ja": "同じ講座カードとフォームの意味別トークン切替"
+    },
+    "capture": "[data-demo=\"theme\"]"
+  },
+  "revenue": {
+    "component": "RevenueGuide",
+    "mode": "interactive",
+    "caption": {
+      "en": "Change fictional paying users, usage and costs to inspect the remainder",
+      "ko": "가상 유료 사용자·사용량·비용을 바꾸어 잔여 금액 확인",
+      "ja": "架空の有料人数・使用量・費用を変え残額を確認"
+    },
+    "capture": "[data-demo=\"revenue\"]"
   }
 }

@@ -116,6 +116,34 @@ const reader = t("Mina", "민아", "美奈");
       <span data-records>{p.empty}</span>
     </p>
   </aside>
+  <dl class="operations">
+    <div>
+      <dt>{t("Runtime owner", "실행 환경 담당", "実行環境の担当")}</dt>
+      <dd>
+        {t(
+          "Product team / operator",
+          "제품 팀 / 운영자",
+          "製品チーム / 運用担当",
+        )}
+      </dd>
+    </div>
+    <div>
+      <dt>{t("Capacity cost", "용량 비용", "容量の費用")}</dt>
+      <dd>
+        {t("Provisioned while idle", "유휴 상태에도 확보", "待機中も確保")}
+      </dd>
+    </div>
+    <div>
+      <dt>{t("Recovery", "복구 책임", "復旧の責任")}</dt>
+      <dd>
+        {t(
+          "Supervise, restart, restore",
+          "감시·재시작·복원",
+          "監視・再起動・復元",
+        )}
+      </dd>
+    </div>
+  </dl>
   <p class="trace" data-path-state>
     {p.waiting}
   </p>
@@ -151,6 +179,28 @@ const reader = t("Mina", "민아", "美奈");
     margin-bottom: 1.2rem;
   }
 
+  .operations {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .operations div {
+    padding: 14px;
+    border-top: 2px solid #486086;
+  }
+  dt {
+    font-size: 0.8rem;
+  }
+  dd {
+    margin: 8px 0 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  @container (width < 600px) {
+    .operations {
+      grid-template-columns: 1fr;
+    }
+  }
   .lanes {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -190,5 +240,23 @@ const reader = t("Mina", "민아", "美奈");
     border-style: solid;
     border-width: 3px;
     border-radius: 10px;
+  }
+
+  .runtime {
+    border: 7px solid #345d74;
+    padding: 28px;
+    border-radius: 0;
+  }
+  .runtime > h3 {
+    font-size: 1.5rem;
+  }
+  .operations {
+    border-top: 5px solid #345d74;
+    padding-top: 24px;
+  }
+  .store {
+    margin-top: 38px;
+    border-width: 5px;
+    border-radius: 50% / 12%;
   }
 </style>

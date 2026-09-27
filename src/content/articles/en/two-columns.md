@@ -2,41 +2,41 @@
 kind: concept
 articleId: two-columns
 lang: en
-title: Two columns
-summary: Arrange visual references for a recipe index.
+title: Sidebar layout
+summary: >-
+  Keep navigation, filters or supporting information beside the main content so
+  both remain available.
 category: columns
 aliases:
+  - Sidebar layout
   - Two columns
+  - 2 columns
+  - 2열
 related:
   - layout
   - single-column
   - multiple-columns
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
 comparison:
-  features: Two adjacent regions separate filters from resources.
-  advantages: Filters stay available beside the resource list.
-  limitations: "Sidebars reduce reading width, so stack regions before they become cramped."
-  suitable: Choose it for documentation with persistent navigation.
-  combinations: The main column can contain lists or a resource grid.
+  features: A main region beside a narrower supporting region
+  advantages: Keep filters and results in view together
+  limitations: Stack regions when usable reading width is lost
+  suitable: Persistent navigation or filtering alongside content
+  combinations: The main region may contain a list or grid
+checked: "2026-09-26"
 ---
 
 ## Why: the goal or problem
 
-Imagine a recipe index where cooks browse many dishes. They keep filtering by ingredient while scanning names and preparation times.
-
-A recipe index needs filters beside a long list of dishes. Scrolling back to controls repeatedly interrupts exploration.
+Cooks use a recipe index to choose dinner by ingredient and time. They adjust filters while comparing dishes. Controls beside results matter more than uninterrupted reading; equally important work areas need a different arrangement.
 
 ## How: work toward a solution
 
-While designing a recipe index, gather six visual references. Filter a topic, reverse collection order, open study notes, or narrow the preview. Check whether the arrangement helps people find each reference. Reset or reload restores the full collection and original order. Filters sit beside the resource list; guidance follows the list.
+Choose tomato and 20 minutes: only tomato basil pasta remains. Open its cooking notes. A 10-minute limit gives an empty state; clear the filters to recover. On narrow screens, filters precede recipes.
 
 ## What: the concept
 
-**Two columns** — Two adjacent regions separate filters from resources.
-
-Sidebars reduce reading width, so stack regions before they become cramped.
-
-[W3C](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
+[**Sidebar layout**](https://design-system.w3.org/layouts/sidebar.html) places a narrower supporting region alongside the main region when space permits. It can use Flexbox or Grid. This is page composition, not CSS multi-column text flow. Stack regions before either becomes too cramped.

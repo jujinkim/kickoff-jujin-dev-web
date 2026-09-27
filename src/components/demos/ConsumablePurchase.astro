@@ -83,6 +83,13 @@ const t = local(lang),
       {m.reset}
     </button>
   </div>
+  <p data-contract-context class="contract-context">
+    {t(
+      "A player buys a pack of three hints and spends one per use. At zero, use is blocked; another purchase adds three. Pack price and storefront seller terms are unspecified; all purchases here are local simulations.",
+      "플레이어는 힌트 3개 묶음을 사서 한 번에 1개를 씁니다. 0이면 사용을 막고 재구매하면 3개를 더합니다. 묶음 가격과 스토어 판매 조건은 미정이며 구매는 모두 로컬 모형입니다.",
+      "プレイヤーはヒント3個を買い、1回に1個使います。0では使用を止め、再購入で3個追加します。価格とストア販売条件は未定で、すべてローカルの仮購入です。",
+    )}
+  </p>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -124,5 +131,17 @@ const t = local(lang),
     .purchase-scene {
       grid-template-columns: 1fr;
     }
+  }
+
+  .inventory {
+    border: 5px solid #796034;
+    padding: 28px;
+  }
+  [data-inventory] {
+    font-size: 4rem;
+    font-weight: 800;
+  }
+  [data-use] {
+    border-bottom-width: 6px;
   }
 </style>

@@ -1,25 +1,28 @@
 ---
-kind: "concept"
-articleId: "direct-seller"
-lang: "ko"
-title: "직접 판매자 모델"
-summary: "제품 사업자가 판매자로 남습니다."
-category: "seller-responsibility"
-aliases: ["직접 판매자 모델", "Direct seller model"]
-related: ["payments", "merchant-of-record", "direct-payment"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: direct-seller
+lang: ko
+title: 직접 판매자 모델
+summary: 판매 계약과 그에 따른 판매자 의무를 직접 맡습니다.
+category: seller-responsibility
+aliases:
+  - 직접 판매자 모델
+  - Direct seller model
+related:
+  - payments
+  - merchant-of-record
+  - direct-payment
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "사업자가 계약상 판매자",
-    "advantages": "판매 관계를 직접 관리",
-    "limitations": "판매자 의무 유지",
-    "suitable": "판매 운영 역량 보유",
-    "combinations": "결제 처리 업체와 과금 방식",
-  }
+  features: 사업자가 계약상 판매자
+  advantages: 판매 관계를 직접 관리
+  limitations: 판매자 의무 유지
+  suitable: 판매 운영 역량 보유
+  combinations: 결제 처리 업체와 과금 방식
 ---
 
 ## 왜 필요한가

@@ -42,24 +42,60 @@ const recommended = ["srs", "architecture", "layout"].map((id) =>
       </div>
       <p class="hero-handoff">{t.siteNotice}</p>
     </div>
-    <figure class="hero-art prompt-art" aria-labelledby="prompt-flow-title">
-      <figcaption id="prompt-flow-title">{h.flowTitle}</figcaption>
-      <ol class="prompt-flow" role="list">
-        {h.flow.map((group) => (
-          <li>
-            <strong class="flow-place">{group.place}</strong>
-            <ol class="flow-steps" role="list">
-              {group.steps.map((step, i) => (
-                <li>
-                  <span aria-hidden="true">{i === 0 ? "→" : "↓"}</span>
-                  {step}
-                </li>
-              ))}
-            </ol>
-          </li>
+    {concepts.some((a) => a.data.articleId === "glassmorphism") && (
+      <a class="hero-study" href={`/${lang}/catalog/glassmorphism/`}>
+        <span class="study-label">01 / {t.examplesTitle}</span>
+        <img
+          src={`/thumbnails/glassmorphism-${lang}.webp`}
+          alt={t.featuredCaption}
+          width="900"
+          height="680"
+          fetchpriority="high"
+        />
+        <span class="study-caption">
+          {t.featuredCaption}
+          <span aria-hidden="true">↗</span>
+        </span>
+      </a>
+    )}
+  </section>
+  <figure class="hero-art prompt-art" aria-labelledby="prompt-flow-title">
+    <figcaption id="prompt-flow-title">{h.flowTitle}</figcaption>
+    <ol class="prompt-flow" role="list">
+      {h.flow.map((group) => (
+        <li>
+          <strong class="flow-place">{group.place}</strong>
+          <ol class="flow-steps" role="list">
+            {group.steps.map((step, i) => (
+              <li>
+                <span aria-hidden="true">{i === 0 ? "→" : "↓"}</span>
+                {step}
+              </li>
+            ))}
+          </ol>
+        </li>
+      ))}
+    </ol>
+  </figure>
+  <section class="section" data-home-section="examples">
+    <div class="section-heading">
+      <h2>{t.examplesTitle}</h2>
+      <a class="text-link" href={`/${lang}/catalog/`}>
+        {t.browse} →
+      </a>
+    </div>
+    <p class="section-intro">{t.examplesIntro}</p>
+    <div class="catalog-grid">
+      {concepts
+        .filter((a) =>
+          ["two-columns", "serif", "hexagonal-architecture"].includes(
+            a.data.articleId,
+          ),
+        )
+        .map((article) => (
+          <Card article={article} />
         ))}
-      </ol>
-    </figure>
+    </div>
   </section>
   <section class="category-section" data-home-section="catalog">
     <div class="section-heading">
@@ -104,3 +140,73 @@ const recommended = ["srs", "architecture", "layout"].map((id) =>
     </div>
   </section>
 </Base>
+
+<style>
+  .hero-study {
+    display: block;
+    min-width: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    transform: rotate(1.2deg);
+  }
+  .hero-study:hover {
+    text-decoration: none;
+  }
+  .study-label {
+    display: block;
+    padding: 18px 22px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-study img {
+    width: 100%;
+    height: 410px;
+    display: block;
+    object-fit: cover;
+    object-position: top;
+  }
+  .study-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 22px;
+    font-size: 0.85rem;
+  }
+  .prompt-art {
+    padding: 24px 0 36px;
+    background: none;
+    border-bottom: 1px solid var(--line);
+    max-width: none;
+  }
+  .prompt-flow {
+    grid-template-columns: 1fr 1fr;
+  }
+  .prompt-flow > li,
+  .prompt-flow > li:last-child {
+    background: transparent;
+    color: var(--ink);
+    border: 0;
+    border-radius: 0;
+    border-left: 2px solid var(--line);
+    padding: 8px 20px;
+  }
+  .flow-steps {
+    font-size: 0.9rem;
+  }
+  @media (max-width: 760px) {
+    .hero-study {
+      transform: none;
+    }
+    .hero-study img {
+      height: auto;
+      max-height: 410px;
+    }
+  }
+  @media (max-width: 440px) {
+    .prompt-flow {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -92,6 +92,13 @@ const t = local(lang),
     )}
   </p>
   <p class="footnote">{s.storeNote}</p>
+  <p class="boundary-note" data-failure-boundary>
+    {t(
+      "One release can have several replicas. A process crash affects capabilities in that instance; restoring code does not restore database writes.",
+      "한 배포에 여러 복제본을 둘 수 있습니다. 프로세스 장애는 해당 인스턴스 기능에 영향을 주며 코드 복귀가 DB 쓰기를 되돌리지는 않습니다.",
+      "一つの配布に複数の複製を置けます。プロセス障害はその中の機能に及び、コードを戻してもDBの書き込みは戻りません。",
+    )}
+  </p>
 </section>
 <style>
   section {
@@ -225,5 +232,38 @@ const t = local(lang),
     .boundary {
       border-color: CanvasText;
     }
+  }
+  .boundary-note {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid currentColor;
+    font-size: 0.85rem;
+  }
+
+  .release {
+    border: 8px solid #294054;
+    padding: clamp(18px, 4cqi, 32px);
+  }
+  .release-heading h3 {
+    font-size: 1.5rem;
+  }
+  .release-heading strong {
+    font-size: 1.4rem;
+  }
+  .capabilities {
+    gap: 0;
+  }
+  .capabilities li {
+    border: 0;
+    border-right: 1px dashed #8094a5;
+  }
+  .capabilities .changed {
+    border: 0;
+    border-top: 6px solid #294054;
+  }
+  .store {
+    border-radius: 50% / 16%;
+    border: 3px solid #294054;
+    padding: 28px;
   }
 </style>

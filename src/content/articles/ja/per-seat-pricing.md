@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "per-seat-pricing"
-lang: "ja"
-title: "席数課金"
-summary: "利用権を持つ席ごとに請求します。"
-category: "pricing-models"
-aliases: ["席数課金", "Per-seat pricing"]
+kind: concept
+articleId: per-seat-pricing
+lang: ja
+title: 席数課金
+summary: 人ごとの利用が価値の基準なら、利用席数に価格を連動させます。
+category: pricing-models
+aliases:
+  - 席数課金
+  - Per-seat pricing
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "feature-tiered-pricing",
-    "volume-pricing",
-    "graduated-pricing",
-    "base-plus-overage",
-    "subscription",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - feature-tiered-pricing
+  - volume-pricing
+  - graduated-pricing
+  - base-plus-overage
+  - subscription
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "席数と単価の積",
-    "advantages": "利用権に応じて拡張",
-    "limitations": "課金対象の席の定義が必要",
-    "suitable": "チーム向け製品",
-    "combinations": "継続課金や機能パッケージ",
-  }
+  features: 席数と単価の積
+  advantages: 利用権に応じて拡張
+  limitations: 課金対象の席の定義が必要
+  suitable: チーム向け製品
+  combinations: 継続課金や機能パッケージ
 ---
 
 ## なぜ必要なのか

@@ -91,6 +91,15 @@ When revising an opening, read the English Why and How together before translati
 the setup should make the later worked example unsurprising. Preserve that
 setup, problem, and result in Korean and Japanese without padding short concepts.
 
+Use deliberately strong examples in every subject area. The example must expose
+the choice's characteristic mechanism or tradeoff, even before a reader knows
+its name. Design examples amplify the relevant material or spatial structure;
+architecture and runtime examples expose boundaries and causal paths; business
+examples expose payer, entitlement, or a price threshold with concrete results.
+Preserve factual accuracy, accessibility and the distinction between an example
+assumption and a general definition. Follow the distinguishing-mechanism rule in
+[Design demos](design-demos.md#exaggerate-the-distinguishing-mechanism).
+
 Before approving a Why section, check its opening in this order:
 
 1. Can a new reader tell what the imagined app, page, or service does and who uses it before a named example actor or failure appears?
@@ -138,7 +147,8 @@ Run `npm run check`, `npm run build`, `npm test`, `npm run test:e2e`. Tests exer
 
 ## Card summaries and reusable requests
 
-A card summary states the priority and situation that make this choice useful.
+A card summary defines the item and its selection criterion. Keep service names,
+worked situations and operation instructions in the body or caption.
 Do not repeat “compare the same screen before and after” across siblings. Keep
 the summary aligned with Why, How, the demo, and comparison metadata. Shape and
 character width remain independent typography axes; styles can also coexist.
@@ -152,3 +162,38 @@ checks. Review each request against a free, single-language project as well as
 the article example. The article application step links new projects to the
 builder and asks existing conversations to share the article link and selection
 reason, without saving or passing a choice automatically.
+
+## Supplementary reading and evidence
+
+Representative quality review: [review record](quality-review.md). The user approved
+the shared screens and glassmorphism revision 12 on 2026-09-27, authorizing the
+remaining 57 concepts and 8 guides without another intermediate approval gate.
+All active articles require supplementary reading in all three languages; removing
+an entire translated set is a validation failure, not an optional omission.
+
+Keep the Why → How → What overview complete without opening disclosures. Optional
+material lives in `src/content/article-details/{lang}/{articleId}.md`, separately
+from overview reading estimates. Its three H2 sections are Selection & comparison,
+Applications, Implementation & cautions (localized). Rendering adds Evidence from
+frontmatter `sources`: title, URL, the supported claim, and checked date.
+
+Each supplementary entry joins its article by `articleId` and `lang`; its
+`sourceRevision` must equal the article revision. Write and review English first,
+then translate the same scope, examples, limits and evidence. All three entries
+must exist together. English Markdown includes the entire English supplement;
+localized compatibility Markdown remains English. API schema v1 stays unchanged.
+
+Use W3C CSS specifications for mechanisms, WCAG 2.2 AA criteria for accessibility,
+pattern authors for composition patterns, and primary field/vendor sources for
+visual styles. Name drafts as drafts. The W3C Design System is a pattern reference,
+not our official taxonomy. Reflow supports narrow-screen checks, not definitions
+of every layout. Page composition (`columns` ID) distinguishes single-column,
+sidebar (`two-columns`, retaining old search aliases), and multi-region layouts
+from CSS multi-column text flow. Typeface shape, character advance and letter
+spacing are separate axes. Claims about font metrics require actual font loading
+and measurement. Style definitions must not prescribe incidental light direction,
+task counts, panel shapes or fixture names.
+
+When a bold source link touches a Korean or Japanese suffix, put the emphasis
+inside the link label (`[**term**](url)`). Check rendered HTML: emphasis around
+the whole link can leave literal asterisks beside the suffix.

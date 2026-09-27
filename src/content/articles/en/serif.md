@@ -3,7 +3,9 @@ kind: concept
 articleId: serif
 lang: en
 title: Serif
-summary: "Give a history magazine a printed editorial tone through letter terminals, checking each language’s glyphs."
+summary: >-
+  Finishing strokes at letter terminals create a distinct text texture; choose
+  by editorial tone and tested legibility.
 category: type-shapes
 aliases:
   - Serif
@@ -12,9 +14,9 @@ related:
   - sans-serif
   - script
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 comparison:
   features: Serifs add finishing strokes at letter terminals.
   advantages: Terminal details give the same specimen a distinct texture.
@@ -23,20 +25,17 @@ comparison:
     back, so inspect actual glyphs.
   suitable: Choose it when an editorial tone fits.
   combinations: Pair serif reading text with sans-serif interface labels.
+checked: "2026-09-26"
 ---
 
 ## Why: the goal or problem
 
-Imagine a local history magazine with interviews and long articles. Editors want a printed tone while keeping its languages legible.
+A local history magazine publishes neighborhood interviews. Editors want a print-like texture with quiet sans-serif labels. Handwriting would compete with long passages; check each language and size.
 
 ## How: work toward a solution
 
-For a local history magazine, compare a phrase with iiiWWW 0123 and aligned numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Mark H terminals to inspect the serif details.
+Read the magazine excerpt, then mark the terminals on H. Change the specimen size and inspect the width guides. Finishing strokes are letter shape; changing size does not turn proportional letters into fixed-width ones.
 
 ## What: the concept
 
-Serifs add finishing strokes at letter terminals.
-
-Korean and Japanese use Noto Serif CJK subsets; unsupported characters fall back, so inspect actual glyphs.
-
-[W3C](https://www.w3.org/TR/css-fonts-3/)
+[**Serif**](https://www.w3.org/TR/css-fonts-3/) describes finishing strokes and related typeface forms. It does not mean fixed width or extra letter spacing, and it does not guarantee easier reading. This example uses Noto Serif with local Korean and Japanese subsets; unsupported characters can fall back.

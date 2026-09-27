@@ -3,7 +3,7 @@ kind: concept
 articleId: static-hosting
 lang: ko
 title: 정적 호스팅
-summary: 공개 파일과 개인 저장 경로를 나눕니다.
+summary: 애플리케이션 운영 부담을 줄여 미리 만든 공개 파일을 제공합니다.
 category: hosting-models
 aliases:
   - 정적 호스팅
@@ -12,10 +12,10 @@ related:
   - always-on-server
   - serverless-functions
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 사전 생성 파일 전달
   advantages: 글 조회 시 앱 렌더러 불필요

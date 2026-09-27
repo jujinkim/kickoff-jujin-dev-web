@@ -3,7 +3,7 @@ kind: concept
 articleId: always-on-server
 lang: ko
 title: 상시 서버
-summary: 프로세스와 데이터의 수명은 다릅니다.
+summary: 프로세스를 계속 대기시켜 요청을 받습니다. 실행 환경을 제어하는 대신 용량·감시·복구를 맡습니다.
 category: hosting-models
 aliases:
   - 상시 서버
@@ -12,10 +12,10 @@ related:
   - static-hosting
   - serverless-functions
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-checked: "2026-09-22"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+checked: "2026-09-26"
 comparison:
   features: 장기 실행 요청 대기 프로세스
   advantages: 실행 환경 직접 제어

@@ -1,29 +1,30 @@
 ---
 kind: guide
-articleId: "theme"
-lang: "en"
-title: "Themes and fonts without fifty shades of almost"
-summary: "Use shared tokens so one decision stays one decision."
-category: "design"
+articleId: theme
+lang: en
+title: Themes and fonts without fifty shades of almost
+summary: "Name visual roles so shared colors, type and spacing stay consistent."
+category: design
 aliases:
-  [
-    "theme",
-    "font",
-    "design tokens",
-    "테마",
-    "폰트",
-    "공통 스타일",
-    "テーマ",
-    "フォント",
-    "デザイントークン",
-  ]
-related: ["layout", "architecture"]
-example: "theme"
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
+  - theme
+  - font
+  - design tokens
+  - 테마
+  - 폰트
+  - 공통 스타일
+  - テーマ
+  - フォント
+  - デザイントークン
+related:
+  - layout
+  - architecture
+example: theme
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
 aiPrompt: "Audit colors, typography, and spacing for our agreed project. Propose semantic tokens and font fallbacks for its supported languages and chosen themes. Show representative screens and contrast measurements. Ask only about unresolved visual directions before applying them. Preserve keyboard focus and any agreed theme preference behavior. Do not add languages or light/dark modes unless the project requires them."
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem

@@ -1,0 +1,200 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+const runbook = [
+  [
+    t("Artifact", "산출물", "成果物"),
+    "catalog-r17",
+    t(
+      "Versioned HTML, assets and release configuration",
+      "버전을 붙인 HTML·자산·배포 설정",
+      "版を付けたHTML・素材・配布設定",
+    ),
+  ],
+  [
+    t("Target", "대상", "配布先"),
+    t("Public file host", "공개 파일 호스트", "公開ファイルホスト"),
+    t(
+      "Readers run the interface in their browsers",
+      "독자는 브라우저에서 화면을 실행",
+      "読者はブラウザーで画面を実行",
+    ),
+  ],
+  [
+    t("Verify", "확인", "確認"),
+    t("Paths · text · assets", "경로·본문·자산", "経路・本文・素材"),
+    t(
+      "Check real hosted routes after the switch",
+      "전환 뒤 실제 호스팅 경로 확인",
+      "切替後の実際の配信経路を確認",
+    ),
+  ],
+  [
+    t("Recover", "복구", "復旧"),
+    "catalog-r16",
+    t(
+      "Stop the release and restore the known-good artifact",
+      "배포를 중단하고 정상 산출물로 복원",
+      "配布を止め、既知の正常成果物に戻す",
+    ),
+  ],
+  [
+    t("Owner", "담당자", "担当者"),
+    t("Release maintainer", "배포 관리자", "配布の管理担当"),
+    t(
+      "Tracks results and responds to failed checks",
+      "결과를 기록하고 검사 실패에 대응",
+      "結果を記録し、検証失敗に対応",
+    ),
+  ],
+];
+---
+
+<section data-demo="shipping" lang={lang}>
+  <header>
+    <span>RELEASE / 017</span>
+    <h2>
+      {t(
+        "A release someone can recover",
+        "담당자가 복구할 수 있는 배포",
+        "担当者が復旧できる配布",
+      )}
+    </h2>
+    <p>
+      {t(
+        "Fictional public article catalog",
+        "가상 공개 글 카탈로그",
+        "架空の公開記事カタログ",
+      )}
+    </p>
+  </header>
+  <dl>
+    {runbook.map(([role, value, note]) => (
+      <div>
+        <dt>{role}</dt>
+        <dd>
+          <strong>{value}</strong>
+          <span>{note}</span>
+        </dd>
+      </div>
+    ))}
+  </dl>
+  <aside>
+    <h3>
+      {t(
+        "Data has a separate recovery path",
+        "데이터 복구는 별도 경로",
+        "データ復旧は別の経路",
+      )}
+    </h3>
+    <p>
+      {t(
+        "If an added service accepts new saved records, restoring r16 does not undo those writes. Its data owner must check schema compatibility, backups and acceptable data loss before a recovery.",
+        "추가 서비스에 새 기록이 저장되었다면 r16 복원으로 그 쓰기가 취소되지는 않습니다. 데이터 담당자는 복구 전에 스키마 호환·백업·허용 데이터 손실을 확인해야 합니다.",
+        "追加サービスに新記録が保存された場合、r16への復元で書き込みは戻りません。データ担当は復旧前にスキーマ互換・バックアップ・許容するデータ損失を確認します。",
+      )}
+    </p>
+  </aside>
+  <p class="note">
+    {t(
+      "A static runbook, not an active deployment. File hosting, browser execution and optional service operation are different responsibilities.",
+      "실제 배포를 하지 않는 정적 절차서입니다. 파일 호스팅·브라우저 실행·선택적 서비스 운영은 서로 다른 책임입니다.",
+      "実配布を行わない静的な手順書です。ファイル配信・ブラウザー実行・任意のサービス運用は異なる責務です。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    background: #faf9f4;
+    color: #292c32;
+    border: 1px solid #afaead;
+    padding: clamp(18px, 4vw, 36px);
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+  header {
+    border-bottom: 3px solid #343940;
+    padding-bottom: 22px;
+  }
+  header > span {
+    font: 700 0.85rem monospace;
+    letter-spacing: 0.1em;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin: 18px 0 10px;
+  }
+  header p {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  dl > div {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 20px;
+    border-bottom: 1px solid #c3c3bd;
+    padding: 18px 0;
+  }
+  dt {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  dd {
+    margin: 0;
+  }
+  dd strong,
+  dd span {
+    display: block;
+  }
+  dd span {
+    font-size: 0.85rem;
+    margin-top: 5px;
+  }
+  aside {
+    background: #efe7d8;
+    border-left: 5px solid #865b28;
+    padding: 20px;
+    margin-top: 28px;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  aside p,
+  .note {
+    font-size: 0.87rem;
+  }
+  .note {
+    margin: 20px 0 0;
+  }
+  @container (width < 440px) {
+    dl > div {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+  }
+
+  dl > div {
+    border-top: 3px solid #586270;
+    padding-block: 26px;
+  }
+  dt {
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+  dd strong {
+    font-size: 1.3rem;
+  }
+  aside {
+    border: 5px dashed #815444;
+    padding: 26px;
+    margin-top: 34px;
+  }
+</style>

@@ -1,30 +1,30 @@
 ---
 kind: guide
-articleId: "payments"
-lang: "en"
+articleId: payments
+lang: en
 title: "Payment channels, PG, and merchant of record"
-summary: "A payment button is the beginning of the paperwork."
-category: "business"
+summary: Link trusted payment evidence to repeat-safe access and clear seller duties.
+category: business
 aliases:
-  [
-    "PG",
-    "MoR",
-    "Toss Payments",
-    "Lemon Squeezy",
-    "결제",
-    "토스",
-    "전자결제대행",
-    "決済",
-    "販売責任者",
-  ]
-related: ["revenue", "shipping"]
-example: "payments"
-status: "published"
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+  - PG
+  - MoR
+  - Toss Payments
+  - Lemon Squeezy
+  - 결제
+  - 토스
+  - 전자결제대행
+  - 決済
+  - 販売責任者
+related:
+  - revenue
+  - shipping
+example: payments
+status: published
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 aiPrompt: "Read our agreed business model first. If payments are outside scope, keep them outside scope. If payments are needed, use our product, seller location, customers, and distribution channels to compare suitable payment arrangements and providers, including store billing only where relevant. Ask for missing details and preserve confirmed choices. Verify eligibility, fees, tax scope, refunds, and settlement with dated official sources; report unknowns and ask before selecting a provider. Include trusted payment verification, repeat-safe entitlement handling, and recovery checks in the requirements."
-checked: "2026-09-23"
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem

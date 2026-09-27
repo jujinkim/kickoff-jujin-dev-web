@@ -3,7 +3,7 @@ kind: concept
 articleId: hugo
 lang: en
 title: Hugo
-summary: Content and templates become files.
+summary: Generate content through Go templates for file-centered publishing.
 category: static-generators
 aliases:
   - Hugo
@@ -12,10 +12,10 @@ related:
   - astro
   - jekyll
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-checked: "2026-09-22"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: Content plus Go templates
   advantages: No request-time article renderer

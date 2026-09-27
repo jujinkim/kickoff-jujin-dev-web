@@ -45,6 +45,13 @@ const t = local(lang),
     )}
   </p>
   <p class="assumptions">{m.omitted}</p>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The reader pays 12 for newspaper access. Billing frequency and access duration are unspecified; the publisher supplies reports. The processor handles payment, while the seller contract determines receipts and refunds.",
+      "독자가 신문 접근에 12를 냅니다. 청구 주기와 이용 기간은 미정이며 발행자가 기사를 제공합니다. 결제 업체는 결제를 처리하고 영수증·환불 책임은 판매 계약에서 정합니다.",
+      "読者が新聞の閲覧に12を払います。請求頻度と利用期間は未定で、発行者が記事を提供します。決済業者は支払いを処理し、領収書・返金責任は販売契約で定めます。",
+    )}
+  </p>
 </section>
 <style>
   .exchange {
@@ -72,5 +79,19 @@ const t = local(lang),
     border-left: 5px solid #b07838;
     padding: 0.7rem 1rem;
     background: #fff;
+  }
+
+  .exchange {
+    border: 5px solid #4a6249;
+    padding: 24px;
+    list-style-position: inside;
+  }
+  .exchange li {
+    font-size: clamp(1.2rem, 3cqi, 1.8rem);
+    font-weight: 700;
+    padding: 24px 16px;
+  }
+  .exchange li + li {
+    border-top: 4px solid #4a6249;
   }
 </style>

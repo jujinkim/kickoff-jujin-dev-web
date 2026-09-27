@@ -1,25 +1,28 @@
 ---
-kind: "concept"
-articleId: "freemium"
-lang: "en"
-title: "Freemium"
-summary: "A lasting free tier with optional paid features."
-category: "access-strategies"
-aliases: ["Freemium"]
-related: ["revenue", "free-trial", "subscription", "non-consumable-purchase"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: freemium
+lang: en
+title: Freemium
+summary: Keep a useful free tier while selling additional capabilities.
+category: access-strategies
+aliases:
+  - Freemium
+related:
+  - revenue
+  - free-trial
+  - subscription
+  - non-consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Ongoing free feature scope",
-    "advantages": "Users can stay free",
-    "limitations": "Free tier needs funding",
-    "suitable": "Useful optional enhancements",
-    "combinations": "Subscriptions or non-consumables",
-  }
+  features: Ongoing free feature scope
+  advantages: Users can stay free
+  limitations: Free tier needs funding
+  suitable: Useful optional enhancements
+  combinations: Subscriptions or non-consumables
 ---
 
 ## Why: the goal or problem

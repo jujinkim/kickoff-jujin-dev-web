@@ -1,30 +1,32 @@
 ---
-kind: "concept"
-articleId: "clean-architecture"
-lang: "en"
-title: "Clean architecture"
-summary: "Point source dependencies toward policy."
-category: "boundaries"
-aliases: ["Clean architecture"]
-related: ["architecture", "layered-architecture", "hexagonal-architecture"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: clean-architecture
+lang: en
+title: Clean architecture
+summary: Point source dependencies inward to protect application policy.
+category: boundaries
+aliases:
+  - Clean architecture
+related:
+  - architecture
+  - layered-architecture
+  - hexagonal-architecture
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Source dependencies point inward",
-    "advantages": "Policy stays independent of framework data",
-    "limitations": "Boundary mapping adds maintenance",
-    "suitable": "Policy must outlive UI and database choices",
-    "combinations": "Can use hexagonal ports at the edges",
-  }
+  features: Source dependencies point inward
+  advantages: Policy stays independent of framework data
+  limitations: Boundary mapping adds maintenance
+  suitable: Policy must outlive UI and database choices
+  combinations: Can use hexagonal ports at the edges
 ---
 
 ## Why: the goal or problem
 
-Imagine a budget guide where readers save pages from web and CLI. Screen or database changes must spare the saving rule; use cases cannot import either.
+Readers save budget guides from web and CLI. Screen or database changes must spare the saving rule; use cases cannot import either.
 
 ## How: work toward a solution
 

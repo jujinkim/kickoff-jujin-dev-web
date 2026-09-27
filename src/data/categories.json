@@ -288,14 +288,14 @@
     "id": "columns",
     "parent": "layout",
     "names": {
-      "en": "Column composition",
-      "ko": "열 구성",
-      "ja": "列構成"
+      "en": "Page composition",
+      "ko": "페이지 구성",
+      "ja": "ページ構成"
     },
     "descriptions": {
-      "en": "Compare one, two, or several columns to balance focused reading with information shown side by side.",
-      "ko": "한 열·두 열·여러 열을 비교해 집중해서 읽기와 나란히 정보 보기의 균형을 정합니다.",
-      "ja": "一列・二列・複数列を比較し、集中して読むことと情報の並列表示を調整します。"
+      "en": "Arrange main and supporting page regions. Separate from CSS multi-column text flow.",
+      "ko": "주 콘텐츠와 보조 영역을 배치합니다. 본문이 이어지는 CSS 다단과 구분합니다.",
+      "ja": "主な内容と補助領域を配置します。本文が流れるCSS段組みとは区別します。"
     },
     "order": 11
   },

@@ -1,24 +1,26 @@
-# Subscription visualization brief
+# Subscription — representative review
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `subscription`; `billing`; Subscription / 구독 / サブスクリプション.
-- Definition (one sentence): A subscription repeats billing over agreed periods. It can include usage charges; recurring does not mean flat-rate.
-- Closest concept and concrete difference: same-category peers one-time-payment, usage-based, prepaid-credits; Recurring billing periods. Cross-category combinations are related reading, not comparison peers.
-- Distinguishing visual features (structure, material, typography): Period and paid-total counters above entitlement panel and renewal/failure controls. Solid surfaces and text/number labels; color is not the only encoding.
-- Shared comparison category: [billing](../catalog-writing/groups/billing.md).
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional family photo backup charges 12 monthly: three successful months total 36, with 100, 300 and 600 exports.
-- Visual variable changed; concept-specific extra controls and their justification: Period and paid-total counters above entitlement panel and renewal/failure controls. Controls expose the mechanism described below; no background timer or real checkout.
-- Fictional scenario and why it demonstrates the definition: A family photo backup keeps files available every month, and both storage and support continue after signup. A fictional family photo backup charges 12 monthly: three successful months total 36, with 100, 300 and 600 exports.
-- Representative action and observable result: A fictional family photo backup charges 12 monthly: three successful months total 36, with 100, 300 and 600 exports. Advance periods, disable renewal or simulate failure.
-- Initial state: Month 1 paid; total 12; renewal on; failure unchecked; access available.
-- Changed state, repeated action, empty input/no results: Where present, integer inputs accept 0–10,000 only; empty, negative and fractional values report an error without a charge. Insufficient balances never become negative. Access, purchase and ad actions are guarded; repeated non-consumable purchase and duplicate ad completion cannot grant extra rights or rewards. See item-specific state tests.
-- Reset and reload behavior: Reset and reload restore the initial page-memory state above. No account, storage, payment or advertising connection.
-- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
-- Keyboard order, focus, accessible names, live feedback: Native controls follow DOM order, labels name inputs, dashed 3px focus remains visible, reset retains focus, polite atomic status announces outcomes. Guarded buttons use aria-disabled while remaining mounted so repeated attempts can be explained.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
-- JavaScript-disabled initial screen and explanation: Complete server-rendered initial result and Markdown remain readable; JS-dependent controls start disabled and wrapper explains why.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
-- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
-- Capture selector and initial content: `[data-demo="subscription"]`; mode `interactive`; 1440px light surroundings in en/ko/ja; initial state above.
-- Source URLs, inspected date, claims each source supports: https://docs.stripe.com/billing/subscriptions/overview; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
-- Comparison summaries: features: Recurring billing periods; advantages: Supports continuing service; limitations: Renewal and failure handling; suitable: Ongoing customer value; combinations: Usage charges or flat rate.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/subscription-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).
+- Stable ID: `subscription`; leaf category: `billing`.
+- Titles (EN / KO / JA): Subscription / 구독 / サブスクリプション.
+- Definition and selection criterion: Charge over recurring periods for continuing value; define renewal, payment failure and access policies.
+- Neighbor comparison: see the matching Selection & comparison supplement; choices may coexist.
+- Why / situation: Fictional family-photo storage with recurring access and support.
+- How / representative action: Advance billing period, turn renewal off, simulate payment failure and retry.
+- Initial, changed, repeat, empty, reset and reload: Starts in paid period 1 at 12. Failure pauses access under this authored policy; retry once paid does not charge again. Renewal off expires at boundary. Reset/reload restore initial state.
+- Visual structure, incidental choices and mobile order: Album preview provides product context, separate paid total and entitlement. Policies and prices are fictional; taxes, fees and refunds omitted.
+- Keyboard: native controls in DOM order, visible focus, polite localized status where interactive; reset retains focus.
+- No JavaScript: static explanation and initial screen remain; script-dependent controls stay disabled. Native disclosures work.
+- Themes and motion: authored demo colors within neutral shell; no required animation. Check dark surrounding theme, forced colors, focus and 200% text.
+- Assets and conditions: public/images/lake-walk.png; provenance in public/images/README.md or font manifest and bundled OFL files.
+- Localized visible labels: authored in English, then Korean/Japanese with the same actions and outcomes.
+- Revision: 5; each supplement sourceRevision matches.
+- Capture: `[data-demo="subscription"]`; screenshots use initial state and loaded fonts/images.
+- Evidence inspected 2026-09-26:
+  - [Stripe: Subscriptions overview](https://docs.stripe.com/billing/subscriptions/overview): Documents recurring subscription lifecycles. Cancellation and immediate access suspension shown here are authored example policies.
+- Verification: check → build → thumbnails → rebuild → unit/output → browser; actual results in [review record](../quality-review.md).
+
+## Strong teaching case — 2026-09-27
+
+Billing period and access entitlement occupy distinct regions; renewal can fail.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

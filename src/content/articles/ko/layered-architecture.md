@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "layered-architecture"
-lang: "ko"
-title: "계층형 아키텍처"
-summary: "명시적인 의존 규칙으로 책임을 나눕니다."
-category: "boundaries"
-aliases: ["계층형 아키텍처"]
-related: ["architecture", "hexagonal-architecture", "clean-architecture"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: layered-architecture
+lang: ko
+title: 계층형 아키텍처
+summary: 안정된 책임을 단순한 의존 경로로 나눕니다.
+category: boundaries
+aliases:
+  - 계층형 아키텍처
+related:
+  - architecture
+  - hexagonal-architecture
+  - clean-architecture
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "책임별 계층과 아래쪽 의존성",
-    "advantages": "검증이 위치할 곳이 명확함",
-    "limitations": "단순 전달 계층도 관리 비용 발생",
-    "suitable": "표현·애플리케이션·저장 책임이 안정적인 경우",
-    "combinations": "포트와 의존성 역전 추가 가능",
-  }
+  features: 책임별 계층과 아래쪽 의존성
+  advantages: 검증이 위치할 곳이 명확함
+  limitations: 단순 전달 계층도 관리 비용 발생
+  suitable: 표현·애플리케이션·저장 책임이 안정적인 경우
+  combinations: 포트와 의존성 역전 추가 가능
 ---
 
 ## 왜 필요한가

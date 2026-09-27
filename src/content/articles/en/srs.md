@@ -1,27 +1,38 @@
 ---
 kind: guide
-articleId: "srs"
-lang: "en"
+articleId: srs
+lang: en
 title: "Requirements: agree on what done means"
-summary: "Describe the behavior; AI writes requirements and decision records."
-category: "planning"
+summary: >-
+  Turn expected behavior and constraints into observable completion checks
+  before choosing implementation details.
+category: planning
 aliases:
-  [
-    "SRS",
-    "requirements",
-    "acceptance criteria",
-    "요구사항",
-    "완료 조건",
-    "要件",
-    "受け入れ条件",
-  ]
-related: ["architecture", "shipping"]
-example: "spec"
-status: "published"
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-aiPrompt: "Read our agreed project context and requirements. Ask only about unresolved product behavior and constraints relevant to this project. Walk through an ordinary action, success, failure, and repetition where applicable; do not assume a shop or checkout. Turn the answers into numbered requirements, acceptance criteria, and tasks. Choose useful scenario and document formats yourself. Record significant decisions, alternatives, status, and revisit conditions. Choose internal data structures yourself; do not infer missing product rules."
+  - SRS
+  - requirements
+  - acceptance criteria
+  - 요구사항
+  - 완료 조건
+  - 要件
+  - 受け入れ条件
+related:
+  - architecture
+  - shipping
+example: spec
+status: published
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+aiPrompt: >-
+  Read our agreed project context and requirements. Ask only about unresolved
+  product behavior and constraints relevant to this project. Walk through an
+  ordinary action, success, failure, and repetition where applicable; do not
+  assume a shop or checkout. Turn the answers into numbered requirements,
+  acceptance criteria, and tasks. Choose useful scenario and document formats
+  yourself. Record significant decisions, alternatives, status, and revisit
+  conditions. Choose internal data structures yourself; do not infer missing
+  product rules.
+checked: "2026-09-26"
 ---
 
 ## Why: the goal or problem

@@ -3,7 +3,7 @@ kind: concept
 articleId: unity
 lang: ko
 title: Unity
-summary: 컴포넌트가 오브젝트 동작을 만듭니다.
+summary: 재사용 GameObject·컴포넌트로 여러 플랫폼의 게임을 구성합니다.
 category: game-engines
 aliases:
   - Unity
@@ -12,10 +12,10 @@ related:
   - godot
   - unreal-engine
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: GameObject에 컴포넌트 부착
   advantages: 동작별 책임 구분

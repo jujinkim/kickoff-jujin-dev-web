@@ -1,32 +1,33 @@
 ---
 kind: guide
-articleId: "tools"
-lang: "ko"
-title: "언어·프레임워크·라이브러리·엔진 구분"
-summary: "하는 일이 다른 도구끼리 결승전을 열지 마세요."
-category: "development"
+articleId: tools
+lang: ko
+title: 언어·프레임워크·라이브러리·엔진 구분
+summary: 역할·필요한 결과·유지 비용으로 도구를 비교합니다.
+category: development
 aliases:
-  [
-    "language",
-    "framework",
-    "library",
-    "engine",
-    "언어",
-    "프레임워크",
-    "라이브러리",
-    "엔진",
-    "言語",
-    "フレームワーク",
-    "ライブラリ",
-    "エンジン",
-  ]
-related: ["static-sites", "shipping"]
-example: "tools"
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+  - language
+  - framework
+  - library
+  - engine
+  - 언어
+  - 프레임워크
+  - 라이브러리
+  - 엔진
+  - 言語
+  - フレームワーク
+  - ライブラリ
+  - エンジン
+related:
+  - static-sites
+  - shipping
+example: tools
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
 aiPrompt: "후보 도구를 언어, 라이브러리, 프레임워크, 엔진 또는 조합으로 분류해줘. 확정된 결과물과 실행 환경 제약부터 읽어줘. 함께 쓸 수 있는 도구를 설명하고 같은 계층의 대안을 비교해줘. 스택 추천 전에 미결정 요구를 질문해줘."
+checked: "2026-09-27"
 ---
 
 ## 왜 필요한가

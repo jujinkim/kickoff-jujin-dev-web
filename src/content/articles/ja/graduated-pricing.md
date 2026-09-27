@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "graduated-pricing"
-lang: "ja"
-title: "区分別累進単価"
-summary: "各区分の利用量を別々に計算して合計します。"
-category: "pricing-models"
-aliases: ["区分別累進単価", "Graduated pricing"]
+kind: concept
+articleId: graduated-pricing
+lang: ja
+title: 区分別累進単価
+summary: 数量帯ごとに該当分を計算し、小計を合計します。
+category: pricing-models
+aliases:
+  - 区分別累進単価
+  - Graduated pricing
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "per-seat-pricing",
-    "feature-tiered-pricing",
-    "volume-pricing",
-    "base-plus-overage",
-    "usage-based",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - per-seat-pricing
+  - feature-tiered-pricing
+  - volume-pricing
+  - base-plus-overage
+  - usage-based
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "区分ごとに計算して合算",
-    "advantages": "先の単位の価格を維持",
-    "limitations": "計算の説明が増える",
-    "suitable": "段階的な利用量割引",
-    "combinations": "利用量の計測と継続課金",
-  }
+  features: 区分ごとに計算して合算
+  advantages: 先の単位の価格を維持
+  limitations: 計算の説明が増える
+  suitable: 段階的な利用量割引
+  combinations: 利用量の計測と継続課金
 ---
 
 ## なぜ必要なのか

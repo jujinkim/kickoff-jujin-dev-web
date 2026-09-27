@@ -89,6 +89,13 @@ const t = local(lang),
       {m.reset}
     </button>
   </div>
+  <p data-contract-context class="contract-context">
+    {t(
+      "Editing and PDF export work before day three, then lock. An explicit simulated paid choice restores both. This three-day policy does not auto-charge; price, paid period and the seller contract are outside the example.",
+      "3일 전에는 편집·PDF 출력이 가능하고 이후 잠깁니다. 가상 유료 선택을 명시적으로 누르면 둘 다 복구됩니다. 이 3일 정책은 자동 청구하지 않으며 가격·유료 기간·판매 계약은 예제 밖입니다.",
+      "3日目前は編集・PDF出力が使え、その後ロックします。明示的な仮の有料選択で両方を復元します。この3日規則では自動請求せず、価格・有料期間・販売契約は例の対象外です。",
+    )}
+  </p>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -123,5 +130,25 @@ const t = local(lang),
     .features {
       grid-template-columns: 1fr;
     }
+  }
+
+  .trial {
+    border: 5px dashed #754c3c;
+    padding: 26px;
+  }
+  .clock {
+    font-size: 1.5rem;
+  }
+  [data-day] {
+    font-size: 3.5rem;
+    font-weight: 800;
+  }
+  [data-plan] {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+  section[data-expired="true"] .trial {
+    border-style: solid;
+    background: #fff1ea;
   }
 </style>

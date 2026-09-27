@@ -3,7 +3,7 @@ kind: concept
 articleId: skeuomorphism
 lang: en
 title: Skeuomorphism
-summary: "Paper-notebook cues make recipe controls familiar."
+summary: Familiar object and material cues explain digital content through a recognizable physical metaphor.
 category: styles
 aliases:
   - Skeuomorphism
@@ -16,34 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-26"
+revision: 11
+sourceRevision: 11
+updated: "2026-09-27"
 comparison:
-  features: >-
-    Recognizable materials and objects explain a digital task. The workspace
-    opens as a paper notebook on a wooden surface.
-  advantages: Paper and cover metaphors make a familiar checklist.
-  limitations: Decorative realism consumes space; keep task controls explicit.
-  suitable: Choose a familiar metaphor that supports the task.
-  combinations: A single reading column can sit inside the paper surface.
-checked: "2026-09-21"
+  features: Familiar physical object references
+  advantages: A notebook metaphor explains recipe structure
+  limitations: Imitation must not restrict interaction
+  suitable: Recognizable object roles over abstract surfaces
+  combinations: Real text and direct serving controls
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
 
-Imagine making a recipe app for people who keep handwritten cooking notebooks. They need to find a recipe, turn to its steps, and mark what they have tried.
-
-A recipe app can feel unfamiliar to someone used to a paper notebook. A physical object people already understand can suggest how its controls and content relate.
+A recipe app helps cooks choose a dish and adjust ingredients for guests. People used to paper notebooks find anonymous panels unfamiliar. A recognizable notebook metaphor matters more than neumorphism’s abstract soft controls.
 
 ## How: work toward a solution
 
-For the recipe notebook, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. The recipe notebook opens as a paper notebook on a wooden surface.
+Recipe tabs sit on a paper page over a wooden surface. Select Tomato pasta and four servings: pasta becomes 400 g. Switch to Tomato salad to see its ingredients. Reset restores pasta for two.
 
 ## What: the concept
 
-**Skeuomorphism** — Recognizable materials and objects explain a digital task.
+Skeuomorphism uses recognizable real-world objects and materials in a digital interface. The metaphor should explain the task. Realistic decoration costs space and must not hide controls or make them ambiguous.
 
-Decorative realism consumes space; keep task controls explicit.
-
-[IxDF](https://ixdf.org/literature/topics/skeuomorphism)
+[IxDF: Skeuomorphism](https://ixdf.org/literature/topics/skeuomorphism)

@@ -1,34 +1,31 @@
 ---
-kind: "concept"
-articleId: "per-seat-pricing"
-lang: "en"
-title: "Per-seat pricing"
-summary: "Charge for each licensed seat."
-category: "pricing-models"
-aliases: ["Per-seat pricing"]
+kind: concept
+articleId: per-seat-pricing
+lang: en
+title: Per-seat pricing
+summary: Scale price with licensed people when access per person drives value.
+category: pricing-models
+aliases:
+  - Per-seat pricing
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "feature-tiered-pricing",
-    "volume-pricing",
-    "graduated-pricing",
-    "base-plus-overage",
-    "subscription",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - feature-tiered-pricing
+  - volume-pricing
+  - graduated-pricing
+  - base-plus-overage
+  - subscription
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Count times seat price",
-    "advantages": "Scales with licensed access",
-    "limitations": "Billable seat definition needed",
-    "suitable": "Team access products",
-    "combinations": "Subscription or feature packages",
-  }
+  features: Count times seat price
+  advantages: Scales with licensed access
+  limitations: Billable seat definition needed
+  suitable: Team access products
+  combinations: Subscription or feature packages
 ---
 
 ## Why: the goal or problem

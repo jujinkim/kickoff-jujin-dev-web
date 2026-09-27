@@ -1,32 +1,29 @@
 ---
-kind: "concept"
-articleId: "prepaid-credits"
-lang: "en"
-title: "Prepaid credits"
-summary: "Buy a balance before consuming units."
-category: "billing"
-aliases: ["Prepaid credits"]
+kind: concept
+articleId: prepaid-credits
+lang: en
+title: Prepaid credits
+summary: Collect before consumption and spend a bounded credit balance.
+category: billing
+aliases:
+  - Prepaid credits
 related:
-  [
-    "revenue",
-    "one-time-payment",
-    "subscription",
-    "usage-based",
-    "consumable-purchase",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - one-time-payment
+  - subscription
+  - usage-based
+  - consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Pre-funded usage balance",
-    "advantages": "Visible spending boundary",
-    "limitations": "Top-ups and expiry rules",
-    "suitable": "Budgeted consumption",
-    "combinations": "Usage metering",
-  }
+  features: Pre-funded usage balance
+  advantages: Visible spending boundary
+  limitations: Top-ups and expiry rules
+  suitable: Budgeted consumption
+  combinations: Usage metering
 ---
 
 ## Why: the goal or problem

@@ -10,9 +10,13 @@ for (const lang of ["en", "ko", "ja"]) {
     await page.route("https://giscus.app/**", (route) => route.abort());
     mkdirSync("artifacts/guide-visuals", { recursive: true });
     for (const id of [
+      "srs",
       "architecture",
       "layout",
       "payments",
+      "tools",
+      "static-sites",
+      "shipping",
       "collections",
       "adr",
     ]) {

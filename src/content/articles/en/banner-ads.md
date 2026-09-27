@@ -1,25 +1,28 @@
 ---
-kind: "concept"
-articleId: "banner-ads"
-lang: "en"
-title: "Banner ads"
-summary: "A labeled ad region beside the main content."
-category: "ad-formats"
-aliases: ["Banner ads"]
-related: ["revenue", "interstitial-ads", "rewarded-ads", "advertising"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: banner-ads
+lang: en
+title: Banner ads
+summary: Reserve a persistent ad slot when the task should remain visible.
+category: ad-formats
+aliases:
+  - Banner ads
+related:
+  - revenue
+  - interstitial-ads
+  - rewarded-ads
+  - advertising
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Bounded on-screen placement",
-    "advantages": "Content stays visible",
-    "limitations": "Uses limited screen space",
-    "suitable": "Screens with reserved space",
-    "combinations": "Advertising revenue",
-  }
+  features: Bounded on-screen placement
+  advantages: Content stays visible
+  limitations: Uses limited screen space
+  suitable: Screens with reserved space
+  combinations: Advertising revenue
 ---
 
 ## Why: the goal or problem

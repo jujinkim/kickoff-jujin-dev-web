@@ -1,25 +1,29 @@
 ---
-kind: "concept"
-articleId: "consumable-purchase"
-lang: "ko"
-title: "소모성 구매"
-summary: "구매한 수량이 사용하면서 줄어듭니다."
-category: "purchase-types"
-aliases: ["소모성 구매", "Consumable purchase"]
-related: ["revenue", "non-consumable-purchase", "prepaid-credits", "freemium"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: consumable-purchase
+lang: ko
+title: 소모성 구매
+summary: 사용하면 소진되어 다시 살 수 있는 단위를 판매합니다.
+category: purchase-types
+aliases:
+  - 소모성 구매
+  - Consumable purchase
+related:
+  - revenue
+  - non-consumable-purchase
+  - prepaid-credits
+  - freemium
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "사용하면 수량 소모",
-    "advantages": "반복 구매 가능",
-    "limitations": "잔액과 지출 설명 필요",
-    "suitable": "선택적 소모 아이템",
-    "combinations": "프리미엄 무료 접근",
-  }
+  features: 사용하면 수량 소모
+  advantages: 반복 구매 가능
+  limitations: 잔액과 지출 설명 필요
+  suitable: 선택적 소모 아이템
+  combinations: 프리미엄 무료 접근
 ---
 
 ## 왜 필요한가

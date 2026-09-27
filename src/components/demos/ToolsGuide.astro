@@ -1,0 +1,204 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+const roles = [
+  [
+    t("Language", "언어", "言語"),
+    "TypeScript",
+    t(
+      "Express rules; check types before producing JavaScript.",
+      "규칙을 표현하고 JavaScript를 만들기 전에 타입을 검사합니다.",
+      "規則を表現し、JavaScript生成前に型を検査します。",
+    ),
+  ],
+  [
+    t("Library", "라이브러리", "ライブラリ"),
+    "React",
+    t(
+      "Render an interactive filter inside a selected island.",
+      "선택한 아일랜드 안의 대화형 필터를 렌더링합니다.",
+      "選んだアイランド内の対話型フィルターを描画します。",
+    ),
+  ],
+  [
+    t("Framework", "프레임워크", "フレームワーク"),
+    "Astro",
+    t(
+      "Organize pages and build the public catalog.",
+      "페이지를 구성하고 공개 카탈로그를 빌드합니다.",
+      "ページを構成し、公開カタログをビルドします。",
+    ),
+  ],
+];
+---
+
+<section data-demo="tools" lang={lang}>
+  <header>
+    <p>
+      {t(
+        "ARTICLE CATALOG / TOOL ROLES",
+        "글 카탈로그 / 도구 역할",
+        "記事カタログ / 道具の役割",
+      )}
+    </p>
+    <h2>
+      {t(
+        "One result, several roles",
+        "한 결과를 만드는 여러 역할",
+        "一つの成果、複数の役割",
+      )}
+    </h2>
+  </header>
+  <div class="web-stack">
+    <h3>
+      {t(
+        "Can coexist in one web project",
+        "한 웹 프로젝트에서 함께 사용",
+        "一つのウェブ制作で併用",
+      )}
+    </h3>
+    <dl>
+      {roles.map(([role, name, purpose]) => (
+        <div>
+          <dt>
+            <span>{role}</span>
+            <strong>{name}</strong>
+          </dt>
+          <dd>{purpose}</dd>
+        </div>
+      ))}
+    </dl>
+    <p class="output">
+      {t(
+        "Build → public HTML + selected browser JavaScript → reader",
+        "빌드 → 공개 HTML + 선택한 브라우저 JavaScript → 독자",
+        "ビルド → 公開HTML＋必要なブラウザーJavaScript → 読者",
+      )}
+    </p>
+  </div>
+  <aside>
+    <span class="engine-label">
+      {t("A different output", "다른 출력 목표", "別の出力目標")}
+    </span>
+    <h3>{t("Engine · Godot", "엔진 · Godot", "エンジン · Godot")}</h3>
+    <p>
+      {t(
+        "Scenes, rendering, input and physics support a game. GDScript or C# expresses its rules; libraries can supplement it.",
+        "장면·렌더링·입력·물리가 게임을 지원합니다. GDScript나 C#으로 규칙을 표현하고 라이브러리로 보완할 수 있습니다.",
+        "シーン・描画・入力・物理がゲームを支えます。GDScriptやC#で規則を表現し、ライブラリで補えます。",
+      )}
+    </p>
+  </aside>
+  <p class="boundary">
+    {t(
+      "Roles overlap. Compare candidates against the same required output. This map runs no framework or engine; React is optional for the catalog.",
+      "역할은 겹칠 수 있습니다. 같은 필수 결과를 기준으로 후보를 비교합니다. 도표는 프레임워크·엔진을 실행하지 않으며 이 카탈로그에 React는 선택 사항입니다.",
+      "役割は重なる場合があります。同じ必須の成果で候補を比べます。図はフレームワークやエンジンを実行せず、カタログのReactは任意です。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    background: #f6f3ea;
+    color: #263d34;
+    padding: clamp(18px, 4vw, 36px);
+    border: 1px solid #b1baae;
+    overflow-wrap: anywhere;
+    line-height: 1.65;
+  }
+  header p,
+  .engine-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin: 12px 0 26px;
+  }
+  h3 {
+    font-size: 1.05rem;
+    margin: 0 0 14px;
+  }
+  .web-stack {
+    border-left: 5px solid #486c4f;
+    padding: 18px;
+    background: #fffdf7;
+  }
+  dl {
+    margin: 0;
+  }
+  dl > div {
+    display: grid;
+    grid-template-columns: minmax(12rem, 0.8fr) minmax(0, 1.2fr);
+    gap: 20px;
+    border-top: 1px solid #c8d0c5;
+    padding: 18px 0;
+  }
+  dt span,
+  dt strong {
+    display: block;
+  }
+  dt span {
+    font-size: 0.75rem;
+  }
+  dt strong {
+    font-size: 1.3rem;
+  }
+  dd {
+    margin: 0;
+  }
+  .output {
+    border-top: 2px solid #486c4f;
+    padding-top: 16px;
+    font-weight: 700;
+  }
+  aside {
+    margin-top: 22px;
+    margin-left: 15%;
+    border: 1px dashed #846b44;
+    padding: 20px;
+    background: #eee4d3;
+  }
+  aside p,
+  .boundary {
+    font-size: 0.88rem;
+  }
+  .boundary {
+    margin-bottom: 0;
+  }
+  @container (width < 620px) {
+    dl > div {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    aside {
+      margin-left: 0;
+    }
+  }
+
+  .web-stack {
+    border: 5px solid #486c4f;
+    padding: 28px;
+  }
+  dt strong {
+    font-size: 1.7rem;
+  }
+  dl > div {
+    border-top-width: 3px;
+  }
+  aside {
+    border: 5px dashed #846b44;
+    margin-top: 34px;
+  }
+  .output {
+    border-top-width: 5px;
+    padding-top: 24px;
+  }
+</style>

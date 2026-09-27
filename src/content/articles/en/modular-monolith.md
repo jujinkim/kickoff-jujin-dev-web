@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "modular-monolith"
-lang: "en"
-title: "Modular monolith"
-summary: "Keep module ownership inside one release unit."
-category: "service-split"
-aliases: ["Modular monolith"]
-related: ["architecture", "monolith", "microservices"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
-checked: "2026-09-22"
+kind: concept
+articleId: modular-monolith
+lang: en
+title: Modular monolith
+summary: Enforce module ownership while retaining one deployment unit.
+category: service-split
+aliases:
+  - Modular monolith
+related:
+  - architecture
+  - monolith
+  - microservices
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Explicit module APIs within one deployment",
-    "advantages": "Library changes stay behind its API",
-    "limitations": "Boundaries need enforcement; releases stay shared",
-    "suitable": "Clear ownership without remote calls",
-    "combinations": "Can use clean or hexagonal module internals",
-  }
+  features: Explicit module APIs within one deployment
+  advantages: Library changes stay behind its API
+  limitations: Boundaries need enforcement; releases stay shared
+  suitable: Clear ownership without remote calls
+  combinations: Can use clean or hexagonal module internals
 ---
 
 ## Why: the goal or problem

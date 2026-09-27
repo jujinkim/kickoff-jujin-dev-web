@@ -3,7 +3,7 @@ kind: concept
 articleId: static-hosting
 lang: en
 title: Static hosting
-summary: Public files and private writes separate.
+summary: Serve prebuilt public files with minimal application operations.
 category: hosting-models
 aliases:
   - Static hosting
@@ -12,10 +12,10 @@ related:
   - always-on-server
   - serverless-functions
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: Prebuilt file delivery
   advantages: Reading needs no app renderer

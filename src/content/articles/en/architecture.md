@@ -1,27 +1,28 @@
 ---
 kind: guide
-articleId: "architecture"
-lang: "en"
+articleId: architecture
+lang: en
 title: "Architecture: boundaries and responsibilities"
-summary: "Agree on module roles and ownership; let AI work out the internal code."
-category: "planning"
+summary: Assign rule and data ownership before choosing module boundaries.
+category: planning
 aliases:
-  [
-    "SOLID",
-    "GRASP",
-    "architecture",
-    "아키텍처",
-    "응집도",
-    "アーキテクチャ",
-    "凝集度",
-  ]
-related: ["srs", "tools"]
-example: "layers"
-status: "published"
-revision: 6
-sourceRevision: 6
-updated: "2026-09-23"
+  - SOLID
+  - GRASP
+  - architecture
+  - 아키텍처
+  - 응집도
+  - アーキテクチャ
+  - 凝集度
+related:
+  - srs
+  - tools
+example: layers
+status: published
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 aiPrompt: "Read our confirmed requirements and constraints. Propose project-wide modules, responsibilities, data and rule ownership, allowed dependencies, public contracts, and failure recovery owners. Explain alternatives and maintenance costs. Ask about unresolved architectural choices; preserve approved decisions. Choose internal classes, methods and data structures yourself within these boundaries. Draw UML only if it clarifies a decision; do not require me to supply it."
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem

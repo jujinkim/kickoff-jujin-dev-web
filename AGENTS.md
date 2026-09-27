@@ -38,6 +38,11 @@ inside the article body, owns its visual structure and interactions, and joins
 through `src/data/design-demos.json`. Do not add page-wide themes or force all
 examples through one visual template.
 
+Every example across every field must strongly expose its defining mechanism:
+material or spatial structure, ownership or execution boundary, or a concrete
+price/access threshold. Make the difference recognizable without the title.
+Amplify teaching cues, never factual claims; preserve accessibility and limits.
+
 Run checks sequentially: check → build → thumbnails → rebuild → unit/output
 tests → browser tests. Do not run builds and tests concurrently; they share
 `.astro` state. Keep IDs, URLs, comment keys, and API schema v1 stable.

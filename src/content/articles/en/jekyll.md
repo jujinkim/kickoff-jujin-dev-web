@@ -3,7 +3,7 @@ kind: concept
 articleId: jekyll
 lang: en
 title: Jekyll
-summary: Ruby builds; hosting serves files.
+summary: Publish Markdown through a Ruby-based layout workflow.
 category: static-generators
 aliases:
   - Jekyll
@@ -12,10 +12,10 @@ related:
   - astro
   - hugo
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: Ruby build with reusable layouts
   advantages: One layout serves many articles

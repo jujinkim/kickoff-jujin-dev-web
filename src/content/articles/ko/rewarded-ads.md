@@ -1,32 +1,30 @@
 ---
-kind: "concept"
-articleId: "rewarded-ads"
-lang: "ko"
-title: "보상형 광고"
-summary: "선택적으로 참여하고 완료 조건에 따라 보상받습니다."
-category: "ad-formats"
-aliases: ["보상형 광고", "Rewarded ads"]
+kind: concept
+articleId: rewarded-ads
+lang: ko
+title: 보상형 광고
+summary: 명시한 제품 내 보상을 조건으로 광고 시청을 선택하게 합니다.
+category: ad-formats
+aliases:
+  - 보상형 광고
+  - Rewarded ads
 related:
-  [
-    "revenue",
-    "banner-ads",
-    "interstitial-ads",
-    "advertising",
-    "consumable-purchase",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - banner-ads
+  - interstitial-ads
+  - advertising
+  - consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "참여 선택과 완료 보상",
-    "advantages": "사용자가 참여 결정",
-    "limitations": "완료 보상은 한 번 지급",
-    "suitable": "선택적 앱 내 혜택",
-    "combinations": "프리미엄 무료 모델과 광고 수익",
-  }
+  features: 참여 선택과 완료 보상
+  advantages: 사용자가 참여 결정
+  limitations: 완료 보상은 한 번 지급
+  suitable: 선택적 앱 내 혜택
+  combinations: 프리미엄 무료 모델과 광고 수익
 ---
 
 ## 왜 필요한가

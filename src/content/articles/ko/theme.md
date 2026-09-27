@@ -1,29 +1,30 @@
 ---
 kind: guide
-articleId: "theme"
-lang: "ko"
+articleId: theme
+lang: ko
 title: "테마·폰트·공통 스타일: 비슷한 색 50개 금지"
-summary: "한 번 정한 스타일이 한 번의 결정으로 남게 합니다."
-category: "design"
+summary: 시각적 역할에 이름을 붙여 색·서체·간격의 일관성을 유지합니다.
+category: design
 aliases:
-  [
-    "theme",
-    "font",
-    "design tokens",
-    "테마",
-    "폰트",
-    "공통 스타일",
-    "テーマ",
-    "フォント",
-    "デザイントークン",
-  ]
-related: ["layout", "architecture"]
-example: "theme"
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
-aiPrompt: "합의한 프로젝트의 색·글자·간격을 점검해줘. 지원 언어와 선택한 테마에 맞는 의미 기반 토큰과 대체 폰트를 제안해줘. 대표 화면과 대비 측정값을 보여줘. 적용 전에 미결정 시각 방향만 질문해줘. 키보드 포커스와 합의한 테마 선택 동작을 보존해줘. 프로젝트에서 요구하지 않은 언어나 밝은·어두운 모드를 추가하지 마."
+  - theme
+  - font
+  - design tokens
+  - 테마
+  - 폰트
+  - 공통 스타일
+  - テーマ
+  - フォント
+  - デザイントークン
+related:
+  - layout
+  - architecture
+example: theme
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+aiPrompt: 합의한 프로젝트의 색·글자·간격을 점검해줘. 지원 언어와 선택한 테마에 맞는 의미 기반 토큰과 대체 폰트를 제안해줘. 대표 화면과 대비 측정값을 보여줘. 적용 전에 미결정 시각 방향만 질문해줘. 키보드 포커스와 합의한 테마 선택 동작을 보존해줘. 프로젝트에서 요구하지 않은 언어나 밝은·어두운 모드를 추가하지 마.
+checked: "2026-09-27"
 ---
 
 ## 왜 필요한가

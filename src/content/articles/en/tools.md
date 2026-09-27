@@ -1,32 +1,33 @@
 ---
 kind: guide
-articleId: "tools"
-lang: "en"
+articleId: tools
+lang: en
 title: "Language, library, framework, engine"
-summary: "Stop comparing tools that do different jobs."
-category: "development"
+summary: "Compare tools by responsibility, required output and maintenance cost."
+category: development
 aliases:
-  [
-    "language",
-    "framework",
-    "library",
-    "engine",
-    "언어",
-    "프레임워크",
-    "라이브러리",
-    "엔진",
-    "言語",
-    "フレームワーク",
-    "ライブラリ",
-    "エンジン",
-  ]
-related: ["static-sites", "shipping"]
-example: "tools"
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+  - language
+  - framework
+  - library
+  - engine
+  - 언어
+  - 프레임워크
+  - 라이브러리
+  - 엔진
+  - 言語
+  - フレームワーク
+  - ライブラリ
+  - エンジン
+related:
+  - static-sites
+  - shipping
+example: tools
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
 aiPrompt: "Classify our candidates as language, library, framework, engine, or a combination. Read the agreed output and runtime constraints. Explain which tools can coexist and compare alternatives at the same layer. Ask about undecided requirements before recommending a stack."
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem

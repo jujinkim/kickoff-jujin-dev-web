@@ -3,7 +3,7 @@ kind: concept
 articleId: tactile-collage
 lang: en
 title: Tactile collage
-summary: "Make a travel memory board feel assembled by hand with paper fragments, tape, and annotations."
+summary: "Layered paper, tape and fragments create an assembled, handmade visual character."
 category: styles
 aliases:
   - Tactile collage
@@ -12,30 +12,28 @@ related:
   - skeuomorphism
   - neobrutalism
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
 comparison:
-  features: "Layered paper fragments, tape, irregular edges, and annotations."
-  advantages: Material cues give an informal board a personal character.
-  limitations: Overlap and texture must not obscure controls or text.
-  suitable: Choose it for a small creative project board.
-  combinations: Keep semantic order and quiet text surfaces beneath the collage.
-checked: "2026-09-22"
+  features: "Layered cutouts, paper and mixed media"
+  advantages: Different memory types retain distinct character
+  limitations: Overlap can harm order and legibility
+  suitable: A collected board over one consistent object
+  combinations: DOM order and explicit reorder buttons
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
 
-Imagine a memory board of trip photos and saved tickets. Uniform panels lose the feel of keepsakes placed by hand.
+A travel memory board lets friends arrange photos, tickets and notes. Uniform cards lose the character of collected keepsakes. The priority is a handmade collection of fragments, rather than skeuomorphism’s single coherent object metaphor.
 
 ## How: work toward a solution
 
-For the memory board, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Layered paper, tape, and a completion mark turn the memory board into a board.
+Photograph, ferry ticket and note have distinct paper treatments. Select a keepsake and use Move earlier or Move later to reorder it. The document order changes too. Reset restores photo, ticket, note.
 
 ## What: the concept
 
-Tactile collage layers paper, tape, and annotations. This editorial category groups handmade cues discussed in Canva’s 2026 trends; it does not date their invention.
+Tactile collage combines material fragments into a handmade composition. It is an editorial category, not a claim about when collage began. Overlap and texture must leave text, controls and focus fully visible.
 
-Overlap and texture must not obscure controls or text.
-
-[Canva 2026](https://www.canva.com/newsroom/news/design-trends-2026/)
+[Canva: Design trends 2026](https://www.canva.com/newsroom/news/design-trends-2026/)

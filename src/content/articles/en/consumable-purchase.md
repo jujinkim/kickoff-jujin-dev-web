@@ -1,25 +1,28 @@
 ---
-kind: "concept"
-articleId: "consumable-purchase"
-lang: "en"
-title: "Consumable purchase"
-summary: "Purchased units decrease when used."
-category: "purchase-types"
-aliases: ["Consumable purchase"]
-related: ["revenue", "non-consumable-purchase", "prepaid-credits", "freemium"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: consumable-purchase
+lang: en
+title: Consumable purchase
+summary: Sell units that are spent when used and can be bought again.
+category: purchase-types
+aliases:
+  - Consumable purchase
+related:
+  - revenue
+  - non-consumable-purchase
+  - prepaid-credits
+  - freemium
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Units consumed through use",
-    "advantages": "Repeatable purchases",
-    "limitations": "Balance and spending need clarity",
-    "suitable": "Optional consumable items",
-    "combinations": "Freemium access",
-  }
+  features: Units consumed through use
+  advantages: Repeatable purchases
+  limitations: Balance and spending need clarity
+  suitable: Optional consumable items
+  combinations: Freemium access
 ---
 
 ## Why: the goal or problem

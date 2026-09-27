@@ -3,7 +3,7 @@ kind: concept
 articleId: flat-design
 lang: en
 title: Flat design
-summary: "Separate clinic tasks with solid colors and labels while keeping detail without simulated depth."
+summary: Solid surfaces and explicit labels establish hierarchy when simulated depth adds little value.
 category: styles
 aliases:
   - Flat design
@@ -16,34 +16,28 @@ related:
   - skeuomorphism
   - minimalism
 status: published
-revision: 10
-sourceRevision: 10
-updated: "2026-09-26"
+revision: 12
+sourceRevision: 12
+updated: "2026-09-27"
 comparison:
-  features: >-
-    Solid surfaces and clear labels establish hierarchy without simulated depth.
-    Solid color regions separate roles without decorative depth.
-  advantages: Labels and solid fills separate tasks and actions clearly.
-  limitations: >-
-    Without depth cues, boundaries and labels must keep actions easy to
-    recognize.
-  suitable: Choose it for routine task management.
-  combinations: List rows work for tasks; uniform grids work for project summaries.
-checked: "2026-09-21"
+  features: Simple shapes and explicit states
+  advantages: Clear service and time choices
+  limitations: Weak affordances if boundaries disappear
+  suitable: Low ornament for routine transactions
+  combinations: "Grid, labels and visible focus"
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
 
-Imagine a clinic visit planner where patients check appointments, tasks, and notes. They need distinct actions without decorative depth; the team keeps all task details while using clear color and shape instead of shadows.
+A clinic booking screen lets patients choose a service and a time. Every option matters, but ornamental depth competes with the form. The team wants clear grouping without removing information, unlike a primarily minimalist reduction.
 
 ## How: work toward a solution
 
-For the clinic visit, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Solid color regions separate roles without decorative depth.
+Solid sections separate service and time. Select Health check and 10:30, then review the booking summary. Changing either choice hides the old summary until reviewed again. Nothing is sent to a clinic.
 
 ## What: the concept
 
-**Flat design** — Solid surfaces and clear labels establish hierarchy without simulated depth.
+Flat design relies on color, type and shape instead of simulated material depth. Clear boundaries, labels and selected-state marks remain necessary; flat does not mean every element must look identical.
 
-Without depth cues, boundaries and labels must keep actions easy to recognize.
-
-[NN/g](https://www.nngroup.com/articles/characteristics-minimalism/)
+[NN/g: Flat Design](https://www.nngroup.com/articles/flat-design/)

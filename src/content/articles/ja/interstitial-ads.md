@@ -1,25 +1,29 @@
 ---
-kind: "concept"
-articleId: "interstitial-ads"
-lang: "ja"
-title: "インタースティシャル広告"
-summary: "自然な切り替わりで画面を覆います。"
-category: "ad-formats"
-aliases: ["インタースティシャル広告", "Interstitial ads"]
-related: ["revenue", "banner-ads", "rewarded-ads", "advertising"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: interstitial-ads
+lang: ja
+title: インタースティシャル広告
+summary: 作業の自然な区切りで全画面広告を表示します。
+category: ad-formats
+aliases:
+  - インタースティシャル広告
+  - Interstitial ads
+related:
+  - revenue
+  - banner-ads
+  - rewarded-ads
+  - advertising
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "切り替わり時の全画面配置",
-    "advantages": "自然な区切りを活用",
-    "limitations": "アプリの流れを中断",
-    "suitable": "明確なレベルや作業の境界",
-    "combinations": "広告収益",
-  }
+  features: 切り替わり時の全画面配置
+  advantages: 自然な区切りを活用
+  limitations: アプリの流れを中断
+  suitable: 明確なレベルや作業の境界
+  combinations: 広告収益
 ---
 
 ## なぜ必要なのか

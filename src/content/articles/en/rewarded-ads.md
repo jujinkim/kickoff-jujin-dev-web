@@ -1,32 +1,29 @@
 ---
-kind: "concept"
-articleId: "rewarded-ads"
-lang: "en"
-title: "Rewarded ads"
-summary: "Optional participation with a stated completion reward."
-category: "ad-formats"
-aliases: ["Rewarded ads"]
+kind: concept
+articleId: rewarded-ads
+lang: en
+title: Rewarded ads
+summary: Offer an optional ad for a clearly stated in-product reward.
+category: ad-formats
+aliases:
+  - Rewarded ads
 related:
-  [
-    "revenue",
-    "banner-ads",
-    "interstitial-ads",
-    "advertising",
-    "consumable-purchase",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - banner-ads
+  - interstitial-ads
+  - advertising
+  - consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Opt-in completion reward",
-    "advantages": "User chooses participation",
-    "limitations": "Completion must grant reward once",
-    "suitable": "Optional in-app benefits",
-    "combinations": "Freemium and advertising revenue",
-  }
+  features: Opt-in completion reward
+  advantages: User chooses participation
+  limitations: Completion must grant reward once
+  suitable: Optional in-app benefits
+  combinations: Freemium and advertising revenue
 ---
 
 ## Why: the goal or problem

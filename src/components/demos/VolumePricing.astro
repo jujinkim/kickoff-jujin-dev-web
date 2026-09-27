@@ -48,6 +48,28 @@ const t = local(lang),
       "最終区分 → 全出力に一つの単価",
     )}
   </p>
+  <div
+    class="quantity-cases"
+    role="group"
+    aria-label={t(
+      "Compare boundary quantities",
+      "경계 수량 비교",
+      "境界の数量を比較",
+    )}
+  >
+    <button type="button" data-quantity-preset="100" data-interactive disabled>
+      <span>{t("Quantity", "수량", "数量")} 100</span>
+      <strong>→ 20.00</strong>
+    </button>
+    <button type="button" data-quantity-preset="101" data-interactive disabled>
+      <span>{t("Quantity", "수량", "数量")} 101</span>
+      <strong>→ 10.10</strong>
+    </button>
+    <button type="button" data-quantity-preset="1000" data-interactive disabled>
+      <span>{t("Quantity", "수량", "数量")} 1000</span>
+      <strong>→ 100.00</strong>
+    </button>
+  </div>
   <label>
     {m.exports}
     <input
@@ -95,6 +117,13 @@ const t = local(lang),
       {m.reset}
     </button>
   </div>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The customer’s monthly rate is 0.20 up to 100 exports, then 0.10 for every export. Thus 100 costs 20, 101 costs 10.10, and 120 costs 12. Access capacity and the seller’s delivery promise are separate from this price formula.",
+      "월 출력 100회까지 단가 0.20, 이후에는 모든 출력에 0.10입니다. 100회는 20, 101회는 10.10, 120회는 12입니다. 접근 용량과 판매자의 제공 약속은 이 가격 산식과 별개입니다.",
+      "月100回までは単価0.20、その後は全出力に0.10です。100回は20、101回は10.10、120回は12です。利用容量と販売者の提供義務は価格式と別です。",
+    )}
+  </p>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -118,5 +147,37 @@ const t = local(lang),
   }
   .result p {
     margin-bottom: 0;
+  }
+
+  .quantity-cases {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 28px 0;
+  }
+  .quantity-cases button {
+    flex: 1 1 130px;
+    display: grid;
+    gap: 8px;
+    padding: 18px;
+    border: 2px solid currentColor;
+    text-align: left;
+  }
+  .quantity-cases strong {
+    font-size: 1.5rem;
+  }
+  .result output {
+    font-size: clamp(2.5rem, 7cqi, 4rem);
+    font-weight: 800;
+  }
+
+  .rule {
+    border: 6px solid #715134;
+    padding: 26px;
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+  .quantity-cases button:nth-child(2) {
+    border: 6px double #715134;
   }
 </style>

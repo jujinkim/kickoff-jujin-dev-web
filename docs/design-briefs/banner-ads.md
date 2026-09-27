@@ -1,24 +1,36 @@
-# Banner ads visualization brief
+# Banner ads / バナー広告 / 배너 광고
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `banner-ads`; `ad-formats`; Banner ads / 배너 광고 / バナー広告.
-- Definition (one sentence): Banner ads occupy a bounded region while the main app remains visible. Format describes placement, not a guaranteed revenue level or targeting method.
-- Closest concept and concrete difference: same-category peers interstitial-ads, rewarded-ads; Bounded on-screen placement. Cross-category combinations are related reading, not comparison peers.
-- Distinguishing visual features (structure, material, typography): Puzzle board and game-control region above a separate labeled ad band. Solid surfaces and text/number labels; color is not the only encoding.
-- Shared comparison category: [ad-formats](../catalog-writing/groups/ad-formats.md).
-- Distinct familiar situation, dataset, labels, actions, and initial state for this article: A fictional number puzzle app shows its board above a labeled bottom banner, separated from game controls.
-- Visual variable changed; concept-specific extra controls and their justification: Puzzle board and game-control region above a separate labeled ad band. Static mode has no controls, scripts, artificial focus stops or mount dependency.
-- Fictional scenario and why it demonstrates the definition: A number puzzle needs its board and controls visible while a sponsor message appears nearby. A fictional number puzzle app shows its board above a labeled bottom banner, separated from game controls.
-- Representative action and observable result: A fictional number puzzle app shows its board above a labeled bottom banner, separated from game controls. The static diagram preserves the play area instead of covering it.
-- Initial state: Puzzle board and game-control region above a separate labeled ad band.
-- Changed state, repeated action, empty input/no results: Not applicable to a static diagram; all labeled relationships remain visible.
-- Reset and reload behavior: No mutable state or reset control.
-- Mobile order and width thresholds: DOM/source order remains the reading order. Flexible flow lanes and component container breakpoints from 350–520px stack panels. Tables wrap at 320px; never shrink a desktop canvas to illegible text.
-- Keyboard order, focus, accessible names, live feedback: No artificial tab stops. Semantic lists, tables and visible descriptions work without JavaScript.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Authored solid light surfaces remain legible in both surrounding themes. No animation or transparency dependency; text and outlines remain meaningful with shadows removed and forced colors.
-- JavaScript-disabled initial screen and explanation: Full static diagram; no interaction instruction or noscript warning.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback, tabular numbers; no extra fonts or font-metric claims.
-- Localized visible strings, input constraints, original/translation review: English reviewed by category before Korean/Japanese translation on 2026-09-22. Definitions, numeric examples, omitted costs and scope boundaries match. No native-speaker review claimed.
-- Capture selector and initial content: `[data-demo="banner-ads"]`; mode `static`; 1440px light surroundings in en/ko/ja; initial state above.
-- Source URLs, inspected date, claims each source supports: https://support.google.com/admob/answer/6128738?hl=en; inspected 2026-09-22. Definition/mechanism only; [source ledger](../catalog-writing/monetization-sources.md). Example policies, figures and suitability are authored illustrations/editorial judgments, not forecasts or universal provider rules.
-- Comparison summaries: features: Bounded on-screen placement; advantages: Content stays visible; limitations: Uses limited screen space; suitable: Screens with reserved space; combinations: Advertising revenue.
-- Verification commands and evidence paths: [Sequential gates](../design-demos.md); `tests/monetization.test.mjs`, `tests/browser/monetization.spec.ts`, registry-wide browser checks. `public/thumbnails/banner-ads-{en,ko,ja}.png`; `artifacts/monetization-demos/`; [actual results](../monetization-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `banner-ads`; `ad-formats`. Existing URLs and comment identity retained.
+- Definition and selection: Reserve a persistent ad slot when the task should remain visible.
+- Closest options and concrete difference: A number puzzle can keep play visible above a reserved ad slot. Interstitials suit genuine transition points; rewarded ads require an optional exchange for a benefit. A banner should not masquerade as a puzzle control.
+- Distinct situation and Why opening: Imagine a phone number puzzle with a board and controls. Sponsor messages must remain visible without covering play.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/banner-ads.md), [KO](../../src/content/articles/ko/banner-ads.md), [JA](../../src/content/articles/ja/banner-ads.md); matching revision 5. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: The reader plays for free while an advertiser would fund the labeled bottom placement. The example has no network, rate or reward. The publisher remains responsible for positioning and the product experience under the ad agreement.
+- Visual structure: `BannerAds.astro` owns its markup, spacing and state. Caption: A labeled ad region beside the main content.
+- Initial and changed states: A fictional number puzzle app shows its board above a labeled bottom banner, separated from game controls. The static diagram preserves the play area instead of covering it. No ad is requested and no reward is granted. Ad size, fill, revenue and network charges are intentionally outside this example.
+- Repetition, empty/failure and constraints: No interactive state. Failure branches explain outcomes without pretending to execute requests.
+- Controls and state selectors: None; static explanatory diagram.
+- Reset and reload: Not applicable: no script, reset or mount wait.
+- Mobile order and widths: Responsive wrapping within the available article width. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Readable text and ordered structure; no imitation controls.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Static diagram needs neither motion nor JavaScript.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `static`; `[data-demo="banner-ads"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/banner-ads.md`, sourceRevision 5; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Bounded on-screen placement; advantages: Content stays visible; limitations: Uses limited screen space; suitable: Screens with reserved space; combinations: Advertising revenue
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/banner-ads-320.png`, `artifacts/design-demos/banner-ads-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Google AdMob: ad formats](https://support.google.com/admob/answer/6128738?hl=en) (checked 2026-09-27): Banner ads occupy a portion of a screen; reserved space and accessible separation are implementation concerns.
+
+## Strong teaching case — 2026-09-27
+
+Small labeled bottom placement leaves the game board visible.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

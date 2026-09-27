@@ -1,24 +1,36 @@
-# Svelte demo brief
+# Svelte / Svelte / Svelte
 
-- Stable ID, leaf category, English/Korean/Japanese titles: `svelte`; `web-ui`; Svelte / Svelte / Svelte.
-- Definition (one sentence): Svelte compiles declarative components into browser code. Compilation prepares the UI; later clicks still run state updates. SvelteKit has a broader application scope.
-- Closest concept and concrete difference: compare react, vue; A dashed compile-time box above a separate browser runtime containing the cards.
-- Distinguishing visual features (structure, material, typography): A dashed compile-time box above a separate browser runtime containing the cards. Restrained solid surfaces, system text and tabular counts keep mechanism labels legible; colors are editorial, not product definitions.
-- Shared comparison category: [web-ui](../catalog-writing/groups/web-ui.md).
-- Article-specific scenario, dataset, labels, actions, and initial state: Two Trip planner cards Bus Timetable/Hiking Route, both unsaved; shared total zero.
-- Visual variable changed; concept-specific extra controls and their justification: A dashed compile-time box above a separate browser runtime containing the cards. Failure and boundary controls expose the documented application assumptions.
-- Fictional scenario and why it demonstrates the definition: A trip planner shows a bus timetable and hiking route; clicks should update the right card after the page loads. Two cards in a trip planner start unsaved.
-- Representative action and observable result: Two cards in a trip planner start unsaved. Save on Bus Timetable changes only its label to Saved; Hiking Route stays unsaved.
-- Initial state: Two Trip planner cards Bus Timetable/Hiking Route, both unsaved; shared total zero.
-- Changed state, repeated action, empty input/no results: Save Bus Timetable changes only Bus Timetable, then Hiking Route changes total to two. Repeated saves do not add records. State ownership is per card with a derived shared total. No free-form input is accepted; no samples is an explicit canary fixture. All values are authored examples, not measurements.
-- Reset and reload behavior: Restore the entire initial page-memory model, including the illustrative store. Hosting restart preserves its store; blue-green Previous and switch-back preserve writes. Only Reset/reload clears those records.
-- Mobile order and width thresholds: Authoring mechanism, cards Bus Timetable then Hiking Route, update path and shared total. Diagram grids stack below 560px of demo content width. At 320px viewport, labels wrap rather than shrink. The scene SVG uses a viewBox and a full-size textual legend.
-- Keyboard order, focus, accessible names, live feedback: Bus Timetable Save → Hiking Route Save → Reset. Save stays enabled for duplicate testing and retains focus. Native buttons/checkboxes, dashed visible focus, mounted controls, polite atomic status, no timer or drag-only control. Reset retains focus. Disabled step buttons mark boundaries.
-- Light/dark surrounding themes, opaque fallback, no shadows, reduced motion: Solid authored light surfaces in both site themes; no transparent/shadow-dependent content or animation. Numbers, version names, outlines and text survive forced colors.
-- JavaScript-disabled initial screen and explanation: Server-rendered initial diagram, legend, captions and Markdown remain readable. All interactive buttons and checkboxes start disabled. Wrapper explains the JavaScript requirement.
-- Font families, supported characters, fallback and measurement method: System sans-serif with platform CJK fallback; monospace only for file/key tokens. No font-metric claims or extra downloaded fonts.
-- Localized visible strings, input constraints, original/translation review: English group argument reviewed before Korean/Japanese translation on 2026-09-22. All interface labels, responses and states are localized; identifiers and engine API type names remain literal. No native-speaker review is claimed.
-- Capture selector and initial content: `[data-demo="svelte"]`; reset at 1440px, light theme, all three languages, initial state above.
-- Source URLs, inspected date, claims each source supports: https://svelte.dev/docs/svelte/overview. Inspected 2026-09-22; definition/mechanism only. See [source refresh](../catalog-writing/platform-sources.md) for exact passages. Choice advice is editorial; fixture numbers and failure rules are authored.
-- Comparison summaries: features: Compiled declarative components; advantages: UI and behavior authored together; limitations: Build and services need design; suitable: Compiler-based UI workflows; combinations: Astro island or an app framework.
-- Verification commands and evidence paths: Follow [design gates](../design-demos.md), `tests/platforms.test.mjs`, `tests/browser/platforms.spec.ts` and registry-wide browser checks. Captures: `public/thumbnails/svelte-{en,ko,ja}.png`, `artifacts/platform-demos/svelte-*.png`. Actual results belong to [platform review](../platform-demos-review.md).
+Based on [the planning template](../templates/design-demo-brief.md). Approved expansion implementation, 2026-09-27. Visual and automated acceptance are recorded separately in [quality review](../quality-review.md).
+
+- Stable ID and category: `svelte`; `web-ui`. Existing URLs and comment identity retained.
+- Definition and selection: Compile declarative components when concise reactive authoring matters.
+- Closest options and concrete difference: Choose Svelte when compiler-assisted component authoring fits the build and maintenance workflow. Vue emphasizes reactive templates and React JavaScript composition. Avoid claiming that compilation removes all runtime work or makes every application faster.
+- Distinct situation and Why opening: Travelers save bus and hiking cards in a trip planner. Labels and totals must agree; its team prefers declarative components compiled before runtime.
+- English/Korean/Japanese review: [EN](../../src/content/articles/en/svelte.md), [KO](../../src/content/articles/ko/svelte.md), [JA](../../src/content/articles/ja/svelte.md); matching revision 6. Read English first, then compare scenario, outcomes and limits in both translations.
+- How/visual link and representative action: The trip planner saves a bus timetable and a hiking route. Compilation prepares update code; clicking later changes the record set and displayed labels at runtime. The browser diagram illustrates those stages without loading Svelte itself.
+- Visual structure: `SvelteState.astro` owns its markup, spacing and state. Caption: Svelte: concept simulation
+- Initial and changed states: Two cards in a trip planner start unsaved. Save on Bus Timetable changes only its label to Saved; Hiking Route stays unsaved. Saving Hiking Route changes the shared count from one to two. Repeating Save leaves two records: each card counts once. The diagram separates compilation from runtime updates. Reset or reload clears them. Nothing is persisted.
+- Repetition, empty/failure and constraints: Keep the compile step separate from runtime state ownership. Deduplicate by a stable record key and derive the total. Routing, server rendering and durable storage require project-level choices; SvelteKit’s application scope is broader than Svelte alone.
+- Controls and state selectors: `data-platform`, `data-update-path`, `data-runtime-facts`, `data-save`, `data-label`, `data-count`, `data-state`, `data-path-state`, `data-reset`
+- Reset and reload: Reset returns the rendered initial model, announces restoration and keeps reset focus. Reload restores initial state; no input persistence or remote mutation.
+- Mobile order and widths: max-width:560px; width<480px. DOM reading order is preserved. Verify 320, 390, 768 and 1440px with long translated labels.
+- Keyboard, focus and feedback: Native controls with localized accessible names, visible focus and a polite status region. Representative keyboard actions and reset covered in browser tests.
+- Light/dark surrounding themes: local palettes remain independent of the site theme. Text and state must remain recognizable without shadows; selection is not conveyed only by color.
+- Reduced motion and JavaScript disabled: Motion is optional. Server-rendered initial information remains readable; script-dependent controls are disabled and the wrapper explains the limitation.
+- Fonts and measurement: Ordinary readable text with system fallbacks; no font metric claim.
+- Assets and usage: No new bitmap required by this component, or shared generated assets selected from its local data. See [image provenance](../../public/images/README.md) and [font manifest](../../public/fonts/manifest.json) for original generation prompts, origins and usage conditions. Images contain no translated UI labels.
+- Mode and capture: `interactive`; `[data-demo="svelte"]`. Capture decoded images, settled fonts and initial state.
+- Incidental example choices: names, times, quantities, prices, light direction and palette are illustrative. They are not universal definitions, performance claims or real transactions.
+- Supplementary reading: all three files under `src/content/article-details/<lang>/svelte.md`, sourceRevision 6; selection/comparison, applications and implementation/limits.
+- Comparison summaries: features: Compiled declarative components; advantages: UI and behavior authored together; limitations: Build and services need design; suitable: Compiler-based UI workflows; combinations: Astro island or an app framework
+- Verification: sequential check → build → thumbnails → rebuild → unit/output → browser. Initial capture alone may use build:demo-preview. Evidence: `artifacts/design-demos/svelte-320.png`, `artifacts/design-demos/svelte-1440.png`, localized review captures and [quality review](../quality-review.md).
+
+## Claim evidence
+
+- [Svelte: Overview](https://svelte.dev/docs/svelte/overview) (checked 2026-09-27): Describes compilation of declarative components; runtime interaction remains necessary after compilation.
+
+## Strong teaching case — 2026-09-27
+
+Compiler and later browser execution occupy separate enclosures joined by an arrow.
+
+Amplification is illustrative, not a new definition or guarantee. Review desktop/mobile captures and preserve the existing failure/fallback contract.

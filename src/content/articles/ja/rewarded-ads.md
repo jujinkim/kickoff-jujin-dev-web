@@ -1,32 +1,30 @@
 ---
-kind: "concept"
-articleId: "rewarded-ads"
-lang: "ja"
-title: "リワード広告"
-summary: "任意で参加し、完了条件に応じて報酬を得ます。"
-category: "ad-formats"
-aliases: ["リワード広告", "Rewarded ads"]
+kind: concept
+articleId: rewarded-ads
+lang: ja
+title: リワード広告
+summary: 明示した製品内報酬と引き換えに、広告視聴を選べるようにします。
+category: ad-formats
+aliases:
+  - リワード広告
+  - Rewarded ads
 related:
-  [
-    "revenue",
-    "banner-ads",
-    "interstitial-ads",
-    "advertising",
-    "consumable-purchase",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - banner-ads
+  - interstitial-ads
+  - advertising
+  - consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "同意して参加し完了で報酬",
-    "advantages": "利用者が参加を選ぶ",
-    "limitations": "完了報酬は一度だけ付与",
-    "suitable": "任意のアプリ内特典",
-    "combinations": "フリーミアムと広告収益",
-  }
+  features: 同意して参加し完了で報酬
+  advantages: 利用者が参加を選ぶ
+  limitations: 完了報酬は一度だけ付与
+  suitable: 任意のアプリ内特典
+  combinations: フリーミアムと広告収益
 ---
 
 ## なぜ必要なのか

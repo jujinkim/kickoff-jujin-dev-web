@@ -40,6 +40,28 @@ const t = local(lang),
       )}
     </p>
   </div>
+  <div
+    class="quantity-cases"
+    role="group"
+    aria-label={t(
+      "Compare boundary quantities",
+      "경계 수량 비교",
+      "境界の数量を比較",
+    )}
+  >
+    <button type="button" data-quantity-preset="0" data-interactive disabled>
+      <span>{t("Quantity", "수량", "数量")} 0</span>
+      <strong>→ 20.00</strong>
+    </button>
+    <button type="button" data-quantity-preset="100" data-interactive disabled>
+      <span>{t("Quantity", "수량", "数量")} 100</span>
+      <strong>→ 20.00</strong>
+    </button>
+    <button type="button" data-quantity-preset="101" data-interactive disabled>
+      <span>{t("Quantity", "수량", "数量")} 101</span>
+      <strong>→ 20.10</strong>
+    </button>
+  </div>
   <label>
     {m.exports}
     <input
@@ -72,6 +94,13 @@ const t = local(lang),
       {m.reset}
     </button>
   </div>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The customer pays 20 monthly including 100 transcript exports, plus 0.10 per excess export. At 120 the total is 22; at zero or 100 it remains 20. Three seats are context, not a multiplier.",
+      "고객은 월 100회 전사 출력을 포함한 20과 초과 출력당 0.10을 냅니다. 120회는 22, 0회나 100회는 20입니다. 3좌석은 상황 설명이며 곱하는 계수가 아닙니다.",
+      "顧客は月100回の文字起こし出力を含む20と、超過1回ごとに0.10を払います。120回は22、0回や100回は20です。3席は状況説明で、掛け算の係数ではありません。",
+    )}
+  </p>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -92,5 +121,40 @@ const t = local(lang),
   }
   .result p {
     margin-bottom: 0;
+  }
+
+  .quantity-cases {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 28px 0;
+  }
+  .quantity-cases button {
+    flex: 1 1 130px;
+    display: grid;
+    gap: 8px;
+    padding: 18px;
+    border: 2px solid currentColor;
+    text-align: left;
+  }
+  .quantity-cases strong {
+    font-size: 1.5rem;
+  }
+  .result output {
+    font-size: clamp(2.5rem, 7cqi, 4rem);
+    font-weight: 800;
+  }
+
+  .included {
+    border: 6px solid #70543b;
+    padding: 28px;
+  }
+  .included strong {
+    font-size: 1.5rem;
+  }
+  .included p {
+    border-top: 4px dashed #70543b;
+    margin-top: 24px;
+    padding-top: 24px;
   }
 </style>

@@ -1,25 +1,29 @@
 ---
-kind: "concept"
-articleId: "non-consumable-purchase"
-lang: "ja"
-title: "非消耗型購入"
-summary: "繰り返し使っても購入権が残ります。"
-category: "purchase-types"
-aliases: ["非消耗型購入", "Non-consumable purchase"]
-related: ["revenue", "consumable-purchase", "one-time-payment", "freemium"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: non-consumable-purchase
+lang: ja
+title: 非消耗型購入
+summary: 使うたびに消費しない、持続する機能を購入で開放します。
+category: purchase-types
+aliases:
+  - 非消耗型購入
+  - Non-consumable purchase
+related:
+  - revenue
+  - consumable-purchase
+  - one-time-payment
+  - freemium
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "維持される購入権",
-    "advantages": "消耗せず繰り返し使える",
-    "limitations": "購入復元の実装が必要",
-    "suitable": "持続する任意の機能",
-    "combinations": "フリーミアムと買い切り",
-  }
+  features: 維持される購入権
+  advantages: 消耗せず繰り返し使える
+  limitations: 購入復元の実装が必要
+  suitable: 持続する任意の機能
+  combinations: フリーミアムと買い切り
 ---
 
 ## なぜ必要なのか

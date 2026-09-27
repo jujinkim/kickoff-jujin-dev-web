@@ -1,32 +1,30 @@
 ---
-kind: "concept"
-articleId: "affiliate-marketing"
-lang: "ko"
-title: "제휴 수수료"
-summary: "조건을 충족한 소개로 수수료를 받습니다."
-category: "revenue-sources"
-aliases: ["제휴 수수료", "Affiliate commissions"]
+kind: concept
+articleId: affiliate-marketing
+lang: ko
+title: 제휴 수수료
+summary: 외부 구매가 조건을 충족하면 추천 수수료를 받습니다.
+category: revenue-sources
+aliases:
+  - 제휴 수수료
+  - Affiliate commissions
 related:
-  [
-    "revenue",
-    "direct-payment",
-    "advertising",
-    "sponsorship",
-    "transaction-fees",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - direct-payment
+  - advertising
+  - sponsorship
+  - transaction-fees
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "조건을 충족한 소개에 수수료",
-    "advantages": "소개 상품을 직접 팔 필요 없음",
-    "limitations": "프로그램 인정 조건에 의존",
-    "suitable": "관계를 밝힌 관련 상품 추천",
-    "combinations": "고객 직접 결제",
-  }
+  features: 조건을 충족한 소개에 수수료
+  advantages: 소개 상품을 직접 팔 필요 없음
+  limitations: 프로그램 인정 조건에 의존
+  suitable: 관계를 밝힌 관련 상품 추천
+  combinations: 고객 직접 결제
 ---
 
 ## 왜 필요한가

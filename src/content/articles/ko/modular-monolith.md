@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "modular-monolith"
-lang: "ko"
-title: "모듈러 모놀리스"
-summary: "하나의 배포 안에서 모듈 소유권을 지킵니다."
-category: "service-split"
-aliases: ["모듈러 모놀리스"]
-related: ["architecture", "monolith", "microservices"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
-checked: "2026-09-22"
+kind: concept
+articleId: modular-monolith
+lang: ko
+title: 모듈러 모놀리스
+summary: 배포 단위 하나를 유지하며 모듈 소유권을 지킵니다.
+category: service-split
+aliases:
+  - 모듈러 모놀리스
+related:
+  - architecture
+  - monolith
+  - microservices
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "단일 배포 안의 명시적 모듈 API",
-    "advantages": "보관함 변경을 API 뒤에 한정",
-    "limitations": "경계 강제 필요·배포는 공유",
-    "suitable": "원격 호출 없이 명확한 소유권",
-    "combinations": "모듈 내부에 클린·헥사고날 적용 가능",
-  }
+  features: 단일 배포 안의 명시적 모듈 API
+  advantages: 보관함 변경을 API 뒤에 한정
+  limitations: 경계 강제 필요·배포는 공유
+  suitable: 원격 호출 없이 명확한 소유권
+  combinations: 모듈 내부에 클린·헥사고날 적용 가능
 ---
 
 ## 왜 필요한가

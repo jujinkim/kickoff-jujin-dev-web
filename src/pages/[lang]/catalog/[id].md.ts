@@ -1,3 +1,4 @@
+import { detailsMarkdown } from "../../../lib/article-details";
 import type { APIRoute } from "astro";
 import {
   published,
@@ -12,11 +13,11 @@ export async function getStaticPaths() {
     props: { article: translationFor(all, article.data.articleId, "en")! },
   }));
 }
-export const GET: APIRoute = ({ props }) => {
+export const GET: APIRoute = async ({ props }) => {
   const article = props.article as Article;
   const d = article.data;
   return new Response(
-    `# ${d.title}\n\n${d.summary}\n\nID: ${d.articleId}\nLanguage: ${d.lang}\nRevision: ${d.revision}\nTranslation source revision: ${d.sourceRevision}\nCanonical: https://kickoff.jujin.dev${articleUrl(article)}\n\n${article.body}\n`,
+    `# ${d.title}\n\n${d.summary}\n\nID: ${d.articleId}\nLanguage: ${d.lang}\nRevision: ${d.revision}\nTranslation source revision: ${d.sourceRevision}\nCanonical: https://kickoff.jujin.dev${articleUrl(article)}\n\n${article.body}${await detailsMarkdown(article)}\n`,
     { headers: { "Content-Type": "text/markdown; charset=utf-8" } },
   );
 };

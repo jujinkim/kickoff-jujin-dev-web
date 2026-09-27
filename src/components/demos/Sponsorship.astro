@@ -47,6 +47,13 @@ const t = local(lang),
     )}
   </p>
   <p class="assumptions">{m.omitted}</p>
+  <p data-contract-context class="contract-context">
+    {t(
+      "A supporter contributes 12 toward maintenance; every reader keeps access. This example promises acknowledgement only. One-time or recurring collection and the party issuing receipts must be stated separately.",
+      "후원자가 유지비로 12를 보태며 모든 독자의 접근은 유지됩니다. 예제는 후원자 표시만 약속합니다. 일회·정기 수금과 영수증 발행 주체는 따로 정해야 합니다.",
+      "支援者が維持費に12を提供し、全読者の閲覧は続きます。この例は支援者表示だけを約束します。単発・継続の徴収と領収書発行者は別途定めます。",
+    )}
+  </p>
 </section>
 <style>
   .exchange {
@@ -74,5 +81,20 @@ const t = local(lang),
     border-left: 5px solid #b07838;
     padding: 0.7rem 1rem;
     background: #fff;
+  }
+
+  .exchange {
+    border-left: 7px solid #76623e;
+    padding-left: 28px;
+  }
+  .exchange li {
+    padding: 24px;
+    font-size: 1.3rem;
+  }
+  .value {
+    border: 5px double #76623e;
+    padding: 28px;
+    font-size: 1.2rem;
+    font-weight: 700;
   }
 </style>

@@ -122,6 +122,24 @@ const t = local(lang),
       </li>
     </ul>
   </div>
+  <dl class="runtime-facts" data-runtime-facts>
+    <dt>{t("Execution boundary", "실행 경계", "実行境界")}</dt>
+    <dd>
+      {t(
+        "Model: scene nodes compose an apple; contact invokes an authored collection rule.",
+        "모형: 장면 노드로 사과를 구성하고 접촉이 직접 작성한 수집 규칙을 호출합니다.",
+        "模型：シーンのノードでリンゴを構成し、接触が独自の取得規則を呼びます。",
+      )}
+    </dd>
+    <dt>{t("State and responsibility", "상태와 책임", "状態と責任")}</dt>
+    <dd>
+      {t(
+        "Score and consumed state belong to this page model. Reset clears them; no Godot engine runs here.",
+        "점수·소비 상태는 페이지 모형 소유입니다. 초기화로 지우며 Godot 엔진을 실행하지 않습니다.",
+        "得点と取得状態はページ模型が持ちます。リセットで消え、Godotエンジンは実行しません。",
+      )}
+    </dd>
+  </dl>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -187,5 +205,51 @@ const t = local(lang),
   }
   .composition ul {
     border-left: 2px solid #5b7498;
+  }
+  .runtime-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 2fr);
+    gap: 10px 16px;
+    border-block: 1px solid currentColor;
+    padding: 18px 0;
+    margin: 18px 0;
+    font-size: 0.85rem;
+  }
+  .runtime-facts dt {
+    font-weight: 700;
+  }
+  .runtime-facts dd {
+    margin: 0;
+    min-width: 0;
+  }
+  @container (width<480px) {
+    .runtime-facts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .composition {
+    border: 4px solid #355777;
+    padding: 26px;
+  }
+  .composition ul {
+    list-style: none;
+    border-left: 3px solid #355777;
+    padding-left: 24px;
+  }
+  .composition li {
+    padding: 12px 0;
+    position: relative;
+  }
+  .composition li::before {
+    content: "";
+    position: absolute;
+    left: -24px;
+    width: 18px;
+    top: 24px;
+    border-top: 3px solid #355777;
+  }
+  .composition > h3 {
+    font-size: 1.4rem;
   }
 </style>

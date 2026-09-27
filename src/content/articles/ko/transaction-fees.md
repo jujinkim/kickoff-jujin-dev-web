@@ -1,33 +1,31 @@
 ---
-kind: "concept"
-articleId: "transaction-fees"
-lang: "ko"
-title: "거래 중개 수수료"
-summary: "플랫폼이 중개한 거래에서 일부를 받습니다."
-category: "revenue-sources"
-aliases: ["거래 중개 수수료", "Transaction fees"]
+kind: concept
+articleId: transaction-fees
+lang: ko
+title: 거래 중개 수수료
+summary: 장터에서 성사된 거래 금액의 일부를 받습니다.
+category: revenue-sources
+aliases:
+  - 거래 중개 수수료
+  - Transaction fees
 related:
-  [
-    "revenue",
-    "direct-payment",
-    "advertising",
-    "sponsorship",
-    "affiliate-marketing",
-    "merchant-of-record",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - direct-payment
+  - advertising
+  - sponsorship
+  - affiliate-marketing
+  - merchant-of-record
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "중개 거래에 수수료 부과",
-    "advantages": "거래에 따라 수익 발생",
-    "limitations": "분쟁과 운영 비용",
-    "suitable": "유용한 양면 장터",
-    "combinations": "구독과 판매 책임 계약",
-  }
+  features: 중개 거래에 수수료 부과
+  advantages: 거래에 따라 수익 발생
+  limitations: 분쟁과 운영 비용
+  suitable: 유용한 양면 장터
+  combinations: 구독과 판매 책임 계약
 ---
 
 ## 왜 필요한가

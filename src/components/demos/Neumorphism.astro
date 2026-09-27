@@ -1,193 +1,197 @@
 ---
 import type { Lang } from "../../lib/i18n";
-import { workshop } from "./workshop";
+import { local } from "./shared";
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
-const w = workshop(lang, "neumorphism");
-const prefix = "neumorphism-" + lang;
+const t = local(lang);
+const moves = [
+  t("Shoulder roll", "어깨 돌리기", "肩回し"),
+  t("Ankle circle", "발목 돌리기", "足首回し"),
+];
 ---
 
 <section
   class="demo"
-  data-comparison="tasks"
   data-demo="neumorphism"
   lang={lang}
-  data-reset-message={w.resetMessage}
-  data-completed-label={w.completed}
-  data-progress-label={w.progress}
+  data-reset-message={t("Reset", "초기화", "リセット")}
 >
   <header>
-    <div>
-      <small>{w.identity} · 01</small>
-      <h2>{w.project}</h2>
-    </div>
-    <span class="mark" aria-hidden="true">
-      ✳
-    </span>
+    <small>{t("A QUIET BREAK", "잠깐의 휴식", "静かな休憩")}</small>
+    <h2>{t("Stretch timer", "스트레칭 타이머", "ストレッチタイマー")}</h2>
   </header>
-  <nav aria-label={w.menu}>
-    {[
-      ["overview", w.overview],
-      ["tasks", w.tasksTitle],
-      ["resources", w.resourcesTitle],
-    ].map(([target, label]) => (
-      <a href={`#${prefix}-${target}`} data-section-link>
-        {label}
-      </a>
-    ))}
-  </nav>
-  <div class="workspace">
-    <div class="work-main">
-      <section
-        class="intro"
-        id={`${prefix}-overview`}
-        tabindex="-1"
-        aria-label={w.overview}
-      >
-        <h3>{w.goal}</h3>
-        <p data-description>{w.description}</p>
-      </section>
-      <section id={`${prefix}-tasks`} tabindex="-1" aria-label={w.tasksTitle}>
-        <h3>{w.tasksTitle}</h3>
-        <div class="controls">
-          <label>
-            {w.status}
-            <select data-filter data-interactive disabled>
-              <option value="all">{w.all}</option>
-              <option value="open">{w.open}</option>
-              <option value="done">{w.done}</option>
-            </select>
-          </label>
-        </div>
-        <ul>
-          {w.tasks.map((text, i) => (
-            <li data-task>
-              <label>
-                <input type="checkbox" data-check data-interactive disabled />
-                <span class="task-label">{text}</span>
-              </label>
-              <small aria-hidden="true">0{i + 1}</small>
-            </li>
-          ))}
-        </ul>
-        <p data-empty hidden>
-          {w.empty}
-        </p>
-      </section>
+  <div class="timer">
+    <div class="dial">
+      <strong data-seconds>30</strong>
+      <span>{t("seconds remaining", "초 남음", "秒 残り")}</span>
     </div>
-    <aside>
-      <section class="progress-panel" aria-label={w.progress}>
-        <h3>{w.progress}</h3>
-        <div class="progress-values">
-          <span>
-            {w.completed} <strong data-count>0 / 3</strong>
-          </span>
-          <strong data-percent>0%</strong>
-        </div>
-        <progress data-progress value="0" max="3" aria-label={w.progress}>
-          0 / 3
-        </progress>
-      </section>
-      <section
-        class="resources"
-        id={`${prefix}-resources`}
-        tabindex="-1"
-        aria-label={w.resourcesTitle}
-      >
-        <h3>{w.resourcesTitle}</h3>
-        {w.resources.map((resource) => (
-          <details data-resource>
-            <summary>
-              {resource.title}
-              <span>{w.note}</span>
-            </summary>
-            <p>{resource.note}</p>
-          </details>
+    <label>
+      {t("Movement", "동작", "動き")}
+      <select data-move data-interactive disabled>
+        {moves.map((m, i) => (
+          <option value={i}>{m}</option>
         ))}
-      </section>
-    </aside>
-  </div>
-  <footer>
-    <div class="footer-line">
-      <small data-footer-summary>{w.summary}</small>
-      <button class="reset" type="button" data-reset data-interactive disabled>
-        {w.reset}
+      </select>
+    </label>
+    <div class="controls">
+      <button
+        type="button"
+        data-start
+        aria-pressed="false"
+        data-interactive
+        disabled
+      >
+        {t("Start", "시작", "開始")}
+      </button>
+      <button
+        type="button"
+        data-pause
+        aria-pressed="false"
+        data-interactive
+        disabled
+      >
+        {t("Pause", "일시정지", "一時停止")}
       </button>
     </div>
-    <p role="status" aria-live="polite" aria-atomic="true">
-      {w.initialMessage}
+    <p
+      data-phase
+      data-idle={t("Ready", "준비", "準備完了")}
+      data-running={t("Running", "진행 중", "計測中")}
+      data-paused={t("Paused", "일시정지됨", "一時停止中")}
+      data-done={t("Complete", "완료", "完了")}
+    >
+      {t("Ready", "준비", "準備完了")}
     </p>
+  </div>
+  <footer>
+    <button type="button" data-reset data-interactive disabled>
+      {t("Reset", "초기화", "リセット")}
+    </button>
+    <p role="status" aria-live="polite" aria-atomic="true"></p>
   </footer>
 </section>
 <script>
-  import { mountTasks } from "./tasks";
-  mountTasks("neumorphism");
+  import { mount } from "./shared";
+  mount("neumorphism", (root, say) => {
+    const output = root.querySelector<HTMLElement>("[data-seconds]")!;
+    const phase = root.querySelector<HTMLElement>("[data-phase]")!;
+    const start = root.querySelector<HTMLButtonElement>("[data-start]")!;
+    const pause = root.querySelector<HTMLButtonElement>("[data-pause]")!;
+    const move = root.querySelector<HTMLSelectElement>("[data-move]")!;
+    let left = 30,
+      deadline = 0,
+      timer: ReturnType<typeof setInterval> | undefined;
+    const stop = () => {
+      if (timer !== undefined) clearInterval(timer);
+      timer = undefined;
+    };
+    const mark = (s: string) => {
+      phase.textContent = phase.dataset[s]!;
+      start.setAttribute("aria-pressed", String(s === "running"));
+      pause.setAttribute("aria-pressed", String(s === "paused"));
+      say(phase.textContent);
+    };
+    const tick = () => {
+      left = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
+      output.textContent = String(left);
+      if (!left) {
+        stop();
+        mark("done");
+      }
+    };
+    start.addEventListener("click", () => {
+      if (timer !== undefined) return;
+      if (!left) left = 30;
+      deadline = Date.now() + left * 1000;
+      timer = setInterval(tick, 200);
+      mark("running");
+      tick();
+    });
+    pause.addEventListener("click", () => {
+      if (timer === undefined) return;
+      tick();
+      stop();
+      if (left) mark("paused");
+    });
+    const reset = () => {
+      stop();
+      left = 30;
+      output.textContent = "30";
+      mark("idle");
+    };
+    move.addEventListener("change", reset);
+    window.addEventListener("pagehide", stop, { once: true });
+    return () => {
+      move.value = "0";
+      reset();
+    };
+  });
 </script>
 <style>
-  /* Local control baseline. Astro scopes every selector to this component. */
   .demo {
     min-width: 0;
     overflow-wrap: anywhere;
-    padding: clamp(16px, 3vw, 32px);
+    padding: clamp(16px, 4vw, 36px);
     color-scheme: light;
+    container-type: inline-size;
   }
   * {
     box-sizing: border-box;
   }
-  :is(h2, h3, p) {
-    margin: 0 0 1rem;
+  h2,
+  h3,
+  p {
+    margin: 0 0 16px;
   }
   h2 {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 5cqi, 3rem);
     line-height: 1.15;
   }
   h3 {
     font-size: 1.15rem;
   }
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    margin: 18px 0;
+  p {
+    line-height: 1.65;
   }
-  label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    max-width: 100%;
-  }
-  :is(button, select, input, textarea) {
+  button,
+  select,
+  input {
     font: inherit;
     max-width: 100%;
     color: inherit;
   }
-
-  :is(button, select, input:not([type="checkbox"]):not([type="range"])) {
+  button,
+  select,
+  input:not([type="checkbox"]) {
     min-height: 44px;
-    padding: 8px 12px;
+    padding: 10px 14px;
   }
-  :is(button, select) {
+  button,
+  summary {
     cursor: pointer;
   }
   button {
-    border: 1px solid currentColor;
     background: transparent;
+    border: 1px solid currentColor;
   }
-  :is(input, textarea, select) {
+  select,
+  input {
     background: #fff;
-    color: #172329;
-    border: 1px solid #67747c;
-  }
-  input[type="range"] {
-    width: 150px;
+    color: #18252b;
+    border: 1px solid #59656a;
   }
   input[type="checkbox"] {
     width: 22px;
     height: 22px;
+    flex: none;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   :focus-visible {
     outline: 3px dashed currentColor;
@@ -196,259 +200,151 @@ const prefix = "neumorphism-" + lang;
   [hidden] {
     display: none !important;
   }
+  footer {
+    margin-top: 28px;
+  }
   [role="status"] {
     min-height: 1.5em;
-    font-size: 0.85rem;
     margin-top: 16px;
+    font-size: 0.9rem;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
   }
   small {
-    font-size: 0.8rem;
-  }
-  .reset {
-    margin-top: 20px;
     font-size: 0.85rem;
   }
   @media (prefers-reduced-motion: reduce) {
     * {
-      transition: none !important;
       animation: none !important;
+      transition: none !important;
     }
-  }
-
-  [data-task] label {
-    flex-wrap: nowrap;
-    min-width: 0;
-  }
-  [data-task] input {
-    flex: none;
-  }
-  [data-task] small {
-    flex: none;
-    white-space: nowrap;
-  }
-
-  .demo {
-    container-type: inline-size;
-  }
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 24px 0;
-  }
-  header .mark {
-    font-size: 2.8rem;
-    flex: none;
-  }
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0 0 24px;
-  }
-  nav a {
-    color: inherit;
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 8px 12px;
-    text-decoration: none;
-  }
-  .workspace {
-    display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-    gap: 24px;
-  }
-  .work-main,
-  aside {
-    min-width: 0;
-  }
-  .intro {
-    margin-bottom: 24px;
-  }
-  h2,
-  h3 {
-    font-family: inherit;
-  }
-  h3 {
-    line-height: 1.3;
-  }
-  .controls {
-    margin: 18px 0;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 20px 12px;
-  }
-  li label {
-    flex: 1;
-    min-height: 44px;
-    cursor: pointer;
-  }
-  li:has(:checked) .task-label {
-    text-decoration: line-through;
-  }
-  .progress-panel {
-    padding: 20px;
-    margin-bottom: 24px;
-  }
-  .progress-values {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  progress {
-    width: 100%;
-    height: 12px;
-    display: block;
-  }
-  details {
-    margin-top: 12px;
-    padding: 16px;
-  }
-  summary {
-    cursor: pointer;
-    min-height: 44px;
-  }
-  summary span {
-    display: block;
-    margin-top: 6px;
-    font-size: 0.8rem;
-  }
-  details p {
-    margin: 16px 0 0;
-    line-height: 1.6;
-  }
-  footer {
-    margin-top: 28px;
-    padding-top: 20px;
-  }
-  footer .footer-line {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    align-items: center;
-    justify-content: space-between;
-  }
-  footer .reset {
-    margin: 0;
-  }
-  [data-empty] {
-    padding: 20px 0;
-  }
-  @container (width < 600px) {
-    .workspace {
-      grid-template-columns: minmax(0, 1fr);
-    }
-  }
-  .demo {
-    --surface: #e3e8ed;
-    --raised: 7px 7px 15px #bec6d0, -7px -7px 15px #fff;
-    --inset: inset 4px 4px 8px #bec6d0, inset -4px -4px 8px #fff;
-    background: var(--surface);
-    color: #304458;
-    border: 0;
-    border-radius: 28px;
-    padding: 30px;
-  }
-  header {
-    padding: 24px;
-    border-radius: 24px;
-    box-shadow: var(--raised);
-    margin-bottom: 28px;
-  }
-  nav {
-    gap: 16px;
-  }
-  nav a {
-    border-radius: 14px;
-    box-shadow: var(--raised);
-  }
-  nav a:active {
-    box-shadow: var(--inset);
-  }
-  ul {
-    display: grid;
-    gap: 22px;
-  }
-  li {
-    border: 0;
-    background: var(--surface);
-    border-radius: 18px;
-    box-shadow: var(--raised);
-    padding: 18px;
-  }
-  li:has(:checked) {
-    box-shadow: var(--inset);
-  }
-  .progress-panel,
-  details {
-    border: 0;
-    border-radius: 20px;
-    box-shadow: var(--raised);
-    background: var(--surface);
-  }
-  details[open] {
-    box-shadow: var(--inset);
-  }
-  .demo :is(button, select, input) {
-    border: 0;
-    background: var(--surface);
-    color: #304458;
-    border-radius: 12px;
-    box-shadow: var(--raised);
-  }
-  .demo button:active,
-  .demo select:focus {
-    box-shadow: var(--inset);
-  }
-  .demo input[type="checkbox"] {
-    appearance: none;
-    display: grid;
-    place-content: center;
-    width: 24px;
-    height: 24px;
-    border: 0;
-    border-radius: 7px;
-  }
-  input[type="checkbox"]::after {
-    content: "";
-    width: 10px;
-    height: 6px;
-    transform: rotate(-45deg);
-  }
-  input[type="checkbox"]:checked {
-    box-shadow: var(--inset);
-  }
-  input[type="checkbox"]:checked::after {
-    border-left: 3px solid currentColor;
-    border-bottom: 3px solid currentColor;
-  }
-  progress {
-    accent-color: #476784;
   }
   @media (forced-colors: active) {
-    .demo input[type="checkbox"],
-    .demo
-      :is(header, li, nav a, .progress-panel, details, button, select, input) {
+    button,
+    input,
+    select {
       border: 1px solid ButtonText;
-      box-shadow: none;
     }
-    .demo input:checked {
-      background: Highlight;
-      color: HighlightText;
-      forced-color-adjust: none;
+    button[aria-pressed="true"] {
+      outline: 2px solid Highlight;
+    }
+  }
+  .demo {
+    background: #e4e9ed;
+    color: #273844;
+    border-radius: 30px;
+    padding: 36px;
+  }
+  header {
+    text-align: center;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-top: 14px;
+  }
+  .timer {
+    max-width: 460px;
+    margin: 30px auto 0;
+    text-align: center;
+  }
+  .dial {
+    width: 220px;
+    max-width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin: 0 auto 32px;
+    box-shadow:
+      12px 12px 26px #b5bfc7,
+      -12px -12px 26px #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+  .dial strong {
+    font-size: 4rem;
+    line-height: 1;
+  }
+  .dial span {
+    font-size: 0.85rem;
+  }
+  label {
+    justify-content: center;
+    gap: 16px;
+  }
+  button,
+  select {
+    border: 0;
+    border-radius: 18px;
+    background: #e4e9ed;
+    box-shadow:
+      5px 5px 10px #b5bfc7,
+      -5px -5px 10px #fff;
+    color: #273844;
+  }
+  .controls {
+    justify-content: center;
+    margin: 30px 0;
+  }
+  button[aria-pressed="true"] {
+    box-shadow:
+      inset 4px 4px 8px #b5bfc7,
+      inset -4px -4px 8px #fff;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    font-weight: 800;
+  }
+  [data-phase] {
+    font-weight: 700;
+  }
+  footer {
+    text-align: center;
+  }
+  @media (forced-colors: active) {
+    .dial {
+      border: 2px solid CanvasText;
+    }
+  }
+
+  .dial {
+    position: relative;
+    isolation: isolate;
+    width: min(100%, 310px);
+    box-shadow:
+      20px 20px 38px #acb8c1,
+      -20px -20px 38px #fff;
+  }
+  .dial::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow:
+      inset 7px 7px 14px #b5bfc7,
+      inset -7px -7px 14px #fff;
+  }
+  .dial strong {
+    font-size: clamp(3rem, 12cqi, 6rem);
+  }
+  button,
+  select {
+    box-shadow:
+      8px 8px 16px #aebac3,
+      -8px -8px 16px #fff;
+  }
+  button[aria-pressed="true"] {
+    box-shadow:
+      inset 7px 7px 12px #aebac3,
+      inset -7px -7px 12px #fff;
+  }
+  @media (forced-colors: active) {
+    .dial::before {
+      display: none;
     }
   }
 </style>

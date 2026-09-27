@@ -1,30 +1,30 @@
 ---
 kind: guide
-articleId: "payments"
-lang: "ko"
+articleId: payments
+lang: ko
 title: "결제 채널과 PG·MoR: 토스·Lemon Squeezy"
-summary: "결제 버튼은 서류 작업의 시작입니다."
-category: "business"
+summary: 신뢰할 결제 근거를 중복에 안전한 접근 부여와 판매 책임에 연결합니다.
+category: business
 aliases:
-  [
-    "PG",
-    "MoR",
-    "Toss Payments",
-    "Lemon Squeezy",
-    "결제",
-    "토스",
-    "전자결제대행",
-    "決済",
-    "販売責任者",
-  ]
-related: ["revenue", "shipping"]
-example: "payments"
-status: "published"
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+  - PG
+  - MoR
+  - Toss Payments
+  - Lemon Squeezy
+  - 결제
+  - 토스
+  - 전자결제대행
+  - 決済
+  - 販売責任者
+related:
+  - revenue
+  - shipping
+example: payments
+status: published
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 aiPrompt: "합의한 사업 모델부터 읽어줘. 결제가 범위 밖이면 그대로 유지해줘. 결제가 필요하면 상품·판매자 소재지·고객·유통 채널에 맞는 결제 방식과 제공자를 비교하고 해당할 때만 스토어 결제를 포함해줘. 누락 정보만 질문하고 확정된 선택은 유지해줘. 날짜 있는 공식 근거로 자격·수수료·세금 범위·환불·정산을 확인하고, 모르는 것은 밝히며 제공자 선택 전에 물어봐. 신뢰할 수 있는 결제 검증, 반복해도 중복 지급되지 않는 권한 처리, 복구 검증을 요구사항에 포함해줘."
-checked: "2026-09-23"
+checked: "2026-09-27"
 ---
 
 ## 왜 필요한가

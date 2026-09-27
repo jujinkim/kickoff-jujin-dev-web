@@ -38,7 +38,16 @@ test("24 monetization concepts have 72 reviewed translations, seven groups and 1
   );
   for (const a of money) {
     assert.equal(a.data.status, "published");
-    assert.equal(a.data.checked, "2026-09-22");
+    assert.match(a.data.checked, /^\d{4}-\d{2}-\d{2}$/);
+    assert.ok(a.data.checked >= "2026-09-22");
+    assert.equal(
+      a.data.checked,
+      articles.find(
+        (original) =>
+          original.data.lang === "en" &&
+          original.data.articleId === a.data.articleId,
+      ).data.checked,
+    );
     assert.equal(
       a.data.sourceRevision,
       english.find((original) => original.data.articleId === a.data.articleId)

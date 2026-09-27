@@ -1,32 +1,29 @@
 ---
-kind: "concept"
-articleId: "affiliate-marketing"
-lang: "en"
-title: "Affiliate commissions"
-summary: "Qualifying referrals can earn a commission."
-category: "revenue-sources"
-aliases: ["Affiliate commissions"]
+kind: concept
+articleId: affiliate-marketing
+lang: en
+title: Affiliate commissions
+summary: Earn a referral commission when an external purchase qualifies.
+category: revenue-sources
+aliases:
+  - Affiliate commissions
 related:
-  [
-    "revenue",
-    "direct-payment",
-    "advertising",
-    "sponsorship",
-    "transaction-fees",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - direct-payment
+  - advertising
+  - sponsorship
+  - transaction-fees
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Commission on qualifying referrals",
-    "advantages": "No need to sell referred item",
-    "limitations": "Program eligibility dependency",
-    "suitable": "Relevant disclosed recommendations",
-    "combinations": "Customer direct payment",
-  }
+  features: Commission on qualifying referrals
+  advantages: No need to sell referred item
+  limitations: Program eligibility dependency
+  suitable: Relevant disclosed recommendations
+  combinations: Customer direct payment
 ---
 
 ## Why: the goal or problem

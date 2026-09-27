@@ -1,32 +1,29 @@
 ---
-kind: "concept"
-articleId: "one-time-payment"
-lang: "en"
-title: "One-time payment"
-summary: "One charge for a defined entitlement."
-category: "billing"
-aliases: ["One-time payment"]
+kind: concept
+articleId: one-time-payment
+lang: en
+title: One-time payment
+summary: Collect once when a bounded purchase can fund its promise.
+category: billing
+aliases:
+  - One-time payment
 related:
-  [
-    "revenue",
-    "subscription",
-    "usage-based",
-    "prepaid-credits",
-    "non-consumable-purchase",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - subscription
+  - usage-based
+  - prepaid-credits
+  - non-consumable-purchase
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "One charge",
-    "advantages": "Clear purchase amount",
-    "limitations": "Future service terms needed",
-    "suitable": "Bounded deliverables",
-    "combinations": "Non-consumable entitlement",
-  }
+  features: One charge
+  advantages: Clear purchase amount
+  limitations: Future service terms needed
+  suitable: Bounded deliverables
+  combinations: Non-consumable entitlement
 ---
 
 ## Why: the goal or problem

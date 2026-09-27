@@ -22,6 +22,33 @@ const t = local(lang),
     <h2>{t("Usage-based billing", "사용량 기반 과금", "従量課金")}</h2>
   </header>
   <p>{m.billing}</p>
+  <div
+    class="quantity-cases"
+    role="group"
+    aria-label={t(
+      "Compare low and high use",
+      "적은 이용과 많은 이용 비교",
+      "少ない利用と多い利用を比較",
+    )}
+  >
+    <button type="button" data-quantity-preset="0" data-interactive disabled>
+      <span>{t("Quantity", "수량", "数量")} 0</span>
+      <strong>→ 18.00</strong>
+    </button>
+    <button type="button" data-quantity-preset="100" data-interactive disabled>
+      <span>{t("Quantity", "수량", "数量")} 100</span>
+      <strong>→ 20.00</strong>
+    </button>
+    <button
+      type="button"
+      data-quantity-preset="10000"
+      data-interactive
+      disabled
+    >
+      <span>{t("Quantity", "수량", "数量")} 10000</span>
+      <strong>→ 218.00</strong>
+    </button>
+  </div>
   <div class="meter">
     <h3>
       {t(
@@ -70,6 +97,13 @@ const t = local(lang),
       {m.reset}
     </button>
   </div>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The customer pays 0.02 per export: 100, 300 and 600 exports cost 2, 6 and 12. Zero exports cost zero here. Payment timing, access limits and seller responsibilities still need contract terms.",
+      "고객은 출력당 0.02를 내므로 100·300·600회가 2·6·12입니다. 예제의 0회는 0입니다. 결제 시점·접근 한도·판매 책임은 별도 계약 조건이 필요합니다.",
+      "顧客は出力ごとに0.02を払い、100・300・600回は2・6・12です。この例の0回は0です。支払時期・利用上限・販売責任は契約条件で別途定めます。",
+    )}
+  </p>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -97,5 +131,36 @@ const t = local(lang),
   }
   .result p {
     margin-bottom: 0;
+  }
+
+  .quantity-cases {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 28px 0;
+  }
+  .quantity-cases button {
+    flex: 1 1 130px;
+    display: grid;
+    gap: 8px;
+    padding: 18px;
+    border: 2px solid currentColor;
+    text-align: left;
+  }
+  .quantity-cases strong {
+    font-size: 1.5rem;
+  }
+  .result output {
+    font-size: clamp(2.5rem, 7cqi, 4rem);
+    font-weight: 800;
+  }
+
+  .meter {
+    border: 4px solid #536d4c;
+    padding: 24px;
+  }
+  .ledger {
+    border-left: 7px solid #536d4c;
+    padding-left: 22px;
   }
 </style>

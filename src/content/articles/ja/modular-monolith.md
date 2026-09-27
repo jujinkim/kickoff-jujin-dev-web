@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "modular-monolith"
-lang: "ja"
-title: "モジュラーモノリス"
-summary: "一つのデプロイ内でモジュールの所有権を守ります。"
-category: "service-split"
-aliases: ["モジュラーモノリス"]
-related: ["architecture", "monolith", "microservices"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
-checked: "2026-09-22"
+kind: concept
+articleId: modular-monolith
+lang: ja
+title: モジュラーモノリス
+summary: 一括配布を保ち、モジュールの所有を守ります。
+category: service-split
+aliases:
+  - モジュラーモノリス
+related:
+  - architecture
+  - monolith
+  - microservices
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "単一デプロイ内の明示的なモジュールAPI",
-    "advantages": "ライブラリの変更をAPIの内部に限定",
-    "limitations": "境界の強制が必要・リリースは共有",
-    "suitable": "遠隔呼び出しなしで明確な所有権",
-    "combinations": "モジュール内部にクリーンやヘキサゴナルを適用可能",
-  }
+  features: 単一デプロイ内の明示的なモジュールAPI
+  advantages: ライブラリの変更をAPIの内部に限定
+  limitations: 境界の強制が必要・リリースは共有
+  suitable: 遠隔呼び出しなしで明確な所有権
+  combinations: モジュール内部にクリーンやヘキサゴナルを適用可能
 ---
 
 ## なぜ必要なのか

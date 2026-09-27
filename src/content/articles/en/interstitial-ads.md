@@ -1,25 +1,28 @@
 ---
-kind: "concept"
-articleId: "interstitial-ads"
-lang: "en"
-title: "Interstitial ads"
-summary: "A full-screen ad at a natural transition."
-category: "ad-formats"
-aliases: ["Interstitial ads"]
-related: ["revenue", "banner-ads", "rewarded-ads", "advertising"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: interstitial-ads
+lang: en
+title: Interstitial ads
+summary: Show full-screen ads at natural task breaks.
+category: ad-formats
+aliases:
+  - Interstitial ads
+related:
+  - revenue
+  - banner-ads
+  - rewarded-ads
+  - advertising
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Full-screen transition placement",
-    "advantages": "Uses a natural break",
-    "limitations": "Interrupts app flow",
-    "suitable": "Clear level or task boundaries",
-    "combinations": "Advertising revenue",
-  }
+  features: Full-screen transition placement
+  advantages: Uses a natural break
+  limitations: Interrupts app flow
+  suitable: Clear level or task boundaries
+  combinations: Advertising revenue
 ---
 
 ## Why: the goal or problem

@@ -3,7 +3,7 @@ kind: concept
 articleId: unity
 lang: en
 title: Unity
-summary: Components supply object behavior.
+summary: Compose cross-platform games from reusable GameObjects and components.
 category: game-engines
 aliases:
   - Unity
@@ -12,10 +12,10 @@ related:
   - godot
   - unreal-engine
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: GameObjects contain components
   advantages: Behavior responsibilities are visible
@@ -26,7 +26,7 @@ comparison:
 
 ## Why: the goal or problem
 
-Imagine a museum maze where players collect keys. Each pickup should score once; the team wants reusable behavior attached to game objects rather than copying key logic.
+Players collect keys in a museum maze. Each pickup should score once; the team wants reusable behavior attached to game objects rather than copying key logic.
 
 ## How: work toward a solution
 

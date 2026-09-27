@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import matter from "gray-matter";
+import { validateDetails } from "./validate-details.mjs";
 import { validateDesigns } from "./design-registry.mjs";
 import { articleOverviewSeconds } from "../src/lib/reading-budget.mjs";
 import { readingBudgets } from "../src/lib/article-format.mjs";
@@ -183,7 +184,7 @@ if (
   import.meta.url === pathToFileURL(resolve(process.argv[1])).href
 ) {
   const articles = readArticles();
-  const errors = validateArticles(articles);
+  const errors = [...validateArticles(articles), ...validateDetails(articles)];
   if (errors.length) {
     console.error(errors.join("\n"));
     process.exitCode = 1;

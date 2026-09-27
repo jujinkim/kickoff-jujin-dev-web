@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "monolith"
-lang: "ja"
-title: "モノリス"
-summary: "サーバーアプリケーションを一単位でデプロイします。"
-category: "service-split"
-aliases: ["モノリス"]
-related: ["architecture", "modular-monolith", "microservices"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
-checked: "2026-09-22"
+kind: concept
+articleId: monolith
+lang: ja
+title: モノリス
+summary: 独立配布より単純な運用を優先し、一括配布します。
+category: service-split
+aliases:
+  - モノリス
+related:
+  - architecture
+  - modular-monolith
+  - microservices
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "サーバー全体が一つのデプロイ単位",
-    "advantages": "小さなチームに一つのパイプライン",
-    "limitations": "リリースとプロセス障害の境界を共有",
-    "suitable": "一つのチームが密接な機能を運用",
-    "combinations": "内部にレイヤーや明示的なモジュールを配置可能",
-  }
+  features: サーバー全体が一つのデプロイ単位
+  advantages: 小さなチームに一つのパイプライン
+  limitations: リリースとプロセス障害の境界を共有
+  suitable: 一つのチームが密接な機能を運用
+  combinations: 内部にレイヤーや明示的なモジュールを配置可能
 ---
 
 ## なぜ必要なのか

@@ -59,6 +59,14 @@ export function mountPricing(id: string, initial: number) {
       if (announce) say(`${m.total}: ${amount(total)}`);
     }
     input.addEventListener("input", () => update());
+    root
+      .querySelectorAll<HTMLButtonElement>("[data-quantity-preset]")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          input.value = button.dataset.quantityPreset!;
+          update();
+        });
+      });
     for (const [selector, delta] of [
       ["[data-less]", -1],
       ["[data-more]", 1],

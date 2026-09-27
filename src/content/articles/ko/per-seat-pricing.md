@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "per-seat-pricing"
-lang: "ko"
-title: "좌석 과금"
-summary: "이용 권한을 부여한 좌석마다 청구합니다."
-category: "pricing-models"
-aliases: ["좌석 과금", "Per-seat pricing"]
+kind: concept
+articleId: per-seat-pricing
+lang: ko
+title: 좌석 과금
+summary: 사람별 접근이 가치의 기준이면 이용 좌석 수에 가격을 연결합니다.
+category: pricing-models
+aliases:
+  - 좌석 과금
+  - Per-seat pricing
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "feature-tiered-pricing",
-    "volume-pricing",
-    "graduated-pricing",
-    "base-plus-overage",
-    "subscription",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - feature-tiered-pricing
+  - volume-pricing
+  - graduated-pricing
+  - base-plus-overage
+  - subscription
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "좌석 수 곱하기 단가",
-    "advantages": "이용 권한에 따라 확장",
-    "limitations": "청구할 좌석 정의 필요",
-    "suitable": "팀 이용 제품",
-    "combinations": "구독 또는 기능 묶음",
-  }
+  features: 좌석 수 곱하기 단가
+  advantages: 이용 권한에 따라 확장
+  limitations: 청구할 좌석 정의 필요
+  suitable: 팀 이용 제품
+  combinations: 구독 또는 기능 묶음
 ---
 
 ## 왜 필요한가

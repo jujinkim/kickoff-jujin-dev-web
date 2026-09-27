@@ -1,30 +1,32 @@
 ---
-kind: "concept"
-articleId: "clean-architecture"
-lang: "ja"
-title: "クリーンアーキテクチャ"
-summary: "ソースの依存を方針へ向けます。"
-category: "boundaries"
-aliases: ["クリーンアーキテクチャ"]
-related: ["architecture", "layered-architecture", "hexagonal-architecture"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: clean-architecture
+lang: ja
+title: クリーンアーキテクチャ
+summary: 方針を守るためソース依存を内側へ向けます。
+category: boundaries
+aliases:
+  - クリーンアーキテクチャ
+related:
+  - architecture
+  - layered-architecture
+  - hexagonal-architecture
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "ソースの依存は内側へ",
-    "advantages": "方針がフレームワークのデータから独立",
-    "limitations": "境界でのデータ変換に管理コスト",
-    "suitable": "UIやデータベースより長く保つ方針",
-    "combinations": "外側の境界にヘキサゴナルのポートを適用可能",
-  }
+  features: ソースの依存は内側へ
+  advantages: 方針がフレームワークのデータから独立
+  limitations: 境界でのデータ変換に管理コスト
+  suitable: UIやデータベースより長く保つ方針
+  combinations: 外側の境界にヘキサゴナルのポートを適用可能
 ---
 
 ## なぜ必要なのか
 
-読者がWebとCLIで記事を保存する家計ガイドを作るとします。画面や保存先が変わっても規則は保ちたい。制作側は直接依存より内側のユースケースを重視します。
+読者がWebとCLIで記事を保存する家計ガイドです。画面や保存先が変わっても規則は保ちたい。内側のユースケースを直接依存より優先します。
 
 ## どう解決するのか
 

@@ -3,7 +3,7 @@ kind: concept
 articleId: liquid-glass
 lang: en
 title: Liquid Glass
-summary: "Float compact, expanding navigation above a photo diary while leaving room for its images."
+summary: "An adaptive, floating control material preserves rich content beneath a distinct navigation layer."
 category: styles
 aliases:
   - Liquid Glass
@@ -12,32 +12,30 @@ related:
   - glassmorphism
   - flat-design
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 comparison:
-  features: >-
-    Floating capsules, reflective edges, and expanding tools separate navigation
-    from content.
-  advantages: The light navigation layer preserves visual context.
-  limitations: Transparency needs contrast checks and an opaque fallback.
-  suitable: Choose it for a small navigation layer over rich content.
-  combinations: Keep task surfaces solid; avoid stacking glass layers.
-checked: "2026-09-22"
+  features: Translucent floating control surfaces
+  advantages: Content remains visually primary
+  limitations: Native optical behavior is not reproduced
+  suitable: Content-focused navigation over photography
+  combinations: Opaque fallback and stable text surfaces
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
 
-Imagine a coastal photo diary where readers browse large images and entries. Navigation must stay over the photos and respond as they move; fixed frosted cards would occupy space better left to the images.
+Imagine a coastal photo diary where readers browse large images. Navigation should occupy little space and expand only when needed. Broad frosted information cards would compete with the photographs.
 
 ## How: work toward a solution
 
-For the coastal photo diary, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. View tools expands the floating capsule; Opaque panels removes transparency.
+Browse with the arrows. The photo bends beneath a rounded floating lens. View tools expands its capsule; Opaque panels removes the optical treatment. Reset returns to the beach.
 
 ## What: the concept
 
-Liquid Glass uses a dynamic, transparent navigation layer above content. This web study illustrates its visual cues, not Apple’s native rendering.
+Liquid Glass is Apple’s adaptive control material, combining lensing, highlights and fluid shape changes. Glassmorphism is a broader translucent, blurred style. This web model displaces an image; it does not reproduce native optics or automatic contrast adaptation.
 
-Transparency needs contrast checks and an opaque fallback.
+Provide readable labels, reduced motion and an opaque fallback.
 
 [Apple WWDC25](https://developer.apple.com/videos/play/wwdc2025/219/)

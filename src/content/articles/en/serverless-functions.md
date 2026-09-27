@@ -3,7 +3,7 @@ kind: concept
 articleId: serverless-functions
 lang: en
 title: Serverless functions
-summary: Invocations use external durable state.
+summary: Run event-triggered work without owning long-lived compute processes.
 category: hosting-models
 aliases:
   - Serverless functions
@@ -12,10 +12,10 @@ related:
   - static-hosting
   - always-on-server
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: Event-triggered managed handlers
   advantages: Platform handles server provisioning

@@ -3,7 +3,7 @@ kind: concept
 articleId: monospace
 lang: en
 title: Monospace
-summary: "Align a weather log’s Latin text columns with equal character advances, checking fallback glyphs."
+summary: Equal character advances suit aligned text data; shape and fallback coverage remain separate concerns.
 category: character-width
 aliases:
   - Monospace
@@ -11,19 +11,16 @@ related:
   - theme
   - proportional
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 comparison:
-  features: >-
-    Monospaced Latin glyphs share an advance width even when their ink shapes
-    differ.
+  features: Equal character advances suit aligned text data; shape and fallback coverage remain separate concerns.
   advantages: Equal Latin advances preserve code and data column alignment.
-  limitations: >-
-    CJK, emoji, combining marks, and fallback faces can break that model;
-    inspect the supported character set.
+  limitations: "CJK, emoji, combining marks, and fallback faces can break that model; inspect the supported character set."
   suitable: Choose it for code or aligned Latin data.
   combinations: Use fixed-width code beside proportional explanatory text.
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
@@ -32,7 +29,7 @@ Imagine a weather log with readings aligned in text tables. Variable Latin lette
 
 ## How: work toward a solution
 
-For a weather log, compare a phrase with iiiWWW 0123 and aligned numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Supported Latin characters share an advance width; fallback characters may differ.
+Read the weather log’s aligned time, temperature and wind columns. In the separate lab, compare i and W, edit the sample and enable measured guides. Supported Latin advances match; reset restores the lab to 48px.
 
 ## What: the concept
 

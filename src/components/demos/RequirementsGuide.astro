@@ -1,0 +1,211 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+const cases = [
+  [
+    t(
+      "Add the same book again",
+      "같은 책 한 번 더 담기",
+      "同じ本をもう一度追加",
+    ),
+    t("One row · quantity 2", "한 줄 · 수량 2", "1行 · 数量2"),
+    t(
+      "A new, deliberate addition",
+      "의도한 새 추가 요청",
+      "意図した新しい追加",
+    ),
+  ],
+  [
+    t("Retry the same request", "같은 요청 재전송", "同じリクエストを再送"),
+    t("One row · quantity 1", "한 줄 · 수량 1", "1行 · 数量1"),
+    t(
+      "Already applied; do not add twice",
+      "이미 처리했다면 중복 추가 안 함",
+      "処理済みなら二重に加算しない",
+    ),
+  ],
+  [
+    t("Add unavailable stock", "재고 없는 책 담기", "在庫のない本を追加"),
+    t("Cart unchanged", "장바구니 유지", "カートは変更しない"),
+    t(
+      "Explain availability; keep selections",
+      "재고 안내 · 기존 선택 보존",
+      "在庫を案内し、選択を保つ",
+    ),
+  ],
+];
+---
+
+<section data-demo="srs" lang={lang}>
+  <header>
+    <span>
+      {t(
+        "BOOKSHOP / ACCEPTANCE NOTES",
+        "책방 / 완료 조건 기록",
+        "書店 / 完了条件の記録",
+      )}
+    </span>
+    <h2>
+      {t(
+        "What happens on the second click?",
+        "두 번째로 누르면 어떻게 될까요?",
+        "2回目に押すと、どうなる？",
+      )}
+    </h2>
+  </header>
+  <div class="cart">
+    <span class="book" aria-hidden="true">
+      A
+    </span>
+    <div>
+      <strong>{t("Book A", "책 A", "本A")}</strong>
+      <p>
+        {t(
+          "Starting cart: one row, quantity 1. Stock available unless stated otherwise.",
+          "시작 상태: 한 줄, 수량 1. 별도 설명이 없으면 재고가 있습니다.",
+          "初期状態：1行、数量1。特記がなければ在庫あり。",
+        )}
+      </p>
+    </div>
+    <span class="quantity">× 1</span>
+  </div>
+  <ol>
+    {cases.map(([action, result, reason], i) => (
+      <li>
+        <span class="case-id">AC-0{i + 1}</span>
+        <div>
+          <h3>{action}</h3>
+          <strong>{result}</strong>
+          <p>{reason}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+  <p class="decision">
+    {t(
+      "Agree on the behavior first. Then choose data structures and write checks for these outcomes. These are example decisions, not universal cart rules.",
+      "먼저 동작에 합의하고 자료구조와 검증 방법을 정합니다. 위 내용은 이 예제의 결정이며 모든 장바구니의 규칙은 아닙니다.",
+      "先に動作に合意し、データ構造と検証方法を決めます。これは作例の判断で、すべてのカートに共通する規則ではありません。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    background: #f5f1e8;
+    color: #38362e;
+    padding: clamp(18px, 4vw, 36px);
+    border: 1px solid #c9c2b3;
+    border-radius: 6px;
+    overflow-wrap: anywhere;
+  }
+  header > span {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+  h2 {
+    margin: 18px 0 28px;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.25;
+  }
+  .cart {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fffdf8;
+    border: 1px solid #c9c2b3;
+    padding: 22px;
+  }
+  .book {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 52px;
+    height: 70px;
+    background: #516451;
+    color: white;
+    border-left: 5px solid #344834;
+    font:
+      28px Georgia,
+      serif;
+  }
+  .cart p {
+    font-size: 0.85rem;
+    margin: 6px 0 0;
+  }
+  .quantity {
+    white-space: nowrap;
+    font-size: 1.25rem;
+  }
+  ol {
+    list-style: none;
+    margin: 26px 0;
+    padding: 0;
+  }
+  li {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 20px;
+    border-top: 1px solid #c9c2b3;
+    padding: 20px 0;
+  }
+  .case-id {
+    font: 0.75rem monospace;
+    padding-top: 5px;
+    color: #675e4e;
+  }
+  h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+  li strong {
+    color: #344f37;
+  }
+  li p {
+    font-size: 0.85rem;
+    margin: 8px 0 0;
+  }
+  .decision {
+    border-top: 2px solid #82765f;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    margin: 0;
+  }
+  @container (width < 400px) {
+    .cart {
+      flex-wrap: wrap;
+    }
+    .cart > div {
+      flex: 1;
+      min-width: 100px;
+    }
+    li {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+  }
+
+  .cart {
+    border: 3px solid #7c6647;
+    padding: 26px;
+  }
+  .quantity {
+    font-size: 3rem;
+  }
+  ol li {
+    border-top: 3px solid #7c6647;
+    padding-block: 28px;
+  }
+  ol li strong {
+    font-size: 1.35rem;
+  }
+  .decision {
+    border: 5px double #7c6647;
+    padding: 24px;
+  }
+</style>

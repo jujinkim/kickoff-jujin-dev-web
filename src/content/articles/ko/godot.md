@@ -3,7 +3,7 @@ kind: concept
 articleId: godot
 lang: ko
 title: Godot
-summary: 노드로 재사용 씬을 구성합니다.
+summary: 오픈 소스 엔진으로 장면 중심 게임을 만듭니다.
 category: game-engines
 aliases:
   - Godot
@@ -12,10 +12,10 @@ related:
   - unity
   - unreal-engine
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-checked: "2026-09-22"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 노드로 만든 재사용 씬
   advantages: 아이템 구성 재사용

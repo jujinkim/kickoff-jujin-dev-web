@@ -49,4 +49,22 @@ const articles = defineCollection({
     aiPrompt: z.string().min(50).optional(),
   }),
 });
-export const collections = { articles };
+const articleDetails = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/article-details" }),
+  schema: z.object({
+    articleId: z.string().regex(/^[a-z0-9-]+$/),
+    lang: z.enum(languages),
+    sourceRevision: z.number().int().positive(),
+    sources: z
+      .array(
+        z.object({
+          title: z.string().min(1),
+          url: z.url(),
+          claim: z.string().min(1),
+          checked: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+        }),
+      )
+      .min(1),
+  }),
+});
+export const collections = { articles, articleDetails };

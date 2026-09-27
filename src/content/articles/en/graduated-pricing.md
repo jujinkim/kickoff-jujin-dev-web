@@ -1,34 +1,31 @@
 ---
-kind: "concept"
-articleId: "graduated-pricing"
-lang: "en"
-title: "Graduated pricing"
-summary: "Each slice keeps its own unit price."
-category: "pricing-models"
-aliases: ["Graduated pricing"]
+kind: concept
+articleId: graduated-pricing
+lang: en
+title: Graduated pricing
+summary: Price each quantity band separately and add the subtotals.
+category: pricing-models
+aliases:
+  - Graduated pricing
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "per-seat-pricing",
-    "feature-tiered-pricing",
-    "volume-pricing",
-    "base-plus-overage",
-    "usage-based",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - per-seat-pricing
+  - feature-tiered-pricing
+  - volume-pricing
+  - base-plus-overage
+  - usage-based
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Sum separately priced slices",
-    "advantages": "Earlier units keep their rate",
-    "limitations": "More calculation to explain",
-    "suitable": "Progressive usage discounts",
-    "combinations": "Usage metering and subscriptions",
-  }
+  features: Sum separately priced slices
+  advantages: Earlier units keep their rate
+  limitations: More calculation to explain
+  suitable: Progressive usage discounts
+  combinations: Usage metering and subscriptions
 ---
 
 ## Why: the goal or problem

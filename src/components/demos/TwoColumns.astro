@@ -1,239 +1,383 @@
 ---
 import type { Lang } from "../../lib/i18n";
 import { local } from "./shared";
-import { resources, resourceScene } from "./resources";
-import "./comparison-base.css";
+import { photo } from "./photos";
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = local(lang);
-const items = resources(lang);
-const scene = resourceScene(lang, "two-columns");
+const recipes = [
+  {
+    title: t(
+      "Tomato & basil pasta",
+      "토마토 바질 파스타",
+      "トマトとバジルのパスタ",
+    ),
+    time: 20,
+    ingredient: "tomato",
+    note: t(
+      "Tomatoes, basil, pasta, olive oil. Simmer the tomatoes, then toss with cooked pasta and basil.",
+      "토마토, 바질, 파스타, 올리브유. 토마토를 졸인 뒤 삶은 파스타와 바질을 섞습니다.",
+      "トマト、バジル、パスタ、オリーブ油。トマトを煮詰め、ゆでたパスタとバジルを合わせます。",
+    ),
+  },
+  {
+    title: t("Roasted tomato soup", "구운 토마토 수프", "焼きトマトのスープ"),
+    time: 40,
+    ingredient: "tomato",
+    note: t(
+      "Roast tomatoes with onion, blend with stock, then warm through. Serve with bread.",
+      "토마토와 양파를 구워 육수와 함께 갈고 다시 데웁니다. 빵을 곁들입니다.",
+      "トマトと玉ねぎを焼き、スープと合わせて混ぜ、温めます。パンを添えます。",
+    ),
+  },
+  {
+    title: t("Mushroom toast", "버섯 토스트", "きのこのトースト"),
+    time: 15,
+    ingredient: "mushroom",
+    note: t(
+      "Sauté mushrooms until golden. Spoon over toasted bread with herbs.",
+      "버섯을 노릇하게 볶아 구운 빵 위에 올리고 허브를 더합니다.",
+      "きのこをこんがり炒め、トーストにのせてハーブを添えます。",
+    ),
+  },
+  {
+    title: t("Mushroom risotto", "버섯 리소토", "きのこのリゾット"),
+    time: 45,
+    ingredient: "mushroom",
+    note: t(
+      "Toast rice, add hot stock in stages, and stir in browned mushrooms.",
+      "쌀을 볶은 뒤 뜨거운 육수를 조금씩 넣고 볶은 버섯을 섞습니다.",
+      "米を炒め、熱いスープを少しずつ加え、炒めたきのこを混ぜます。",
+    ),
+  },
+];
 ---
 
 <section
-  class="demo"
   data-demo="two-columns"
-  data-comparison="resources"
   lang={lang}
   data-reset-message={t(
-    "Initial state restored",
-    "초기 상태로 복원했습니다",
-    "初期状態に戻しました",
+    "All recipes restored",
+    "모든 요리법을 다시 표시합니다",
+    "すべてのレシピに戻しました",
   )}
+  data-results-label={t("recipes", "개 요리법", "件のレシピ")}
 >
   <header>
-    <small>{t("COLLECTED / 06", "수집 자료 / 06", "収集資料 / 06")}</small>
-    <h2>{scene.title}</h2>
-    <p>{scene.goal}</p>
+    <span class="identity">
+      {t("THE EVERYDAY TABLE", "매일의 식탁", "いつもの食卓")}
+    </span>
+    <h2>
+      {t(
+        "Good food. Any day.",
+        "오늘도 맛있는 한 끼.",
+        "いつもの日にも、おいしく。",
+      )}
+    </h2>
+    <p>
+      {t(
+        "Find a recipe for what is in your kitchen.",
+        "주방에 있는 재료로 만들 요리법을 찾아보세요.",
+        "キッチンにある材料で作れるレシピを探しましょう。",
+      )}
+    </p>
   </header>
-  <div class="controls">
-    <label>
-      {t("Preview width", "미리보기 폭", "表示幅")}
-      <select data-width data-interactive disabled>
-        <option value="wide">{t("Wide", "넓게", "広い")}</option>
-        <option value="narrow">{t("Narrow", "좁게", "狭い")}</option>
-      </select>
-    </label>
-  </div>
-  <div class="frame" data-width="wide">
-    <div class="workspace">
-      <nav aria-label={t("Resource filters", "자료 필터", "資料の絞り込み")}>
-        <label>
-          {t("Topic", "주제", "テーマ")}
-          <select data-filter data-interactive disabled>
-            <option value="all">{t("All", "전체", "すべて")}</option>
-            <option value="color">{t("Color", "색", "色")}</option>
-            <option value="form">{t("Form", "형태", "形")}</option>
-            <option value="type">{t("Type", "글자", "文字")}</option>
-          </select>
-        </label>
-        <label>
-          {t("Order", "순서", "順序")}
-          <select data-sort data-interactive disabled>
-            <option value="original">
-              {t("Collection order", "수집 순서", "収集順")}
-            </option>
-            <option value="reverse">
-              {t("Reverse order", "역순", "逆順")}
-            </option>
-          </select>
-        </label>
-        <strong data-count>6 / 6</strong>
-      </nav>
-      <div class="board">
-        {items.map((item) => (
-          <article data-tile data-id={item.id} data-topic={item.topic}>
-            <div class={`art art-${item.id}`} aria-hidden="true">
-              {item.symbol}
-            </div>
-            <div class="description">
-              <small>0{item.id + 1}</small>
-              <h3 data-resource-title>{item.title}</h3>
-              <p>{item.description}</p>
-              <details>
-                <summary>{t("Study notes", "연구 메모", "研究メモ")}</summary>
-                <p>
-                  {t(
-                    "Compare shape, spacing, and contrast. Keep this resource beside the next draft and revisit the details.",
-                    "형태, 간격, 대비를 비교합니다. 다음 초안 곁에 자료를 두고 세부를 다시 살펴보세요.",
-                    "形、間隔、コントラストを比べます。次の案の横に資料を置き、細部を見直してください。",
-                  )}
-                </p>
-              </details>
-            </div>
-          </article>
-        ))}
+  <div class="workspace">
+    <aside
+      class="recipe-filters"
+      aria-label={t("Recipe filters", "요리법 필터", "レシピの絞り込み")}
+    >
+      <h3>{t("On the menu", "오늘의 메뉴", "今日のメニュー")}</h3>
+      <label>
+        {t("Ingredient", "재료", "材料")}
+        <select data-ingredient data-interactive disabled>
+          <option value="all">
+            {t("All ingredients", "모든 재료", "すべての材料")}
+          </option>
+          <option value="tomato">{t("Tomato", "토마토", "トマト")}</option>
+          <option value="mushroom">{t("Mushroom", "버섯", "きのこ")}</option>
+        </select>
+      </label>
+      <label>
+        {t("Cooking time", "조리 시간", "調理時間")}
+        <select data-time data-interactive disabled>
+          <option value="all">
+            {t("Any time", "시간 제한 없음", "指定なし")}
+          </option>
+          <option value="20">
+            {t("20 minutes or less", "20분 이내", "20分以内")}
+          </option>
+          <option value="10">
+            {t("10 minutes or less", "10분 이내", "10分以内")}
+          </option>
+        </select>
+      </label>
+      <button type="button" data-reset data-interactive disabled>
+        {t("Clear filters", "필터 초기화", "絞り込みを解除")}
+      </button>
+      <p class="filter-note">
+        {t(
+          "Change the filters; keep the recipes in view.",
+          "요리법을 보면서 필터를 바꿔보세요.",
+          "レシピを見ながら条件を変えてみましょう。",
+        )}
+      </p>
+    </aside>
+    <div class="recipes">
+      <div class="collection-heading">
+        <h3>
+          {t("From our kitchen", "주방에서 온 요리법", "キッチンからのレシピ")}
+        </h3>
+        <span data-count>4 / 4</span>
       </div>
-      <aside>
-        <h3>{t("Study guide", "연구 안내", "研究ガイド")}</h3>
-        <p>
-          {t(
-            "Collect → compare → revise",
-            "수집 → 비교 → 수정",
-            "収集 → 比較 → 修正",
+      {recipes.map((recipe, i) => (
+        <article
+          data-recipe
+          data-ingredient={recipe.ingredient}
+          data-minutes={recipe.time}
+        >
+          {i === 0 && (
+            <img
+              {...photo("tomato-pasta.png")}
+              alt={t(
+                "Tomato and basil pasta in a ceramic bowl",
+                "그릇에 담긴 토마토 바질 파스타",
+                "器に盛ったトマトとバジルのパスタ",
+              )}
+              width="1536"
+              height="1024"
+            />
           )}
-        </p>
-        <p>
-          {t(
-            "Six resources, one collection.",
-            "자료 6개, 하나의 모음.",
-            "6件の資料、ひとつのコレクション。",
-          )}
-        </p>
-      </aside>
+          <div class="recipe-copy">
+            <span class="recipe-time">
+              {recipe.time} {t("min", "분", "分")}
+            </span>
+            <h3>{recipe.title}</h3>
+            <details>
+              <summary>{t("Recipe notes", "요리 메모", "調理メモ")}</summary>
+              <p>{recipe.note}</p>
+            </details>
+          </div>
+        </article>
+      ))}
+      <p class="empty" data-empty hidden>
+        {t(
+          "No recipes match. Clear a filter to try again.",
+          "조건에 맞는 요리법이 없습니다. 필터를 풀어 다시 찾아보세요.",
+          "条件に合うレシピがありません。条件を解除して試してください。",
+        )}
+      </p>
     </div>
   </div>
-  <button class="reset" type="button" data-reset data-interactive disabled>
-    {t("Reset", "초기화", "リセット")}
-  </button>
-  <p role="status" aria-live="polite" aria-atomic="true"></p>
+  <p class="status" role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
-  import { mountResources } from "./resource-behavior";
-  mountResources("two-columns", false);
+  import { mount } from "./shared";
+  mount("two-columns", (root, say) => {
+    const ingredient = root.querySelector<HTMLSelectElement>(
+      "select[data-ingredient]",
+    )!;
+    const time = root.querySelector<HTMLSelectElement>("select[data-time]")!;
+    const recipes = root.querySelectorAll<HTMLElement>("[data-recipe]");
+    const update = () => {
+      let count = 0;
+      recipes.forEach((recipe) => {
+        recipe.hidden =
+          !(
+            ingredient.value === "all" ||
+            ingredient.value === recipe.dataset.ingredient
+          ) ||
+          !(
+            time.value === "all" ||
+            Number(recipe.dataset.minutes) <= Number(time.value)
+          );
+        if (!recipe.hidden) count++;
+      });
+      root.querySelector("[data-count]")!.textContent = `${count} / 4`;
+      root.querySelector<HTMLElement>("[data-empty]")!.hidden = count !== 0;
+      say(`${count} ${root.dataset.resultsLabel}`);
+    };
+    ingredient.addEventListener("change", update);
+    time.addEventListener("change", update);
+    return () => {
+      ingredient.value = time.value = "all";
+      root
+        .querySelectorAll("details")
+        .forEach((detail) => (detail.open = false));
+      update();
+    };
+  });
 </script>
 <style>
-  .demo {
-    background: #f3ece5;
-    color: #443730;
-  }
-  .frame {
+  section {
     container-type: inline-size;
-    margin: auto;
+    padding: clamp(18px, 3vw, 32px);
+    background: #faf7f0;
+    color: #38352d;
+    color-scheme: light;
+    border: 1px solid #d8d0c2;
+    border-radius: 6px;
+    overflow-wrap: anywhere;
   }
-  .frame[data-width="narrow"] {
-    max-width: 300px;
+  header {
+    border-bottom: 1px solid #cfc7b9;
+    padding-bottom: 22px;
+    margin-bottom: 28px;
+  }
+  .identity {
+    font-size: 0.7rem;
+    letter-spacing: 0.17em;
+    color: #6b4f35;
+  }
+  h2 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    font-size: clamp(1.7rem, 3.4vw, 2.8rem);
+    margin: 16px 0 8px;
+  }
+  header p {
+    font-size: 0.9rem;
+    margin: 0;
   }
   .workspace {
     display: grid;
-    gap: 20px;
+    grid-template-columns: minmax(150px, 0.7fr) minmax(0, 2fr);
+    gap: 28px;
     align-items: start;
   }
   .workspace > * {
     min-width: 0;
   }
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 16px;
-    background: #e5ddd3;
-    border: 1px solid #bead9e;
-    align-items: center;
+  h3 {
+    font-size: 1.05rem;
+    letter-spacing: -0.015em;
   }
-  nav select {
+  .recipe-filters {
+    padding: 0 20px 0 0;
+    border-right: 1px solid #cfc7b9;
+  }
+  label {
+    display: grid;
+    gap: 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin: 24px 0;
+  }
+  select,
+  button {
+    max-width: 100%;
     width: 100%;
-    min-width: 0;
+    min-height: 44px;
+    padding: 10px;
+    border: 1px solid #968978;
+    border-radius: 3px;
+    background: #fffdf8;
+    color: #38352d;
+    font-size: 0.85rem;
   }
-  nav label {
-    min-width: 0;
-    display: grid;
-    gap: 8px;
+  .filter-note {
+    font-size: 0.8rem;
+    color: #635c50;
+    margin-top: 20px;
   }
-  .board {
-    display: grid;
-    gap: 16px;
-    align-items: start;
-    min-width: 0;
-    position: relative;
+  .collection-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .collection-heading span {
+    font-size: 0.8rem;
+    white-space: nowrap;
   }
   article {
-    min-width: 0;
-    padding: 14px;
-    background: #fffaf4;
-    border: 1px solid #bead9e;
+    border-bottom: 1px solid #cfc7b9;
+    padding: 18px 0;
   }
-  .art {
-    display: grid;
-    place-items: center;
-    height: 120px;
-    font-size: 3rem;
-    background: #bdc9ad;
-    color: #3f5034;
-    margin-bottom: 16px;
+  article:first-of-type {
+    padding-top: 0;
   }
-  .art-1 {
-    background: #dfb29c;
-    color: #6c3924;
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 18px;
   }
-  .art-2 {
-    background: #c7cadc;
-    color: #454b70;
+  article h3 {
+    font-size: 1.2rem;
+    margin: 8px 0;
   }
-  .art-3 {
-    background: #decf99;
-    color: #665824;
+  .recipe-time {
+    font-size: 0.75rem;
+    color: #775131;
   }
-  .art-4 {
-    background: #d1b7c5;
-    color: #664252;
-  }
-  .art-5 {
-    background: #a8c5c2;
-    color: #315a56;
-  }
-  article p,
-  aside p {
+  summary {
+    min-height: 44px;
+    padding: 10px 0;
+    cursor: pointer;
     font-size: 0.85rem;
-    line-height: 1.65;
   }
   details p {
-    margin-top: 12px;
+    font-size: 0.85rem;
+    margin: 8px 0;
   }
-  aside {
-    border-block: 1px solid #bead9e;
-    padding: 16px 0;
+  .empty {
+    padding: 28px;
+    background: #ece5d7;
   }
+  .status {
+    margin: 12px 0 0;
+    font-size: 0.85rem;
+  }
+  .status:empty {
+    display: none;
+  }
+  :focus-visible {
+    outline: 3px solid #674b30;
+    outline-offset: 3px;
+  }
+  @container (width < 520px) {
+    .workspace {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+    }
+    .recipe-filters {
+      border-right: 0;
+      border-bottom: 1px solid #cfc7b9;
+      padding: 0 0 20px;
+    }
+    label {
+      margin: 16px 0;
+    }
+    .filter-note {
+      display: none;
+    }
+    img {
+      height: 180px;
+    }
+  }
+
   .workspace {
-    grid-template-columns: 160px minmax(0, 1fr);
+    grid-template-columns: minmax(150px, 0.55fr) minmax(0, 2fr);
+    gap: 32px;
   }
-  nav {
-    display: grid;
-    grid-row: 1 / span 2;
+  .recipe-filters {
+    background: #e9e2d3;
+    padding: 20px;
+    border-right: 4px solid #7c6a51;
   }
-  .board {
-    grid-column: 2;
-  }
-  aside {
-    grid-column: 2;
-  }
-  @container (max-width:450px) {
+  @container (width < 520px) {
     .workspace {
       grid-template-columns: 1fr;
     }
-    .workspace > * {
-      grid-column: auto;
-    }
-    .board {
-      grid-template-columns: 1fr;
-    }
-    article {
-      display: block;
-    }
-    .art {
-      max-width: 100%;
+    .recipe-filters {
+      border-right: 0;
+      border-bottom: 4px solid #7c6a51;
     }
   }
 </style>

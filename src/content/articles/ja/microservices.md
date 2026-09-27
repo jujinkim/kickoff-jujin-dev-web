@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "microservices"
-lang: "ja"
-title: "マイクロサービス"
-summary: "業務機能別のサービスを独立してデプロイします。"
-category: "service-split"
-aliases: ["マイクロサービス"]
-related: ["architecture", "monolith", "modular-monolith"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
-checked: "2026-09-22"
+kind: concept
+articleId: microservices
+lang: ja
+title: マイクロサービス
+summary: 調整費用より運用独立性が重要なら機能を独立配布します。
+category: service-split
+aliases:
+  - マイクロサービス
+related:
+  - architecture
+  - monolith
+  - modular-monolith
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "独立デプロイ可能な業務機能別サービス",
-    "advantages": "課金の再ビルドなしでライブラリをリリース",
-    "limitations": "ネットワーク障害とデータ調整が必要",
-    "suitable": "安定した境界と独立リリースの必要性",
-    "combinations": "モジュラーモノリスと共存可能",
-  }
+  features: 独立デプロイ可能な業務機能別サービス
+  advantages: 課金の再ビルドなしでライブラリをリリース
+  limitations: ネットワーク障害とデータ調整が必要
+  suitable: 安定した境界と独立リリースの必要性
+  combinations: モジュラーモノリスと共存可能
 ---
 
 ## なぜ必要なのか

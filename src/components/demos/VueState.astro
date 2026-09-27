@@ -43,7 +43,10 @@ const t = local(lang),
           "ロジック：リアクティブ状態",
         )}
       </h3>
-      <p>Library Book: 0 · Garden Article: 0 → 1</p>
+      <p data-state>
+        {t("Library Book", "도서관 책", "図書館の本")}: 0 ·{" "}
+        {t("Garden Article", "정원 가꾸기 글", "庭の記事")}: 0
+      </p>
     </section>
     <section>
       <h3>
@@ -106,10 +109,6 @@ const t = local(lang),
   <p class="total">
     {p.count}: <strong data-count>0</strong> / 2
   </p>
-  <p data-state>
-    {t("Library Book", "도서관 책", "図書館の本")}: 0 ·{" "}
-    {t("Garden Article", "정원 가꾸기 글", "庭の記事")}: 0
-  </p>
   <p class="trace" data-path-state>
     {p.waiting}
   </p>
@@ -118,6 +117,24 @@ const t = local(lang),
       {p.reset}
     </button>
   </div>
+  <dl class="runtime-facts" data-runtime-facts>
+    <dt>{t("Execution boundary", "실행 경계", "実行境界")}</dt>
+    <dd>
+      {t(
+        "Browser model: card state and shared records update templates after each click.",
+        "브라우저 모형: 클릭 후 카드 상태·공유 기록이 템플릿을 갱신합니다.",
+        "ブラウザー模型：クリック後にカード状態と共通記録が表示を更新します。",
+      )}
+    </dd>
+    <dt>{t("State and responsibility", "상태와 책임", "状態と責任")}</dt>
+    <dd>
+      {t(
+        "One record set owns the count. Reload clears it; real persistence needs a service. Vue itself is not loaded here.",
+        "한 기록 집합이 개수의 원본입니다. 새로고침하면 지웁니다. 실제 저장에는 서비스가 필요하며 Vue 자체는 로드하지 않습니다.",
+        "一つの記録集合が件数の元です。再読み込みで消えます。実際の保存にはサービスが必要で、Vue自体は読み込みません。",
+      )}
+    </dd>
+  </dl>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -188,5 +205,47 @@ const t = local(lang),
   }
   .sfc > section:first-child {
     background: #e0f1e9;
+  }
+  .runtime-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 2fr);
+    gap: 10px 16px;
+    border-block: 1px solid currentColor;
+    padding: 18px 0;
+    margin: 18px 0;
+    font-size: 0.85rem;
+  }
+  .runtime-facts dt {
+    font-weight: 700;
+  }
+  .runtime-facts dd {
+    margin: 0;
+    min-width: 0;
+  }
+  @container (width<480px) {
+    .runtime-facts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .sfc {
+    border: 6px solid #315b44;
+    padding: 0;
+    border-radius: 0;
+  }
+  .sfc > section {
+    border: 0;
+    border-radius: 0;
+    border-bottom: 4px solid #315b44;
+    padding: 28px;
+  }
+  .sfc > section > h3 {
+    font-size: 1.4rem;
+  }
+  .sfc > section:last-child {
+    border-bottom: 0;
+  }
+  .total strong {
+    font-size: 3rem;
   }
 </style>

@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "free-trial"
-lang: "en"
-title: "Free trial"
-summary: "Evaluate paid features for a limited period."
-category: "access-strategies"
-aliases: ["Free trial"]
-related: ["revenue", "freemium", "subscription"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: free-trial
+lang: en
+title: Free trial
+summary: Offer time-limited evaluation before paid access is required.
+category: access-strategies
+aliases:
+  - Free trial
+related:
+  - revenue
+  - freemium
+  - subscription
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Time-limited evaluation",
-    "advantages": "Try paid capabilities",
-    "limitations": "Expiry and conversion decisions",
-    "suitable": "Value visible during trial",
-    "combinations": "Subscription after explicit choice",
-  }
+  features: Time-limited evaluation
+  advantages: Try paid capabilities
+  limitations: Expiry and conversion decisions
+  suitable: Value visible during trial
+  combinations: Subscription after explicit choice
 ---
 
 ## Why: the goal or problem

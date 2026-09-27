@@ -1,25 +1,27 @@
 ---
-kind: "concept"
-articleId: "monolith"
-lang: "ko"
-title: "모놀리스"
-summary: "서버 애플리케이션을 하나의 단위로 배포합니다."
-category: "service-split"
-aliases: ["모놀리스"]
-related: ["architecture", "modular-monolith", "microservices"]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-26"
-checked: "2026-09-22"
+kind: concept
+articleId: monolith
+lang: ko
+title: 모놀리스
+summary: 독립 배포보다 단순한 운영이 중요할 때 함께 배포합니다.
+category: service-split
+aliases:
+  - 모놀리스
+related:
+  - architecture
+  - modular-monolith
+  - microservices
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "서버 전체가 하나의 배포 단위",
-    "advantages": "작은 팀에 배포 파이프라인 하나",
-    "limitations": "배포·프로세스 장애 경계 공유",
-    "suitable": "한 팀이 밀접한 기능을 운영",
-    "combinations": "내부에 계층과 명시적 모듈 구성 가능",
-  }
+  features: 서버 전체가 하나의 배포 단위
+  advantages: 작은 팀에 배포 파이프라인 하나
+  limitations: 배포·프로세스 장애 경계 공유
+  suitable: 한 팀이 밀접한 기능을 운영
+  combinations: 내부에 계층과 명시적 모듈 구성 가능
 ---
 
 ## 왜 필요한가

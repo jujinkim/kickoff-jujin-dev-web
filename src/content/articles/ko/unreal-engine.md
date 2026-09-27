@@ -3,7 +3,7 @@ kind: concept
 articleId: unreal-engine
 lang: ko
 title: Unreal Engine
-summary: 액터의 구성과 이벤트를 연결합니다.
+summary: 월드 중심 개발에 액터·Blueprint·C++를 결합합니다.
 category: game-engines
 aliases:
   - Unreal Engine
@@ -12,10 +12,10 @@ related:
   - godot
   - unity
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 액터·컴포넌트·Blueprint 이벤트
   advantages: 게임 동작 경로 확인

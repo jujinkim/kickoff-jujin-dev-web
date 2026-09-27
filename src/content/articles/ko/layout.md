@@ -1,30 +1,31 @@
 ---
 kind: guide
-articleId: "layout"
-lang: "ko"
+articleId: layout
+lang: ko
 title: "레이아웃과 UI 요소: 가리키는 것에 이름 붙이기"
-summary: "헤더·사이드바·그리드·모달. 피드백에도 좌표가 필요합니다."
-category: "design"
+summary: 사용자의 주요 작업을 중심으로 영역과 읽기 순서를 구성합니다.
+category: design
 aliases:
-  [
-    "layout",
-    "sidebar",
-    "breadcrumb",
-    "modal",
-    "레이아웃",
-    "사이드바",
-    "모달",
-    "レイアウト",
-    "サイドバー",
-    "モーダル",
-  ]
-related: ["theme", "srs"]
-example: "layout"
-status: "published"
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+  - layout
+  - sidebar
+  - breadcrumb
+  - modal
+  - 레이아웃
+  - 사이드바
+  - 모달
+  - レイアウト
+  - サイドバー
+  - モーダル
+related:
+  - theme
+  - srs
+example: layout
+status: published
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 aiPrompt: "합의한 프로젝트와 지원 화면을 기준으로 이름 있는 영역과 컴포넌트를 설명해줘. 미결정 정보 우선순위를 확인한 뒤 배치, 읽기 순서, 키보드 동작과 해당하는 빈 상태·로딩·오류를 제안해줘. 텍스트 와이어프레임과 검증 가능한 완료 조건을 작성해줘. 합의한 기기·언어 범위를 유지하고 글의 카탈로그 예시를 요구사항으로 넣지 마."
+checked: "2026-09-27"
 ---
 
 ## 왜 필요한가

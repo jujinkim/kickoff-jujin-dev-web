@@ -1,0 +1,184 @@
+[
+  {
+    "original": "beach-diary.png",
+    "bytes": 3128721,
+    "variants": [
+      {
+        "file": "public/images/beach-diary-320.webp",
+        "width": 320,
+        "bytes": 11908
+      },
+      {
+        "file": "public/images/beach-diary-640.webp",
+        "width": 640,
+        "bytes": 45264
+      },
+      {
+        "file": "public/images/beach-diary-960.webp",
+        "width": 960,
+        "bytes": 96712
+      },
+      {
+        "file": "public/images/beach-diary-1440.webp",
+        "width": 1440,
+        "bytes": 192446
+      }
+    ]
+  },
+  {
+    "original": "fern-plant.png",
+    "bytes": 2302612,
+    "variants": [
+      {
+        "file": "public/images/fern-plant-320.webp",
+        "width": 320,
+        "bytes": 15118
+      },
+      {
+        "file": "public/images/fern-plant-640.webp",
+        "width": 640,
+        "bytes": 47764
+      },
+      {
+        "file": "public/images/fern-plant-960.webp",
+        "width": 960,
+        "bytes": 89076
+      },
+      {
+        "file": "public/images/fern-plant-1440.webp",
+        "width": 1254,
+        "bytes": 125554
+      }
+    ]
+  },
+  {
+    "original": "harbor-diary.png",
+    "bytes": 2687178,
+    "variants": [
+      {
+        "file": "public/images/harbor-diary-320.webp",
+        "width": 320,
+        "bytes": 26670
+      },
+      {
+        "file": "public/images/harbor-diary-640.webp",
+        "width": 640,
+        "bytes": 85766
+      },
+      {
+        "file": "public/images/harbor-diary-960.webp",
+        "width": 960,
+        "bytes": 155472
+      },
+      {
+        "file": "public/images/harbor-diary-1440.webp",
+        "width": 1024,
+        "bytes": 172380
+      }
+    ]
+  },
+  {
+    "original": "lake-walk.png",
+    "bytes": 2749273,
+    "variants": [
+      {
+        "file": "public/images/lake-walk-320.webp",
+        "width": 320,
+        "bytes": 10298
+      },
+      {
+        "file": "public/images/lake-walk-640.webp",
+        "width": 640,
+        "bytes": 36348
+      },
+      {
+        "file": "public/images/lake-walk-960.webp",
+        "width": 960,
+        "bytes": 76388
+      },
+      {
+        "file": "public/images/lake-walk-1440.webp",
+        "width": 1440,
+        "bytes": 147760
+      }
+    ]
+  },
+  {
+    "original": "monstera-plant.png",
+    "bytes": 1974047,
+    "variants": [
+      {
+        "file": "public/images/monstera-plant-320.webp",
+        "width": 320,
+        "bytes": 7680
+      },
+      {
+        "file": "public/images/monstera-plant-640.webp",
+        "width": 640,
+        "bytes": 19298
+      },
+      {
+        "file": "public/images/monstera-plant-960.webp",
+        "width": 960,
+        "bytes": 34582
+      },
+      {
+        "file": "public/images/monstera-plant-1440.webp",
+        "width": 1254,
+        "bytes": 50918
+      }
+    ]
+  },
+  {
+    "original": "rosemary-plant.png",
+    "bytes": 2584084,
+    "variants": [
+      {
+        "file": "public/images/rosemary-plant-320.webp",
+        "width": 320,
+        "bytes": 14640
+      },
+      {
+        "file": "public/images/rosemary-plant-640.webp",
+        "width": 640,
+        "bytes": 52772
+      },
+      {
+        "file": "public/images/rosemary-plant-960.webp",
+        "width": 960,
+        "bytes": 101560
+      },
+      {
+        "file": "public/images/rosemary-plant-1440.webp",
+        "width": 1254,
+        "bytes": 146728
+      }
+    ]
+  },
+  {
+    "original": "tomato-pasta.png",
+    "bytes": 2865687,
+    "variants": [
+      {
+        "file": "public/images/tomato-pasta-320.webp",
+        "width": 320,
+        "bytes": 14336
+      },
+      {
+        "file": "public/images/tomato-pasta-640.webp",
+        "width": 640,
+        "bytes": 43656
+      },
+      {
+        "file": "public/images/tomato-pasta-960.webp",
+        "width": 960,
+        "bytes": 87240
+      },
+      {
+        "file": "public/images/tomato-pasta-1440.webp",
+        "width": 1440,
+        "bytes": 158644
+      }
+    ]
+  }
+]

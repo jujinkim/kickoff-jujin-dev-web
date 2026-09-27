@@ -87,6 +87,13 @@ const t = local(lang),
       "対象の義務は契約に従います。国別の税務規則や普遍的な対応範囲は示しません。",
     )}
   </p>
+  <p data-contract-context class="contract-context">
+    {t(
+      "The learner buys the practice license from the merchant of record, which later settles with the app business. The diagram assigns receipts, refunds and transaction-tax duties to that seller. The app business continues product delivery and support.",
+      "학습자는 공식 판매 대행사에서 연습 이용권을 사고 대행사가 앱 업체와 정산합니다. 도표는 영수증·환불·거래 세금 의무를 대행사에 둡니다. 앱 업체는 상품 제공과 지원을 계속 맡습니다.",
+      "学習者はMoRから練習利用権を買い、MoRが後でアプリ事業者へ精算します。図では領収書・返金・取引税をMoRに割り当てます。アプリ側は商品提供と支援を続けます。",
+    )}
+  </p>
 </section>
 <style>
   .contract {
@@ -100,5 +107,24 @@ const t = local(lang),
   .money {
     border-bottom: 3px solid #567a73;
     padding-bottom: 1rem;
+  }
+
+  .contract {
+    border: 6px double #674d78;
+    padding: 28px;
+  }
+  .contract p {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  tbody tr:not(:last-child) td {
+    border-left: 7px solid #674d78;
+    font-weight: 800;
+    padding: 20px;
+  }
+  tbody tr:last-child td {
+    border-left: 7px dashed #674d78;
+    font-weight: 800;
+    padding: 20px;
   }
 </style>

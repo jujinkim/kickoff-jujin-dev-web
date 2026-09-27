@@ -1,30 +1,30 @@
 ---
 kind: guide
-articleId: "revenue"
-lang: "ko"
+articleId: revenue
+lang: ko
 title: "구독·일회 결제·광고: 가치에 맞춰 청구하기"
-summary: "가격표가 제품까지 구해주지는 않습니다."
-category: "business"
+summary: 지불자·청구·접근을 명시적인 매출·비용 가정과 연결합니다.
+category: business
 aliases:
-  [
-    "subscription",
-    "one-time",
-    "advertising",
-    "구독",
-    "일회 결제",
-    "광고",
-    "サブスクリプション",
-    "買い切り",
-    "広告",
-  ]
-related: ["payments", "srs"]
-example: "revenue"
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
+  - subscription
+  - one-time
+  - advertising
+  - 구독
+  - 일회 결제
+  - 광고
+  - サブスクリプション
+  - 買い切り
+  - 広告
+related:
+  - payments
+  - srs
+example: revenue
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
 aiPrompt: "독자와 지속 비용을 기준으로 구독·일회 결제·광고를 비교해줘. 가정을 명시하고 총매출과 비용을 구분해줘. 권한 기간, 해지, 개인정보의 미결정 사항을 물어봐. 위임 없이 수익 모델을 정하지 말고 결정 기록과 완료 조건을 남겨줘."
-checked: "2026-09-23"
+checked: "2026-09-27"
 ---
 
 ## 왜 필요한가

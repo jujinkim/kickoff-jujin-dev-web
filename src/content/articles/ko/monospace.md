@@ -3,7 +3,7 @@ kind: concept
 articleId: monospace
 lang: ko
 title: 고정폭
-summary: "같은 글자 폭으로 날씨 기록의 라틴 문자 열을 맞추고 대체 글자의 폭도 확인합니다."
+summary: 같은 문자 전진 폭으로 텍스트 데이터를 맞추며 글자 형태와 대체 글꼴은 별도로 확인합니다.
 category: character-width
 aliases:
   - 고정폭
@@ -11,15 +11,16 @@ related:
   - theme
   - proportional
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
 comparison:
-  features: 고정폭 라틴 글자는 윤곽이 달라도 전진 폭이 같습니다.
+  features: 같은 문자 전진 폭으로 텍스트 데이터를 맞추며 글자 형태와 대체 글꼴은 별도로 확인합니다.
   advantages: 같은 라틴 전진 폭이 코드·자료의 열을 맞춥니다.
   limitations: "한·일 문자, 이모지, 결합 문자, 대체 서체는 달라질 수 있어 지원 문자 집합을 확인하세요."
   suitable: 코드나 정렬된 라틴 자료에 어울립니다.
   combinations: 고정폭 코드 옆에 비례폭 설명 본문을 둘 수 있습니다.
+checked: "2026-09-27"
 ---
 
 ## 왜 필요한가
@@ -28,7 +29,7 @@ comparison:
 
 ## 어떻게 해결하는가
 
-날씨 기록표에 쓸 문구와 iiiWWW 0123, 숫자를 함께 비교합니다. 표본 입력·크기·실측 폭 가이드·숫자 정렬을 조절합니다. 글자는 하나의 문자열로 연결 형태를 유지합니다. 초기화·새로고침하면 처음 글과 48px 크기로 돌아갑니다. 지원되는 라틴 문자는 전진 폭이 같지만 대체 문자는 다를 수 있습니다.
+날씨 기록의 시간·온도·바람 열을 읽습니다. 별도 실험에서 i와 W를 비교하고 표본과 실측 가이드를 조절합니다. 지원 라틴 문자는 전진 폭이 같으며 초기화하면 48px로 돌아갑니다.
 
 ## 무엇이라 부르는가
 

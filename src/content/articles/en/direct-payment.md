@@ -1,34 +1,31 @@
 ---
-kind: "concept"
-articleId: "direct-payment"
-lang: "en"
-title: "Customer direct payment"
-summary: "Customers fund access to the product."
-category: "revenue-sources"
-aliases: ["Customer direct payment"]
+kind: concept
+articleId: direct-payment
+lang: en
+title: Customer direct payment
+summary: Users fund access when its value supports payment.
+category: revenue-sources
+aliases:
+  - Customer direct payment
 related:
-  [
-    "revenue",
-    "advertising",
-    "sponsorship",
-    "affiliate-marketing",
-    "transaction-fees",
-    "subscription",
-    "direct-seller",
-  ]
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - advertising
+  - sponsorship
+  - affiliate-marketing
+  - transaction-fees
+  - subscription
+  - direct-seller
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Customer funds access",
-    "advantages": "Value and payer align",
-    "limitations": "Payment may limit access",
-    "suitable": "Products with paid value",
-    "combinations": "Subscription or one-time billing",
-  }
+  features: Customer funds access
+  advantages: Value and payer align
+  limitations: Payment may limit access
+  suitable: Products with paid value
+  combinations: Subscription or one-time billing
 ---
 
 ## Why: the goal or problem

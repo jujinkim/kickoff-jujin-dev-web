@@ -1,33 +1,30 @@
 ---
-kind: "concept"
-articleId: "transaction-fees"
-lang: "en"
-title: "Transaction fees"
-summary: "A platform takes a share of a mediated sale."
-category: "revenue-sources"
-aliases: ["Transaction fees"]
+kind: concept
+articleId: transaction-fees
+lang: en
+title: Transaction fees
+summary: Take a share of completed marketplace transactions.
+category: revenue-sources
+aliases:
+  - Transaction fees
 related:
-  [
-    "revenue",
-    "direct-payment",
-    "advertising",
-    "sponsorship",
-    "affiliate-marketing",
-    "merchant-of-record",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - direct-payment
+  - advertising
+  - sponsorship
+  - affiliate-marketing
+  - merchant-of-record
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Fee on mediated sale",
-    "advantages": "Revenue follows transactions",
-    "limitations": "Disputes and operating costs",
-    "suitable": "Useful two-sided marketplaces",
-    "combinations": "Subscription plus seller contract",
-  }
+  features: Fee on mediated sale
+  advantages: Revenue follows transactions
+  limitations: Disputes and operating costs
+  suitable: Useful two-sided marketplaces
+  combinations: Subscription plus seller contract
 ---
 
 ## Why: the goal or problem

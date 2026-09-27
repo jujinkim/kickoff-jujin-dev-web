@@ -1,32 +1,33 @@
 ---
 kind: guide
-articleId: "tools"
-lang: "ja"
-title: "言語・フレームワーク・ライブラリ・エンジン"
-summary: "仕事の違う道具で決勝戦をしないこと。"
-category: "development"
+articleId: tools
+lang: ja
+title: 言語・フレームワーク・ライブラリ・エンジン
+summary: 役割・必要な成果・維持費用で道具を比較します。
+category: development
 aliases:
-  [
-    "language",
-    "framework",
-    "library",
-    "engine",
-    "언어",
-    "프레임워크",
-    "라이브러리",
-    "엔진",
-    "言語",
-    "フレームワーク",
-    "ライブラリ",
-    "エンジン",
-  ]
-related: ["static-sites", "shipping"]
-example: "tools"
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-aiPrompt: "候補を言語、ライブラリ、フレームワーク、エンジン、または組み合わせに分類して。確定済みの成果物と実行環境の制約を読んで。併用できる道具を示し、同じ層の代案を比較して。推薦前に未決定要件を質問して。"
+  - language
+  - framework
+  - library
+  - engine
+  - 언어
+  - 프레임워크
+  - 라이브러리
+  - 엔진
+  - 言語
+  - フレームワーク
+  - ライブラリ
+  - エンジン
+related:
+  - static-sites
+  - shipping
+example: tools
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+aiPrompt: 候補を言語、ライブラリ、フレームワーク、エンジン、または組み合わせに分類して。確定済みの成果物と実行環境の制約を読んで。併用できる道具を示し、同じ層の代案を比較して。推薦前に未決定要件を質問して。
+checked: "2026-09-27"
 ---
 
 ## なぜ必要なのか

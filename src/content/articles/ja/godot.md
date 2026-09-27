@@ -3,7 +3,7 @@ kind: concept
 articleId: godot
 lang: ja
 title: Godot
-summary: ノードで再利用可能なシーンを構成します。
+summary: オープンソースのエンジンでシーン中心のゲームを作ります。
 category: game-engines
 aliases:
   - Godot
@@ -12,10 +12,10 @@ related:
   - unity
   - unreal-engine
 status: published
-revision: 6
-sourceRevision: 6
-updated: "2026-09-26"
-checked: "2026-09-22"
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: ノードで作る再利用シーン
   advantages: アイテム構成を再利用

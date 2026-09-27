@@ -3,7 +3,7 @@ kind: concept
 articleId: static-hosting
 lang: ja
 title: 静的ホスティング
-summary: 公開ファイルと個人の書き込みを分けます。
+summary: アプリ運用を抑え、事前生成した公開ファイルを配信します。
 category: hosting-models
 aliases:
   - 静的ホスティング
@@ -12,10 +12,10 @@ related:
   - always-on-server
   - serverless-functions
 status: published
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 事前生成ファイルを配信
   advantages: 閲覧時のアプリ描画が不要

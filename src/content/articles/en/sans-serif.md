@@ -3,7 +3,7 @@ kind: concept
 articleId: sans-serif
 lang: en
 title: Sans serif
-summary: "Use plain transit labels; check weight and ambiguous glyphs."
+summary: Letterforms without serifs suit a plain visual voice; readability still depends on the chosen face and context.
 category: type-shapes
 aliases:
   - Sans serif
@@ -12,19 +12,16 @@ related:
   - serif
   - script
 status: published
-revision: 7
-sourceRevision: 7
-updated: "2026-09-26"
+revision: 9
+sourceRevision: 9
+updated: "2026-09-27"
 comparison:
-  features: >-
-    Sans-serif letters omit serifs, but their terminals and proportions still
-    vary.
+  features: Letterforms without serifs suit a plain visual voice; readability still depends on the chosen face and context.
   advantages: Size and weight establish hierarchy in the same specimen.
-  limitations: >-
-    Check ambiguous glyphs and localized CJK subsets instead of assuming
-    universal readability.
+  limitations: Check ambiguous glyphs and localized CJK subsets instead of assuming universal readability.
   suitable: Choose it for a sign or interface whose hierarchy is clear.
   combinations: Pair with flat controls or serif editorial headings.
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
@@ -33,7 +30,7 @@ Imagine a transit screen where travelers scan routes and times. Editors favor pl
 
 ## How: work toward a solution
 
-For a train information board, compare a phrase with iiiWWW 0123 and aligned numbers. Edit the specimen, adjust its size, and show measured width guides or tabular digits. Text remains shaped as one string. Reset or reload restores the initial text at 48px. Change weight to compare the same glyphs at different strengths.
+Read the transit board’s departure times, destinations and status. In the separate lab, change weight and compare similar glyphs. Local Noto Sans and its CJK companions render supported text; reset restores the initial sample.
 
 ## What: the concept
 

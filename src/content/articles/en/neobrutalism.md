@@ -3,7 +3,7 @@ kind: concept
 articleId: neobrutalism
 lang: en
 title: Neobrutalism
-summary: "Group school-fair tasks with bright blocks, thick outlines, and hard shadows for bold emphasis."
+summary: "Bright blocks, thick outlines and hard shadows give selected content deliberate graphic emphasis."
 category: styles
 aliases:
   - Neobrutalism
@@ -16,36 +16,28 @@ related:
   - flat-design
   - minimalism
 status: published
-revision: 9
-sourceRevision: 9
-updated: "2026-09-26"
+revision: 11
+sourceRevision: 11
+updated: "2026-09-27"
 comparison:
-  features: >-
-    Bright blocks, thick outlines, and hard offset shadows create graphic
-    emphasis. Bold outlines and hard shadows give the panels a graphic weight.
-  advantages: Strong blocks emphasize tasks and actions.
-  limitations: >-
-    Dense decoration competes with details; reserve strong emphasis for key
-    information.
-  suitable: Choose it for a small interface with a bold voice.
-  combinations: Keep repeated task rows concise.
-checked: "2026-09-21"
+  features: "Bold outlines, hard shadows and color"
+  advantages: Playful event blocks remain distinct
+  limitations: Strong contrast can become visual noise
+  suitable: Lively identity with explicit controls
+  combinations: "Filtering, grids and clear selection marks"
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem
 
-Imagine making a board for a school fair with dozens of stalls. Families need to spot food, games, and meeting points among many announcements.
-
-A school-fair board needs bold grouping among many stalls. Subtle surface changes may not provide enough emphasis.
+A school fair program helps families choose food, games and music. Quiet cards make the attractions blend together. The organizers want a playful graphic poster with clear groups, rather than brutalism’s raw noticeboard or minimalism’s restraint.
 
 ## How: work toward a solution
 
-For the school fair, track three tasks and two notes. Mark one task: progress becomes 1 / 3 and 33%. Filter tasks or open notes; reset restores the initial state. Bold outlines and hard shadows give the panels a graphic weight.
+Colored blocks and hard shadows separate activities. Filter to Games and mark Cardboard racers as interesting. The count updates; selecting it again removes it. Filtering preserves selections until reset or reload.
 
 ## What: the concept
 
-**Neobrutalism** — Bright blocks, thick outlines, and hard offset shadows create graphic emphasis.
+Neobrutalism uses intentional graphic weight through saturated blocks, outlines and hard offset shadows. Dense decoration can compete with details; the selected mark and text must remain clear without color.
 
-Dense decoration competes with details; reserve strong emphasis for key information.
-
-[NN/g](https://www.nngroup.com/articles/neobrutalism/)
+[NN/g: Neobrutalism](https://www.nngroup.com/articles/neobrutalism/)

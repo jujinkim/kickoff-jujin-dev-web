@@ -1,34 +1,31 @@
 ---
-kind: "concept"
-articleId: "flat-rate-pricing"
-lang: "en"
-title: "Flat-rate pricing"
-summary: "A fixed price for a defined package."
-category: "pricing-models"
-aliases: ["Flat-rate pricing"]
+kind: concept
+articleId: flat-rate-pricing
+lang: en
+title: Flat-rate pricing
+summary: Charge one package price when a predictable bundle matters most.
+category: pricing-models
+aliases:
+  - Flat-rate pricing
 related:
-  [
-    "revenue",
-    "per-seat-pricing",
-    "feature-tiered-pricing",
-    "volume-pricing",
-    "graduated-pricing",
-    "base-plus-overage",
-    "subscription",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - per-seat-pricing
+  - feature-tiered-pricing
+  - volume-pricing
+  - graduated-pricing
+  - base-plus-overage
+  - subscription
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Fixed package amount",
-    "advantages": "Predictable within limits",
-    "limitations": "Package boundaries matter",
-    "suitable": "Stable service bundles",
-    "combinations": "Subscription billing",
-  }
+  features: Fixed package amount
+  advantages: Predictable within limits
+  limitations: Package boundaries matter
+  suitable: Stable service bundles
+  combinations: Subscription billing
 ---
 
 ## Why: the goal or problem

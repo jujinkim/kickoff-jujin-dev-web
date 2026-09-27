@@ -1,0 +1,116 @@
+---
+import { render } from "astro:content";
+import type { Article } from "../lib/content";
+import { detailsFor, detailLabels } from "../lib/article-details";
+interface Props {
+  article: Article;
+}
+const { article } = Astro.props;
+const detail = await detailsFor(article);
+if (detail) await render(detail);
+const sections =
+  detail?.rendered?.html.split(/(?=<h2\b)/).filter((s) => s.trim()) ?? [];
+const t = detailLabels[article.data.lang];
+if (detail && sections.length !== 3)
+  throw new Error(`Expected three supplementary sections: ${detail.id}`);
+---
+
+{detail && (
+  <section
+    class="further-reading"
+    aria-labelledby="further-reading-title"
+    data-article-details
+  >
+    <h2 id="further-reading-title">{t.title}</h2>
+    <p class="reading-note">{t.note}</p>
+    {sections.map((html, index) => (
+      <details>
+        <summary>
+          <span aria-hidden="true">0{index + 1}</span>
+          {t.sections[index]}
+        </summary>
+        <div
+          class="prose"
+          set:html={html.replace(/<h2\b[^>]*>[\s\S]*?<\/h2>/, "")}
+        />
+      </details>
+    ))}
+    <details>
+      <summary>
+        <span aria-hidden="true">04</span>
+        {t.evidence}
+      </summary>
+      <ul class="evidence-list">
+        {detail.data.sources.map((s) => (
+          <li>
+            <a href={s.url}>{s.title} ↗</a>
+            <p>{s.claim}</p>
+            <small>
+              {t.checked} <time datetime={s.checked}>{s.checked}</time>
+            </small>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </section>
+)}
+<style>
+  .further-reading {
+    margin: 48px 0;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  .reading-note,
+  small {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  details {
+    border-top: 1px solid var(--line);
+  }
+  details:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+  summary {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    padding: 20px 4px;
+    cursor: pointer;
+    font-weight: 650;
+  }
+  summary::after {
+    content: "+";
+    margin-left: auto;
+  }
+  details[open] summary::after {
+    content: "−";
+  }
+  summary span {
+    color: var(--muted);
+    font: 0.75rem monospace;
+  }
+  summary:focus-visible {
+    outline: 3px solid var(--green);
+    outline-offset: 3px;
+  }
+  .prose {
+    padding: 0 4px 20px;
+  }
+  .evidence-list {
+    padding: 0 0 12px;
+    list-style: none;
+  }
+  li {
+    padding: 16px 4px;
+  }
+  li a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  li p {
+    margin: 8px 0;
+  }
+</style>

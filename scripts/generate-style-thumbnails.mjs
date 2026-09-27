@@ -2,6 +2,7 @@
 // Build first, serve dist, run this script, then rebuild to copy the new assets.
 import { chromium } from "@playwright/test";
 import { mkdirSync } from "node:fs";
+import sharp from "sharp";
 import { designRegistry } from "./design-registry.mjs";
 import { readArticles } from "./validate-content.mjs";
 const selected = process.argv.includes("--id")
@@ -41,6 +42,18 @@ try {
         )
         .waitFor();
       await page.evaluate(() => document.fonts.ready);
+      // Photograph demos must capture decoded local images, including lazy ones.
+      await page
+        .locator(entry.capture)
+        .locator("img")
+        .evaluateAll(async (images) => {
+          await Promise.all(
+            images.map(async (image) => {
+              image.loading = "eager";
+              await image.decode();
+            }),
+          );
+        });
       await page.evaluate(
         () => (document.documentElement.dataset.theme = "light"),
       );
@@ -65,12 +78,16 @@ try {
       );
       if (failedFonts.length)
         throw new Error(`Fonts failed: ${failedFonts.join(", ")}`);
-      await page.locator(entry.capture).screenshot({
+      const capture = await page.locator(entry.capture).screenshot({
         path: `public/thumbnails/${id}-${lang}.png`,
         type: "png",
         // Fixed off-screen navigation must not leak into tall element captures.
         style: ".skip-link { visibility: hidden !important; }",
       });
+      await sharp(capture)
+        .resize({ width: 720, withoutEnlargement: true })
+        .webp({ quality: 74, effort: 6 })
+        .toFile(`public/thumbnails/${id}-${lang}.webp`);
       console.log(`Captured ${id}/${lang}`);
     }
   }

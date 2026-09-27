@@ -161,7 +161,12 @@ for (const [lang, name, notes] of [
       assert.match(html.match(/<footer[\s\S]*?<\/footer>/)[0], noAI);
     }
     const builder = read(`dist/${lang}/start/index.html`);
-    assert.match(builder.split("data-editor")[0], noAI);
+    assert.match(
+      builder
+        .replace(/<style[^>]*>[\s\S]*?<\/style>/g, "")
+        .split(/<div[^>]*\bdata-editor\b/)[0],
+      noAI,
+    );
     for (const path of ["ai", "start/v1", "guides/srs"]) {
       const html = read(`dist/${lang}/${path}/index.html`);
       assert.match(

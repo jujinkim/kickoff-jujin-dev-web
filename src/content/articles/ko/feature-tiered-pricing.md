@@ -1,34 +1,32 @@
 ---
-kind: "concept"
-articleId: "feature-tiered-pricing"
-lang: "ko"
-title: "기능별 요금제"
-summary: "포함 기능이 다른 상품 묶음을 제공합니다."
-category: "pricing-models"
-aliases: ["기능별 요금제", "Feature-tiered pricing"]
+kind: concept
+articleId: feature-tiered-pricing
+lang: ko
+title: 기능별 요금제
+summary: 고객마다 필요한 기능 묶음이 다를 때 기능 등급별 가격을 둡니다.
+category: pricing-models
+aliases:
+  - 기능별 요금제
+  - Feature-tiered pricing
 related:
-  [
-    "revenue",
-    "flat-rate-pricing",
-    "per-seat-pricing",
-    "volume-pricing",
-    "graduated-pricing",
-    "base-plus-overage",
-    "freemium",
-  ]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+  - revenue
+  - flat-rate-pricing
+  - per-seat-pricing
+  - volume-pricing
+  - graduated-pricing
+  - base-plus-overage
+  - freemium
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "서로 다른 기능 묶음",
-    "advantages": "다양한 요구에 대응",
-    "limitations": "요금제 경계가 혼동될 수 있음",
-    "suitable": "선택 기능이 있는 제품",
-    "combinations": "구독 또는 좌석 과금",
-  }
+  features: 서로 다른 기능 묶음
+  advantages: 다양한 요구에 대응
+  limitations: 요금제 경계가 혼동될 수 있음
+  suitable: 선택 기능이 있는 제품
+  combinations: 구독 또는 좌석 과금
 ---
 
 ## 왜 필요한가

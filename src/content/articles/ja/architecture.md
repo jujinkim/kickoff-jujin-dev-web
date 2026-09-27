@@ -1,27 +1,28 @@
 ---
 kind: guide
-articleId: "architecture"
-lang: "ja"
-title: "アーキテクチャ：境界と役割を決める"
-summary: "モジュールの役割と所有を合意し、内部コードはAIが具体化します。"
-category: "planning"
+articleId: architecture
+lang: ja
+title: アーキテクチャ：境界と役割を決める
+summary: モジュール境界を選ぶ前に規則とデータの所有者を定めます。
+category: planning
 aliases:
-  [
-    "SOLID",
-    "GRASP",
-    "architecture",
-    "아키텍처",
-    "응집도",
-    "アーキテクチャ",
-    "凝集度",
-  ]
-related: ["srs", "tools"]
-example: "layers"
-status: "published"
-revision: 6
-sourceRevision: 6
-updated: "2026-09-23"
-aiPrompt: "確定済みの要件と制約を読んで。全体のモジュール、責任、データと規則の所有、依存方向、公開契約、障害復旧の担当を提案して。代案と保守費用を説明し、未決定のアーキテクチャだけ質問して。承認済みの判断を守り、境界内のクラス・メソッド・データ構造は自分で選んで。UMLは判断の説明に必要な場合に作成し、私に作成を求めないで。"
+  - SOLID
+  - GRASP
+  - architecture
+  - 아키텍처
+  - 응집도
+  - アーキテクチャ
+  - 凝集度
+related:
+  - srs
+  - tools
+example: layers
+status: published
+revision: 8
+sourceRevision: 8
+updated: "2026-09-27"
+aiPrompt: 確定済みの要件と制約を読んで。全体のモジュール、責任、データと規則の所有、依存方向、公開契約、障害復旧の担当を提案して。代案と保守費用を説明し、未決定のアーキテクチャだけ質問して。承認済みの判断を守り、境界内のクラス・メソッド・データ構造は自分で選んで。UMLは判断の説明に必要な場合に作成し、私に作成を求めないで。
+checked: "2026-09-27"
 ---
 
 ## なぜ必要なのか

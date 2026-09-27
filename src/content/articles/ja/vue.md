@@ -3,7 +3,7 @@ kind: concept
 articleId: vue
 lang: ja
 title: Vue
-summary: リアクティブな状態がテンプレートを更新します。
+summary: テンプレート中心の記述で反応状態と表示を結びます。
 category: web-ui
 aliases:
   - Vue
@@ -12,10 +12,10 @@ related:
   - react
   - svelte
 status: published
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
-checked: "2026-09-22"
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
   features: 状態に結び付いたテンプレート
   advantages: ロジックとマークアップを併記

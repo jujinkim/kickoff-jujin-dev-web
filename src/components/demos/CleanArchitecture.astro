@@ -125,6 +125,13 @@ const t = local(lang),
     <li>{b.failure}</li>
   </ul>
   <p class="footnote">{b.alternatives}</p>
+  <p class="boundary-note" data-failure-boundary>
+    {t(
+      "The four policy bands share one process here. Inward source dependencies do not create independent deployment or failure isolation.",
+      "네 정책 영역은 하나의 프로세스를 공유합니다. 안쪽 소스 의존성이 독립 배포나 장애 격리를 만들지는 않습니다.",
+      "四つの方針領域は一つのプロセスを共有します。内向きの依存が独立配布や障害隔離を作るわけではありません。",
+    )}
+  </p>
 </section>
 <style>
   section {
@@ -250,5 +257,31 @@ const t = local(lang),
     .call {
       border-color: CanvasText;
     }
+  }
+  .boundary-note {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid currentColor;
+    font-size: 0.85rem;
+  }
+
+  .ring {
+    border-width: 4px;
+    padding: clamp(10px, 2.3cqi, 26px);
+    border-radius: 30px;
+  }
+  .domain {
+    border-width: 6px;
+    border-radius: 22px;
+    padding: 24px;
+  }
+  .inward {
+    font-size: 1.15rem;
+    font-weight: 800;
+    border-width: 3px;
+  }
+  .crossing {
+    border-top: 4px dashed currentColor;
+    padding-top: 20px;
   }
 </style>

@@ -1,25 +1,28 @@
 ---
-kind: "concept"
-articleId: "non-consumable-purchase"
-lang: "en"
-title: "Non-consumable purchase"
-summary: "A purchased entitlement survives repeated use."
-category: "purchase-types"
-aliases: ["Non-consumable purchase"]
-related: ["revenue", "consumable-purchase", "one-time-payment", "freemium"]
-status: "published"
-revision: 4
-sourceRevision: 4
-updated: "2026-09-23"
-checked: "2026-09-22"
+kind: concept
+articleId: non-consumable-purchase
+lang: en
+title: Non-consumable purchase
+summary: Unlock a lasting capability without spending it on each use.
+category: purchase-types
+aliases:
+  - Non-consumable purchase
+related:
+  - revenue
+  - consumable-purchase
+  - one-time-payment
+  - freemium
+status: published
+revision: 6
+sourceRevision: 6
+updated: "2026-09-27"
+checked: "2026-09-27"
 comparison:
-  {
-    "features": "Persistent purchased entitlement",
-    "advantages": "Repeated use without depletion",
-    "limitations": "Restoration needs implementation",
-    "suitable": "Durable optional features",
-    "combinations": "Freemium and one-time payment",
-  }
+  features: Persistent purchased entitlement
+  advantages: Repeated use without depletion
+  limitations: Restoration needs implementation
+  suitable: Durable optional features
+  combinations: Freemium and one-time payment
 ---
 
 ## Why: the goal or problem

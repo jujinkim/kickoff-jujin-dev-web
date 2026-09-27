@@ -43,7 +43,7 @@ test(
           rmSync(join(dir, "src/content/articles", article.file));
       }
       const articlePath = (lang) =>
-        join(dir, "src/content/articles", lang, "srs.md");
+        join(dir, "src/content/articles", lang, "shipping.md");
       const original = matter(readFileSync(articlePath("en"), "utf8"));
       for (const [id, status] of [
         ["english-only-fixture", "published"],
@@ -61,17 +61,49 @@ test(
           matter.stringify(original.content, data),
         );
       }
+      // All production guides now have demos and must keep translations current.
+      // Exercise stale-translation rendering with a separate unregistered guide.
       for (const lang of ["en", "ko", "ja"]) {
-        const article = matter(readFileSync(articlePath(lang), "utf8"));
+        const article = structuredClone(
+          matter(readFileSync(articlePath(lang), "utf8")),
+        );
+        article.data.articleId = "stale-guide-fixture";
+        article.data.title = "Stale guide fixture";
+        article.data.aliases = ["stale-guide-fixture"];
         article.data.related.push("english-only-fixture");
         if (lang === "en") {
           article.data.revision += 1;
           article.data.sourceRevision = article.data.revision;
         }
         writeFileSync(
-          articlePath(lang),
+          join(dir, "src/content/articles", lang, "stale-guide-fixture.md"),
           matter.stringify(article.content, article.data),
         );
+      }
+      for (const [id, languages] of [
+        ["english-only-fixture", ["en"]],
+        ["stale-guide-fixture", ["en", "ko", "ja"]],
+      ]) {
+        for (const lang of languages) {
+          const detail = matter(
+            readFileSync(
+              join(dir, "src/content/article-details", lang, "shipping.md"),
+              "utf8",
+            ),
+          );
+          const article = matter(
+            readFileSync(
+              join(dir, "src/content/articles", lang, `${id}.md`),
+              "utf8",
+            ),
+          );
+          detail.data.articleId = id;
+          detail.data.sourceRevision = article.data.revision;
+          writeFileSync(
+            join(dir, "src/content/article-details", lang, `${id}.md`),
+            matter.stringify(detail.content, detail.data),
+          );
+        }
       }
       createConcept("brutalism", join(dir, "src/content/articles"));
       createConcept("glassmorphism", join(dir, "src/content/articles"));
@@ -93,6 +125,20 @@ test(
         conceptPath,
         matter.stringify(concept.content, concept.data),
       );
+      for (const lang of ["en", "ko", "ja"]) {
+        const detailPath = join(
+          dir,
+          "src/content/article-details",
+          lang,
+          "brutalism.md",
+        );
+        const detail = matter(readFileSync(detailPath, "utf8"));
+        detail.data.sourceRevision = concept.data.revision;
+        writeFileSync(
+          detailPath,
+          matter.stringify(detail.content, detail.data),
+        );
+      }
       // Public designs require all three reviewed translations. Guides still
       // exercise missing/stale translation behavior in this fixture.
       for (const [lang, headings] of [
@@ -174,19 +220,24 @@ test(
       assert.ok(html.includes("Not translated"));
       assert.ok(html.includes('href="/en/guides/english-only-fixture/"'));
       assert.ok(
-        read("ko/guides/srs/index.html").includes("번역 갱신이 필요합니다"),
+        read("ko/guides/stale-guide-fixture/index.html").includes(
+          "번역 갱신이 필요합니다",
+        ),
       );
       assert.ok(
-        read("ko/guides/srs/index.html").includes("미번역 — 영어로 읽기"),
+        read("ko/guides/stale-guide-fixture/index.html").includes(
+          "미번역 — 영어로 읽기",
+        ),
       );
       assert.equal(
-        catalog.articles.find((a) => a.id === "srs").translations.ko.stale,
+        catalog.articles.find((a) => a.id === "stale-guide-fixture")
+          .translations.ko.stale,
         true,
       );
       const manifest = JSON.parse(read("pagefind/pagefind-entry.json"));
       assert.equal(
         Object.values(manifest.languages).reduce((n, l) => n + l.page_count, 0),
-        31, // Nine active guides in three languages, three concepts, one English-only fixture.
+        34, // Nine active guides plus one stale guide in three languages, three concepts, one English-only fixture.
       );
       const category = read("en/catalog/categories/styles/index.html");
       assert.ok(category.includes('href="/en/catalog/brutalism/"'));

@@ -1,32 +1,32 @@
 ---
 kind: guide
-articleId: "shipping"
-lang: "en"
+articleId: shipping
+lang: en
 title: "Delivery and operations: where it runs, how it recovers"
-summary: "Choose target devices and operating constraints; AI plans the release procedure."
-category: "deployment"
+summary: "Connect an artifact to its users, checks, recovery path and responsible owner."
+category: deployment
 aliases:
-  [
-    "runtime",
-    "hosting",
-    "distribution",
-    "web",
-    "console",
-    "호스팅",
-    "배포",
-    "콘솔",
-    "ホスティング",
-    "配布",
-    "コンソール",
-  ]
-related: ["static-sites", "payments"]
-example: "shipping"
-status: "published"
-revision: 5
-sourceRevision: 5
-updated: "2026-09-23"
+  - runtime
+  - hosting
+  - distribution
+  - web
+  - console
+  - 호스팅
+  - 배포
+  - 콘솔
+  - ホスティング
+  - 配布
+  - コンソール
+related:
+  - static-sites
+  - payments
+example: shipping
+status: published
+revision: 7
+sourceRevision: 7
+updated: "2026-09-27"
 aiPrompt: "Separate runtime, distribution and hosting for our agreed target devices. Ask about unresolved channels, acceptable downtime, recovery expectations, operating responsibility and budget. Identify artifacts, access needs and current platform rules. Choose a release procedure and validation gates that fit the approved constraints; explain capacity costs and recovery limits. Ask before increasing cost, exposure or downtime. Do not require me to choose rolling, blue-green or canary terminology. Plan execution is not deployment permission."
-checked: "2026-09-23"
+checked: "2026-09-27"
 ---
 
 ## Why: the goal or problem

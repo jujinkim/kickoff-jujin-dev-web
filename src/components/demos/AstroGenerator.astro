@@ -76,8 +76,8 @@ const t = local(lang),
       {t("Generated HTML files", "생성된 HTML 파일", "生成HTMLファイル")}{" "}
       <strong data-output-count>0</strong>
       <p>
-        index.html · morning-walk.html · weekend-recipes.html ·
-        garden-notes.html
+        index.html · block-party.html · pet-adoption.html ·
+        community-meeting.html
       </p>
     </li>
     <li data-stage="3">
@@ -137,6 +137,24 @@ const t = local(lang),
       )}
     </p>
   </aside>
+  <dl class="runtime-facts" data-runtime-facts>
+    <dt>{t("Execution boundary", "실행 경계", "実行境界")}</dt>
+    <dd>
+      {t(
+        "Build: components and Markdown → HTML; selected islands run in the browser.",
+        "빌드: 컴포넌트·Markdown → HTML. 선택한 아일랜드는 브라우저 실행.",
+        "ビルド：コンポーネント・Markdown→HTML。選んだアイランドはブラウザーで実行。",
+      )}
+    </dd>
+    <dt>{t("State and responsibility", "상태와 책임", "状態と責任")}</dt>
+    <dd>
+      {t(
+        "Publisher owns builds and artifacts; a separate API owns personal saves.",
+        "발행자는 빌드·산출물, 별도 API는 개인 저장을 담당합니다.",
+        "公開担当はビルドと成果物、別APIは個人保存を担当します。",
+      )}
+    </dd>
+  </dl>
   <p role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 <script>
@@ -201,6 +219,61 @@ const t = local(lang),
   @container (max-width:560px) {
     .pipeline {
       grid-template-columns: 1fr;
+    }
+  }
+  .runtime-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 2fr);
+    gap: 10px 16px;
+    border-block: 1px solid currentColor;
+    padding: 18px 0;
+    margin: 18px 0;
+    font-size: 0.85rem;
+  }
+  .runtime-facts dt {
+    font-weight: 700;
+  }
+  .runtime-facts dd {
+    margin: 0;
+    min-width: 0;
+  }
+  @container (width<480px) {
+    .runtime-facts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pipeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .pipeline > li {
+    border: 3px solid #304f83;
+    padding: 22px;
+  }
+  .pipeline > li:nth-child(3) {
+    grid-column: span 2;
+    border: 6px double #304f83;
+  }
+  .island {
+    max-width: 480px;
+    margin-left: auto;
+    border: 5px solid #825335;
+    padding: 24px;
+    border-radius: 60px;
+  }
+  .api {
+    margin-top: 32px;
+    border-width: 3px;
+  }
+  @container (width < 560px) {
+    .pipeline {
+      grid-template-columns: 1fr;
+    }
+    .pipeline > li:nth-child(3) {
+      grid-column: auto;
+    }
+    .island {
+      border-radius: 28px;
     }
   }
 </style>
