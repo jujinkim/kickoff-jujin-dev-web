@@ -15,7 +15,11 @@ const moduleURL = (source) =>
   ).toString("base64")}`;
 const startupURL = moduleURL(read("src/lib/startup.ts"));
 const { startupPrompt } = await import(startupURL);
-const { projectPrompt } = await import(moduleURL(read("src/lib/ai.ts")));
+const { projectPrompt } = await import(
+  moduleURL(
+    read("src/lib/ai.ts").replace('"./startup"', JSON.stringify(startupURL)),
+  )
+);
 const { composeStartupPrompt } = await import(
   moduleURL(
     read("src/lib/prompt-builder.ts").replace(
@@ -80,13 +84,57 @@ for (const [lang, name, notes] of [
     const noScript = read(`dist/${lang}/start/index.html`).match(
       /<noscript>[\s\S]*?<\/noscript>/,
     )[0];
+    const workflow = {
+      en: [
+        "realistic options, pros/cons",
+        "requirements and constraints",
+        "use your recommendation",
+        "without asking again",
+        "task file",
+        "automatically commit locally after checks pass",
+        "existing restrictions",
+        "applied design/architecture",
+        "reasons and tradeoffs",
+        "user-confirmed versus delegated",
+        "save/commit status",
+        "remaining work",
+      ],
+      ko: [
+        "현실적인 선택지·장단점",
+        "요구·제약에 근거한 추천",
+        "알아서 추천대로 해줘",
+        "재확인 없이",
+        "작업 파일",
+        "금지 규칙을 지켜 자동 로컬 커밋",
+        "적용한 디자인·아키텍처",
+        "이유·절충점",
+        "사용자 확정과 위임받은 선택",
+        "저장·커밋 상태",
+        "남은 작업",
+      ],
+      ja: [
+        "現実的な選択肢・利点と欠点",
+        "要件と制約に基づく推薦",
+        "推薦どおりに任せます",
+        "聞き直さず",
+        "作業ファイル",
+        "検証通過後に既存の禁止規則を守って自動でローカルコミット",
+        "適用したデザイン・構成",
+        "理由・トレードオフ",
+        "ユーザー確定と委任された判断",
+        "保存・コミット状態",
+        "残作業",
+      ],
+    }[lang];
     for (const prompt of [
       minimal,
+      startupPrompt(lang),
       startupPrompt(lang, "v1"),
       projectPrompt[lang],
       noScript,
     ])
-      for (const term of versionControl) assert.ok(prompt.includes(term), term);
+      for (const term of [...versionControl, ...workflow])
+        assert.ok(prompt.includes(term), `${lang}: ${term}`);
     for (const prompt of [minimal, projectPrompt[lang]])
       assert.doesNotMatch(prompt, /llms\.txt|catalog\.json|\/categories\//);
     const literal = '<script>alert("x")</script> & <b>books</b>\nSecond line';

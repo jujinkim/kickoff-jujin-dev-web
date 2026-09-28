@@ -10,9 +10,46 @@ test("startup versions publish localized HTML and English-only Markdown with lat
     const html = read(`${lang}/start/v1/index.html`);
     assert.match(
       source,
-      { en: /Revision: 5\./, ko: /리비전: 5\./, ja: /リビジョン: 5。/ }[lang],
+      { en: /Revision: 6\./, ko: /리비전: 6\./, ja: /リビジョン: 6。/ }[lang],
     );
-    assert.ok(source.includes("2026-09-27"));
+    assert.ok(source.includes("2026-09-28"));
+    for (const obligation of {
+      en: [
+        "Use your recommendation",
+        "uncertainty or silence",
+        "task file",
+        "automatic local commits",
+        "reasons/tradeoffs",
+        "remaining gaps",
+      ],
+      ko: [
+        "알아서 추천대로 해줘",
+        "불확실함이나 침묵",
+        "작업 파일",
+        "자동 로컬 커밋",
+        "이유·절충점",
+        "남은 사항",
+      ],
+      ja: [
+        "推薦どおりに任せます",
+        "不明や沈黙",
+        "作業ファイル",
+        "自動ローカルコミット",
+        "理由・トレードオフ",
+        "残る事項",
+      ],
+    }[lang])
+      assert.ok(source.includes(obligation), `${lang}: ${obligation}`);
+    for (let revision = 1; revision <= 6; revision++)
+      assert.ok(
+        html.includes(
+          {
+            en: `revision ${revision}`,
+            ko: `리비전 ${revision}`,
+            ja: `リビジョン${revision}`,
+          }[lang],
+        ),
+      );
     for (const oldRequirement of [
       "Offer the entire catalog",
       "모든 카탈로그를 제안",

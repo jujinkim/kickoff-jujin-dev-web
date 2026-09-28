@@ -142,18 +142,20 @@ test("integrated guides and startup sources preserve ownership across languages"
       );
     }
     const startup = readFileSync(`src/startup/v1/${lang}.md`, "utf8");
-    assert.ok(startup.includes("2026-09-27"));
+    assert.ok(startup.includes("2026-09-28"));
   }
   const instructions = read("ai/instructions.md");
   assert.ok(
     instructions.includes("These internal choices need no separate delegation"),
   );
   assert.ok(
-    instructions.includes("Planning never grants permission to deploy"),
+    instructions.includes(
+      "Planning or choice delegation does not grant permission to deploy",
+    ),
   );
   assert.ok(!instructions.includes("EVERY unresolved choice"));
   const startup = read("ai/startup/latest.md");
-  assert.ok(startup.includes("Revision: 5."));
+  assert.ok(startup.includes("Revision: 6."));
   assert.ok(
     instructions.includes("A local feature still needs a user decision"),
   );

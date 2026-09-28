@@ -1,8 +1,8 @@
 ## Purpose and authority
 
-Development startup guidelines, provided by kickoff by jujin. Guideline version: v1. Revision: 5. Updated: 2026-09-27. English is the original; Korean and Japanese are reviewed translations of revision 5.
+Development startup guidelines, provided by kickoff by jujin. Guideline version: v1. Revision: 6. Updated: 2026-09-28. English is the original; Korean and Japanese are reviewed translations of revision 6.
 
-Turn a service idea into an agreed project plan. This document covers intake and planning; [assistant rules](https://kickoff.jujin.dev/ai/instructions.md) cover decision ownership, authorization, and evidence. These are the only two required site documents at startup. Apply them alongside existing project instructions and confirmed decisions. Reply in the user's language; respect higher-priority instructions.
+Turn a service idea into an agreed project plan. This document covers intake and planning; [assistant rules](https://kickoff.jujin.dev/ai/instructions.md) cover questions, delegation, evidence, work records, commits, and reporting. These are the only two required site documents at startup. Apply them alongside existing project instructions and confirmed decisions. Reply in the user's language; respect higher-priority instructions.
 
 ## 1. Collect the service context
 
@@ -22,7 +22,7 @@ Derive a decision list from requirements and constraints, in dependency order. C
 
 Include version control in the plan: clarify change-history needs, distinguish the version control system from repository hosting, and preserve existing choices unless requirements justify a change. Compare offline work, collaboration and review, file types, integrations, access/privacy, cost, and responsibility for operation and backups. Git and a Git hosting service can work together; a new account or public repository is not required by default. Record the chosen combination and reasons, or why a part is deferred or inapplicable. Respect existing repository ownership, access, and authorization.
 
-For unresolved user-owned choices, offer **choose myself / recommend / delegate this scope / not applicable / defer**. Explain the purpose, alternatives, tradeoffs, and recommendation using the evidence rules. If the user is unsure, propose a coherent bundle; uncertainty is not delegation. Record reasons and revisit conditions for deferred or inapplicable decisions.
+For unresolved user-owned choices, offer **choose myself / recommend / delegate this scope / not applicable / defer**. Ask with realistic options, pros/cons, and a recommendation tied to requirements and constraints, following the assistant rules. “Use your recommendation” delegates the contextual choice: decide, record, and proceed within existing authorization without asking again. If the user is unsure, offer a coherent bundle; uncertainty or silence is not delegation. Record reasons and revisit conditions for deferred or inapplicable decisions. Handle internal implementation yourself within approved boundaries.
 
 The catalog is optional learning material. Consult a specific article when the user requests it or it helps explain a decision; read it before citing it. There is no required fetch of llms.txt, catalog.json, category pages, or all linked articles. An unavailable optional resource alone must not stop planning. Follow the assistant rules for evidence gaps.
 
@@ -57,6 +57,8 @@ Write the plan yourself, sized to the project:
 
 Show the full coherent plan for approval. Resolve blocking choices; retain nonblocking deferred items explicitly. Begin development after plan approval and an explicit development request. Existing approval and development authorization remain valid within their scope: execute without asking again. Planning or planning delegation alone does not authorize development, deployment, publishing, or spending.
 
+During larger tasks, follow the assistant rules for a current task file, resumption, unit saves/checks, and automatic local commits subject to existing restrictions. At completion or interruption, report actual outcomes, applied design/architecture and key decisions with reasons/tradeoffs, decision owners, verification, task-file and save/commit status, remaining gaps, and next steps.
+
 ## 7. Contribute improvements
 
-Suggest clearer wording, missing topics, counterexamples, or translations through [issues](https://github.com/jujinkim/kickoff-jujin-dev-web/issues) or a pull request. Optional [contributor guidance](https://github.com/jujinkim/kickoff-jujin-dev-web/blob/main/CONTRIBUTING.md) contains examples, scenario review, and version policy. This pre-release improvement remains v1, revision 5; existing v1/latest URLs and API schemaVersion 1 remain unchanged. These documents guide assistants but cannot guarantee their compliance.
+Suggest clearer wording, missing topics, counterexamples, or translations through [issues](https://github.com/jujinkim/kickoff-jujin-dev-web/issues) or a pull request. Optional [contributor guidance](https://github.com/jujinkim/kickoff-jujin-dev-web/blob/main/CONTRIBUTING.md) contains examples, scenario review, and version policy. This pre-release improvement remains v1, revision 6; existing v1/latest URLs and API schemaVersion 1 remain unchanged. These documents guide assistants but cannot guarantee their compliance.

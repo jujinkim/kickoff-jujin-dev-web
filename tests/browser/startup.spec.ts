@@ -15,6 +15,32 @@ const versionControl = {
   ko: /버전 관리 시스템과 저장소 호스팅/,
   ja: /バージョン管理システムとリポジトリホスティング/,
 };
+const workflow = {
+  en: [
+    /realistic options, pros\/cons/,
+    /use your recommendation/,
+    /task file/,
+    /automatically commit locally after checks pass/,
+    /applied design\/architecture/,
+    /save\/commit status/,
+  ],
+  ko: [
+    /현실적인 선택지·장단점/,
+    /알아서 추천대로 해줘/,
+    /작업 파일/,
+    /자동 로컬 커밋/,
+    /적용한 디자인·아키텍처/,
+    /저장·커밋 상태/,
+  ],
+  ja: [
+    /現実的な選択肢・利点と欠点/,
+    /推薦どおりに任せます/,
+    /作業ファイル/,
+    /自動でローカルコミット/,
+    /適用したデザイン・構成/,
+    /保存・コミット状態/,
+  ],
+};
 const identity = {
   en: {
     learning: "Custom prompts and project planning resources",
@@ -50,6 +76,8 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await expect(prompt).toHaveValue(/\/ai\/startup\/latest.md/);
     await expect(prompt).toHaveValue(/\/ai\/instructions.md/);
     await expect(prompt).toHaveValue(versionControl[lang]);
+    for (const requirement of workflow[lang])
+      await expect(prompt).toHaveValue(requirement);
     await expect(prompt).not.toHaveValue(
       /llms\.txt|catalog\.json|\/categories\//,
     );
@@ -67,6 +95,8 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await expect(page.locator("#startup-prompt")).toContainText(
       versionControl[lang],
     );
+    for (const requirement of workflow[lang])
+      await expect(page.locator("#startup-prompt")).toContainText(requirement);
     await page.locator('[data-copy="startup-prompt"]').click();
     await expect(page.locator(".prompt-section [role=status]")).toContainText(
       handoff[lang],
@@ -108,6 +138,8 @@ for (const lang of ["en", "ko", "ja"] as const) {
     const aiPrompt = page.locator("#project-prompt");
     await expect(aiPrompt).toContainText("/ai/instructions.md");
     await expect(aiPrompt).toContainText(versionControl[lang]);
+    for (const requirement of workflow[lang])
+      await expect(aiPrompt).toContainText(requirement);
     await expect(aiPrompt).not.toContainText(/llms\.txt|catalog\.json/);
     await page.locator('[data-copy="project-prompt"]').click();
     await expect(page.locator(".prompt-section [role=status]")).toContainText(
@@ -266,6 +298,8 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await expect(page.locator("noscript pre")).toContainText(
       versionControl[lang],
     );
+    for (const requirement of workflow[lang])
+      await expect(page.locator("noscript pre")).toContainText(requirement);
     await expect(page.locator("noscript pre")).toContainText(
       "/ai/startup/latest.md",
     );
