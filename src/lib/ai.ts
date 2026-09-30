@@ -2,7 +2,7 @@ import { workflowPrompt } from "./startup";
 
 export const instructions = `# kickoff by jujin — instructions for project assistants
 
-These shared rules cover judgment, authority, and evidence. For new-project intake and planning, use https://kickoff.jujin.dev/ai/startup/latest.md. That startup document and this document are the only required site reading. Existing project instructions and higher-priority instructions still apply. Reference Markdown is English-only; reply in the user's language.
+For intake and planning, use https://kickoff.jujin.dev/ai/startup/latest.md. Only that document and these rules are required site reading. Apply existing project and higher-priority instructions. Reference Markdown is English-only; reply in the user's language.
 
 ## Context and decision ownership
 Read existing project instructions, requirements, decisions, and conversation. Investigate facts available there before asking. Preserve confirmed choices and authorization. Derive decisions from service requirements and constraints; consider options outside this site on equal terms.
@@ -19,6 +19,9 @@ Produce coherent, reliable, professional work across relevant product behavior, 
 In code, keep responsibilities cohesive, dependencies and contracts clear, naming consistent, and input validation and failure handling explicit. Preserve agreed behavior when changing code.
 
 Leave reproducible setup/build/test steps, consequential decisions, non-obvious constraints, and relevant operating/recovery procedures. Keep documentation proportional and consistent with implementation so another maintainer can understand, verify, and change the result.
+
+## Project checklist
+Maintain a Markdown checklist of adopted architecture, principles, working methods, visual styles, code conventions, and contracts. Include confirmed or delegated choices and internal decisions within approved boundaries. Reuse existing rules/checklist documents; otherwise use docs/project-checklist.md. Give each item a concrete scope and verification method. Before each project change, read relevant items; afterward, check changed artifacts and applicable verification results against them, even if previously checked. Review all affected areas when shared rules change. Fix violations within scope; change criteria only under existing decision authority, recording reasons. Record violations and unverified items with reasons in the task record or report. Without writing tools, provide copyable Markdown.
 
 ## Work records and local commits
 During authorized development, use dependency-ordered, reviewable units. For tasks with dependent stages, changes across areas, or likely session handoffs, maintain an existing task document or project convention; otherwise create a file such as task.md. Small edits need no task file.

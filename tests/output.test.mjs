@@ -100,6 +100,12 @@ test("AI rules keep decision ownership and selective evidence; scenarios live in
     "Existing commit prohibition",
     "No repository or no writing tools",
     "Partial completion or interruption",
+    "Existing project checklist",
+    "Small change and earlier checkmarks",
+    "Shared criterion changes",
+    "Violated or unverified criterion",
+    "Criterion change authority",
+    "Checklist without writing tools",
   ])
     assert.ok(contributor.includes(scenario), scenario);
   for (const rule of [
@@ -132,6 +138,17 @@ test("AI rules keep decision ownership and selective evidence; scenarios live in
     "Read an article before citing it",
     "catalog access failure alone must not block planning",
     "acceptance criteria",
+    "Markdown checklist of adopted architecture, principles, working methods, visual styles, code conventions, and contracts",
+    "confirmed or delegated choices and internal decisions within approved boundaries",
+    "Reuse existing rules/checklist documents",
+    "docs/project-checklist.md",
+    "concrete scope and verification method",
+    "Before each project change, read relevant items",
+    "check changed artifacts and applicable verification results against them, even if previously checked",
+    "Review all affected areas when shared rules change",
+    "change criteria only under existing decision authority, recording reasons",
+    "Record violations and unverified items with reasons in the task record or report",
+    "Without writing tools, provide copyable Markdown",
   ])
     assert.ok(text.includes(rule), rule);
   assert.ok(!text.includes("## Acceptance scenarios"));

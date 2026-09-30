@@ -23,6 +23,9 @@ const workflow = {
     /automatically commit locally after checks pass/,
     /applied design\/architecture/,
     /save\/commit status/,
+    /Markdown checklist of adopted project criteria/,
+    /read relevant items before changes/,
+    /verify actual results afterward/,
   ],
   ko: [
     /현실적인 선택지·장단점/,
@@ -31,6 +34,9 @@ const workflow = {
     /자동 로컬 커밋/,
     /적용한 디자인·아키텍처/,
     /저장·커밋 상태/,
+    /채택한 프로젝트 기준을 Markdown 체크리스트로 유지/,
+    /수정 전 관련 항목을 읽고/,
+    /수정 후 실제 결과를 검증/,
   ],
   ja: [
     /現実的な選択肢・利点と欠点/,
@@ -39,6 +45,9 @@ const workflow = {
     /自動でローカルコミット/,
     /適用したデザイン・構成/,
     /保存・コミット状態/,
+    /採用したプロジェクト基準をMarkdownチェックリストとして維持/,
+    /変更前に関連項目を読み/,
+    /変更後に実際の結果を検証/,
   ],
 };
 const identity = {

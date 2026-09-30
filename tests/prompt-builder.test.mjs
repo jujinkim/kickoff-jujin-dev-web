@@ -98,6 +98,9 @@ for (const [lang, name, notes] of [
         "user-confirmed versus delegated",
         "save/commit status",
         "remaining work",
+        "Markdown checklist of adopted project criteria",
+        "read relevant items before changes",
+        "verify actual results afterward",
       ],
       ko: [
         "현실적인 선택지·장단점",
@@ -111,6 +114,9 @@ for (const [lang, name, notes] of [
         "사용자 확정과 위임받은 선택",
         "저장·커밋 상태",
         "남은 작업",
+        "채택한 프로젝트 기준을 Markdown 체크리스트로 유지",
+        "수정 전 관련 항목을 읽고",
+        "수정 후 실제 결과를 검증",
       ],
       ja: [
         "現実的な選択肢・利点と欠点",
@@ -124,6 +130,9 @@ for (const [lang, name, notes] of [
         "ユーザー確定と委任された判断",
         "保存・コミット状態",
         "残作業",
+        "採用したプロジェクト基準をMarkdownチェックリストとして維持",
+        "変更前に関連項目を読み",
+        "変更後に実際の結果を検証",
       ],
     }[lang];
     for (const prompt of [

@@ -10,9 +10,9 @@ test("startup versions publish localized HTML and English-only Markdown with lat
     const html = read(`${lang}/start/v1/index.html`);
     assert.match(
       source,
-      { en: /Revision: 6\./, ko: /리비전: 6\./, ja: /リビジョン: 6。/ }[lang],
+      { en: /Revision: 7\./, ko: /리비전: 7\./, ja: /リビジョン: 7。/ }[lang],
     );
-    assert.ok(source.includes("2026-09-28"));
+    assert.ok(source.includes("2026-10-01"));
     for (const obligation of {
       en: [
         "Use your recommendation",
@@ -21,6 +21,9 @@ test("startup versions publish localized HTML and English-only Markdown with lat
         "automatic local commits",
         "reasons/tradeoffs",
         "remaining gaps",
+        "Markdown checklist of adopted project criteria",
+        "scope and verification methods",
+        "maintain and check it under the assistant rules",
       ],
       ko: [
         "알아서 추천대로 해줘",
@@ -29,6 +32,10 @@ test("startup versions publish localized HTML and English-only Markdown with lat
         "자동 로컬 커밋",
         "이유·절충점",
         "남은 사항",
+        "채택한 프로젝트 기준",
+        "적용 범위·확인 방법",
+        "Markdown 체크리스트",
+        "AI 행동 지침에 따라 유지하고 점검",
       ],
       ja: [
         "推薦どおりに任せます",
@@ -37,10 +44,14 @@ test("startup versions publish localized HTML and English-only Markdown with lat
         "自動ローカルコミット",
         "理由・トレードオフ",
         "残る事項",
+        "採用したプロジェクト基準",
+        "適用範囲、確認方法",
+        "Markdownチェックリスト",
+        "AI行動規則に従って維持・確認",
       ],
     }[lang])
       assert.ok(source.includes(obligation), `${lang}: ${obligation}`);
-    for (let revision = 1; revision <= 6; revision++)
+    for (let revision = 1; revision <= 7; revision++)
       assert.ok(
         html.includes(
           {

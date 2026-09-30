@@ -1,6 +1,6 @@
 ## 목적과 적용 범위
 
-개발 시작 지침 문서, provided by kickoff by jujin. 지침 버전: v1. 리비전: 6. 갱신일: 2026-09-28. 영어가 원본이며, 한국어·일본어는 원본 리비전 6에 대응합니다.
+개발 시작 지침 문서, provided by kickoff by jujin. 지침 버전: v1. 리비전: 7. 갱신일: 2026-10-01. 영어가 원본이며, 한국어·일본어는 원본 리비전 7에 대응합니다.
 
 서비스 아이디어를 합의된 프로젝트 기획으로 구체화합니다. 이 문서는 입력 수집과 기획을, [AI 행동 지침](https://kickoff.jujin.dev/ai/instructions.md)은 질문·위임·근거·작업 기록·커밋·보고를 담당합니다. 시작 시 필수 사이트 문서는 이 두 개뿐입니다. 기존 프로젝트 지침·확정된 결정과 함께 적용합니다. 사용자 언어로 답하고 상위 지침을 우선합니다.
 
@@ -52,6 +52,7 @@ SOLID·GRASP를 프로그래밍 방식에 맞게 사용해 응집된 책임, 낮
 
 - 입력받은 이름·설명·맥락, 번호가 있는 요구사항, MVP·비목표, 측정 가능한 완료 조건.
 - 관련 제품·소프트웨어·디자인·수익화·운영 결정과 대안·이유·가정·영향·재검토 조건. 제안·채택·거절·대체·보류 상태, 결정 주체, 정확한 위임 범위.
+- 채택한 프로젝트 기준과 적용 범위·확인 방법을 담은 Markdown 체크리스트. AI 행동 지침에 따라 유지하고 점검합니다.
 - 위험·미확정 질문·차단 사항, 의존 순서에 따른 작업 목록, 요구사항에 연결된 검증 계획.
 - 지침 버전·리비전과 실제 참고한 자료만 기록. 카탈로그 조회일·글 ID 목록·카탈로그 사본은 필수가 아닙니다.
 
@@ -61,4 +62,4 @@ SOLID·GRASP를 프로그래밍 방식에 맞게 사용해 응집된 책임, 낮
 
 ## 7. 함께 개선하기
 
-표현 개선, 빠진 주제, 반례, 번역을 [이슈](https://github.com/jujinkim/kickoff-jujin-dev-web/issues)나 PR로 제안할 수 있습니다. 선택 참고자료인 [기여 지침](https://github.com/jujinkim/kickoff-jujin-dev-web/blob/main/CONTRIBUTING.md)에 예시·시나리오 검토·버전 정책이 있습니다. 이번 출시 전 개선은 v1 리비전 6으로 유지하며, 기존 v1/latest URL과 API schemaVersion 1은 바꾸지 않습니다. 이 문서는 AI를 안내하지만 준수를 보장하지는 않습니다.
+표현 개선, 빠진 주제, 반례, 번역을 [이슈](https://github.com/jujinkim/kickoff-jujin-dev-web/issues)나 PR로 제안할 수 있습니다. 선택 참고자료인 [기여 지침](https://github.com/jujinkim/kickoff-jujin-dev-web/blob/main/CONTRIBUTING.md)에 예시·시나리오 검토·버전 정책이 있습니다. 이번 출시 전 개선은 v1 리비전 7로 유지하며, 기존 v1/latest URL과 API schemaVersion 1은 바꾸지 않습니다. 이 문서는 AI를 안내하지만 준수를 보장하지는 않습니다.

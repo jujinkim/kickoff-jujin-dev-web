@@ -1,5 +1,34 @@
 # AI guidance reviews
 
+## v1 revision 7 guidance review
+
+Reviewed 2026-10-01 against the approved Markdown project-checklist plan. The user selected relevant-item review before and after each change, with broader impact review when shared criteria change. English rules and reminders were written first, then Korean/Japanese startup artifacts and workflow reminders were reviewed for equivalent obligations. Detailed creation, reuse, checks, authority, and reporting rules live in the shared English assistant instructions; startup documents and copied prompts connect to those rules.
+
+Manual scenario and translation review (prescribed behavior, not external AI compliance):
+
+| Scenario                                                                     | Result and supporting rule                                                                                                                                                                                                               |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Adopted architecture, principles, methods, styles, conventions, or contracts | Shared rules maintain criteria from confirmed or delegated choices and internal decisions within approved boundaries. Each item has concrete scope and a verification method.                                                            |
+| Existing Markdown rules/checklist                                            | Reuse the existing document; otherwise use `docs/project-checklist.md`. Contributor examples explain linking decisions without duplicating criteria.                                                                                     |
+| Small edit or previously checked item                                        | Read relevant items before every change and check actual changed artifacts and applicable verification results afterward, including previously checked items. Small edits still need no task file.                                       |
+| Shared criterion changes                                                     | Review all affected areas; criterion updates follow existing decision authority and record reasons. Unrelated choices remain outside the change.                                                                                         |
+| Violated or unverified item                                                  | Fix in-scope violations and report violations/unverified items with reasons in the task record or report. Do not rewrite criteria merely to hide a violation.                                                                            |
+| Undelegated project choice versus internal decision                          | User-owned architecture/design-direction changes retain existing ownership; internal choices within approved boundaries require no separate delegation.                                                                                  |
+| No writing tools                                                             | Provide copyable Markdown; contributor scenarios require honest disclosure of unsaved or unverified work.                                                                                                                                |
+| EN/KO/JA prompt paths                                                        | All startup sources name the checklist artifact, scope, and verification methods and connect to the shared rules. `workflowPrompt` supplies equivalent reminders to latest, pinned, project, generated, and JavaScript-disabled prompts. |
+| Earlier obligations and document budget                                      | Only the original two documents remain required; catalog references stay optional. Shortened English introductory and optional-reference wording preserves its obligations.                                                              |
+
+Sequential local verification completed:
+
+- `npm run check`: passed; 214 files with zero errors/warnings/hints, 276 articles validated, and formatting passed.
+- `npm run build`: passed; 440 static pages and 249 indexed documents.
+- `scripts/measure-ai-input.py` with tiktoken 0.12.0 and `o200k_base`: startup **1,628** + assistant rules **1,366** = **2,994 / 3,000 tokens**. Future wording changes must be measured again because only six tokens remain below the limit.
+- `npm test`: **51/51 passed**, including revision/history, translated checklist reminders, all prompt entry points, authority boundaries, required rules, and stable output identities.
+- `npm run test:e2e -- tests/browser/startup.spec.ts --output=/tmp/kickoff-revision-7-e2e`: **20/20 passed** in 27.3 seconds. Covers EN/KO/JA generated, pinned and project prompt copying, no-JavaScript fallback, keyboard use, clipboard failure, input privacy, and 320/768/1440px light/dark layouts.
+- Catalog JSON remained byte-identical: SHA-256 `ea42c0be62ae1b012c8ec24a5dd4a4b50462cfe2a798b038cce6da624353f508` before and after the build.
+
+This instruction-only change needs no demo or thumbnail regeneration. Public routes, IDs, comment keys, API schemaVersion 1, and browser-only input handling are preserved. No full catalog browser suite, external AI compliance test, or deployment was performed. See [revision 7 task record](ai-guidance-revision-7-task.md) for save/commit state and the resume point.
+
 ## v1 revision 6 guidance review
 
 Reviewed 2026-09-28 against the approved question/delegation, task-record/commit, and completion-report plan. English rules and startup wording were written first. Korean and Japanese preserve the same contextual delegation, existing authorization, work tracking, and report obligations. Detailed exceptions live in the required English assistant rules; all three startup documents connect to them. `workflowPrompt` supplies one localized core request to latest/pinned and project prompts. Generated prompts and the no-JavaScript fallback inherit the same request through `startupPrompt`.

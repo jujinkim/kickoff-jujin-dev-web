@@ -65,9 +65,34 @@ Also review these product quality scenarios:
 
 Automated checks verify documents, links, generated output, and copy controls. They do not prove that external assistants obey the documents. Model-by-model comparisons are not a release requirement because assistant behavior changes with models and tools. Review the prescribed workflow and translation consistency; retain local document and site checks. See [guidance reviews and token measurement](docs/ai-guidance-review.md).
 
+## Project checklist review
+
+Revision 7 asks assistants to maintain a Markdown checklist of adopted project criteria: architecture, principles, working methods, visual styles, code conventions, and contracts. Include confirmed or delegated project choices and internal decisions within approved boundaries. Link existing decisions when useful; reuse existing Markdown rules/checklists instead of copying their criteria into a competing document. If none exists, use `docs/project-checklist.md`. Without writing tools, provide copyable Markdown and disclose that it was not saved.
+
+Make criteria concrete, with scope and a verification method. For example, a project that has already adopted these boundaries could maintain:
+
+```markdown
+- [ ] Domain modules do not import UI modules. Scope: domain code. Verify: inspect changed imports and run the existing dependency check when available.
+- [ ] Changed UI spacing uses the adopted design tokens. Scope: UI components. Verify: inspect styles and the affected rendered states.
+- [ ] Public responses retain the agreed API version and field meanings. Scope: API changes. Verify: review contracts and run relevant compatibility tests.
+```
+
+These illustrate checkable criteria; do not adopt them for a project without the corresponding decisions. A prior checkmark records an earlier review, not continuing compliance. Before a change, read the relevant criteria; afterward, compare actual artifacts and applicable verification results with those criteria. Record current results, violations, unverified items, and reasons in the task record or completion report without requiring a new log for small changes. Update the checklist when criteria change under existing decision authority; do not weaken a criterion merely to make a violating implementation pass.
+
+| Scenario                            | Expected behavior                                                                                                                                                                                                                       |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Existing project checklist          | Reuse its adopted criteria and link source decisions as helpful. Add missing scope or verification methods without creating a duplicate document. If none exists, create `docs/project-checklist.md`.                                   |
+| Small change and earlier checkmarks | A button-spacing edit reads relevant design criteria before the edit and checks the actual result afterward, even if previously checked. A task file remains optional for a small edit.                                                 |
+| Shared criterion changes            | A revised module boundary or shared design token triggers review of all affected areas and a checklist update under existing authority. Review unrelated criteria only when affected.                                                   |
+| Violated or unverified criterion    | Fix violations within scope. Record a failing compatibility test or unavailable browser check and its reason; do not mark the affected criterion verified.                                                                              |
+| Criterion change authority          | Keep an undelegated architecture or design-direction change with the user. Internal conventions may be decided within approved boundaries. Record authorized updates and their reasons; never change criteria just to hide a violation. |
+| Checklist without writing tools     | Provide copyable Markdown containing adopted criteria, scope, and verification methods; report that saving and any unavailable checks remain unverified.                                                                                |
+
 ## Version policy
 
 User-approved pre-release policy, 2026-09-24: **remain in guideline v1**. This is an improvement before formal release, not a new major version. The lighter workflow was recorded as **v1 revision 3**, including its changed reading obligations. **v1 revision 4**, 2026-09-26, clarifies proportionate architecture, SOLID/GRASP as judgment criteria, quality across software/design/monetization/operations, and maintenance handoff. **v1 revision 5**, 2026-09-27, includes version control systems and repository hosting in prompts and planning, preserving existing choices and access responsibilities. **v1 revision 6**, 2026-09-28, adds reasoned questions and contextual delegation, resumable task records, validated automatic local commits subject to existing restrictions, and completion/interruption reports. Keep v1/latest URLs, API `schemaVersion: 1`, and the catalog JSON structure unchanged; API reduction or splitting is outside this change.
+
+**v1 revision 7**, 2026-10-01, adds maintained Markdown project checklists, relevant checks before and after every change, review of affected areas when shared criteria change, and explicit violation/unverified reporting under existing decision authority.
 
 Earlier approved correction, 2026-09-23: v1 revision 2 clarified user-owned project choices, AI-owned implementation/documentation, and operating constraints. Preserve that history alongside revision 1.
 
