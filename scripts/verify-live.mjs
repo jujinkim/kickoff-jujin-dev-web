@@ -9,9 +9,9 @@ const activeArticles = readArticles().filter(
     a.data.status === "published" &&
     isListedArticle(a.data),
 );
-const styles = activeArticles
-  .filter((a) => designRegistry[a.data.articleId])
-  .map((a) => a.data.articleId);
+const examples = activeArticles.filter((a) => designRegistry[a.data.articleId]);
+const sectionFor = (article) =>
+  article.data.kind === "guide" ? "guides" : "catalog";
 async function check(path, expected) {
   try {
     const url = new URL(path, origin);
@@ -44,17 +44,19 @@ for (const lang of ["en", "ko", "ja"]) {
   ]);
   await check(`/${lang}/start/`, "data-builder");
   await check(`/${lang}/help/`, 'id="make-prompt"');
-  for (const id of styles) {
-    await check(`/${lang}/catalog/${id}/`, [
+  for (const article of examples) {
+    const id = article.data.articleId;
+    const section = sectionFor(article);
+    await check(`/${lang}/${section}/${id}/`, [
       `data-comment-term="${id}"`,
       `data-demo="${id}"`,
-      `rel="canonical" href="https://kickoff.jujin.dev/${lang}/catalog/${id}/"`,
+      `rel="canonical" href="https://kickoff.jujin.dev/${lang}/${section}/${id}/"`,
       ...["en", "ko", "ja"].map(
         (other) =>
-          `hreflang="${other}" href="https://kickoff.jujin.dev/${other}/catalog/${id}/"`,
+          `hreflang="${other}" href="https://kickoff.jujin.dev/${other}/${section}/${id}/"`,
       ),
     ]);
-    await check(`/${lang}/catalog/${id}.md`, `ID: ${id}`);
+    await check(`/${lang}/${section}/${id}.md`, `ID: ${id}`);
   }
   await check(`/${lang}/catalog/categories/styles/`, 'class="comparison"');
   await check(
@@ -64,7 +66,9 @@ for (const lang of ["en", "ko", "ja"]) {
   await check(`/${lang}/guides/srs.md`, "ID: srs");
   await check(`/sitemap-${lang}.xml`, [
     "/guides/srs/",
-    ...styles.map((id) => `/${lang}/catalog/${id}/`),
+    ...examples.map(
+      (article) => `/${lang}/${sectionFor(article)}/${article.data.articleId}/`,
+    ),
   ]);
 }
 await check("/llms.txt", "/ai/catalog.json");

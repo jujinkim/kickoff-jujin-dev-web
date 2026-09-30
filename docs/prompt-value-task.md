@@ -1,6 +1,6 @@
 # Prompt value explanation and publication
 
-Started 2026-10-01. Status: local verification complete; publication in progress.
+Started 2026-10-01. Status: complete; deployed and verified in production.
 
 ## Goal and authorization
 
@@ -25,7 +25,7 @@ Explain why a visitor would prepare a prompt with kickoff instead of writing a l
 - [x] Future evaluation has predefined metrics, balanced scenarios, baselines, and publication rules.
 - [x] Sequential check, build, unit/output tests, and relevant browser tests pass. No article demos or thumbnails change.
 - [x] Verify prompt/guideline/catalog compatibility and visually inspect desktop/mobile light/dark views.
-- [ ] Commit, push, observe successful GitHub Pages deployment, verify production HTTP and browser flows, and prove remote/working-tree state.
+- [x] Commit, push, observe successful GitHub Pages deployment, verify production HTTP and browser flows, and prove remote/working-tree state.
 
 ## Evidence and progress
 
@@ -50,7 +50,14 @@ Explain why a visitor would prepare a prompt with kickoff instead of writing a l
 - Catalog/startup/product-alignment/entry-language tests then passed 58/58 locally. A dedicated delayed-clipboard reproduction exposed the underlying focus bug: disabling the native copy button during an unresolved clipboard promise moves focus away. The failure is preserved in `/tmp/kickoff-prompt-value-focus-repro.log` and `/tmp/kickoff-prompt-value-focus-repro`.
 - Replaced the transient native disabled state with a guarded in-flight copy and `aria-busy` feedback, preserving focus while still preventing duplicate writes. Input edits/reset clear that state; revision checks still suppress stale completion. Extended the existing deferred-clipboard test to verify focus, busy state, one write per attempt, and stale feedback suppression.
 - Final blocker-fix rerun passed sequentially: check (216 files, no diagnostics), build (440 pages, 249 indexed documents), unit/output tests (51/51), and the expanded catalog/startup/product-alignment/entry-language browser subset (58/58, 1.1 minutes). The delayed-copy reproduction now passes within that subset. Built AI documents and catalog still match the recorded hashes. Final logs use `/tmp/kickoff-prompt-value-*-final.log`; browser artifacts use `/tmp/kickoff-prompt-value-e2e-final`.
+- Published application commit `cd8455de370e736fe0d910cefbe427527d9b5163` through successful [Actions run 36777832007](https://github.com/jujinkim/kickoff-jujin-dev-web/actions/runs/36777832007). CI passed 51/51 unit/output tests and all 179 browser tests (13.5 minutes); build and Pages deployment jobs both succeeded. Pages reports `built`, workflow publishing, and CNAME `kickoff.jujin.dev`.
+- Initial live validation passed the changed screens and concept checks but found 30 obsolete guide-path/sitemap assertions: the script treated registered guide demos as catalog concepts. Updated verification to derive `guides`/`catalog` paths from actual article kind while retaining comment identity, demo, canonical, hreflang, Markdown, and sitemap checks. No published route or application artifact changed.
+- Verification-script change passed `npm run check` (216 files, no diagnostics; 276 articles; formatting passed). Production `npm run verify:live` passed all 525 HTTP checks with zero failures. Log: `/tmp/kickoff-prompt-value-live-final.log`.
+- Production browser verification passed 19/19 tests (13.5 seconds): EN/KO/JA prompt/version documents, actual homepage-to-builder equality and edits/reset/help, no-JavaScript use, search/recovery, keyboard copy/AI lookup, clipboard-failure fallback, input privacy, and delayed-copy focus/stale feedback. Log: `/tmp/kickoff-prompt-value-production-e2e.log`; artifacts: `/tmp/kickoff-prompt-value-production-e2e`.
+- Agent-browser inspected the published Korean desktop (1440px) and mobile (320px) pages, including the actual prompt disclosure in dark mode. No horizontal overflow, page errors, console errors, or error overlay. Screenshots: `/tmp/kickoff-prompt-value-production-desktop.png`, `/tmp/kickoff-prompt-value-production-mobile.png`, `/tmp/kickoff-prompt-value-production-mobile-dark-example.png`. Closed the owned browser session and confirmed local preview port 4322 was stopped.
+- Retrieved published startup guidance, assistant rules, and AI catalog directly: HTTP 200 and byte equality with the verified build, retaining the recorded SHA-256 values.
+- Final maintenance commit contains only this release record and the corrected live-verification script. Use `[skip ci]` for that commit because it does not change published application artifacts; the deployed application remains `cd8455de370e736fe0d910cefbe427527d9b5163`, whose complete workflow and production checks passed. Verify local/remote commit equality and a clean working tree after pushing; report that proof in the handoff.
 
 ## Remaining work
 
-Commit and push the locally verified change, observe the matching Pages deployment, verify production content and browser flows, then record publication evidence. No external-model comparison or user study has been run for this change; preparing exact evaluation fixtures and collecting real study results remains future work.
+No implementation or publication work remains. No external-model comparison or user study has been run for this change. Future work starts with exact evaluation fixtures and reviewer calibration in `docs/prompt-evaluation.md`, followed by real trials and a separate human-effort study. Publish improvement numbers or testimonials only when matching evidence exists.
