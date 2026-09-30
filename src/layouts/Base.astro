@@ -195,7 +195,9 @@ const absolute = (url: string) =>
         .forEach((button) =>
           button.addEventListener("click", async () => {
             const target = document.getElementById(button.dataset.copy!);
-            const status = button.parentElement?.querySelector("[role=status]");
+            const status = button
+              .closest(".prompt-section")
+              ?.querySelector("[role=status]");
             try {
               await navigator.clipboard.writeText(
                 target?.textContent?.trim() ?? "",

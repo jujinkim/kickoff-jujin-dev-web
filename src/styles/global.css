@@ -1135,6 +1135,26 @@ html[lang="ko"] .hero-copy {
   margin: 10px 0 0;
   min-height: 1.4em;
 }
+.prompt-section .prompt-copy-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 12px;
+}
+.prompt-section .prompt-copy-actions .button {
+  flex-shrink: 0;
+  min-height: 44px;
+}
+.prompt-section .prompt-mode-hint {
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+.prompt-section .prompt-copy-actions .prompt-mode-hint {
+  flex: 1 1 16rem;
+  min-width: 0;
+  margin: 0;
+}
 .notice {
   padding: 15px 20px;
   background: var(--soft);

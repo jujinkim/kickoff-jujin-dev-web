@@ -15,6 +15,11 @@ const versionControl = {
   ko: /버전 관리 시스템과 저장소 호스팅/,
   ja: /バージョン管理システムとリポジトリホスティング/,
 };
+const planModeRecommendation = {
+  en: /Recommended: .*Plan mode.*optional/,
+  ko: /권장: .*Plan mode.*필수는 아닙니다/,
+  ja: /推奨：.*Plan mode.*必須ではありません/,
+};
 const workflow = {
   en: [
     /realistic options, pros\/cons/,
@@ -90,7 +95,18 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await expect(prompt).not.toHaveValue(
       /llms\.txt|catalog\.json|\/categories\//,
     );
+    await expect(prompt).not.toHaveValue(/Plan mode/);
+    await expect(page.locator("#prompt-plan-mode-hint")).toContainText(
+      planModeRecommendation[lang],
+    );
+    await expect(page.locator("[data-copy-prompt]")).toHaveAttribute(
+      "aria-describedby",
+      /prompt-plan-mode-hint/,
+    );
     await page.locator("[data-copy-prompt]").click();
+    await expect(page.locator(".prompt-builder [role=status]")).toContainText(
+      planModeRecommendation[lang],
+    );
     await expect
       .poll(() => page.evaluate(() => navigator.clipboard.readText()))
       .toBe(await prompt.inputValue());
@@ -109,6 +125,12 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await page.locator('[data-copy="startup-prompt"]').click();
     await expect(page.locator(".prompt-section [role=status]")).toContainText(
       handoff[lang],
+    );
+    await expect(page.locator("#startup-prompt-plan-mode-hint")).toContainText(
+      planModeRecommendation[lang],
+    );
+    await expect(page.locator(".prompt-section [role=status]")).toContainText(
+      planModeRecommendation[lang],
     );
     await expect
       .poll(() => page.evaluate(() => navigator.clipboard.readText()))
@@ -150,9 +172,16 @@ for (const lang of ["en", "ko", "ja"] as const) {
     for (const requirement of workflow[lang])
       await expect(aiPrompt).toContainText(requirement);
     await expect(aiPrompt).not.toContainText(/llms\.txt|catalog\.json/);
+    await expect(aiPrompt).not.toContainText(/Plan mode/);
+    await expect(page.locator("#project-prompt-plan-mode-hint")).toContainText(
+      planModeRecommendation[lang],
+    );
     await page.locator('[data-copy="project-prompt"]').click();
     await expect(page.locator(".prompt-section [role=status]")).toContainText(
       handoff[lang],
+    );
+    await expect(page.locator(".prompt-section [role=status]")).toContainText(
+      planModeRecommendation[lang],
     );
     await expect
       .poll(() => page.evaluate(() => navigator.clipboard.readText()))
@@ -304,6 +333,9 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await expect(page.locator("[data-editor]")).toBeHidden();
     await expect(page.locator("noscript .notice")).toContainText("JavaScript");
     await expect(page.locator("noscript .notice")).toContainText(handoff[lang]);
+    await expect(page.locator("noscript .prompt-mode-hint")).toContainText(
+      planModeRecommendation[lang],
+    );
     await expect(page.locator("noscript pre")).toContainText(
       versionControl[lang],
     );

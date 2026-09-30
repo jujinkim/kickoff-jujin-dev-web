@@ -13,7 +13,7 @@ const t = builderText[lang];
   class="prompt-section prompt-builder"
   data-builder
   data-lang={lang}
-  data-success={t.success}
+  data-success={`${t.success} ${strings[lang].planModeHint}`}
 >
   <p class="notice site-notice">{strings[lang].builderNotice}</p>
   <div data-editor hidden>
@@ -66,15 +66,20 @@ const t = builderText[lang];
     <div class="builder-preview">
       <div class="preview-heading">
         <label for="prompt-preview">{t.preview}</label>
-        <button
-          type="button"
-          class="button primary"
-          data-copy-prompt
-          disabled
-          aria-describedby="prompt-validation"
-        >
-          {t.copy} ⧉
-        </button>
+        <div class="prompt-copy-actions">
+          <button
+            type="button"
+            class="button primary"
+            data-copy-prompt
+            disabled
+            aria-describedby="prompt-validation prompt-plan-mode-hint"
+          >
+            {t.copy} ⧉
+          </button>
+          <p id="prompt-plan-mode-hint" class="prompt-mode-hint">
+            {strings[lang].planModeHint}
+          </p>
+        </div>
       </div>
       <p role="status" aria-live="polite" aria-atomic="true"></p>
       <p id="prompt-preview-hint">{t.previewHint}</p>
@@ -95,6 +100,7 @@ const t = builderText[lang];
   </div>
   <noscript>
     <p class="notice">{t.noScript}</p>
+    <p class="prompt-mode-hint">{strings[lang].planModeHint}</p>
     <pre class="prompt-box" tabindex="0">{startupPrompt(lang)}</pre>
   </noscript>
 </section>

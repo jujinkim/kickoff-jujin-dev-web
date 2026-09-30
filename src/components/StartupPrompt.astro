@@ -26,14 +26,20 @@ const s = startupText[lang];
     id={promptId}
     tabindex="0"
   >{startupPrompt(lang, version)}</pre>
-  <button
-    class="button primary"
-    data-copy={promptId}
-    data-success={t.copied}
-    data-error={t.copyError}
-  >
-    {t.copy} ⧉
-  </button>
+  <div class="prompt-copy-actions">
+    <button
+      class="button primary"
+      data-copy={promptId}
+      data-success={`${t.copied} ${t.planModeHint}`}
+      data-error={t.copyError}
+      aria-describedby={`${promptId}-plan-mode-hint`}
+    >
+      {t.copy} ⧉
+    </button>
+    <p id={`${promptId}-plan-mode-hint`} class="prompt-mode-hint">
+      {t.planModeHint}
+    </p>
+  </div>
   <p role="status" aria-live="polite"></p>
   <noscript>
     <p class="notice">{t.copyNoScript}</p>

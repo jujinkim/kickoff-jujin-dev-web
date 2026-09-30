@@ -68,6 +68,8 @@ export const strings = {
     toc: "On this page",
     copy: "Copy instructions",
     copied: "Copied. Paste the text into your external AI tool to continue.",
+    planModeHint:
+      "Recommended: Start in Plan mode if your external AI tool supports it. This is optional.",
     copyError:
       "Copy failed. Select and copy the text above manually, then paste it into your external AI tool to continue.",
     promptHandoff:
@@ -172,6 +174,8 @@ export const strings = {
     toc: "이 글의 순서",
     copy: "지시문 복사",
     copied: "복사 완료. 외부 AI 도구에 붙여넣어 진행하세요.",
+    planModeHint:
+      "권장: 지원하는 외부 AI 도구에서는 Plan mode로 시작하세요. 필수는 아닙니다.",
     copyError:
       "복사 실패. 위 글을 직접 선택해 복사한 뒤 외부 AI 도구에 붙여넣어 진행하세요.",
     promptHandoff:
@@ -275,6 +279,8 @@ export const strings = {
     toc: "この記事の目次",
     copy: "指示をコピー",
     copied: "コピーしました。外部AIツールに貼り付けて進めてください。",
+    planModeHint:
+      "推奨：対応する外部AIツールではPlan modeで始めてください。必須ではありません。",
     copyError:
       "コピー失敗。上の文章を選択して手動でコピーし、外部AIツールに貼り付けて進めてください。",
     promptHandoff:
