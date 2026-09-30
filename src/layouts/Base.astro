@@ -158,7 +158,26 @@ const absolute = (url: string) =>
         <a href="https://github.com/jujinkim/kickoff-jujin-dev-web">GitHub ↗</a>
       </div>
     </footer>
+    <div class="copy-snackbar" data-copy-snackbar>
+      <p
+        id="copy-snackbar-message"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      ></p>
+      <button
+        type="button"
+        class="copy-snackbar-close"
+        data-dismiss-copy
+        aria-label={t.dismissNotification}
+        hidden
+      >
+        ×
+      </button>
+    </div>
     <script>
+      import { hideCopySnackbar, showCopySnackbar } from "../lib/copy-feedback";
+
       const toggle = document.querySelector<HTMLButtonElement>("#theme-toggle");
       function syncTheme() {
         const dark = document.documentElement.dataset.theme === "dark";
@@ -198,12 +217,14 @@ const absolute = (url: string) =>
             const status = button
               .closest(".prompt-section")
               ?.querySelector("[role=status]");
+            const section = button.closest<HTMLElement>(".prompt-section");
+            if (section) hideCopySnackbar(section);
+            if (status) status.textContent = "";
             try {
               await navigator.clipboard.writeText(
                 target?.textContent?.trim() ?? "",
               );
-              if (status)
-                status.textContent = button.dataset.success ?? "Copied";
+              showCopySnackbar(button.dataset.success ?? "Copied", button);
             } catch {
               if (status)
                 status.textContent = button.dataset.error ?? "Copy failed";

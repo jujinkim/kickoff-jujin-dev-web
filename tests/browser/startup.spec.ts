@@ -104,7 +104,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
       /prompt-plan-mode-hint/,
     );
     await page.locator("[data-copy-prompt]").click();
-    await expect(page.locator(".prompt-builder [role=status]")).toContainText(
+    await expect(page.locator("#copy-snackbar-message")).toContainText(
       planModeRecommendation[lang],
     );
     await expect
@@ -123,13 +123,13 @@ for (const lang of ["en", "ko", "ja"] as const) {
     for (const requirement of workflow[lang])
       await expect(page.locator("#startup-prompt")).toContainText(requirement);
     await page.locator('[data-copy="startup-prompt"]').click();
-    await expect(page.locator(".prompt-section [role=status]")).toContainText(
+    await expect(page.locator("#copy-snackbar-message")).toContainText(
       handoff[lang],
     );
     await expect(page.locator("#startup-prompt-plan-mode-hint")).toContainText(
       planModeRecommendation[lang],
     );
-    await expect(page.locator(".prompt-section [role=status]")).toContainText(
+    await expect(page.locator("#copy-snackbar-message")).toContainText(
       planModeRecommendation[lang],
     );
     await expect
@@ -177,10 +177,10 @@ for (const lang of ["en", "ko", "ja"] as const) {
       planModeRecommendation[lang],
     );
     await page.locator('[data-copy="project-prompt"]').click();
-    await expect(page.locator(".prompt-section [role=status]")).toContainText(
+    await expect(page.locator("#copy-snackbar-message")).toContainText(
       handoff[lang],
     );
-    await expect(page.locator(".prompt-section [role=status]")).toContainText(
+    await expect(page.locator("#copy-snackbar-message")).toContainText(
       planModeRecommendation[lang],
     );
     await expect
@@ -190,7 +190,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await page.locator(".prompt-section summary").click();
     await expect(page.locator(".prompt-handoff")).toContainText(handoff[lang]);
     await page.locator('[data-copy="article-prompt"]').click();
-    await expect(page.locator(".prompt-section [role=status]")).toContainText(
+    await expect(page.locator("#copy-snackbar-message")).toContainText(
       handoff[lang],
     );
     await expect
@@ -213,7 +213,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
     const description = page.locator("#service-description");
     const preview = page.locator("#prompt-preview");
     const copy = page.locator("[data-copy-prompt]");
-    const status = page.locator(".prompt-builder [role=status]");
+    const status = page.locator("#copy-snackbar-message");
     await expect(preview).toHaveAccessibleDescription(handoff[lang]);
     await expect(copy).toBeDisabled();
     await description.fill(" \n\t　");
@@ -288,6 +288,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await expect(page.locator(".prompt-builder [role=status]")).toContainText(
       handoff[lang],
     );
+    await expect(page.locator("[data-copy-snackbar]")).toBeHidden();
     await expect(page.locator("#prompt-preview")).toBeFocused();
     expect(
       await page
@@ -415,9 +416,70 @@ test("late clipboard completion cannot restore stale success after edit or reset
     else await page.locator("[data-reset-prompt]").click();
     await page.evaluate(() => (window as any).finishCopy());
     await expect(page.locator(".prompt-builder [role=status]")).toBeEmpty();
+    await expect(page.locator("#copy-snackbar-message")).toBeEmpty();
+    await expect(page.locator("[data-copy-snackbar]")).toBeHidden();
     if (change === "reset")
       await expect(page.locator("[data-copy-prompt]")).toBeDisabled();
   }
+});
+
+test("copy snackbar expires, restarts, pauses, dismisses, and clears after edits", async ({
+  page,
+  context,
+}, testInfo) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+  await page.clock.install();
+  await page.setViewportSize({ width: 320, height: 800 });
+  await page.goto("/ko/start/");
+  const snackbar = page.locator("[data-copy-snackbar]");
+  const copy = page.locator("[data-copy-prompt]");
+  const dismiss = page.getByRole("button", { name: "알림 닫기" });
+  const description = page.locator("#service-description");
+  await expect(snackbar).toBeHidden();
+  await description.fill("Neighbors lend books");
+  const show = async () => {
+    await copy.click();
+    await page.mouse.move(0, 0);
+    await expect(snackbar).toBeVisible();
+  };
+
+  await show();
+  await expect(copy).toBeFocused();
+  await expect(snackbar).toContainText(planModeRecommendation.ko);
+  await page.screenshot({
+    path: testInfo.outputPath("snackbar-320-light.png"),
+  });
+  await page.clock.fastForward(3_000);
+  await show();
+  await page.clock.fastForward(3_000);
+  await expect(snackbar).toBeVisible();
+  await page.clock.fastForward(3_001);
+  await expect(snackbar).toBeHidden();
+
+  await show();
+  await dismiss.focus();
+  await page.clock.fastForward(12_000);
+  await expect(snackbar).toBeVisible();
+  await dismiss.press("Escape");
+  await expect(snackbar).toBeHidden();
+  await expect(copy).toBeFocused();
+
+  await show();
+  await snackbar.hover();
+  await page.clock.fastForward(12_000);
+  await expect(snackbar).toBeVisible();
+  await page.mouse.move(0, 0);
+  await page.clock.fastForward(6_001);
+  await expect(snackbar).toBeHidden();
+
+  await show();
+  await dismiss.click();
+  await expect(snackbar).toBeHidden();
+  await expect(copy).toBeFocused();
+
+  await show();
+  await description.fill("Updated service");
+  await expect(snackbar).toBeHidden();
 });
 
 for (const lang of ["en", "ko", "ja"] as const) {
@@ -445,7 +507,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await page.keyboard.press("Tab");
     await expect(page.locator("[data-copy-prompt]")).toBeFocused();
     await page.keyboard.press("Enter");
-    await expect(page.locator(".prompt-builder [role=status]")).toContainText(
+    await expect(page.locator("#copy-snackbar-message")).toContainText(
       handoff[lang],
     );
     await page.keyboard.press("Tab");

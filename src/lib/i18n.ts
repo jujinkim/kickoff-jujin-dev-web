@@ -70,6 +70,7 @@ export const strings = {
     copied: "Copied. Paste the text into your external AI tool to continue.",
     planModeHint:
       "Recommended: Start in Plan mode if your external AI tool supports it. This is optional.",
+    dismissNotification: "Dismiss notification",
     copyError:
       "Copy failed. Select and copy the text above manually, then paste it into your external AI tool to continue.",
     promptHandoff:
@@ -176,6 +177,7 @@ export const strings = {
     copied: "복사 완료. 외부 AI 도구에 붙여넣어 진행하세요.",
     planModeHint:
       "권장: 지원하는 외부 AI 도구에서는 Plan mode로 시작하세요. 필수는 아닙니다.",
+    dismissNotification: "알림 닫기",
     copyError:
       "복사 실패. 위 글을 직접 선택해 복사한 뒤 외부 AI 도구에 붙여넣어 진행하세요.",
     promptHandoff:
@@ -281,6 +283,7 @@ export const strings = {
     copied: "コピーしました。外部AIツールに貼り付けて進めてください。",
     planModeHint:
       "推奨：対応する外部AIツールではPlan modeで始めてください。必須ではありません。",
+    dismissNotification: "通知を閉じる",
     copyError:
       "コピー失敗。上の文章を選択して手動でコピーし、外部AIツールに貼り付けて進めてください。",
     promptHandoff:

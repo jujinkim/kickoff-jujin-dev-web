@@ -107,6 +107,7 @@ const t = builderText[lang];
 
 <script>
   import { builderText, composeStartupPrompt } from "../lib/prompt-builder";
+  import { hideCopySnackbar, showCopySnackbar } from "../lib/copy-feedback";
   import type { Lang } from "../lib/i18n";
   document.querySelectorAll<HTMLElement>("[data-builder]").forEach((root) => {
     const lang = root.dataset.lang as Lang;
@@ -130,6 +131,7 @@ const t = builderText[lang];
       copy.disabled = !preview.value;
       validation.hidden = !!preview.value;
       status.textContent = "";
+      hideCopySnackbar(root);
     }
     [name, description, notes].forEach((field) =>
       field.addEventListener("input", update),
@@ -144,10 +146,11 @@ const t = builderText[lang];
       const copiedRevision = revision;
       copy.disabled = true;
       status.textContent = "";
+      hideCopySnackbar(root);
       try {
         await navigator.clipboard.writeText(preview.value);
         if (revision === copiedRevision)
-          status.textContent = root.dataset.success!;
+          showCopySnackbar(root.dataset.success!, copy);
       } catch {
         if (revision === copiedRevision) {
           status.textContent = builderText[lang].failure;
