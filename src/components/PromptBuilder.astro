@@ -121,8 +121,11 @@ const t = builderText[lang];
     const validation = root.querySelector<HTMLElement>("#prompt-validation")!;
     const status = root.querySelector<HTMLElement>("[role=status]")!;
     let revision = 0;
+    let copying = false;
     function update() {
       revision++;
+      copying = false;
+      copy.removeAttribute("aria-busy");
       preview.value = composeStartupPrompt(lang, {
         name: name.value,
         description: description.value,
@@ -142,9 +145,10 @@ const t = builderText[lang];
       description.focus();
     });
     copy.addEventListener("click", async () => {
-      if (!preview.value) return;
+      if (!preview.value || copying) return;
       const copiedRevision = revision;
-      copy.disabled = true;
+      copying = true;
+      copy.setAttribute("aria-busy", "true");
       status.textContent = "";
       hideCopySnackbar(root);
       try {
@@ -158,7 +162,11 @@ const t = builderText[lang];
           preview.select();
         }
       } finally {
-        if (revision === copiedRevision) copy.disabled = !preview.value;
+        if (revision === copiedRevision) {
+          copying = false;
+          copy.removeAttribute("aria-busy");
+          copy.disabled = !preview.value;
+        }
       }
     });
     update();
@@ -167,6 +175,9 @@ const t = builderText[lang];
 </script>
 
 <style>
+  [data-copy-prompt][aria-busy="true"] {
+    cursor: progress;
+  }
   [data-editor] {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);

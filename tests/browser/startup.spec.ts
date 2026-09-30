@@ -429,18 +429,30 @@ test("late clipboard completion cannot restore stale success after edit or reset
       value: {
         writeText: () =>
           new Promise<void>((resolve) => {
+            (window as any).copyWrites = ((window as any).copyWrites ?? 0) + 1;
             (window as any).finishCopy = resolve;
           }),
       },
     }),
   );
   await page.goto("/en/start/");
+  const copy = page.locator("[data-copy-prompt]");
+  let writes = 0;
   for (const change of ["edit", "reset"]) {
     await page.locator("#service-description").fill("Neighbors lend books");
-    await page.locator("[data-copy-prompt]").click();
+    await copy.focus();
+    await copy.press("Enter");
+    await expect(copy).toBeFocused();
+    await expect(copy).toHaveAttribute("aria-busy", "true");
+    expect(await page.evaluate(() => (window as any).copyWrites)).toBe(
+      ++writes,
+    );
+    await copy.press("Enter");
+    expect(await page.evaluate(() => (window as any).copyWrites)).toBe(writes);
     if (change === "edit")
       await page.locator("#service-description").fill("Updated service");
     else await page.locator("[data-reset-prompt]").click();
+    await expect(copy).not.toHaveAttribute("aria-busy", "true");
     await page.evaluate(() => (window as any).finishCopy());
     await expect(page.locator(".prompt-builder [role=status]")).toBeEmpty();
     await expect(page.locator("#copy-snackbar-message")).toBeEmpty();
@@ -465,7 +477,8 @@ test("copy snackbar expires, restarts, pauses, dismisses, and clears after edits
   await expect(snackbar).toBeHidden();
   await description.fill("Neighbors lend books");
   const show = async () => {
-    await copy.click();
+    await copy.focus();
+    await copy.press("Enter");
     await page.mouse.move(0, 0);
     await expect(snackbar).toBeVisible();
   };

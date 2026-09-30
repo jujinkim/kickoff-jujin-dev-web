@@ -83,7 +83,7 @@ test("keyboard navigation, copy and AI lookup complete the reader flow", async (
   await page.goto("/en/guides/srs/");
   await page.locator(".prompt-section summary").click();
   await page.locator("[data-copy]").click();
-  await expect(page.locator(".prompt-section [role=status]")).toHaveText(
+  await expect(page.locator("#copy-snackbar-message")).toHaveText(
     "Copied. Paste the text into your external AI tool to continue.",
   );
   expect(await page.evaluate(() => navigator.clipboard.readText())).toContain(
@@ -91,8 +91,11 @@ test("keyboard navigation, copy and AI lookup complete the reader flow", async (
   );
   await page.goto("/en/ai/");
   await page.locator("[data-copy]").click();
-  await expect(page.locator("[role=status]")).toHaveText(
+  await expect(page.locator("#copy-snackbar-message")).toContainText(
     "Copied. Paste the text into your external AI tool to continue.",
+  );
+  await expect(page.locator("#copy-snackbar-message")).toContainText(
+    "Recommended: Start in Plan mode",
   );
   const catalog = await (await request.get("/ai/catalog.json")).json();
   const article = catalog.articles.find((a: any) =>
@@ -125,7 +128,10 @@ test("search failure keeps browse available and copy failure explains fallback",
     }),
   );
   await page.locator("[data-copy]").click();
-  await expect(page.locator("[role=status]")).toContainText("Copy failed");
+  await expect(page.locator(".prompt-section [role=status]")).toContainText(
+    "Copy failed",
+  );
+  await expect(page.locator("[data-copy-snackbar]")).toBeHidden();
   await expect(page.locator("#project-prompt")).toBeVisible();
 });
 test("mobile and desktop layouts contain content without horizontal overflow", async ({
