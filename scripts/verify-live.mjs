@@ -36,7 +36,14 @@ async function check(path, expected) {
   }
 }
 for (const lang of ["en", "ko", "ja"]) {
-  await check(`/${lang}/`, `lang="${lang}"`);
+  await check(`/${lang}/`, [
+    `lang="${lang}"`,
+    "data-prompt-example",
+    "data-example-prompt",
+    'data-home-section="prompt-value"',
+  ]);
+  await check(`/${lang}/start/`, "data-builder");
+  await check(`/${lang}/help/`, 'id="make-prompt"');
   for (const id of styles) {
     await check(`/${lang}/catalog/${id}/`, [
       `data-comment-term="${id}"`,
@@ -61,10 +68,10 @@ for (const lang of ["en", "ko", "ja"]) {
   ]);
 }
 await check("/llms.txt", "/ai/catalog.json");
-await check(
-  "/ai/instructions.md",
-  "Do not ask users to choose every internal implementation detail",
-);
+await check("/ai/instructions.md", [
+  "Within approved requirements and boundaries",
+  "These documents guide assistants; they do not enforce behavior.",
+]);
 const catalog = await check("/ai/catalog.json", '"schemaVersion": 1');
 if (catalog) {
   try {

@@ -208,6 +208,20 @@ for (const lang of ["en", "ko", "ja"] as const) {
     const errors: string[] = [];
     page.on("pageerror", (e) => errors.push(e.message));
     await page.goto(`/${lang}/`);
+    const example = page.locator("[data-prompt-example]");
+    const exampleDescription = await example
+      .locator("[data-example-description]")
+      .innerText();
+    await example.locator("summary").focus();
+    await page.keyboard.press("Enter");
+    await expect(example.locator("[data-example-prompt]")).toBeVisible();
+    const examplePrompt = await example
+      .locator("[data-example-prompt]")
+      .textContent();
+    await expect(page.locator(".prompt-benefits dt")).toHaveCount(3);
+    await expect(
+      page.locator(`[data-home-section="prompt-value"] a[href="/${lang}/ai/"]`),
+    ).toBeVisible();
     await page.locator(".hero-actions .primary").click();
     await expect(page).toHaveURL(`/${lang}/start/`);
     const description = page.locator("#service-description");
@@ -219,7 +233,8 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await description.fill(" \n\t　");
     await expect(copy).toBeDisabled();
     await expect(preview).toHaveValue("");
-    await description.fill("Neighbors lend books");
+    await description.fill(exampleDescription);
+    await expect(preview).toHaveValue(examplePrompt!);
     await expect(preview).toHaveValue(/Undecided|미정|未定/);
     await expect(preview).toHaveValue(
       /Needs clarification|추가 확인 필요|追加確認が必要/,
@@ -327,6 +342,18 @@ for (const lang of ["en", "ko", "ja"] as const) {
     });
     const page = await context.newPage();
     await page.goto(`/${lang}/`);
+    const example = page.locator("[data-prompt-example]");
+    await example.locator("summary").focus();
+    await page.keyboard.press("Enter");
+    await expect(example.locator("[data-example-prompt]")).toBeVisible();
+    await expect(example.locator("[data-example-prompt]")).toContainText(
+      "/ai/instructions.md",
+    );
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+    ).toBe(true);
     await page.locator(".hero-actions .primary").click();
     await expect(page.locator(".prompt-builder > .site-notice")).toContainText(
       noAI[lang],

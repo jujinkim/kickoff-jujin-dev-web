@@ -44,9 +44,44 @@ export const strings = {
     eyebrow: "Custom prompts and project planning resources",
     hero: "Your first task for AI, with a prompt that fits your project.",
     intro:
-      "Prepare a custom prompt for your project's first task with AI. kickoff is an information site where you can also learn and compare planning, design, and technology choices through examples.",
+      "Describe what you want to make. Prepare a prompt that asks your external AI to clarify requirements, agree on a plan, and verify the work. Learn and compare planning, design, and technology choices through examples.",
     siteDescription:
-      "Prepare custom prompts and learn project planning with kickoff. kickoff provides no AI service; copy your prompt into your external AI tool to discuss and work on your project.",
+      "Prepare a prompt with your service idea and requests to clarify requirements, plan, and verify work. kickoff provides no AI service; copy your prompt into your external AI tool. Learn project planning through examples.",
+    promptValue: {
+      title: "Why prepare your prompt here?",
+      intro:
+        "Your service description carries what you want to make. kickoff adds requests for how to work together: clarify requirements, explain choices, agree on a plan, and verify work. Review those guidelines before you copy.",
+      exampleTitle: "Your idea + working guidelines",
+      inputLabel: "The service you describe",
+      exampleDescription:
+        "Neighbors list books they can lend, request a loan, and check when each book is due back.",
+      addedLabel: "Requests kickoff adds",
+      requests: [
+        "Ask about missing requirements and constraints.",
+        "Explain options and recommend by project fit.",
+        "Agree on a plan before development; verify and report the work.",
+      ],
+      fullPrompt: "Read the actual generated prompt",
+      exampleNote:
+        "A prompt composition example. The conversation takes place in your external AI tool.",
+      benefits: [
+        {
+          title: "Turn unknowns into questions",
+          body: "Ask your external AI to clarify unresolved details, such as the budget or loan period. Blank considerations are marked as needing clarification.",
+        },
+        {
+          title: "Understand why a choice fits",
+          body: "Ask for realistic options, tradeoffs, and a recommendation based on your service's requirements and constraints.",
+        },
+        {
+          title: "Know what was checked",
+          body: "Ask to agree on the plan before development and receive a report of applied decisions, actual checks, and remaining work.",
+        },
+      ],
+      limits:
+        "These are instructions for your external AI. How it reads and follows them depends on the tool and model you use.",
+      readRules: "See the instructions behind the prompt",
+    },
     siteNotice:
       "kickoff does not provide an AI service. Prepare your prompt here, then copy and paste it into the external AI tool you use to continue the conversation and work.",
     browse: "Explore the catalog",
@@ -101,7 +136,7 @@ export const strings = {
     aboutIntro:
       "kickoff is an information site for preparing custom prompts for your external AI tool and learning project planning, design, and technology choices through examples.",
     startIntro:
-      "Describe your service, review the prompt, and copy it into your external AI tool.",
+      "Describe your service. The prompt adds requests to clarify requirements, plan, and verify work. Review it, then copy it into your external AI tool.",
     next: "Next step",
     notFound: "This shelf is empty.",
     home: "Go home",
@@ -150,9 +185,44 @@ export const strings = {
     eyebrow: "맞춤 프롬프트와 프로젝트 기획 학습 자료",
     hero: "AI에게 맡길 첫 작업, 내 프로젝트에 맞는 프롬프트로.",
     intro:
-      "내 프로젝트에서 AI에게 맡길 첫 작업을 맞춤 프롬프트로 준비하세요. kickoff는 기획·설계·기술 선택도 예시로 배우고 비교할 수 있는 정보 사이트입니다.",
+      "하고 싶은 일을 적으세요. 외부 AI에게 요구 확인부터 기획·검증까지 요청하는 프롬프트를 준비합니다. 기획·설계·기술 선택은 예시로 배우고 비교할 수 있습니다.",
     siteDescription:
-      "kickoff에서 맞춤 프롬프트를 준비하고 프로젝트 기획을 배우세요. kickoff는 AI 서비스를 제공하지 않습니다. 프롬프트를 복사해 외부 AI 도구에서 대화와 작업을 진행하세요.",
+      "서비스 아이디어에 요구 확인·기획·검증을 요청하는 지침을 담아 프롬프트를 준비하세요. kickoff는 AI 서비스를 제공하지 않습니다. 외부 AI 도구에 복사해 전달하고, 프로젝트 기획도 예시로 배우세요.",
+    promptValue: {
+      title: "왜 여기서 프롬프트를 만들까요?",
+      intro:
+        "서비스 설명에는 만들고 싶은 일을 담습니다. kickoff는 함께 일할 방식을 요청하는 지침을 더합니다. 요구 확인, 선택 이유, 기획 합의, 결과 검증까지 어떤 요청이 담기는지 복사 전에 확인하세요.",
+      exampleTitle: "내 아이디어 + 함께 일할 기준",
+      inputLabel: "내가 설명하는 서비스",
+      exampleDescription:
+        "이웃이 빌려줄 책을 등록하고, 대여를 요청하며, 책마다 반납일을 확인하는 서비스입니다.",
+      addedLabel: "kickoff가 함께 담는 요청",
+      requests: [
+        "빠진 요구사항과 제약은 질문해줘.",
+        "선택지를 설명하고 프로젝트에 맞는 안을 추천해줘.",
+        "기획을 합의한 뒤 개발하고, 작업을 검증·보고해줘.",
+      ],
+      fullPrompt: "실제로 만들어지는 전체 프롬프트 보기",
+      exampleNote:
+        "프롬프트 구성 예시입니다. 실제 대화는 사용하는 외부 AI 도구에서 진행합니다.",
+      benefits: [
+        {
+          title: "빈칸은 질문으로",
+          body: "예산이나 대여 기간처럼 미정인 조건을 외부 AI가 질문하도록 요청합니다. 빈 참고사항은 ‘추가 확인 필요’로 표시합니다.",
+        },
+        {
+          title: "선택에는 이유를",
+          body: "서비스의 요구와 제약에 맞춰 현실적인 선택지, 장단점, 추천 이유를 설명하도록 요청합니다.",
+        },
+        {
+          title: "완료에는 확인을",
+          body: "기획을 함께 확정한 뒤 개발하고, 적용한 결정·실제 검증·남은 일을 보고하도록 요청합니다.",
+        },
+      ],
+      limits:
+        "외부 AI에 전달하는 지침입니다. 읽고 적용하는 방식은 사용하는 도구와 모델에 따라 달라집니다.",
+      readRules: "프롬프트에 담기는 지침 읽기",
+    },
     siteNotice:
       "kickoff는 AI 서비스를 제공하지 않습니다. 이곳에서 프롬프트를 준비하고, 복사한 내용을 사용하는 외부 AI 도구에 붙여넣어 대화와 작업을 진행하세요.",
     browse: "카탈로그 둘러보기",
@@ -206,7 +276,7 @@ export const strings = {
     aboutIntro:
       "kickoff는 외부 AI에 전달할 맞춤 프롬프트를 준비하고 프로젝트 기획·설계·기술 선택을 예시로 배우는 정보 사이트입니다.",
     startIntro:
-      "서비스를 설명하고 프롬프트를 확인한 뒤 외부 AI 도구에 복사해 전달하세요.",
+      "서비스를 설명하세요. 요구 확인·기획·검증을 요청하는 지침이 프롬프트에 함께 담깁니다. 내용을 확인한 뒤 외부 AI 도구에 복사해 전달하세요.",
     next: "다음 단계",
     notFound: "이 칸은 비어 있습니다.",
     home: "홈으로",
@@ -256,9 +326,44 @@ export const strings = {
     eyebrow: "自分に合うプロンプトとプロジェクト企画の学習資料",
     hero: "AIに任せる最初の作業を、自分のプロジェクトに合うプロンプトで。",
     intro:
-      "自分のプロジェクトでAIに任せる最初の作業を、目的に合うプロンプトにまとめましょう。kickoffは、企画・設計・技術の選択も例から学び、比較できる情報サイトです。",
+      "作りたいものを書いてみましょう。外部AIに要件の確認から企画・検証まで依頼するプロンプトを準備します。企画・設計・技術の選択は、例から学び比較できます。",
     siteDescription:
-      "kickoffで自分に合うプロンプトを準備し、プロジェクト企画を学びましょう。kickoffはAIサービスを提供しません。プロンプトをコピーし、外部AIツールで会話や作業を進めてください。",
+      "サービスのアイデアに、要件の確認・企画・検証を依頼する指示を添えてプロンプトを準備しましょう。kickoffはAIサービスを提供しません。外部AIツールへコピーして渡し、プロジェクト企画も例から学べます。",
+    promptValue: {
+      title: "ここでプロンプトを作る理由は？",
+      intro:
+        "サービスの説明には、作りたいものを書きます。kickoffは、一緒に進める方法を依頼する指示を加えます。要件の確認、選択の理由、企画への合意、結果の検証まで、どんな依頼が含まれるかコピー前に確認できます。",
+      exampleTitle: "アイデア + 一緒に進める基準",
+      inputLabel: "自分が説明するサービス",
+      exampleDescription:
+        "近所の人が貸せる本を登録し、貸出を申し込み、本ごとの返却日を確認するサービスです。",
+      addedLabel: "kickoffが添える依頼",
+      requests: [
+        "不足する要件や制約について質問してください。",
+        "選択肢を説明し、プロジェクトに合う案を推薦してください。",
+        "企画に合意してから開発し、作業を検証・報告してください。",
+      ],
+      fullPrompt: "実際に生成されるプロンプト全文を見る",
+      exampleNote:
+        "プロンプト構成の例です。実際の会話は、お使いの外部AIツールで行います。",
+      benefits: [
+        {
+          title: "未定のことは質問へ",
+          body: "予算や貸出期間など、未定の条件について外部AIに質問を依頼します。空欄の参考事項は「追加確認が必要」と表示します。",
+        },
+        {
+          title: "選択には理由を",
+          body: "サービスの要件と制約に沿って、現実的な選択肢、利点と欠点、推薦の理由を説明するよう依頼します。",
+        },
+        {
+          title: "完了には確認を",
+          body: "企画に合意してから開発し、採用した判断・実際の検証・残作業を報告するよう依頼します。",
+        },
+      ],
+      limits:
+        "外部AIに渡す指示です。読み方や適用のしかたは、お使いのツールとモデルによって異なります。",
+      readRules: "プロンプトに含まれる指示を読む",
+    },
     siteNotice:
       "kickoffはAIサービスを提供していません。ここでプロンプトを準備し、コピーした内容をお使いの外部AIツールに貼り付けて、会話や作業を進めてください。",
     browse: "カタログを見る",
@@ -311,7 +416,7 @@ export const strings = {
     aboutIntro:
       "kickoffは外部AIに渡す自分に合ったプロンプトを準備し、プロジェクトの企画・設計・技術の選択を例から学ぶ情報サイトです。",
     startIntro:
-      "サービスを説明し、プロンプトを確認してから外部AIツールへコピーして渡しましょう。",
+      "サービスを説明しましょう。要件の確認・企画・検証を依頼する指示がプロンプトに加わります。内容を確認してから外部AIツールへコピーして渡してください。",
     next: "次の一歩",
     notFound: "この棚は空です。",
     home: "ホームへ",

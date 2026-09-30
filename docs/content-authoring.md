@@ -47,6 +47,16 @@ Presentation edits alone do not change prompt bodies, guideline obligations,
 or revision history. Keep required reading limited to the two guideline
 documents; the catalog remains optional learning material.
 
+Explain prompt value through observable composition: the visitor's service
+description plus requests to clarify requirements, explain choices, agree on a
+plan, and verify work. A comparison must preserve the same service information;
+do not create a deliberately weak request to manufacture an advantage. Use the
+actual prompt generator when displaying a generated example, and identify it
+as a composition example rather than an observed AI conversation. Instruction
+compliance is not a guarantee. Publish outcome or time-saving claims only with
+matching evaluation evidence; testimonials require actual consenting users.
+The evaluation protocol lives in [prompt evaluation](prompt-evaluation.md).
+
 ## Shared data and routes
 
 - `src/data/categories.json` is the single taxonomy: stable language-independent ID, nullable parent, localized names/descriptions, sibling order. Roots are navigation shelves; concepts belong to one leaf comparison group.

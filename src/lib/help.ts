@@ -36,8 +36,8 @@ export const helpText = {
     ],
     why: "Why: give your idea enough context",
     scenario:
-      "Imagine a service for a neighborhood book swap. Readers list books they can lend, find a book nearby, and arrange a handoff with its owner. You want AI to help plan that service, but “build a book app” leaves out who uses it and what they need to do. AI could propose a store with payments when you only need lending.",
-    goal: "Start by writing the actions you already know: listing a book, requesting a loan, and agreeing on a pickup. You can leave the name undecided and ask about unresolved rules, such as how long a loan lasts. The aim is a shared plan that you can review before development starts.",
+      "Imagine a service for a neighborhood book swap. Readers list books they can lend, find a book nearby, and arrange a handoff with its owner. Even a detailed feature request can leave the loan period, budget, and completion criteria undecided. If AI treats an unknown loan period as settled, you may review a plan built around a rule you never chose.",
+    goal: "Write the actions and constraints you already know. kickoff combines that description with requests to ask about gaps, explain choices, agree on a plan, and verify work. You can inspect the actual generated example on the homepage. The aim is a shared plan you can review before development starts.",
     how: "How: move from an idea to an agreed plan",
     steps: [
       "Have an external AI tool ready separately; kickoff does not provide one. Open Create a prompt on kickoff. Enter a service description: “Neighbors list books, request loans, and arrange a pickup.” This is the only required field. The name is optional; a blank becomes “Undecided”.",
@@ -90,8 +90,8 @@ export const helpText = {
     ],
     why: "왜 필요한가: 아이디어의 맥락 전달하기",
     scenario:
-      "동네에서 책을 빌려주는 서비스를 만든다고 가정해 봅시다. 독자는 빌려줄 책을 등록하고, 근처의 책을 찾고, 소유자와 전달 약속을 잡습니다. AI와 이 서비스를 기획하려는데 ‘책 앱을 만들어줘’라고만 하면 누가 무엇을 해야 하는지 빠집니다. 대여만 필요해도 AI는 결제 기능이 있는 서점을 제안할 수 있습니다.",
-    goal: "이미 알고 있는 동작부터 적으세요. 책 등록, 대여 요청, 수령 약속처럼 구체적이면 됩니다. 이름은 미정으로 두고, 대여 기간처럼 정하지 않은 규칙은 질문받을 수 있습니다. 개발 전에 함께 검토할 수 있는 기획을 만드는 것이 목표입니다.",
+      "동네에서 책을 빌려주는 서비스를 만든다고 가정해 봅시다. 독자는 빌려줄 책을 등록하고, 근처의 책을 찾고, 소유자와 전달 약속을 잡습니다. 기능을 자세히 요청해도 대여 기간, 예산, 완료 조건은 미정일 수 있습니다. AI가 미정인 대여 기간을 확정된 것으로 다루면, 내가 정하지 않은 규칙에 맞춘 기획을 검토하게 될 수 있습니다.",
+    goal: "이미 알고 있는 동작과 제약을 적으세요. kickoff는 그 설명에 빠진 조건 질문, 선택 이유, 기획 합의, 결과 검증을 요청하는 지침을 더합니다. 홈페이지에서 실제로 만들어지는 예시 프롬프트를 확인할 수 있습니다. 개발 전에 함께 검토할 수 있는 기획을 만드는 것이 목표입니다.",
     how: "어떻게 해결하는가: 아이디어에서 합의된 기획까지",
     steps: [
       "사용할 외부 AI 도구를 별도로 준비하세요. kickoff는 AI 도구를 제공하지 않습니다. kickoff에서 ‘프롬프트 만들기’를 열고 서비스 설명을 입력하세요. 예: ‘이웃이 책을 등록하고 대여를 요청한 뒤 수령 약속을 잡습니다.’ 필수 입력은 서비스 설명뿐입니다. 이름은 선택이며, 비워두면 ‘미정’으로 표시됩니다.",
@@ -144,8 +144,8 @@ export const helpText = {
     ],
     why: "なぜ必要なのか：アイデアの背景を伝える",
     scenario:
-      "近所で本を貸し借りするサービスを作るとします。読者は貸せる本を登録し、近くの本を探し、持ち主と受け渡しを約束します。AIと企画したくても「本のアプリを作って」だけでは、誰が何をするかが伝わりません。貸し借りだけでよいのに、AIが決済付きの書店を提案するかもしれません。",
-    goal: "本の登録、貸し出しの依頼、受け取りの約束など、わかっている動作から書きましょう。名前は未定でもよく、貸出期間など決まっていない規則は質問してもらえます。開発前に一緒に確認できる企画を作ることが目標です。",
+      "近所で本を貸し借りするサービスを作るとします。読者は貸せる本を登録し、近くの本を探し、持ち主と受け渡しを約束します。機能を詳しく依頼しても、貸出期間、予算、完了条件は未定かもしれません。AIが未定の貸出期間を確定済みと扱うと、自分が選んでいない規則に沿った企画を確認することになります。",
+    goal: "わかっている動作と制約を書きましょう。kickoffは、その説明に不足する条件の質問、選択の理由、企画への合意、結果の検証を依頼する指示を添えます。ホームページで実際に生成されるプロンプトの例を確認できます。開発前に一緒に確認できる企画を作ることが目標です。",
     how: "どう解決するのか：アイデアから合意した企画へ",
     steps: [
       "使用する外部AIツールは別途ご自身で用意してください。kickoffはAIツールを提供しません。kickoffで「プロンプトを作る」を開き、サービスの説明を入力します。例：「近所の人が本を登録し、貸し出しを依頼して受け取りを約束します」。必須なのは説明だけです。名前は任意で、空欄なら「未定」になります。",
