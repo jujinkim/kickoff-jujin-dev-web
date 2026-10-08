@@ -1,6 +1,6 @@
 # Agent workflow selection and startup task
 
-Started 2026-10-08. Status: implementation and verification complete; local commit pending.
+Started 2026-10-08. Status: complete.
 
 ## Goal and authorized scope
 
@@ -51,7 +51,7 @@ compatible scoped skills may coexist without overlapping workflow ownership.
 | Guidance and prompt update           | Complete | Revision 8 in all languages; built English document total 2,964 / 3,000 tokens. Manual scenarios reviewed.                                                                                  |
 | Catalog articles and diagrams        | Complete | Four EN-first concepts and faithful translations/supplements; distinct static diagrams registered. All overview budgets are within 60 seconds; twelve PNG/WebP pairs captured and reviewed. |
 | Sequential verification              | Complete | Regular check/build, 2,964-token audit, 54/54 unit/output checks; all 189 distinct browser cases passed across full and corrective runs.                                                    |
-| Local save and commit                | Pending  | Commit this verified scope and then record its SHA; no remote action.                                                                                                                       |
+| Local save and commit                | Complete | Implementation saved in local commit `a05035acbd66764e5e053bffa9bbb52238e2db02`; this closing record is documentation only. No remote action.                                               |
 
 ## Verification and resume point
 
@@ -88,9 +88,11 @@ registered visuals. Desktop and mobile diagram captures were inspected. All
 articles preserve schemaVersion 1, English Markdown aliases, canonical and
 alternate links, sitemap/search presence, and comment identities.
 
-Save point: implementation and verification are complete. Commit this scoped
-unit, then record its SHA and mark local save complete. No remote action remains
-in the requested scope.
+Save point: implementation and verification were saved in local commit
+`a05035acbd66764e5e053bffa9bbb52238e2db02` (Add fit-based agent workflow selection
+and learning catalog). The closing record changes documentation only; its
+formatting and diff checks pass. No work remains in the requested local scope.
+No push or deploy was performed.
 
 External-agent installation, model compliance, real-device behavior, and live
 publication are not established by local site tests. No push or deploy requested.
