@@ -99,9 +99,9 @@ publication are not established by local site tests. No push or deploy requested
 
 ## Deployment authorized 2026-10-09
 
-The user subsequently requested deployment. Status: in progress. Publish the
-reviewed implementation through the existing GitHub Pages workflow, then verify
-the public origin. No domain or deployment architecture change is needed.
+The user subsequently requested deployment. Status: complete. The reviewed
+implementation was published through the existing GitHub Pages workflow and
+verified at the public origin. No domain or deployment architecture changed.
 
 Preflight confirmed a clean implementation checkout, the two reviewed local
 commits, current `origin/main`, and available GitHub access. The live verifier
@@ -115,5 +115,31 @@ documents; unit/output tests passed 54/54. Required English input remains
 2,964/3,000 tokens. Existing thumbnail captures remain valid. The repaired live
 verifier passed against local output with no failures.
 
-Next: commit/push, wait for matching Actions deployment, and check public HTTP
-and browser behavior. Record the deployed SHA and final remote synchronization.
+Deployed commit: `c3021e91a5ac63ed04fab107dfe90df7bf6fbf32` (Update live verifier
+for revised workflow guidance), including both reviewed implementation commits.
+[Actions run 37844726653](https://github.com/jujinkim/kickoff-jujin-dev-web/actions/runs/37844726653)
+completed successfully: check, build, 54/54 unit/output tests, a fresh 189/189
+browser suite (14.3 minutes), and the Pages deployment job.
+
+Public verification at `https://kickoff.jujin.dev` on 2026-10-09:
+
+- `npm run verify:live`: 549/549 checks passed. The first run received a 503
+  for `/ja/guides/shipping.md`; a direct retry returned 200 with the expected
+  article ID, and the complete verifier rerun passed with zero failures.
+- SHA-256 comparison: all 32 checked public resources match local output,
+  covering required and versioned English guidance, API catalog JSON, the four
+  new English Markdown articles, and all 24 localized PNG/WebP thumbnails.
+  API schemaVersion remains 1, with 87 active articles and current translations
+  for all four workflow concepts.
+- Production Playwright: 13/13 cases passed (18.3 seconds), using
+  `PLAYWRIGHT_BASE_URL=https://kickoff.jujin.dev` with the workflow and startup
+  files. Coverage includes all three languages, actual Pagefind alias queries,
+  comparison and related reading, generated/versioned/project/article prompt
+  copying, 320/390/768/1440px layouts, both themes, text contrast, 200% text,
+  and JavaScript-disabled reading.
+
+The final verification record is documentation only and is committed with
+`[skip ci]`; the deployed application remains the commit above. Publication,
+live HTTP, and desktop Chromium behavior are verified. External-agent
+installation, model compliance, native-device behavior, and authenticated
+comment posting were not exercised by these site checks.
