@@ -1,0 +1,202 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="superpowers" lang={lang}>
+  <header>
+    <p class="eyebrow">
+      {t(
+        "Recipe app · illustrated test-first repair",
+        "레시피 앱 · 테스트 우선 수정 예시",
+        "レシピアプリ · テスト先行の修正例",
+      )}
+    </p>
+    <h2>
+      {t(
+        "Observe failure. Repair. Review.",
+        "실패 확인 → 수정 → 검토",
+        "失敗を確認 → 修正 → レビュー",
+      )}
+    </h2>
+  </header>
+  <div class="formula" data-expected>
+    <p>{t("Agreed behavior", "합의한 동작", "合意した動作")}</p>
+    <strong>200 g × 2 / 4 = 100 g</strong>
+    <span>
+      {t("Four servings → two servings", "4인분 → 2인분", "4人分 → 2人分")}
+    </span>
+  </div>
+  <div class="bench">
+    <article class="failure" data-test-failure>
+      <h3>01 / {t("Failing test", "실패하는 테스트", "失敗するテスト")}</h3>
+      <p class="output">✕ 200 g</p>
+      <p>
+        {t(
+          "Observed result differs from the expected 100 g",
+          "관찰 결과가 예상한 100 g과 다름",
+          "観察結果が期待する100 gと異なる",
+        )}
+      </p>
+    </article>
+    <div class="repair">
+      <b>02</b>
+      <p>
+        {t("Fix the scaling calculation", "배율 계산 수정", "倍率の計算を修正")}
+      </p>
+      <span aria-hidden="true">→</span>
+    </div>
+    <article class="pass" data-test-pass>
+      <h3>03 / {t("Passing test", "통과하는 테스트", "通過するテスト")}</h3>
+      <p class="output">✓ 100 g</p>
+      <p>
+        {t(
+          "Rerun the test and relevant checks",
+          "테스트와 관련 점검 재실행",
+          "テストと関連確認を再実行",
+        )}
+      </p>
+    </article>
+  </div>
+  <p class="review" data-review>
+    04 /{" "}
+    {t(
+      "Review against the plan and check other agreed quantities",
+      "계획과 대조해 검토·다른 합의된 재료량 점검",
+      "計画と照合してレビュー・他の合意した分量も確認",
+    )}
+  </p>
+  <p class="boundary" data-boundary>
+    {t(
+      "Illustrated procedure, not an executed test. Harness setup and skill activation must be checked; existing project limits still apply.",
+      "실행한 테스트가 아닌 절차 예시입니다. 에이전트 설정·스킬 활성화를 확인하고 기존 프로젝트 제한을 지킵니다.",
+      "実行済みテストではなく手順の例です。環境設定・スキル有効化を確認し、既存の制限を守ります。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(18px, 4vw, 34px);
+    background: #172636;
+    color: #f2f5fa;
+    border: 1px solid #687d90;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  h2,
+  h3 {
+    color: inherit;
+  }
+  h2 {
+    margin-top: 6px;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 0.9rem;
+  }
+  .eyebrow {
+    font-size: 0.82rem;
+    font-weight: 650;
+    color: #c7d8e7;
+  }
+  .formula {
+    margin-top: 22px;
+    border-left: 4px solid #f7ca7d;
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .formula p,
+  .formula span {
+    font-size: 0.86rem;
+  }
+  .formula strong {
+    font:
+      700 clamp(1.2rem, 3vw, 1.65rem) ui-monospace,
+      monospace;
+    color: #ffddaa;
+  }
+  .bench {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  article {
+    border: 2px solid;
+    padding: 18px;
+    min-width: 0;
+  }
+  .failure {
+    border-color: #eda9ae;
+    background: #3c2534;
+  }
+  .pass {
+    border-color: #a5dab8;
+    background: #193d34;
+  }
+  article p:last-child {
+    font-size: 0.86rem;
+  }
+  .output {
+    font:
+      800 clamp(1.4rem, 4vw, 2rem) ui-monospace,
+      monospace;
+    margin: 16px 0;
+  }
+  .failure .output {
+    color: #ffd1d4;
+  }
+  .pass .output {
+    color: #c4f7d7;
+  }
+  .repair {
+    align-self: center;
+    text-align: center;
+  }
+  .repair b {
+    color: #ffddaa;
+  }
+  .repair span {
+    font-size: 1.8rem;
+  }
+  .review {
+    margin-top: 18px;
+    padding: 14px;
+    border: 1px dashed #a9bdd0;
+    font-weight: 700;
+  }
+  .boundary {
+    margin-top: 18px;
+    font-size: 0.86rem;
+    color: #d2dfeb;
+  }
+  @container (max-width: 610px) {
+    .bench {
+      grid-template-columns: 1fr;
+    }
+    .repair {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+    .repair span {
+      transform: rotate(90deg);
+    }
+  }
+</style>

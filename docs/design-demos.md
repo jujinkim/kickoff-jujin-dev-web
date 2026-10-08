@@ -1,5 +1,7 @@
 # Design demos: implementation and extension
 
+Current agent workflow addition: [selection and verification](agent-workflow-selection-task.md). Four new independent static diagrams compare no extra setup, specification tracking, development skills, and change deltas.
+
 Current version-control addition: [extension review](version-control-review.md). Git/GitHub representatives were checked first; all ten new diagrams are static, with their own semantic structures and localized captions.
 
 In kickoff, all designs belong **inside the article body**. Site header, navigation, title,
@@ -41,10 +43,10 @@ scopes basic controls for layout/type demos to `[data-comparison]`. Style demos
 keep their control baseline inside each component; they share only data and
 behavior. Do not add a global visual theme.
 
-The preserved inventory contains 80 concept demos: **49 interactive demos and
-31 static diagrams**, plus 12 guide articles. Active discovery includes 74
-concepts and 9 guides (249 localized documents); 6 concepts and 3 guides remain
-reference-only (27 localized documents). Total: 276 published source documents.
+The preserved inventory contains 84 concept demos: **49 interactive demos and
+35 static diagrams**, plus 12 guide articles. Active discovery includes 78
+concepts and 9 guides (261 localized documents); 6 concepts and 3 guides remain
+reference-only (27 localized documents). Total: 288 published source documents.
 These counts describe retained material, not runtime allowlists. The eight
 unwritten data-structure candidates are outside the writing queue. See
 [catalog scope](catalog-scope.md) and [product alignment](product-alignment-review.md).
@@ -102,7 +104,7 @@ research lives in [catalog-writing](catalog-writing/README.md).
    leaf category in `src/data/categories.json`. Add a leaf if needed; descendants
    of `design`, all five platform groups, all seven monetization groups and
    `requirements`, `boundaries`, `service-split`, `version-control-systems` and
-   `repository-hosting` participate in publication validation.
+   `repository-hosting` and `agent-workflows` participate in publication validation.
    Extend `platformCategories` when introducing a new platform comparison group.
 2. Run `npm run content:new -- --id <id>` for all three draft files. The command
    prints this guide and template paths. Never overwrite an existing original.

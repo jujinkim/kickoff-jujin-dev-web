@@ -1,4 +1,7 @@
-import { activeTaxonomy as taxonomy } from "../../scripts/catalog-data.mjs";
+import {
+  activeCandidates,
+  activeTaxonomy as taxonomy,
+} from "../../scripts/catalog-data.mjs";
 import { isDesignCategory } from "../../scripts/design-registry.mjs";
 import { readArticles } from "../../scripts/validate-content.mjs";
 const publishedDesignCount = readArticles().filter(
@@ -181,7 +184,9 @@ for (const lang of ["en", "ko", "ja"]) {
     page,
   }) => {
     await page.goto(`/${lang}/catalog/`);
-    await expect(page.locator(".catalog-card")).toHaveCount(74);
+    await expect(page.locator(".catalog-card")).toHaveCount(
+      activeCandidates.length,
+    );
     await page
       .locator(`.category-card[href="/${lang}/catalog/categories/design/"]`)
       .click();

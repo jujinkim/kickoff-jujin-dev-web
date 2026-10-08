@@ -1,0 +1,32 @@
+# No additional skills demo brief
+
+- Stable ID, leaf category, English/Korean/Japanese titles: `no-extra-skills`; `agent-workflows`; No additional skills / 추가 스킬 없이 시작하기 / 追加スキルなしで始める.
+- Definition (one sentence): Use existing agent instructions and checks when extra workflow setup adds little value.
+- Closest concept and concrete difference: compare no extra setup, specification tracking, reusable development procedures, and change deltas. These are overlapping approaches, not exclusive size tiers.
+- Strong teaching case: One confirmed venue patch plus existing project-rule and page checks. Zero added packages is visible; no implication that planning or verification disappears.
+- Amplification and limits: emphasize artifact/execution ownership. All states are authored examples, not executed tools, tests, observed AI outcomes, or universal product defaults.
+- Distinguishing visual features: A single edit proof beside a short existing-check list; direct work has no extra installation boundary.
+- Comparison category: AI development workflows under Planning & architecture; compare existing practices, uncertainty, risk, collaboration/handoff, and setup/maintenance cost.
+- Why opening: School club website: visitors read meeting time, venue, and registration link. Correct the venue to Library while preserving date and link. EN reviewed before KO/JA; all three retain ordinary actions, problem, selection priority, and a peer-favoring priority.
+- Distinct situation, dataset, labels, actions, initial state: the scenario above; keep its product facts and localized captions consistent with the article.
+- How/visual link and representative result: Venue changes from Gym to Library; date and registration link remain unchanged.
+- Visual decisions and controls: independent semantic Astro component; no controls are needed to explain this relationship.
+- Fictional scenario: numbers, venue, and product policy are accepted illustrative inputs, not vendor capabilities or measured results.
+- Initial/changed/repeated/empty states: before and after are static, labeled explanatory states. Repetition and empty input are not applicable; no simulated executable interface.
+- Reset and reload: no reset; reload renders the same explanation.
+- Mobile order and widths: preserve DOM order; component container queries stack regions at narrow widths. Check 320, 390, 768, and 1440 pixels and enlarged text.
+- Keyboard/focus/names/live feedback: semantic headings, paragraphs, lists, and inline change markers; no focusable demo controls or live announcements. Article disclosures retain native keyboard behavior.
+- Themes/fallback/shadows/motion: component owns opaque colors and scoped styles; no external assets, shadows, or animation. Verify legibility in surrounding light/dark themes.
+- JavaScript disabled: identical static diagram and complete Markdown narrative.
+- Fonts/characters: system sans-serif, optional system monospace; local text has Unicode fallback and requires no font measurement.
+- Localized strings/constraints/review: all instructional text EN/KO/JA through existing `local` helper; proper names, IDs, units, and file names may remain literal. No user input or persistence.
+- Mode: static; no script, reset, or mount wait.
+- Capture: `[data-demo="no-extra-skills"]`; full initial diagram in all three languages.
+- Source review: 2026-10-08; current official docs, with claims separated from editorial fit judgments:
+  - https://learn.chatgpt.com/docs/agent-configuration/agents-md — Codex reads project instructions before work; this is a product-specific example, not a universal agent guarantee.
+  - https://agentskills.io/home — Skills package optional specialized instructions and resources, loaded when relevant.
+- Assets/origin/license: original authored markup/CSS, no downloaded or generated images/fonts; captured local thumbnails follow repository workflow.
+- Incidental choices: colors, geometry, sample service, and particular fictional rules are teaching composition, not requirements of the approach.
+- Supplementary reading: selection/comparison, application, implementation/cautions and dated evidence in EN/KO/JA; revision/sourceRevision 1.
+- Comparison metadata: Existing instructions and checks, No extra installation, You must keep decisions and checks explicit, Clear scope with adequate existing practices, Existing project rules and ordinary agent tools.
+- Verification: sequential bootstrap check/preview build, thumbnails, normal check/build, required-document token measurement, unit/output tests, browser tests. Results and resume point: [task record](../agent-workflow-selection-task.md).

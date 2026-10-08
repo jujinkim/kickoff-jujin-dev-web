@@ -46,6 +46,7 @@ export const helpText = {
       "Ask AI to confirm it has read both documents. If a URL cannot be opened, use the Markdown or AI behavior rules link on the prompt page and paste the missing text into the conversation. Continue with service details; do not assume unread rules were applied. Optional catalog access failure alone does not stop planning.",
     ],
     agree: [
+      "Before adding agent skills or workflow tools, ask AI to assess uncertainty, dependencies, change risk, collaboration, handoff, and existing practices. Starting without extra skills is a valid option. Compare only relevant alternatives, such as Spec Kit, Superpowers, or OpenSpec. Any selected installation and invocation happen in your external coding agent under existing authorization; a chat-only tool can provide manual next steps. Review actual setup results, not a printed command alone.",
       "For the book swap, AI might ask whether a loan needs the owner’s approval and what happens when a book is not returned. Answer unresolved questions. Compare options by your requirements, including those outside this site. Catalog examples are optional. Ask for a recommendation, delegate a specific choice, or explicitly defer it.",
       "A question such as ‘Should loan status be shared across devices?’ connects behavior to data storage and architecture. If the owner marks a book as lent on a phone, should a neighbor see it as unavailable on a laptop? Shared status calls for comparing shared storage and synchronization; a private record used on one device may fit local storage. Ask your external AI to explain these tradeoffs and what should happen offline. This gives you a concrete requirement to compare with the catalog examples, rather than choosing a technology by name.",
       "Ask AI to summarize the users, main actions, failure cases, constraints, decisions, and completion criteria. Check that the plan still describes lending books, and that unresolved questions are visible. Confirm the plan, then explicitly request development. Copying a prompt alone does not approve a plan or start development.",
@@ -100,6 +101,7 @@ export const helpText = {
       "AI가 두 문서를 읽었는지 확인하세요. URL을 열지 못하면 작성기 페이지의 Markdown 또는 AI 행동 지침 링크에서 빠진 본문을 대화에 붙여넣으세요. 서비스 정보를 이어서 전달하되, 읽지 못한 규칙이 적용됐다고 가정하지 마세요. 선택 자료인 카탈로그 접근 실패만으로 기획을 중단하지는 않습니다.",
     ],
     agree: [
+      "스킬이나 작업 도구를 추가하기 전에 AI에게 불확실성·의존 관계·변경 위험·협업·인수인계·기존 작업 방식을 살펴보도록 요청하세요. 추가 스킬 없이 시작해도 됩니다. Spec Kit·Superpowers·OpenSpec 등 관련 대안만 비교합니다. 선택한 도구의 설치·호출은 기존 승인 범위 안에서 외부 코딩 에이전트가 진행하며, 채팅만 가능한 도구는 수동 방법을 안내할 수 있습니다. 명령문 표시만이 아니라 실제 설정 결과를 확인하세요.",
       "책 대여 서비스라면 AI가 소유자의 대여 승인 여부나 책이 반납되지 않았을 때의 동작을 질문할 수 있습니다. 미결정 질문에 답하세요. 요구사항에 따라 사이트 밖 선택지도 비교합니다. 카탈로그 예시는 선택 참고자료입니다. 추천을 받거나 특정 선택을 위임하거나 명시적으로 보류하세요.",
       "‘여러 기기에서 대여 상태를 공유해야 하는가’라는 질문은 서비스 동작을 데이터 저장·아키텍처 선택으로 연결합니다. 소유자가 휴대전화에서 책을 대여 중으로 바꾸면 이웃의 노트북에서도 빌릴 수 없다고 보여야 할까요? 상태를 공유하려면 공용 저장소와 동기화 방식을 비교해야 하고, 한 기기에서만 쓰는 개인 기록이라면 로컬 저장이 맞을 수 있습니다. 외부 AI에게 장단점과 오프라인일 때의 동작을 설명하도록 요청하세요. 기술 이름부터 고르는 대신, 카탈로그 예시와 비교할 구체적인 요구사항을 얻습니다.",
       "AI에게 사용자, 주요 동작, 실패 상황, 제약, 결정 사항, 완료 조건을 정리하도록 요청하세요. 기획이 여전히 책 대여를 다루는지, 미결정 질문이 드러나 있는지 확인합니다. 기획을 확정한 뒤 명시적으로 개발을 요청하세요. 프롬프트 복사만으로 기획 승인이나 개발 시작이 되지는 않습니다.",
@@ -154,6 +156,7 @@ export const helpText = {
       "AIが二つの文書を読んだか確認します。URLを開けなければ、作成ページのMarkdownかAI行動規則のリンクから不足する本文を会話に貼り付けます。サービス情報を続けて伝え、未読の規則が適用済みだと思い込まないでください。任意のカタログにアクセスできないことだけでは企画を止めません。",
     ],
     agree: [
+      "スキルや作業ツールを追加する前に、不確実性・依存関係・変更リスク・共同作業・引継ぎ・既存の方法をAIに評価してもらいます。追加スキルなしでも始められます。Spec Kit・Superpowers・OpenSpecなど関連する代案だけを比較します。選んだツールの導入・呼出しは既存の許可範囲で外部のコーディングエージェントが行い、チャットだけなら手動の手順を示せます。コマンドの表示だけでなく実際の設定結果を確認してください。",
       "本の貸し借りなら、AIは持ち主の承認が必要か、返却されないときにどうするかを質問するかもしれません。未決定の質問に答えましょう。要件に沿ってサイト外の選択肢も比較します。カタログの例は任意です。推薦を求め、特定の判断を委任し、または明示的に保留します。",
       "「複数の端末で貸出状況を共有する必要があるか」という質問は、サービスの動作をデータ保存とアーキテクチャの選択につなげます。持ち主がスマートフォンで貸出中にしたら、近所の人のノートパソコンでも借りられないと表示すべきでしょうか。状況を共有するなら共有の保存先と同期方法の比較が必要です。一台だけで使う個人の記録ならローカル保存が合う場合もあります。外部AIに利点・制約とオフライン時の動作を説明してもらいましょう。技術名から選ぶのではなく、カタログの例と比較できる具体的な要件を得られます。",
       "ユーザー、主な動作、失敗時の扱い、制約、決定事項、完了条件をAIにまとめてもらいます。企画が本の貸し借りを扱っているか、未決定の質問が見えるか確認します。企画を確定した後、明示的に開発を依頼します。コピーだけで企画の承認や開発開始にはなりません。",

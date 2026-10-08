@@ -22,6 +22,13 @@ const planModeRecommendation = {
 };
 const workflow = {
   en: [
+    /starting without extra skills/,
+    /Spec Kit/,
+    /change risk/,
+    /installation authorization/,
+    /verify availability/,
+    /invoke the selected workflow/,
+    /manual next steps/,
     /realistic options, pros\/cons/,
     /use your recommendation/,
     /task file/,
@@ -33,6 +40,13 @@ const workflow = {
     /verify actual results afterward/,
   ],
   ko: [
+    /추가 스킬 없이 시작하기/,
+    /Spec Kit/,
+    /변경 위험/,
+    /기존 설치 승인 범위/,
+    /사용 가능 여부를 검증/,
+    /지원하는 방식으로 호출/,
+    /수동 진행 방법/,
     /현실적인 선택지·장단점/,
     /알아서 추천대로 해줘/,
     /작업 파일/,
@@ -44,6 +58,13 @@ const workflow = {
     /수정 후 실제 결과를 검증/,
   ],
   ja: [
+    /追加スキルなし/,
+    /Spec Kit/,
+    /変更リスク/,
+    /既存の導入許可/,
+    /利用可能か検証/,
+    /対応する方式で呼び出/,
+    /手動の次の手順/,
     /現実的な選択肢・利点と欠点/,
     /推薦どおりに任せます/,
     /作業ファイル/,
@@ -141,9 +162,9 @@ for (const lang of ["en", "ko", "ja"] as const) {
     await expect(
       page.getByRole("heading", {
         name: {
-          en: "6. Present the plan, then develop",
-          ko: "6. 기획 제시 후 개발하기",
-          ja: "6. 計画を提示してから開発する",
+          en: "7. Present the plan, then develop",
+          ko: "7. 기획 제시 후 개발하기",
+          ja: "7. 計画を提示してから開発する",
         }[lang],
       }),
     ).toBeVisible();
@@ -157,7 +178,7 @@ for (const lang of ["en", "ko", "ja"] as const) {
     const md = await page.request.get(`/${lang}/start/v1.md`);
     expect(md.headers()["content-type"]).toContain("text/markdown");
     const markdown = await md.text();
-    expect(markdown).toContain("Reply in the user's language");
+    expect(markdown).toMatch(/reply in the user's language/i);
     expect(markdown).toBe(
       await (await page.request.get("/ai/startup/v1.md")).text(),
     );

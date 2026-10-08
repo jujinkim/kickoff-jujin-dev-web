@@ -90,6 +90,36 @@ These illustrate checkable criteria; do not adopt them for a project without the
 
 ## Version policy
 
+**v1 revision 8**, 2026-10-08, adds fit-based agent workflow selection, starting
+without extra skills as an equal option, official-source and runtime checks,
+authorized external-agent setup/activation/invocation, and reuse of workflow
+artifacts. It preserves all earlier duties, the two required site documents,
+optional catalog reading, and the 3,000-token initial English input budget.
+
+Review revision 8 in every localized source and every generated, pinned,
+project, and no-JavaScript prompt:
+
+| Scenario                                            | Expected behavior                                                                                                                                                                                          |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Clear correction with adequate existing rules       | Recommend no additional skills when setup adds little value; preserve planning, records, and checks.                                                                                                       |
+| Large project with an established workflow          | Reuse adopted tools and artifacts. Size alone does not require Spec Kit or another package.                                                                                                                |
+| Small but consequential permission change           | Evaluate risk, uncertainty, and verification needs; a small diff can justify a structured specification.                                                                                                   |
+| Shared dependent requirements                       | Compare applicable tracking approaches, explain fit/overhead, and propose an owned specification/plan/task set.                                                                                            |
+| Repeatable development skills are the priority      | Compare relevant skills or packages, including options outside this catalog; do not install every listed example.                                                                                          |
+| Selected workflow and existing setup authority      | Reuse existing installation; install/configure needed components and invoke supported planning steps without repeating permission already granted. Selection delegation alone does not expand setup scope. |
+| Installation authority missing                      | Explain needed scope and obtain only missing authority; continue independent planning.                                                                                                                     |
+| Installed but not active or invocable               | Verify activation and invocation separately; inspect actual output. Do not count printed slash syntax as execution evidence.                                                                               |
+| Chat-only, read-only, offline, or unsupported agent | Provide a usable plan/manual steps; report exactly which setup or invocation boundary is unverified.                                                                                                       |
+| Existing framework artifacts                        | Reuse adopted plans, task lists, and criteria, retaining all required content/checks and avoiding competing records.                                                                                       |
+| Overlapping workflows                               | Establish artifact and execution ownership before combining; retain approved project instructions and scope.                                                                                               |
+
+Current examples are Spec Kit, Superpowers, and OpenSpec. They represent
+overlapping tool packages and approaches, not single-skill equivalents or
+exclusive scale tiers. Their catalog evidence is optional; install-time facts
+must be refreshed from official sources. Local site tests establish composition,
+publication, accessibility behavior, and compatibility, not external-agent
+installation or model compliance.
+
 User-approved pre-release policy, 2026-09-24: **remain in guideline v1**. This is an improvement before formal release, not a new major version. The lighter workflow was recorded as **v1 revision 3**, including its changed reading obligations. **v1 revision 4**, 2026-09-26, clarifies proportionate architecture, SOLID/GRASP as judgment criteria, quality across software/design/monetization/operations, and maintenance handoff. **v1 revision 5**, 2026-09-27, includes version control systems and repository hosting in prompts and planning, preserving existing choices and access responsibilities. **v1 revision 6**, 2026-09-28, adds reasoned questions and contextual delegation, resumable task records, validated automatic local commits subject to existing restrictions, and completion/interruption reports. Keep v1/latest URLs, API `schemaVersion: 1`, and the catalog JSON structure unchanged; API reduction or splitting is outside this change.
 
 **v1 revision 7**, 2026-10-01, adds maintained Markdown project checklists, relevant checks before and after every change, review of affected areas when shared criteria change, and explicit violation/unverified reporting under existing decision authority.

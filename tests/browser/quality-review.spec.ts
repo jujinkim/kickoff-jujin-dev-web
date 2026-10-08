@@ -1,7 +1,9 @@
 import { test, expect } from "@playwright/test";
 import { mkdirSync } from "node:fs";
+import { readDetails } from "../../scripts/validate-details.mjs";
 import { readArticles } from "../../scripts/validate-content.mjs";
 import { isListedArticle } from "../../scripts/catalog-data.mjs";
+const supplements = readDetails();
 const active = readArticles().filter(
   (a) =>
     a.data.lang === "en" &&
@@ -120,8 +122,15 @@ for (const lang of languages) {
           await page.keyboard.press("Enter");
         }
         await expect(details.locator("details[open]")).toHaveCount(4);
+        const supplement = supplements.find(
+          (d) =>
+            d.data.lang === lang &&
+            d.data.articleId === route.split("/").filter(Boolean).at(-1),
+        );
+        if (!supplement)
+          throw new Error(`Missing evidence for ${lang}/${route}`);
         await expect(details.locator("time").first()).toHaveText(
-          /^2026-09-(26|27)$/,
+          supplement.data.sources[0].checked,
         );
       }
       for (const width of [320, 390, 768, 1440]) {

@@ -871,5 +871,45 @@
       "ja": "ルートツールの貢献者と保守担当者が共同体運営のサービスを共有"
     },
     "capture": "[data-demo=\"codeberg\"]"
+  },
+  "no-extra-skills": {
+    "component": "NoExtraSkills",
+    "caption": {
+      "en": "A confirmed venue correction uses existing rules and checks",
+      "ko": "확정된 장소 수정에 기존 규칙과 점검 사용",
+      "ja": "確定した会場の修正に既存の規則と確認を使う"
+    },
+    "mode": "static",
+    "capture": "[data-demo=\"no-extra-skills\"]"
+  },
+  "spec-kit": {
+    "component": "SpecKit",
+    "caption": {
+      "en": "One waitlist rule follows the specification, plan, tasks, and code review",
+      "ko": "대기자 규칙 하나를 명세·계획·작업·코드 점검까지 추적",
+      "ja": "一つの待機者ルールを仕様・計画・作業・コード確認まで追跡"
+    },
+    "mode": "static",
+    "capture": "[data-demo=\"spec-kit\"]"
+  },
+  "superpowers": {
+    "component": "Superpowers",
+    "caption": {
+      "en": "A recipe scaling test goes from observed failure to a checked repair",
+      "ko": "레시피 배율 테스트의 실패 확인부터 수정 검증까지",
+      "ja": "レシピの倍率テストで失敗を確認し、修正を検証する"
+    },
+    "mode": "static",
+    "capture": "[data-demo=\"superpowers\"]"
+  },
+  "openspec": {
+    "component": "OpenSpec",
+    "caption": {
+      "en": "A proposed rescheduling rule changes the spec while preserving confirmation",
+      "ko": "확인 규칙을 보존하며 일정 변경 규칙을 명세에 반영",
+      "ja": "確認ルールを保ちながら日程変更のルールを仕様に反映"
+    },
+    "mode": "static",
+    "capture": "[data-demo=\"openspec\"]"
   }
 }

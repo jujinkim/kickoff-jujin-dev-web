@@ -1,0 +1,33 @@
+# OpenSpec demo brief
+
+- Stable ID, leaf category, English/Korean/Japanese titles: `openspec`; `agent-workflows`; OpenSpec / OpenSpec / OpenSpec.
+- Definition (one sentence): Keep current specifications alongside reviewed change proposals and deltas when evolving agreed behavior.
+- Closest concept and concrete difference: compare no extra setup, specification tracking, reusable development procedures, and change deltas. These are overlapping approaches, not exclusive size tiers.
+- Strong teaching case: Current specification and a visibly added delta stay separate until review/implementation/checks; reconciled spec and archived rationale have different ownership.
+- Amplification and limits: emphasize artifact/execution ownership. All states are authored examples, not executed tools, tests, observed AI outcomes, or universal product defaults.
+- Distinguishing visual features: Current and proposed records side by side, a review boundary, then separate specification and archive destinations.
+- Comparison category: AI development workflows under Planning & architecture; compare existing practices, uncertainty, risk, collaboration/handoff, and setup/maintenance cost.
+- Why opening: Pottery workshop: members book classes and receive confirmation. Add rescheduling at least 24 hours before class while preserving confirmation. EN reviewed before KO/JA; all three retain ordinary actions, problem, selection priority, and a peer-favoring priority.
+- Distinct situation, dataset, labels, actions, initial state: the scenario above; keep its product facts and localized captions consistent with the article.
+- How/visual link and representative result: Review a new time-bound rescheduling scenario and verify both the added rule and unchanged confirmation behavior.
+- Visual decisions and controls: independent semantic Astro component; no controls are needed to explain this relationship.
+- Fictional scenario: numbers, venue, and product policy are accepted illustrative inputs, not vendor capabilities or measured results.
+- Initial/changed/repeated/empty states: before and after are static, labeled explanatory states. Repetition and empty input are not applicable; no simulated executable interface.
+- Reset and reload: no reset; reload renders the same explanation.
+- Mobile order and widths: preserve DOM order; component container queries stack regions at narrow widths. Check 320, 390, 768, and 1440 pixels and enlarged text.
+- Keyboard/focus/names/live feedback: semantic headings, paragraphs, lists, and inline change markers; no focusable demo controls or live announcements. Article disclosures retain native keyboard behavior.
+- Themes/fallback/shadows/motion: component owns opaque colors and scoped styles; no external assets, shadows, or animation. Verify legibility in surrounding light/dark themes.
+- JavaScript disabled: identical static diagram and complete Markdown narrative.
+- Fonts/characters: system sans-serif, optional system monospace; local text has Unicode fallback and requires no font measurement.
+- Localized strings/constraints/review: all instructional text EN/KO/JA through existing `local` helper; proper names, IDs, units, and file names may remain literal. No user input or persistence.
+- Mode: static; no script, reset, or mount wait.
+- Capture: `[data-demo="openspec"]`; full initial diagram in all three languages.
+- Source review: 2026-10-08; current official docs, with claims separated from editorial fit judgments:
+  - https://github.com/Fission-AI/OpenSpec — OpenSpec uses project specifications and change artifacts, documents installation, and supports agent-specific invocation.
+  - https://github.com/Fission-AI/OpenSpec/blob/main/docs/workflows.md — Planning artifacts can be refined; implementation, specification synchronization, and archiving are distinct actions.
+  - https://github.com/Fission-AI/OpenSpec/blob/main/docs/supported-tools.md — Generated integration paths and invocation syntax vary by agent.
+- Assets/origin/license: original authored markup/CSS, no downloaded or generated images/fonts; captured local thumbnails follow repository workflow.
+- Incidental choices: colors, geometry, sample service, and particular fictional rules are teaching composition, not requirements of the approach.
+- Supplementary reading: selection/comparison, application, implementation/cautions and dated evidence in EN/KO/JA; revision/sourceRevision 1.
+- Comparison metadata: Current specs plus proposed change deltas, Changed and preserved rules stay visible, Artifacts must stay aligned with code, Reviewable changes to agreed behavior, Scoped execution skills and existing project rules.
+- Verification: sequential bootstrap check/preview build, thumbnails, normal check/build, required-document token measurement, unit/output tests, browser tests. Results and resume point: [task record](../agent-workflow-selection-task.md).

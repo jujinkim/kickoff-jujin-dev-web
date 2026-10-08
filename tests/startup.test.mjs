@@ -10,9 +10,9 @@ test("startup versions publish localized HTML and English-only Markdown with lat
     const html = read(`${lang}/start/v1/index.html`);
     assert.match(
       source,
-      { en: /Revision: 7\./, ko: /리비전: 7\./, ja: /リビジョン: 7。/ }[lang],
+      { en: /Revision: 8\./, ko: /리비전: 8\./, ja: /リビジョン: 8。/ }[lang],
     );
-    assert.ok(source.includes("2026-10-01"));
+    assert.ok(source.includes("2026-10-08"));
     for (const obligation of {
       en: [
         "Use your recommendation",
@@ -51,7 +51,7 @@ test("startup versions publish localized HTML and English-only Markdown with lat
       ],
     }[lang])
       assert.ok(source.includes(obligation), `${lang}: ${obligation}`);
-    for (let revision = 1; revision <= 7; revision++)
+    for (let revision = 1; revision <= 8; revision++)
       assert.ok(
         html.includes(
           {

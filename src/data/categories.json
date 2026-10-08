@@ -8,9 +8,9 @@
       "ja": "企画・設計"
     },
     "descriptions": {
-      "en": "Compare module boundaries and service splitting to decide how responsibilities and changes fit together.",
-      "ko": "모듈 경계와 서비스 분할을 비교해 책임과 변경 범위를 정합니다.",
-      "ja": "モジュールの境界とサービス分割を比較し、責任と変更範囲を決めます。"
+      "en": "Compare project workflows, module boundaries, and service splitting to decide how responsibilities, checks, and changes fit together.",
+      "ko": "작업 방식·모듈 경계·서비스 분할을 비교해 책임·점검·변경 범위를 정합니다.",
+      "ja": "作業方式・モジュールの境界・サービス分割を比較し、責任・確認・変更範囲を決めます。"
     },
     "order": 0
   },
@@ -508,5 +508,20 @@
       "ja": "Git協業の運営者、レビュー、連携、移行の要件を比較します。"
     },
     "order": 1
+  },
+  {
+    "id": "agent-workflows",
+    "parent": "planning",
+    "names": {
+      "en": "AI development workflows",
+      "ko": "AI 개발 작업 방식",
+      "ja": "AI開発の作業方式"
+    },
+    "descriptions": {
+      "en": "Compare starting without extra skills, specification tracking, reusable development skills, and change proposals by risk, collaboration, and setup cost.",
+      "ko": "추가 스킬 없이 시작하기·명세 추적·개발 스킬·변경 제안을 위험·협업·설치 비용으로 비교합니다.",
+      "ja": "追加スキルなし・仕様の追跡・開発スキル・変更提案を、リスク・共同作業・導入費用で比較します。"
+    },
+    "order": 3
   }
 ]

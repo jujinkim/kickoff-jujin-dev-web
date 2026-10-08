@@ -1,0 +1,203 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+const ruleLabel = t("Waitlist first", "대기자 우선", "待機者優先");
+const stages = [
+  [
+    "spec.md",
+    t(
+      "Waitlist first · Next eligible fan before public sale",
+      "대기자 우선 · 공개 판매 전 다음 자격 있는 대기자",
+      "待機者優先 · 一般販売より先に次の対象待機者",
+    ),
+  ],
+  [
+    "plan.md",
+    t(
+      "Waitlist first · Booking and notification boundary",
+      "대기자 우선 · 예매·알림 경계",
+      "待機者優先 · 予約と通知の境界",
+    ),
+  ],
+  [
+    "tasks.md",
+    t(
+      "Waitlist first · Implement and check queue-first notification",
+      "대기자 우선 · 대기자 우선 알림 구현·점검",
+      "待機者優先 · 待機者優先の通知を実装・確認",
+    ),
+  ],
+  [
+    t("Convergence", "구현 대조 확인", "実装との照合"),
+    t(
+      "Waitlist first · Compare code with the agreed rule",
+      "대기자 우선 · 코드와 합의한 규칙 대조",
+      "待機者優先 · コードと合意したルールを照合",
+    ),
+  ],
+];
+---
+
+<section data-demo="spec-kit" lang={lang}>
+  <header>
+    <p class="eyebrow">
+      {t(
+        "Concert booking · illustrated requirement trace",
+        "공연 예매 · 요구 추적 예시",
+        "公演予約 · 要件追跡の例",
+      )}
+    </p>
+    <h2>
+      {t(
+        "Keep one rule through every stage",
+        "하나의 규칙을 모든 단계에 연결",
+        "一つのルールを全ての段階へ結ぶ",
+      )}
+    </h2>
+  </header>
+  <div class="rule" data-shared-rule>
+    <b>{ruleLabel}</b>
+    <p>
+      {t(
+        "Cancelled seat → next eligible fan → public offer after the agreed response period",
+        "취소 좌석 → 다음 자격 있는 대기자 → 합의한 응답 기간 후 공개",
+        "取消席 → 次の対象待機者 → 合意した返答期限後に公開",
+      )}
+    </p>
+  </div>
+  <ol class="trace" data-artifact-trace>
+    {stages.map(([file, description], index) => (
+      <li>
+        <span class="stage-index">{index + 1}</span>
+        <div>
+          <h3>{file}</h3>
+          <p>{description}</p>
+        </div>
+        <span class="rule-tag">{ruleLabel}</span>
+      </li>
+    ))}
+  </ol>
+  <p class="return" data-gap-loop>
+    ↳{" "}
+    {t(
+      "Implementation gap found? Add remaining tasks and check again.",
+      "구현에 빠진 부분 발견? 남은 작업을 추가하고 다시 확인합니다.",
+      "実装に不足を発見？残作業を追加して再確認します。",
+    )}
+  </p>
+  <p class="boundary" data-boundary>
+    {t(
+      "Agree on eligibility and response time. Documents and task boxes do not replace behavior checks; setup and review add work.",
+      "자격·응답 시간을 합의합니다. 문서와 작업 체크가 동작 검증을 대신하지 않으며 설치·검토 비용이 생깁니다.",
+      "対象条件・返答期限を合意します。文書やチェック欄は動作検証の代わりにならず、導入・確認の作業が増えます。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(18px, 4vw, 34px);
+    background: #fbf1e5;
+    color: #4d2933;
+    border: 1px solid #b7978a;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  h2,
+  h3 {
+    color: inherit;
+  }
+  h2 {
+    margin-top: 6px;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    line-height: 1.2;
+  }
+  .eyebrow {
+    color: inherit;
+    font-size: 0.82rem;
+    font-weight: 650;
+  }
+  .rule {
+    display: flex;
+    align-items: start;
+    gap: 14px;
+    padding: 18px;
+    margin-top: 22px;
+    border: 2px solid #79404f;
+    background: #fffaf4;
+  }
+  .rule b {
+    color: #fff;
+    background: #79404f;
+    padding: 3px 9px;
+    flex-shrink: 0;
+  }
+  .trace {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+  }
+  li {
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    gap: 14px;
+    padding: 16px 0;
+    border-top: 1px solid #b7978a;
+    align-items: start;
+  }
+  li:last-child {
+    border-bottom: 1px solid #b7978a;
+  }
+  .stage-index {
+    border: 1px solid #79404f;
+    text-align: center;
+    padding: 3px;
+    font-weight: 700;
+  }
+  h3 {
+    font:
+      700 0.98rem ui-monospace,
+      monospace;
+  }
+  li p {
+    margin-top: 5px;
+  }
+  .rule-tag {
+    font-weight: 800;
+    border-bottom: 3px solid #79404f;
+  }
+  .return {
+    padding: 16px 0 16px 46px;
+    font-weight: 700;
+  }
+  .boundary {
+    font-size: 0.86rem;
+  }
+  @container (max-width: 450px) {
+    .rule {
+      flex-direction: column;
+      gap: 8px;
+    }
+    li {
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+    }
+    .rule-tag {
+      display: none;
+    }
+    .return {
+      padding-left: 0;
+    }
+  }
+</style>

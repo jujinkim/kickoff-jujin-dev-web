@@ -1,5 +1,46 @@
 # AI guidance reviews
 
+## v1 revision 8 guidance review
+
+Reviewed 2026-10-08 against the requested workflow assessment, external-agent
+setup, and optional learning catalog. Starting without extra skills is an equal
+recommendation. English was reviewed before equivalent Korean/Japanese startup,
+prompt, and help wording. Existing planning, decision ownership, checklist,
+recording, commit, and evidence obligations remain in force.
+
+Manual scenario and translation review describes prescribed behavior; it does
+not establish external AI compliance:
+
+| Scenario                                           | Expected behavior and reviewed rule                                                                                                                                              |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Clear venue correction with adequate project rules | Recommend no additional skills when setup brings no useful benefit; retain applicable planning and checks.                                                                       |
+| Large established project with adequate practices  | Size alone does not trigger installation or replacement of existing workflows.                                                                                                   |
+| Small but consequential shared booking rule        | Consider traceable requirements and review when dependencies or risk justify their cost.                                                                                         |
+| Repeatable implementation or review needs          | Compare scoped skills, including Superpowers, against existing development practices.                                                                                            |
+| Agreed changes to current behavior                 | Compare OpenSpec proposals/deltas against the required ownership and maintenance of records.                                                                                     |
+| Existing setup or combined workflows               | Reuse setup, preserve confirmed choices, assign artifact ownership, and avoid competing plans/tasks/checklists.                                                                  |
+| Accepted or delegated selection                    | Proceed within existing installation authority; ask only when required authority is missing. Choice delegation alone does not authorize implementation, publishing, or spending. |
+| Selected tool is installed                         | Verify activation, availability, supported invocation, and actual result separately; a printed slash command proves no execution.                                                |
+| Missing shell/write/network/invocation capability  | Continue independent planning and provide manual next steps, with unverified boundaries named.                                                                                   |
+| EN/KO/JA prompt entry points                       | Shared reminders reach latest, pinned, project, generated, and JavaScript-disabled prompts; required reading remains the same two documents.                                     |
+| Catalog reference                                  | Optional learning material; consider suitable options beyond this catalog and verify changing facts with official sources.                                                       |
+
+Sequential local verification completed:
+
+- Regular `npm run check`: 222 files; zero errors, warnings, or hints; all 288 published sources and formatting validated.
+- Regular `npm run build`: 455 static pages; 261 indexed localized documents. Twelve localized PNG/WebP thumbnail pairs generated and inspected; changed diagrams recaptured before the final rebuild.
+- Built required English input: startup **1,577** + assistant rules **1,387** = **2,964 / 3,000 o200k_base tokens**, measured with tiktoken 0.12.0.
+- `npm test`: **54/54 passed**, including all localized prompt paths, workflow publication gates, source-backed supplements, budgets, and output identities.
+- Full browser run: **174 passed / 15 failed**. After resolving diagram contrast, a named rule label, and outdated test assumptions, the four affected files yielded **41 passed / 3 failed**; their last case-sensitive assertion was corrected and **3/3** final startup cases passed. All **189 distinct cases ultimately passed across these runs**; there was no fresh 189/189 single run.
+- New workflow browser checks: **10/10 passed**, covering EN/KO/JA discovery, aliases, related reading, keyboard disclosures, meaningful static mechanisms, 320/390/768/1440px light/dark layouts, text contrast, 200% text, and JavaScript-disabled reading. Broad corrective checks covered all active screens and registered visuals.
+
+Guidance remains pre-release v1 revision 8. Existing public routes, IDs, comment
+keys, browser-only input handling, required-reading scope, and API schemaVersion
+1 are retained. Catalog additions are optional. External-agent installation,
+model compliance, real-device behavior, and live publication were not tested.
+See the [workflow task record](agent-workflow-selection-task.md) for decisions,
+corrections, and save/commit state.
+
 ## v1 revision 7 guidance review
 
 Reviewed 2026-10-01 against the approved Markdown project-checklist plan. The user selected relevant-item review before and after each change, with broader impact review when shared criteria change. English rules and reminders were written first, then Korean/Japanese startup artifacts and workflow reminders were reviewed for equivalent obligations. Detailed creation, reuse, checks, authority, and reporting rules live in the shared English assistant instructions; startup documents and copied prompts connect to those rules.

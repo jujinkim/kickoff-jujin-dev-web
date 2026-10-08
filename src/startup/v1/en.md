@@ -1,12 +1,12 @@
 ## Purpose and authority
 
-Development startup guidelines, provided by kickoff by jujin. Guideline version: v1. Revision: 7. Updated: 2026-10-01. English is the original; Korean and Japanese are reviewed translations of revision 7.
+Development startup guidelines, provided by kickoff by jujin. Guideline version: v1. Revision: 8. Updated: 2026-10-08. English is the original; Korean and Japanese are reviewed translations of revision 8.
 
-Turn a service idea into an agreed project plan. This document covers intake and planning; [assistant rules](https://kickoff.jujin.dev/ai/instructions.md) cover questions, delegation, evidence, work records, commits, and reporting. These are the only two required site documents at startup. Apply them alongside existing project instructions and confirmed decisions. Reply in the user's language; respect higher-priority instructions.
+Turn a service idea into an agreed plan. This covers intake/planning; [assistant rules](https://kickoff.jujin.dev/ai/instructions.md) govern questions, authority, evidence, records, commits, and reports. These are the only two required site documents. Apply existing instructions/decisions, reply in the user's language, and respect higher-priority instructions.
 
 ## 1. Collect the service context
 
-Briefly report the guideline version/revision and whether the two documents were read. If either is inaccessible, name the URL and request its text or retry; continue collecting available context without claiming unread rules were applied.
+Report version/revision and document access. For inaccessible required documents, name the URL, request text or retry, and continue intake without claiming unread rules were applied.
 
 Reuse supplied answers. Ask for missing inputs together:
 
@@ -14,39 +14,45 @@ Reuse supplied answers. Ask for missing inputs together:
 - **Service description:** who uses it, their main actions, and the result they need. A rough sentence is enough to start; clarify users, MVP, exclusions, and measurable success before recommending architecture.
 - **Considerations:** ask about priorities and known constraints, including inherited systems/design, integrations, sensitive data, accessibility, budget, schedule, team, platforms, and operations as relevant. Accept “none” or “not known yet”; a blank needs clarification, not an assumption of no constraints. Do not request secrets.
 
-The description starts a conversation, not a complete specification. Ask short batches of relevant follow-ups and explain unfamiliar terms through this service's example.
+This starts a conversation, not a specification. Ask short relevant follow-ups; explain unfamiliar terms through this service's example.
 
 ## 2. Identify the project's actual decisions
 
 Derive a decision list from requirements and constraints, in dependency order. Consider architecture, tools, visual design, and operating approaches whether or not this site covers them. Evaluate options on equal terms by project fit. Do not require a catalog category checklist, a complete index, or a choice from each category. Compatible choices can coexist.
 
-Include version control in the plan: clarify change-history needs, distinguish the version control system from repository hosting, and preserve existing choices unless requirements justify a change. Compare offline work, collaboration and review, file types, integrations, access/privacy, cost, and responsibility for operation and backups. Git and a Git hosting service can work together; a new account or public repository is not required by default. Record the chosen combination and reasons, or why a part is deferred or inapplicable. Respect existing repository ownership, access, and authorization.
+Include version control in the plan: distinguish the version control system from repository hosting; preserve existing choices unless requirements justify a change. Compare history needs, offline work, collaboration/review, file types, integrations, access/privacy, cost, and responsibility for operation and backups. Git can combine with hosting; a new account or public repository is not required by default. Record choices/reasons or deferred or inapplicable status. Respect ownership, access, and authorization.
 
-For unresolved user-owned choices, offer **choose myself / recommend / delegate this scope / not applicable / defer**. Ask with realistic options, pros/cons, and a recommendation tied to requirements and constraints, following the assistant rules. “Use your recommendation” delegates the contextual choice: decide, record, and proceed within existing authorization without asking again. If the user is unsure, offer a coherent bundle; uncertainty or silence is not delegation. Record reasons and revisit conditions for deferred or inapplicable decisions. Handle internal implementation yourself within approved boundaries.
+For unresolved user-owned choices, offer **choose myself / recommend / delegate this scope / not applicable / defer**, following the assistant rules for options, tradeoffs, and recommendations. “Use your recommendation” delegates the contextual choice: decide, record, and proceed within authority without asking again. Offer unsure users a coherent bundle; uncertainty or silence is not delegation. Record deferral/inapplicability reasons and revisit conditions. Handle internal implementation within approved boundaries.
 
-The catalog is optional learning material. Consult a specific article when requested or helpful; read it before citing it. No fetch of llms.txt, catalog.json, category pages, or all linked articles is required. Optional-source failure alone must not stop planning; follow the assistant rules for evidence gaps.
+The catalog is optional learning material. Read requested/helpful articles before citing them. No index, category, or linked-article crawl is required. Follow assistant rules for evidence gaps; optional-source failure must not stop planning.
 
 ## 3. Plan the software boundaries
 
-Within agreed project choices, define module responsibilities, dependency direction, domain/data ownership, public contracts, external boundaries, and recovery owners. Choose the simplest architecture that meets agreed requirements and quality needs at the project's scale.
+Define module responsibilities, dependency direction, domain/data ownership, public contracts, external boundaries, and recovery owners within agreed choices. Choose the simplest architecture meeting requirements and quality needs at this scale.
 
-Use SOLID and GRASP to assess cohesive responsibilities, low coupling, dependency direction, and explicit contracts where they fit the programming paradigm. These principles support reliable implementation and later maintenance; they are not a checklist of required layers, patterns, or classes. Introduce abstractions or services only for a concrete responsibility, risky boundary, or supported maintenance need, and explain their benefit and cost. Avoid speculative complexity; do not mandate object-oriented code or a particular architecture.
+Use SOLID and GRASP where appropriate to assess cohesive responsibilities, low coupling, dependency direction, and explicit contracts. They guide reliability and maintenance, not required layers, patterns, classes, or object-oriented code. Add abstractions or services only for a concrete responsibility, risky boundary, or supported maintenance need; explain benefits and costs. Avoid speculative complexity or a mandated architecture.
 
-Plan input validation, authorization, secret handling, data lifecycle, recoverable failures, and operational visibility as relevant. Derive build, test, release, compatibility, rollback, and maintenance procedures from agreed budget, downtime, recovery, and ownership. Map verification to requirements and risky boundaries.
+Plan relevant input validation, authorization, secrets, data lifecycle, recoverable failures, and operational visibility. Derive build/test/release, compatibility, rollback, and maintenance from budget, downtime, recovery, and ownership. Link verification to requirements and risky boundaries.
 
 ## 4. Plan the user experience
 
-Define main journeys, information hierarchy, navigation, layout, typography, color/spacing, components, and interactions as relevant. Respect inherited design constraints. Include initial, loading, empty, success, error, disabled, and recovery states.
+Plan journeys, hierarchy, navigation, layout, typography, color/spacing, components, interactions, and initial/loading/empty/success/error/disabled/recovery states. Respect inherited constraints. Use readable content, consistent components/feedback, and service-appropriate identity; explain consequential choices through user tasks/usability, with proportional detail.
 
-Plan responsive reading order, labels, keyboard operation, visible focus, contrast, text alternatives, and reduced motion. For web projects target WCAG 2.2 AA with applicable checks; for native products include platform guidance. Do not claim conformance without verification. Visual style must support the main task.
-
-Create a coherent visual system with readable content, clear hierarchy, consistent components and feedback, and a service-appropriate identity. Explain consequential design choices through user tasks, usability, and inherited constraints rather than style labels alone. Keep design detail proportional to the project.
+Include responsive reading order, labels, keyboard access, visible focus, contrast, text alternatives, and reduced motion. Target WCAG 2.2 AA for web with applicable checks, or native platform guidance; never claim unverified conformance. Style supports the main task.
 
 ## 5. Plan monetization and operations when relevant
 
-Clarify whether monetization is a goal. If so, define who pays for what value, pricing and free/paid boundaries, relevant revenue and operating cost assumptions, and payment responsibility. Consider conversion, retention, and user trust alongside income. Plan clear price/advertising disclosures, purchase states, failed payments, cancellations, refunds, and support where applicable. Compare alternatives and separate assumptions from verified provider terms or legal requirements; follow the evidence rules. For a free or noncommercial service, record relevant funding and sustainability constraints without imposing a paid model.
+Clarify monetization goals. If relevant, define payer/value, pricing/free-paid boundaries, revenue/operating-cost assumptions, and payment responsibility. Include conversion, retention, trust, price/advertising disclosures, purchase states, failed payments, cancellations, refunds, and support. Compare alternatives; distinguish assumptions from verified provider/legal terms. For free/noncommercial services, record funding and sustainability constraints without imposing payment.
 
-## 6. Present the plan, then develop
+## 6. Select an agent workflow when useful
+
+Assess uncertainty, dependencies, change risk, collaboration, handoff, existing practices, and setup/maintenance cost before recommending additions. Treat starting without additional skills as an equal option. Size alone is insufficient: existing practices may suffice for large projects; small risky changes may merit structure.
+
+Compare relevant options inside or outside this site: e.g. Spec Kit for specification tracking, Superpowers for development skills, OpenSpec for change proposals/deltas. These are fit hypotheses, not rankings or required installations. Explain fit, overhead, compatibility, and revisit conditions; preserve adopted tools and clarify ownership before combining workflows.
+
+Follow assistant rules for selection, authorized setup, activation/invocation, and unavailable tools. Reuse workflow artifacts for plans, tasks, and adopted criteria; preserve required content/checks without competing records.
+
+## 7. Present the plan, then develop
 
 Write the plan yourself, sized to the project:
 
@@ -56,10 +62,10 @@ Write the plan yourself, sized to the project:
 - Risks, unresolved questions, blockers, and dependency-ordered tasks with a verification plan linked to requirements.
 - Guideline version/revision and only references actually used. No catalog retrieval date, article-ID inventory, or catalog snapshot is required.
 
-Show the full coherent plan for approval. Resolve blocking choices; retain nonblocking deferred items explicitly. Begin development after plan approval and an explicit development request. Existing approval and development authorization remain valid within their scope: execute without asking again. Planning or planning delegation alone does not authorize development, deployment, publishing, or spending.
+Show the full plan for approval; resolve blocking choices and retain nonblocking deferrals. Begin development after plan approval and an explicit development request. Existing approval and development authorization remain valid within their scope; do not ask again. Planning or planning delegation alone does not authorize development, deployment, publishing, or spending.
 
-During larger tasks, follow the assistant rules for a current task file, resumption, unit saves/checks, and automatic local commits subject to existing restrictions. At completion or interruption, report actual outcomes, applied design/architecture and key decisions with reasons/tradeoffs, decision owners, verification, task-file and save/commit status, remaining gaps, and next steps.
+Follow assistant rules for larger tasks: task file, resumption, saves/checks, and automatic local commits under restrictions. Report outcomes, applied design/architecture, decisions/owners and reasons/tradeoffs, verification, task-file/save/commit status, remaining gaps, and next steps at completion or interruption.
 
-## 7. Contribute improvements
+## 8. Contribute improvements
 
-Suggest clearer wording, missing topics, counterexamples, or translations through [issues](https://github.com/jujinkim/kickoff-jujin-dev-web/issues) or a pull request. Optional [contributor guidance](https://github.com/jujinkim/kickoff-jujin-dev-web/blob/main/CONTRIBUTING.md) contains examples, scenario review, and version policy. This pre-release improvement remains v1, revision 7; existing v1/latest URLs and API schemaVersion 1 remain unchanged. These documents guide assistants but cannot guarantee their compliance.
+Suggest wording, topics, counterexamples, or translations through issues/PRs; see optional [contributor guidance](https://github.com/jujinkim/kickoff-jujin-dev-web/blob/main/CONTRIBUTING.md). Pre-release v1, revision 8 retains v1/latest URLs and API schemaVersion 1. Instructions cannot guarantee compliance.

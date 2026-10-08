@@ -1183,5 +1183,66 @@
       "Forgejo"
     ],
     "order": 2109
+  },
+  {
+    "id": "no-extra-skills",
+    "category": "agent-workflows",
+    "titles": {
+      "en": "No additional skills",
+      "ko": "추가 스킬 없이 시작하기",
+      "ja": "追加スキルなしで始める"
+    },
+    "scope": "Use existing agent/project instructions for a bounded task with clear acceptance. Distinguish no additional installation from no planning or verification; size alone is not a rule.",
+    "compareWith": ["spec-kit", "superpowers", "openspec"],
+    "relatedGuides": ["tools", "srs"],
+    "order": 2303,
+    "aliases": [
+      "no-extra-skills",
+      "No additional skills",
+      "추가 스킬 없이 시작하기",
+      "追加スキルなしで始める"
+    ]
+  },
+  {
+    "id": "spec-kit",
+    "category": "agent-workflows",
+    "titles": {
+      "en": "Spec Kit",
+      "ko": "Spec Kit",
+      "ja": "Spec Kit"
+    },
+    "scope": "Trace shared requirements through specification, plan, tasks and convergence. Existing-project use and optional processes remain possible; no universal scale cutoff.",
+    "compareWith": ["no-extra-skills", "superpowers", "openspec"],
+    "relatedGuides": ["tools", "srs"],
+    "order": 2304,
+    "aliases": ["spec-kit", "Spec Kit", "speckit", "스펙킷", "スペックキット"]
+  },
+  {
+    "id": "superpowers",
+    "category": "agent-workflows",
+    "titles": {
+      "en": "Superpowers",
+      "ko": "Superpowers",
+      "ja": "Superpowers"
+    },
+    "scope": "Teach repeatable test/debug/review skills through a cancellation regression. Inspect harness installation and scope; no promise of better model outcomes or automatic delegation.",
+    "compareWith": ["no-extra-skills", "spec-kit", "openspec"],
+    "relatedGuides": ["tools", "srs"],
+    "order": 2305,
+    "aliases": ["superpowers", "Superpowers", "슈퍼파워스", "スーパーパワーズ"]
+  },
+  {
+    "id": "openspec",
+    "category": "agent-workflows",
+    "titles": {
+      "en": "OpenSpec",
+      "ko": "OpenSpec",
+      "ja": "OpenSpec"
+    },
+    "scope": "Teach current specifications plus a reviewed delta and archived change through a workshop rescheduling rule. Preserve unchanged requirements; not exclusive to existing projects.",
+    "compareWith": ["no-extra-skills", "spec-kit", "superpowers"],
+    "relatedGuides": ["tools", "srs"],
+    "order": 2306,
+    "aliases": ["openspec", "OpenSpec", "오픈스펙", "オープンスペック"]
   }
 ]

@@ -2,7 +2,7 @@
 
 The [version-control extension](../version-control-review.md) adds 10 concepts in [version control systems](groups/version-control-systems.md) and [repository hosting](groups/repository-hosting.md), with 30 overviews, 30 supplements and 10 static diagrams. The earlier source inventories below remain historical.
 
-kickoff current scope: **74 active concepts, 9 active guides, 249 indexed localized documents, no pending candidates**. Six concepts and three guides remain reference-only (27 localized documents). See [product alignment](../product-alignment-review.md) for the current purpose, reader-flow work, and local evidence. The 2026-09-23 [scope review](../catalog-scope.md) supersedes the writing queue below. Data-structure briefs and the earlier document-format/release briefs are historical research, not new writing tasks.
+kickoff current scope: **78 active concepts, 9 active guides, 261 indexed localized documents, no pending candidates**. Six concepts and three guides remain reference-only (27 localized documents). See [product alignment](../product-alignment-review.md) for the current purpose, reader-flow work, and local evidence. The 2026-09-23 [scope review](../catalog-scope.md) supersedes the writing queue below. Data-structure briefs and the earlier document-format/release briefs are historical research, not new writing tasks.
 
 > Current publishing rule (2026-09-23): follow [the shared authoring guide](../content-authoring.md). All articles follow Why → How → What: introduce the imagined app or page and its reader tasks before the problem, work through that same situation, then name the concept and its limits. In a catalog concept, Why also conveys the scenario's deciding priority among leaf-category peers, without pretending combinable choices are exclusive. Catalog concepts stay within one minute; guides are practical 2–3 minute walkthroughs. Historical plans below are research references.
 
@@ -16,6 +16,8 @@ The original research pack contained **58 candidates in 19 comparison groups**. 
 4. Use the existing single-candidate scaffold command from [authoring instructions](../content-authoring.md) when drafting is separately requested. Do not run it merely to consume these designs. Drafts remain unpublished until editorial review.
 
 Every visualization must preserve the declared inputs, mobile reading order, keyboard operation where interactive, non-color distinctions, visible long description and complete Markdown text equivalent. The figures are authored explanatory examples, not performance measurements, financial forecasts or service screenshots. Current implementations and complete visualization briefs are linked from each released group.
+
+Current AI workflow group: [comparison and source review](groups/agent-workflows.md).
 
 ## Historical writing queue and coverage
 

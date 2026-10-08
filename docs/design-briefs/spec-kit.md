@@ -1,0 +1,35 @@
+# Spec Kit demo brief
+
+- Stable ID, leaf category, English/Korean/Japanese titles: `spec-kit`; `agent-workflows`; Spec Kit / Spec Kit / Spec Kit.
+- Definition (one sentence): Track requirements through a specification, plan, tasks, and implementation checks when shared rules need durable agreement.
+- Closest concept and concrete difference: compare no extra setup, specification tracking, reusable development procedures, and change deltas. These are overlapping approaches, not exclusive size tiers.
+- Strong teaching case: One named waitlist-first requirement persists through spec, plan, tasks, and implementation comparison. A gap returns to tasks; checkbox count is not success.
+- Amplification and limits: emphasize artifact/execution ownership. All states are authored examples, not executed tools, tests, observed AI outcomes, or universal product defaults.
+- Distinguishing visual features: A prominent agreed-rule block and a vertical numbered artifact trace, with a separate return path.
+- Comparison category: AI development workflows under Planning & architecture; compare existing practices, uncertainty, risk, collaboration/handoff, and setup/maintenance cost.
+- Why opening: Concert booking: fans reserve seats and join a waitlist. Booking and notification changes must honor one agreed release rule. EN reviewed before KO/JA; all three retain ordinary actions, problem, selection priority, and a peer-favoring priority.
+- Distinct situation, dataset, labels, actions, initial state: the scenario above; keep its product facts and localized captions consistent with the article.
+- How/visual link and representative result: Cancelled seat goes to the next eligible fan before public availability; eligibility and response period still require agreement.
+- Visual decisions and controls: independent semantic Astro component; no controls are needed to explain this relationship.
+- Fictional scenario: numbers, venue, and product policy are accepted illustrative inputs, not vendor capabilities or measured results.
+- Initial/changed/repeated/empty states: before and after are static, labeled explanatory states. Repetition and empty input are not applicable; no simulated executable interface.
+- Reset and reload: no reset; reload renders the same explanation.
+- Mobile order and widths: preserve DOM order; component container queries stack regions at narrow widths. Check 320, 390, 768, and 1440 pixels and enlarged text.
+- Keyboard/focus/names/live feedback: semantic headings, paragraphs, lists, and inline change markers; no focusable demo controls or live announcements. Article disclosures retain native keyboard behavior.
+- Themes/fallback/shadows/motion: component owns opaque colors and scoped styles; no external assets, shadows, or animation. Verify legibility in surrounding light/dark themes.
+- JavaScript disabled: identical static diagram and complete Markdown narrative.
+- Fonts/characters: system sans-serif, optional system monospace; local text has Unicode fallback and requires no font measurement.
+- Localized strings/constraints/review: all instructional text EN/KO/JA through existing `local` helper; proper names, IDs, units, and file names may remain literal. No user input or persistence.
+- Mode: static; no script, reset, or mount wait.
+- Capture: `[data-demo="spec-kit"]`; full initial diagram in all three languages.
+- Source review: 2026-10-08; current official docs, with claims separated from editorial fit judgments:
+  - https://github.github.io/spec-kit/quickstart.html — Specifications, plans, tasks, implementation, and convergence form the SDD workflow; optional quality gates are available.
+  - https://github.github.io/spec-kit/installation.html — Installation and project initialization have runtime and integration requirements and are separate from agent invocation.
+  - https://github.github.io/spec-kit/reference/integrations.html — Invocation syntax and installed locations depend on the selected agent integration.
+  - https://github.github.io/spec-kit/guides/existing-projects.html — Initialization in an existing project may replace conflicting managed paths and should start from a reviewable baseline.
+  - https://github.com/github/spec-kit — SDD, bug repair, and idea assessment are separate entry points; the latter two are opt-in extensions.
+- Assets/origin/license: original authored markup/CSS, no downloaded or generated images/fonts; captured local thumbnails follow repository workflow.
+- Incidental choices: colors, geometry, sample service, and particular fictional rules are teaching composition, not requirements of the approach.
+- Supplementary reading: selection/comparison, application, implementation/cautions and dated evidence in EN/KO/JA; revision/sourceRevision 1.
+- Comparison metadata: Specification, plan, tasks, and convergence, Shared requirements remain reviewable, Setup and document review add work, Dependent features or consequential shared rules, Scoped execution skills with clear artifact ownership.
+- Verification: sequential bootstrap check/preview build, thumbnails, normal check/build, required-document token measurement, unit/output tests, browser tests. Results and resume point: [task record](../agent-workflow-selection-task.md).

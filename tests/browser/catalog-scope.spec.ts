@@ -1,3 +1,4 @@
+import { activeCandidates } from "../../scripts/catalog-data.mjs";
 import { test, expect } from "@playwright/test";
 
 for (const lang of ["en", "ko", "ja"]) {
@@ -7,7 +8,9 @@ for (const lang of ["en", "ko", "ja"]) {
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
     await page.goto(`/${lang}/catalog/`);
-    await expect(page.locator(".catalog-card")).toHaveCount(74);
+    await expect(page.locator(".catalog-card")).toHaveCount(
+      activeCandidates.length,
+    );
     await expect(page.locator(".category-card")).toHaveCount(6);
     await page
       .locator(

@@ -1,0 +1,33 @@
+# Superpowers demo brief
+
+- Stable ID, leaf category, English/Korean/Japanese titles: `superpowers`; `agent-workflows`; Superpowers / Superpowers / Superpowers.
+- Definition (one sentence): Use composable development skills when repeatable design, testing, debugging, and review steps are the priority.
+- Closest concept and concrete difference: compare no extra setup, specification tracking, reusable development procedures, and change deltas. These are overlapping approaches, not exclusive size tiers.
+- Strong teaching case: An explicit failing test, minimal repair, passing test, and review expose a repeatable development procedure; symbols and labels supplement color.
+- Amplification and limits: emphasize artifact/execution ownership. All states are authored examples, not executed tools, tests, observed AI outcomes, or universal product defaults.
+- Distinguishing visual features: A dark test bench with a large arithmetic expectation, failure/repair/pass regions, and a separate review strip.
+- Comparison category: AI development workflows under Planning & architecture; compare existing practices, uncertainty, risk, collaboration/handoff, and setup/maintenance cost.
+- Why opening: Recipe app: cooks scale ingredient quantities. Four servings use 200 g; two must use 100 g. A regression produces 200 g. EN reviewed before KO/JA; all three retain ordinary actions, problem, selection priority, and a peer-favoring priority.
+- Distinct situation, dataset, labels, actions, initial state: the scenario above; keep its product facts and localized captions consistent with the article.
+- How/visual link and representative result: Observe the expected test failure before repair, then check the corrected result and other agreed quantities.
+- Visual decisions and controls: independent semantic Astro component; no controls are needed to explain this relationship.
+- Fictional scenario: numbers, venue, and product policy are accepted illustrative inputs, not vendor capabilities or measured results.
+- Initial/changed/repeated/empty states: before and after are static, labeled explanatory states. Repetition and empty input are not applicable; no simulated executable interface.
+- Reset and reload: no reset; reload renders the same explanation.
+- Mobile order and widths: preserve DOM order; component container queries stack regions at narrow widths. Check 320, 390, 768, and 1440 pixels and enlarged text.
+- Keyboard/focus/names/live feedback: semantic headings, paragraphs, lists, and inline change markers; no focusable demo controls or live announcements. Article disclosures retain native keyboard behavior.
+- Themes/fallback/shadows/motion: component owns opaque colors and scoped styles; no external assets, shadows, or animation. Verify legibility in surrounding light/dark themes.
+- JavaScript disabled: identical static diagram and complete Markdown narrative.
+- Fonts/characters: system sans-serif, optional system monospace; local text has Unicode fallback and requires no font measurement.
+- Localized strings/constraints/review: all instructional text EN/KO/JA through existing `local` helper; proper names, IDs, units, and file names may remain literal. No user input or persistence.
+- Mode: static; no script, reset, or mount wait.
+- Capture: `[data-demo="superpowers"]`; full initial diagram in all three languages.
+- Source review: 2026-10-08; current official docs, with claims separated from editorial fit judgments:
+  - https://github.com/obra/superpowers — Superpowers combines composable development skills and documents harness-specific plugin and extension setup.
+  - https://github.com/obra/superpowers/blob/main/skills/test-driven-development/SKILL.md — The test-first workflow checks failure before a minimal implementation and then checks passing behavior.
+  - https://github.com/obra/superpowers/blob/main/skills/brainstorming/SKILL.md — Design clarification reuses supplied context and requires the selected path’s design prerequisites before implementation.
+- Assets/origin/license: original authored markup/CSS, no downloaded or generated images/fonts; captured local thumbnails follow repository workflow.
+- Incidental choices: colors, geometry, sample service, and particular fictional rules are teaching composition, not requirements of the approach.
+- Supplementary reading: selection/comparison, application, implementation/cautions and dated evidence in EN/KO/JA; revision/sourceRevision 1.
+- Comparison metadata: Composable design, test, debug, and review skills, Explicit development and verification habits, Workflow and harness setup add overhead, Repeatable execution and regression checks, Existing requirements or a clearly owned specification workflow.
+- Verification: sequential bootstrap check/preview build, thumbnails, normal check/build, required-document token measurement, unit/output tests, browser tests. Results and resume point: [task record](../agent-workflow-selection-task.md).

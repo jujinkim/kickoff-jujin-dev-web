@@ -34,7 +34,9 @@ export const versionControlCategories = [
 ];
 export const requiresDemo = (id) =>
   isDesignCategory(id) ||
-  ["requirements", "boundaries", "service-split"].includes(id) ||
+  ["requirements", "boundaries", "service-split", "agent-workflows"].includes(
+    id,
+  ) ||
   platformCategories.includes(id) ||
   monetizationCategories.includes(id) ||
   versionControlCategories.includes(id);

@@ -9,6 +9,8 @@ export async function GET() {
 
 Only the startup guidelines and behavior rules below are required site reading to begin planning. This index and the catalog are optional learning resources, not a required selection list. Derive decisions from requirements and constraints, including options outside this site. Follow individual links only when requested or useful; an inaccessible optional resource alone does not stop planning.
 
+Assess whether extra agent workflows are useful before recommending installation. Starting without extra skills is an equal option. Spec Kit, Superpowers, and OpenSpec are examples to compare by project fit, not a required package list. Authorized setup and invocation happen in the user's external coding agent; this site prepares the request and learning material.
+
 ## Create a prompt and start planning
 - [Latest development startup guidelines](https://kickoff.jujin.dev/ai/startup/latest.md)
 - [Create a custom prompt](https://kickoff.jujin.dev/en/start/)

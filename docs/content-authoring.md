@@ -1,6 +1,6 @@
 # Catalog and guide authoring
 
-This guide describes the authoring workflow. Design implementation follows [Design demos](design-demos.md). 74 concepts and 9 guides are active in three languages; no candidates remain pending. See [catalog scope](catalog-scope.md). Current counts and release reviews live in the [writing index](catalog-writing/README.md). The earlier [styles review](catalog-writing/styles-review.md) is historical.
+This guide describes the authoring workflow. Design implementation follows [Design demos](design-demos.md). 78 concepts and 9 guides are active in three languages; no candidates remain pending. See [catalog scope](catalog-scope.md). Current counts and release reviews live in the [writing index](catalog-writing/README.md). The earlier [styles review](catalog-writing/styles-review.md) is historical.
 
 See [product alignment](product-alignment-review.md) for the purpose, screen roles, change criteria, and verification of the current reader flow.
 
@@ -60,7 +60,7 @@ The evaluation protocol lives in [prompt evaluation](prompt-evaluation.md).
 ## Shared data and routes
 
 - `src/data/categories.json` is the single taxonomy: stable language-independent ID, nullable parent, localized names/descriptions, sibling order. Roots are navigation shelves; concepts belong to one leaf comparison group.
-- `src/data/candidates.json` holds 80 existing concept records (74 active, 6 reference-only): stable ID, leaf category, en/ko/ja titles, scope, comparison peers, related guide IDs, writing order. Public pending names and the writing queue filter this file through `src/data/catalog-retirements.json`. Retired categories and guide IDs point to an active integrated guide; their existing paths and comment identities remain intact. The eight unwritten data-structure records were removed.
+- `src/data/candidates.json` holds 84 existing concept records (78 active, 6 reference-only): stable ID, leaf category, en/ko/ja titles, scope, comparison peers, related guide IDs, writing order. Public pending names and the writing queue filter this file through `src/data/catalog-retirements.json`. Retired categories and guide IDs point to an active integrated guide; their existing paths and comment identities remain intact. The eight unwritten data-structure records were removed.
 - `npm run content:new -- --list` shows active writing order and computed English status. Retired concepts cannot be scaffolded. No file means `planned`; existing `draft` or `published` frontmatter determines subsequent states. Public pages expose only published text; an untranslated or draft candidate still displays its fixed candidate name as coming soon, with no article link.
 - Concepts: `/{lang}/catalog/{articleId}/`; categories: `/{lang}/catalog/categories/{categoryId}/`; guides: `/{lang}/guides/{articleId}/`. Article Markdown uses `/en/catalog/{articleId}.md` or `/en/guides/{articleId}.md` for every UI language. Existing localized Markdown URLs serve the English original; keep translated sources for HTML.
 - Legacy guide `/catalog/{articleId}/` routes are noindex static redirects with canonical guide links. Legacy Markdown serves the same source and declares the new canonical. IDs, comments and translation identity do not change.

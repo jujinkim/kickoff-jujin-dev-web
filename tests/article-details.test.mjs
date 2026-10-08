@@ -12,9 +12,18 @@ const articles = readArticles(),
   details = readDetails();
 test("every active article has all three supplements, even when an entire set is removed", () => {
   const active = articles.filter(needsDetails);
-  assert.equal(active.length, 249);
-  assert.equal(active.filter((a) => a.data.kind === "concept").length, 74 * 3);
-  assert.equal(active.filter((a) => a.data.kind === "guide").length, 9 * 3);
+  const originals = active.filter((a) => a.data.lang === "en");
+  assert.ok(originals.length > 0);
+  assert.equal(active.length, originals.length * 3);
+  for (const original of originals) {
+    assert.deepEqual(
+      active
+        .filter((a) => a.data.articleId === original.data.articleId)
+        .map((a) => a.data.lang)
+        .sort(),
+      ["en", "ja", "ko"],
+    );
+  }
   assert.equal(details.length, active.length);
   const id = active[0].data.articleId;
   const missing = details.filter((d) => d.data.articleId !== id);
@@ -28,7 +37,7 @@ test("every active article has all three supplements, even when an entire set is
     validateDetails(articles, []).filter((e) =>
       e.includes("missing active article"),
     ).length,
-    249,
+    active.length,
   );
 });
 test("supplements join current articles with translated sections and dated claim evidence", () => {

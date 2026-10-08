@@ -1,6 +1,6 @@
 # Catalog scope, 2026-09-23
 
-Current inventory after the [2026-09-27 version-control extension](version-control-review.md): 74 active concepts, 9 active guides, six active roots, 249 indexed documents and 249 supplements. There are 276 retained source articles including the unchanged 27 reference-only documents. The scope decision and verification below are the historical 2026-09-23 record.
+Current inventory after the [2026-10-08 agent workflow extension](agent-workflow-selection-task.md): 78 active concepts, 9 active guides, six active roots, 261 indexed documents and 261 supplements. There are 288 retained source articles including the unchanged 27 reference-only documents. The scope decision and verification below are the historical 2026-09-23 record.
 
 kickoff helps people prepare custom prompts and learn project planning, design, and technology choices before discussing or working in an external AI tool. Users do not need to know every implementation term. This review covers all current groups and guides, following the maintainer's approved scope.
 

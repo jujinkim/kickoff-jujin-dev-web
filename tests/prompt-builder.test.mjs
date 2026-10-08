@@ -84,6 +84,41 @@ for (const [lang, name, notes] of [
     const noScript = read(`dist/${lang}/start/index.html`).match(
       /<noscript>[\s\S]*?<\/noscript>/,
     )[0];
+    const agentWorkflow = {
+      en: [
+        "starting without extra skills",
+        "Spec Kit",
+        "change risk",
+        "external agent",
+        "installation authorization",
+        "verify availability",
+        "invoke the selected workflow",
+        "manual next steps",
+        "unverified",
+      ],
+      ko: [
+        "추가 스킬 없이 시작하기",
+        "Spec Kit",
+        "변경 위험",
+        "외부 AI 에이전트",
+        "기존 설치 승인 범위",
+        "사용 가능 여부를 검증",
+        "지원하는 방식으로 호출",
+        "수동 진행 방법",
+        "미검증",
+      ],
+      ja: [
+        "追加スキルなし",
+        "Spec Kit",
+        "変更リスク",
+        "外部AIエージェント",
+        "既存の導入許可",
+        "利用可能か検証",
+        "対応する方式で呼び出",
+        "手動の次の手順",
+        "未検証",
+      ],
+    }[lang];
     const workflow = {
       en: [
         "realistic options, pros/cons",
@@ -142,7 +177,7 @@ for (const [lang, name, notes] of [
       projectPrompt[lang],
       noScript,
     ])
-      for (const term of [...versionControl, ...workflow])
+      for (const term of [...versionControl, ...workflow, ...agentWorkflow])
         assert.ok(prompt.includes(term), `${lang}: ${term}`);
     for (const prompt of [minimal, projectPrompt[lang]])
       assert.doesNotMatch(prompt, /llms\.txt|catalog\.json|\/categories\//);

@@ -1,0 +1,208 @@
+---
+import type { Lang } from "../../lib/i18n";
+import { local } from "./shared";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = local(lang);
+---
+
+<section data-demo="no-extra-skills" lang={lang}>
+  <header>
+    <p class="eyebrow">
+      {t(
+        "School club website · illustrated correction",
+        "학교 동아리 사이트 · 수정 예시",
+        "学校のクラブサイト · 修正の例",
+      )}
+    </p>
+    <h2>
+      {t(
+        "One clear change. Existing checks.",
+        "명확한 수정 하나, 기존 점검",
+        "明確な修正一つ、既存の確認",
+      )}
+    </h2>
+  </header>
+  <p class="request">
+    {t(
+      "Confirmed request: the meeting venue is the library.",
+      "확정된 요청: 모임 장소는 도서관입니다.",
+      "確定した依頼：集まりの会場は図書館です。",
+    )}
+  </p>
+  <div class="desk">
+    <article class="page-proof" data-direct-change>
+      <h3>
+        {t("Edit the existing page", "기존 페이지 수정", "既存のページを修正")}
+      </h3>
+      <p class="venue">
+        <span>{t("Venue", "장소", "会場")}</span>
+        <del>{t("Gym", "체육관", "体育館")}</del>
+        <span aria-hidden="true">→</span>
+        <ins>{t("Library", "도서관", "図書館")}</ins>
+      </p>
+      <div class="preserved">
+        <p>{t("Date: unchanged", "날짜: 유지", "日付：維持")}</p>
+        <p>
+          {t(
+            "Registration link: unchanged",
+            "신청 링크: 유지",
+            "申込リンク：維持",
+          )}
+        </p>
+      </div>
+    </article>
+    <aside class="checks" data-existing-checks>
+      <h3>
+        {t(
+          "Check against the request",
+          "요청과 대조해 점검",
+          "依頼と照合して確認",
+        )}
+      </h3>
+      <ol>
+        <li>
+          {t(
+            "Read project instructions",
+            "프로젝트 지침 읽기",
+            "プロジェクト指示を読む",
+          )}
+        </li>
+        <li>
+          {t(
+            "Verify venue and preserved content",
+            "장소와 유지할 내용 확인",
+            "会場と保つ内容を確認",
+          )}
+        </li>
+        <li>
+          {t(
+            "Run existing page checks; report gaps",
+            "기존 페이지 점검 실행·부족한 부분 보고",
+            "既存の確認を実行し不足を報告",
+          )}
+        </li>
+      </ol>
+      <p class="setup">
+        {t(
+          "Extra packages to install: 0",
+          "추가로 설치할 패키지: 0",
+          "追加導入するパッケージ：0",
+        )}
+      </p>
+    </aside>
+  </div>
+  <p class="boundary" data-boundary>
+    {t(
+      "No extra skill does not remove planning, adopted rules, records, or verification. Reassess if scope or risk grows.",
+      "추가 스킬이 없어도 계획·채택 규칙·기록·검증은 필요합니다. 범위나 위험이 커지면 재검토합니다.",
+      "追加スキルなしでも計画・採用規則・記録・検証は必要です。範囲やリスクが増したら再検討します。",
+    )}
+  </p>
+</section>
+<style>
+  section {
+    container-type: inline-size;
+    padding: clamp(18px, 4vw, 34px);
+    background: #f4f5ef;
+    color: #203a30;
+    border: 1px solid #829387;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  p,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  h2,
+  h3 {
+    color: inherit;
+  }
+  h2 {
+    margin-top: 6px;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  .eyebrow {
+    color: inherit;
+    font-size: 0.82rem;
+    font-weight: 650;
+  }
+  .request {
+    margin-top: 22px;
+    padding-left: 12px;
+    border-left: 4px solid #315f49;
+  }
+  .desk {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .page-proof {
+    background: #fff;
+    border: 1px solid #829387;
+    padding: 20px;
+  }
+  .venue {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: baseline;
+    margin: 24px 0;
+    font-size: 1.1rem;
+  }
+  .venue > span:first-child {
+    flex-basis: 100%;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  del {
+    color: #803638;
+  }
+  ins {
+    color: #205438;
+    font-weight: 800;
+    text-decoration-thickness: 2px;
+  }
+  .preserved {
+    border-top: 1px solid #829387;
+    padding-top: 14px;
+    font-size: 0.86rem;
+  }
+  .checks {
+    padding: 16px 0;
+  }
+  ol {
+    padding-left: 1.3em;
+    margin: 16px 0;
+  }
+  li + li {
+    margin-top: 9px;
+  }
+  .setup {
+    font-weight: 800;
+    border-top: 2px solid #315f49;
+    padding-top: 14px;
+  }
+  .boundary {
+    margin-top: 20px;
+    font-size: 0.86rem;
+  }
+  @container (max-width: 560px) {
+    .desk {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .page-proof {
+      padding: 16px;
+    }
+  }
+</style>
