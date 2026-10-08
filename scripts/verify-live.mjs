@@ -73,7 +73,9 @@ for (const lang of ["en", "ko", "ja"]) {
 }
 await check("/llms.txt", "/ai/catalog.json");
 await check("/ai/instructions.md", [
-  "Within approved requirements and boundaries",
+  "These internal choices need no separate delegation",
+  "starting without extra skills is valid",
+  "Installation is not activation or invocation",
   "These documents guide assistants; they do not enforce behavior.",
 ]);
 const catalog = await check("/ai/catalog.json", '"schemaVersion": 1');

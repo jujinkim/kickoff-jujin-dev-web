@@ -96,3 +96,24 @@ No push or deploy was performed.
 
 External-agent installation, model compliance, real-device behavior, and live
 publication are not established by local site tests. No push or deploy requested.
+
+## Deployment authorized 2026-10-09
+
+The user subsequently requested deployment. Status: in progress. Publish the
+reviewed implementation through the existing GitHub Pages workflow, then verify
+the public origin. No domain or deployment architecture change is needed.
+
+Preflight confirmed a clean implementation checkout, the two reviewed local
+commits, current `origin/main`, and available GitHub access. The live verifier
+still expected a sentence shortened in revision 8; update its ownership check
+to the retained rule and also check no-extra-skills and separate
+installation/activation/invocation obligations. This changes verification only.
+
+Regular check passed again: 222 files with zero errors/warnings/hints, 288
+published articles, and formatting. Build passed with 455 pages and 261 indexed
+documents; unit/output tests passed 54/54. Required English input remains
+2,964/3,000 tokens. Existing thumbnail captures remain valid. The repaired live
+verifier passed against local output with no failures.
+
+Next: commit/push, wait for matching Actions deployment, and check public HTTP
+and browser behavior. Record the deployed SHA and final remote synchronization.
